@@ -1,0 +1,1564 @@
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.8(debug):v2.8-490-g409610a9a
+NOTICE:  BL1: Built : 08:08:07, Mar  8 2023
+INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
+WARNING: BL1: cortex_a57: CPU workaround for 813419 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 817169 was missing!
+INFO:    BL1: cortex_a57: CPU workaround for disable_ldnp_overread was applied
+WARNING: BL1: cortex_a57: CPU workaround for 826974 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 826977 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 828024 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 829520 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 833471 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 859972 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for 1319537 was missing!
+INFO:    BL1: cortex_a57: CPU workaround for cve_2017_5715 was applied
+INFO:    BL1: cortex_a57: CPU workaround for cve_2018_3639 was applied
+INFO:    BL1: cortex_a57: CPU workaround for cve_2022_23960 was applied
+INFO:    BL1: Loading BL2
+INFO:    Loading image id=1 at address 0x3fcd1000
+INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: Booting BL2
+INFO:    Entry point address = 0x3fcd1000
+INFO:    SPSR = 0x3c5
+NOTICE:  BL2: v2.8(debug):v2.8-490-g409610a9a
+NOTICE:  BL2: Built : 08:08:07, Mar  8 2023
+INFO:    BL2: Doing platform setup
+INFO:    BL2: Loading image id 3
+INFO:    Loading image id=3 at address 0x3fcee000
+INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcf9089
+INFO:    BL2: Skip loading image id 5
+NOTICE:  BL1: Booting BL31
+INFO:    Entry point address = 0x3fcee000
+INFO:    SPSR = 0x3cd
+NOTICE:  BL31: v2.8(debug):v2.8-490-g409610a9a
+NOTICE:  BL31: Built : 08:08:07, Mar  8 2023
+INFO:    GICv3 without legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    Maximum SPI INTID supported: 287
+INFO:    BL31: Initializing runtime services
+WARNING: BL31: cortex_a57: CPU workaround for 813419 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 817169 was missing!
+INFO:    BL31: cortex_a57: CPU workaround for disable_ldnp_overread was applied
+WARNING: BL31: cortex_a57: CPU workaround for 826974 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 826977 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 828024 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 829520 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 833471 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 859972 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for 1319537 was missing!
+INFO:    BL31: cortex_a57: CPU workaround for cve_2017_5715 was applied
+INFO:    BL31: cortex_a57: CPU workaround for cve_2018_3639 was applied
+INFO:    BL31: cortex_a57: CPU workaround for cve_2022_23960 was applied
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x10000000
+INFO:    SPSR = 0x3c9
+UEFI firmware (version 1.0 built at 13:30:41 on Feb 25 2023)
+[2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
+[1m[33m[40mMapping table[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -l 6 -v 1
+
+
+ SBSA Architecture Compliance Suite 
+    Version 7.1.0  
+
+ Starting tests for level  6 (Print level is  1)
+
+ Creating Platform Information Tables 
+ Using SMC as PSCI conduit
+ MADT is at FC0FF598 and length is 1A8 
+ MPIDR 0 PE num 0 
+ MPIDR 1 PE num 1 
+ MPIDR 2 PE num 2 
+ MPIDR 3 PE num 3 
+ PE_INFO: Number of PE detected       :    4 
+ MADT is at FC0FF598 and length is 1A8 
+ GICH base 2C010000 
+ GICH base 2C010000 
+ GICH base 2C010000 
+ GICH base 2C010000 
+ GIC DIS base 40060000 
+ GIC RD base Structure 40080000 
+ GIC ITS base 44081000 
+ GIC ITS ID0 
+ GIC_INFO: Number of GICD             :    1 
+ GIC_INFO: Number of ITS              :    1 
+ GTDT is at FC0FFD18 and length is 84 
+ TIMER_INFO: Number of system timers  :    0 
+ Watchdog base = 0x50011000 INTID = 0x30 
+ WATCHDOG_INFO: Number of Watchdogs   :    1 
+PPTT table found at 0x100FC0FF818 with length 0xF0
+
+Cache info * Index 0 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 1 *
+  Offset:                  0x68
+  Type:                    0x2
+  Cache ID:                0x1C00
+  Size:                    0x80000
+  Next level index:        -1
+  Private flag:            0x1
+
+Cache info * Index 2 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 3 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 4 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 5 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 6 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 7 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 8 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+PE level one cache index info
+PE Index * 0 *
+  Level 1 Cache index(s) : 0, 2,
+
+PE Index * 1 *
+  Level 1 Cache index(s) : 3, 4,
+
+PE Index * 2 *
+  Level 1 Cache index(s) : 5, 6,
+
+PE Index * 3 *
+  Level 1 Cache index(s) : 7, 8,
+ CACHE_INFO: Number of cache nodes    :    9
+ MPAM table not found
+ MPAM INFO: Number of MSC nodes       :    0 
+ HMAT ACPI table not found
+ SRAT not found 
+
+ Allocating memory for RAS2 info table RAS2 ACPI table not found
+ RAS2_INFO: Number of RAS2 entries    :    0 
+ RAS2_INFO: Num of RAS2 memory entries:    0 
+ PCIE_INFO: Number of ECAM regions    :    1 
+
+       dp_type 0x200 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x1 
+       dp_type 0x1 
+       dp_type 0x1 
+       dp_type 0x80    Dev bdf 0x100 DP type 0x200  RP bdf 0xFFFFFFFF
+ PCIE_INFO: Number of BDFs found      :    1
+ PCIE_INFO: Number of RCiEP           :    1 
+ PCIE_INFO: Number of RCEC            :    0 
+ PCIE_INFO: Number of EP              :    0 
+ PCIE_INFO: Number of RP              :    0 
+ PCIE_INFO: Number of iEP_EP          :    0 
+ PCIE_INFO: Number of iEP_RP          :    0 
+ IORT node offset:30, type: 0
+ IORT node offset:48, type: 4
+ IORT node offset:30, type: 0
+ IORT node offset:28, type: 48
+ Invalid IORT node type
+ IORT node offset:A0, type: 2
+ IORT node offset:48, type: 4
+ Number of IOVIRT blocks = 3
+
+ ITS Group: Num ITS:0
+  ITS ID : 0
+ SMMU: Major Rev:3 Base Address:0x60050000
+ Number of ID Mappings:2
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0x18
+  input_base:0x3C02 id_count:0x0
+  output_base:0x1 output ref:0xFFFFFFFF
+
+ Root Complex: PCI segment number:0
+ Number of ID Mappings:1
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0x144
+
+ SMMU_INFO: Number of SMMU CTRL       :    1 
+ 000.00.00 class_code = 0 6
+ 000.00.12 class_code = 6 1
+ 000.01.01 class_code = 0 2
+ 000.02.02 class_code = 0 3
+ 000.03.03 class_code = 4 6
+ 000.04.05 class_code = 4 6
+ 000.05.07 class_code = 4 6
+ 000.06.09 class_code = 4 6
+ 001.00.04 class_code = 3 12
+ Found a USB controller 82400004 
+ 005.08.11 class_code = 255 0
+ 000.00.00 class_code = 0 6
+ 000.00.12 class_code = 6 1
+ Found a SATA controller 60100000 
+ 000.01.01 class_code = 0 2
+ 000.02.02 class_code = 0 3
+ 000.03.03 class_code = 4 6
+ 000.04.05 class_code = 4 6
+ 000.05.07 class_code = 4 6
+ 000.06.09 class_code = 4 6
+ 005.08.11 class_code = 255 0
+ Peripheral: Num of USB controllers   :    1 
+ Peripheral: Num of SATA controllers  :    1 
+ Peripheral: Num of UART controllers  :    1 
+
+ BDF is 0
+ Class code is 6000000
+ BDF is 100
+ Class code is 2000000
+ BDF is 200
+ Class code is 3000002
+ BDF is 300
+ Class code is 6040000
+ BDF is 400
+ Class code is 6040000
+ BDF is 500
+ Class code is 6040000
+ BDF is 600
+ Class code is 6040000
+ BDF is 10000
+ Class code is C033001
+ BDF is 20000
+ Class code is 3800002
+ BDF is 30000
+ Class code is 2000000
+ BDF is 40000
+ Class code is 6040000
+ BDF is 50800
+ Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
+ Peripheral: Num of Storage ctrl      :    0 
+ Peripheral: Num of Display ctrl      :    2 
+ Reserved region of type 7 [0x10000000000, 0x100FBDC5000]
+ Reserved region of type 1 [0x100FBDC5000, 0x100FBF30000]
+ Reserved region of type 5 [0x100FBF30000, 0x100FBFB0000]
+ Reserved region of type 6 [0x100FBFB0000, 0x100FC000000]
+ Reserved region of type 4 [0x100FC000000, 0x100FC020000]
+ Reserved region of type 6 [0x100FC020000, 0x100FC070000]
+ Reserved region of type 5 [0x100FC070000, 0x100FC0C0000]
+ Reserved region of type 9 [0x100FC0C0000, 0x100FC100000]
+ Reserved region of type 7 [0x100FC100000, 0x100FE14F000]
+ Reserved region of type 4 [0x100FE14F000, 0x100FE21F000]
+ Reserved region of type 7 [0x100FE21F000, 0x100FE220000]
+ Reserved region of type 4 [0x100FE220000, 0x100FEFF4000]
+ Reserved region of type 7 [0x100FEFF4000, 0x100FF31F000]
+ Reserved region of type 3 [0x100FF31F000, 0x100FF5D0000]
+ Reserved region of type 5 [0x100FF5D0000, 0x100FF760000]
+ Reserved region of type 6 [0x100FF760000, 0x100FF9B0000]
+ Reserved region of type 7 [0x100FF9B0000, 0x100FF9CE000]
+ Reserved region of type 4 [0x100FF9CE000, 0x100FF9F0000]
+ Reserved region of type 3 [0x100FF9F0000, 0x100FFA27000]
+ Reserved region of type 4 [0x100FFA27000, 0x100FFFE9000]
+ Reserved region of type 3 [0x100FFFE9000, 0x100FFFF8000]
+ Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
+ Reserved region of type 11 [0x10000000, 0x104C0000]
+ Reserved region of type 11 [0x60010000, 0x60011000]
+ APMT table not found
+ PMU_INFO: Number of PMU units        :    0
+ AEST table not found
+ RAS_INFO: Number of RAS nodes        :    0 
+ Shared memory is 100FE224918 
+
+      ***  Starting PE tests ***  
+   1 : Check PE Granule Support          
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       S_L3PE_01
+                                  : Result:  PASS 
+       END  
+
+   2 : Check for 16-bit ASID support     
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       S_L3PE_02
+                                  : Result:  PASS 
+       END  
+
+   3 : Check AARCH64 implementation      
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       S_L3PE_03
+                                  : Result:  PASS 
+       END  
+
+   4 : Check FEAT_LPA Requirements       
+       START  
+       S_L3PE_04
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+   5 : Check for RAS extension           
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L4PE_01
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+   6 : Check DC CVAP support             
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       S_L4PE_02
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+   7 : Check for 16-Bit VMID             
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L4PE_03
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+   8 : Check for Virtual host extensions 
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L4PE_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+   9 : Support Page table map size change
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_01
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  10 : Check for pointer signing         
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_02
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  11 : Check Activity monitors extension 
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  12 : Check for SHA3 and SHA512 support 
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_05
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  13 : Stage 2 control of mem and cache  
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_06
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  14 : Check for nested virtualization   
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L5PE_07
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  15 : Check MPAM PE Requirements        
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       S_MPAM_PE
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+  16 : Check MPAM LLC Requirements       
+       START  
+       cache 1 has invalid cache_identifier
+       LLC invalid in PPTT
+       Failed on PE -    0 for Level=  6 
+       S_MPAM_PE
+       Checkpoint --  2                  : Result:  FAIL 
+       END  
+
+  17 : Check SPE if implemented          
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       B_PE_17
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+  18 : Check Branch Target Support       
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_02
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  19 : Check Protect Against Timing Fault
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_03
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  20 : Check PMU Version Support         
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  21 : Check AccessFlag DirtyState Update
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_05
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  22 : Check Enhanced Virtualization Trap
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_06
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  23 : Check Speculation Restriction     
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       B_SEC_01
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  24 : Check Speculative Str Bypass Safe 
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       B_SEC_02
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  25 : Check PEs Impl CSDB,SSBB,PSSBB    
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       B_SEC_03
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  26 : Check PEs Implement SB Barrier    
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       B_SEC_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  27 : Check PE Impl CFP,DVP,CPP RCTX    
+       START  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  6 
+       B_SEC_05
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+
+      One or more PE tests failed or were skipped.
+
+      ***  Starting GIC tests ***  
+ 101 : Check GIC version                 
+       START  
+       gic version from ACPI table = 3 
+       Received GIC version =    3      
+       S_L3GI_01
+                                  : Result:  PASS 
+       END  
+
+ 102 : Check Reserved PPI Assignments    
+       START  
+       S_L5PP_01
+                                  : Result:  PASS 
+       END  
+
+
+      All GIC tests passed.
+
+      *** Starting Watchdog tests ***  
+ 301 : Check NS Watchdog Revision        
+       START  
+       Found 1 watchdogs in ACPI table 
+      Watchdog CTRL base is  50011000      
+       S_L6WD_01
+                                  : Result:  PASS 
+       END  
+
+
+      All Watchdog tests passed.
+
+      *** Starting SMMU  tests ***  
+ 701 : Check SMMU Version                
+       START  
+       Level 6 should support Smmuv3.2 or higher  
+       Failed on PE -    0 for Level=  6 
+       S_L3SM_01 
+       Checkpoint --  2                  : Result:  FAIL 
+       END  
+
+
+      SMMU Version Not Compliant,                          Skipping Remaining SM
+MU Tests
+
+      ***  Starting Memory tests ***  
+1301 : Check peripherals addr 64Kb apart 
+       START  
+ Peripheral 2000
+ Peripheral 2001
+   addr of Peripheral 1 is  82400004
+   addr of Peripheral 2 is  60100000
+ Peripheral 2000
+ Peripheral 2002
+   addr of Peripheral 1 is  82400004
+   addr of Peripheral 2 is  60000000
+ Peripheral 2001
+ Peripheral 2002
+   addr of Peripheral 1 is  60100000
+   addr of Peripheral 2 is  60000000
+       S_L3MM_01, S_L3MM_02
+                                  : Result:  PASS 
+       END  
+
+
+      All Memory tests passed.
+
+      *** Starting PCIe tests ***  
+ 401 : Check ECAM Presence               
+       START  
+       PCI_IN_01
+                                  : Result:  PASS 
+       END  
+
+ 403 : Check ECAM Memory accessibility   
+       START  
+       PCI_IN_02
+                                  : Result:  PASS 
+       END  
+
+ 420 : Check Type 0/1 common config rules
+       START  
+       Number of bit-field entries to check 12
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       RE_REG_1, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 421 : Check Type 0 config header rules  
+       START  
+       Number of bit-field entries to check 3
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       RE_REG_1, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 422 : Check Type 1 config header rules  
+       START  
+       Number of bit-field entries to check 10
+       RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 423 : Check PCIe capability rules       
+       START  
+       Number of bit-field entries to check 1
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 424 : Check Device capabilites reg rules
+       START  
+       Number of bit-field entries to check 8
+       BDF 0x100 : PASS
+       BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       Failed on PE -    0 for Level=  6 
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+ 425 : Check Device Control register rule
+       START  
+       Number of bit-field entries to check 4
+       BDF 0x100 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
+       BDF 0x100 : WARNING APPE attribute mismatch: 0x400 instead of 0x0
+       RE_REG_3, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 426 : Check Device cap 2 register rules 
+       START  
+       Number of bit-field entries to check 16
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : WARNING EFFS value mismatch: 0x0 instead of 0x1
+       RE_REG_3, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 427 : Check Device control 2 reg rules  
+       START  
+       Number of bit-field entries to check 5
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       RE_REG_3, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 428 : Check Power management cap rules  
+       START  
+       Number of bit-field entries to check 2
+       BDF 0x100 : PASS
+       BDF 0x100 : PASS
+       RE_REG_2, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 429 : Check Power management/status rule
+       START  
+       Number of bit-field entries to check 2
+       BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
+
+       BDF 0x100 : PASS
+       RE_REG_2, RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 430 : Check Cmd Reg memory space enable 
+       START  
+      tbl_index 0      BDF 100      Bar Base 82560000    bar_data FFFFFFFF 
+       RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 431 : Check Type0/1 BIST Register rule  
+       START  
+       RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 432 : Check HDR CapPtr Register rule    
+       START  
+       RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 433 : Check Max payload size supported  
+       START  
+       RE_REC_1, RE_REC_2
+                                  : Result:  PASS 
+       END  
+
+ 434 : Check BAR memory space & Type rule
+       START  
+       HDR TYPE 0x0 
+       MAX BARS 0x6 
+       BDF 0x0 Not MMIO
+       Failed on PE -    0 for Level=  6 
+       RE_BAR_3
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+ 435 : Check Function level reset rule   
+       START  
+       RE_RST_1, PCI_SM_02
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 436 : Check ARI forwarding support rule 
+       START  
+       PCI_IN_17
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 437 : Check OBFF supported rule         
+       START  
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 438 : Check CTRS and CTDS rule          
+       START  
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 439 : Check i-EP atomicop rule          
+       START  
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 441 : Check MSI and MSI-X support rule  
+       START  
+    BDF 0x100 int pin value 1 MSI cap 0 MSIX cap 0
+       RE_INT_1, IE_INT_1
+                                  : Result:  PASS 
+       END  
+
+ 442 : Check Power Management rules      
+       START  
+       RE_PWR_1
+                                  : Result:  PASS 
+       END  
+
+ 443 : Check ARI forwarding enable rule  
+       START  
+       PCI_IN_17
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 444 : Check device under RP in same ECAM
+       START  
+       PCI_IN_04
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 445 : Check all RP in HB is in same ECAM
+       START  
+       PCI_IN_03
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 446 : Check RP Byte Enable Rules        
+       START  
+       PCI_IN_18
+                                  : Result:  PASS 
+       END  
+
+ 447 : Check Config Txn for RP in HB     
+       START  
+       PCI_IN_12
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 448 : Check RootPort NP Memory Access   
+       START  
+       PCI_IN_13
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 449 : Check RootPort P Memory Access    
+       START  
+       PCI_IN_13
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 450 : Check L-Intr SPI Level-Sensitive  
+       START  
+ pal_pcie_get_legacy_irq_map unimplemented
+       PCI_LI_01, PCI_LI_03
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+ 451 : Check Sec Bus Reset For iEP_RP    
+       START  
+       IE_RST_2
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+ 452 : Check ATS Support Rule            
+       START  
+       RE_SMU_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 456 : Check iEP-RootPort P2P Support    
+       START  
+       pal_pcie_p2p_support API is unimplemented 
+       
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 457 : Check RCiEP, iEP_EP P2P Supp      
+       START  
+       
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 458 : Read and write to RCiEP BAR reg   
+       START  
+       BDF 000100 BAR offset0x10 value is 0x82560000     The BAR supports 32-bit
+ address capability
+
+       BDF 000100 BAR offset0x14 value is 0x82540000     The BAR supports 32-bit
+ address capability
+
+       RE_BAR_1
+                                  : Result:  PASS 
+       END  
+
+ 459 : Check RCEC Class code and Ext Cap     
+       START  
+       RE_PCI_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 460 : Check RCiEP Hdr type & link Cap   
+       START  
+       Link Capabilities reg check failed
+       Invalid Link Capabilities 0x1 Bdf : 0x100
+       Failed on PE -    0 for Level=  6 
+       RE_PCI_1
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+ 461 : Check RootPort P&NP Memory Access 
+       START  
+       S_PCI_02
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 462 : Check EA Capability               
+       START  
+       S_L4PCI_2
+                                  : Result:  PASS 
+       END  
+
+
+      One or more PCIe tests failed or were skipped.
+ITS : Info Block 
+GIC ITS Index : 0
+GIC ITS ID : 0
+GIC ITS Base : 44081000
+
+
+      *** Starting PCIe Exerciser tests ***  
+
+       dp_type 0x200 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x10 
+       dp_type 0x1 
+       dp_type 0x1 
+       dp_type 0x1 
+       dp_type 0x80  PCIE_INFO: Number of exerciser cards :    0 
+
+     No Exerciser Devices Found, Skipping Exerciser tests...
+
+     ------------------------------------------------------- 
+     Total Tests run  =   73;  Tests Passed  =   25  Tests Failed =   24
+     --------------------------------------------------------- 
+
+      **  For complete SBSA test coverage, it is 
+            necessary to also run the BSA test    ** 
+
+
+      *** SBSA tests complete. Reset the system. *** 
+
+[1m[33m[40mShell> [0m[37m[40mreset -c
+INFO:    PSCI Power Domain Map:
+INFO:      Domain Node : Level 1, parent_node 4294967295, State ON (0x0)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      Domain Node : Level 1, parent_node 4294967295, State OFF (0x2)
+INFO:      CPU Node : MPID 0x0, parent_node 0, State ON (0x0)
+INFO:      CPU Node : MPID 0x1, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0x2, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0x3, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 0, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 1, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 2, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 3, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 4, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 5, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 6, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 7, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 8, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 9, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 10, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 11, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 12, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 13, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 14, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 15, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 16, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 17, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 18, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 19, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 20, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 21, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 22, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 23, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 24, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 25, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 26, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 27, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 28, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 29, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 30, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 31, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 32, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 33, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 34, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 35, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 36, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 37, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 38, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 39, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 40, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 41, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 42, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 43, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 44, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 45, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 46, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 47, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 48, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 49, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 50, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 51, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 52, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 53, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 54, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 55, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 56, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 57, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 58, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 59, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 60, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 61, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 62, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
+INFO:      CPU Node : MPID 0xffffffffffffffff, parent_node 63, State OFF (0x2)
