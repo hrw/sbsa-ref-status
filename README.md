@@ -43,3 +43,31 @@ file) and status.
 Status information is split to core names. Cortex-A57/A72 are Arm v8.0 so they
 lack many extensions, Neoverse-N1 is Arm v8.2 so have more of them and finally
 "max" core has everything QEMU supports.
+
+
+# External patches
+
+This work was done using some external patches.
+
+
+## QEMU
+
+- target/arm: Add Neoverse-N1 registers from Chen Baozi
+- target/arm: Add ITS support from Shashi Mallela
+
+
+## EDK2
+
+Both patches I got from Shashi Mallela:
+
+- add ITS support
+- add SMMU support
+
+
+## TF-A
+
+Here are my patches:
+
+- [feat(qemu): allow to use hardware assisted coherency](https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/17772)
+- [fix(qemu-sbsa): enable FGT](https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/19459)
+- not shared yet patch to add Neoverse-N1 into qemu_sbsa platform
