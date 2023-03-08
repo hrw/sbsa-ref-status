@@ -1,0 +1,664 @@
+1:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_01
+  title: Check Arch symmetry across PE
+2:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_02
+  title: Check for number of PE
+3:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_03
+  title: Check for AdvSIMD and FP support
+4:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_04
+  title: Check PE 4KB Granule Support
+6:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_06
+  title: Check Cryptographic extensions
+7:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_07
+  title: Check Little Endian support
+8:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_08
+  title: Check EL1 and EL0 implementation
+9:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_09
+  title: Check for PMU and PMU counters
+10:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_10
+  title: Check PMU Overflow signal
+11:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_11
+  title: Check num of Breakpoints and type
+12:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_12
+  title: Check Synchronous Watchpoints
+13:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_13
+  title: Check CRC32 instruction support
+51:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_18
+  title: Check EL2 implementation
+52:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_19
+  title: Check Stage 2 4KB Granule Support
+53:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_20
+  title: Check Stage2 and Stage1 Granule match
+54:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_21
+  title: Check for PMU counters
+55:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_22
+  title: Check VMID breakpoint number
+76:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PE_23, B_PE_24
+  title: Check EL3 implementation
+102:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_MEM_01
+  title: Mem Access Response in finite time
+103:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_MEM_05
+  title: PE must access all NS addr space
+203:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_GIC_03
+  title: If PCIe, GICv3 then ITS, LPI
+204:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_GIC_04
+  title: Check GICv3 Security States
+205:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_GIC_05
+  title: Non-secure SGIs are implemented
+206:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PPI_01
+  title: Check PPI Assignments for OS
+226:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: B_PPI_02
+  title: Check NS EL2-Virt timer PPI Assignment
+227:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PPI_02
+  title: Check NS EL2-Phy timer PPI Assignment
+228:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PPI_02
+  title: Check GIC Maintenance PPI Assignment
+276:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: ITS_01
+  title: Check number of ITS blocks in a group
+277:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: ITS_02
+  title: Check ITS block association with group
+278:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: ITS_DEV_2
+  title: Check uniqueness of StreamID
+279:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: ITS_DEV_7,ITS_DEV_8
+  title: Check Device's ReqID-DeviceID-StreamID
+301:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_SMMU_01
+  title: All SMMUs have same Arch Revision
+302:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_SMMU_02
+  title: Check SMMU Granule Support
+305:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_06
+  title: Check Large Physical Addr Support
+306:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: SKIPPED
+    neoverse-n1: PASS
+  tags: B_SMMU_08
+  title: SMMU revision and S-EL2 support
+351:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: B_SMMU_16, B_SMMU_17
+  title: Check Stage2 SMMU functionality
+352:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: SKIPPED
+    neoverse-n1: FAIL
+  tags: B_SMMU_18
+  title: SMMU Revision,S-EL2 support Hyp
+353:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_19
+  title: SMMUv2 unique intr per ctxt bank
+354:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_SMMU_21, SMMU_01
+  title: SMMUv3 Integration compliance
+401:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_TIME_01, B_TIME_02
+  title: Check Counter Frequency
+402:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_TIME_06
+  title: SYS Timer if PE Timer not ON
+403:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_TIME_07, B_TIME_10
+  title: Memory mapped timer check
+404:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_TIME_08
+  title: Generate Mem Mapped SYS Timer Intr
+405:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_TIME_09
+  title: Restore PE timer on PE wake up
+501:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+  title: Wake from EL1 PHY Timer Int
+502:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+  title: Wake from EL1 VIR Timer Int
+503:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+  title: Wake from EL2 PHY Timer Int
+504:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+  title: Wake from Watchdog WS0 Int
+505:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+  title: Wake from System Timer Int
+601:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PER_01, B_PER_02
+  title: USB CTRL Interface
+602:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PER_03
+  title: Check SATA CTRL Interface
+603:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PER_05
+  title: Check Arm BSA UART register offsets
+604:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PER_06, B_PER_07
+  title: Check Arm GENERIC UART Interrupt
+606:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_PER_05
+  title: 16550 compatible UART
+701:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WD_01, B_WD_02, S_L3WD_01
+  title: Non Secure Watchdog Access
+702:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_WD_03, S_L3WD_01
+  title: Check Watchdog WS0 interrupt
+801:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_01
+  title: Check ECAM Presence
+802:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_02
+  title: PE - ECAM Region accessibility check
+803:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_04
+  title: All EP/Sw under RP in same ECAM Region
+804:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_13
+  title: Check RootPort NP Memory Access
+805:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_13
+  title: Check RootPort P Memory Access
+806:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_LI_01, PCI_LI_03
+  title: Legacy int must be SPI & lvl-sensitive
+808:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: PCI_IN_16
+  title: Check all 1's for out of range
+809:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_20
+  title: Vendor specfic data are PCIe compliant
+811:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_18
+  title: Check RP Byte Enable Rules
+817:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_PP_05
+  title: Check Direct Transl P2P Support
+818:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_PP_05
+  title: Check RP Adv Error Report
+819:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_PP_03
+  title: RP must suprt ACS if P2P Txn are allow
+820:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_05, PCI_IN_19
+  title: Type 0/1 common config rule
+821:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PER_12
+  title: Type 0 config header rules
+822:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: PCI_IN_05, PCI_IN_19
+  title: Check Type 1 config header rules
+824:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_05
+  title: Device capabilities reg rule
+825:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_05
+  title: Device Control register rule
+826:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_05
+  title: Device cap 2 register rules
+830:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_19
+  title: Check Cmd Reg memory space enable
+831:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_19
+  title: Check Type0/1 BIST Register rule
+832:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_19
+  title: Check HDR CapPtr Register rule
+833:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_05
+  title: Check Max payload size supported
+835:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_SM_02
+  title: Check Function level reset
+836:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_17
+  title: Check ARI forwarding enable rule
+837:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_12
+  title: Check Config Txn for RP in HB
+838:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_03
+  title: Check all RP in HB is in same ECAM
+839:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_MSI_01
+  title: Check MSI support for PCIe dev
