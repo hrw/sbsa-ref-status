@@ -6,11 +6,12 @@ import yaml
 with open("status-sbsa.yml", encoding="utf-8") as yml:
     status_sbsa = yaml.safe_load(yml)
 
-if len(sys.argv) < 3:
-    print("Give me: logfile corename")
+if len(sys.argv) < 4:
+    print("Give me: logfile corename sbsalevel")
     sys.exit(-1)
 
 core_name = sys.argv[2]
+sbsa_level = sys.argv[3]
 
 start_parsing = False
 
@@ -55,6 +56,8 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
                                                  }
                     status_sbsa[int(test_id)]["status"][core_name] = result
 
+            if test_id and status_sbsa[int(test_id)]["level"] == 0:
+                status_sbsa[int(test_id)]["level"] = sbsa_level
 
             if line.strip().startswith("Total Tests run"):
                 break
