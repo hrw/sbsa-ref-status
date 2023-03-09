@@ -27,17 +27,17 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
         if start_parsing:
             if "START" in line:
                 test_id, test_title = line.removesuffix("START\n").strip().split(" : ")
+                test_id = int(test_id)
 
             if test_id and line.strip().startswith(("B_", "ITS_", "PCI_")):
                 test_tags = line.strip()
                 print(f"{test_id}\t{test_tags}\t{test_title}")
-                status_bsa[int(test_id)]["tags"] = test_tags
-                status_bsa[int(test_id)]["title"] = test_title
-
+                status_bsa[test_id]["tags"] = test_tags
+                status_bsa[test_id]["title"] = test_title
 
             if 'Result:' in line:
                 result = line.split(':')[-1].strip()
-                status_bsa[int(test_id)]["status"][core_name] = result
+                status_bsa[test_id]["status"][core_name] = result
 
             if line.strip().startswith("Total Tests run"):
                 break
