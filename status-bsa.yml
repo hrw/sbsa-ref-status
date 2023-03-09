@@ -96,11 +96,11 @@
   title: Check CRC32 instruction support
 14:
   status:
-    cortex-a57: ""
-    cortex-a72: ""
-    max: ""
-    neoverse-n1: ""
-  tags: B_PE_14
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: PASS
+    neoverse-n1: SKIPPED
+  tags: B_PE_15
   title: Check PAuth if implementation
 51:
   status:
@@ -166,6 +166,14 @@
     neoverse-n1: PASS
   tags: B_MEM_05
   title: PE must access all NS addr space
+201:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_GIC_01
+  title: Check GIC version
 203:
   status:
     cortex-a57: PASS
