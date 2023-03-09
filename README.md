@@ -6,13 +6,16 @@ in QEMU ("-M sbsa-ref") in a bit more organized way.
 
 # Scripts
 
-There are some scripts to parse (S)BSA ACS logs:
+There are some scripts provided:
 
-- parse-bsa-log.py
-- parse-sbsa-log.py
-
-They expect verbose logs ("-v 1" argument) and core names. SBSA log parser also
-wants SBSA level number.
+| Name                   | Function
+|                      - | - 
+| boot-sbsa-ref.sh       | Boot QEMU with several options enabled.
+| check-sbsa.py          | Check "sbsa-ref" against SBSA checklists.
+| parse-bsa-log.py       | Parse BSA ACS logs. Needs verbose logs and core name.
+| parse-sbsa-log.py      | Parse SBSA ACS logs. Needs verbose logs, core name and SBSA level.
+| run-gathering-logs.sh  | Gather (S)BSA ACS logs.
+| run-parsing-logs.sh    | Parse all (S)BSA ACS logs.
 
 
 # YAML files
