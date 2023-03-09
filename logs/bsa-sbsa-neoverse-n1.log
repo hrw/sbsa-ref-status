@@ -70,14 +70,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of RP              :    4 
  PCIE_INFO: Number of iEP_EP          :    0 
  PCIE_INFO: Number of iEP_RP          :    0 
+ Invalid IORT node type
  SMMU_INFO: Number of SMMU CTRL       :    1 
  SMMU_INFO: SMMU index 00 version     :    v3 
  Peripheral: Num of USB controllers   :    1 
  Peripheral: Num of SATA controllers  :    1 
  Peripheral: Num of UART controllers  :    1 
- Peripheral: Num of Network ctrl      :    2 
- Peripheral: Num of Storage ctrl      :    0 
- Peripheral: Num of Display ctrl      :    2 
 
       ***  Starting PE tests ***  
 Operating System View:
