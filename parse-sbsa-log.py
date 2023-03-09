@@ -28,7 +28,8 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
 
         if start_parsing:
             if "START" in line:
-                test_id, test_title = prev_line.removesuffix("START\n").strip().split(" : ")
+                test_id, test_title = prev_line.removesuffix(
+                    "START\n").strip().split(" : ")
                 test_id = int(test_id)
                 try:
                     tmp = status_sbsa[test_id]

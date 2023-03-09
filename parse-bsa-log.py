@@ -26,7 +26,8 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
 
         if start_parsing:
             if "START" in line:
-                test_id, test_title = line.removesuffix("START\n").strip().split(" : ")
+                test_id, test_title = line.removesuffix(
+                    "START\n").strip().split(" : ")
                 test_id = int(test_id)
                 try:
                     tmp = status_bsa[test_id]
