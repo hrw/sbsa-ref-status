@@ -736,6 +736,15 @@
     neoverse-n1: FAIL
   tags: S_L3SM_01
   title: Check SMMU Version
+702:
+  level: '4'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
+  title: SMMU Compatibility Check
 1101:
   level: '7'
   status:
