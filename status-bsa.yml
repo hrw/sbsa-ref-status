@@ -94,6 +94,14 @@
     neoverse-n1: PASS
   tags: B_PE_13
   title: Check CRC32 instruction support
+14:
+  status:
+    cortex-a57: ""
+    cortex-a72: ""
+    max: ""
+    neoverse-n1: ""
+  tags: B_PE_14
+  title: Check PAuth if implementation
 51:
   status:
     cortex-a57: PASS
