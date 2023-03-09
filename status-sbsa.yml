@@ -671,7 +671,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: ''
+  tags: IE_ACS_2
   title: Check iEP-RootPort P2P Support
 457:
   level: '6'
@@ -680,7 +680,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: ''
+  tags: IE_ACS_1
   title: Check RCiEP, iEP_EP P2P Supp
 458:
   level: '6'
