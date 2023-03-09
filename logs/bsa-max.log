@@ -39,7 +39,7 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -sbsa
+[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi
 
 
  BSA Architecture Compliance Suite
@@ -87,6 +87,7 @@ Operating System View:
   11 : Check num of Breakpoints and type          : Result:  PASS 
   12 : Check Synchronous Watchpoints              : Result:  PASS 
   13 : Check CRC32 instruction support            : Result:  PASS 
+  14 : Check PAuth if implementation              : Result:  PASS 
 
 Hypervisor View:
   51 : Check EL2 implementation                   : Result:  PASS 
@@ -109,6 +110,7 @@ Operating System View:
 
       ***  Starting GIC tests ***  
 Operating System View:
+ 201 : Check GIC version                          : Result:  PASS 
  203 : If PCIe, GICv3 then ITS, LPI               : Result:  PASS 
  204 : Check GICv3 Security States                : Result:  PASS 
  205 : Non-secure SGIs are implemented            : Result:  PASS 
@@ -248,7 +250,7 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   82  Tests Passed  =   65  Tests Failed =    5
+     Total Tests run  =   84  Tests Passed  =   67  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

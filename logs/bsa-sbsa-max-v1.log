@@ -2,11 +2,6 @@ NOTICE:  Booting Trusted Firmware
 NOTICE:  BL1: v2.8(debug):v2.8-490-g409610a9a
 NOTICE:  BL1: Built : 08:08:07, Mar  8 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-WARNING: BL1: cortex_a72: CPU workaround for 859971 was missing!
-WARNING: BL1: cortex_a72: CPU workaround for 1319367 was missing!
-INFO:    BL1: cortex_a72: CPU workaround for cve_2017_5715 was applied
-INFO:    BL1: cortex_a72: CPU workaround for cve_2018_3639 was applied
-INFO:    BL1: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL1: Loading BL2
 INFO:    Loading image id=1 at address 0x3fcd1000
 INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
@@ -29,11 +24,6 @@ INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
 INFO:    BL31: Initializing runtime services
-WARNING: BL31: cortex_a72: CPU workaround for 859971 was missing!
-WARNING: BL31: cortex_a72: CPU workaround for 1319367 was missing!
-INFO:    BL31: cortex_a72: CPU workaround for cve_2017_5715 was applied
-INFO:    BL31: cortex_a72: CPU workaround for cve_2018_3639 was applied
-INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
@@ -49,7 +39,7 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -sbsa -v 1
 
 
  BSA Architecture Compliance Suite
@@ -232,14 +222,14 @@ ndor ID: 0x1B36
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE222E98 
+ Shared memory is 100FE226298 
 
       ***  Starting PE tests ***  
 Operating System View:
    1 : Check Arch symmetry across PE                  START
 
        cache size read is 701FE00A 
-       cache size read is 707FE07A        PSCI_CPU_ON: success  
+       cache size read is 70FFE07A        PSCI_CPU_ON: success  
        PSCI_CPU_ON: success  
        PSCI_CPU_ON: success  
 
@@ -342,15 +332,6 @@ Operating System View:
                                        : Result:  PASS 
          END
 
-  14 : Check PAuth if implementation                  START
-       PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
-
-       B_PE_15
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
-
 
 Hypervisor View:
   51 : Check EL2 implementation                       START
@@ -410,7 +391,7 @@ Platform Security View:
          END
 
 
-      One or more PE tests failed or were skipped.
+      All PE tests passed.
 
       ***  Starting Memory Map tests ***  
 Operating System View:
@@ -436,14 +417,6 @@ Instance 0x2 not found for memory type 0x1000
       ***  Starting GIC tests ***  
        gic version from info table = 3 
 Operating System View:
- 201 : Check GIC version                              START
-
-       gic version from info table = 3 
-       Received GIC version =    3      
-       B_GIC_01
-                                       : Result:  PASS 
-         END
-
  203 : If PCIe, GICv3 then ITS, LPI                   START
 
        gic version from info table = 3 
@@ -479,9 +452,10 @@ Operating System View:
 Hypervisor View:
  226 : Check NS EL2-Virt timer PPI Assignment         START
 
-       v8.1 VHE not supported on this PE 
+       NS EL2 Virtual timer interrupt 28 not received
+       Failed on PE -    0
        B_PPI_02
-       Checkpoint --  2                           : Result:  SKIPPED 
+       Checkpoint --  4                           : Result:  FAIL 
          END
 
  227 : Check NS EL2-Phy timer PPI Assignment          START
@@ -568,15 +542,17 @@ Operating System View:
 
  305 : Check Large Physical Addr Support              START
 
-       Large PA Not Supported by PE                          
+       Large PA Not Supported in SMMU 0
+       Failed on PE -    0
        B_SMMU_06
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  2                           : Result:  FAIL 
          END
 
  306 : SMMU revision and S-EL2 support                START
 
+       S-EL2 implemented...Skipping
        B_SMMU_08
-                                       : Result:  PASS 
+       Checkpoint --  2                           : Result:  SKIPPED 
          END
 
 
@@ -592,10 +568,9 @@ Hypervisor View:
 
  352 : SMMU Revision,S-EL2 support Hyp                START
 
-       SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0
+       S-EL2 implemented...Skipping
        B_SMMU_18
-       Checkpoint --  2                           : Result:  FAIL 
+       Checkpoint --  2                           : Result:  SKIPPED 
          END
 
  354 : SMMUv3 Integration compliance                  START
@@ -1255,7 +1230,7 @@ st
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   84  Tests Passed  =   67  Tests Failed =    4
+     Total Tests run  =   82  Tests Passed  =   65  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

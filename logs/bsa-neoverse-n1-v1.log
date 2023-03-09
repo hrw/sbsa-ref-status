@@ -45,7 +45,7 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -sbsa -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
 
 
  BSA Architecture Compliance Suite
@@ -228,7 +228,7 @@ ndor ID: 0x1B36
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE226298 
+ Shared memory is 100FE222E98 
 
       ***  Starting PE tests ***  
 Operating System View:
@@ -338,6 +338,15 @@ Operating System View:
                                        : Result:  PASS 
          END
 
+  14 : Check PAuth if implementation                  START
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+       PSCI_CPU_ON: success  
+
+       B_PE_15
+       Checkpoint --  1                           : Result:  SKIPPED 
+         END
+
 
 Hypervisor View:
   51 : Check EL2 implementation                       START
@@ -397,7 +406,7 @@ Platform Security View:
          END
 
 
-      All PE tests passed.
+      One or more PE tests failed or were skipped.
 
       ***  Starting Memory Map tests ***  
 Operating System View:
@@ -423,6 +432,14 @@ Instance 0x2 not found for memory type 0x1000
       ***  Starting GIC tests ***  
        gic version from info table = 3 
 Operating System View:
+ 201 : Check GIC version                              START
+
+       gic version from info table = 3 
+       Received GIC version =    3      
+       B_GIC_01
+                                       : Result:  PASS 
+         END
+
  203 : If PCIe, GICv3 then ITS, LPI                   START
 
        gic version from info table = 3 
@@ -1235,7 +1252,7 @@ st
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   82  Tests Passed  =   66  Tests Failed =    5
+     Total Tests run  =   84  Tests Passed  =   67  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 
