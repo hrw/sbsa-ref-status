@@ -28,6 +28,11 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
             if "START" in line:
                 test_id, test_title = line.removesuffix("START\n").strip().split(" : ")
                 test_id = int(test_id)
+                try:
+                    tmp = status_bsa[test_id]
+                except KeyError:
+                    status_bsa[test_id] = {"tags": "", "title": "",
+                                           "status": {core_name: ""}}
 
             if test_id and line.strip().startswith(("B_", "ITS_", "PCI_")):
                 test_tags = line.strip()
@@ -42,5 +47,5 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
             if line.strip().startswith("Total Tests run"):
                 break
 
-with open("status-bsa.yml", "w") as yml:
+with open("status-bsa.yml", "w", encoding="utf-8") as yml:
     yaml.dump(status_bsa, yml)

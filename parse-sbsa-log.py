@@ -30,31 +30,24 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
             if "START" in line:
                 test_id, test_title = prev_line.removesuffix("START\n").strip().split(" : ")
                 test_id = int(test_id)
+                try:
+                    tmp = status_sbsa[test_id]
+                except KeyError:
+                    status_sbsa[test_id] = {"tags": "", "title": "",
+                                            "level": 0,
+                                            "status": {core_name: ""}}
 
             if test_id and line.strip().startswith(("B_", "IE_", "ITS_",
                                                     "PCI_", "PMU_", "RE_",
                                                     "S_")):
                 test_tags = line.strip()
                 print(f"{test_id}\t{test_tags}\t{test_title}")
-                try:
-                    status_sbsa[test_id]["tags"] = test_tags
-                    status_sbsa[test_id]["title"] = test_title
-                except KeyError:
-                    status_sbsa[test_id] = {"tags": "", "title": "",
-                                                 "status": {core_name: ""}
-                                                 }
-                    status_sbsa[test_id]["tags"] = test_tags
-                    status_sbsa[test_id]["title"] = test_title
+                status_sbsa[test_id]["tags"] = test_tags
+                status_sbsa[test_id]["title"] = test_title
 
             if 'Result:' in line:
                 result = line.split(':')[-1].strip()
-                try:
-                    status_sbsa[test_id]["status"][core_name] = result
-                except KeyError:
-                    status_sbsa[test_id] = {"tags": "", "title": "",
-                                                 "status": {core_name: ""}
-                                                 }
-                    status_sbsa[test_id]["status"][core_name] = result
+                status_sbsa[test_id]["status"][core_name] = result
 
             if test_id and status_sbsa[test_id]["level"] == 0:
                 status_sbsa[test_id]["level"] = sbsa_level
@@ -64,5 +57,5 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
 
         prev_line = line
 
-with open("status-sbsa.yml", "w") as yml:
+with open("status-sbsa.yml", "w", encoding="utf-8") as yml:
     yaml.dump(status_sbsa, yml)
