@@ -292,10 +292,10 @@ PE Index * 3 *
  Reserved region of type 6 [0x100FC020000, 0x100FC070000]
  Reserved region of type 5 [0x100FC070000, 0x100FC0C0000]
  Reserved region of type 9 [0x100FC0C0000, 0x100FC100000]
- Reserved region of type 7 [0x100FC100000, 0x100FE14F000]
- Reserved region of type 4 [0x100FE14F000, 0x100FE21F000]
- Reserved region of type 7 [0x100FE21F000, 0x100FE220000]
- Reserved region of type 4 [0x100FE220000, 0x100FEFF4000]
+ Reserved region of type 7 [0x100FC100000, 0x100FE147000]
+ Reserved region of type 4 [0x100FE147000, 0x100FE1A4000]
+ Reserved region of type 7 [0x100FE1A4000, 0x100FE1A9000]
+ Reserved region of type 4 [0x100FE1A9000, 0x100FEFF4000]
  Reserved region of type 7 [0x100FEFF4000, 0x100FF31F000]
  Reserved region of type 3 [0x100FF31F000, 0x100FF5D0000]
  Reserved region of type 5 [0x100FF5D0000, 0x100FF760000]
@@ -312,7 +312,7 @@ PE Index * 3 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0 
- Shared memory is 100FE224918 
+ Shared memory is 100FE21DB18 
 
       ***  Starting PE tests ***  
    1 : Check PE Granule Support          
@@ -903,13 +903,13 @@ MU Tests
  456 : Check iEP-RootPort P2P Support    
        START  
        pal_pcie_p2p_support API is unimplemented 
-       
+       IE_ACS_2
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 
  457 : Check RCiEP, iEP_EP P2P Supp      
        START  
-       
+       IE_ACS_1
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 

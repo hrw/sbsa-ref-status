@@ -91,6 +91,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of iEP_EP          :    0 
  PCIE_INFO: Number of iEP_RP          :    0 
  SMMU_INFO: Number of SMMU CTRL       :    1 
+ SMMU_INFO: SMMU index 00 version     :    v3 
  Peripheral: Num of USB controllers   :    1 
  Peripheral: Num of SATA controllers  :    1 
  Peripheral: Num of UART controllers  :    1 
@@ -172,8 +173,6 @@ Hypervisor View:
        SMMUv3.1 not providing Stage2 functionality
        Failed on PE -    0
        Checkpoint --  2                           : Result:  FAIL 
- 353 : SMMUv2 unique intr per ctxt bank      
-       Checkpoint --  2                           : Result:  SKIPPED 
  354 : SMMUv3 Integration compliance              : Result:  PASS 
 
       One or more SMMU tests failed or were skipped.
@@ -206,10 +205,10 @@ Operating System View:
 Operating System View:
  601 : USB CTRL Interface                         : Result:  PASS 
  602 : Check SATA CTRL Interface             
-       Read PCIe_CFG: ECAM Base is zero FF000000     : Result:  PASS 
- 603 : Check Arm BSA UART register offsets         : Result:  PASS 
+       PCIe_CFG_RD ECAM Base is zero FF000000     : Result:  PASS 
+ 603 : Check Arm BSA UART register offsets        : Result:  PASS 
  604 : Check Arm GENERIC UART Interrupt      
-    Test Message       : Result:  PASS 
+       Test Message                               : Result:  PASS 
  606 : 16550 compatible UART                 
        Checkpoint --  2                           : Result:  SKIPPED 
 
@@ -272,7 +271,7 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   83  Tests Passed  =   66  Tests Failed =    4
+     Total Tests run  =   82  Tests Passed  =   66  Tests Failed =    4
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

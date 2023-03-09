@@ -272,10 +272,10 @@ S
        RE_SMU_2
        Checkpoint --  1                  : Result:  SKIPPED 
  456 : Check iEP-RootPort P2P Support    
-       
+       IE_ACS_2
        Checkpoint --  1                  : Result:  SKIPPED 
  457 : Check RCiEP, iEP_EP P2P Supp      
-       
+       IE_ACS_1
        Checkpoint --  1                  : Result:  SKIPPED 
  458 : Read and write to RCiEP BAR reg   : Result:  PASS 
  459 : Check RCEC Class code and Ext Cap     

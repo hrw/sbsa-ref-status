@@ -144,6 +144,7 @@ ndor ID: 0x1B36
   output_base:0x0 output ref:0x134
 
  SMMU_INFO: Number of SMMU CTRL       :    1 
+ SMMU_INFO: SMMU index 00 version     :    v3 
  Creating PERIPHERAL INFO table
   000.00.00 class_code = 0 6
   000.00.12 class_code = 6 1
@@ -197,18 +198,18 @@ ndor ID: 0x1B36
  Peripheral: Num of Storage ctrl      :    0 
  Peripheral: Num of Display ctrl      :    2 
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBDDC000]
-  Reserved region of type 1 [0x100FBDDC000, 0x100FBF30000]
+  Reserved region of type 7 [0x10000000000, 0x100FBDDB000]
+  Reserved region of type 1 [0x100FBDDB000, 0x100FBF30000]
   Reserved region of type 5 [0x100FBF30000, 0x100FBFB0000]
   Reserved region of type 6 [0x100FBFB0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
   Reserved region of type 6 [0x100FC020000, 0x100FC070000]
   Reserved region of type 5 [0x100FC070000, 0x100FC0C0000]
   Reserved region of type 9 [0x100FC0C0000, 0x100FC100000]
-  Reserved region of type 7 [0x100FC100000, 0x100FE1B4000]
-  Reserved region of type 4 [0x100FE1B4000, 0x100FE21F000]
-  Reserved region of type 7 [0x100FE21F000, 0x100FE224000]
-  Reserved region of type 4 [0x100FE224000, 0x100FEFF4000]
+  Reserved region of type 7 [0x100FC100000, 0x100FE1A3000]
+  Reserved region of type 4 [0x100FE1A3000, 0x100FE1A4000]
+  Reserved region of type 7 [0x100FE1A4000, 0x100FE1B6000]
+  Reserved region of type 4 [0x100FE1B6000, 0x100FEFF4000]
   Reserved region of type 7 [0x100FEFF4000, 0x100FF31F000]
   Reserved region of type 3 [0x100FF31F000, 0x100FF5D0000]
   Reserved region of type 5 [0x100FF5D0000, 0x100FF760000]
@@ -221,7 +222,7 @@ ndor ID: 0x1B36
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE22A298 
+ Shared memory is 100FE1C1E98 
 
       ***  Starting PE tests ***  
 Operating System View:
@@ -572,13 +573,6 @@ Hypervisor View:
        Checkpoint --  2                           : Result:  SKIPPED 
          END
 
- 353 : SMMUv2 unique intr per ctxt bank               START
-
-       Not valid for SMMU v3             
-       B_SMMU_19
-       Checkpoint --  2                           : Result:  SKIPPED 
-         END
-
  354 : SMMUv3 Integration compliance                  START
 
        B_SMMU_21, SMMU_01
@@ -686,8 +680,8 @@ Operating System View:
 
  602 : Check SATA CTRL Interface                      START
 
-       Read PCIe_CFG: ECAM Base is zero FF000000       WARN: SATA CTRL ECAM acce
-ss failed 0 
+       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access 
+failed 0 
        Re-checking SATA CTRL using PciIo protocol
 
        B_PER_03
@@ -695,7 +689,7 @@ ss failed 0
          END
 
  603 : Check Arm BSA UART register offsets            START
- 
+
        B_PER_05
                                        : Result:  PASS 
          END
@@ -703,7 +697,7 @@ ss failed 0
  604 : Check Arm GENERIC UART Interrupt               START
 
        Received interrupt on 33     
-    Test Message  
+       Test Message                          
        B_PER_06, B_PER_07
                                        : Result:  PASS 
          END
@@ -756,58 +750,71 @@ Operating System View:
 
  803 : All EP/Sw under RP in same ECAM Region         START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x30000
+       BDF - 0x40000
        PCI_IN_04
                                        : Result:  PASS 
          END
 
  804 : Check RootPort NP Memory Access                START
 
-  BDF is 0x300
-   Memory base is 0x82400000 Memory lim is  0x824FFFFF
- Class code is C033001
-  BDF is 0x400
-   Memory base is 0x82300000 Memory lim is  0x823FFFFF
- Class code is 3800002
-   Skipping for RP BDF 400
-  BDF is 0x500
-   Memory base is 0x82200000 Memory lim is  0x822FFFFF
- Class code is 2000000
-   Skipping for RP BDF 500
-  BDF is 0x600
-   Memory base is 0x82000000 Memory lim is  0x821FFFFF
- Class code is 6040000
- Class code is FF0000
- Entered Check_2 for bdf 600  Value read is 0xFFFFFFFF
+       BDF is 0x300
+       Memory base is 0x82400000 Memory lim is  0x824FFFFF
+       Class code is 0xC033001
+       BDF is 0x400
+       Memory base is 0x82300000 Memory lim is  0x823FFFFF
+       Class code is 0x3800002
+       Skipping for RP BDF 0x400
+       BDF is 0x500
+       Memory base is 0x82200000 Memory lim is  0x822FFFFF
+       Class code is 0x2000000
+       Skipping for RP BDF 0x500
+       BDF is 0x600
+       Memory base is 0x82000000 Memory lim is  0x821FFFFF
+       Class code is 0x6040000
+       Class code is 0xFF0000
+       Entered Check_2 for bdf 0x600  Value read is 0xFFFFFFFF
        PCI_IN_13
                                        : Result:  PASS 
          END
 
  805 : Check RootPort P Memory Access                 START
 
-  BDF is 0x300
-   Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-  BDF is 0x400
-   Memory base is 0x81000000 Memory lim is  0x81FFFFFF
- Class code is 3800002
-   Skipping for RP BDF 400
-  BDF is 0x500
-   Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-  BDF is 0x600
-   Memory base is 0x100000000 Memory lim is  0x1000FFFFF
- Class code is 6040000
- Class code is FF0000
+       BDF is 0x300
+       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
+       Mem limit < Mem Base. Skipping Bdf - 0x300
+       BDF is 0x400
+       Memory base is 0x81000000 Memory lim is  0x81FFFFFF
+       Class code is 0x3800002
+       Skipping for RP BDF 0x400
+       BDF is 0x500
+       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
+       Mem limit < Mem Base. Skipping Bdf - 0x500
+       BDF is 0x600
+       Memory base is 0x100000000 Memory lim is  0x1000FFFFF
+       Class code is 0x6040000
+       Class code is 0xFF0000
        PCI_IN_13
                                        : Result:  PASS 
          END
 
  806 : Legacy int must be SPI & lvl-sensitive         START
 
+       BDF - 0x300
+       pal_pcie_get_legacy_irq_map unimplemented. Skipping test
        PCI_LI_01, PCI_LI_03
        Checkpoint --  2                           : Result:  SKIPPED 
          END
 
  808 : Check all 1's for out of range                 START
-Maximum bus value is 0x4
+
+       Maximum bus value is 0x4
        Calculated config address is F0500000
        Calculated config address is F0501000
        Calculated config address is F0502000
@@ -881,18 +888,27 @@ Maximum bus value is 0x4
 
  809 : Vendor specfic data are PCIe compliant         START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
        PCI_IN_20
                                        : Result:  PASS 
          END
 
  811 : Check RP Byte Enable Rules                     START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
        PCI_IN_18
                                        : Result:  PASS 
          END
 
  817 : Check Direct Transl P2P Support                START
 
+       No RP type device found with P2P and ATS Support. Skipping test
        PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED 
          END
@@ -906,6 +922,7 @@ Maximum bus value is 0x4
 
  819 : RP must suprt ACS if P2P Txn are allow         START
 
+       PCIe hierarchy does not support P2P. Skipping test
        PCI_PP_03
        Checkpoint --  1                           : Result:  SKIPPED 
          END
@@ -1110,40 +1127,73 @@ Maximum bus value is 0x4
 
  831 : Check Type0/1 BIST Register rule               START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x30000
+       BDF - 0x40000
        PCI_IN_19
                                        : Result:  PASS 
          END
 
  832 : Check HDR CapPtr Register rule                 START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x30000
+       BDF - 0x40000
        PCI_IN_19
                                        : Result:  PASS 
          END
 
  833 : Check Max payload size supported               START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x30000
+       BDF - 0x40000
        PCI_IN_05
                                        : Result:  PASS 
          END
 
  835 : Check Function level reset                     START
 
+       BDF 0x10000 
+       BDF 0x20000 
+       BDF 0x30000 
+       No RCiEP/ EP type device found with PCIe Express Cap support. Skipping te
+st
        PCI_SM_02
        Checkpoint --  1                           : Result:  SKIPPED 
          END
 
  836 : Check ARI forwarding enable rule               START
 
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
        PCI_IN_17
                                        : Result:  PASS 
          END
 
  837 : Check Config Txn for RP in HB                  START
 
-    BDF 0x300
-    BDF 0x400
-    BDF 0x500
-    BDF 0x600
+       BDF 0x300
+       BDF 0x400
+       BDF 0x500
+       BDF 0x600
        PCI_IN_12
                                        : Result:  PASS 
          END
@@ -1164,9 +1214,9 @@ Maximum bus value is 0x4
 
  839 : Check MSI support for PCIe dev                 START
 
-    BDF 0x10000 int pin value 1 MSI cap 268435472 MSIX cap 0
-    BDF 0x20000 int pin value 0 MSI cap 268435472 MSIX cap 268435472
-    BDF 0x30000 int pin value 1 MSI cap 0 MSIX cap 0
+       BDF 0x10000 int pin value 1 MSI cap 268435472 MSIX cap 0
+       BDF 0x20000 int pin value 0 MSI cap 268435472 MSIX cap 268435472
+       BDF 0x30000 int pin value 1 MSI cap 0 MSIX cap 0
        PCI_MSI_01
                                        : Result:  PASS 
          END
@@ -1180,7 +1230,7 @@ Maximum bus value is 0x4
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   83  Tests Passed  =   65  Tests Failed =    5
+     Total Tests run  =   82  Tests Passed  =   65  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 
