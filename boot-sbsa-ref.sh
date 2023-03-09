@@ -28,6 +28,16 @@ fi
 \
 -drive file=fat:rw:$PWD/disks/virtual/,format=raw \
 \
+-device pcie-root-port,id=root_port_1.2,chassis=1,slot=2  \
+  -device qemu-xhci,id=usb,bus=root_port_1.2 \
+-device pcie-root-port,id=root_port_1.3,chassis=1,slot=3  \
+  -device bochs-display,bus=root_port_1.3 \
+-device pcie-root-port,id=root_port_1.4,chassis=1,slot=4  \
+  -device e1000e,bus=root_port_1.4 \
+-device pcie-root-port,id=root_port_1.5,chassis=1,slot=5  \
+  -device pcie-pci-bridge,id=pci,bus=root_port_1.5 \
+    -device virtio-rng-pci,bus=pci,addr=8 \
+\
 -usb \
 -device usb-kbd \
 -device usb-tablet \
