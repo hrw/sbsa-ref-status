@@ -74,13 +74,15 @@ def check_sbsa_level(cpu, level, previous_level_result):
     for bsa_test_id in sbsa_level_checklist[level]["bsa"]:
         if status_bsa[bsa_test_id]['status'][cpu] in ["FAIL"]:
             print(f"- BSA  test {bsa_test_id} for "
-                  f"{status_bsa[bsa_test_id]['tags']} failed")
+                  f"{status_bsa[bsa_test_id]['tags']} "
+                  f"({status_bsa[bsa_test_id]['title']}) failed")
             failed = True
 
     for sbsa_test_id in sbsa_level_checklist[level]["sbsa"]:
         if status_sbsa[sbsa_test_id]['status'][cpu] in ["FAIL"]:
             print(f"- SBSA test {sbsa_test_id} for "
-                  f"{status_sbsa[sbsa_test_id]['tags']} failed")
+                  f"{status_sbsa[sbsa_test_id]['tags']} "
+                  f"({status_sbsa[sbsa_test_id]['title']}) failed")
             failed = True
 
     if not failed:
