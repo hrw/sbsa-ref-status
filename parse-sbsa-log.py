@@ -48,7 +48,8 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
 
             if 'Result:' in line:
                 result = line.split(':')[-1].strip()
-                status_sbsa[test_id]["status"][core_name] = result
+                if sbsa_level <= status_sbsa[test_id]["level"]:
+                    status_sbsa[test_id]["status"][core_name] = result
 
             if test_id and status_sbsa[test_id]["level"] == 0:
                 status_sbsa[test_id]["level"] = sbsa_level
