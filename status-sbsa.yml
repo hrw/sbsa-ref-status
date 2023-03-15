@@ -442,10 +442,10 @@
 427:
   level: '6'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
   tags: RE_REG_3, RE_REC_1, RE_REC_2
   title: Check Device control 2 reg rules
 428:
