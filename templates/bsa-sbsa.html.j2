@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Arm BSA/SBSA checklist</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Arm BSA/SBSA checklist" />
+    <meta name="keywords" content="arm aarch64 arm64 bsa sbsa checklist" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@haerwu" />
+    <meta name="twitter:title" content="Marcin Juszkiewicz"/>
+    <meta name="twitter:description" content="Arm BSA/SBSA checklist" />
+    <meta name="twitter:creator" content="@haerwu" />
+    <meta name="twitter:image" content="https://marcin.juszkiewicz.com.pl/files/images/hrw-512.jpg" />
+
+    <meta property="og:title" content="Arm BSA/SBSA checklist" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://marcin.juszkiewicz.com.pl/download/tables/bsa-sbsa.html" />
+    <meta property="og:description" content="Arm BSA/SBSA checklist" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Marcin Juszkiewicz" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.3.1/css/fixedHeader.dataTables.min.css"/>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" id="js">
+            $(document).ready(function() {
+                    $("table").DataTable( {
+                            pageLength  : -1,
+                            paging:       false,
+                            scrollX:        false,
+                            scrollCollapse: false,
+                            fixedHeader    : true,
+                            ordering: false,
+                    });
+    });
+    </script>
+
+    <style type="text/css">
+
+table {
+        border: 1px solid #000;
+}
+
+table th {
+        text-align: center;
+        padding: 0.5em;
+        line-height: 2em;
+        color: white;
+}
+
+table thead {
+        border: 1px solid black;
+        background-color: grey;
+}
+
+table td {
+        padding: 0.5em;
+}
+
+table tbody tr.odd td {
+        background-color: lightgrey;
+}
+
+table td.title {
+        font-weight: bold;
+}
+table td.mark {
+        text-align: center;
+        font-weight: bold;
+}
+    </style>
+</head>
+<body>
+
+<h1>Arm BSA/SBSA checklist</h1>
+    <p>
+        This table shows which BSA/SBSA rules are required for each level of those specifications.
+    </p>
+
+<h1>Some notes</h1>
+
+    <ul>
+        <li>both BSA ACS and SBSA ACS use tag names which are covered by this checklist</li>
+        <li>some entries depend on which cpu features are implemented</li>
+        <li>table is updated at random moments</li>
+        <li>test numbers can be covered for their titles</li>
+    </ul>
+
+<h1>Author info</h1>    
+    <p>
+    Table is maintained by <a href="https://marcin.juszkiewicz.com.pl/">Marcin Juszkiewicz</a> &mdash; AArch64/Arm developer working at Red Hat as Linaro assignee.
+    </p>
+
+<h2>My table pages</h2>
+<ul>
+	<li><a href="/download/tables/arm-socs.html">AArch64 SoC features table</a></li>
+	<li><a href="/download/tables/arm-cpu-cores.html">AArch64 cpu cores information</a></li>
+	<li><a href="/download/tables/syscalls.html">Linux kernel system calls for all architectures</a></li>
+	<li><a href="/download/tables/bsa-sbsa.html">Arm BSA/SBSA checklist</a></li>
+</ul>
+
+<h1>How to help</h1>
+    <p>
+    Sources used to generate table are available in <a
+    href="https://github.com/hrw/xbsa/">git repository at github</a>.
+    Patches are always welcomed.
+    </p>
+
+<h2>Build info</h2>
+    <p>Table generated on <strong>{{ generate_time }} UTC</strong>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Rule ID</th>
+<th>ACS tests</th>
+<th align="center">BSA</th>
+<th align="center">SBSA level 3</th>
+<th align="center">SBSA level 4</th>
+<th align="center">SBSA level 5</th>
+<th align="center">SBSA level 6</th>
+<th align="center">SBSA level 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU architecture</td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center">v8.0</td>
+<td align="center">v8.2</td>
+<td align="center">v8.4</td>
+<td align="center">v8.5</td>
+<td align="center">v8.6</td>
+</tr>
+<tr>
+<td>SMMU</td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center">v2 or v3</td>
+<td align="center">v3.0</td>
+<td align="center">v3.2</td>
+<td align="center">v3.2</td>
+<td align="center">v3.2</td>
+</tr>
+<tr>
+<td>GIC</td>
+<td></td>
+<td></td>
+<td></td>
+<td align="center">v3.0</td>
+<td align="center">v3.0</td>
+<td align="center">v3.0</td>
+<td align="center">v3.0</td>
+<td align="center">v3.0</td>
+</tr>
+
+{% set v = namespace(category = "", group = "") %}
+
+{% for entry in checklist %}
+        {% if entry["category"] != v.category %}
+                {% set v.category = entry["category"] %}
+                {% set v.group = "" %}
+<tr>
+<td class="title">{{ v.category }}</td>
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+</tr>
+        {% endif %}
+        {% if entry["group"] != v.group %}
+                {% set v.group = entry["group"] %}
+<tr>
+<td class="title">{{ v.group }}</td>
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+<td />
+</tr>
+        {% endif %}
+
+<tr>
+<td></td>
+<td>{{ entry.tag }}</td>
+<td>
+{% if entry.tests.bsa %}BSA: 
+        {% for test in entry.tests.bsa %}
+                <abbr title="{{ status_bsa[test].title }}">{{ test }}</abbr>{% if not loop.last %},{% endif %}
+        {% endfor %}
+{% endif %}
+{% if entry.tests.sbsa and entry.tests.bsa %}<br />{% endif %}
+{% if entry.tests.sbsa %}SBSA: 
+        {% for test in entry.tests.sbsa %}
+                <abbr title="{{ status_sbsa[test].title }}">{{ test }}</abbr>{% if not loop.last %},{% endif %}
+        {% endfor %}
+{% endif %}
+</td>
+<td class="mark">{% if entry.bsa %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[3] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[4] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[5] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[6] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[7] %}✔{% endif %}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>    
+
+</body>
+</html>
