@@ -71,6 +71,4 @@ Both patches I got from Shashi Mallela:
 
 Here are my patches:
 
-- [feat(qemu): allow to use hardware assisted coherency](https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/17772)
 - [fix(qemu-sbsa): enable FGT](https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/19459)
-- not shared yet patch to add Neoverse-N1 into qemu_sbsa platform
