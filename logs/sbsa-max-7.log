@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL1: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 INFO:    BL1: Loading BL2
 INFO:    Loading image id=1 at address 0x3fcd1000
@@ -8,8 +8,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL2: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -18,8 +18,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL31: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -27,7 +27,7 @@ INFO:    BL31: Initializing runtime services
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 09:00:59 on Mar 10 2023)
+UEFI firmware (version 1.0 built at 12:50:24 on Mar 15 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -43,7 +43,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.0  
+    Version 7.1.1  
 
  Starting tests for level  7 (Print level is  3)
 
@@ -146,19 +146,19 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
       One or more PE tests failed or were skipped.
 
+      ***  Starting Memory tests ***  
+ 101 : Check peripherals addr 64Kb apart : Result:  PASS 
+
+      All Memory tests passed.
+
       ***  Starting GIC tests ***  
- 101 : Check GIC version                 : Result:  PASS 
- 102 : Check Reserved PPI Assignments    : Result:  PASS 
+ 201 : Check GIC version                 : Result:  PASS 
+ 202 : Check Reserved PPI Assignments    : Result:  PASS 
 
       All GIC tests passed.
 
-      *** Starting Watchdog tests ***  
- 301 : Check NS Watchdog Revision        : Result:  PASS 
-
-      All Watchdog tests passed.
-
       *** Starting SMMU  tests ***  
- 701 : Check SMMU Version                
+ 301 : Check SMMU Version                
        Level 7 should support Smmuv3.2 or higher  
        Failed on PE -    0 for Level=  7 
        S_L3SM_01 
@@ -167,10 +167,129 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
       SMMU Version Not Compliant,                          Skipping Remaining SM
 MU Tests
 
-      ***  Starting Memory tests ***  
-1301 : Check peripherals addr 64Kb apart : Result:  PASS 
+      *** Starting Watchdog tests ***  
+ 701 : Check NS Watchdog Revision        : Result:  PASS 
 
-      All Memory tests passed.
+      All Watchdog tests passed.
+
+      *** Starting PCIe tests ***  
+ 801 : Check ECAM Presence               : Result:  PASS 
+ 803 : Check ECAM Memory accessibility   : Result:  PASS 
+ 820 : Check Type 0/1 common config rules: Result:  PASS 
+ 821 : Check Type 0 config header rules  : Result:  PASS 
+ 822 : Check Type 1 config header rules  
+       RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 823 : Check PCIe capability rules       
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 824 : Check Device capabilites reg rules
+       BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
+       Failed on PE -    0 for Level=  7 
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  FAIL 
+ 825 : Check Device Control register rule
+       BDF 0x100 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
+       BDF 0x100 : WARNING APPE attribute mismatch: 0x400 instead of 0x0: Result
+:  PASS 
+ 826 : Check Device cap 2 register rules 
+       BDF 0x100 : WARNING EFFS value mismatch: 0x0 instead of 0x1: Result:  PAS
+S 
+ 827 : Check Device control 2 reg rules  
+       BDF 0x100 : AFI attribute mismatch: 0x2400020 instead of 0x2400000
+       Failed on PE -    0 for Level=  7 
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  FAIL 
+ 828 : Check Power management cap rules  : Result:  PASS 
+ 829 : Check Power management/status rule
+       BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
+: Result:  PASS 
+ 830 : Check Cmd Reg memory space enable : Result:  PASS 
+ 831 : Check Type0/1 BIST Register rule  : Result:  PASS 
+ 832 : Check HDR CapPtr Register rule    : Result:  PASS 
+ 833 : Check Max payload size supported  : Result:  PASS 
+ 834 : Check BAR memory space & Type rule
+       BDF 0x0 Not MMIO
+       Failed on PE -    0 for Level=  7 
+       RE_BAR_3
+       Checkpoint --  1                  : Result:  FAIL 
+ 835 : Check Function level reset rule   
+       RE_RST_1, PCI_SM_02
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 836 : Check ARI forwarding support rule 
+       PCI_IN_17
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 837 : Check OBFF supported rule         
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 838 : Check CTRS and CTDS rule          
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 839 : Check i-EP atomicop rule          
+       RE_REG_3, RE_REC_1, RE_REC_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 841 : Check MSI and MSI-X support rule  : Result:  PASS 
+ 842 : Check Power Management rules      : Result:  PASS 
+ 843 : Check ARI forwarding enable rule  
+       PCI_IN_17
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 844 : Check device under RP in same ECAM
+       PCI_IN_04
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 845 : Check all RP in HB is in same ECAM
+       PCI_IN_03
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 846 : Check RP Byte Enable Rules        : Result:  PASS 
+ 847 : Check Config Txn for RP in HB     
+       PCI_IN_12
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 848 : Check RootPort NP Memory Access   
+       PCI_IN_13
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 849 : Check RootPort P Memory Access    
+       PCI_IN_13
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 850 : Check L-Intr SPI Level-Sensitive  
+       pal_pcie_get_legacy_irq_map unimplemented. Skipping test
+       PCI_LI_01, PCI_LI_03
+       Checkpoint --  2                  : Result:  SKIPPED 
+ 851 : Check Sec Bus Reset For iEP_RP    
+       IE_RST_2
+       Checkpoint --  2                  : Result:  SKIPPED 
+ 852 : Check ATS Support Rule            
+       RE_SMU_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 856 : Check iEP-RootPort P2P Support    
+       IE_ACS_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 857 : Check RCiEP, iEP_EP P2P Supp      
+       IE_ACS_1
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 858 : Read and write to RCiEP BAR reg   : Result:  PASS 
+ 859 : Check RCEC Class code and Ext Cap     
+       RE_PCI_2
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 860 : Check RCiEP Hdr type & link Cap   
+       BDF - 0x100
+       Link Capabilities reg check failed
+       Invalid Link Capabilities 0x1
+       Failed on PE -    0 for Level=  7 
+       RE_PCI_1
+       Checkpoint --  1                  : Result:  FAIL 
+ 861 : Check RootPort P&NP Memory Access 
+       S_PCI_02
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 862 : Check EA Capability               : Result:  PASS 
+ 863 : Slot Cap, Control and Status register rules      
+       IE_REG_4
+       Checkpoint --  1                  : Result:  SKIPPED 
+
+      One or more PCIe tests failed or were skipped.
+
+      *** Starting PCIe Exerciser tests ***  
+ PCIE_INFO: Number of exerciser cards :    0 
+
+     No Exerciser Devices Found, Skipping Exerciser tests...
 
       *** Starting MPAM tests ***  
 
@@ -193,123 +312,8 @@ MU Tests
 
        RAS nodes not found. Skipping all RAS tests
 
-      *** Starting PCIe tests ***  
- 401 : Check ECAM Presence               : Result:  PASS 
- 403 : Check ECAM Memory accessibility   : Result:  PASS 
- 420 : Check Type 0/1 common config rules: Result:  PASS 
- 421 : Check Type 0 config header rules  : Result:  PASS 
- 422 : Check Type 1 config header rules  
-       RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 423 : Check PCIe capability rules       
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 424 : Check Device capabilites reg rules
-       BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
-       Failed on PE -    0 for Level=  7 
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  FAIL 
- 425 : Check Device Control register rule
-       BDF 0x100 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
-       BDF 0x100 : WARNING APPE attribute mismatch: 0x400 instead of 0x0: Result
-:  PASS 
- 426 : Check Device cap 2 register rules 
-       BDF 0x100 : WARNING EFFS value mismatch: 0x0 instead of 0x1: Result:  PAS
-S 
- 427 : Check Device control 2 reg rules  
-       BDF 0x100 : AFI attribute mismatch: 0x2400020 instead of 0x2400000
-       Failed on PE -    0 for Level=  7 
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  FAIL 
- 428 : Check Power management cap rules  : Result:  PASS 
- 429 : Check Power management/status rule
-       BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
-: Result:  PASS 
- 430 : Check Cmd Reg memory space enable : Result:  PASS 
- 431 : Check Type0/1 BIST Register rule  : Result:  PASS 
- 432 : Check HDR CapPtr Register rule    : Result:  PASS 
- 433 : Check Max payload size supported  : Result:  PASS 
- 434 : Check BAR memory space & Type rule
-       BDF 0x0 Not MMIO
-       Failed on PE -    0 for Level=  7 
-       RE_BAR_3
-       Checkpoint --  1                  : Result:  FAIL 
- 435 : Check Function level reset rule   
-       RE_RST_1, PCI_SM_02
-       Checkpoint --  1                  : Result:  SKIPPED 
- 436 : Check ARI forwarding support rule 
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED 
- 437 : Check OBFF supported rule         
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 438 : Check CTRS and CTDS rule          
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 439 : Check i-EP atomicop rule          
-       RE_REG_3, RE_REC_1, RE_REC_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 441 : Check MSI and MSI-X support rule  : Result:  PASS 
- 442 : Check Power Management rules      : Result:  PASS 
- 443 : Check ARI forwarding enable rule  
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED 
- 444 : Check device under RP in same ECAM
-       PCI_IN_04
-       Checkpoint --  1                  : Result:  SKIPPED 
- 445 : Check all RP in HB is in same ECAM
-       PCI_IN_03
-       Checkpoint --  1                  : Result:  SKIPPED 
- 446 : Check RP Byte Enable Rules        : Result:  PASS 
- 447 : Check Config Txn for RP in HB     
-       PCI_IN_12
-       Checkpoint --  1                  : Result:  SKIPPED 
- 448 : Check RootPort NP Memory Access   
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED 
- 449 : Check RootPort P Memory Access    
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED 
- 450 : Check L-Intr SPI Level-Sensitive  
- pal_pcie_get_legacy_irq_map unimplemented
-       PCI_LI_01, PCI_LI_03
-       Checkpoint --  2                  : Result:  SKIPPED 
- 451 : Check Sec Bus Reset For iEP_RP    
-       IE_RST_2
-       Checkpoint --  2                  : Result:  SKIPPED 
- 452 : Check ATS Support Rule            
-       RE_SMU_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 456 : Check iEP-RootPort P2P Support    
-       IE_ACS_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 457 : Check RCiEP, iEP_EP P2P Supp      
-       IE_ACS_1
-       Checkpoint --  1                  : Result:  SKIPPED 
- 458 : Read and write to RCiEP BAR reg   : Result:  PASS 
- 459 : Check RCEC Class code and Ext Cap     
-       RE_PCI_2
-       Checkpoint --  1                  : Result:  SKIPPED 
- 460 : Check RCiEP Hdr type & link Cap   
-       Link Capabilities reg check failed
-       Invalid Link Capabilities 0x1 Bdf : 0x100
-       Failed on PE -    0 for Level=  7 
-       RE_PCI_1
-       Checkpoint --  1                  : Result:  FAIL 
- 461 : Check RootPort P&NP Memory Access 
-       S_PCI_02
-       Checkpoint --  1                  : Result:  SKIPPED 
- 462 : Check EA Capability               : Result:  PASS 
-
-      One or more PCIe tests failed or were skipped.
-
-      *** Starting PCIe Exerciser tests ***  
- PCIE_INFO: Number of exerciser cards :    0 
-
-     No Exerciser Devices Found, Skipping Exerciser tests...
-
      ------------------------------------------------------- 
-     Total Tests run  =   87;  Tests Passed  =   49  Tests Failed =   15
+     Total Tests run  =   88;  Tests Passed  =   49  Tests Failed =   15
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

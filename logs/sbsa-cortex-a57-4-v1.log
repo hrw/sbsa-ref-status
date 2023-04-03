@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL1: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: cortex_a57: CPU workaround for 813419 was missing!
 WARNING: BL1: cortex_a57: CPU workaround for 817169 was missing!
@@ -21,8 +21,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL2: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -31,8 +31,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL31: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -53,7 +53,7 @@ INFO:    BL31: cortex_a57: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 09:00:59 on Mar 10 2023)
+UEFI firmware (version 1.0 built at 12:50:24 on Mar 15 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -69,7 +69,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.0  
+    Version 7.1.1  
 
  Starting tests for level  4 (Print level is  1)
 
@@ -280,8 +280,8 @@ PE Index * 3 *
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
  Peripheral: Num of Storage ctrl      :    0 
  Peripheral: Num of Display ctrl      :    2 
- Reserved region of type 7 [0x10000000000, 0x100FBD75000]
- Reserved region of type 1 [0x100FBD75000, 0x100FBEE0000]
+ Reserved region of type 7 [0x10000000000, 0x100FBD77000]
+ Reserved region of type 1 [0x100FBD77000, 0x100FBEE0000]
  Reserved region of type 5 [0x100FBEE0000, 0x100FBF60000]
  Reserved region of type 6 [0x100FBF60000, 0x100FC000000]
  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
@@ -289,8 +289,8 @@ PE Index * 3 *
  Reserved region of type 9 [0x100FC0B0000, 0x100FC0F0000]
  Reserved region of type 7 [0x100FC0F0000, 0x100FE122000]
  Reserved region of type 4 [0x100FE122000, 0x100FE17F000]
- Reserved region of type 7 [0x100FE17F000, 0x100FE184000]
- Reserved region of type 4 [0x100FE184000, 0x100FEFE4000]
+ Reserved region of type 7 [0x100FE17F000, 0x100FE182000]
+ Reserved region of type 4 [0x100FE182000, 0x100FEFE4000]
  Reserved region of type 7 [0x100FEFE4000, 0x100FF30E000]
  Reserved region of type 3 [0x100FF30E000, 0x100FF5C0000]
  Reserved region of type 5 [0x100FF5C0000, 0x100FF750000]
@@ -307,7 +307,7 @@ PE Index * 3 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0 
- Shared memory is 100FE1FC918 
+ Shared memory is 100FE1F6798 
 
       ***  Starting PE tests ***  
    1 : Check PE Granule Support          
@@ -385,39 +385,8 @@ PE Index * 3 *
 
       One or more PE tests failed or were skipped.
 
-      ***  Starting GIC tests ***  
- 101 : Check GIC version                 
-       START  
-       gic version from ACPI table = 3 
-       Received GIC version =    3      
-       S_L3GI_01
-                                  : Result:  PASS 
-       END  
-
-
-      All GIC tests passed.
-
-      *** Starting SMMU  tests ***  
- 701 : Check SMMU Version                
-       START  
-       S_L3SM_01 
-                                  : Result:  PASS 
-       END  
-
- 702 : SMMU Compatibility Check          
-       START  
-       Detected SMMUv3 
-       Stage 2 Translation not supported 
-       Failed on PE -    0 for Level=  4 
-       S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-
-      One or more SMMU tests failed or were skipped.
-
       ***  Starting Memory tests ***  
-1301 : Check peripherals addr 64Kb apart 
+ 101 : Check peripherals addr 64Kb apart 
        START  
  Peripheral 2000
  Peripheral 2001
@@ -437,6 +406,37 @@ PE Index * 3 *
 
 
       All Memory tests passed.
+
+      ***  Starting GIC tests ***  
+ 201 : Check GIC version                 
+       START  
+       gic version from ACPI table = 3 
+       Received GIC version =    3      
+       S_L3GI_01
+                                  : Result:  PASS 
+       END  
+
+
+      All GIC tests passed.
+
+      *** Starting SMMU  tests ***  
+ 301 : Check SMMU Version                
+       START  
+       S_L3SM_01 
+                                  : Result:  PASS 
+       END  
+
+ 302 : SMMU Compatibility Check          
+       START  
+       Detected SMMUv3 
+       Stage 2 Translation not supported 
+       Failed on PE -    0 for Level=  4 
+       S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+
+      One or more SMMU tests failed or were skipped.
 ITS : Info Block 
 GIC ITS Index : 0
 GIC ITS ID : 0
@@ -444,16 +444,7 @@ GIC ITS Base : 44081000
 
 
       *** Starting PCIe Exerciser tests ***  
-
-       dp_type 0x200 
-       dp_type 0x10 
-       dp_type 0x10 
-       dp_type 0x10 
-       dp_type 0x10 
-       dp_type 0x1 
-       dp_type 0x1 
-       dp_type 0x1 
-       dp_type 0x80  PCIE_INFO: Number of exerciser cards :    0 
+ PCIE_INFO: Number of exerciser cards :    0 
 
      No Exerciser Devices Found, Skipping Exerciser tests...
 

@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL1: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: neoverse_n1: CPU workaround for 1946160 was missing!
 WARNING: BL1: neoverse_n1: CPU workaround for 2743102 was missing!
@@ -11,8 +11,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL2: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -21,8 +21,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL31: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -33,7 +33,7 @@ INFO:    BL31: neoverse_n1: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 09:00:59 on Mar 10 2023)
+UEFI firmware (version 1.0 built at 12:50:24 on Mar 15 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -49,7 +49,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.0  
+    Version 7.1.1  
 
  Starting tests for level  4 (Print level is  3)
 
@@ -94,25 +94,25 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
       One or more PE tests failed or were skipped.
 
+      ***  Starting Memory tests ***  
+ 101 : Check peripherals addr 64Kb apart : Result:  PASS 
+
+      All Memory tests passed.
+
       ***  Starting GIC tests ***  
- 101 : Check GIC version                 : Result:  PASS 
+ 201 : Check GIC version                 : Result:  PASS 
 
       All GIC tests passed.
 
       *** Starting SMMU  tests ***  
- 701 : Check SMMU Version                : Result:  PASS 
- 702 : SMMU Compatibility Check          
+ 301 : Check SMMU Version                : Result:  PASS 
+ 302 : SMMU Compatibility Check          
        Stage 2 Translation not supported 
        Failed on PE -    0 for Level=  4 
        S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
        Checkpoint --  1                  : Result:  FAIL 
 
       One or more SMMU tests failed or were skipped.
-
-      ***  Starting Memory tests ***  
-1301 : Check peripherals addr 64Kb apart : Result:  PASS 
-
-      All Memory tests passed.
 
       *** Starting PCIe Exerciser tests ***  
  PCIE_INFO: Number of exerciser cards :    0 
