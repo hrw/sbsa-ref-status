@@ -1,3 +1,4 @@
+
 1:
   level: '3'
   status:
@@ -755,7 +756,7 @@
   tags: S_L4PCI_2
   title: Check EA Capability
 701:
-  level: '3'
+  level: '6'
   status:
     cortex-a57: PASS
     cortex-a72: PASS
