@@ -338,8 +338,8 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L3GI_01
-  title: Check GIC version
+  tags: S_L3MM_01, S_L3MM_02
+  title: Check peripherals addr 64Kb apart
 102:
   level: '5'
   status:
@@ -349,15 +349,42 @@
     neoverse-n1: PASS
   tags: S_L5PP_01
   title: Check Reserved PPI Assignments
-301:
-  level: '6'
+201:
+  level: '3'
   status:
     cortex-a57: PASS
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L6WD_01
-  title: Check NS Watchdog Revision
+  tags: S_L3GI_01
+  title: Check GIC version
+202:
+  level: '5'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L5PP_01
+  title: Check Reserved PPI Assignments
+301:
+  level: '3'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L3SM_01
+  title: Check SMMU Version
+302:
+  level: '4'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
+  title: SMMU Compatibility Check
 401:
   level: '6'
   status:
@@ -734,8 +761,8 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L3SM_01
-  title: Check SMMU Version
+  tags: S_L6WD_01
+  title: Check NS Watchdog Revision
 702:
   level: '4'
   status:
@@ -745,6 +772,384 @@
     neoverse-n1: FAIL
   tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
   title: SMMU Compatibility Check
+801:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_01
+  title: Check ECAM Presence
+803:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_02
+  title: Check ECAM Memory accessibility
+820:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_1, RE_REC_1, RE_REC_2
+  title: Check Type 0/1 common config rules
+821:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_1, RE_REC_1, RE_REC_2
+  title: Check Type 0 config header rules
+822:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_REC_1, RE_REC_2
+  title: Check Type 1 config header rules
+823:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check PCIe capability rules
+824:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check Device capabilites reg rules
+825:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check Device Control register rule
+826:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check Device cap 2 register rules
+827:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check Device control 2 reg rules
+828:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_2, RE_REC_1, RE_REC_2
+  title: Check Power management cap rules
+829:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REG_2, RE_REC_1, RE_REC_2
+  title: Check Power management/status rule
+830:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REC_1, RE_REC_2
+  title: Check Cmd Reg memory space enable
+831:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REC_1, RE_REC_2
+  title: Check Type0/1 BIST Register rule
+832:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REC_1, RE_REC_2
+  title: Check HDR CapPtr Register rule
+833:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_REC_1, RE_REC_2
+  title: Check Max payload size supported
+834:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: RE_BAR_3
+  title: Check BAR memory space & Type rule
+835:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_RST_1, PCI_SM_02
+  title: Check Function level reset rule
+836:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_17
+  title: Check ARI forwarding support rule
+837:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check OBFF supported rule
+838:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check CTRS and CTDS rule
+839:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  title: Check i-EP atomicop rule
+841:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_INT_1, IE_INT_1
+  title: Check MSI and MSI-X support rule
+842:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_PWR_1
+  title: Check Power Management rules
+843:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_17
+  title: Check ARI forwarding enable rule
+844:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_04
+  title: Check device under RP in same ECAM
+845:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_03
+  title: Check all RP in HB is in same ECAM
+846:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IN_18
+  title: Check RP Byte Enable Rules
+847:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_12
+  title: Check Config Txn for RP in HB
+848:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_13
+  title: Check RootPort NP Memory Access
+849:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_IN_13
+  title: Check RootPort P Memory Access
+850:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_LI_01, PCI_LI_03
+  title: Check L-Intr SPI Level-Sensitive
+851:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: IE_RST_2
+  title: Check Sec Bus Reset For iEP_RP
+852:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_SMU_2
+  title: Check ATS Support Rule
+856:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: IE_ACS_2
+  title: Check iEP-RootPort P2P Support
+857:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: IE_ACS_1
+  title: Check RCiEP, iEP_EP P2P Supp
+858:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: RE_BAR_1
+  title: Read and write to RCiEP BAR reg
+859:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: RE_PCI_2
+  title: Check RCEC Class code and Ext Cap
+860:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: RE_PCI_1
+  title: Check RCiEP Hdr type & link Cap
+861:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: S_PCI_02
+  title: Check RootPort P&NP Memory Access
+862:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L4PCI_2
+  title: Check EA Capability
+863:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: IE_REG_4
+  title: Slot Cap, Control and Status register rules
 1101:
   level: '7'
   status:
@@ -781,12 +1186,3 @@
     neoverse-n1: SKIPPED
   tags: PMU_SPE
   title: Check for PMU SPE Requirements
-1301:
-  level: '3'
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-  tags: S_L3MM_01, S_L3MM_02
-  title: Check peripherals addr 64Kb apart
