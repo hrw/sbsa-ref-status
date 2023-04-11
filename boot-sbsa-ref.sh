@@ -12,8 +12,11 @@ if [ ! -z $2 ]; then
 fi
 
 if [ ! -z "$3" ]; then
-	echo "$3"        > disks/virtual/startup.nsh
-	echo "reset -c" >> disks/virtual/startup.nsh
+	echo "mode 100 31" > disks/virtual/startup.nsh
+	echo "$3"         >> disks/virtual/startup.nsh
+if [ -z "$4" ]; then
+ 	echo "reset -c"   >> disks/virtual/startup.nsh
+fi
 fi
 
 ./code/qemu/build/aarch64-softmmu/qemu-system-aarch64 \
