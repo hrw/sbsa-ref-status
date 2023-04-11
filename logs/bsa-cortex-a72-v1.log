@@ -37,7 +37,7 @@ INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 12:50:24 on Mar 15 2023)
+UEFI firmware (version 1.0 built at 15:53:43 on Apr  7 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -49,7 +49,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
 
 
  BSA Architecture Compliance Suite
@@ -62,9 +63,17 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Using SMC as PSCI conduit
  Creating PE INFO table
   MADT is at FC0EF598 and length is 1A8 
+  Flags 1 
+  PE Enabled 1, Online Capable 0
   MPIDR 0 PE num 0 
+  Flags 1 
+  PE Enabled 1, Online Capable 0
   MPIDR 1 PE num 1 
+  Flags 1 
+  PE Enabled 1, Online Capable 0
   MPIDR 2 PE num 2 
+  Flags 1 
+  PE Enabled 1, Online Capable 0
   MPIDR 3 PE num 3 
  PE_INFO: Number of PE detected       :    4 
  Creating GIC INFO table
@@ -75,11 +84,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   GICH base 2C010000 
   GIC DIS base 40060000 
   GICR RD base 40080000 
+  GICR RD Length 4000000 
   GIC ITS base 44081000 
   GIC ITS ID0 
 
-       gic version from info table = 3  GIC INFO: GIC version                :  
-  v3 
+       gic version from info table = 3  GIC INFO: GIC version                :    v3 
  GIC_INFO: Number of GICD             :    1 
  GIC_INFO: Number of GICR RD          :    1 
  GIC_INFO: Number of ITS              :    1 
@@ -99,14 +108,14 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Start Bus = 0x0
   End Bus   = 0xFF
  PCIE_INFO: Number of ECAM regions    :    1 
-  Dev bdf 0x300 type 0x10 RP bdf 0x300
-  Dev bdf 0x400 type 0x10 RP bdf 0x400
-  Dev bdf 0x500 type 0x10 RP bdf 0x500
-  Dev bdf 0x600 type 0x10 RP bdf 0x600
-  Dev bdf 0x10000 type 0x1 RP bdf 0x300
-  Dev bdf 0x20000 type 0x1 RP bdf 0x400
-  Dev bdf 0x30000 type 0x1 RP bdf 0x500
-  Dev bdf 0x40000 type 0x80 RP bdf 0x600
+  Dev bdf 0x000300 type 0x10 RP bdf 0x000300
+  Dev bdf 0x000400 type 0x10 RP bdf 0x000400
+  Dev bdf 0x000500 type 0x10 RP bdf 0x000500
+  Dev bdf 0x000600 type 0x10 RP bdf 0x000600
+  Dev bdf 0x010000 type 0x01 RP bdf 0x000300
+  Dev bdf 0x020000 type 0x01 RP bdf 0x000400
+  Dev bdf 0x030000 type 0x01 RP bdf 0x000500
+  Dev bdf 0x040000 type 0x80 RP bdf 0x000600
  PCIE_INFO: Number of BDFs found      :    8
  PCIE_INFO: Number of RCiEP           :    0 
  PCIE_INFO: Number of RCEC            :    0 
@@ -114,15 +123,24 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of RP              :    4 
  PCIE_INFO: Number of iEP_EP          :    0 
  PCIE_INFO: Number of iEP_RP          :    0 
+
   ECAM 0:  Base 0xF0000000
-  Seg: 0x0, Bus: 0x0, Dev: 0x3, Func: 0x0, Dev ID: 0xC, Vendor ID: 0x1B36
-  Seg: 0x0, Bus: 0x0, Dev: 0x4, Func: 0x0, Dev ID: 0xC, Vendor ID: 0x1B36
-  Seg: 0x0, Bus: 0x0, Dev: 0x5, Func: 0x0, Dev ID: 0xC, Vendor ID: 0x1B36
-  Seg: 0x0, Bus: 0x0, Dev: 0x6, Func: 0x0, Dev ID: 0xC, Vendor ID: 0x1B36
-  Seg: 0x0, Bus: 0x1, Dev: 0x0, Func: 0x0, Dev ID: 0xD, Vendor ID: 0x1B36
-  Seg: 0x0, Bus: 0x2, Dev: 0x0, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
-  Seg: 0x0, Bus: 0x3, Dev: 0x0, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
-  Seg: 0x0, Bus: 0x4, Dev: 0x0, Func: 0x0, Dev ID: 0xE, Vendor ID: 0x1B36
+  BDF: 0x300
+  Seg: 0x0, Bus: 0x00, Dev: 0x03, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x400
+  Seg: 0x0, Bus: 0x00, Dev: 0x04, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x500
+  Seg: 0x0, Bus: 0x00, Dev: 0x05, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x600
+  Seg: 0x0, Bus: 0x00, Dev: 0x06, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x10000
+  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x000D, Vendor ID: 0x1B36
+  BDF: 0x20000
+  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
+  BDF: 0x30000
+  Seg: 0x0, Bus: 0x03, Dev: 0x00, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  BDF: 0x40000
+  Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x000E, Vendor ID: 0x1B36
  Creating SMMU INFO table
   IORT node offset:30, type: 0
   IORT node offset:48, type: 4
@@ -204,12 +222,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
   Reserved region of type 5 [0x100FC020000, 0x100FC0B0000]
   Reserved region of type 9 [0x100FC0B0000, 0x100FC0F0000]
-  Reserved region of type 7 [0x100FC0F0000, 0x100FE17E000]
-  Reserved region of type 4 [0x100FE17E000, 0x100FE17F000]
-  Reserved region of type 7 [0x100FE17F000, 0x100FE18B000]
-  Reserved region of type 4 [0x100FE18B000, 0x100FE1F6000]
-  Reserved region of type 7 [0x100FE1F6000, 0x100FE1FA000]
-  Reserved region of type 4 [0x100FE1FA000, 0x100FEFE4000]
+  Reserved region of type 7 [0x100FC0F0000, 0x100FE16C000]
+  Reserved region of type 4 [0x100FE16C000, 0x100FEFE4000]
   Reserved region of type 7 [0x100FEFE4000, 0x100FF30E000]
   Reserved region of type 3 [0x100FF30E000, 0x100FF5C0000]
   Reserved region of type 5 [0x100FF5C0000, 0x100FF750000]
@@ -222,7 +236,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE202818 
+ Shared memory is 100FE20FB98 
 
       ***  Starting PE tests ***  
 Operating System View:
@@ -451,6 +465,7 @@ Operating System View:
  205 : Non-secure SGIs are implemented                START
 
        PE MPIDR 0x0       gicr_rdindex 0       gicrd_base 0x40080000
+       GICR_TYPER 0x1000001
 
        PE RD base address 40080000  data 0x6C80FFFF
        B_GIC_05
@@ -701,8 +716,7 @@ Operating System View:
 
  602 : Check SATA CTRL Interface                      START
 
-       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access 
-failed 0 
+       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access failed 0 
        Re-checking SATA CTRL using PciIo protocol
 
        B_PER_03
@@ -1193,8 +1207,7 @@ Operating System View:
        BDF 0x10000 
        BDF 0x20000 
        BDF 0x30000 
-       No RCiEP/ EP type device found with PCIe Express Cap support. Skipping te
-st
+       No RCiEP/ EP type device found with PCIe Express Cap support. Skipping test
        PCI_SM_02
        Checkpoint --  1                           : Result:  SKIPPED 
          END

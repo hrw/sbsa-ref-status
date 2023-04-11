@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL1: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: cortex_a72: CPU workaround for 859971 was missing!
 WARNING: BL1: cortex_a72: CPU workaround for 1319367 was missing!
@@ -13,8 +13,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL2: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -23,8 +23,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-550-g147702db7
-NOTICE:  BL31: Built : 09:31:30, Mar 16 2023
+NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
+NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -37,7 +37,7 @@ INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 09:00:59 on Mar 10 2023)
+UEFI firmware (version 1.0 built at 15:53:43 on Apr  7 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -49,7 +49,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40macpiview
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40macpiview
 
 
  --------------- RSDP Table --------------- 
@@ -629,15 +630,15 @@ GTDT                                 :
 Address  : 0x100FC0EE998
 Length   : 220
   
-00000000 : 49 4F 52 54 DC 00 00 00 - 00 CB 4C 49 4E 41 52 4F   IORT......LINARO
+00000000 : 49 4F 52 54 DC 00 00 00 - 00 F9 4C 49 4E 41 52 4F   IORT......LINARO
 00000010 : 53 42 53 41 51 45 4D 55 - 10 08 20 20 4C 4E 52 4F   SBSAQEMU..  LNRO
 00000020 : 01 00 00 00 03 00 00 00 - 30 00 00 00 00 00 00 00   ........0.......
 00000030 : 00 18 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
 00000040 : 01 00 00 00 00 00 00 00 - 04 58 00 02 00 00 00 00   .........X......
 00000050 : 01 00 00 00 44 00 00 00 - 00 00 05 60 00 00 00 00   ....D......`....
 00000060 : 01 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
-00000070 : 00 00 00 00 4A 00 00 00 - 4B 00 00 00 4D 00 00 00   ....J...K...M...
-00000080 : 4C 00 00 00 00 00 00 00 - 01 00 00 00 00 00 00 00   L...............
+00000070 : 00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00   ................
+00000080 : 00 00 00 00 00 00 00 00 - 01 00 00 00 00 00 00 00   ................
 00000090 : FF FF 00 00 00 00 00 00 - 30 00 00 00 00 00 00 00   ........0.......
 000000A0 : 02 3C 00 00 00 00 00 00 - 01 00 00 00 28 00 00 00   .<..........(...
 000000B0 : 01 00 00 00 00 00 00 00 - 01 00 00 00 00 00 00 00   ................
@@ -650,7 +651,7 @@ IORT                                 :
   Signature                          : IORT
   Length                             : 220
   Revision                           : 0
-  Checksum                           : 0xCB
+  Checksum                           : 0xF9
   Oem ID                             : LINARO
   Oem Table ID                       : SBSAQEMU
   Oem Revision                       : 0x20200810
@@ -683,10 +684,10 @@ IORT                                 :
     Reserved                         : 0x0
     VATOS Address                    : 0x0
     Model                            : 0
-    Event                            : 0x4A
-    PRI                              : 0x4B
-    GERR                             : 0x4D
-    Sync                             : 0x4C
+    Event                            : 0x0
+    PRI                              : 0x0
+    GERR                             : 0x0
+    Sync                             : 0x0
     Proximity domain                 : 0x0
     Device ID mapping index          : 1
     ID Mapping [0]                   :
@@ -1036,8 +1037,8 @@ PPTT                                 :
     Length                           : 24
     Reserved                         : 0x0
     Flags                            : 0x5F
-ERROR: On Arm based systems, all cache properties must be provided in the cache 
-type structure. Missing 'Write Policy Valid' flag.
+ERROR: On Arm based systems, all cache properties must be provided in the cache type structure. Miss
+ing 'Write Policy Valid' flag.
     Next Level of Cache              : 0x68
     Size                             : 0x8000
     Number of sets                   : 256
