@@ -1,4 +1,3 @@
-
 1:
   level: '3'
   status:
@@ -375,7 +374,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L3SM_01
+  tags: S_L3SM_01, S_L5SM_01
   title: Check SMMU Version
 302:
   level: '4'
