@@ -62,6 +62,36 @@ def handle_checklist():
                     'tests': tests,
                 })
 
+    for tag in sorted(tag_to_test.keys()):
+        if tag_to_test[tag]["acs_only"]:
+            # we want to display it at the end on checklist
+            entry = {
+                'category': "ACS only tests",
+                'group': "ACS",
+                'tag': tag,
+                'tests': tag_to_test[tag],
+                'bsa': [],
+                'sbsa': []
+            }
+
+            if tag_to_test[tag]["bsa"]:
+                entry["bsa"] = True
+            if tag_to_test[tag]["sbsa"]:
+                entry["sbsa"] = {
+                    3: False,
+                    4: False,
+                    5: False,
+                    6: False,
+                    7: False
+                }
+                for test in tag_to_test[tag]["sbsa"]:
+                    sbsa_level = int(status_sbsa[test]["level"])
+
+                    for level in range(sbsa_level, 8):
+                        entry["sbsa"][level] = True
+
+            checklist.append(entry)
+
     return checklist
 
 def generate_html_file(checklist):
