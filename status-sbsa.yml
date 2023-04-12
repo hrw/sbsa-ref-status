@@ -394,15 +394,6 @@
     neoverse-n1: PASS
   tags: S_L6WD_01
   title: Check NS Watchdog Revision
-702:
-  level: '4'
-  status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-  tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
-  title: SMMU Compatibility Check
 801:
   level: '6'
   status:
