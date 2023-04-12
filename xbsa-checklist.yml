@@ -11,10 +11,6 @@
             6: true
             7: true
         tag: B_PE_01
-        tests:
-          bsa:
-          - 1
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -24,10 +20,6 @@
             6: true
             7: true
         tag: B_PE_02
-        tests:
-          bsa:
-          - 2
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -37,10 +29,6 @@
             6: true
             7: true
         tag: B_PE_03
-        tests:
-          bsa:
-          - 3
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -50,10 +38,6 @@
             6: true
             7: true
         tag: B_PE_04
-        tests:
-          bsa:
-          - 4
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -63,9 +47,6 @@
             6: true
             7: true
         tag: B_PE_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -75,10 +56,6 @@
             6: true
             7: true
         tag: B_PE_06
-        tests:
-          bsa:
-          - 6
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -88,10 +65,6 @@
             6: true
             7: true
         tag: B_PE_07
-        tests:
-          bsa:
-          - 7
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -101,10 +74,6 @@
             6: true
             7: true
         tag: B_PE_08
-        tests:
-          bsa:
-          - 8
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -114,10 +83,6 @@
             6: true
             7: true
         tag: B_PE_09
-        tests:
-          bsa:
-          - 9
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -127,10 +92,6 @@
             6: true
             7: true
         tag: B_PE_10
-        tests:
-          bsa:
-          - 10
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -140,10 +101,6 @@
             6: true
             7: true
         tag: B_PE_11
-        tests:
-          bsa:
-          - 11
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -153,10 +110,6 @@
             6: true
             7: true
         tag: B_PE_12
-        tests:
-          bsa:
-          - 12
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -166,10 +119,6 @@
             6: true
             7: true
         tag: B_PE_13
-        tests:
-          bsa:
-          - 13
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -179,9 +128,6 @@
             6: true
             7: true
         tag: B_PE_14
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -191,10 +137,6 @@
             6: false
             7: false
         tag: B_PE_15
-        tests:
-          bsa:
-          - 14
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -204,9 +146,6 @@
             6: true
             7: true
         tag: B_PE_16
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -216,10 +155,6 @@
             6: true
             7: true
         tag: B_PE_17
-        tests:
-          bsa: null
-          sbsa:
-          - 17
       - required:
           bsa: true
           sbsa:
@@ -229,10 +164,6 @@
             6: true
             7: true
         tag: B_SEC_01
-        tests:
-          bsa: null
-          sbsa:
-          - 23
       - required:
           bsa: true
           sbsa:
@@ -242,10 +173,6 @@
             6: true
             7: true
         tag: B_SEC_02
-        tests:
-          bsa: null
-          sbsa:
-          - 24
       - required:
           bsa: true
           sbsa:
@@ -255,10 +182,6 @@
             6: true
             7: true
         tag: B_SEC_03
-        tests:
-          bsa: null
-          sbsa:
-          - 25
       - required:
           bsa: true
           sbsa:
@@ -268,10 +191,6 @@
             6: true
             7: true
         tag: B_SEC_04
-        tests:
-          bsa: null
-          sbsa:
-          - 26
       - required:
           bsa: true
           sbsa:
@@ -281,10 +200,6 @@
             6: true
             7: true
         tag: B_SEC_05
-        tests:
-          bsa: null
-          sbsa:
-          - 27
       - required:
           bsa: false
           sbsa:
@@ -294,10 +209,6 @@
             6: true
             7: true
         tag: S_L3PE_01
-        tests:
-          bsa: null
-          sbsa:
-          - 1
       - required:
           bsa: false
           sbsa:
@@ -307,10 +218,6 @@
             6: true
             7: true
         tag: S_L3PE_02
-        tests:
-          bsa: null
-          sbsa:
-          - 2
       - required:
           bsa: false
           sbsa:
@@ -320,10 +227,6 @@
             6: true
             7: true
         tag: S_L3PE_03
-        tests:
-          bsa: null
-          sbsa:
-          - 3
       - required:
           bsa: false
           sbsa:
@@ -333,10 +236,6 @@
             6: true
             7: true
         tag: S_L3PE_04
-        tests:
-          bsa: null
-          sbsa:
-          - 4
       - required:
           bsa: false
           sbsa:
@@ -346,10 +245,6 @@
             6: true
             7: true
         tag: S_L4PE_01
-        tests:
-          bsa: null
-          sbsa:
-          - 5
       - required:
           bsa: false
           sbsa:
@@ -359,10 +254,6 @@
             6: true
             7: true
         tag: S_L4PE_02
-        tests:
-          bsa: null
-          sbsa:
-          - 6
       - required:
           bsa: false
           sbsa:
@@ -372,10 +263,6 @@
             6: true
             7: true
         tag: S_L4PE_03
-        tests:
-          bsa: null
-          sbsa:
-          - 7
       - required:
           bsa: false
           sbsa:
@@ -385,10 +272,6 @@
             6: true
             7: true
         tag: S_L4PE_04
-        tests:
-          bsa: null
-          sbsa:
-          - 8
       - required:
           bsa: false
           sbsa:
@@ -398,10 +281,6 @@
             6: true
             7: true
         tag: S_L5PE_01
-        tests:
-          bsa: null
-          sbsa:
-          - 9
       - required:
           bsa: false
           sbsa:
@@ -411,10 +290,6 @@
             6: true
             7: true
         tag: S_L5PE_02
-        tests:
-          bsa: null
-          sbsa:
-          - 10
       - required:
           bsa: false
           sbsa:
@@ -424,9 +299,6 @@
             6: true
             7: true
         tag: S_L5PE_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -436,10 +308,6 @@
             6: true
             7: true
         tag: S_L5PE_04
-        tests:
-          bsa: null
-          sbsa:
-          - 11
       - required:
           bsa: false
           sbsa:
@@ -449,10 +317,6 @@
             6: true
             7: true
         tag: S_L5PE_05
-        tests:
-          bsa: null
-          sbsa:
-          - 12
       - required:
           bsa: false
           sbsa:
@@ -462,10 +326,6 @@
             6: true
             7: true
         tag: S_L5PE_06
-        tests:
-          bsa: null
-          sbsa:
-          - 13
       - required:
           bsa: false
           sbsa:
@@ -475,10 +335,6 @@
             6: true
             7: true
         tag: S_L5PE_07
-        tests:
-          bsa: null
-          sbsa:
-          - 14
       - required:
           bsa: false
           sbsa:
@@ -488,10 +344,6 @@
             6: true
             7: true
         tag: S_L6PE_02
-        tests:
-          bsa: null
-          sbsa:
-          - 18
       - required:
           bsa: false
           sbsa:
@@ -501,10 +353,6 @@
             6: true
             7: true
         tag: S_L6PE_03
-        tests:
-          bsa: null
-          sbsa:
-          - 19
       - required:
           bsa: false
           sbsa:
@@ -514,10 +362,6 @@
             6: true
             7: true
         tag: S_L6PE_04
-        tests:
-          bsa: null
-          sbsa:
-          - 20
       - required:
           bsa: false
           sbsa:
@@ -527,10 +371,6 @@
             6: true
             7: true
         tag: S_L6PE_05
-        tests:
-          bsa: null
-          sbsa:
-          - 21
       - required:
           bsa: false
           sbsa:
@@ -540,10 +380,6 @@
             6: true
             7: true
         tag: S_L6PE_06
-        tests:
-          bsa: null
-          sbsa:
-          - 22
       - required:
           bsa: false
           sbsa:
@@ -553,10 +389,6 @@
             6: false
             7: true
         tag: S_L7PE_01
-        tests:
-          bsa: null
-          sbsa:
-          - 28
       - required:
           bsa: false
           sbsa:
@@ -566,10 +398,6 @@
             6: false
             7: true
         tag: S_L7PE_02
-        tests:
-          bsa: null
-          sbsa:
-          - 29
       - required:
           bsa: false
           sbsa:
@@ -579,10 +407,6 @@
             6: false
             7: true
         tag: S_L7PE_03
-        tests:
-          bsa: null
-          sbsa:
-          - 30
       - required:
           bsa: false
           sbsa:
@@ -592,10 +416,6 @@
             6: false
             7: true
         tag: S_L7PE_04
-        tests:
-          bsa: null
-          sbsa:
-          - 31
       - required:
           bsa: false
           sbsa:
@@ -605,10 +425,6 @@
             6: false
             7: true
         tag: S_L7PE_05
-        tests:
-          bsa: null
-          sbsa:
-          - 32
       - required:
           bsa: false
           sbsa:
@@ -618,10 +434,6 @@
             6: false
             7: true
         tag: S_L7PE_06
-        tests:
-          bsa: null
-          sbsa:
-          - 33
       - required:
           bsa: false
           sbsa:
@@ -631,10 +443,6 @@
             6: false
             7: true
         tag: S_L7PE_07
-        tests:
-          bsa: null
-          sbsa:
-          - 34
       - required:
           bsa: false
           sbsa:
@@ -644,10 +452,6 @@
             6: false
             7: true
         tag: S_L7PE_08
-        tests:
-          bsa: null
-          sbsa:
-          - 35
       - required:
           bsa: false
           sbsa:
@@ -657,10 +461,6 @@
             6: false
             7: true
         tag: S_L7PE_09
-        tests:
-          bsa: null
-          sbsa:
-          - 36
       - required:
           bsa: false
           sbsa:
@@ -670,10 +470,6 @@
             6: false
             7: true
         tag: S_L7PE_10
-        tests:
-          bsa: null
-          sbsa:
-          - 37
       - required:
           bsa: false
           sbsa:
@@ -683,11 +479,6 @@
             6: true
             7: true
         tag: S_MPAM_PE
-        tests:
-          bsa: null
-          sbsa:
-          - 15
-          - 16
       - required:
           bsa: false
           sbsa:
@@ -697,9 +488,6 @@
             6: true
             7: true
         tag: S_RAS_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -709,9 +497,6 @@
             6: false
             7: true
         tag: S_L7RAS_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -721,9 +506,6 @@
             6: false
             7: true
         tag: S_L7RAS_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -733,9 +515,6 @@
             6: false
             7: true
         tag: S_L7TME_1
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -745,9 +524,6 @@
             6: false
             7: true
         tag: S_L7TME_2
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -757,9 +533,6 @@
             6: false
             7: true
         tag: S_L7TME_3
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -769,9 +542,6 @@
             6: false
             7: true
         tag: S_L7TME_4
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -781,9 +551,6 @@
             6: false
             7: true
         tag: S_L7TME_5
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -793,9 +560,6 @@
             6: false
             7: true
         tag: S_L7MP_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -805,9 +569,6 @@
             6: false
             7: true
         tag: S_L7MP_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -817,9 +578,6 @@
             6: false
             7: true
         tag: S_L7MP_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -829,9 +587,6 @@
             6: false
             7: true
         tag: S_L7MP_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -841,9 +596,6 @@
             6: false
             7: true
         tag: S_L7MP_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -853,9 +605,6 @@
             6: false
             7: true
         tag: S_L7MP_06
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -865,9 +614,6 @@
             6: false
             7: true
         tag: S_L7MP_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -877,11 +623,6 @@
             6: false
             7: true
         tag: S_L7MP_08
-        tests:
-          bsa: null
-          sbsa: null
-    1-Entropy:
-      rules:
       - required:
           bsa: false
           sbsa:
@@ -891,11 +632,6 @@
             6: false
             7: true
         tag: S_L7ENT_01
-        tests:
-          bsa: null
-          sbsa: null
-    2-Hypervisor:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -905,10 +641,6 @@
             6: true
             7: true
         tag: B_PE_18
-        tests:
-          bsa:
-          - 51
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -918,10 +650,6 @@
             6: true
             7: true
         tag: B_PE_19
-        tests:
-          bsa:
-          - 52
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -931,10 +659,6 @@
             6: true
             7: true
         tag: B_PE_20
-        tests:
-          bsa:
-          - 53
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -944,10 +668,6 @@
             6: true
             7: true
         tag: B_PE_21
-        tests:
-          bsa:
-          - 54
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -957,12 +677,6 @@
             6: true
             7: true
         tag: B_PE_22
-        tests:
-          bsa:
-          - 55
-          sbsa: null
-    3-Platform security:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -972,10 +686,6 @@
             6: true
             7: true
         tag: B_PE_23
-        tests:
-          bsa:
-          - 76
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -985,11 +695,6 @@
             6: true
             7: true
         tag: B_PE_24
-        tests:
-          bsa: null
-          sbsa: null
-    4-RAS:
-      rules:
       - required:
           bsa: false
           sbsa:
@@ -999,9 +704,6 @@
             6: false
             7: true
         tag: SYS_RAS
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1011,9 +713,6 @@
             6: false
             7: true
         tag: SYS_RAS_1
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1023,9 +722,6 @@
             6: false
             7: true
         tag: SYS_RAS_2
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1035,9 +731,6 @@
             6: false
             7: true
         tag: SYS_RAS_3
-        tests:
-          bsa: null
-          sbsa: null
 1-Memory map:
   groups:
     0-Operating system:
@@ -1051,10 +744,6 @@
             6: true
             7: true
         tag: B_MEM_01
-        tests:
-          bsa:
-          - 102
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1064,9 +753,6 @@
             6: true
             7: true
         tag: B_MEM_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1076,9 +762,6 @@
             6: true
             7: true
         tag: B_MEM_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1088,9 +771,6 @@
             6: true
             7: true
         tag: B_MEM_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1100,10 +780,6 @@
             6: true
             7: true
         tag: B_MEM_05
-        tests:
-          bsa:
-          - 103
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1113,9 +789,6 @@
             6: true
             7: true
         tag: B_MEM_06
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1125,9 +798,6 @@
             6: true
             7: true
         tag: B_MEM_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1137,9 +807,6 @@
             6: true
             7: true
         tag: B_MEM_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1149,10 +816,6 @@
             6: true
             7: true
         tag: S_L3MM_01
-        tests:
-          bsa: null
-          sbsa:
-          - 1301
       - required:
           bsa: false
           sbsa:
@@ -1162,11 +825,6 @@
             6: true
             7: true
         tag: S_L3MM_02
-        tests:
-          bsa: null
-          sbsa: null
-    1-Platform security:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1176,9 +834,6 @@
             6: true
             7: true
         tag: B_MEM_08
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1188,9 +843,6 @@
             6: true
             7: true
         tag: B_MEM_09
-        tests:
-          bsa: null
-          sbsa: null
 2-Interrupts:
   groups:
     0-Operating system:
@@ -1204,10 +856,6 @@
             6: false
             7: false
         tag: B_GIC_01
-        tests:
-          bsa:
-          - 201
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1217,9 +865,6 @@
             6: false
             7: false
         tag: B_GIC_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1229,10 +874,6 @@
             6: true
             7: true
         tag: B_GIC_03
-        tests:
-          bsa:
-          - 203
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1242,10 +883,6 @@
             6: true
             7: true
         tag: B_GIC_04
-        tests:
-          bsa:
-          - 204
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1255,10 +892,6 @@
             6: true
             7: true
         tag: B_GIC_05
-        tests:
-          bsa:
-          - 205
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1268,10 +901,6 @@
             6: true
             7: true
         tag: S_L3GI_01
-        tests:
-          bsa: null
-          sbsa:
-          - 101
       - required:
           bsa: false
           sbsa:
@@ -1281,9 +910,6 @@
             6: true
             7: true
         tag: S_L3GI_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1293,9 +919,6 @@
             6: true
             7: true
         tag: S_L3PP_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1305,9 +928,6 @@
             6: true
             7: true
         tag: S_L5GI_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1317,10 +937,6 @@
             6: true
             7: true
         tag: B_PPI_01
-        tests:
-          bsa:
-          - 206
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1330,12 +946,6 @@
             6: true
             7: true
         tag: S_L5PP_01
-        tests:
-          bsa: null
-          sbsa:
-          - 102
-    1-Hypervisor:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1345,14 +955,6 @@
             6: true
             7: true
         tag: B_PPI_02
-        tests:
-          bsa:
-          - 226
-          - 227
-          - 228
-          sbsa: null
-    2-Platform security:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1362,9 +964,6 @@
             6: true
             7: true
         tag: B_PPI_03
-        tests:
-          bsa: null
-          sbsa: null
 3-SMMU:
   groups:
     0-Operating system:
@@ -1378,10 +977,6 @@
             6: true
             7: true
         tag: B_SMMU_01
-        tests:
-          bsa:
-          - 301
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1391,10 +986,6 @@
             6: true
             7: true
         tag: B_SMMU_02
-        tests:
-          bsa:
-          - 302
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1404,9 +995,6 @@
             6: true
             7: true
         tag: B_SMMU_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1416,9 +1004,6 @@
             6: true
             7: true
         tag: B_SMMU_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1428,9 +1013,6 @@
             6: true
             7: true
         tag: B_SMMU_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1440,10 +1022,6 @@
             6: true
             7: true
         tag: B_SMMU_06
-        tests:
-          bsa:
-          - 305
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1453,9 +1031,6 @@
             6: true
             7: true
         tag: B_SMMU_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1465,10 +1040,6 @@
             6: false
             7: false
         tag: B_SMMU_08
-        tests:
-          bsa:
-          - 306
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1478,9 +1049,6 @@
             6: true
             7: true
         tag: B_SMMU_09
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1490,9 +1058,6 @@
             6: true
             7: true
         tag: B_SMMU_11
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1502,9 +1067,6 @@
             6: true
             7: true
         tag: B_SMMU_12
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1514,9 +1076,6 @@
             6: true
             7: true
         tag: B_SMMU_13
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1526,9 +1085,6 @@
             6: true
             7: true
         tag: B_SMMU_14
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1538,10 +1094,6 @@
             6: true
             7: true
         tag: S_L3SM_01
-        tests:
-          bsa: null
-          sbsa:
-          - 701
       - required:
           bsa: false
           sbsa:
@@ -1551,10 +1103,6 @@
             6: false
             7: false
         tag: S_L4SM_01
-        tests:
-          bsa: null
-          sbsa:
-          - 702
       - required:
           bsa: false
           sbsa:
@@ -1564,9 +1112,6 @@
             6: true
             7: true
         tag: S_L4SM_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1576,9 +1121,6 @@
             6: true
             7: true
         tag: S_L4SM_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1588,9 +1130,6 @@
             6: true
             7: true
         tag: S_L5SM_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1600,9 +1139,6 @@
             6: true
             7: true
         tag: S_L5SM_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1612,9 +1148,6 @@
             6: true
             7: true
         tag: S_L5SM_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1624,9 +1157,6 @@
             6: true
             7: true
         tag: S_L6SM_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1636,9 +1166,6 @@
             6: true
             7: true
         tag: S_L6SM_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1648,9 +1175,6 @@
             6: true
             7: true
         tag: S_L6SM_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1660,9 +1184,6 @@
             6: false
             7: true
         tag: S_L7SM_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1672,9 +1193,6 @@
             6: false
             7: true
         tag: S_L7SM_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1684,9 +1202,6 @@
             6: false
             7: true
         tag: S_L7SM_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1696,9 +1211,6 @@
             6: false
             7: true
         tag: S_L7SM_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1708,11 +1220,6 @@
             6: false
             7: true
         tag: S_L7PMU
-        tests:
-          bsa: null
-          sbsa: null
-    1-Hypervisor:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1722,10 +1229,6 @@
             6: true
             7: true
         tag: B_SMMU_16
-        tests:
-          bsa:
-          - 351
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1735,9 +1238,6 @@
             6: true
             7: true
         tag: B_SMMU_17
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1747,10 +1247,6 @@
             6: true
             7: true
         tag: B_SMMU_18
-        tests:
-          bsa:
-          - 352
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1760,10 +1256,6 @@
             6: true
             7: true
         tag: B_SMMU_19
-        tests:
-          bsa:
-          - 353
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1773,9 +1265,6 @@
             6: true
             7: true
         tag: B_SMMU_20
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1785,10 +1274,6 @@
             6: true
             7: true
         tag: B_SMMU_21
-        tests:
-          bsa:
-          - 354
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1798,9 +1283,6 @@
             6: true
             7: true
         tag: B_SMMU_22
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1810,11 +1292,6 @@
             6: true
             7: true
         tag: B_SMMU_23
-        tests:
-          bsa: null
-          sbsa: null
-    2-Platform security:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1824,9 +1301,6 @@
             6: false
             7: false
         tag: B_SMMU_24
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1836,9 +1310,6 @@
             6: false
             7: false
         tag: B_SMMU_25
-        tests:
-          bsa: null
-          sbsa: null
 4-Timer subsystem:
   groups:
     0-Operating system:
@@ -1852,10 +1323,6 @@
             6: true
             7: true
         tag: B_TIME_01
-        tests:
-          bsa:
-          - 401
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1865,9 +1332,6 @@
             6: true
             7: true
         tag: B_TIME_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1877,9 +1341,6 @@
             6: true
             7: true
         tag: B_TIME_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1889,9 +1350,6 @@
             6: true
             7: true
         tag: B_TIME_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1901,9 +1359,6 @@
             6: true
             7: true
         tag: B_TIME_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1913,10 +1368,6 @@
             6: true
             7: true
         tag: B_TIME_06
-        tests:
-          bsa:
-          - 402
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1926,10 +1377,6 @@
             6: true
             7: true
         tag: B_TIME_07
-        tests:
-          bsa:
-          - 403
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1939,10 +1386,6 @@
             6: true
             7: true
         tag: B_TIME_08
-        tests:
-          bsa:
-          - 404
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1952,10 +1395,6 @@
             6: true
             7: true
         tag: B_TIME_09
-        tests:
-          bsa:
-          - 405
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -1965,9 +1404,6 @@
             6: true
             7: true
         tag: B_TIME_10
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -1977,11 +1413,6 @@
             6: true
             7: true
         tag: S_L5TI_01
-        tests:
-          bsa: null
-          sbsa: null
-    1-Power and wakeup:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -1991,9 +1422,6 @@
             6: true
             7: true
         tag: B_WAK_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2003,9 +1431,6 @@
             6: true
             7: true
         tag: B_WAK_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2015,9 +1440,6 @@
             6: true
             7: true
         tag: B_WAK_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2027,9 +1449,6 @@
             6: true
             7: true
         tag: B_WAK_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2039,9 +1458,6 @@
             6: true
             7: true
         tag: B_WAK_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2051,14 +1467,6 @@
             6: true
             7: true
         tag: B_WAK_06
-        tests:
-          bsa:
-          - 501
-          - 502
-          - 503
-          - 504
-          - 505
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2068,9 +1476,6 @@
             6: true
             7: true
         tag: B_WAK_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2080,9 +1485,6 @@
             6: true
             7: true
         tag: B_WAK_08
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2092,9 +1494,6 @@
             6: true
             7: true
         tag: B_WAK_10
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2104,9 +1503,6 @@
             6: true
             7: true
         tag: B_WAK_11
-        tests:
-          bsa: null
-          sbsa: null
 5-Peripherals:
   groups:
     0-Operating system:
@@ -2120,10 +1516,6 @@
             6: true
             7: true
         tag: B_PER_01
-        tests:
-          bsa:
-          - 601
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2133,9 +1525,6 @@
             6: true
             7: true
         tag: B_PER_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2145,10 +1534,6 @@
             6: true
             7: true
         tag: B_PER_03
-        tests:
-          bsa:
-          - 602
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2158,9 +1543,6 @@
             6: true
             7: true
         tag: B_PER_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2170,11 +1552,6 @@
             6: true
             7: true
         tag: B_PER_05
-        tests:
-          bsa:
-          - 603
-          - 606
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2184,10 +1561,6 @@
             6: true
             7: true
         tag: B_PER_06
-        tests:
-          bsa:
-          - 604
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2197,9 +1570,6 @@
             6: true
             7: true
         tag: B_PER_07
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2209,9 +1579,6 @@
             6: true
             7: true
         tag: B_PER_08
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2221,9 +1588,6 @@
             6: true
             7: true
         tag: B_PER_09
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2233,9 +1597,6 @@
             6: true
             7: true
         tag: B_PER_10
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: true
           sbsa:
@@ -2245,12 +1606,6 @@
             6: true
             7: true
         tag: B_PER_12
-        tests:
-          bsa:
-          - 821
-          sbsa: null
-    1-Platform security:
-      rules:
       - required:
           bsa: true
           sbsa:
@@ -2260,9 +1615,6 @@
             6: true
             7: true
         tag: B_PER_11
-        tests:
-          bsa: null
-          sbsa: null
 6-PCIe:
   groups:
     0-Operating System:
@@ -2275,10 +1627,7 @@
             5: true
             6: true
             7: true
-        tag: S_L4PCI_01
-        tests:
-          bsa: null
-          sbsa: null
+        tag: S_L4PCI_1
       - required:
           bsa: false
           sbsa:
@@ -2287,10 +1636,7 @@
             5: true
             6: true
             7: true
-        tag: S_L4PCI_02
-        tests:
-          bsa: null
-          sbsa: null
+        tag: S_L4PCI_2
       - required:
           bsa: false
           sbsa:
@@ -2300,9 +1646,6 @@
             6: true
             7: true
         tag: B_REP_1
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2312,9 +1655,6 @@
             6: true
             7: true
         tag: B_IEP_1
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2324,9 +1664,15 @@
             6: false
             7: true
         tag: S_PCIe_01
-        tests:
-          bsa: null
-          sbsa: null
+      - required:
+          bsa: false
+          sbsa:
+            3: false
+            4: false
+            5: false
+            6: false
+            7: true
+        tag: S_PCI_02
       - required:
           bsa: false
           sbsa:
@@ -2336,9 +1682,6 @@
             6: false
             7: true
         tag: S_PCIe_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2348,9 +1691,6 @@
             6: false
             7: true
         tag: S_PCIe_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2360,9 +1700,6 @@
             6: false
             7: true
         tag: S_PCIe_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2372,9 +1709,6 @@
             6: false
             7: true
         tag: S_PCIe_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2384,9 +1718,6 @@
             6: false
             7: true
         tag: PCIE_ER_01
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2396,9 +1727,6 @@
             6: false
             7: true
         tag: PCIE_ER_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2408,9 +1736,6 @@
             6: false
             7: true
         tag: PCIE_ER_03
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2420,9 +1745,6 @@
             6: false
             7: true
         tag: PCIE_ER_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2432,9 +1754,6 @@
             6: false
             7: true
         tag: PCIE_ER_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2444,9 +1763,6 @@
             6: false
             7: true
         tag: PCIE_ER_06
-        tests:
-          bsa: null
-          sbsa: null
 7-Watchdog:
   groups:
     0-Operating System:
@@ -2460,10 +1776,6 @@
             6: true
             7: true
         tag: B_WD_01
-        tests:
-          bsa:
-          - 701
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2473,9 +1785,6 @@
             6: true
             7: true
         tag: B_WD_02
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2485,10 +1794,6 @@
             6: true
             7: true
         tag: B_WD_03
-        tests:
-          bsa:
-          - 702
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2498,9 +1803,6 @@
             6: true
             7: true
         tag: B_WD_04
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2510,9 +1812,6 @@
             6: true
             7: true
         tag: B_WD_05
-        tests:
-          bsa: null
-          sbsa: null
       - required:
           bsa: false
           sbsa:
@@ -2522,9 +1821,15 @@
             6: true
             7: true
         tag: B_WD_06
-        tests:
-          bsa: null
-          sbsa: null
+      - required:
+          bsa: false
+          sbsa:
+            3: true
+            4: true
+            5: true
+            6: true
+            7: true
+        tag: S_L3WD_01
       - required:
           bsa: false
           sbsa:
@@ -2534,7 +1839,3 @@
             6: true
             7: true
         tag: S_L6WD_01
-        tests:
-          bsa: null
-          sbsa:
-          - 301

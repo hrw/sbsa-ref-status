@@ -19,18 +19,47 @@ def handle_checklist():
 
     checklist = []
 
+    tag_to_test = {}
+
+    for test in status_bsa:
+        for tag in status_bsa[test]["tags"].split(','):
+            tag = tag.strip()
+            try:
+                tag_to_test[tag]["bsa"].append(test)
+            except KeyError:
+                tag_to_test[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
+                tag_to_test[tag]["bsa"].append(test)
+
+    for test in status_sbsa:
+        for tag in status_sbsa[test]["tags"].split(','):
+            tag = tag.strip()
+            try:
+                tag_to_test[tag]["sbsa"].append(test)
+            except KeyError:
+                tag_to_test[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
+                tag_to_test[tag]["sbsa"].append(test)
+
     for category in xbsa_checklist:
         category_name = category.split('-')[1]
         for group in xbsa_checklist[category]["groups"]:
             group_name = group.split('-')[1]
             for rule in xbsa_checklist[category]["groups"][group]["rules"]:
+
+                # not every entry from checklist has ACS tests
+                try:
+                    tests = tag_to_test[rule["tag"]]
+                    # this tag is present in BSA/SBSA spec, not only in ACS
+                    tag_to_test[rule["tag"]]["acs_only"] = False
+                except KeyError:
+                    tests = {"bsa": [], "sbsa": []}
+
                 checklist.append({
                     'category': category_name,
                     'group': group_name,
                     'tag': rule["tag"],
                     'bsa': rule["required"]["bsa"],
                     'sbsa': rule["required"]["sbsa"],
-                    'tests': rule["tests"]
+                    'tests': tests,
                 })
 
     return checklist
