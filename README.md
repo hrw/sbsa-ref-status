@@ -55,7 +55,6 @@ This work was done using some external patches.
 
 ## QEMU
 
-- target/arm: Add Neoverse-N1 registers from Chen Baozi
 - target/arm: Add ITS support from Shashi Mallela
 
 
