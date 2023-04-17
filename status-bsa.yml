@@ -278,7 +278,7 @@
     neoverse-n1: PASS
   tags: B_SMMU_02
   title: Check SMMU Granule Support
-305:
+303:
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -286,30 +286,22 @@
     neoverse-n1: SKIPPED
   tags: B_SMMU_06
   title: Check Large Physical Addr Support
-306:
+304:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
     max: SKIPPED
     neoverse-n1: PASS
   tags: B_SMMU_08
-  title: SMMU revision and S-EL2 support
-351:
-  status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-  tags: B_SMMU_16, B_SMMU_17
-  title: Check Stage2 SMMU functionality
+  title: S-EL2 not implemented & SMMU stage1 support
 352:
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
     max: SKIPPED
     neoverse-n1: FAIL
-  tags: B_SMMU_18
-  title: SMMU Revision,S-EL2 support Hyp
+  tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
+  title: S-EL2 not implemented & SMMU stage2 support
 353:
   status:
     cortex-a57: SKIPPED

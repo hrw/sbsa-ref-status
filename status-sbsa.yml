@@ -385,6 +385,15 @@
     neoverse-n1: FAIL
   tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
   title: SMMU Compatibility Check
+601:
+  level: '4'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L4PCI_2
+  title: Check EA Capability
 701:
   level: '6'
   status:
@@ -419,7 +428,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_1, RE_REC_1, RE_REC_2
+  tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Type 0/1 common config rules
 821:
   level: '6'
@@ -428,7 +437,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_1, RE_REC_1, RE_REC_2
+  tags: RE_REG_1, IE_REG_1
   title: Check Type 0 config header rules
 822:
   level: '6'
@@ -437,7 +446,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_REC_1, RE_REC_2
+  tags: IE_REG_3
   title: Check Type 1 config header rules
 823:
   level: '6'
@@ -446,7 +455,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: IE_REG_4
   title: Check PCIe capability rules
 824:
   level: '6'
@@ -455,7 +464,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device capabilites reg rules
 825:
   level: '6'
@@ -464,7 +473,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device Control register rule
 826:
   level: '6'
@@ -473,7 +482,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device cap 2 register rules
 827:
   level: '6'
@@ -482,7 +491,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device control 2 reg rules
 828:
   level: '6'
@@ -491,7 +500,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_2, RE_REC_1, RE_REC_2
+  tags: RE_REG_2, IE_REG_5
   title: Check Power management cap rules
 829:
   level: '6'
@@ -500,7 +509,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REG_2, RE_REC_1, RE_REC_2
+  tags: RE_REG_2, IE_REG_5
   title: Check Power management/status rule
 830:
   level: '6'
@@ -509,7 +518,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REC_1, RE_REC_2
+  tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Cmd Reg memory space enable
 831:
   level: '6'
@@ -518,7 +527,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REC_1, RE_REC_2
+  tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Type0/1 BIST Register rule
 832:
   level: '6'
@@ -527,7 +536,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REC_1, RE_REC_2
+  tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check HDR CapPtr Register rule
 833:
   level: '6'
@@ -536,7 +545,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_REC_1, RE_REC_2
+  tags: RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Max payload size supported
 834:
   level: '6'
@@ -572,7 +581,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: IE_REG_2
   title: Check OBFF supported rule
 838:
   level: '6'
@@ -581,7 +590,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: IE_REG_4
   title: Check CTRS and CTDS rule
 839:
   level: '6'
@@ -590,7 +599,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_REG_3, RE_REC_1, RE_REC_2
+  tags: IE_REG_2
   title: Check i-EP atomicop rule
 841:
   level: '6'
