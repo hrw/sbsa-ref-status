@@ -18,10 +18,9 @@ sbsa_level_checklist = {
             228,    # B_PPI_02 Check GIC Maintenance PPI Assignment
             301,    # B_SMMU_01 All SMMUs have same Arch Revision
             302,    # B_SMMU_02 Check SMMU Granule Support
-            305,    # B_SMMU_06 Check Large Physical Addr Support
-            306,    # B_SMMU_08 SMMU revision and S-EL2 support
-            351,    # B_SMMU_16, B_SMMU_17 Check Stage2 SMMU functionality
-            352,    # B_SMMU_18 SMMU Revision,S-EL2 support Hyp
+            303,    # B_SMMU_06 Check Large Physical Addr Support
+            304,    # B_SMMU_08 SMMU revision and S-EL2 support
+            352,    # B_SMMU_16, B_SMMU_17, B_SMMU_18 S-EL2 not implemented & SMMU stage2 support
             353,    # B_SMMU_19 SMMUv2 unique intr per ctxt bank
             354,    # B_SMMU_21, SMMU_01 SMMUv3 Integration compliance
             401,    # B_TIME_01, B_TIME_02 Check Counter Frequency
@@ -60,7 +59,7 @@ sbsa_level_checklist = {
             6,      # S_L4PE_02 Check DC CVAP support
             7,      # S_L4PE_03 Check for 16-Bit VMID
             8,      # S_L4PE_04 Check for Virtual host extensions
-            462     # S_L4PCI_2 Check EA Capability
+            601     # S_L4PCI_2 Check EA Capability
         }
     },
     5: {
