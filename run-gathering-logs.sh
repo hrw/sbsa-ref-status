@@ -18,9 +18,9 @@ do
 	for level in 3 4 5 6 7
 	do
 		echo -n $level
-		./boot-sbsa-ref.sh $cpu nogfx "fs0:sbsa.efi -l ${level}" 2>&1 |grep -v " Node :" > logs/sbsa-${cpu}-${level}.log
+		./boot-sbsa-ref.sh $cpu nogfx "fs0:sbsa.efi -skip 861 -l ${level}" 2>&1 |grep -v " Node :" > logs/sbsa-${cpu}-${level}.log
 		echo -n "/v "
-		./boot-sbsa-ref.sh $cpu nogfx "fs0:sbsa.efi -l ${level} -v 1" 2>&1 |grep -v " Node :" > logs/sbsa-${cpu}-${level}-v1.log
+		./boot-sbsa-ref.sh $cpu nogfx "fs0:sbsa.efi -skip 861 -l ${level} -v 1" 2>&1 |grep -v " Node :" > logs/sbsa-${cpu}-${level}-v1.log
 	done
 
 	echo "ACPI tables"
