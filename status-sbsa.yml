@@ -327,7 +327,7 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: FAIL
+    max: PASS
     neoverse-n1: FAIL
   tags: S_L7PE_10
   title: Check for enhanced PAN feature
