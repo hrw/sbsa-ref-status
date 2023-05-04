@@ -42,7 +42,6 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
                                                     "PCI_", "PMU_", "RE_",
                                                     "S_")):
                 test_tags = line.strip()
-                print(f"{test_id}\t{test_tags}\t{test_title}")
                 status_sbsa[test_id]["tags"] = test_tags
                 status_sbsa[test_id]["title"] = test_title
 

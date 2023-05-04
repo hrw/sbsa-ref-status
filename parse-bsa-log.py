@@ -37,7 +37,6 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
 
             if test_id and line.strip().startswith(("B_", "ITS_", "PCI_")):
                 test_tags = line.strip()
-                print(f"{test_id}\t{test_tags}\t{test_title}")
                 status_bsa[test_id]["tags"] = test_tags
                 status_bsa[test_id]["title"] = test_title
 
