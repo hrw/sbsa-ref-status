@@ -761,7 +761,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: S_PCI_02
+  tags: S_PCIe_02
   title: Check RootPort P&NP Memory Access
 862:
   level: '6'
