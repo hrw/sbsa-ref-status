@@ -9,7 +9,7 @@ do
 	echo -n "/v "
 	./boot-sbsa-ref.sh $cpu nogfx "fs0:bsa.efi -v 1" 2>&1 |grep -v " Node :" > logs/bsa-${cpu}-v1.log
 
-	echo -n "sbsa"
+	echo -n "BSA -sbsa"
 	./boot-sbsa-ref.sh $cpu nogfx "fs0:bsa.efi -sbsa" 2>&1 |grep -v " Node :" > logs/bsa-sbsa-${cpu}.log
 	echo -n "/v "
 	./boot-sbsa-ref.sh $cpu nogfx "fs0:bsa.efi -sbsa -v 1" 2>&1 |grep -v " Node :" > logs/bsa-sbsa-${cpu}-v1.log
