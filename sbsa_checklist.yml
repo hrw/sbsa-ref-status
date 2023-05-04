@@ -1,0 +1,253 @@
+3:
+  bsa:
+    # PE / Operating system
+    - "B_PE_01"
+    - "B_PE_02"
+    - "B_PE_03"
+    - "B_PE_04"
+    - "B_PE_05"
+    - "B_PE_06"
+    - "B_PE_07"
+    - "B_PE_08"
+    - "B_PE_09"
+    - "B_PE_10"
+    - "B_PE_11"
+    - "B_PE_12"
+    - "B_PE_13"
+    - "B_PE_14"
+    # PE / Hypervisor
+    - "B_PE_18"
+    - "B_PE_19"
+    - "B_PE_20"
+    - "B_PE_21"
+    - "B_PE_22"
+    # PE / Platform security
+    - "B_PE_23"
+    - "B_PE_24"
+    # Memory map / Operating system
+    - "B_MEM_01"
+    - "B_MEM_02"
+    - "B_MEM_03"
+    - "B_MEM_04"
+    - "B_MEM_05"
+    - "B_MEM_06"
+    - "B_MEM_07"
+    # Memory map / Platform security
+    - "B_MEM_08"
+    - "B_MEM_09"
+    # Interrupts / Operating system
+    - "B_GIC_03"
+    - "B_GIC_04"
+    - "B_GIC_05"
+    - "B_PPI_01"
+    # Interrupts / Hypervisor
+    - "B_PPI_02"
+    # Interrupts / Platform security
+    - "B_PPI_03"
+    # SMMU / Operating system
+    - "B_SMMU_01"
+    - "B_SMMU_02"
+    - "B_SMMU_06"
+    - "B_SMMU_07"
+    - "B_SMMU_08"
+    - "B_SMMU_12"
+    # SMMU / Hypervisor
+    - "B_SMMU_16"
+    - "B_SMMU_17"
+    - "B_SMMU_18"
+    - "B_SMMU_19"
+    - "B_SMMU_21"
+    # Timer subsystem / Operating system
+    - "B_TIME_01"
+    - "B_TIME_02"
+    - "B_TIME_03"
+    - "B_TIME_04"
+    - "B_TIME_05"
+    - "B_TIME_06"
+    - "B_TIME_07"
+    - "B_TIME_08"
+    - "B_TIME_09"
+    - "B_TIME_10"
+    # Power and wakeup
+    - "B_WAK_01"
+    - "B_WAK_02"
+    - "B_WAK_03"
+    - "B_WAK_04"
+    - "B_WAK_05"
+    - "B_WAK_06"
+    - "B_WAK_07"
+    - "B_WAK_08"
+    - "B_WAK_09"
+    - "B_WAK_10"
+    - "B_WAK_11"
+    # Peripherals / Operating system
+    - "B_PER_01"
+    - "B_PER_02"
+    - "B_PER_03"
+    - "B_PER_04"
+    - "B_PER_05"
+    - "B_PER_06"
+    - "B_PER_07"
+    - "B_PER_08"
+    - "B_PER_09"
+    - "B_PER_10"
+    - "B_PER_12"
+    # Peripherals / Platform security
+    - "B_PER_11"
+    # Watchdog
+    - "B_WD_01"
+    - "B_WD_02"
+    - "B_WD_03"
+    - "B_WD_04"
+    - "B_WD_05"
+  sbsa:
+    # PE / Operating system
+    - "S_L3PE_01"
+    - "S_L3PE_02"
+    - "S_L3PE_03"
+    - "S_L3PE_04"
+    # Memory map / Operating system
+    - "S_L3MM_01"
+    - "S_L3MM_02"
+    # Interrupts / Operating system
+    - "S_L3GI_01"
+    - "S_L3GI_02"
+    - "S_L3PP_01"
+    # SMMU / Operating system
+    - "S_L3SM_01"
+4:
+  bsa:
+  sbsa:
+    # PE
+    - "S_L4PE_01"
+    - "S_L4PE_02"
+    - "S_L4PE_03"
+    - "S_L4PE_04"
+    # SMMU
+    - "S_L4SM_01"
+    - "S_L4SM_02"
+    - "S_L4SM_03"
+    # PCIe
+    - "S_L4PCI_1"
+    - "S_L4PCI_2"
+5:
+  bsa:
+    # SMMU
+    - "B_SMMU_09"
+    - "B_SMMU_11"
+    - "B_SMMU_20"
+    - "B_SMMU_22"
+  sbsa:
+    # PE
+    - "S_L5PE_01"
+    - "S_L5PE_02"
+    - "S_L5PE_03"
+    - "S_L5PE_04"
+    - "S_L5PE_05"
+    - "S_L5PE_06"
+    - "S_L5PE_07"
+    - "S_MPAM_PE"
+    # GIC
+    - "S_L5GI_01"
+    # SMMU
+    - "S_L5SM_01"
+    - "S_L5SM_02"
+    - "S_L5SM_03"
+    # Timer
+    - "S_L5TI_01"
+    # Interrupts
+    - "S_L5PP_01"
+6:
+  bsa:
+    # PE
+    - "B_PE_16"
+    - "B_PE_17"
+    # SMMU
+    - "B_SMMU_03"
+    - "B_SMMU_04"
+    - "B_SMMU_05"
+    - "B_SMMU_13"
+    - "B_SMMU_14"
+    - "B_SMMU_23"
+    # PCI
+    - "B_REP_1"
+    - "B_IEP_1"
+  sbsa:
+    # PE
+    - "S_L6PE_02"
+    - "S_L6PE_03"
+    - "S_L6PE_04"
+    - "S_L6PE_05"
+    - "S_L6PE_06"
+    # those are BSA tags but tests are in SBSA ACS
+    - "B_SEC_01"
+    - "B_SEC_02"
+    - "B_SEC_03"
+    - "B_SEC_04"
+    - "B_SEC_05"
+    # SMMU
+    - "S_L6SM_01"
+    - "S_L6SM_02"
+    - "S_L6SM_03"
+    # Watchdog
+    - "S_L6WD_01"
+    # RAS
+    - "S_RAS_01"
+7:
+  bsa:
+  sbsa:
+    # PE
+    - "S_L7PE_01"
+    - "S_L7PE_02"
+    - "S_L7PE_03"
+    - "S_L7PE_04"
+    - "S_L7PE_05"
+    - "S_L7PE_06"
+    - "S_L7PE_07"
+    - "S_L7PE_08"
+    - "S_L7PE_09"
+    - "S_L7PE_10"
+    # PE RAS
+    - "S_L7RAS_1"
+    - "S_L7RAS_2"
+    # PE TME
+    - "S_L7TME_1"
+    - "S_L7TME_2"
+    - "S_L7TME_3"
+    - "S_L7TME_4"
+    - "S_L7TME_5"
+    # PE MPAM
+    - "S_L7MP_01"
+    - "S_L7MP_02"
+    - "S_L7MP_03"
+    - "S_L7MP_04"
+    - "S_L7MP_05"
+    - "S_L7MP_06"
+    - "S_L7MP_07"
+    - "S_L7MP_08"
+    # Entropy
+    - "S_L7ENT_1"
+    # SMMU
+    - "S_L7SM_01"
+    - "S_L7SM_02"
+    - "S_L7SM_03"
+    - "S_L7SM_04"
+    # PMU
+    - "S_L7PMU"
+    # RAS
+    - "SYS_RAS"
+    - "SYS_RAS_1"
+    - "SYS_RAS_2"
+    - "SYS_RAS_3"
+    # PCIe
+    - "S_PCIe_01"
+    - "S_PCIe_02"
+    - "S_PCIe_03"
+    - "S_PCIe_04"
+    - "S_PCIe_05"
+    - "PCI_ER_01"
+    - "PCI_ER_02"
+    - "PCI_ER_03"
+    - "PCI_ER_04"
+    - "PCI_ER_05"
+    - "PCI_ER_06"
