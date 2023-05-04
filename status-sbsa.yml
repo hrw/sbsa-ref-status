@@ -385,6 +385,123 @@
     neoverse-n1: FAIL
   tags: S_L5SM_01, S_L5SM_02
   title: Check SMMUv3.2 or higher
+303:
+  level: '5'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_09
+  title: SMMU revision and S-EL2 support
+304:
+  level: '5'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_20
+  title: SMMU Revision,S-EL2 support Hyp
+305:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L6SM_01
+  title: Check SMMU Coherent Access Support
+306:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: S_L6SM_02
+  title: Check SMMU HTTU Support
+307:
+  level: '6'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: S_L6SM_03
+  title: Check SMMU MSI Support
+308:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: B_SMMU_23
+  title: Check SMMU 16 Bit VMID Support
+309:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_03
+  title: Check Large Virtual Addr Support
+310:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: PASS
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_04, B_SMMU_05
+  title: Check TLB Range Invalidation
+311:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_SMMU_13
+  title: Check SMMU 16 Bit ASID Support
+312:
+  level: '6'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_SMMU_14
+  title: Check SMMU Endianess Support
+313:
+  level: '7'
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L7SM_01
+  title: Check if all DMA reqs behind SMMU
+314:
+  level: '7'
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: S_L7SM_03, S_L7SM_04
+  title: Check SMMUv3 PMU Extension
+315:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_11, B_SMMU_22
+  title: Check system for MPAM support
 601:
   level: '4'
   status:
