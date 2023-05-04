@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL1: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL1: Built : 10:33:27, Apr 28 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: cortex_a72: CPU workaround for 859971 was missing!
 WARNING: BL1: cortex_a72: CPU workaround for 1319367 was missing!
@@ -13,8 +13,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL2: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL2: Built : 10:33:27, Apr 28 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -23,8 +23,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL31: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL31: Built : 10:33:27, Apr 28 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -37,7 +37,7 @@ INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 15:53:43 on Apr  7 2023)
+UEFI firmware (version 1.0 built at 11:18:59 on Apr 24 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)

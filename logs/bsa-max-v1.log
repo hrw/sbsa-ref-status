@@ -1,6 +1,6 @@
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL1: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL1: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL1: Built : 10:33:27, Apr 28 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 INFO:    BL1: Loading BL2
 INFO:    Loading image id=1 at address 0x3fcd1000
@@ -8,8 +8,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL2: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL2: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL2: Built : 10:33:27, Apr 28 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -18,8 +18,8 @@ INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-531-g226f4c8e3
-NOTICE:  BL31: Built : 12:50:14, Mar 15 2023
+NOTICE:  BL31: v2.8(debug):v2.8-848-g5ed9f7ea8
+NOTICE:  BL31: Built : 10:33:27, Apr 28 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -27,7 +27,7 @@ INFO:    BL31: Initializing runtime services
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 15:53:43 on Apr  7 2023)
+UEFI firmware (version 1.0 built at 11:18:59 on Apr 24 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -212,21 +212,21 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
   Reserved region of type 5 [0x100FC020000, 0x100FC0B0000]
   Reserved region of type 9 [0x100FC0B0000, 0x100FC0F0000]
-  Reserved region of type 7 [0x100FC0F0000, 0x100FE16C000]
-  Reserved region of type 4 [0x100FE16C000, 0x100FEFE4000]
+  Reserved region of type 7 [0x100FC0F0000, 0x100FE14C000]
+  Reserved region of type 4 [0x100FE14C000, 0x100FEFE4000]
   Reserved region of type 7 [0x100FEFE4000, 0x100FF30E000]
   Reserved region of type 3 [0x100FF30E000, 0x100FF5C0000]
   Reserved region of type 5 [0x100FF5C0000, 0x100FF750000]
   Reserved region of type 6 [0x100FF750000, 0x100FF9A0000]
-  Reserved region of type 7 [0x100FF9A0000, 0x100FF9BD000]
-  Reserved region of type 4 [0x100FF9BD000, 0x100FF9DF000]
-  Reserved region of type 3 [0x100FF9DF000, 0x100FFA16000]
-  Reserved region of type 4 [0x100FFA16000, 0x100FFFE9000]
-  Reserved region of type 3 [0x100FFFE9000, 0x100FFFF8000]
+  Reserved region of type 7 [0x100FF9A0000, 0x100FF9BB000]
+  Reserved region of type 4 [0x100FF9BB000, 0x100FF9DD000]
+  Reserved region of type 3 [0x100FF9DD000, 0x100FFA14000]
+  Reserved region of type 4 [0x100FFA14000, 0x100FFFE8000]
+  Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE20FB98 
+ Shared memory is 100FE20FC18 
 
       ***  Starting PE tests ***  
 Operating System View:
@@ -464,8 +464,8 @@ Operating System View:
 
  206 : Check PPI Assignments for OS                   START
 
-       Received interrupt   
-       Received interrupt   
+       Received phy el1 interrupt   
+       Received vir el1 interrupt   
        B_PPI_01
                                        : Result:  PASS 
          END
@@ -482,7 +482,7 @@ Hypervisor View:
 
  227 : Check NS EL2-Phy timer PPI Assignment          START
 
-       Received interrupt     
+       Received phy el2 interrupt     
        B_PPI_02
                                        : Result:  PASS 
          END
@@ -568,7 +568,7 @@ Operating System View:
                                        : Result:  PASS 
          END
 
- 305 : Check Large Physical Addr Support              START
+ 303 : Check Large Physical Addr Support              START
 
        Large PA Not Supported in SMMU 0
        Failed on PE -    0
@@ -576,7 +576,7 @@ Operating System View:
        Checkpoint --  2                           : Result:  FAIL 
          END
 
- 306 : SMMU revision and S-EL2 support                START
+ 304 : S-EL2 not implemented & SMMU stage1 support         START
 
        S-EL2 implemented...Skipping
        B_SMMU_08
@@ -585,19 +585,10 @@ Operating System View:
 
 
 Hypervisor View:
- 351 : Check Stage2 SMMU functionality                START
-
-	 Detected SMMUv3 
-	 Stage 2 Translation not supported 
-       Failed on PE -    0
-       B_SMMU_16, B_SMMU_17
-       Checkpoint --  1                           : Result:  FAIL 
-         END
-
- 352 : SMMU Revision,S-EL2 support Hyp                START
+ 352 : S-EL2 not implemented & SMMU stage2 support         START
 
        S-EL2 implemented...Skipping
-       B_SMMU_18
+       B_SMMU_16, B_SMMU_17, B_SMMU_18
        Checkpoint --  2                           : Result:  SKIPPED 
          END
 
@@ -1256,7 +1247,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   84  Tests Passed  =   67  Tests Failed =    5
+     Total Tests run  =   83  Tests Passed  =   67  Tests Failed =    4
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 
