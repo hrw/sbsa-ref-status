@@ -368,23 +368,23 @@
   tags: S_L5PP_01
   title: Check Reserved PPI Assignments
 301:
-  level: '3'
+  level: '4'
   status:
     cortex-a57: PASS
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L3SM_01, S_L5SM_01
-  title: Check SMMU Version
+  tags: S_L4SM_01, S_L4SM_02
+  title: SMMU Compatibility Check
 302:
-  level: '4'
+  level: '5'
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
-  tags: S_L4SM_01, S_L4SM_02, S_L5SM_01, S_L5SM_02
-  title: SMMU Compatibility Check
+  tags: S_L5SM_01, S_L5SM_02
+  title: Check SMMUv3.2 or higher
 601:
   level: '4'
   status:
