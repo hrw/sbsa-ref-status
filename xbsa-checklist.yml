@@ -1806,15 +1806,6 @@
       - required:
           bsa: false
           sbsa:
-            3: false
-            4: true
-            5: true
-            6: true
-            7: true
-        tag: B_WD_06
-      - required:
-          bsa: false
-          sbsa:
             3: true
             4: true
             5: true
