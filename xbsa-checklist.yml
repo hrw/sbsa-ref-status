@@ -1596,7 +1596,7 @@
             5: true
             6: true
             7: true
-        tag: B_PER_12
+        tag: B_PER_11
       - required:
           bsa: true
           sbsa:
@@ -1605,7 +1605,7 @@
             5: true
             6: true
             7: true
-        tag: B_PER_11
+        tag: B_PER_12
 6-PCIe:
   groups:
     0-Operating System:
