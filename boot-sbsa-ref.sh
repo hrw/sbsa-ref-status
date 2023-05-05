@@ -13,6 +13,7 @@ fi
 
 if [ ! -z "$3" ]; then
 	echo "mode 100 31" > disks/virtual/startup.nsh
+	echo "pci"        >> disks/virtual/startup.nsh
 	echo "$3"         >> disks/virtual/startup.nsh
 if [ -z "$4" ]; then
  	echo "reset -c"   >> disks/virtual/startup.nsh
