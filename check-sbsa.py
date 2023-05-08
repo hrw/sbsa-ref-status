@@ -82,6 +82,11 @@ for cpu in ["cortex-a57", "cortex-a72", "neoverse-n1", "max"]:
 
     level_result = False
     for level in range(3, 8):
+
+        # SBSA Level 4 requires Arm v8.3
+        if cpu != "max" and level > 3:
+            continue
+
         level_result = check_sbsa_level(cpu, level, level_result)
         print("")
 
