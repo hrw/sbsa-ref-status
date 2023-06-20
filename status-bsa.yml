@@ -205,7 +205,15 @@
     max: PASS
     neoverse-n1: PASS
   tags: B_PPI_01
-  title: Check PPI Assignments for OS
+  title: Check EL1-Phy timer PPI assignment
+207:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: B_PPI_01
+  title: Check EL1-Virt timer PPI assignment
 226:
   status:
     cortex-a57: SKIPPED
@@ -285,7 +293,7 @@
     max: FAIL
     neoverse-n1: SKIPPED
   tags: B_SMMU_06
-  title: Check Large Physical Addr Support
+  title: Check SMMU Large Physical Addr Support
 304:
   status:
     cortex-a57: PASS
@@ -504,10 +512,10 @@
   title: Legacy int must be SPI & lvl-sensitive
 808:
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
   tags: PCI_IN_16
   title: Check all 1's for out of range
 809:
@@ -600,10 +608,10 @@
   title: Device cap 2 register rules
 830:
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
   tags: PCI_IN_19
   title: Check Cmd Reg memory space enable
 831:
@@ -632,10 +640,10 @@
   title: Check Max payload size supported
 835:
   status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
   tags: PCI_SM_02
   title: Check Function level reset
 836:
@@ -670,3 +678,27 @@
     neoverse-n1: PASS
   tags: PCI_MSI_01
   title: Check MSI support for PCIe dev
+840:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: PCI_IC_11
+  title: PCIe RC,PE - Same Inr Shareable Domain
+841:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+  tags: PCI_MM_04
+  title: NP type-1 PCIe supp 32-bit only
+842:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_PAS_1
+  title: PASID support atleast 16 bits

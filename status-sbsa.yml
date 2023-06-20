@@ -136,10 +136,10 @@
 16:
   level: '5'
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
   tags: S_MPAM_PE
   title: Check MPAM LLC Requirements
 17:
@@ -267,7 +267,7 @@
     max: FAIL
     neoverse-n1: FAIL
   tags: S_L7PE_03
-  title: Check for AMU Support
+  title: Check for AMUv1p1 Support
 31:
   level: '7'
   status:
@@ -404,14 +404,14 @@
   tags: B_SMMU_20
   title: SMMU Revision,S-EL2 support Hyp
 305:
-  level: '6'
+  level: '5'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-  tags: S_L6SM_01
-  title: Check SMMU Coherent Access Support
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: B_SMMU_11, B_SMMU_22, S_L5SM_03
+  title: Check SMMU for MPAM support
 306:
   level: '6'
   status:
@@ -435,8 +435,8 @@
   status:
     cortex-a57: PASS
     cortex-a72: PASS
-    max: FAIL
-    neoverse-n1: FAIL
+    max: PASS
+    neoverse-n1: PASS
   tags: B_SMMU_23
   title: Check SMMU 16 Bit VMID Support
 309:
@@ -476,14 +476,14 @@
   tags: B_SMMU_14
   title: Check SMMU Endianess Support
 313:
-  level: '7'
+  level: '6'
   status:
     cortex-a57: PASS
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: S_L7SM_01
-  title: Check if all DMA reqs behind SMMU
+  tags: S_L6SM_01
+  title: Check SMMU Coherent Access Support
 314:
   level: '7'
   status:
@@ -494,14 +494,14 @@
   tags: S_L7SM_03, S_L7SM_04
   title: Check SMMUv3 PMU Extension
 315:
-  level: '6'
+  level: '7'
   status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-  tags: B_SMMU_11, B_SMMU_22
-  title: Check system for MPAM support
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+  tags: S_L7SM_01
+  title: Check if all DMA reqs behind SMMU
 601:
   level: '4'
   status:
@@ -613,19 +613,19 @@
 828:
   level: '6'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
   tags: RE_REG_2, IE_REG_5
   title: Check Power management cap rules
 829:
   level: '6'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
   tags: RE_REG_2, IE_REG_5
   title: Check Power management/status rule
 830:
@@ -730,10 +730,10 @@
 842:
   level: '6'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
   tags: RE_PWR_1
   title: Check Power Management rules
 843:
@@ -766,10 +766,10 @@
 846:
   level: '6'
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
   tags: PCI_IN_18
   title: Check RP Byte Enable Rules
 847:
