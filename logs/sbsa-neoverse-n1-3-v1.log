@@ -1,6 +1,46 @@
+QEMU command line arguments:
+-machine sbsa-ref
+-m 4096
+-smp 2
+-cpu neoverse-n1
+-drive if=pflash,file=SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
+-usb
+-device usb-kbd
+-device usb-tablet
+-nographic
+-watchdog-action none
+-no-reboot
+-monitor telnet::45454,server,nowait
+-serial stdio
+-device pcie-root-port,id=root_port_for_switch1,chassis=1,slot=12
+-device x3130-upstream,id=upstream_port1,bus=root_port_for_switch1
+-device xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20
+-device ac97,bus=downstream_port1
+-device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
+-device nvme,serial=deadbeef,bus=root_port_for_nvme1
+-device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
+-device igb
+-device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
+-device qemu-xhci
+-device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
+-device ac97
+-device pcie-root-port,id=root_port_for_pci,chassis=1
+-device pcie-pci-bridge,id=pci,bus=root_port_for_pci
+-device virtio-rng-pci,bus=pci,addr=8
+-device pxb-pcie,id=pxb1,bus_nr=2
+-device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
+-device ahci,bus=root_port_for_ahci
+
+EFI startup script:
+pci
+fs0:sbsa.efi -skip 861 -l 3 -v 1
+reset -c
+
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.8(debug):v2.8-848-g5ed9f7ea8
-NOTICE:  BL1: Built : 10:33:27, Apr 28 2023
+NOTICE:  BL1: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
+NOTICE:  BL1: Built : 15:54:31, Jun 20 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: neoverse_n1: CPU workaround for 1946160 was missing!
 WARNING: BL1: neoverse_n1: CPU workaround for 2743102 was missing!
@@ -11,18 +51,22 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.8(debug):v2.8-848-g5ed9f7ea8
-NOTICE:  BL2: Built : 10:33:27, Apr 28 2023
+NOTICE:  BL2: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
+NOTICE:  BL2: Built : 15:54:31, Jun 20 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcf9089
+INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcfb0b9
 INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
 INFO:    Entry point address = 0x3fcee000
 INFO:    SPSR = 0x3cd
-NOTICE:  BL31: v2.8(debug):v2.8-848-g5ed9f7ea8
-NOTICE:  BL31: Built : 10:33:27, Apr 28 2023
+INFO:    Platform version: 0.2
+INFO:    GICD base = 0x40060000
+INFO:    GICR base = 0x40080000
+INFO:    GICI base = 0x44081000
+NOTICE:  BL31: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
+NOTICE:  BL31: Built : 15:54:31, Jun 20 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -33,7 +77,8 @@ INFO:    BL31: neoverse_n1: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 11:18:59 on Apr 24 2023)
+UEFI firmware (version 1.0 built at 16:00:18 on Jun 20 2023)
+INFO:    Platform version requested
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -45,8 +90,49 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mmode 100 31
-[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 3 -v 1
+[1m[33m[40mShell> [0m[37m[40mpci
+   Seg  Bus  Dev  Func
+   ---  ---  ---  ----
+    [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 0008 Prog Interface 0
+    [1m[33m[40m00   00   01    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10D3 Prog Interface 0
+    [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
+             Vendor 1234 Device 1111 Prog Interface 0
+    [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   04    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10C9 Prog Interface 0
+    [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mSerial Bus Controllers - USB
+             Vendor 1B36 Device 000D Prog Interface 30
+    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   0A    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
+    [1m[33m[40m00   00   0B    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   0C    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 000B Prog Interface 0
+    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 104C Device 8232 Prog Interface 0
+    [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
+             Vendor 8086 Device 2922 Prog Interface 1
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
+em
+             Vendor 1B36 Device 0010 Prog Interface 2
+    [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000E Prog Interface 0
+    [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
+             Vendor 1AF4 Device 1005 Prog Interface 0
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 3 -v 1
 
 
  SBSA Architecture Compliance Suite 
@@ -56,23 +142,15 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
- MADT is at FC0EF598 and length is 1A8 
+ MADT is at FC10F598 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
  MPIDR 0 PE num 0 
   Flags 1 
   PE Enabled 1, Online Capable 0
  MPIDR 1 PE num 1 
-  Flags 1 
-  PE Enabled 1, Online Capable 0
- MPIDR 2 PE num 2 
-  Flags 1 
-  PE Enabled 1, Online Capable 0
- MPIDR 3 PE num 3 
- PE_INFO: Number of PE detected       :    4 
- MADT is at FC0EF598 and length is 1A8 
- GICH base 2C010000 
- GICH base 2C010000 
+ PE_INFO: Number of PE detected       :    2 
+ MADT is at FC10F598 and length is 108 
  GICH base 2C010000 
  GICH base 2C010000 
  GIC DIS base 40060000 
@@ -81,11 +159,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC ITS ID0 
  GIC_INFO: Number of GICD             :    1 
  GIC_INFO: Number of ITS              :    1 
- GTDT is at FC0EFD18 and length is 84 
+ GTDT is at FC10FD18 and length is 84 
  TIMER_INFO: Number of system timers  :    0 
  Watchdog base = 0x50011000 INTID = 0x30 
  WATCHDOG_INFO: Number of Watchdogs   :    1 
-PPTT table found at 0x100FC0EF818 with length 0xF0
+PPTT table found at 0x100FC10F718 with length 0xB8
 
 Cache info * Index 0 *
   Offset:                  0x38
@@ -127,51 +205,13 @@ Cache info * Index 4 *
   Next level index:        1
   Private flag:            0x1
 
-Cache info * Index 5 *
-  Offset:                  0x38
-  Type:                    0x0
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
-  Private flag:            0x1
-
-Cache info * Index 6 *
-  Offset:                  0x50
-  Type:                    0x1
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
-  Private flag:            0x1
-
-Cache info * Index 7 *
-  Offset:                  0x38
-  Type:                    0x0
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
-  Private flag:            0x1
-
-Cache info * Index 8 *
-  Offset:                  0x50
-  Type:                    0x1
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
-  Private flag:            0x1
-
 PE level one cache index info
 PE Index * 0 *
   Level 1 Cache index(s) : 0, 2,
 
 PE Index * 1 *
   Level 1 Cache index(s) : 3, 4,
-
-PE Index * 2 *
-  Level 1 Cache index(s) : 5, 6,
-
-PE Index * 3 *
-  Level 1 Cache index(s) : 7, 8,
- CACHE_INFO: Number of cache nodes    :    9
+ CACHE_INFO: Number of cache nodes    :    5
  MPAM table not found
  MPAM INFO: Number of MSC nodes       :    0 
  HMAT ACPI table not found
@@ -182,25 +222,36 @@ PE Index * 3 *
  RAS2_INFO: Num of RAS2 memory entries:    0 
  PCIE_INFO: Number of ECAM regions    :    1 
    Dev bdf 0x000100 DP type 0x200   RP bdf 0xFFFFFFFF
+   Dev bdf 0x000200 DP type 0x200   RP bdf 0xFFFFFFFF
    Dev bdf 0x000300 DP type 0x010   RP bdf 0x000300
    Dev bdf 0x000400 DP type 0x010   RP bdf 0x000400
    Dev bdf 0x000500 DP type 0x010   RP bdf 0x000500
-   Dev bdf 0x000600 DP type 0x010   RP bdf 0x000600
-   Dev bdf 0x010000 DP type 0x001   RP bdf 0x000300
-   Dev bdf 0x020000 DP type 0x001   RP bdf 0x000400
-   Dev bdf 0x030000 DP type 0x001   RP bdf 0x000500
-   Dev bdf 0x040000 DP type 0x080   RP bdf 0x000600
- PCIE_INFO: Number of BDFs found      :    9
- PCIE_INFO: Number of RCiEP           :    1 
+   Dev bdf 0x000600 DP type 0x200   RP bdf 0xFFFFFFFF
+   Dev bdf 0x000700 DP type 0x010   RP bdf 0x000700
+   Dev bdf 0x000800 DP type 0x200   RP bdf 0xFFFFFFFF
+   Dev bdf 0x000900 DP type 0x010   RP bdf 0x000900
+   Dev bdf 0x000B00 DP type 0x010   RP bdf 0x000B00
+   Dev bdf 0x010000 DP type 0x020   RP bdf 0x000300
+   Dev bdf 0x020000 DP type 0x010   RP bdf 0x020000
+   Dev bdf 0x040000 DP type 0x001   RP bdf 0x000400
+   Dev bdf 0x080000 DP type 0x080   RP bdf 0x000B00
+ PCIE_INFO: Number of BDFs found      :    14
+ PCIE_INFO: Number of RCiEP           :    4 
  PCIE_INFO: Number of RCEC            :    0 
- PCIE_INFO: Number of EP              :    3 
- PCIE_INFO: Number of RP              :    4 
+ PCIE_INFO: Number of EP              :    1 
+ PCIE_INFO: Number of RP              :    7 
  PCIE_INFO: Number of iEP_EP          :    0 
  PCIE_INFO: Number of iEP_RP          :    0 
+ PCIE_INFO: Number of UP of switch    :    1 
+ PCIE_INFO: Number of DP of switch    :    0 
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0 
+ PCIE_INFO: Number of PCIe/PCI Bridge :    1 
 
   ECAM 0:  Base 0xF0000000
   BDF: 0x100
   Seg: 0x0, Bus: 0x00, Dev: 0x01, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  BDF: 0x200
+  Seg: 0x0, Bus: 0x00, Dev: 0x02, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
   BDF: 0x300
   Seg: 0x0, Bus: 0x00, Dev: 0x03, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x400
@@ -208,15 +259,23 @@ PE Index * 3 *
   BDF: 0x500
   Seg: 0x0, Bus: 0x00, Dev: 0x05, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x600
-  Seg: 0x0, Bus: 0x00, Dev: 0x06, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x00, Dev: 0x06, Func: 0x0, Dev ID: 0x10C9, Vendor ID: 0x8086
+  BDF: 0x700
+  Seg: 0x0, Bus: 0x00, Dev: 0x07, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x800
+  Seg: 0x0, Bus: 0x00, Dev: 0x08, Func: 0x0, Dev ID: 0x000D, Vendor ID: 0x1B36
+  BDF: 0x900
+  Seg: 0x0, Bus: 0x00, Dev: 0x09, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0xB00
+  Seg: 0x0, Bus: 0x00, Dev: 0x0B, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x10000
-  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x000D, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x8232, Vendor ID: 0x104C
   BDF: 0x20000
-  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
-  BDF: 0x30000
-  Seg: 0x0, Bus: 0x03, Dev: 0x00, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x40000
-  Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x000E, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
+  BDF: 0x80000
+  Seg: 0x0, Bus: 0x08, Dev: 0x00, Func: 0x0, Dev ID: 0x000E, Vendor ID: 0x1B36
  IORT node offset:30, type: 0
  IORT node offset:48, type: 4
  IORT node offset:30, type: 0
@@ -238,26 +297,36 @@ PE Index * 3 *
 
  SMMU_INFO: Number of SMMU CTRL       :    1 
  000.00.00 class_code = 0 6
- 000.00.12 class_code = 6 1
+ 000.00.19 class_code = 6 1
  000.01.01 class_code = 0 2
- 000.02.02 class_code = 0 3
+ 000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
- 000.04.05 class_code = 4 6
- 000.05.07 class_code = 4 6
- 000.06.09 class_code = 4 6
- 001.00.04 class_code = 3 12
- Found a USB controller 82400004 
- 005.08.11 class_code = 255 0
+ 000.04.07 class_code = 4 6
+ 000.05.09 class_code = 4 6
+ 000.06.10 class_code = 0 2
+ 000.07.11 class_code = 4 6
+ 000.08.12 class_code = 3 12
+ Found a USB controller 140004 
+ 000.09.13 class_code = 4 6
+ 000.10.14 class_code = 1 4
+ 000.11.15 class_code = 4 6
+ 000.12.18 class_code = 0 6
  000.00.00 class_code = 0 6
- 000.00.12 class_code = 6 1
+ 000.00.19 class_code = 6 1
  Found a SATA controller 60100000 
  000.01.01 class_code = 0 2
- 000.02.02 class_code = 0 3
+ 000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
- 000.04.05 class_code = 4 6
- 000.05.07 class_code = 4 6
- 000.06.09 class_code = 4 6
- 005.08.11 class_code = 255 0
+ 000.04.07 class_code = 4 6
+ 000.05.09 class_code = 4 6
+ 000.06.10 class_code = 0 2
+ 000.07.11 class_code = 4 6
+ 000.08.12 class_code = 3 12
+ 000.09.13 class_code = 4 6
+ 000.10.14 class_code = 1 4
+ 000.11.15 class_code = 4 6
+ 000.12.18 class_code = 0 6
+ 009.08.17 class_code = 255 0
  Peripheral: Num of USB controllers   :    1 
  Peripheral: Num of SATA controllers  :    1 
  Peripheral: Num of UART controllers  :    1 
@@ -267,7 +336,7 @@ PE Index * 3 *
  BDF is 100
  Class code is 2000000
  BDF is 200
- Class code is 3000002
+ Class code is 3800002
  BDF is 300
  Class code is 6040000
  BDF is 400
@@ -275,39 +344,52 @@ PE Index * 3 *
  BDF is 500
  Class code is 6040000
  BDF is 600
+ Class code is 2000001
+ BDF is 700
  Class code is 6040000
- BDF is 10000
+ BDF is 800
  Class code is C033001
- BDF is 20000
- Class code is 3800002
- BDF is 30000
- Class code is 2000000
- BDF is 40000
+ BDF is 900
  Class code is 6040000
- BDF is 50800
+ BDF is A00
+ Class code is 4010001
+ BDF is B00
+ Class code is 6040000
+ BDF is C00
+ Class code is 6000000
+ BDF is 10000
+ Class code is 6040002
+ BDF is 20000
+ Class code is 6040000
+ BDF is 30000
+ Class code is 1060102
+ BDF is 40000
+ Class code is 1080202
+ BDF is 80000
+ Class code is 6040000
+ BDF is 90800
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
- Peripheral: Num of Storage ctrl      :    0 
- Peripheral: Num of Display ctrl      :    2 
- Reserved region of type 7 [0x10000000000, 0x100FBD77000]
- Reserved region of type 1 [0x100FBD77000, 0x100FBEE0000]
- Reserved region of type 5 [0x100FBEE0000, 0x100FBF60000]
- Reserved region of type 6 [0x100FBF60000, 0x100FC000000]
+ Peripheral: Num of Storage ctrl      :    2 
+ Peripheral: Num of Display ctrl      :    1 
+ Reserved region of type 7 [0x10000000000, 0x100FBDC9000]
+ Reserved region of type 1 [0x100FBDC9000, 0x100FBF30000]
+ Reserved region of type 5 [0x100FBF30000, 0x100FBFB0000]
+ Reserved region of type 6 [0x100FBFB0000, 0x100FC000000]
  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
- Reserved region of type 5 [0x100FC020000, 0x100FC0B0000]
- Reserved region of type 9 [0x100FC0B0000, 0x100FC0F0000]
- Reserved region of type 7 [0x100FC0F0000, 0x100FE0E1000]
- Reserved region of type 4 [0x100FE0E1000, 0x100FE1F7000]
- Reserved region of type 7 [0x100FE1F7000, 0x100FE1F8000]
- Reserved region of type 4 [0x100FE1F8000, 0x100FEFE4000]
- Reserved region of type 7 [0x100FEFE4000, 0x100FF30E000]
- Reserved region of type 3 [0x100FF30E000, 0x100FF5C0000]
- Reserved region of type 5 [0x100FF5C0000, 0x100FF750000]
- Reserved region of type 6 [0x100FF750000, 0x100FF9A0000]
- Reserved region of type 7 [0x100FF9A0000, 0x100FF9BB000]
- Reserved region of type 4 [0x100FF9BB000, 0x100FF9DD000]
- Reserved region of type 3 [0x100FF9DD000, 0x100FFA14000]
- Reserved region of type 4 [0x100FFA14000, 0x100FFFE8000]
- Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
+ Reserved region of type 6 [0x100FC020000, 0x100FC070000]
+ Reserved region of type 5 [0x100FC070000, 0x100FC0C0000]
+ Reserved region of type 9 [0x100FC0C0000, 0x100FC110000]
+ Reserved region of type 7 [0x100FC110000, 0x100FE02D000]
+ Reserved region of type 4 [0x100FE02D000, 0x100FF004000]
+ Reserved region of type 7 [0x100FF004000, 0x100FF332000]
+ Reserved region of type 3 [0x100FF332000, 0x100FF5E0000]
+ Reserved region of type 5 [0x100FF5E0000, 0x100FF770000]
+ Reserved region of type 6 [0x100FF770000, 0x100FF9C0000]
+ Reserved region of type 7 [0x100FF9C0000, 0x100FF9D0000]
+ Reserved region of type 4 [0x100FF9D0000, 0x100FF9F2000]
+ Reserved region of type 3 [0x100FF9F2000, 0x100FFA29000]
+ Reserved region of type 4 [0x100FFA29000, 0x100FFFE9000]
+ Reserved region of type 3 [0x100FFFE9000, 0x100FFFF8000]
  Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
  Reserved region of type 11 [0x10000000, 0x104C0000]
  Reserved region of type 11 [0x60010000, 0x60011000]
@@ -315,13 +397,11 @@ PE Index * 3 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0 
- Shared memory is 100FE20FA98 
+ Shared memory is 100FE171098 
 
-      ***  Starting PE tests ***  
+      *** Starting PE tests ***  
    1 : Check PE Granule Support          
        START  
-       PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
        PSCI_CPU_ON: success  
        S_L3PE_01
                                   : Result:  PASS 
@@ -330,16 +410,12 @@ PE Index * 3 *
    2 : Check for 16-bit ASID support     
        START  
        PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
        S_L3PE_02
                                   : Result:  PASS 
        END  
 
    3 : Check AARCH64 implementation      
        START  
-       PSCI_CPU_ON: success  
-       PSCI_CPU_ON: success  
        PSCI_CPU_ON: success  
        S_L3PE_03
                                   : Result:  PASS 
@@ -354,16 +430,16 @@ PE Index * 3 *
 
       One or more PE tests failed or were skipped.
 
-      ***  Starting Memory tests ***  
+      *** Starting Memory tests ***  
  101 : Check peripherals addr 64Kb apart 
        START  
  Peripheral 2000
  Peripheral 2001
-   addr of Peripheral 1 is  82400004
+   addr of Peripheral 1 is  100140004
    addr of Peripheral 2 is  60100000
  Peripheral 2000
  Peripheral 2002
-   addr of Peripheral 1 is  82400004
+   addr of Peripheral 1 is  100140004
    addr of Peripheral 2 is  60000000
  Peripheral 2001
  Peripheral 2002
@@ -376,7 +452,7 @@ PE Index * 3 *
 
       All Memory tests passed.
 
-      ***  Starting GIC tests ***  
+      *** Starting GIC tests ***  
  201 : Check GIC version                 
        START  
        gic version from ACPI table = 3 
@@ -387,14 +463,11 @@ PE Index * 3 *
 
 
       All GIC tests passed.
-ITS : Info Block 
-GIC ITS Index : 0
-GIC ITS ID : 0
-GIC ITS Base : 44081000
 
+      Starting Exerciser Setup
+      PCIE_INFO: Number of exerciser cards :    0 
 
-      *** Starting PCIe Exerciser tests ***  
-Exerciser Sbsa compliance is only from Level 4 
+     No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
      Total Tests run  =    6;  Tests Passed  =    5  Tests Failed =    0
