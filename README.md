@@ -64,10 +64,3 @@ Both patches I got from Shashi Mallela:
 
 - add ITS support
 - add SMMU support
-
-
-## TF-A
-
-Here are my patches:
-
-- [fix(qemu-sbsa): enable FGT](https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/19459)
