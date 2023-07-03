@@ -39,8 +39,8 @@ fs0:sbsa.efi -skip 861 -l 7
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL1: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL1: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL1: Built : 14:16:50, Jul  3 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 INFO:    BL1: Loading BL2
 INFO:    Loading image id=1 at address 0x3fcd1000
@@ -48,8 +48,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL2: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL2: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL2: Built : 14:16:50, Jul  3 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -62,8 +62,8 @@ INFO:    Platform version: 0.2
 INFO:    GICD base = 0x40060000
 INFO:    GICR base = 0x40080000
 INFO:    GICI base = 0x44081000
-NOTICE:  BL31: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL31: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL31: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL31: Built : 14:16:50, Jul  3 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -71,7 +71,7 @@ INFO:    BL31: Initializing runtime services
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 16:00:18 on Jun 20 2023)
+UEFI firmware (version 1.0 built at 14:17:57 on Jul  3 2023)
 INFO:    Platform version requested
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -303,6 +303,9 @@ er
  601 : Check EA Capability               : Result:  PASS 
  801 : Check ECAM Presence               : Result:  PASS 
  803 : Check ECAM Memory accessibility   : Result:  PASS 
+ 816 : NP type-1 pcie only support 32-bit
+       PCI_MM_04
+       Checkpoint --  3                  : Result:  SKIPPED 
  820 : Check Type 0/1 common config rules: Result:  PASS 
  821 : Check Type 0 config header rules  : Result:  PASS 
  822 : Check Type 1 config header rules  
@@ -365,10 +368,10 @@ S
        BDF 0x0 Not MMIO
        BDF 0x0 Not MMIO
        Failed on PE -    0 for Level=  7 
-       RE_BAR_3
+       RE_BAR_3, IE_BAR_3
        Checkpoint --  2                  : Result:  FAIL 
  835 : Check Function level reset rule   
-       RE_RST_1, PCI_SM_02
+       RE_RST_1, IE_RST_1, PCI_SM_02
        Checkpoint --  1                  : Result:  SKIPPED 
  836 : Check ARI forwarding support rule 
        PCI_IN_17
@@ -418,15 +421,15 @@ S
        IE_RST_2
        Checkpoint --  2                  : Result:  SKIPPED 
  852 : Check ATS Support Rule            
-       RE_SMU_2
+       IE_SMU_1, RE_SMU_2
        Checkpoint --  1                  : Result:  SKIPPED 
  856 : Check iEP-RootPort P2P Support    
        IE_ACS_2
        Checkpoint --  1                  : Result:  SKIPPED 
  857 : Check RCiEP, iEP_EP P2P Supp      
-       IE_ACS_1
+       IE_ACS_1, RE_ACS_2
        Checkpoint --  1                  : Result:  SKIPPED 
- 858 : Read and write to RCiEP BAR reg   : Result:  PASS 
+ 858 : Read and write to BAR reg         : Result:  PASS 
  859 : Check RCEC Class code and Ext Cap     
        RE_PCI_2
        Checkpoint --  1                  : Result:  SKIPPED 
@@ -477,7 +480,7 @@ S
        RAS nodes not found. Skipping all RAS tests
 
      ------------------------------------------------------- 
-     Total Tests run  =  102;  Tests Passed  =   52  Tests Failed =   23
+     Total Tests run  =  103;  Tests Passed  =   52  Tests Failed =   23
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

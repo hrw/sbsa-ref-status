@@ -538,6 +538,15 @@
     neoverse-n1: PASS
   tags: PCI_IN_02
   title: Check ECAM Memory accessibility
+816:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+  tags: PCI_MM_04
+  title: NP type-1 pcie only support 32-bit
 820:
   level: '6'
   status:
@@ -671,7 +680,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
-  tags: RE_BAR_3
+  tags: RE_BAR_3, IE_BAR_3
   title: Check BAR memory space & Type rule
 835:
   level: '6'
@@ -680,7 +689,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_RST_1, PCI_SM_02
+  tags: RE_RST_1, IE_RST_1, PCI_SM_02
   title: Check Function level reset rule
 836:
   level: '6'
@@ -824,7 +833,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: RE_SMU_2
+  tags: IE_SMU_1, RE_SMU_2
   title: Check ATS Support Rule
 856:
   level: '6'
@@ -842,7 +851,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-  tags: IE_ACS_1
+  tags: IE_ACS_1, RE_ACS_2
   title: Check RCiEP, iEP_EP P2P Supp
 858:
   level: '6'
@@ -851,8 +860,8 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
-  tags: RE_BAR_1
-  title: Read and write to RCiEP BAR reg
+  tags: RE_BAR_1, IE_BAR_1
+  title: Read and write to BAR reg
 859:
   level: '6'
   status:

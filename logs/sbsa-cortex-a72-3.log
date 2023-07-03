@@ -39,8 +39,8 @@ fs0:sbsa.efi -skip 861 -l 3
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL1: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL1: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL1: Built : 14:16:50, Jul  3 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: cortex_a72: CPU workaround for 859971 was missing!
 WARNING: BL1: cortex_a72: CPU workaround for 1319367 was missing!
@@ -53,8 +53,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL2: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL2: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL2: Built : 14:16:50, Jul  3 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -67,8 +67,8 @@ INFO:    Platform version: 0.2
 INFO:    GICD base = 0x40060000
 INFO:    GICR base = 0x40080000
 INFO:    GICI base = 0x44081000
-NOTICE:  BL31: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL31: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL31: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL31: Built : 14:16:50, Jul  3 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -81,7 +81,7 @@ INFO:    BL31: cortex_a72: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 16:00:18 on Jun 20 2023)
+UEFI firmware (version 1.0 built at 14:17:57 on Jul  3 2023)
 INFO:    Platform version requested
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -192,6 +192,10 @@ em
  201 : Check GIC version                 : Result:  PASS 
 
       All GIC tests passed.
+
+      *** Starting PCIe tests ***  
+
+      All PCIe tests passed.
       PCIE_INFO: Number of exerciser cards :    0 
 
      No Exerciser Devices Found, Skipping Exerciser tests...

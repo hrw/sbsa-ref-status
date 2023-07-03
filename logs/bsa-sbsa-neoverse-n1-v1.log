@@ -39,8 +39,8 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL1: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL1: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL1: Built : 14:16:50, Jul  3 2023
 INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
 WARNING: BL1: neoverse_n1: CPU workaround for 1946160 was missing!
 WARNING: BL1: neoverse_n1: CPU workaround for 2743102 was missing!
@@ -51,8 +51,8 @@ INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
 INFO:    Entry point address = 0x3fcd1000
 INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL2: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL2: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL2: Built : 14:16:50, Jul  3 2023
 INFO:    BL2: Doing platform setup
 INFO:    BL2: Loading image id 3
 INFO:    Loading image id=3 at address 0x3fcee000
@@ -65,8 +65,8 @@ INFO:    Platform version: 0.2
 INFO:    GICD base = 0x40060000
 INFO:    GICR base = 0x40080000
 INFO:    GICI base = 0x44081000
-NOTICE:  BL31: v2.9(debug):v2.9.0-200-gcf26a2fc4-dirty
-NOTICE:  BL31: Built : 15:54:31, Jun 20 2023
+NOTICE:  BL31: v2.9(debug):v2.9.0-280-g8e31faa05
+NOTICE:  BL31: Built : 14:16:50, Jul  3 2023
 INFO:    GICv3 without legacy support detected.
 INFO:    ARM GICv3 driver initialized in EL3
 INFO:    Maximum SPI INTID supported: 287
@@ -77,7 +77,7 @@ INFO:    BL31: neoverse_n1: CPU workaround for cve_2022_23960 was applied
 INFO:    BL31: Preparing for EL3 exit to normal world
 INFO:    Entry point address = 0x10000000
 INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 16:00:18 on Jun 20 2023)
+UEFI firmware (version 1.0 built at 14:17:57 on Jul  3 2023)
 INFO:    Platform version requested
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -144,7 +144,7 @@ em
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at FC10F598 and length is 108 
+  MADT is at F86DE498 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
   MPIDR 0 PE num 0 
@@ -153,7 +153,7 @@ em
   MPIDR 1 PE num 1 
  PE_INFO: Number of PE detected       :    2 
  Creating GIC INFO table
-  MADT is at FC10F598 and length is 108 
+  MADT is at F86DE498 and length is 108 
   GICH base 2C010000 
   GICH base 2C010000 
   GIC DIS base 40060000 
@@ -168,7 +168,7 @@ em
  GIC_INFO: Number of GICR RD          :    1 
  GIC_INFO: Number of ITS              :    1 
  Creating TIMER INFO table
-  GTDT is at FC10FD18 and length is 84 
+  GTDT is at F86DFD18 and length is 84 
   GTDT revision is at 3 
   GTDT don't have el2 virt timer info
   using bsa recommended value 28
@@ -324,31 +324,34 @@ em
  Peripheral: Num of Storage ctrl      :    2 
  Peripheral: Num of Display ctrl      :    1 
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBDD7000]
-  Reserved region of type 1 [0x100FBDD7000, 0x100FBF30000]
-  Reserved region of type 5 [0x100FBF30000, 0x100FBFB0000]
-  Reserved region of type 6 [0x100FBFB0000, 0x100FC000000]
-  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 6 [0x100FC020000, 0x100FC070000]
-  Reserved region of type 5 [0x100FC070000, 0x100FC0C0000]
-  Reserved region of type 9 [0x100FC0C0000, 0x100FC110000]
-  Reserved region of type 7 [0x100FC110000, 0x100FE0BD000]
-  Reserved region of type 4 [0x100FE0BD000, 0x100FE160000]
-  Reserved region of type 7 [0x100FE160000, 0x100FE161000]
-  Reserved region of type 4 [0x100FE161000, 0x100FF004000]
-  Reserved region of type 7 [0x100FF004000, 0x100FF332000]
-  Reserved region of type 3 [0x100FF332000, 0x100FF5E0000]
-  Reserved region of type 5 [0x100FF5E0000, 0x100FF770000]
-  Reserved region of type 6 [0x100FF770000, 0x100FF9C0000]
-  Reserved region of type 7 [0x100FF9C0000, 0x100FF9D0000]
-  Reserved region of type 4 [0x100FF9D0000, 0x100FF9F2000]
-  Reserved region of type 3 [0x100FF9F2000, 0x100FFA29000]
-  Reserved region of type 4 [0x100FFA29000, 0x100FFFE9000]
-  Reserved region of type 3 [0x100FFFE9000, 0x100FFFF8000]
+  Reserved region of type 7 [0x10000000000, 0x100F8388000]
+  Reserved region of type 1 [0x100F8388000, 0x100F84E0000]
+  Reserved region of type 5 [0x100F84E0000, 0x100F8560000]
+  Reserved region of type 6 [0x100F8560000, 0x100F8600000]
+  Reserved region of type 5 [0x100F8600000, 0x100F8690000]
+  Reserved region of type 9 [0x100F8690000, 0x100F86E0000]
+  Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA43C000]
+  Reserved region of type 4 [0x100FA43C000, 0x100FA47E000]
+  Reserved region of type 7 [0x100FA47E000, 0x100FA493000]
+  Reserved region of type 4 [0x100FA493000, 0x100FA4F5000]
+  Reserved region of type 7 [0x100FA4F5000, 0x100FA4F7000]
+  Reserved region of type 4 [0x100FA4F7000, 0x100FB624000]
+  Reserved region of type 7 [0x100FB624000, 0x100FB7BD000]
+  Reserved region of type 3 [0x100FB7BD000, 0x100FBC00000]
+  Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
+  Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
+  Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
+  Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
+  Reserved region of type 7 [0x100FC020000, 0x100FF74F000]
+  Reserved region of type 4 [0x100FF74F000, 0x100FF770000]
+  Reserved region of type 3 [0x100FF770000, 0x100FF7C1000]
+  Reserved region of type 4 [0x100FF7C1000, 0x100FFFD4000]
+  Reserved region of type 3 [0x100FFFD4000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x104C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE169F98 
+ Shared memory is 100FA507E98 
 
       *** Starting PE tests ***  
 
