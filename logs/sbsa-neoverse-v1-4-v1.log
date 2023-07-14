@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a57
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -35,7 +35,7 @@ QEMU command line arguments:
 
 EFI startup script:
 pci
-fs0:sbsa.efi -skip 861 -l 3 -v 1
+fs0:sbsa.efi -skip 861 -l 4 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -101,13 +101,13 @@ em
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 3 -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 4 -v 1
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.2  
 
- Starting tests for level  3 (Print level is  1)
+ Starting tests for level  4 (Print level is  1)
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
@@ -396,6 +396,34 @@ PE Index * 1 *
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 
+   5 : Check for RAS extension           
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_01
+                                  : Result:  PASS 
+       END  
+
+   6 : Check DC CVAP support             
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_02
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+   7 : Check for 16-Bit VMID             
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_03
+                                  : Result:  PASS 
+       END  
+
+   8 : Check for Virtual host extensions 
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_04
+                                  : Result:  PASS 
+       END  
+
 
       One or more PE tests failed or were skipped.
 
@@ -433,7 +461,40 @@ PE Index * 1 *
 
       All GIC tests passed.
 
+      *** Starting SMMU tests ***  
+ 301 : SMMU Compatibility Check          
+       START  
+       Detected SMMUv3, or higher implementation 
+       Stage 2 translation not supported 
+       Failed on PE -    0 for Level=  4 
+       S_L4SM_01, S_L4SM_02
+       Checkpoint --  2                  : Result:  FAIL 
+       END  
+
+
+      One or more SMMU tests failed or were skipped.
+
       *** Starting PCIe tests ***  
+ 601 : Check EA Capability               
+       START  
+       BDF - 0x100
+       BDF - 0x200
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x700
+       BDF - 0x800
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x40000
+       BDF - 0x50000
+       BDF - 0x60000
+       BDF - 0x80000
+       S_L4PCI_2
+                                  : Result:  PASS 
+       END  
+
 
       All PCIe tests passed.
 
@@ -443,7 +504,7 @@ PE Index * 1 *
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =    6;  Tests Passed  =    5  Tests Failed =    0
+     Total Tests run  =   12;  Tests Passed  =    9  Tests Failed =    1
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

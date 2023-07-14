@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a57
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -35,7 +35,7 @@ QEMU command line arguments:
 
 EFI startup script:
 pci
-fs0:sbsa.efi -skip 861 -l 3 -v 1
+fs0:sbsa.efi -skip 861 -l 5 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -101,13 +101,13 @@ em
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 3 -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 5 -v 1
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.2  
 
- Starting tests for level  3 (Print level is  1)
+ Starting tests for level  5 (Print level is  1)
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
@@ -396,6 +396,91 @@ PE Index * 1 *
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 
+   5 : Check for RAS extension           
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_01
+                                  : Result:  PASS 
+       END  
+
+   6 : Check DC CVAP support             
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_02
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+   7 : Check for 16-Bit VMID             
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_03
+                                  : Result:  PASS 
+       END  
+
+   8 : Check for Virtual host extensions 
+       START  
+       PSCI_CPU_ON: success  
+       S_L4PE_04
+                                  : Result:  PASS 
+       END  
+
+   9 : Support Page table map size change
+       START  
+       PSCI_CPU_ON: success  
+       S_L5PE_01
+                                  : Result:  PASS 
+       END  
+
+  10 : Check for pointer signing         
+       START  
+       PSCI_CPU_ON: success  
+       S_L5PE_02
+                                  : Result:  PASS 
+       END  
+
+  11 : Check Activity monitors extension 
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  5 
+       S_L5PE_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  12 : Check for SHA3 and SHA512 support 
+       START  
+       PSCI_CPU_ON: success  
+       S_L5PE_05
+                                  : Result:  PASS 
+       END  
+
+  13 : Stage 2 control of mem and cache  
+       START  
+       PSCI_CPU_ON: success  
+       S_L5PE_06
+                                  : Result:  PASS 
+       END  
+
+  14 : Check for nested virtualization   
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  5 
+       S_L5PE_07
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  15 : Check MPAM PE Requirements        
+       START  
+       PSCI_CPU_ON: success  
+       S_MPAM_PE
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+  16 : Check MPAM LLC Requirements       
+       START  
+       S_MPAM_PE
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
 
       One or more PE tests failed or were skipped.
 
@@ -430,10 +515,79 @@ PE Index * 1 *
                                   : Result:  PASS 
        END  
 
+ 202 : Check Reserved PPI Assignments    
+       START  
+       S_L5PP_01
+                                  : Result:  PASS 
+       END  
+
 
       All GIC tests passed.
 
+      *** Starting SMMU tests ***  
+ 301 : SMMU Compatibility Check          
+       START  
+       Detected SMMUv3, or higher implementation 
+       Stage 2 translation not supported 
+       Failed on PE -    0 for Level=  5 
+       S_L4SM_01, S_L4SM_02
+       Checkpoint --  2                  : Result:  FAIL 
+       END  
+
+ 302 : Check SMMUv3.2 or higher          
+       START  
+       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or high
+er  
+       Failed on PE -    0 for Level=  5 
+       S_L5SM_01, S_L5SM_02
+       Checkpoint --  2                  : Result:  FAIL 
+       END  
+
+ 303 : SMMU revision and S-EL2 support   
+       START  
+       Secure EL2 not implemented
+       B_SMMU_09
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 304 : SMMU Revision,S-EL2 support Hyp   
+       START  
+       Secure EL2 not implemented
+       B_SMMU_20
+       Checkpoint --  1                  : Result:  SKIPPED 
+       END  
+
+ 305 : Check SMMU for MPAM support       
+       START  
+       No MPAM controlled resources present               
+       B_SMMU_11, B_SMMU_22, S_L5SM_03
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+
+      One or more SMMU tests failed or were skipped.
+
       *** Starting PCIe tests ***  
+ 601 : Check EA Capability               
+       START  
+       BDF - 0x100
+       BDF - 0x200
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x700
+       BDF - 0x800
+       BDF - 0x10000
+       BDF - 0x20000
+       BDF - 0x40000
+       BDF - 0x50000
+       BDF - 0x60000
+       BDF - 0x80000
+       S_L4PCI_2
+                                  : Result:  PASS 
+       END  
+
 
       All PCIe tests passed.
 
@@ -443,7 +597,7 @@ PE Index * 1 *
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =    6;  Tests Passed  =    5  Tests Failed =    0
+     Total Tests run  =   25;  Tests Passed  =   14  Tests Failed =    4
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

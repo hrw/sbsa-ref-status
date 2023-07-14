@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu max
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -207,15 +207,14 @@ Operating System View:
  301 : All SMMUs have same Arch Revision          : Result:  PASS 
  302 : Check SMMU Granule Support                 : Result:  PASS 
  303 : Check SMMU Large Physical Addr Support
-       Large PA Not Supported in SMMU 0
-       Failed on PE -    0
-       Checkpoint --  2                           : Result:  FAIL 
- 304 : S-EL2 not implemented & SMMU stage1 support
-       Checkpoint --  2                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED 
+ 304 : S-EL2 not implemented & SMMU stage1 support     : Result:  PASS 
 
 Hypervisor View:
  352 : S-EL2 not implemented & SMMU stage2 support
-       Checkpoint --  2                           : Result:  SKIPPED 
+       SMMUv3.1 not providing Stage2 functionality
+       Failed on PE -    0
+       Checkpoint --  2                           : Result:  FAIL 
  354 : SMMUv3 Integration compliance              : Result:  PASS 
 
       One or more SMMU tests failed or were skipped.
@@ -330,7 +329,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   70  Tests Failed =    5
+     Total Tests run  =   87  Tests Passed  =   71  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

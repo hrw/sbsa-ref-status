@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu max
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -35,7 +35,7 @@ QEMU command line arguments:
 
 EFI startup script:
 pci
-fs0:sbsa.efi -skip 861 -l 7
+fs0:sbsa.efi -skip 861 -l 6
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -101,13 +101,13 @@ em
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 7
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 6
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.2  
 
- Starting tests for level  7 (Print level is  3)
+ Starting tests for level  6 (Print level is  3)
 
  Creating Platform Information Tables 
  PE_INFO: Number of PE detected       :    2 
@@ -142,7 +142,9 @@ em
    1 : Check PE Granule Support          : Result:  PASS 
    2 : Check for 16-bit ASID support     : Result:  PASS 
    3 : Check AARCH64 implementation      : Result:  PASS 
-   4 : Check FEAT_LPA Requirements       : Result:  PASS 
+   4 : Check FEAT_LPA Requirements       
+       S_L3PE_04
+       Checkpoint --  1                  : Result:  SKIPPED 
    5 : Check for RAS extension           : Result:  PASS 
    6 : Check DC CVAP support             
        S_L4PE_02
@@ -152,13 +154,13 @@ em
    9 : Support Page table map size change: Result:  PASS 
   10 : Check for pointer signing         : Result:  PASS 
   11 : Check Activity monitors extension 
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L5PE_04
        Checkpoint --  1                  : Result:  FAIL 
   12 : Check for SHA3 and SHA512 support : Result:  PASS 
   13 : Stage 2 control of mem and cache  : Result:  PASS 
   14 : Check for nested virtualization   
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L5PE_07
        Checkpoint --  1                  : Result:  FAIL 
   15 : Check MPAM PE Requirements        
@@ -168,41 +170,37 @@ em
        S_MPAM_PE
        Checkpoint --  1                  : Result:  SKIPPED 
   17 : Check SPE if implemented          
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        B_PE_17
        Checkpoint --  1                  : Result:  FAIL 
-  18 : Check Branch Target Support       : Result:  PASS 
-  19 : Check Protect Against Timing Fault: Result:  PASS 
-  20 : Check PMU Version Support         : Result:  PASS 
+  18 : Check Branch Target Support       
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_02
+       Checkpoint --  1                  : Result:  FAIL 
+  19 : Check Protect Against Timing Fault
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_03
+       Checkpoint --  1                  : Result:  FAIL 
+  20 : Check PMU Version Support         
+       Failed on PE -    0 for Level=  6 
+       S_L6PE_04
+       Checkpoint --  1                  : Result:  FAIL 
   21 : Check AccessFlag DirtyState Update: Result:  PASS 
   22 : Check Enhanced Virtualization Trap: Result:  PASS 
-  23 : Check Speculation Restriction     : Result:  PASS 
+  23 : Check Speculation Restriction     
+       Failed on PE -    0 for Level=  6 
+       B_SEC_01
+       Checkpoint --  1                  : Result:  FAIL 
   24 : Check Speculative Str Bypass Safe : Result:  PASS 
   25 : Check PEs Impl CSDB,SSBB,PSSBB    : Result:  PASS 
-  26 : Check PEs Implement SB Barrier    : Result:  PASS 
-  27 : Check PE Impl CFP,DVP,CPP RCTX    : Result:  PASS 
-  28 : Check Fine Grain Trap Support     : Result:  PASS 
-  29 : Check for ECV support             
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_02
+  26 : Check PEs Implement SB Barrier    
+       Failed on PE -    0 for Level=  6 
+       B_SEC_04
        Checkpoint --  1                  : Result:  FAIL 
-  30 : Check for AMUv1p1 Support         
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_03
+  27 : Check PE Impl CFP,DVP,CPP RCTX    
+       Failed on PE -    0 for Level=  6 
+       B_SEC_05
        Checkpoint --  1                  : Result:  FAIL 
-  31 : Checks ASIMD Int8 matrix multiplc : Result:  PASS 
-  32 : Check for BFLOAT16 extension      : Result:  PASS 
-  33 : Check for EnhancedPAC2 and FPAC   
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_06
-       Checkpoint --  1                  : Result:  FAIL 
-  34 : Check for SVE Int8 matrix multiplc: Result:  PASS 
-  35 : Check for data gathering hint     : Result:  PASS 
-  36 : Check WFE Fine tune delay feature 
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_09
-       Checkpoint --  1                  : Result:  FAIL 
-  37 : Check for enhanced PAN feature    : Result:  PASS 
 
       One or more PE tests failed or were skipped.
 
@@ -220,52 +218,44 @@ em
       *** Starting SMMU tests ***  
  301 : SMMU Compatibility Check          
        Stage 2 translation not supported 
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L4SM_01, S_L4SM_02
        Checkpoint --  2                  : Result:  FAIL 
  302 : Check SMMUv3.2 or higher          
        Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or high
 er  
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
  303 : SMMU revision and S-EL2 support   
-       SMMUv3.1 detected: revision must be v3.2 or higher  
-       Failed on PE -    0 for Level=  7 
+       Secure EL2 not implemented
        B_SMMU_09
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  1                  : Result:  SKIPPED 
  304 : SMMU Revision,S-EL2 support Hyp   
-       SMMUv3.1 detected: revision must be v3.2 or higher  
-       Failed on PE -    0 for Level=  7 
+       Secure EL2 not implemented
        B_SMMU_20
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  1                  : Result:  SKIPPED 
  305 : Check SMMU for MPAM support       
        B_SMMU_11, B_SMMU_22, S_L5SM_03
        Checkpoint --  2                  : Result:  SKIPPED 
  306 : Check SMMU HTTU Support           
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L6SM_02
        Checkpoint --  1                  : Result:  FAIL 
  307 : Check SMMU MSI Support            
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        S_L6SM_03
        Checkpoint --  1                  : Result:  FAIL 
  308 : Check SMMU 16 Bit VMID Support    : Result:  PASS 
  309 : Check Large Virtual Addr Support      
-       Large VA Not Supported in SMMU 0
-       Failed on PE -    0 for Level=  6 
        B_SMMU_03
-       Checkpoint --  2                  : Result:  FAIL 
- 310 : Check TLB Range Invalidation      : Result:  PASS 
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 310 : Check TLB Range Invalidation      
+       B_SMMU_04, B_SMMU_05
+       Checkpoint --  1                  : Result:  SKIPPED 
  311 : Check SMMU 16 Bit ASID Support    : Result:  PASS 
  312 : Check SMMU Endianess Support      : Result:  PASS 
  313 : Check SMMU Coherent Access Support: Result:  PASS 
- 314 : Check SMMUv3 PMU Extension        
-       PMU Extension not implemented for SMMU index : 0
-       Failed on PE -    0 for Level=  7 
-       S_L7SM_03, S_L7SM_04
-       Checkpoint --  1                  : Result:  FAIL 
- 315 : Check if all DMA reqs behind SMMU : Result:  PASS 
 
       One or more SMMU tests failed or were skipped.
 
@@ -292,7 +282,7 @@ er
  824 : Check Device capabilites reg rules
        BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
        BDF 0x200 : ETFS value mismatch: 0x0 instead of 0x1
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
        Checkpoint --  2                  : Result:  FAIL 
  825 : Check Device Control register rule
@@ -306,13 +296,13 @@ er
 S 
  827 : Check Device control 2 reg rules  
        BDF 0x100 : AFI attribute mismatch: 0x2400020 instead of 0x2400000
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
        Checkpoint --  1                  : Result:  FAIL 
  828 : Check Power management cap rules  
        PCIe Capability not found for BDF 0x200
        PCIe Capability not found for BDF 0x200
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_REG_2, IE_REG_5
        Checkpoint --  2                  : Result:  FAIL 
  829 : Check Power management/status rule
@@ -320,7 +310,7 @@ S
 
        PCIe Capability not found for BDF 0x200
        PCIe Capability not found for BDF 0x200
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_REG_2, IE_REG_5
        Checkpoint --  2                  : Result:  FAIL 
  830 : Check Cmd Reg memory space enable : Result:  PASS 
@@ -329,7 +319,7 @@ S
  833 : Check Max payload size supported  : Result:  PASS 
  834 : Check BAR memory space & Type rule
        BDF 0x0 Not MMIO
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_BAR_3, IE_BAR_3
        Checkpoint --  1                  : Result:  FAIL 
  835 : Check Function level reset rule   
@@ -350,7 +340,7 @@ S
  841 : Check MSI and MSI-X support rule  : Result:  PASS 
  842 : Check Power Management rules      
        BDF - 200 does not support Power Management Capability
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_PWR_1
        Checkpoint --  1                  : Result:  FAIL 
  843 : Check ARI forwarding enable rule  
@@ -401,41 +391,20 @@ S
        BDF - 0x200
        Link Capabilities reg check failed
        Invalid Link Capabilities 0x1
-       Failed on PE -    0 for Level=  7 
+       Failed on PE -    0 for Level=  6 
        RE_PCI_1
        Checkpoint --  2                  : Result:  FAIL 
  863 : Slot Cap, Control and Status register rules      
        IE_REG_4
        Checkpoint --  1                  : Result:  SKIPPED 
- 861 : Check RootPort P&NP Memory Access 
-       USER OVERRIDE  - Skip Test        
-       S_PCIe_02
-       Checkpoint --  0                  : Result:  SKIPPED 
 
       One or more PCIe tests failed or were skipped.
       PCIE_INFO: Number of exerciser cards :    0 
 
      No Exerciser Devices Found, Skipping Exerciser tests...
 
-       PE MPAM extension unimplemented. Skipping all MPAM tests
-
-      *** Starting PMU tests ***  
-1101 : Check PMU Overflow signal         : Result:  PASS 
-1102 : Check number of PMU counters      : Result:  PASS 
-1103 : Check for multi-threaded PMU ext  
-       Failed on PE -    0 for Level=  7 
-       PMU_EV_11
-       Checkpoint --  1                  : Result:  FAIL 
-1106 : Check for PMU SPE Requirements    
-       PMU_SPE
-       Checkpoint --  2                  : Result:  SKIPPED 
-
-       PMU nodes not found. Skipping remaining PMU tests
-
-       RAS nodes not found. Skipping all RAS tests
-
      ------------------------------------------------------- 
-     Total Tests run  =  103;  Tests Passed  =   52  Tests Failed =   23
+     Total Tests run  =   86;  Tests Passed  =   35  Tests Failed =   20
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

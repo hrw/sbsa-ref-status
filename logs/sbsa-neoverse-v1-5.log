@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a72
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -35,7 +35,7 @@ QEMU command line arguments:
 
 EFI startup script:
 pci
-fs0:sbsa.efi -skip 861 -l 3
+fs0:sbsa.efi -skip 861 -l 5
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -101,13 +101,13 @@ em
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 3
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 5
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.2  
 
- Starting tests for level  3 (Print level is  3)
+ Starting tests for level  5 (Print level is  3)
 
  Creating Platform Information Tables 
  PE_INFO: Number of PE detected       :    2 
@@ -145,6 +145,30 @@ em
    4 : Check FEAT_LPA Requirements       
        S_L3PE_04
        Checkpoint --  1                  : Result:  SKIPPED 
+   5 : Check for RAS extension           : Result:  PASS 
+   6 : Check DC CVAP support             
+       S_L4PE_02
+       Checkpoint --  2                  : Result:  SKIPPED 
+   7 : Check for 16-Bit VMID             : Result:  PASS 
+   8 : Check for Virtual host extensions : Result:  PASS 
+   9 : Support Page table map size change: Result:  PASS 
+  10 : Check for pointer signing         : Result:  PASS 
+  11 : Check Activity monitors extension 
+       Failed on PE -    0 for Level=  5 
+       S_L5PE_04
+       Checkpoint --  1                  : Result:  FAIL 
+  12 : Check for SHA3 and SHA512 support : Result:  PASS 
+  13 : Stage 2 control of mem and cache  : Result:  PASS 
+  14 : Check for nested virtualization   
+       Failed on PE -    0 for Level=  5 
+       S_L5PE_07
+       Checkpoint --  1                  : Result:  FAIL 
+  15 : Check MPAM PE Requirements        
+       S_MPAM_PE
+       Checkpoint --  2                  : Result:  SKIPPED 
+  16 : Check MPAM LLC Requirements       
+       S_MPAM_PE
+       Checkpoint --  1                  : Result:  SKIPPED 
 
       One or more PE tests failed or were skipped.
 
@@ -155,10 +179,38 @@ em
 
       *** Starting GIC tests ***  
  201 : Check GIC version                 : Result:  PASS 
+ 202 : Check Reserved PPI Assignments    : Result:  PASS 
 
       All GIC tests passed.
 
+      *** Starting SMMU tests ***  
+ 301 : SMMU Compatibility Check          
+       Stage 2 translation not supported 
+       Failed on PE -    0 for Level=  5 
+       S_L4SM_01, S_L4SM_02
+       Checkpoint --  2                  : Result:  FAIL 
+ 302 : Check SMMUv3.2 or higher          
+       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or high
+er  
+       Failed on PE -    0 for Level=  5 
+       S_L5SM_01, S_L5SM_02
+       Checkpoint --  2                  : Result:  FAIL 
+ 303 : SMMU revision and S-EL2 support   
+       Secure EL2 not implemented
+       B_SMMU_09
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 304 : SMMU Revision,S-EL2 support Hyp   
+       Secure EL2 not implemented
+       B_SMMU_20
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 305 : Check SMMU for MPAM support       
+       B_SMMU_11, B_SMMU_22, S_L5SM_03
+       Checkpoint --  2                  : Result:  SKIPPED 
+
+      One or more SMMU tests failed or were skipped.
+
       *** Starting PCIe tests ***  
+ 601 : Check EA Capability               : Result:  PASS 
 
       All PCIe tests passed.
       PCIE_INFO: Number of exerciser cards :    0 
@@ -166,7 +218,7 @@ em
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =    6;  Tests Passed  =    5  Tests Failed =    0
+     Total Tests run  =   25;  Tests Passed  =   14  Tests Failed =    4
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

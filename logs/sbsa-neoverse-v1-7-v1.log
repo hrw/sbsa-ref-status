@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a57
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -399,9 +399,8 @@ PE Index * 1 *
    5 : Check for RAS extension           
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L4PE_01
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
    6 : Check DC CVAP support             
@@ -414,33 +413,29 @@ PE Index * 1 *
    7 : Check for 16-Bit VMID             
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L4PE_03
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
    8 : Check for Virtual host extensions 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L4PE_04
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
    9 : Support Page table map size change
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L5PE_01
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   10 : Check for pointer signing         
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L5PE_02
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   11 : Check Activity monitors extension 
@@ -454,17 +449,15 @@ PE Index * 1 *
   12 : Check for SHA3 and SHA512 support 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L5PE_05
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   13 : Stage 2 control of mem and cache  
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L5PE_06
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   14 : Check for nested virtualization   
@@ -491,8 +484,9 @@ PE Index * 1 *
   17 : Check SPE if implemented          
        START  
        PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
        B_PE_17
-       Checkpoint --  2                  : Result:  SKIPPED 
+       Checkpoint --  1                  : Result:  FAIL 
        END  
 
   18 : Check Branch Target Support       
@@ -522,17 +516,15 @@ PE Index * 1 *
   21 : Check AccessFlag DirtyState Update
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L6PE_05
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   22 : Check Enhanced Virtualization Trap
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L6PE_06
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   23 : Check Speculation Restriction     
@@ -546,17 +538,15 @@ PE Index * 1 *
   24 : Check Speculative Str Bypass Safe 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        B_SEC_02
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   25 : Check PEs Impl CSDB,SSBB,PSSBB    
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        B_SEC_03
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   26 : Check PEs Implement SB Barrier    
@@ -602,9 +592,8 @@ PE Index * 1 *
   31 : Checks ASIMD Int8 matrix multiplc 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L7PE_04
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   32 : Check for BFLOAT16 extension      
@@ -627,15 +616,14 @@ PE Index * 1 *
        START  
        PSCI_CPU_ON: success  
        S_L7PE_07
-       Checkpoint --  2                  : Result:  SKIPPED 
+                                  : Result:  PASS 
        END  
 
   35 : Check for data gathering hint     
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L7PE_08
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   36 : Check WFE Fine tune delay feature 
@@ -1305,10 +1293,10 @@ test
 
        PMU nodes not found. Skipping remaining PMU tests
 
-       PE RAS extension unimplemented. Skipping all RAS tests
+       RAS nodes not found. Skipping all RAS tests
 
      ------------------------------------------------------- 
-     Total Tests run  =  103;  Tests Passed  =   27  Tests Failed =   41
+     Total Tests run  =  103;  Tests Passed  =   41  Tests Failed =   29
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

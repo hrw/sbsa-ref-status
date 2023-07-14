@@ -21,11 +21,11 @@ QEMU command line arguments:
 -device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
 -device nvme,serial=deadbeef,bus=root_port_for_nvme1
 -device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
--device igb
+-device igb,bus=root_port_for_igb
 -device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
--device qemu-xhci
+-device qemu-xhci,bus=root_port_for_xhci
 -device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
--device ac97
+-device ac97,bus=root_port_for_ac97
 -device pcie-root-port,id=root_port_for_pci,chassis=1
 -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
 -device virtio-rng-pci,bus=pci,addr=8
@@ -39,40 +39,15 @@ fs0:sbsa.efi -skip 861 -l 3
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(debug):v2.9.0-280-g8e31faa05
-NOTICE:  BL1: Built : 14:16:50, Jul  3 2023
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.9(release):v2.9.0-353-g2503c8f32
+NOTICE:  BL1: Built : 14:21:08, Jul 14 2023
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.9(debug):v2.9.0-280-g8e31faa05
-NOTICE:  BL2: Built : 14:16:50, Jul  3 2023
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcfb0b9
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.9(release):v2.9.0-353-g2503c8f32
+NOTICE:  BL2: Built : 14:21:08, Jul 14 2023
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.2
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-NOTICE:  BL31: v2.9(debug):v2.9.0-280-g8e31faa05
-NOTICE:  BL31: Built : 14:16:50, Jul  3 2023
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
+NOTICE:  BL31: v2.9(release):v2.9.0-353-g2503c8f32
+NOTICE:  BL31: Built : 14:21:08, Jul 14 2023
 UEFI firmware (version 1.0 built at 14:17:57 on Jul  3 2023)
-INFO:    Platform version requested
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -99,19 +74,13 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
-             Vendor 8086 Device 10C9 Prog Interface 0
+    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mSerial Bus Controllers - USB
-             Vendor 1B36 Device 000D Prog Interface 30
-    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   0A    00 ==> [0m[37m[40mMultimedia Device - Audio device
-             Vendor 8086 Device 2415 Prog Interface 0
-    [1m[33m[40m00   00   0B    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   0C    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
              Vendor 1B36 Device 000B Prog Interface 0
     [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 104C Device 8232 Prog Interface 0
@@ -122,6 +91,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
     [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
 em
              Vendor 1B36 Device 0010 Prog Interface 2
+    [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10C9 Prog Interface 0
+    [1m[33m[40m00   06   00    00 ==> [0m[37m[40mSerial Bus Controllers - USB
+             Vendor 1B36 Device 000D Prog Interface 30
+    [1m[33m[40m00   07   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
     [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
@@ -130,7 +105,7 @@ em
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.1  
+    Version 7.1.2  
 
  Starting tests for level  3 (Print level is  3)
 
@@ -146,9 +121,9 @@ em
  RAS2_INFO: Num of RAS2 memory entries:    0 
  PCIE_INFO: Number of ECAM regions    :    1 
  PCIE_INFO: Number of BDFs found      :    14
- PCIE_INFO: Number of RCiEP           :    4 
+ PCIE_INFO: Number of RCiEP           :    2 
  PCIE_INFO: Number of RCEC            :    0 
- PCIE_INFO: Number of EP              :    1 
+ PCIE_INFO: Number of EP              :    3 
  PCIE_INFO: Number of RP              :    7 
  PCIE_INFO: Number of iEP_EP          :    0 
  PCIE_INFO: Number of iEP_RP          :    0 
@@ -199,4 +174,3 @@ em
       *** SBSA tests complete. Reset the system. *** 
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:

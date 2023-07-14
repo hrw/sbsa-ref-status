@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a57
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -330,8 +330,8 @@ em
 Operating System View:
    1 : Check Arch symmetry across PE                  START
 
-       cache size read is 701FE00A 
-       cache size read is 70FFE07A        PSCI_CPU_ON: success  
+       cache size read is 1A 
+       cache size read is 3A        PSCI_CPU_ON: success  
 
        B_PE_01
                                        : Result:  PASS 
@@ -418,7 +418,7 @@ Operating System View:
        PSCI_CPU_ON: success  
 
        B_PE_15
-       Checkpoint --  1                           : Result:  SKIPPED 
+                                       : Result:  PASS 
          END
 
 
@@ -468,7 +468,7 @@ Platform Security View:
          END
 
 
-      One or more PE tests failed or were skipped.
+      All PE tests passed.
 
       *** Starting Memory Map tests ***  
 
@@ -544,9 +544,10 @@ Operating System View:
 Hypervisor View:
  226 : Check NS EL2-Virt timer PPI Assignment         START
 
-       v8.1 VHE not supported on this PE 
+       NS EL2 Virtual timer interrupt 28 not received
+       Failed on PE -    0
        B_PPI_02
-       Checkpoint --  2                           : Result:  SKIPPED 
+       Checkpoint --  4                           : Result:  FAIL 
          END
 
  227 : Check NS EL2-Phy timer PPI Assignment          START
@@ -1702,7 +1703,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   70  Tests Failed =    4
+     Total Tests run  =   87  Tests Passed  =   71  Tests Failed =    5
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

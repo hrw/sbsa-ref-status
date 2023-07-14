@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu max
+-cpu neoverse-v1
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -142,7 +142,9 @@ em
    1 : Check PE Granule Support          : Result:  PASS 
    2 : Check for 16-bit ASID support     : Result:  PASS 
    3 : Check AARCH64 implementation      : Result:  PASS 
-   4 : Check FEAT_LPA Requirements       : Result:  PASS 
+   4 : Check FEAT_LPA Requirements       
+       S_L3PE_04
+       Checkpoint --  1                  : Result:  SKIPPED 
    5 : Check for RAS extension           : Result:  PASS 
    6 : Check DC CVAP support             
        S_L4PE_02
@@ -171,17 +173,38 @@ em
        Failed on PE -    0 for Level=  7 
        B_PE_17
        Checkpoint --  1                  : Result:  FAIL 
-  18 : Check Branch Target Support       : Result:  PASS 
-  19 : Check Protect Against Timing Fault: Result:  PASS 
-  20 : Check PMU Version Support         : Result:  PASS 
+  18 : Check Branch Target Support       
+       Failed on PE -    0 for Level=  7 
+       S_L6PE_02
+       Checkpoint --  1                  : Result:  FAIL 
+  19 : Check Protect Against Timing Fault
+       Failed on PE -    0 for Level=  7 
+       S_L6PE_03
+       Checkpoint --  1                  : Result:  FAIL 
+  20 : Check PMU Version Support         
+       Failed on PE -    0 for Level=  7 
+       S_L6PE_04
+       Checkpoint --  1                  : Result:  FAIL 
   21 : Check AccessFlag DirtyState Update: Result:  PASS 
   22 : Check Enhanced Virtualization Trap: Result:  PASS 
-  23 : Check Speculation Restriction     : Result:  PASS 
+  23 : Check Speculation Restriction     
+       Failed on PE -    0 for Level=  7 
+       B_SEC_01
+       Checkpoint --  1                  : Result:  FAIL 
   24 : Check Speculative Str Bypass Safe : Result:  PASS 
   25 : Check PEs Impl CSDB,SSBB,PSSBB    : Result:  PASS 
-  26 : Check PEs Implement SB Barrier    : Result:  PASS 
-  27 : Check PE Impl CFP,DVP,CPP RCTX    : Result:  PASS 
-  28 : Check Fine Grain Trap Support     : Result:  PASS 
+  26 : Check PEs Implement SB Barrier    
+       Failed on PE -    0 for Level=  7 
+       B_SEC_04
+       Checkpoint --  1                  : Result:  FAIL 
+  27 : Check PE Impl CFP,DVP,CPP RCTX    
+       Failed on PE -    0 for Level=  7 
+       B_SEC_05
+       Checkpoint --  1                  : Result:  FAIL 
+  28 : Check Fine Grain Trap Support     
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_01
+       Checkpoint --  1                  : Result:  FAIL 
   29 : Check for ECV support             
        Failed on PE -    0 for Level=  7 
        S_L7PE_02
@@ -191,7 +214,10 @@ em
        S_L7PE_03
        Checkpoint --  1                  : Result:  FAIL 
   31 : Checks ASIMD Int8 matrix multiplc : Result:  PASS 
-  32 : Check for BFLOAT16 extension      : Result:  PASS 
+  32 : Check for BFLOAT16 extension      
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_05
+       Checkpoint --  1                  : Result:  FAIL 
   33 : Check for EnhancedPAC2 and FPAC   
        Failed on PE -    0 for Level=  7 
        S_L7PE_06
@@ -202,7 +228,10 @@ em
        Failed on PE -    0 for Level=  7 
        S_L7PE_09
        Checkpoint --  1                  : Result:  FAIL 
-  37 : Check for enhanced PAN feature    : Result:  PASS 
+  37 : Check for enhanced PAN feature    
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_10
+       Checkpoint --  1                  : Result:  FAIL 
 
       One or more PE tests failed or were skipped.
 
@@ -230,15 +259,13 @@ er
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
  303 : SMMU revision and S-EL2 support   
-       SMMUv3.1 detected: revision must be v3.2 or higher  
-       Failed on PE -    0 for Level=  7 
+       Secure EL2 not implemented
        B_SMMU_09
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  1                  : Result:  SKIPPED 
  304 : SMMU Revision,S-EL2 support Hyp   
-       SMMUv3.1 detected: revision must be v3.2 or higher  
-       Failed on PE -    0 for Level=  7 
+       Secure EL2 not implemented
        B_SMMU_20
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  1                  : Result:  SKIPPED 
  305 : Check SMMU for MPAM support       
        B_SMMU_11, B_SMMU_22, S_L5SM_03
        Checkpoint --  2                  : Result:  SKIPPED 
@@ -252,11 +279,11 @@ er
        Checkpoint --  1                  : Result:  FAIL 
  308 : Check SMMU 16 Bit VMID Support    : Result:  PASS 
  309 : Check Large Virtual Addr Support      
-       Large VA Not Supported in SMMU 0
-       Failed on PE -    0 for Level=  6 
        B_SMMU_03
-       Checkpoint --  2                  : Result:  FAIL 
- 310 : Check TLB Range Invalidation      : Result:  PASS 
+       Checkpoint --  1                  : Result:  SKIPPED 
+ 310 : Check TLB Range Invalidation      
+       B_SMMU_04, B_SMMU_05
+       Checkpoint --  1                  : Result:  SKIPPED 
  311 : Check SMMU 16 Bit ASID Support    : Result:  PASS 
  312 : Check SMMU Endianess Support      : Result:  PASS 
  313 : Check SMMU Coherent Access Support: Result:  PASS 
@@ -435,7 +462,7 @@ S
        RAS nodes not found. Skipping all RAS tests
 
      ------------------------------------------------------- 
-     Total Tests run  =  103;  Tests Passed  =   52  Tests Failed =   23
+     Total Tests run  =  103;  Tests Passed  =   41  Tests Failed =   29
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 
