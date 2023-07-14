@@ -109,3 +109,5 @@ do
         echo "ACPI tables"
         boot-sbsa-ref "acpiview" > logs/acpiview-${cpu}.log
 done
+
+rm disks/virtual/startup.nsh
