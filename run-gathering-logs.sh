@@ -46,15 +46,15 @@ qemu_args=(
 
 # Intel network card
 -device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
-  -device igb
+  -device igb,bus=root_port_for_igb
 
 # XHCI USB card
 -device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
-  -device qemu-xhci
+  -device qemu-xhci,bus=root_port_for_xhci
 
 # AC97
 -device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
-  -device ac97
+  -device ac97,bus=root_port_for_ac97
 
 # PCIe-PCI bridge with virtio-rng behind
 -device pcie-root-port,id=root_port_for_pci,chassis=1
