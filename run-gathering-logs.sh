@@ -83,7 +83,7 @@ echo ""
 ./code/qemu/build/aarch64-softmmu/qemu-system-aarch64 "${qemu_args[@]}" | grep -v "Node :"
 }
 
-for cpu in cortex-a57 cortex-a72 neoverse-n1 max
+for cpu in cortex-a57 cortex-a72 neoverse-n1 neoverse-v1 max
 do
         printf "Run tests for %11b: " $cpu
 
