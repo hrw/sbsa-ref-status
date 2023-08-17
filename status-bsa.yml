@@ -339,7 +339,7 @@
     neoverse-n1: PASS
     neoverse-v1: PASS
   tags: B_SMMU_08
-  title: S-EL2 not implemented & SMMU stage1 support
+  title: Check SMMU S-EL2 & stage1 support
 352:
   status:
     cortex-a57: FAIL
@@ -348,7 +348,7 @@
     neoverse-n1: FAIL
     neoverse-v1: FAIL
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
-  title: S-EL2 not implemented & SMMU stage2 support
+  title: Check SMMU S-EL2 & stage2 support
 353:
   status:
     cortex-a57: SKIPPED

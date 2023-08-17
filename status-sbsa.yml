@@ -416,7 +416,7 @@
     neoverse-n1: FAIL
     neoverse-v1: FAIL
   tags: S_L4SM_01, S_L4SM_02
-  title: SMMU Compatibility Check
+  title: Check SMMU Compatibility
 302:
   level: '5'
   status:
@@ -436,7 +436,7 @@
     neoverse-n1: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_09
-  title: SMMU revision and S-EL2 support
+  title: Check S-EL2 & SMMU Stage1 support
 304:
   level: '5'
   status:
@@ -446,7 +446,7 @@
     neoverse-n1: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_20
-  title: SMMU Revision,S-EL2 support Hyp
+  title: Check S-EL2 & SMMU Stage2 Support
 305:
   level: '5'
   status:
@@ -496,7 +496,7 @@
     neoverse-n1: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_03
-  title: Check Large Virtual Addr Support
+  title: Check SMMU Large VA Support
 310:
   level: '6'
   status:
@@ -546,7 +546,7 @@
     neoverse-n1: FAIL
     neoverse-v1: FAIL
   tags: S_L7SM_03, S_L7SM_04
-  title: Check SMMUv3 PMU Extension
+  title: Check SMMU PMU Extension
 315:
   level: '7'
   status:
