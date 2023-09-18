@@ -152,6 +152,7 @@ its_pci_setup=(
 -device pcie-root-port,id=root_port_for_pci,chassis=6,slot=0
   -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
     -device es1370,bus=pci,addr=9
+    -device e1000,bus=pci,addr=10
 
 # another PCIe bus
  -device pxb-pcie,id=pxb1,bus_nr=1
