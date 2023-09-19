@@ -71,9 +71,10 @@ echo "QEMU command line arguments:"
 echo "${qemu_args[@]}" | sed -e "s/ -/\n-/g"
 echo ""
 
-echo "pci"       > disks/virtual/startup.nsh
-echo "$1"       >> disks/virtual/startup.nsh
-echo "reset -c" >> disks/virtual/startup.nsh
+echo "mode 100 31"  > disks/virtual/startup.nsh
+echo "pci"         >> disks/virtual/startup.nsh
+echo "$1"          >> disks/virtual/startup.nsh
+echo "reset -c"    >> disks/virtual/startup.nsh
 
 echo "EFI startup script:"
 cat disks/virtual/startup.nsh
@@ -106,8 +107,11 @@ do
                 boot-sbsa-ref "fs0:sbsa.efi -skip 861 -l ${level} -v 1" > logs/sbsa-${cpu}-${level}-v1.log
         done
 
-        echo "ACPI tables"
+        echo -n "ACPI tables"
         boot-sbsa-ref "acpiview" > logs/acpiview-${cpu}.log
+
+        echo "CPU info"
+        boot-sbsa-ref "fs0:armcpuinfo.efi" > logs/cpuinfo-${cpu}.log
 done
 
 rm disks/virtual/startup.nsh
