@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CPU="neoverse-v1"
+MACHINE="sbsa-ref"
 
 for i in "$@"; do
 	case $i in
@@ -28,6 +29,10 @@ for i in "$@"; do
 			GDB=1
 			shift
 			;;
+		--virt)
+			MACHINE="virt"
+			shift
+			;;
 		-*|--*)
 			echo "Unknown option $i"
 			exit 1
@@ -48,16 +53,30 @@ if [ ! -z "$CMD" ]; then
     fi
 fi
 
-common_qemu_args=(
-
--machine sbsa-ref
--m 4096
--smp 2
--cpu $CPU
+if [ $MACHINE == "sbsa-ref" ]; then
+	firmware_args=(
 
 # firmware
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+
+		)
+elif [ $MACHINE == "virt" ]; then
+	firmware_args=(
+
+# firmware
+-drive if=pflash,file=VIRT_FLASH0.fd,format=raw
+-drive if=pflash,file=VIRT_FLASH1.fd,format=raw
+
+		)
+fi
+
+common_qemu_args=(
+
+-machine $MACHINE
+-m 4096
+-smp 2
+-cpu $CPU
 
 # basic disk with EFI apps and generic Debian d-i
 -drive file=fat:rw:$PWD/disks/virtual/,format=raw
@@ -160,11 +179,15 @@ its_pci_setup=(
      -device ahci,bus=root_port_for_ahci
 )
 
+# virt does not have USB host controller
+if [ $MACHINE == "virt" ]; then
+        qemu_args="${qemu_args} -device qemu-xhci,id=usb"
+fi
+
+qemu_args="${qemu_args} ${common_qemu_args[@]}"
 
 if [ -z $NOITS ]; then
-	qemu_args="${common_qemu_args[@]} ${its_pci_setup[@]}"
-else
-	qemu_args="${common_qemu_args[@]}"
+	qemu_args="${qemu_args[@]} ${its_pci_setup[@]}"
 fi
 
 if [ ! -z $GDB ]; then
@@ -175,6 +198,7 @@ if [ -z $GFX ]; then
         qemu_args="${qemu_args} -nographic"
 fi
 
+qemu_args="${qemu_args} ${firmware_args[@]}"
 
 echo "QEMU command line arguments:"
 echo "${qemu_args}" | sed -e "s/ -/\n-/g"
