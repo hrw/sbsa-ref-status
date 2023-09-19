@@ -84,6 +84,7 @@ cpus = {
     "cortex-a72":  80,
     "neoverse-n1": 82,
     "neoverse-v1": 83,
+    "neoverse-n2": 90,
     "max":         99 }
 
 for cpu in cpus:
