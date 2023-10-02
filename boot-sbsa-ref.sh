@@ -69,11 +69,14 @@ elif [ $MACHINE == "virt" ]; then
 -drive if=pflash,file=VIRT_FLASH1.fd,format=raw
 
 		)
+MACHINE_OPTIONS=",iommu=smmuv3,gic-version=max"
+
 fi
+
 
 common_qemu_args=(
 
--machine $MACHINE
+-machine ${MACHINE}${MACHINE_OPTIONS}
 -m 4096
 -smp 2
 -cpu $CPU
