@@ -242,6 +242,7 @@
   tags: B_PPI_01
   title: Check EL1-Virt timer PPI assignment
 226:
+  comment: work in progress, patches in review
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -323,6 +324,7 @@
   tags: B_SMMU_02
   title: Check SMMU Granule Support
 303:
+  comment: only max has LPA, smmu lacks LPA
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -341,6 +343,7 @@
   tags: B_SMMU_08
   title: Check SMMU S-EL2 & stage1 support
 352:
+  comment: QEMU has stage1 or stage2, Linux is fine with either
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
@@ -350,6 +353,7 @@
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
   title: Check SMMU S-EL2 & stage2 support
 353:
+  comment: SBSA requires SMMU v3
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
