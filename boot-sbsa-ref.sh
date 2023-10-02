@@ -33,6 +33,10 @@ for i in "$@"; do
 			MACHINE="virt"
 			shift
 			;;
+		--os=*)
+			OS="${i#*=}"
+			shift
+			;;
 		-*|--*)
 			echo "Unknown option $i"
 			exit 1
@@ -181,6 +185,55 @@ its_pci_setup=(
    -device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=10,slot=0
      -device ahci,bus=root_port_for_ahci
 )
+
+# is iso file hdd image?
+ISOHDD=0
+
+case $OS in
+	"alpine")
+		ISO="disks/alpine-standard-3.17.2-aarch64.iso"
+		;;
+	"centos")
+		ISO="disks/CentOS-Stream-9-20230918.0-aarch64-boot.iso"
+		;;
+	"centos8s")
+		ISO="disks/CentOS-Stream-8-aarch64-latest-boot.iso"
+		;;
+	"debian")
+		ISO="disks/debian-12.1.0-arm64-netinst.iso"
+		;;
+	"fedora")
+		ISO="disks/Fedora-Server-netinst-aarch64-39_Beta-1.1.iso"
+		;;
+	"freebsd")
+		ISO="disks/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso"
+		;;
+	"netbsd")
+		ISO="disks/NetBSD-10.0_BETA-evbarm-aarch64.iso"
+		;;
+	"netbsd9")
+		ISO="disks/NetBSD-9.3-evbarm-arm64.img"
+		ISOHDD=1
+		;;
+	"openbsd")
+		ISO="disks/openbsd-miniroot73.img,format=raw"
+		ISOHDD=1
+		;;
+	"rhel")
+		ISO="disks/rhel-9.2-aarch64-boot.iso"
+		;;
+	*)
+		echo "Unknown OS: >${OS}<"
+		exit 1
+		;;
+esac
+
+if [ ! -z $ISO ];then
+	if [ 0 == $ISOHDD ];then
+		ISO="${ISO},media=cdrom"
+	fi
+	qemu_args="${qemu_args} -drive file=${ISO}"
+fi
 
 # virt does not have USB host controller
 if [ $MACHINE == "virt" ]; then
