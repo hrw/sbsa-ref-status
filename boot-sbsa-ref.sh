@@ -91,11 +91,6 @@ common_qemu_args=(
 # full Debian installation
 -drive format=raw,file=$PWD/disks/full-debian.hddimg
 
-# Debian install ISO
-#-drive if=ide,file=$PWD/../disks/debian-bookworm.iso,format=raw,media=cdrom
-
-# Fedora install ISO
-#-drive if=ide,file=$PWD/../disks/Fedora-Server-netinst-aarch64-Rawhide-20230704.n.0.iso,format=raw,media=cdrom
 
 # ServerReady ACS
 #  -drive file=../disks/sr_acs_live_image-v23.01_2.0.0_BETA-0.img,format=raw,if=ide
