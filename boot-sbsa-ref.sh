@@ -61,16 +61,16 @@ if [ $MACHINE == "sbsa-ref" ]; then
 	firmware_args=(
 
 # firmware
--drive if=pflash,file=SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
 
 		)
 elif [ $MACHINE == "virt" ]; then
 	firmware_args=(
 
 # firmware
--drive if=pflash,file=VIRT_FLASH0.fd,format=raw
--drive if=pflash,file=VIRT_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/VIRT_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/VIRT_FLASH1.fd,format=raw
 
 		)
 MACHINE_OPTIONS=",iommu=smmuv3,gic-version=max"
