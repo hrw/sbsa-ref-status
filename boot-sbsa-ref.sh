@@ -108,6 +108,7 @@ common_qemu_args=(
 #-usb
 -device usb-kbd
 -device usb-tablet
+-device usb-mouse
 
 -watchdog-action none
 
