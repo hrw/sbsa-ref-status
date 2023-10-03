@@ -201,6 +201,12 @@ case $OS in
 	"freebsd")
 		ISO="disks/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso"
 		;;
+	"freebsd14")
+		ISO="disks/FreeBSD-14.0-BETA4-arm64-aarch64-bootonly.iso"
+		;;
+	"freebsd15")
+		ISO="disks/FreeBSD-15.0-CURRENT-arm64-aarch64-20230921-febba4622b60-265435-bootonly.iso"
+		;;
 	"netbsd")
 		ISO="disks/NetBSD-10.0_BETA-evbarm-aarch64.iso"
 		;;
