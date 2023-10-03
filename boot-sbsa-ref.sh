@@ -223,8 +223,10 @@ case $OS in
 		ISO="disks/rhel-9.2-aarch64-boot.iso"
 		;;
 	*)
-		echo "Unknown OS: >${OS}<"
-		exit 1
+		if [ ! -z $OS ]; then
+			echo "Unknown OS: >${OS}<"
+			exit 1
+		fi
 		;;
 esac
 
