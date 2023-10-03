@@ -120,9 +120,6 @@ common_qemu_args=(
 # output on console
 -serial stdio
 
-# Intel network card to have interrupt debugging information
--device igb
-
 # --------------------------------------------------------------------------------------
 # some random disks/isos
 # --------------------------------------------------------------------------------------
