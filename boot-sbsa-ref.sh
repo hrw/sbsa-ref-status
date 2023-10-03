@@ -213,7 +213,7 @@ case $OS in
 		ISOHDD=1
 		;;
 	"openbsd")
-		ISO="disks/openbsd-miniroot73.img,format=raw"
+		ISO="disks/openbsd-miniroot73.img"
 		ISOHDD=1
 		;;
 	"rhel")
@@ -230,6 +230,8 @@ esac
 if [ ! -z $ISO ];then
 	if [ 0 == $ISOHDD ];then
 		ISO="${ISO},media=cdrom"
+	else
+		ISO="${ISO},format=raw"
 	fi
 	qemu_args="${qemu_args} -drive file=${ISO}"
 fi
