@@ -263,7 +263,7 @@ echo "QEMU command line arguments:"
 echo "${qemu_args}" | sed -e "s/ -/\n-/g"
 echo ""
 
-./code/qemu/build/aarch64-softmmu/qemu-system-aarch64 $qemu_args
+../code/qemu/build/aarch64-softmmu/qemu-system-aarch64 $qemu_args
 
 if [ ! -z "$CMD" ]; then
         rm disks/virtual/startup.nsh
