@@ -136,6 +136,40 @@ its_pci_setup=(
 # now some PCIe stuff for system with ITS
 # --------------------------------------------------------------------------------------
 
+# lspci -nn
+# 00:00.0 Host bridge [0600]: Red Hat, Inc. QEMU PCIe Host bridge [1b36:0008]
+# 00:01.0 Ethernet controller [0200]: Intel Corporation 82574L Gigabit Network Connection [8086:10d3]
+# 00:02.0 Display controller [0380]: Device [1234:1111] (rev 02)
+# 00:03.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:04.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:05.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:06.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:07.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:08.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 00:09.0 Host bridge [0600]: Red Hat, Inc. QEMU PCIe Expander bridge [1b36:000b]
+# 01:00.0 PCI bridge [0604]: Red Hat, Inc. QEMU PCIe Root port [1b36:000c]
+# 02:00.0 SATA controller [0106]: Intel Corporation 82801IR/IO/IH (ICH9R/DO/DH) 6 port SATA Controller [AHCI mode] [8086:2922] (rev 02)
+# 03:00.0 Non-Volatile memory controller [0108]: Red Hat, Inc. QEMU NVM Express Controller [1b36:0010] (rev 02)
+# 04:00.0 Ethernet controller [0200]: Intel Corporation 82576 Gigabit Network Connection [8086:10c9] (rev 01)
+# 05:00.0 USB controller [0c03]: Red Hat, Inc. QEMU XHCI Host Controller [1b36:000d] (rev 01)
+# 06:00.0 Unclassified device [00ff]: Red Hat, Inc. Virtio 1.0 RNG [1af4:1044] (rev 01)
+# 07:00.0 PCI bridge [0604]: Red Hat, Inc. Device [1b36:000e]
+# 08:09.0 Multimedia audio controller [0401]: Ensoniq ES1370 [AudioPCI] [1274:5000]
+# 08:10.0 Ethernet controller [0200]: Intel Corporation 82540EM Gigabit Ethernet Controller [8086:100e] (rev 03)
+#
+# lspci -tv
+# -[0000:00]-+-00.0  Red Hat, Inc. QEMU PCIe Host bridge
+#            +-01.0  Intel Corporation 82574L Gigabit Network Connection
+#            +-02.0  Device 1234:1111
+#            +-03.0-[01-02]----00.0-[02]----00.0  Intel Corporation 82801IR/IO/IH (ICH9R/DO/DH) 6 port SATA Controller [AHCI mode]
+#            +-04.0-[03]----00.0  Red Hat, Inc. QEMU NVM Express Controller
+#            +-05.0-[04]----00.0  Intel Corporation 82576 Gigabit Network Connection
+#            +-06.0-[05]----00.0  Red Hat, Inc. QEMU XHCI Host Controller
+#            +-07.0-[06]----00.0  Red Hat, Inc. Virtio 1.0 RNG
+#            +-08.0-[07-08]----00.0-[08]--+-09.0  Ensoniq ES1370 [AudioPCI]
+#            |                            \-10.0  Intel Corporation 82540EM Gigabit Ethernet Controller
+#            \-09.0  Red Hat, Inc. QEMU PCIe Expander bridge
+
 # 104c:8232 x3130-upstream  
 # 1274:5000 es1370          
 # 1af4:1044 virtio-rng-pci  
