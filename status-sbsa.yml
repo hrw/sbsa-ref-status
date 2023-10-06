@@ -323,7 +323,7 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: FAIL
+    max: PASS
     neoverse-n1: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_06
@@ -656,7 +656,7 @@
     neoverse-n1: FAIL
     neoverse-v1: FAIL
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-  title: Check Device capabilites reg rules
+  title: Check Device capabilities reg rule
 825:
   level: '6'
   status:
@@ -806,7 +806,7 @@
     neoverse-n1: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_2
-  title: Check i-EP atomicop rule
+  title: Check i-EP AtomicOp rule
 841:
   level: '6'
   status:
@@ -825,7 +825,7 @@
     max: FAIL
     neoverse-n1: FAIL
     neoverse-v1: FAIL
-  tags: RE_PWR_1
+  tags: RE_PWR_1, IE_PWR_1
   title: Check Power Management rules
 843:
   level: '6'
