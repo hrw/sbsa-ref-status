@@ -34,20 +34,21 @@ QEMU command line arguments:
 -device ahci,bus=root_port_for_ahci
 
 EFI startup script:
+mode 100 31
 pci
 fs0:sbsa.efi -skip 861 -l 6 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL1: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL2: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL31: Built : 17:45:15, Aug 16 2023
-UEFI firmware (version 1.0 built at 13:29:26 on Aug 17 2023)
+NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
+UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -59,7 +60,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -88,8 +90,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
              Vendor 8086 Device 2922 Prog Interface 1
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
-em
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
              Vendor 8086 Device 10C9 Prog Interface 0
@@ -105,13 +106,13 @@ em
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.2  
+    Version 7.1.3  
 
  Starting tests for level  6 (Print level is  1)
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
- MADT is at F85AE498 and length is 108 
+ MADT is at FC02E498 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
  MPIDR 0 PE num 0 
@@ -119,7 +120,7 @@ em
   PE Enabled 1, Online Capable 0
  MPIDR 1 PE num 1 
  PE_INFO: Number of PE detected       :    2 
- MADT is at F85AE498 and length is 108 
+ MADT is at FC02E498 and length is 108 
  GICH base 2C010000 
  GICH base 2C010000 
  GIC DIS base 40060000 
@@ -128,11 +129,11 @@ em
  GIC ITS ID0 
  GIC_INFO: Number of GICD             :    1 
  GIC_INFO: Number of ITS              :    1 
- GTDT is at F85AFD18 and length is 84 
+ GTDT is at FC02E618 and length is 84 
  TIMER_INFO: Number of system timers  :    0 
  Watchdog base = 0x50011000 INTID = 0x30 
  WATCHDOG_INFO: Number of Watchdogs   :    1 
-PPTT table found at 0x100F85AE618 with length 0xB8
+PPTT table found at 0x100FC02FD18 with length 0xB8
 
 Cache info * Index 0 *
   Offset:                  0x38
@@ -341,27 +342,26 @@ PE Index * 1 *
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
  Peripheral: Num of Storage ctrl      :    2 
  Peripheral: Num of Display ctrl      :    1 
- Reserved region of type 7 [0x10000000000, 0x100F8317000]
- Reserved region of type 1 [0x100F8317000, 0x100F8480000]
- Reserved region of type 5 [0x100F8480000, 0x100F84C0000]
- Reserved region of type 6 [0x100F84C0000, 0x100F8560000]
- Reserved region of type 9 [0x100F8560000, 0x100F85B0000]
- Reserved region of type 5 [0x100F85B0000, 0x100F8730000]
- Reserved region of type 7 [0x100F8730000, 0x100FA21C000]
- Reserved region of type 4 [0x100FA21C000, 0x100FA2E0000]
- Reserved region of type 7 [0x100FA2E0000, 0x100FA2E8000]
- Reserved region of type 4 [0x100FA2E8000, 0x100FB624000]
- Reserved region of type 7 [0x100FB624000, 0x100FB6E5000]
- Reserved region of type 3 [0x100FB6E5000, 0x100FBC00000]
- Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
- Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
- Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
- Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
- Reserved region of type 7 [0x100FC020000, 0x100FF5FA000]
- Reserved region of type 4 [0x100FF5FA000, 0x100FF61C000]
- Reserved region of type 3 [0x100FF61C000, 0x100FF66D000]
- Reserved region of type 4 [0x100FF66D000, 0x100FFFD4000]
- Reserved region of type 3 [0x100FFFD4000, 0x100FFFF8000]
+ Reserved region of type 7 [0x10000000000, 0x100FBC86000]
+ Reserved region of type 1 [0x100FBC86000, 0x100FBDF0000]
+ Reserved region of type 5 [0x100FBDF0000, 0x100FBE70000]
+ Reserved region of type 6 [0x100FBE70000, 0x100FBF10000]
+ Reserved region of type 5 [0x100FBF10000, 0x100FBF60000]
+ Reserved region of type 9 [0x100FBF60000, 0x100FBFB0000]
+ Reserved region of type 5 [0x100FBFB0000, 0x100FC000000]
+ Reserved region of type 4 [0x100FC000000, 0x100FC020000]
+ Reserved region of type 9 [0x100FC020000, 0x100FC030000]
+ Reserved region of type 7 [0x100FC030000, 0x100FDE27000]
+ Reserved region of type 4 [0x100FDE27000, 0x100FEF24000]
+ Reserved region of type 7 [0x100FEF24000, 0x100FF1C8000]
+ Reserved region of type 3 [0x100FF1C8000, 0x100FF500000]
+ Reserved region of type 5 [0x100FF500000, 0x100FF690000]
+ Reserved region of type 6 [0x100FF690000, 0x100FF8E0000]
+ Reserved region of type 7 [0x100FF8E0000, 0x100FF8F6000]
+ Reserved region of type 4 [0x100FF8F6000, 0x100FF918000]
+ Reserved region of type 3 [0x100FF918000, 0x100FF94F000]
+ Reserved region of type 4 [0x100FF94F000, 0x100FFFE8000]
+ Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
  Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
  Reserved region of type 11 [0x10000000, 0x106C0000]
  Reserved region of type 11 [0x60010000, 0x60011000]
@@ -369,7 +369,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0 
- Shared memory is 100FA3AC918 
+ Shared memory is 100FDF9C718 
 
       *** Starting PE tests ***  
    1 : Check PE Granule Support          
@@ -633,8 +633,7 @@ PE Index * 1 *
 
  302 : Check SMMUv3.2 or higher          
        START  
-       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or high
-er  
+       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
        Failed on PE -    0 for Level=  6 
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
@@ -829,7 +828,7 @@ er
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 
- 824 : Check Device capabilites reg rules
+ 824 : Check Device capabilities reg rule
        START  
        Number of bit-field entries to check 8
        BDF 0x100 : PASS
@@ -909,7 +908,6 @@ er
        START  
        Number of bit-field entries to check 2
        BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
-
        BDF 0x100 : PASS
        PCIe Capability 0x1 not found for BDF 0x200
        PCIe Capability 0x1 not found for BDF 0x200
@@ -1004,7 +1002,7 @@ er
        Checkpoint --  1                  : Result:  SKIPPED 
        END  
 
- 839 : Check i-EP atomicop rule          
+ 839 : Check i-EP AtomicOp rule          
        START  
        No iEP_EP type device found. Skipping test
        IE_REG_2
@@ -1025,7 +1023,7 @@ er
        BDF - 0x200
        BDF - 200 does not support Power Management Capability
        Failed on PE -    0 for Level=  6 
-       RE_PWR_1
+       RE_PWR_1, IE_PWR_1
        Checkpoint --  1                  : Result:  FAIL 
        END  
 
@@ -1115,8 +1113,7 @@ er
        START  
        BDF - 0x100
        BDF - 0x200
-       No RCiEP/ iEP_EP type device with Multifunction and P2P support.Skipping 
-test
+       No RCiEP/ iEP_EP type device with Multifunction and P2P support.Skipping test
        IE_ACS_1, RE_ACS_1, RE_ACS_2
        Checkpoint --  1                  : Result:  SKIPPED 
        END  

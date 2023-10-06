@@ -34,20 +34,21 @@ QEMU command line arguments:
 -device ahci,bus=root_port_for_ahci
 
 EFI startup script:
+mode 100 31
 pci
 fs0:sbsa.efi -skip 861 -l 5
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL1: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL2: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL31: Built : 17:45:15, Aug 16 2023
-UEFI firmware (version 1.0 built at 13:29:26 on Aug 17 2023)
+NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
+UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -59,7 +60,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -88,8 +90,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
              Vendor 8086 Device 2922 Prog Interface 1
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
-em
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
              Vendor 8086 Device 10C9 Prog Interface 0
@@ -105,7 +106,7 @@ em
 
 
  SBSA Architecture Compliance Suite 
-    Version 7.1.2  
+    Version 7.1.3  
 
  Starting tests for level  5 (Print level is  3)
 
@@ -211,8 +212,7 @@ em
        S_L4SM_01, S_L4SM_02
        Checkpoint --  2                  : Result:  FAIL 
  302 : Check SMMUv3.2 or higher          
-       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or high
-er  
+       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
        Failed on PE -    0 for Level=  5 
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 

@@ -34,20 +34,21 @@ QEMU command line arguments:
 -device ahci,bus=root_port_for_ahci
 
 EFI startup script:
+mode 100 31
 pci
 fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL1: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL2: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL31: Built : 17:45:15, Aug 16 2023
-UEFI firmware (version 1.0 built at 13:29:26 on Aug 17 2023)
+NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
+UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -59,7 +60,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -88,8 +90,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
              Vendor 8086 Device 2922 Prog Interface 1
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
-em
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
              Vendor 8086 Device 10C9 Prog Interface 0
@@ -105,7 +106,7 @@ em
 
 
  BSA Architecture Compliance Suite
-          Version 1.0.5
+          Version 1.0.6
 
  Starting tests with print level :  1
 
@@ -113,7 +114,7 @@ em
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at F85AE498 and length is 108 
+  MADT is at FC02E498 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
   MPIDR 0 PE num 0 
@@ -121,8 +122,9 @@ em
   PE Enabled 1, Online Capable 0
   MPIDR 1 PE num 1 
  PE_INFO: Number of PE detected       :    2 
+ PE_INFO: Primary PE index       :    0 
  Creating GIC INFO table
-  MADT is at F85AE498 and length is 108 
+  MADT is at FC02E498 and length is 108 
   GICH base 2C010000 
   GICH base 2C010000 
   GIC DIS base 40060000 
@@ -131,16 +133,13 @@ em
   GIC ITS base 44081000 
   GIC ITS ID0 
 
-       gic version from info table = 3  GIC INFO: GIC version                :  
-  v3 
+       gic version from info table = 3  GIC INFO: GIC version                :    v3 
  GIC_INFO: Number of GICD             :    1 
  GIC_INFO: Number of GICR RD          :    1 
  GIC_INFO: Number of ITS              :    1 
  Creating TIMER INFO table
-  GTDT is at F85AFD18 and length is 84 
+  GTDT is at FC02E618 and length is 84 
   GTDT revision is at 3 
-  GTDT don't have el2 virt timer info
-  using bsa recommended value 28
  TIMER_INFO: Number of system timers  :    0 
  Creating WATCHDOG INFO table
   Watchdog base = 0x50011000 INTID = 0x30 
@@ -300,33 +299,32 @@ em
  Peripheral: Num of Storage ctrl      :    2 
  Peripheral: Num of Display ctrl      :    1 
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100F8328000]
-  Reserved region of type 1 [0x100F8328000, 0x100F8480000]
-  Reserved region of type 5 [0x100F8480000, 0x100F84C0000]
-  Reserved region of type 6 [0x100F84C0000, 0x100F8560000]
-  Reserved region of type 9 [0x100F8560000, 0x100F85B0000]
-  Reserved region of type 5 [0x100F85B0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA29E000]
-  Reserved region of type 4 [0x100FA29E000, 0x100FA2E0000]
-  Reserved region of type 7 [0x100FA2E0000, 0x100FA2F5000]
-  Reserved region of type 4 [0x100FA2F5000, 0x100FA357000]
-  Reserved region of type 7 [0x100FA357000, 0x100FA359000]
-  Reserved region of type 4 [0x100FA359000, 0x100FB624000]
-  Reserved region of type 7 [0x100FB624000, 0x100FB6E5000]
-  Reserved region of type 3 [0x100FB6E5000, 0x100FBC00000]
-  Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
-  Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
-  Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
-  Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FF5FA000]
-  Reserved region of type 4 [0x100FF5FA000, 0x100FF61C000]
-  Reserved region of type 3 [0x100FF61C000, 0x100FF66D000]
-  Reserved region of type 4 [0x100FF66D000, 0x100FFFD4000]
-  Reserved region of type 3 [0x100FFFD4000, 0x100FFFF8000]
+  Reserved region of type 7 [0x10000000000, 0x100FBC97000]
+  Reserved region of type 1 [0x100FBC97000, 0x100FBDF0000]
+  Reserved region of type 5 [0x100FBDF0000, 0x100FBE70000]
+  Reserved region of type 6 [0x100FBE70000, 0x100FBF10000]
+  Reserved region of type 5 [0x100FBF10000, 0x100FBF60000]
+  Reserved region of type 9 [0x100FBF60000, 0x100FBFB0000]
+  Reserved region of type 5 [0x100FBFB0000, 0x100FC000000]
+  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
+  Reserved region of type 9 [0x100FC020000, 0x100FC030000]
+  Reserved region of type 7 [0x100FC030000, 0x100FDEB6000]
+  Reserved region of type 4 [0x100FDEB6000, 0x100FDF6D000]
+  Reserved region of type 7 [0x100FDF6D000, 0x100FDF6F000]
+  Reserved region of type 4 [0x100FDF6F000, 0x100FEF24000]
+  Reserved region of type 7 [0x100FEF24000, 0x100FF1C8000]
+  Reserved region of type 3 [0x100FF1C8000, 0x100FF500000]
+  Reserved region of type 5 [0x100FF500000, 0x100FF690000]
+  Reserved region of type 6 [0x100FF690000, 0x100FF8E0000]
+  Reserved region of type 7 [0x100FF8E0000, 0x100FF8F6000]
+  Reserved region of type 4 [0x100FF8F6000, 0x100FF918000]
+  Reserved region of type 3 [0x100FF918000, 0x100FF94F000]
+  Reserved region of type 4 [0x100FF94F000, 0x100FFFE8000]
+  Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FA383F98 
+ Shared memory is 100FDF9EF98 
 
       *** Starting PE tests ***  
 
@@ -547,10 +545,9 @@ Operating System View:
 Hypervisor View:
  226 : Check NS EL2-Virt timer PPI Assignment         START
 
-       NS EL2 Virtual timer interrupt 28 not received
-       Failed on PE -    0
+       Received vir el2 interrupt    
        B_PPI_02
-       Checkpoint --  4                           : Result:  FAIL 
+                                       : Result:  PASS 
          END
 
  227 : Check NS EL2-Phy timer PPI Assignment          START
@@ -640,7 +637,7 @@ Operating System View:
          END
 
 
-      One or more GIC tests failed or were skipped.
+      All GIC tests passed.
 
       *** Starting SMMU tests ***  
 
@@ -791,8 +788,7 @@ Operating System View:
 
  602 : Check SATA CTRL Interface                      START
 
-       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access 
-failed 0 
+       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access failed 0 
        Re-checking SATA CTRL using PciIo protocol
 
        B_PER_03
@@ -1216,7 +1212,7 @@ Operating System View:
                                        : Result:  PASS 
          END
 
- 809 : Vendor specfic data are PCIe compliant         START
+ 809 : Vendor specific data is PCIe compliant         START
 
        BDF - 0x300
        BDF - 0x400
@@ -1386,7 +1382,6 @@ Operating System View:
  822 : Check Type 1 config header rules               START
 
        Number of bit-field entries to check 10
-       BDF 0x300 : SLT attribute mismatch: 0xFF030100 instead of 0x30100
        BDF 0x300 : PASS
        BDF 0x300 : PASS
        BDF 0x300 : PASS
@@ -1396,7 +1391,7 @@ Operating System View:
        BDF 0x300 : PASS
        BDF 0x300 : PASS
        BDF 0x300 : PASS
-       BDF 0x400 : SLT attribute mismatch: 0xFF040400 instead of 0x40400
+       BDF 0x300 : PASS
        BDF 0x400 : PASS
        BDF 0x400 : PASS
        BDF 0x400 : PASS
@@ -1406,7 +1401,7 @@ Operating System View:
        BDF 0x400 : PASS
        BDF 0x400 : PASS
        BDF 0x400 : PASS
-       BDF 0x500 : SLT attribute mismatch: 0xFF050500 instead of 0x50500
+       BDF 0x400 : PASS
        BDF 0x500 : PASS
        BDF 0x500 : PASS
        BDF 0x500 : PASS
@@ -1416,7 +1411,7 @@ Operating System View:
        BDF 0x500 : PASS
        BDF 0x500 : PASS
        BDF 0x500 : PASS
-       BDF 0x600 : SLT attribute mismatch: 0xFF060600 instead of 0x60600
+       BDF 0x500 : PASS
        BDF 0x600 : PASS
        BDF 0x600 : PASS
        BDF 0x600 : PASS
@@ -1426,7 +1421,7 @@ Operating System View:
        BDF 0x600 : PASS
        BDF 0x600 : PASS
        BDF 0x600 : PASS
-       BDF 0x700 : SLT attribute mismatch: 0xFF070700 instead of 0x70700
+       BDF 0x600 : PASS
        BDF 0x700 : PASS
        BDF 0x700 : PASS
        BDF 0x700 : PASS
@@ -1436,7 +1431,7 @@ Operating System View:
        BDF 0x700 : PASS
        BDF 0x700 : PASS
        BDF 0x700 : PASS
-       BDF 0x800 : SLT attribute mismatch: 0xFF090800 instead of 0x90800
+       BDF 0x700 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
@@ -1446,7 +1441,7 @@ Operating System View:
        BDF 0x800 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
-       BDF 0x20000 : SLT attribute mismatch: 0xFF030302 instead of 0x30302
+       BDF 0x800 : PASS
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
@@ -1456,9 +1451,9 @@ Operating System View:
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
-       Failed on PE -    0
+       BDF 0x20000 : PASS
        PCI_IN_05, PCI_IN_19
-       Checkpoint --  7                           : Result:  FAIL 
+                                       : Result:  PASS 
          END
 
  824 : Device capabilities reg rule                   START
@@ -1595,11 +1590,11 @@ Operating System View:
 
  835 : Check Function level reset                     START
 
-       BDF 0x40000   config space addr 0xF0400000
        BDF 0x50000 
        BDF 0x60000 
+       No EP type device found with PCIe Express Cap support. Skipping test
        PCI_SM_02
-                                       : Result:  PASS 
+       Checkpoint --  1                           : Result:  SKIPPED 
          END
 
  836 : Check ARI forwarding enable rule               START
@@ -1704,7 +1699,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   70  Tests Failed =    5
+     Total Tests run  =   87  Tests Passed  =   71  Tests Failed =    3
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

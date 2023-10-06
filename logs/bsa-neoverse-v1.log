@@ -34,20 +34,21 @@ QEMU command line arguments:
 -device ahci,bus=root_port_for_ahci
 
 EFI startup script:
+mode 100 31
 pci
 fs0:bsa.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL1: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL2: Built : 17:45:15, Aug 16 2023
+NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-596-g640c03c37-dirty
-NOTICE:  BL31: Built : 17:45:15, Aug 16 2023
-UEFI firmware (version 1.0 built at 13:29:26 on Aug 17 2023)
+NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
+UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -59,7 +60,8 @@ UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -88,8 +90,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
              Vendor 8086 Device 2922 Prog Interface 1
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsyst
-em
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
              Vendor 8086 Device 10C9 Prog Interface 0
@@ -105,7 +106,7 @@ em
 
 
  BSA Architecture Compliance Suite
-          Version 1.0.5
+          Version 1.0.6
 
  Starting tests with print level :  3
 
@@ -184,10 +185,7 @@ Operating System View:
  207 : Check EL1-Virt timer PPI assignment        : Result:  PASS 
 
 Hypervisor View:
- 226 : Check NS EL2-Virt timer PPI Assignment
-       NS EL2 Virtual timer interrupt 28 not received
-       Failed on PE -    0
-       Checkpoint --  4                           : Result:  FAIL 
+ 226 : Check NS EL2-Virt timer PPI Assignment     : Result:  PASS 
  227 : Check NS EL2-Phy timer PPI Assignment      : Result:  PASS 
  228 : Check GIC Maintenance PPI Assignment       : Result:  PASS 
 
@@ -199,7 +197,7 @@ Operating System View:
  278 : Check uniqueness of StreamID               : Result:  PASS 
  279 : Check Device's ReqID-DeviceID-StreamID     : Result:  PASS 
 
-      One or more GIC tests failed or were skipped.
+      All GIC tests passed.
 
       *** Starting SMMU tests ***  
 
@@ -278,7 +276,7 @@ Operating System View:
  806 : Legacy int must be SPI & lvl-sensitive
        Checkpoint --  2                           : Result:  SKIPPED 
  808 : Check all 1's for out of range             : Result:  PASS 
- 809 : Vendor specfic data are PCIe compliant     : Result:  PASS 
+ 809 : Vendor specific data is PCIe compliant     : Result:  PASS 
  811 : Check RP Byte Enable Rules                 : Result:  PASS 
  817 : Check Direct Transl P2P Support       
        Checkpoint --  1                           : Result:  SKIPPED 
@@ -288,16 +286,7 @@ Operating System View:
        Checkpoint --  1                           : Result:  SKIPPED 
  820 : Type 0/1 common config rule                : Result:  PASS 
  821 : Type 0 config header rules                 : Result:  PASS 
- 822 : Check Type 1 config header rules      
-       BDF 0x300 : SLT attribute mismatch: 0xFF030100 instead of 0x30100
-       BDF 0x400 : SLT attribute mismatch: 0xFF040400 instead of 0x40400
-       BDF 0x500 : SLT attribute mismatch: 0xFF050500 instead of 0x50500
-       BDF 0x600 : SLT attribute mismatch: 0xFF060600 instead of 0x60600
-       BDF 0x700 : SLT attribute mismatch: 0xFF070700 instead of 0x70700
-       BDF 0x800 : SLT attribute mismatch: 0xFF090800 instead of 0x90800
-       BDF 0x20000 : SLT attribute mismatch: 0xFF030302 instead of 0x30302
-       Failed on PE -    0
-       Checkpoint --  7                           : Result:  FAIL 
+ 822 : Check Type 1 config header rules           : Result:  PASS 
  824 : Device capabilities reg rule               : Result:  PASS 
  825 : Device Control register rule               : Result:  PASS 
  826 : Device cap 2 register rules                : Result:  PASS 
@@ -308,7 +297,8 @@ Operating System View:
  831 : Check Type0/1 BIST Register rule           : Result:  PASS 
  832 : Check HDR CapPtr Register rule             : Result:  PASS 
  833 : Check Max payload size supported           : Result:  PASS 
- 835 : Check Function level reset                 : Result:  PASS 
+ 835 : Check Function level reset            
+       Checkpoint --  1                           : Result:  SKIPPED 
  836 : Check ARI forwarding enable rule           : Result:  PASS 
  837 : Check Config Txn for RP in HB              : Result:  PASS 
  838 : Check all RP in HB is in same ECAM         : Result:  PASS 
@@ -328,7 +318,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   71  Tests Failed =    5
+     Total Tests run  =   87  Tests Passed  =   72  Tests Failed =    3
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 
