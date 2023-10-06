@@ -242,13 +242,12 @@
   tags: B_PPI_01
   title: Check EL1-Virt timer PPI assignment
 226:
-  comment: work in progress, patches in review
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-v1: FAIL
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-v1: PASS
   tags: B_PPI_02
   title: Check NS EL2-Virt timer PPI Assignment
 227:
@@ -594,7 +593,7 @@
     neoverse-n1: PASS
     neoverse-v1: PASS
   tags: PCI_IN_20
-  title: Vendor specfic data are PCIe compliant
+  title: Vendor specific data is PCIe compliant
 811:
   status:
     cortex-a57: PASS
@@ -651,11 +650,11 @@
   title: Type 0 config header rules
 822:
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-v1: FAIL
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-v1: PASS
   tags: PCI_IN_05, PCI_IN_19
   title: Check Type 1 config header rules
 824:
@@ -723,11 +722,11 @@
   title: Check Max payload size supported
 835:
   status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-v1: PASS
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-v1: SKIPPED
   tags: PCI_SM_02
   title: Check Function level reset
 836:
