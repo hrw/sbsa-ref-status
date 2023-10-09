@@ -107,7 +107,7 @@ do
                 boot-sbsa-ref "fs0:sbsa.efi -skip 861 -l ${level} -v 1" > logs/sbsa-${cpu}-${level}-v1.log
         done
 
-        echo -n "ACPI tables"
+        echo -n "ACPI tables "
         boot-sbsa-ref "acpiview" > logs/acpiview-${cpu}.log
 
         echo "CPU info"
