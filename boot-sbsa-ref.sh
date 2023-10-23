@@ -108,7 +108,7 @@ common_qemu_args=(
 -watchdog-action none
 
 # exit instead of rebooting
--no-reboot
+#-no-reboot
 
 # have a way to check internals
 -monitor telnet::45454,server,nowait
@@ -280,6 +280,10 @@ if [ $MACHINE == "virt" ]; then
 fi
 
 qemu_args="${qemu_args} ${common_qemu_args[@]}"
+
+if [ -z $DISABLE_NO_REBOOT ]; then
+	qemu_args="${qemu_args} --no-reboot"
+fi
 
 if [ -z $NOITS ]; then
 	qemu_args="${qemu_args[@]} ${its_pci_setup[@]}"
