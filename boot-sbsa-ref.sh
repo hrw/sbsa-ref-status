@@ -257,6 +257,11 @@ case $OS in
 	"rhel")
 		ISO="disks/rhel-9.2-aarch64-boot.iso"
 		;;
+	"sr-acs")
+		ISO="disks/SystemReady-ACS-23.09-2.0.0-sr_acs_live_image.img"
+		ISOHDD=1
+		DISABLE_NO_REBOOT=1
+		;;
 	*)
 		if [ ! -z $OS ]; then
 			echo "Unknown OS: >${OS}<"
