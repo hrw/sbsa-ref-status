@@ -29,6 +29,10 @@ for i in "$@"; do
 			GDB=1
 			shift
 			;;
+		--empty)
+			EMPTY=1
+			shift
+			;;
 		--virt)
 			MACHINE="virt"
 			shift
@@ -299,6 +303,12 @@ fi
 
 if [ -z $GFX ]; then
         qemu_args="${qemu_args} -nographic"
+fi
+
+if [ ! -z $EMPTY ]; then
+	rm -f disks/empty.hddimg
+	truncate -s 10g disks/empty.hddimg
+        qemu_args="${qemu_args} -drive file=disks/empty.hddimg,format=raw"
 fi
 
 qemu_args="${qemu_args} ${firmware_args[@]}"
