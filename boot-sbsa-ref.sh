@@ -173,7 +173,9 @@ its_pci_setup=(
 # 104c:8232 x3130-upstream  
 # 1274:5000 es1370          
 # 1af4:1044 virtio-rng-pci  
+# 1b36:000b pxb-pcie
 # 1b36:000c pcie-root-port  
+# 1b36:000d qemu-xhci
 # 1b36:000e pcie-pci-bridge 
 # 1b36:0010 qemu nvme       
 # 8086:10c9 intel igb       
