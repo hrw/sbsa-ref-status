@@ -262,6 +262,9 @@ case $OS in
 		ISOHDD=1
 		DISABLE_NO_REBOOT=1
 		;;
+	"winpe")
+		ISO="disks/WinPE_arm64.iso"
+		;;
 	*)
 		if [ ! -z $OS ]; then
 			echo "Unknown OS: >${OS}<"
