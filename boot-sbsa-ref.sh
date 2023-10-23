@@ -251,7 +251,7 @@ case $OS in
 		ISOHDD=1
 		;;
 	"openbsd")
-		ISO="disks/openbsd-miniroot73.img"
+		ISO="disks/openbsd-miniroot74.img"
 		ISOHDD=1
 		;;
 	"rhel")
