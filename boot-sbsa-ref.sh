@@ -209,10 +209,6 @@ its_pci_setup=(
     -device es1370,bus=pci,addr=9
     -device e1000,bus=pci,addr=10
 
-# another PCIe bus
- -device pxb-pcie,id=pxb1,bus_nr=1
-   -device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=10,slot=0
-     -device ahci,bus=root_port_for_ahci
 )
 
 # is iso file hdd image?
