@@ -274,10 +274,10 @@ case $OS in
 esac
 
 if [ ! -z $ISO ];then
-	if [ 0 == $ISOHDD ];then
-		ISO="${ISO},media=cdrom"
-	else
+	if [ 1 == $ISOHDD ];then
 		ISO="${ISO},format=raw"
+	else
+		ISO="${ISO},media=cdrom"
 	fi
 	qemu_args="${qemu_args} -drive file=${ISO}"
 fi
