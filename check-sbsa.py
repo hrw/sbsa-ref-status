@@ -78,27 +78,29 @@ for test in status_sbsa:
 
         tags_to_tests[tag]["sbsa"].append(test)
 
+# SBSA Level 3 requires Arm v8.0
+# SBSA Level 4 requires Arm v8.3
+# SBSA Level 5 requires Arm v8.4
+# SBSA Level 6 requires Arm v8.5/9.0
+# SBSA Level 7 requires Arm v8.6/9.1
+
 cpus = {
-#   "core name":   architecture level
-    "cortex-a57":  80,
-    "cortex-a72":  80,
-    "neoverse-n1": 82,
-    "neoverse-v1": 83,
-    "neoverse-n2": 90,
+#   "core name":   sbsa level
+    "cortex-a57":  3,
+    "cortex-a72":  3,
+    "neoverse-n1": 3,
+    "neoverse-v1": 5,
+    "neoverse-n2": 6,
     "max":         99 }
 
 for cpu in cpus:
 
     level_result = False
     info_given = False
+
     for level in range(3, 8):
 
-        # SBSA Level 4 requires Arm v8.3
-        # SBSA Level 5 requires Arm v8.4
-        if (
-            (cpus[cpu] < 83 and level >= 4) or
-            (cpus[cpu] < 84 and level >= 5)
-        ):
+        if (cpus[cpu] < level):
             if not info_given:
                 print(f"{cpu} is too old for SBSA level {level} and above")
                 info_given = True
