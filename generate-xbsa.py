@@ -3,41 +3,15 @@
 from datetime import datetime, UTC
 from jinja2 import Environment, FileSystemLoader
 
-import yaml
+import bsa
 
-with open("xbsa-checklist.yml", encoding="utf-8") as yml:
-    xbsa_checklist = yaml.safe_load(yml)
 
-with open("status-bsa.yml", encoding="utf-8") as yml:
-    status_bsa = yaml.safe_load(yml)
 
-with open("status-sbsa.yml", encoding="utf-8") as yml:
-    status_sbsa = yaml.safe_load(yml)
 
 
 def handle_checklist():
 
     checklist = []
-
-    tag_to_test = {}
-
-    for test in status_bsa:
-        for tag in status_bsa[test]["tags"].split(','):
-            tag = tag.strip()
-            try:
-                tag_to_test[tag]["bsa"].append(test)
-            except KeyError:
-                tag_to_test[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
-                tag_to_test[tag]["bsa"].append(test)
-
-    for test in status_sbsa:
-        for tag in status_sbsa[test]["tags"].split(','):
-            tag = tag.strip()
-            try:
-                tag_to_test[tag]["sbsa"].append(test)
-            except KeyError:
-                tag_to_test[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
-                tag_to_test[tag]["sbsa"].append(test)
 
     for category in xbsa_checklist:
         for group in xbsa_checklist[category]["groups"]:
@@ -45,9 +19,9 @@ def handle_checklist():
 
                 # not every entry from checklist has ACS tests
                 try:
-                    tests = tag_to_test[rule["tag"]]
+                    tests = tags_to_tests[rule["tag"]]
                     # this tag is present in BSA/SBSA spec, not only in ACS
-                    tag_to_test[rule["tag"]]["acs_only"] = False
+                    tags_to_tests[rule["tag"]]["acs_only"] = False
                 except KeyError:
                     tests = {"bsa": [], "sbsa": []}
 
@@ -60,21 +34,21 @@ def handle_checklist():
                     'tests': tests,
                 })
 
-    for tag in sorted(tag_to_test.keys()):
-        if tag_to_test[tag]["acs_only"]:
+    for tag in sorted(tags_to_tests.keys()):
+        if tags_to_tests[tag]["acs_only"]:
             # we want to display it at the end on checklist
             entry = {
                 'category': "ACS only tests",
                 'group': "ACS",
                 'tag': tag,
-                'tests': tag_to_test[tag],
+                'tests': tags_to_tests[tag],
                 'bsa': [],
                 'sbsa': []
             }
 
-            if tag_to_test[tag]["bsa"]:
+            if tags_to_tests[tag]["bsa"]:
                 entry["bsa"] = True
-            if tag_to_test[tag]["sbsa"]:
+            if tags_to_tests[tag]["sbsa"]:
                 entry["sbsa"] = {
                     3: False,
                     4: False,
@@ -82,7 +56,7 @@ def handle_checklist():
                     6: False,
                     7: False
                 }
-                for test in tag_to_test[tag]["sbsa"]:
+                for test in tags_to_tests[tag]["sbsa"]:
                     sbsa_level = int(status_sbsa[test]["level"])
 
                     for level in range(sbsa_level, 8):
@@ -112,5 +86,7 @@ def generate_html_file(checklist):
 
 
 if __name__ == "__main__":
+    status_bsa, status_sbsa, xbsa_checklist = bsa.load_yamls()
+    tags_to_tests = bsa.create_map_tags_to_tests(status_bsa, status_sbsa)
     checklist = handle_checklist()
     generate_html_file(checklist)

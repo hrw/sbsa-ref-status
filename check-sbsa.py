@@ -1,21 +1,8 @@
 #!/usr/bin/python3
 
-import yaml
-
-with open("status-bsa.yml", encoding="utf-8") as yml:
-    status_bsa = yaml.safe_load(yml)
-
-with open("status-sbsa.yml", encoding="utf-8") as yml:
-    status_sbsa = yaml.safe_load(yml)
-
-with open("xbsa-checklist.yml", encoding="utf-8") as yml:
-    xbsa_checklist = yaml.safe_load(yml)
-
-# some tests lists several tags and we do want to show it once
-checked_tests = {"bsa": [], "sbsa": []}
+import bsa
 
 def check_tag(tag, failed):
-
     try:
         for bsa_test_id in tags_to_tests[tag]["bsa"]:
             if bsa_test_id not in checked_tests["bsa"]:
@@ -60,30 +47,11 @@ def check_sbsa_level(cpu, level, previous_level_result):
     return failed
 
 
-def create_map_tag_to_test():
-    # create a map of (S)BSA tag to tests
-    tags_to_tests = {}
+# some tests lists several tags and we do want to show it once
+checked_tests = {"bsa": [], "sbsa": []}
 
-    for test in status_bsa:
-        for tag in status_bsa[test]["tags"].split(","):
-            tag = tag.strip()
-            if tag not in tags_to_tests:
-                tags_to_tests[tag] = {"bsa": [], "sbsa": []}
-
-            tags_to_tests[tag]["bsa"].append(test)
-
-    for test in status_sbsa:
-        for tag in status_sbsa[test]["tags"].split(','):
-            tag = tag.strip()
-            if tag not in tags_to_tests:
-                tags_to_tests[tag] = {"bsa": [], "sbsa": []}
-
-            tags_to_tests[tag]["sbsa"].append(test)
-
-    return tags_to_tests
-
-
-tags_to_tests = create_map_tag_to_test()
+status_bsa, status_sbsa, xbsa_checklist = bsa.load_yamls()
+tags_to_tests = bsa.create_map_tags_to_tests(status_bsa, status_sbsa)
 
 # SBSA Level 3 requires Arm v8.0
 # SBSA Level 4 requires Arm v8.3
