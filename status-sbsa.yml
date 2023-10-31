@@ -5,6 +5,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L3PE_01
   title: Check PE Granule Support
@@ -15,6 +16,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L3PE_02
   title: Check for 16-bit ASID support
@@ -25,6 +27,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L3PE_03
   title: Check AARCH64 implementation
@@ -35,6 +38,7 @@
     cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: S_L3PE_04
   title: Check FEAT_LPA Requirements
@@ -45,6 +49,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L4PE_01
   title: Check for RAS extension
@@ -55,6 +60,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: S_L4PE_02
   title: Check DC CVAP support
@@ -65,6 +71,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L4PE_03
   title: Check for 16-Bit VMID
@@ -75,6 +82,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L4PE_04
   title: Check for Virtual host extensions
@@ -85,6 +93,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_01
   title: Support Page table map size change
@@ -95,6 +104,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_02
   title: Check for pointer signing
@@ -105,6 +115,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L5PE_04
   title: Check Activity monitors extension
@@ -115,6 +126,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_05
   title: Check for SHA3 and SHA512 support
@@ -125,6 +137,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_06
   title: Stage 2 control of mem and cache
@@ -135,6 +148,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L5PE_07
   title: Check for nested virtualization
@@ -145,6 +159,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: S_MPAM_PE
   title: Check MPAM PE Requirements
@@ -155,6 +170,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: S_MPAM_PE
   title: Check MPAM LLC Requirements
@@ -165,6 +181,7 @@
     cortex-a72: SKIPPED
     max: FAIL
     neoverse-n1: SKIPPED
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: B_PE_17
   title: Check SPE if implemented
@@ -175,6 +192,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L6PE_02
   title: Check Branch Target Support
@@ -185,6 +203,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L6PE_03
   title: Check Protect Against Timing Fault
@@ -195,6 +214,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L6PE_04
   title: Check PMU Version Support
@@ -205,6 +225,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L6PE_05
   title: Check AccessFlag DirtyState Update
@@ -215,6 +236,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L6PE_06
   title: Check Enhanced Virtualization Trap
@@ -225,6 +247,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: B_SEC_01
   title: Check Speculation Restriction
@@ -235,6 +258,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SEC_02
   title: Check Speculative Str Bypass Safe
@@ -245,6 +269,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SEC_03
   title: Check PEs Impl CSDB,SSBB,PSSBB
@@ -255,6 +280,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: B_SEC_04
   title: Check PEs Implement SB Barrier
@@ -265,6 +291,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: B_SEC_05
   title: Check PE Impl CFP,DVP,CPP RCTX
@@ -275,6 +302,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_01
   title: Check Fine Grain Trap Support
@@ -285,6 +313,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_02
   title: Check for ECV support
@@ -295,6 +324,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_03
   title: Check for AMUv1p1 Support
@@ -305,6 +335,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L7PE_04
   title: Checks ASIMD Int8 matrix multiplc
@@ -315,6 +346,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L7PE_05
   title: Check for BFLOAT16 extension
@@ -325,6 +357,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L7PE_06
   title: Check for EnhancedPAC2 and FPAC
@@ -335,6 +368,7 @@
     cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L7PE_07
   title: Check for SVE Int8 matrix multiplc
@@ -345,6 +379,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L7PE_08
   title: Check for data gathering hint
@@ -355,6 +390,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_09
   title: Check WFE Fine tune delay feature
@@ -365,6 +401,7 @@
     cortex-a72: FAIL
     max: PASS
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_10
   title: Check for enhanced PAN feature
@@ -375,6 +412,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L3MM_01, S_L3MM_02
   title: Check peripherals addr 64Kb apart
@@ -394,6 +432,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L3GI_01
   title: Check GIC version
@@ -404,6 +443,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PP_01
   title: Check Reserved PPI Assignments
@@ -414,6 +454,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L4SM_01, S_L4SM_02
   title: Check SMMU Compatibility
@@ -424,6 +465,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L5SM_01, S_L5SM_02
   title: Check SMMUv3.2 or higher
@@ -434,6 +476,7 @@
     cortex-a72: SKIPPED
     max: FAIL
     neoverse-n1: SKIPPED
+    neoverse-n2: FAIL
     neoverse-v1: SKIPPED
   tags: B_SMMU_09
   title: Check S-EL2 & SMMU Stage1 support
@@ -444,6 +487,7 @@
     cortex-a72: SKIPPED
     max: FAIL
     neoverse-n1: SKIPPED
+    neoverse-n2: FAIL
     neoverse-v1: SKIPPED
   tags: B_SMMU_20
   title: Check S-EL2 & SMMU Stage2 Support
@@ -454,6 +498,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_11, B_SMMU_22, S_L5SM_03
   title: Check SMMU for MPAM support
@@ -464,6 +509,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L6SM_02
   title: Check SMMU HTTU Support
@@ -474,6 +520,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L6SM_03
   title: Check SMMU MSI Support
@@ -484,6 +531,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_23
   title: Check SMMU 16 Bit VMID Support
@@ -494,6 +542,7 @@
     cortex-a72: SKIPPED
     max: FAIL
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_03
   title: Check SMMU Large VA Support
@@ -504,6 +553,7 @@
     cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: SKIPPED
   tags: B_SMMU_04, B_SMMU_05
   title: Check TLB Range Invalidation
@@ -514,6 +564,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_13
   title: Check SMMU 16 Bit ASID Support
@@ -524,6 +575,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_14
   title: Check SMMU Endianess Support
@@ -534,6 +586,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L6SM_01
   title: Check SMMU Coherent Access Support
@@ -544,6 +597,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7SM_03, S_L7SM_04
   title: Check SMMU PMU Extension
@@ -554,6 +608,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L7SM_01
   title: Check if all DMA reqs behind SMMU
@@ -564,6 +619,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L4PCI_2
   title: Check EA Capability
@@ -574,6 +630,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L6WD_01
   title: Check NS Watchdog Revision
@@ -584,6 +641,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_01
   title: Check ECAM Presence
@@ -594,6 +652,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_02
   title: Check ECAM Memory accessibility
@@ -604,6 +663,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_MM_04
   title: NP type-1 pcie only support 32-bit
@@ -614,6 +674,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Type 0/1 common config rules
@@ -624,6 +685,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_1, IE_REG_1
   title: Check Type 0 config header rules
@@ -634,6 +696,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_3
   title: Check Type 1 config header rules
@@ -644,6 +707,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_4
   title: Check PCIe capability rules
@@ -654,6 +718,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device capabilities reg rule
@@ -664,6 +729,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device Control register rule
@@ -674,6 +740,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device cap 2 register rules
@@ -684,6 +751,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device control 2 reg rules
@@ -694,6 +762,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_REG_2, IE_REG_5
   title: Check Power management cap rules
@@ -704,6 +773,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_REG_2, IE_REG_5
   title: Check Power management/status rule
@@ -714,6 +784,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Cmd Reg memory space enable
@@ -724,6 +795,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check Type0/1 BIST Register rule
@@ -734,6 +806,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REG_1, IE_REG_1, IE_REG_3
   title: Check HDR CapPtr Register rule
@@ -744,6 +817,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Max payload size supported
@@ -754,6 +828,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_BAR_3, IE_BAR_3
   title: Check BAR memory space & Type rule
@@ -764,6 +839,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: RE_RST_1, IE_RST_1, PCI_SM_02
   title: Check Function level reset rule
@@ -774,6 +850,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_17
   title: Check ARI forwarding support rule
@@ -784,6 +861,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_2
   title: Check OBFF supported rule
@@ -794,6 +872,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_4
   title: Check CTRS and CTDS rule
@@ -804,6 +883,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_2
   title: Check i-EP AtomicOp rule
@@ -814,6 +894,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_INT_1, IE_INT_1
   title: Check MSI and MSI-X support rule
@@ -824,6 +905,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_PWR_1, IE_PWR_1
   title: Check Power Management rules
@@ -834,6 +916,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_17
   title: Check ARI forwarding enable rule
@@ -844,6 +927,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_04
   title: Check device under RP in same ECAM
@@ -854,6 +938,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_03
   title: Check all RP in HB is in same ECAM
@@ -864,6 +949,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_18
   title: Check RP Byte Enable Rules
@@ -874,6 +960,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_12
   title: Check Config Txn for RP in HB
@@ -884,6 +971,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_13
   title: Check RootPort NP Memory Access
@@ -894,6 +982,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_IN_13
   title: Check RootPort P Memory Access
@@ -904,6 +993,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_LI_01, PCI_LI_03
   title: Check L-Intr SPI Level-Sensitive
@@ -914,6 +1004,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_RST_2
   title: Check Sec Bus Reset For iEP_RP
@@ -924,6 +1015,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_SMU_1, RE_SMU_2
   title: Check ATS Support Rule
@@ -934,6 +1026,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_ACS_2
   title: Check iEP-RootPort P2P Support
@@ -944,6 +1037,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_ACS_1, RE_ACS_1, RE_ACS_2
   title: Check RCiEP, iEP_EP P2P Supp
@@ -954,6 +1048,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: RE_BAR_1, IE_BAR_1
   title: Read and write to BAR reg
@@ -964,6 +1059,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: RE_PCI_2
   title: Check RCEC Class code and Ext Cap
@@ -974,6 +1070,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: RE_PCI_1
   title: Check RCiEP Hdr type & link Cap
@@ -1002,6 +1099,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_4
   title: Slot Cap, Control and Status register rules
@@ -1012,6 +1110,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PMU_PE_02
   title: Check PMU Overflow signal
@@ -1022,6 +1121,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PMU_PE_03
   title: Check number of PMU counters
@@ -1032,6 +1132,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: PMU_EV_11
   title: Check for multi-threaded PMU ext
@@ -1042,6 +1143,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PMU_SPE
   title: Check for PMU SPE Requirements

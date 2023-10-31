@@ -4,6 +4,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_01
   title: Check Arch symmetry across PE
@@ -13,6 +14,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_02
   title: Check for number of PE
@@ -22,6 +24,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_03
   title: Check for AdvSIMD and FP support
@@ -31,6 +34,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_04
   title: Check PE 4KB Granule Support
@@ -40,6 +44,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_06
   title: Check Cryptographic extensions
@@ -49,6 +54,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_07
   title: Check Little Endian support
@@ -58,6 +64,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_08
   title: Check EL1 and EL0 implementation
@@ -67,6 +74,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_09
   title: Check for PMU and PMU counters
@@ -76,6 +84,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_10
   title: Check PMU Overflow signal
@@ -85,6 +94,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_11
   title: Check num of Breakpoints and type
@@ -94,6 +104,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_12
   title: Check Synchronous Watchpoints
@@ -103,6 +114,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_13
   title: Check CRC32 instruction support
@@ -112,6 +124,7 @@
     cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_15
   title: Check PAuth if implementation
@@ -121,6 +134,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_18
   title: Check EL2 implementation
@@ -130,6 +144,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_19
   title: Check Stage 2 4KB Granule Support
@@ -139,6 +154,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_20
   title: Check Stage2 and Stage1 Granule match
@@ -148,6 +164,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_21
   title: Check for PMU counters
@@ -157,6 +174,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_22
   title: Check VMID breakpoint number
@@ -166,6 +184,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PE_23, B_PE_24
   title: Check EL3 implementation
@@ -175,6 +194,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_MEM_01
   title: Mem Access Response in finite time
@@ -184,6 +204,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_MEM_05
   title: PE must access all NS addr space
@@ -193,6 +214,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_GIC_01
   title: Check GIC version
@@ -202,6 +224,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_GIC_03
   title: If PCIe, GICv3 then ITS, LPI
@@ -211,6 +234,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_GIC_04
   title: Check GICv3 Security States
@@ -220,6 +244,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_GIC_05
   title: Non-secure SGIs are implemented
@@ -229,6 +254,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PPI_01
   title: Check EL1-Phy timer PPI assignment
@@ -238,6 +264,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PPI_01
   title: Check EL1-Virt timer PPI assignment
@@ -247,6 +274,7 @@
     cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PPI_02
   title: Check NS EL2-Virt timer PPI Assignment
@@ -256,6 +284,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PPI_02
   title: Check NS EL2-Phy timer PPI Assignment
@@ -265,6 +294,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PPI_02
   title: Check GIC Maintenance PPI Assignment
@@ -274,6 +304,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: ITS_01
   title: Check number of ITS blocks in a group
@@ -283,6 +314,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: ITS_02
   title: Check ITS block association with group
@@ -292,6 +324,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: ITS_DEV_2
   title: Check uniqueness of StreamID
@@ -301,6 +334,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: ITS_DEV_7,ITS_DEV_8
   title: Check Device's ReqID-DeviceID-StreamID
@@ -310,6 +344,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_01
   title: All SMMUs have same Arch Revision
@@ -319,6 +354,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_02
   title: Check SMMU Granule Support
@@ -329,6 +365,7 @@
     cortex-a72: SKIPPED
     max: FAIL
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_SMMU_06
   title: Check SMMU Large Physical Addr Support
@@ -338,6 +375,7 @@
     cortex-a72: PASS
     max: SKIPPED
     neoverse-n1: PASS
+    neoverse-n2: SKIPPED
     neoverse-v1: PASS
   tags: B_SMMU_08
   title: Check SMMU S-EL2 & stage1 support
@@ -348,6 +386,7 @@
     cortex-a72: FAIL
     max: SKIPPED
     neoverse-n1: FAIL
+    neoverse-n2: SKIPPED
     neoverse-v1: FAIL
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
   title: Check SMMU S-EL2 & stage2 support
@@ -366,6 +405,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_21, SMMU_01
   title: SMMUv3 Integration compliance
@@ -375,6 +415,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_TIME_01, B_TIME_02
   title: Check Counter Frequency
@@ -384,6 +425,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_TIME_06
   title: SYS Timer if PE Timer not ON
@@ -393,6 +435,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_TIME_07, B_TIME_10
   title: Memory mapped timer check
@@ -402,6 +445,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_TIME_08
   title: Generate Mem Mapped SYS Timer Intr
@@ -411,6 +455,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_TIME_09
   title: Restore PE timer on PE wake up
@@ -420,6 +465,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
   title: Wake from EL1 PHY Timer Int
@@ -429,6 +475,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
   title: Wake from EL1 VIR Timer Int
@@ -438,6 +485,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
   title: Wake from EL2 PHY Timer Int
@@ -447,6 +495,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
   title: Wake from Watchdog WS0 Int
@@ -456,6 +505,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
   title: Wake from System Timer Int
@@ -465,6 +515,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_01, B_PER_02
   title: USB CTRL Interface
@@ -474,6 +525,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_03
   title: Check SATA CTRL Interface
@@ -483,6 +535,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_05
   title: Check Arm BSA UART register offsets
@@ -492,6 +545,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_06, B_PER_07
   title: Check Arm GENERIC UART Interrupt
@@ -501,6 +555,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: B_PER_05
   title: 16550 compatible UART
@@ -510,6 +565,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WD_01, B_WD_02, S_L3WD_01
   title: Non Secure Watchdog Access
@@ -519,6 +575,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_WD_03, S_L3WD_01
   title: Check Watchdog WS0 interrupt
@@ -528,6 +585,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_01
   title: Check ECAM Presence
@@ -537,6 +595,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_02
   title: PE - ECAM Region accessibility check
@@ -546,6 +605,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_04
   title: All EP/Sw under RP in same ECAM Region
@@ -555,6 +615,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_13
   title: Check RootPort NP Memory Access
@@ -564,6 +625,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_13
   title: Check RootPort P Memory Access
@@ -573,6 +635,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_LI_01, PCI_LI_03
   title: Legacy int must be SPI & lvl-sensitive
@@ -582,6 +645,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_16
   title: Check all 1's for out of range
@@ -591,6 +655,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_20
   title: Vendor specific data is PCIe compliant
@@ -600,6 +665,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_18
   title: Check RP Byte Enable Rules
@@ -609,6 +675,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_PP_05
   title: Check Direct Transl P2P Support
@@ -618,6 +685,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_PP_05
   title: Check RP Adv Error Report
@@ -627,6 +695,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_PP_03
   title: RP must suprt ACS if P2P Txn are allow
@@ -636,6 +705,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05, PCI_IN_19
   title: Type 0/1 common config rule
@@ -645,6 +715,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_12
   title: Type 0 config header rules
@@ -654,6 +725,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05, PCI_IN_19
   title: Check Type 1 config header rules
@@ -663,6 +735,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05
   title: Device capabilities reg rule
@@ -672,6 +745,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05
   title: Device Control register rule
@@ -681,6 +755,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05
   title: Device cap 2 register rules
@@ -690,6 +765,7 @@
     cortex-a72: FAIL
     max: FAIL
     neoverse-n1: FAIL
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: PCI_IN_19
   title: Check Cmd Reg memory space enable
@@ -699,6 +775,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_19
   title: Check Type0/1 BIST Register rule
@@ -708,6 +785,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_19
   title: Check HDR CapPtr Register rule
@@ -717,6 +795,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_05
   title: Check Max payload size supported
@@ -726,6 +805,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_SM_02
   title: Check Function level reset
@@ -735,6 +815,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_17
   title: Check ARI forwarding enable rule
@@ -744,6 +825,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_12
   title: Check Config Txn for RP in HB
@@ -753,6 +835,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IN_03
   title: Check all RP in HB is in same ECAM
@@ -762,6 +845,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_MSI_01
   title: Check MSI support for PCIe dev
@@ -771,6 +855,7 @@
     cortex-a72: PASS
     max: PASS
     neoverse-n1: PASS
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: PCI_IC_11
   title: PCIe RC,PE - Same Inr Shareable Domain
@@ -789,6 +874,7 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: PCI_PAS_1
   title: PASID support atleast 16 bits
