@@ -6,7 +6,22 @@ from jinja2 import Environment, FileSystemLoader
 import bsa
 
 
+def check_tag(tag):
+    cpu = "neoverse-n2"
+    passed = True
 
+    try:
+        for bsa_test_id in tags_to_tests[tag]["bsa"]:
+            if status_bsa[bsa_test_id]['status'][cpu] in ["FAIL"]:
+                passed = False
+
+        for sbsa_test_id in tags_to_tests[tag]["sbsa"]:
+            if status_sbsa[sbsa_test_id]['status'][cpu] in ["FAIL"]:
+                passed = False
+    except KeyError:
+        pass
+
+    return passed
 
 
 def handle_checklist():
@@ -16,6 +31,8 @@ def handle_checklist():
     for category in xbsa_checklist:
         for group in xbsa_checklist[category]["groups"]:
             for rule in xbsa_checklist[category]["groups"][group]["rules"]:
+                if rule["required"]["sbsa"][7]:
+                    sbsaref_passed = check_tag(rule["tag"])
 
                 # not every entry from checklist has ACS tests
                 try:
@@ -31,11 +48,13 @@ def handle_checklist():
                     'tag': rule["tag"],
                     'bsa': rule["required"]["bsa"],
                     'sbsa': rule["required"]["sbsa"],
+                    'sbsaref': sbsaref_passed,
                     'tests': tests,
                 })
 
     for tag in sorted(tags_to_tests.keys()):
         if tags_to_tests[tag]["acs_only"]:
+            sbsaref_passed = check_tag(tag)
             # we want to display it at the end on checklist
             entry = {
                 'category': "ACS only tests",
@@ -43,7 +62,8 @@ def handle_checklist():
                 'tag': tag,
                 'tests': tags_to_tests[tag],
                 'bsa': [],
-                'sbsa': []
+                'sbsa': [],
+                'sbsaref': sbsaref_passed,
             }
 
             if tags_to_tests[tag]["bsa"]:

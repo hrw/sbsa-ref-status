@@ -93,6 +93,7 @@ table td.mark {
         <li>some entries depend on which cpu features are implemented</li>
         <li>table is updated at random moments</li>
         <li>test numbers can be covered for their titles</li>
+        <li>last column shows status of SBSA Reference Platform (sbsa-ref) in current QEMU</li>
     </ul>
 
 <h1>Author info</h1>    
@@ -130,6 +131,7 @@ table td.mark {
 <th align="center">SBSA level 5</th>
 <th align="center">SBSA level 6</th>
 <th align="center">SBSA level 7</th>
+<th align="center">SBSA Reference Platform</th>
 </tr>
 </thead>
 <tbody>
@@ -143,6 +145,7 @@ table td.mark {
 <td align="center">v8.4</td>
 <td align="center">v8.5 or v9.0</td>
 <td align="center">v8.6 or v9.1</td>
+<td align="center">Neoverse-N2</td>
 </tr>
 <tr>
 <td>SMMU</td>
@@ -154,6 +157,7 @@ table td.mark {
 <td align="center">v3.2</td>
 <td align="center">v3.2</td>
 <td align="center">v3.2</td>
+<td align="center">3.0</td>
 </tr>
 <tr>
 <td>GIC</td>
@@ -165,6 +169,7 @@ table td.mark {
 <td align="center">v3.0</td>
 <td align="center">v3.0</td>
 <td align="center">v3.0</td>
+<td align="center">3.0</td>
 </tr>
 
 {% set v = namespace(category = "", group = "") %}
@@ -183,12 +188,14 @@ table td.mark {
 <td />
 <td />
 <td />
+<td />
 </tr>
         {% endif %}
         {% if entry["group"] != v.group %}
                 {% set v.group = entry["group"] %}
 <tr>
 <td class="title">{{ v.group }}</td>
+<td />
 <td />
 <td />
 <td />
@@ -222,6 +229,7 @@ table td.mark {
 <td class="mark">{% if entry.sbsa[5] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[6] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[7] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsaref %}✔{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>
