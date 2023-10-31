@@ -2,14 +2,14 @@
 
 import yaml
 
-from sbsa_checklist import sbsa_level_checklist
-
 with open("status-bsa.yml", encoding="utf-8") as yml:
     status_bsa = yaml.safe_load(yml)
 
 with open("status-sbsa.yml", encoding="utf-8") as yml:
     status_sbsa = yaml.safe_load(yml)
 
+with open("sbsa_checklist.yml", encoding="utf-8") as yml:
+    sbsa_level_checklist = yaml.safe_load(yml)
 
 def check_sbsa_level(cpu, level, previous_level_result):
     failed = previous_level_result
