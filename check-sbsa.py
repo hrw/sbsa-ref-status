@@ -11,7 +11,7 @@ with open("status-sbsa.yml", encoding="utf-8") as yml:
 with open("xbsa-checklist.yml", encoding="utf-8") as yml:
     xbsa_checklist = yaml.safe_load(yml)
 
-# some tests lists several tests and we do want to show it once
+# some tests lists several tags and we do want to show it once
 checked_tests = {"bsa": [], "sbsa": []}
 
 def check_tag(tag, failed):
