@@ -955,27 +955,27 @@
     1:
       name: Hypervisor
       rules:
-        - required:
-            bsa: true
-            sbsa:
-              3: true
-              4: true
-              5: true
-              6: true
-              7: true
-          tag: B_PPI_02
+      - required:
+          bsa: true
+          sbsa:
+            3: true
+            4: true
+            5: true
+            6: true
+            7: true
+        tag: B_PPI_02
     2:
       name: Platform security
       rules:
-        - required:
-            bsa: true
-            sbsa:
-              3: true
-              4: true
-              5: true
-              6: true
-              7: true
-          tag: B_PPI_03
+      - required:
+          bsa: true
+          sbsa:
+            3: true
+            4: true
+            5: true
+            6: true
+            7: true
+        tag: B_PPI_03
 3:
   name: SMMU
   groups:
