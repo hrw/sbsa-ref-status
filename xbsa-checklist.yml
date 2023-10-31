@@ -1,6 +1,8 @@
-0-PE:
+0:
+  name: PE
   groups:
-    0-Operating System:
+    0:
+      name: Operating System
       rules:
       - required:
           bsa: true
@@ -632,6 +634,9 @@
             6: false
             7: true
         tag: S_L7ENT_01
+    1:
+      name: Hypervisor
+      rules:
       - required:
           bsa: true
           sbsa:
@@ -677,6 +682,9 @@
             6: true
             7: true
         tag: B_PE_22
+    2:
+      name: Platform security
+      rules:
       - required:
           bsa: true
           sbsa:
@@ -731,9 +739,11 @@
             6: false
             7: true
         tag: SYS_RAS_3
-1-Memory map:
+1:
+  name: Memory map
   groups:
-    0-Operating system:
+    0:
+      name: Operating system
       rules:
       - required:
           bsa: true
@@ -816,6 +826,9 @@
             6: true
             7: true
         tag: S_L3MM_02
+    1:
+      name: Platform security
+      rules:
       - required:
           bsa: true
           sbsa:
@@ -834,9 +847,11 @@
             6: true
             7: true
         tag: B_MEM_09
-2-Interrupts:
+2:
+  name: Interrupts
   groups:
-    0-Operating system:
+    0:
+      name: Operating system
       rules:
       - required:
           bsa: true
@@ -937,27 +952,35 @@
             6: true
             7: true
         tag: S_L5PP_01
-      - required:
-          bsa: true
-          sbsa:
-            3: true
-            4: true
-            5: true
-            6: true
-            7: true
-        tag: B_PPI_02
-      - required:
-          bsa: true
-          sbsa:
-            3: true
-            4: true
-            5: true
-            6: true
-            7: true
-        tag: B_PPI_03
-3-SMMU:
+    1:
+      name: Hypervisor
+      rules:
+        - required:
+            bsa: true
+            sbsa:
+              3: true
+              4: true
+              5: true
+              6: true
+              7: true
+          tag: B_PPI_02
+    2:
+      name: Platform security
+      rules:
+        - required:
+            bsa: true
+            sbsa:
+              3: true
+              4: true
+              5: true
+              6: true
+              7: true
+          tag: B_PPI_03
+3:
+  name: SMMU
   groups:
-    0-Operating system:
+    0:
+      name: Operating system
       rules:
       - required:
           bsa: true
@@ -1211,6 +1234,9 @@
             6: false
             7: true
         tag: S_L7PMU
+    1:
+      name: Hypervisor
+      rules:
       - required:
           bsa: true
           sbsa:
@@ -1301,9 +1327,11 @@
             6: false
             7: false
         tag: B_SMMU_25
-4-Timer subsystem:
+4:
+  name: Timer subsystem
   groups:
-    0-Operating system:
+    0:
+      name: Operating system
       rules:
       - required:
           bsa: true
@@ -1404,6 +1432,12 @@
             6: true
             7: true
         tag: S_L5TI_01
+5:
+  name: Power and wakeup
+  groups:
+    0:
+      name: Operating system
+      rules:
       - required:
           bsa: true
           sbsa:
@@ -1494,9 +1528,11 @@
             6: true
             7: true
         tag: B_WAK_11
-5-Peripherals:
+6:
+  name: Peripherals
   groups:
-    0-Operating system:
+    0:
+      name: Operating system
       rules:
       - required:
           bsa: true
@@ -1596,7 +1632,10 @@
             5: true
             6: true
             7: true
-        tag: B_PER_11
+        tag: B_PER_12
+  1:
+    name: Platform security
+    rules:
       - required:
           bsa: true
           sbsa:
@@ -1605,10 +1644,12 @@
             5: true
             6: true
             7: true
-        tag: B_PER_12
-6-PCIe:
+        tag: B_PER_11
+7:
+  name: PCIe
   groups:
-    0-Operating System:
+    0:
+      name: Operating System
       rules:
       - required:
           bsa: false
@@ -1754,9 +1795,11 @@
             6: false
             7: true
         tag: PCIE_ER_06
-7-Watchdog:
+8:
+  name: Watchdog
   groups:
-    0-Operating System:
+    0:
+      name: Operating System
       rules:
       - required:
           bsa: false

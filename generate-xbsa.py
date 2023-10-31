@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from datetime import datetime
+from datetime import datetime, UTC
 from jinja2 import Environment, FileSystemLoader
 
 import yaml
@@ -40,9 +40,7 @@ def handle_checklist():
                 tag_to_test[tag]["sbsa"].append(test)
 
     for category in xbsa_checklist:
-        category_name = category.split('-')[1]
         for group in xbsa_checklist[category]["groups"]:
-            group_name = group.split('-')[1]
             for rule in xbsa_checklist[category]["groups"][group]["rules"]:
 
                 # not every entry from checklist has ACS tests
@@ -54,8 +52,8 @@ def handle_checklist():
                     tests = {"bsa": [], "sbsa": []}
 
                 checklist.append({
-                    'category': category_name,
-                    'group': group_name,
+                    'category': xbsa_checklist[category]["name"],
+                    'group': xbsa_checklist[category]["groups"][group]["name"],
                     'tag': rule["tag"],
                     'bsa': rule["required"]["bsa"],
                     'sbsa': rule["required"]["sbsa"],
@@ -104,7 +102,8 @@ def generate_html_file(checklist):
     template = env.get_template("bsa-sbsa.html.j2")
 
     output = template.render(
-        generate_time=datetime.strftime(datetime.utcnow(), "%d %B %Y %H:%M"),
+        generate_time=datetime.strftime(datetime.now(UTC), 
+                                        "%d %B %Y %H:%M"),
         checklist=checklist,
         status_bsa=status_bsa,
         status_sbsa=status_sbsa,
