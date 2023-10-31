@@ -66,6 +66,10 @@ table tbody tr.odd td {
         background-color: lightgrey;
 }
 
+table td.category_title {
+        font-weight: bold;
+        font-size: 120%;
+}
 table td.title {
         font-weight: bold;
 }
@@ -170,7 +174,7 @@ table td.mark {
                 {% set v.category = entry["category"] %}
                 {% set v.group = "" %}
 <tr>
-<td class="title">{{ v.category }}</td>
+<td class="category_title">{{ v.category }}</td>
 <td />
 <td />
 <td />
