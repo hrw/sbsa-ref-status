@@ -47,8 +47,6 @@ def check_sbsa_level(cpu, level, previous_level_result):
     failed = previous_level_result
 
     print(f"Checking SBSA level {level} for {cpu}")
-    checked_tests["bsa"].clear()
-    checked_tests["sbsa"].clear()
 
     for category in xbsa_checklist:
         for group in xbsa_checklist[category]["groups"]:
@@ -106,6 +104,8 @@ for cpu in cpus:
 
     level_result = False
     info_given = False
+    checked_tests["bsa"].clear()
+    checked_tests["sbsa"].clear()
 
     for level in range(3, 8):
 
