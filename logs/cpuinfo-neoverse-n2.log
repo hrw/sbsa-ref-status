@@ -1,0 +1,252 @@
+QEMU command line arguments:
+-machine sbsa-ref
+-m 4096
+-smp 2
+-cpu neoverse-n2
+-drive if=pflash,file=SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
+-usb
+-device usb-kbd
+-device usb-tablet
+-nographic
+-watchdog-action none
+-no-reboot
+-monitor telnet::45454,server,nowait
+-serial stdio
+-device pcie-root-port,id=root_port_for_switch1,chassis=1,slot=12
+-device x3130-upstream,id=upstream_port1,bus=root_port_for_switch1
+-device xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20
+-device ac97,bus=downstream_port1
+-device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
+-device nvme,serial=deadbeef,bus=root_port_for_nvme1
+-device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
+-device igb,bus=root_port_for_igb
+-device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
+-device qemu-xhci,bus=root_port_for_xhci
+-device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
+-device ac97,bus=root_port_for_ac97
+-device pcie-root-port,id=root_port_for_pci,chassis=1
+-device pcie-pci-bridge,id=pci,bus=root_port_for_pci
+-device virtio-rng-pci,bus=pci,addr=8
+-device pxb-pcie,id=pxb1,bus_nr=2
+-device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
+-device ahci,bus=root_port_for_ahci
+
+EFI startup script:
+mode 100 31
+pci
+fs0:armcpuinfo.efi
+reset -c
+
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL1: Booting BL2
+NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL1: Booting BL31
+NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
+NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
+UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
+[2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
+[1m[33m[40mMapping table[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
+   Seg  Bus  Dev  Func
+   ---  ---  ---  ----
+    [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 0008 Prog Interface 0
+    [1m[33m[40m00   00   01    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10D3 Prog Interface 0
+    [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
+             Vendor 1234 Device 1111 Prog Interface 0
+    [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   04    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 000B Prog Interface 0
+    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 104C Device 8232 Prog Interface 0
+    [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
+             Vendor 8086 Device 2922 Prog Interface 1
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
+             Vendor 1B36 Device 0010 Prog Interface 2
+    [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10C9 Prog Interface 0
+    [1m[33m[40m00   06   00    00 ==> [0m[37m[40mSerial Bus Controllers - USB
+             Vendor 1B36 Device 000D Prog Interface 30
+    [1m[33m[40m00   07   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
+    [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000E Prog Interface 0
+    [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
+             Vendor 1AF4 Device 1005 Prog Interface 0
+[1m[33m[40mShell> [0m[37m[40mfs0:armcpuinfo.efi
+ArmCpuInfo v1.0.0
+
+ID_AA64MMFR0_EL1 = 0x0000022200101125
+ID_AA64MMFR1_EL1 = 0x0000000010212122
+ID_AA64MMFR2_EL1 = 0x1221011110101011
+ID_AA64PFR0_EL1  = 0x1201001121111112
+ID_AA64PFR1_EL1  = 0x0000000000000121
+ID_AA64ISAR0_EL1 = 0x0221111110212120
+ID_AA64ISAR1_EL1 = 0x0011111101211052
+ID_AA64ISAR2_EL1 = 0x0000000000000000
+ID_AA64DFR0_EL1  = 0x000000F010305609
+ID_AA64SMFR0_EL1 = 0x0000000000000000
+ID_AA64ZFR0_EL1  = 0x0000110100110021
+
+Reg   |  Bits | Value | Feature
+------|-------|-------|----------------------------------------------
+MMFR0 |  3:0  |  0101 | 48 Bits (256TB) of physical address range supported.
+MMFR0 |  7:4  |  0010 | ASID: 16 Bits
+MMFR0 | 11:8  |  0001 | Mixed-endian support.
+MMFR0 | 19:16 |  0000 | No mixed-endian support at EL0.
+MMFR0 | 15:12 |  0001 | Supports a distinction between Secure and Non-Secure Memory.
+MMFR0 | 31:28 |  0000 |  4KB granule supported.
+MMFR0 | 43:40 |  0010 |  4KB granule supported at stage 2.
+MMFR0 | 23:20 |  0001 | 16KB granule supported.
+MMFR0 | 35:32 |  0010 | 16KB granule supported at stage 2.
+MMFR0 | 27:24 |  0000 | 64KB granule supported.
+MMFR0 | 39:36 |  0010 | 64KB granule supported at stage 2.
+MMFR0 | 47:44 |  0000 | FEAT_ExS not implemented.
+MMFR0 | 59:56 |  0000 | FEAT_FGT not implemented.
+MMFR0 | 63:60 |  0000 | FEAT_ECV not implemented.
+------|-------|-------|----------------------------------------------
+MMFR1 |  3:0  |  0010 | FEAT_HAFDBS implemented with dirty status support.
+MMFR1 |  7:4  |  0010 | FEAT_VMID16 implemented.
+MMFR1 | 11:8  |  0001 | FEAT_VHE implemented.
+MMFR1 | 15:12 |  0010 | FEAT_HPDS2 implemented.
+MMFR1 | 19:16 |  0001 | FEAT_LOR implemented.
+MMFR1 | 23:20 |  0010 | FEAT_PAN2 implemented.
+MMFR1 | 27:24 |  0000 | The PE never generates an SError interrupt due to
+      |       |       | an External abort on a speculative read.
+MMFR1 | 31:28 |  0001 | FEAT_XNX implemented.
+MMFR1 | 35:32 |  0000 | FEAT_TWED not implemented.
+MMFR1 | 39:36 |  0000 | FEAT_ETS not implemented.
+MMFR1 | 43:40 |  0000 | FEAT_HCX not implemented.
+MMFR1 | 47:44 |  0000 | FEAT_AFP not implemented.
+MMFR1 | 51:48 |  0000 | FEAT_nTLBPA not implemented.
+MMFR1 | 55:52 |  0000 | FEAT_TIDCP1 not implemented
+MMFR1 | 59:56 |  0000 | FEAT_CMOW not implemented.
+------|-------|-------|----------------------------------------------
+MMFR2 |  3:0  |  0001 | FEAT_TTCNP implemented.
+MMFR2 |  7:4  |  0001 | FEAT_UAO implemented.
+MMFR2 | 11:8  |  0000 | FEAT_LSMAOC not implemented.
+MMFR2 | 15:12 |  0001 | FEAT_IESB implemented.
+MMFR2 | 19:16 |  0000 | FEAT_LVA not implemented.
+MMFR2 | 23:20 |  0001 | FEAT_CCIDX implemented.
+MMFR2 | 27:24 |  0000 | FEAT_NV not implemented.
+MMFR2 | 31:28 |  0001 | FEAT_TTST implemented.
+MMFR2 | 35:32 |  0001 | FEAT_LSE2 implemented.
+MMFR2 | 39:36 |  0001 | FEAT_IDST implemented.
+MMFR2 | 43:40 |  0001 | FEAT_S2FWB implemented.
+MMFR2 | 51:48 |  0001 | FEAT_TTL implemented.
+MMFR2 | 55:52 |  0010 | FEAT_BBM: Level 2 support for changing block size is supported.
+MMFR2 | 59:56 |  0010 | FEAT_EVT: HCR_EL2.{TTLBOS, TTLSBIS, TOCU, TICAB, TID4} traps are supported.
+MMFR2 | 63:60 |  0001 | FEAT_E0PD implemented.
+------|-------|-------|----------------------------------------------
+PFR0  |  3:0  |  0010 | EL0 in AArch64 and AArch32
+PFR0  |  7:4  |  0001 | EL1 in AArch64 only
+PFR0  | 11:8  |  0001 | EL2 in AArch64 only
+PFR0  | 15:12 |  0001 | EL3 in AArch64 only
+PFR0  | 19:16 |  0001 | Floating-point with half-precision support (FEAT_FP16).
+PFR0  | 23:20 |  0001 | Advanced SIMD with half precision support (FEAT_FP16).
+PFR0  | 27:24 |  0001 | System registers to versions 3.0/4.0 of GIC CPU implemented.
+PFR0  | 31:28 |  0010 | FEAT_RASv1p1 implemented. FEAT_DoubleFault implemented.
+PFR0  | 35:32 |  0001 | FEAT_SVE implemented.
+PFR0  | 39:36 |  0001 | Secure EL2 implemented.
+PFR0  | 43:40 |  0000 | FEAT_MPAM not implemented.
+PFR0  | 47:44 |  0000 | FEAT_AMU not implemented.
+PFR0  | 51:48 |  0001 | FEAT_DIT implemented.
+PFR0  | 55:52 |  0000 | FEAT_RME not implemented
+PFR0  | 59:56 |  0010 | FEAT_CSV2_2 implemented.
+PFR0  | 63:60 |  0001 | FEAT_CSV3 implemented.
+------|-------|-------|----------------------------------------------
+PFR1  |  3:0  |  0001 | FEAT_BTI implemented.
+PFR1  |  7:4  |  0010 | FEAT_SSBS2 implemented.
+PFR1  | 11:8  |  0001 | FEAT_MTE implemented.
+PFR1  | 27:24 |  0000 | FEAT_SME not implemented.
+PFR1  | 31:28 |  0000 | FEAT_RNG_TRAP not implemented.
+PFR1  | 39:36 |  0000 | FEAT_NMI not implemented.
+------|-------|-------|----------------------------------------------
+ISAR0 |  7:4  |  0010 | FEAT_AES and FEAT_PMULL implemented.
+ISAR0 | 11:8  |  0001 | FEAT_SHA1 implemented.
+ISAR0 | 15:12 |  0010 | FEAT_SHA512 implemented.
+ISAR0 | 19:16 |  0001 | CRC32 instructions implemented.
+ISAR0 | 23:20 |  0010 | FEAT_LSE implemented.
+ISAR0 | 27:24 |  0000 | TME instructions not implemented.
+ISAR0 | 31:28 |  0001 | FEAT_RDM implemented.
+ISAR0 | 35:32 |  0001 | FEAT_SHA3 implemented.
+ISAR0 | 39:36 |  0001 | FEAT_SM3 implemented.
+ISAR0 | 43:40 |  0001 | FEAT_SM4 implemented.
+ISAR0 | 47:44 |  0001 | FEAT_DotProd implemented.
+ISAR0 | 51:48 |  0001 | FEAT_FHM implemented.
+ISAR0 | 55:52 |  0010 | FEAT_FlagM2 implemented.
+ISAR0 | 59:56 |  0010 | FEAT_TLBIRANGE implemented.
+ISAR0 | 63:60 |  0000 | FEAT_RNG not implemented.
+------|-------|-------|----------------------------------------------
+ISAR1 |  3:0  |  0010 | FEAT_DPB2 implemented.
+ISAR1 |  7:4  |  0101 | FEAT_FPACCOMBINE implemented.
+      |       |       | FEAT_PACQARMA5 implemented.
+ISAR1 | 11:8  |  0000 | Address Authentication (API) not implemented.
+ISAR1 | 15:12 |  0001 | FEAT_JSCVT implemented.
+ISAR1 | 19:16 |  0001 | FEAT_FCMA implemented.
+ISAR1 | 23:20 |  0010 | FEAT_LRCPC2 implemented.
+ISAR1 | 27:24 |  0001 | FEAT_PACQARMA5 implemented.
+ISAR1 | 31:28 |  0000 | FEAT_PACIMP not implemented.
+ISAR1 | 35:32 |  0001 | FEAT_FRINTTS implemented.
+ISAR1 | 39:36 |  0001 | FEAT_SB implemented.
+ISAR1 | 43:40 |  0001 | FEAT_SPECRES implemented.
+ISAR1 | 47:44 |  0001 | FEAT_BF16 implemented.
+ISAR1 | 51:48 |  0001 | FEAT_DGH implemented.
+ISAR1 | 55:52 |  0001 | FEAT_I8MM implemented.
+ISAR1 | 59:56 |  0000 | FEAT_XS not implemented.
+ISAR1 | 63:60 |  0000 | FEAT_LS64 not implemented.
+------|-------|-------|----------------------------------------------
+DFR0  |  3:0  |  1001 | FEAT_Debugv8p4 implemented.
+DFR0  |  7:4  |  0000 | Trace unit System registers not implemented.
+DFR0  | 11:8  |  0110 | FEAT_PMUv3p5 implemented.
+DFR0  | 15:12 |  0101 | Number of breakpoints, minus 1.
+DFR0  | 23:20 |  0011 | Number of watchpoints, minus 1.
+DFR0  | 31:28 |  0001 | Number of breakpoints that are context-aware, minus 1.
+DFR0  | 35:32 |  0000 | FEAT_SPE not implemented.
+DFR0  | 39:36 |  1111 | FEAT_DoubleLock not implemented.
+DFR0  | 43:40 |  0000 | FEAT_TRF not implemented.
+DFR0  | 47:44 |  0000 | FEAT_TRBE not implemented.
+DFR0  | 51:48 |  0000 | FEAT_MTPMU not implemented.
+DFR0  | 55:52 |  0000 | FEAT_BRBE not implemented.
+DFR0  | 63:60 |  0000 | Setting MDCR_EL2.HPMN to zero has CONSTRAINED UNPREDICTABLE behavior.
+------|-------|-------|----------------------------------------------
+ZFR0  |  3:0  |  0001 | FEAT_SVE2 implemented.
+ZFR0  |  7:4  |  0010 | FEAT_SVE_AES and FEAT_SVE_PMULL128 implemented.
+ZFR0  | 19:16 |  0001 | FEAT_SVE_BitPerm implemented.
+ZFR0  | 23:20 |  0001 | FEAT_BF16 SVE implemented.
+ZFR0  | 35:32 |  0001 | FEAT_SVE_SHA3 implemented.
+ZFR0  | 43:40 |  0001 | FEAT_SVE_SM4 implemented.
+ZFR0  | 47:44 |  0001 | FEAT_I8MM SVE implemented.
+ZFR0  | 55:52 |  0000 | FEAT_F32MM SVE not implemented
+ZFR0  | 59:56 |  0000 | FEAT_F64MM SVE not implemented
+------|-------|-------|----------------------------------------------
+[1m[33m[40mShell> [0m[37m[40mreset -c

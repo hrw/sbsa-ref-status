@@ -944,6 +944,8 @@ Operating System View:
 
        BDF - 0x300
        pal_pcie_get_legacy_irq_map unimplemented. Skipping test
+    The API is platform specific and to be populated
+    by partners with system legacy irq map
        PCI_LI_01, PCI_LI_03
        Checkpoint --  2                           : Result:  SKIPPED 
          END
@@ -1248,7 +1250,9 @@ Operating System View:
 
  818 : Check RP Adv Error Report                      START
 
-       pal_pcie_p2p_support API is unimplemented 
+       The test is applicable only if the system supports
+       P2P traffic. If the system supports P2P, pass the
+       command line option '-p2p' while running the binary
        PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED 
          END
@@ -1659,29 +1663,6 @@ Operating System View:
                                        : Result:  PASS 
          END
 
- 841 : NP type-1 PCIe supp 32-bit only                START
-
-       BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
-       BDF - 0x10000
-       BDF - 0x20000
-       BDF - 0x40000
-       Skipping Non Type-1 headers
-       BDF - 0x50000
-       Skipping Non Type-1 headers
-       BDF - 0x60000
-       Skipping Non Type-1 headers
-       BDF - 0x80000
-       NP type-1 pcie is not 32-bit mem type
-       Failed on PE -    0
-       PCI_MM_04
-       Checkpoint --  1                           : Result:  FAIL 
-         END
-
  842 : PASID support atleast 16 bits                  START
 
        Peripheral check - Max PASID bits - 0x0
@@ -1700,7 +1681,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   70  Tests Failed =    3
+     Total Tests run  =   86  Tests Passed  =   70  Tests Failed =    2
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

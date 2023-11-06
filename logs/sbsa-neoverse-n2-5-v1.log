@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu neoverse-v1
+-cpu neoverse-n2
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -36,7 +36,7 @@ QEMU command line arguments:
 EFI startup script:
 mode 100 31
 pci
-fs0:sbsa.efi -skip 861 -l 6 -v 1
+fs0:sbsa.efi -skip 861 -l 5 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -102,13 +102,13 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 6 -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 5 -v 1
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.3  
 
- Starting tests for level  6 (Print level is  1)
+ Starting tests for level  5 (Print level is  1)
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
@@ -444,7 +444,7 @@ PE Index * 1 *
   11 : Check Activity monitors extension 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  5 
        S_L5PE_04
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -466,7 +466,7 @@ PE Index * 1 *
   14 : Check for nested virtualization   
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  5 
        S_L5PE_07
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -482,90 +482,6 @@ PE Index * 1 *
        START  
        S_MPAM_PE
        Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
-  17 : Check SPE if implemented          
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       B_PE_17
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  18 : Check Branch Target Support       
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_02
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  19 : Check Protect Against Timing Fault
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_03
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  20 : Check PMU Version Support         
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_04
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  21 : Check AccessFlag DirtyState Update
-       START  
-       PSCI_CPU_ON: success  
-       S_L6PE_05
-                                  : Result:  PASS 
-       END  
-
-  22 : Check Enhanced Virtualization Trap
-       START  
-       PSCI_CPU_ON: success  
-       S_L6PE_06
-                                  : Result:  PASS 
-       END  
-
-  23 : Check Speculation Restriction     
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       B_SEC_01
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  24 : Check Speculative Str Bypass Safe 
-       START  
-       PSCI_CPU_ON: success  
-       B_SEC_02
-                                  : Result:  PASS 
-       END  
-
-  25 : Check PEs Impl CSDB,SSBB,PSSBB    
-       START  
-       PSCI_CPU_ON: success  
-       B_SEC_03
-                                  : Result:  PASS 
-       END  
-
-  26 : Check PEs Implement SB Barrier    
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       B_SEC_04
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
-  27 : Check PE Impl CFP,DVP,CPP RCTX    
-       START  
-       PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
-       B_SEC_05
-       Checkpoint --  1                  : Result:  FAIL 
        END  
 
 
@@ -616,7 +532,7 @@ PE Index * 1 *
        START  
        Detected SMMUv3, or higher implementation 
        Stage 2 translation not supported 
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  5 
        S_L4SM_01, S_L4SM_02
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -624,23 +540,25 @@ PE Index * 1 *
  302 : Check SMMUv3.2 or higher          
        START  
        Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  5 
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
        END  
 
  303 : Check S-EL2 & SMMU Stage1 support 
        START  
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  5 
        B_SMMU_09
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
        END  
 
  304 : Check S-EL2 & SMMU Stage2 Support 
        START  
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  5 
        B_SMMU_20
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
        END  
 
  305 : Check SMMU for MPAM support       
@@ -650,72 +568,8 @@ PE Index * 1 *
        Checkpoint --  2                  : Result:  SKIPPED 
        END  
 
- 306 : Check SMMU HTTU Support           
-       START  
-       Failed on PE -    0 for Level=  6 
-       S_L6SM_02
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
- 307 : Check SMMU MSI Support            
-       START  
-       Failed on PE -    0 for Level=  6 
-       S_L6SM_03
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
- 308 : Check SMMU 16 Bit VMID Support    
-       START  
-       B_SMMU_23
-                                  : Result:  PASS 
-       END  
-
- 309 : Check SMMU Large VA Support       
-       START  
-       Large VA Not Supported by PE                        
-       B_SMMU_03
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 310 : Check TLB Range Invalidation      
-       START  
-       TLB Range Invalid Not Supported For PE              
-       B_SMMU_04, B_SMMU_05
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 311 : Check SMMU 16 Bit ASID Support    
-       START  
-       B_SMMU_13
-                                  : Result:  PASS 
-       END  
-
- 312 : Check SMMU Endianess Support      
-       START  
-       B_SMMU_14
-                                  : Result:  PASS 
-       END  
-
- 313 : Check SMMU Coherent Access Support
-       START  
-       S_L6SM_01
-                                  : Result:  PASS 
-       END  
-
 
       One or more SMMU tests failed or were skipped.
-
-      *** Starting Watchdog tests ***  
- 701 : Check NS Watchdog Revision        
-       START  
-       Found 1 watchdogs in ACPI table 
-      Watchdog CTRL base is  50011000      
-       S_L6WD_01
-                                  : Result:  PASS 
-       END  
-
-
-      All Watchdog tests passed.
 
       *** Starting PCIe tests ***  
  601 : Check EA Capability               
@@ -738,422 +592,8 @@ PE Index * 1 *
                                   : Result:  PASS 
        END  
 
- 801 : Check ECAM Presence               
-       START  
-       PCI_IN_01
-                                  : Result:  PASS 
-       END  
 
- 803 : Check ECAM Memory accessibility   
-       START  
-       Skipping legacy PCI device with BDF 0x0
-       Skipping legacy PCI device with BDF 0x900
-       Skipping legacy PCI device with BDF 0x30000
-       Skipping legacy PCI device with BDF 0x70000
-       Skipping legacy PCI device with BDF 0x90800
-       PCI_IN_02
-                                  : Result:  PASS 
-       END  
-
- 816 : NP type-1 pcie only support 32-bit
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       No Type1 Non Prefetcable BAR Detected. Skipping test
-       PCI_MM_04
-       Checkpoint --  3                  : Result:  SKIPPED 
-       END  
-
- 820 : Check Type 0/1 common config rules
-       START  
-       Number of bit-field entries to check 12
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       RE_REG_1, IE_REG_1, IE_REG_3
-                                  : Result:  PASS 
-       END  
-
- 821 : Check Type 0 config header rules  
-       START  
-       Number of bit-field entries to check 3
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       RE_REG_1, IE_REG_1
-                                  : Result:  PASS 
-       END  
-
- 822 : Check Type 1 config header rules  
-       START  
-       Number of bit-field entries to check 10
-       IE_REG_3
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 823 : Check PCIe capability rules       
-       START  
-       Number of bit-field entries to check 1
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 824 : Check Device capabilities reg rule
-       START  
-       Number of bit-field entries to check 8
-       BDF 0x100 : PASS
-       BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : ETFS value mismatch: 0x0 instead of 0x1
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       Failed on PE -    0 for Level=  6 
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-       Checkpoint --  2                  : Result:  FAIL 
-       END  
-
- 825 : Check Device Control register rule
-       START  
-       Number of bit-field entries to check 4
-       BDF 0x100 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
-       BDF 0x100 : WARNING APPE attribute mismatch: 0x400 instead of 0x0
-       BDF 0x200 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
-       BDF 0x200 : WARNING APPE attribute mismatch: 0x400 instead of 0x0
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-                                  : Result:  PASS 
-       END  
-
- 826 : Check Device cap 2 register rules 
-       START  
-       Number of bit-field entries to check 16
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x100 : WARNING EFFS value mismatch: 0x0 instead of 0x1
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-                                  : Result:  PASS 
-       END  
-
- 827 : Check Device control 2 reg rules  
-       START  
-       Number of bit-field entries to check 5
-       BDF 0x100 : AFI attribute mismatch: 0x2400020 instead of 0x2400000
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       BDF 0x200 : PASS
-       Failed on PE -    0 for Level=  6 
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
- 828 : Check Power management cap rules  
-       START  
-       Number of bit-field entries to check 2
-       BDF 0x100 : PASS
-       BDF 0x100 : PASS
-       PCIe Capability 0x1 not found for BDF 0x200
-       PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  6 
-       RE_REG_2, IE_REG_5
-       Checkpoint --  2                  : Result:  FAIL 
-       END  
-
- 829 : Check Power management/status rule
-       START  
-       Number of bit-field entries to check 2
-       BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
-       BDF 0x100 : PASS
-       PCIe Capability 0x1 not found for BDF 0x200
-       PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  6 
-       RE_REG_2, IE_REG_5
-       Checkpoint --  2                  : Result:  FAIL 
-       END  
-
- 830 : Check Cmd Reg memory space enable 
-       START  
-       tbl_index 0
-       BDF - 0x100       Bar Base 81760000       bar_data FFFFFFFF 
-       tbl_index 1
-       BDF - 0x200       Bar Base 80000000       bar_data FFFFFFFF 
-       tbl_index 2
-       tbl_index 3
-       tbl_index 4
-       tbl_index 5
-       tbl_index 6
-       tbl_index 7
-       tbl_index 8
-       tbl_index 9
-       tbl_index A
-       tbl_index B
-       tbl_index C
-       tbl_index D
-       RE_REG_1, IE_REG_1, IE_REG_3
-                                  : Result:  PASS 
-       END  
-
- 831 : Check Type0/1 BIST Register rule  
-       START  
-       RE_REG_1, IE_REG_1, IE_REG_3
-                                  : Result:  PASS 
-       END  
-
- 832 : Check HDR CapPtr Register rule    
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       RE_REG_1, IE_REG_1, IE_REG_3
-                                  : Result:  PASS 
-       END  
-
- 833 : Check Max payload size supported  
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       RE_REC_1, IE_REG_2, IE_REG_4
-                                  : Result:  PASS 
-       END  
-
- 834 : Check BAR memory space & Type rule
-       START  
-       BDF - 0x100 
-       HDR TYPE 0x0 
-       MAX BARS 0x6 
-       BDF 0x0 Not MMIO
-       BDF - 0x200 
-       HDR TYPE 0x0 
-       MAX BARS 0x6 
-       Failed on PE -    0 for Level=  6 
-       RE_BAR_3, IE_BAR_3
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
- 835 : Check Function level reset rule   
-       START  
-       No RCiEP/iEP_EP with FLR Cap found. Skipping test
-       RE_RST_1, IE_RST_1, PCI_SM_02
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 836 : Check ARI forwarding support rule 
-       START  
-       No iEP_EP found with ARI Capability Support. Skipping test
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 837 : Check OBFF supported rule         
-       START  
-       No iEP_EP type device found. Skipping test
-       IE_REG_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 838 : Check CTRS and CTDS rule          
-       START  
-       No iEP_RP type device found. Skipping test
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 839 : Check i-EP AtomicOp rule          
-       START  
-       No iEP_EP type device found. Skipping test
-       IE_REG_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 841 : Check MSI and MSI-X support rule  
-       START  
-       BDF - 0x100 int pin value 1 MSI cap 0 MSIX cap 0
-       BDF - 0x200 int pin value 0 MSI cap 268435472 MSIX cap 268435472
-       RE_INT_1, IE_INT_1
-                                  : Result:  PASS 
-       END  
-
- 842 : Check Power Management rules      
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       BDF - 200 does not support Power Management Capability
-       Failed on PE -    0 for Level=  6 
-       RE_PWR_1, IE_PWR_1
-       Checkpoint --  1                  : Result:  FAIL 
-       END  
-
- 843 : Check ARI forwarding enable rule  
-       START  
-       No DP/ iEP_RP type device found.Skipping test
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 844 : Check device under RP in same ECAM
-       START  
-       No iEP_EP type device found. Skipping test
-       PCI_IN_04
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 845 : Check all RP in HB is in same ECAM
-       START  
-       No iEP_RP type device found. Skipping test
-       PCI_IN_03
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 846 : Check RP Byte Enable Rules        
-       START  
-       No iEP_RP type device found. Skipping test
-       PCI_IN_18
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 847 : Check Config Txn for RP in HB     
-       START  
-       No iEP_RP type device found. Skipping test
-       PCI_IN_12
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 848 : Check RootPort NP Memory Access   
-       START  
-       No iEP_RP type device found with valid Memory Base/Limit Reg.
-       Skipping Test
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 849 : Check RootPort P Memory Access    
-       START  
-       No iEP_RP type device found with valid Memory Base/Limit Reg.
-       Skipping Test
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 850 : Check L-Intr SPI Level-Sensitive  
-       START  
-       BDF - 0x100
-       pal_pcie_get_legacy_irq_map unimplemented. Skipping test
-       The API is platform specific and to be populated
-       by partners with system legacy irq map
-       PCI_LI_01, PCI_LI_03
-       Checkpoint --  2                  : Result:  SKIPPED 
-       END  
-
- 851 : Check Sec Bus Reset For iEP_RP    
-       START  
-       No iEP_RP type device found. Skipping test
-       IE_RST_2
-       Checkpoint --  2                  : Result:  SKIPPED 
-       END  
-
- 852 : Check ATS Support Rule            
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       No RCiEP/ iEP_EP type device found with ATC available. Skipping test
-       IE_SMU_1, RE_SMU_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 856 : Check iEP-RootPort P2P Support    
-       START  
-       The test is applicable only if the system supports
-       P2P traffic. If the system supports P2P, pass the
-       command line option '-p2p' while running the binary
-       IE_ACS_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 857 : Check RCiEP, iEP_EP P2P Supp      
-       START  
-       BDF - 0x100
-       BDF - 0x200
-       No RCiEP/ iEP_EP type device with Multifunction and P2P support.Skipping test
-       IE_ACS_1, RE_ACS_1, RE_ACS_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 858 : Read and write to BAR reg         
-       START  
-       BDF - 0x100 BAR offset0x10 value is 0x81760000     
-       The BAR supports 32-bit address capability
-       BDF - 0x100 BAR offset0x14 value is 0x81740000     
-       The BAR supports 32-bit address capability
-       BDF - 0x200 BAR offset0x10 value is 0x80000008     
-       The BAR supports 32-bit address capability
-       BDF - 0x200 BAR offset0x14 value is 0x0     
-       RE_BAR_1, IE_BAR_1
-                                  : Result:  PASS 
-       END  
-
- 859 : Check RCEC Class code and Ext Cap     
-       START  
-       No RCEC type device found. Skipping test
-       RE_PCI_2
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
- 860 : Check RCiEP Hdr type & link Cap   
-       START  
-       BDF - 0x100
-       Link Capabilities reg check failed
-       Invalid Link Capabilities 0x1
-       BDF - 0x200
-       Link Capabilities reg check failed
-       Invalid Link Capabilities 0x1
-       Failed on PE -    0 for Level=  6 
-       RE_PCI_1
-       Checkpoint --  2                  : Result:  FAIL 
-       END  
-
- 863 : Slot Cap, Control and Status register rules      
-       START  
-       Number of bit-field entries to check 26
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED 
-       END  
-
-
-      One or more PCIe tests failed or were skipped.
+      All PCIe tests passed.
 
       Starting Exerciser Setup
       PCIE_INFO: Number of exerciser cards :    0 
@@ -1161,7 +601,7 @@ PE Index * 1 *
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   86;  Tests Passed  =   35  Tests Failed =   20
+     Total Tests run  =   25;  Tests Passed  =   14  Tests Failed =    6
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

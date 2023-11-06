@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a72
+-cpu neoverse-n2
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -146,41 +146,20 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
    4 : Check FEAT_LPA Requirements       
        S_L3PE_04
        Checkpoint --  1                  : Result:  SKIPPED 
-   5 : Check for RAS extension           
-       Failed on PE -    0 for Level=  6 
-       S_L4PE_01
-       Checkpoint --  1                  : Result:  FAIL 
+   5 : Check for RAS extension           : Result:  PASS 
    6 : Check DC CVAP support             
        S_L4PE_02
        Checkpoint --  2                  : Result:  SKIPPED 
-   7 : Check for 16-Bit VMID             
-       Failed on PE -    0 for Level=  6 
-       S_L4PE_03
-       Checkpoint --  1                  : Result:  FAIL 
-   8 : Check for Virtual host extensions 
-       Failed on PE -    0 for Level=  6 
-       S_L4PE_04
-       Checkpoint --  1                  : Result:  FAIL 
-   9 : Support Page table map size change
-       Failed on PE -    0 for Level=  6 
-       S_L5PE_01
-       Checkpoint --  1                  : Result:  FAIL 
-  10 : Check for pointer signing         
-       Failed on PE -    0 for Level=  6 
-       S_L5PE_02
-       Checkpoint --  1                  : Result:  FAIL 
+   7 : Check for 16-Bit VMID             : Result:  PASS 
+   8 : Check for Virtual host extensions : Result:  PASS 
+   9 : Support Page table map size change: Result:  PASS 
+  10 : Check for pointer signing         : Result:  PASS 
   11 : Check Activity monitors extension 
        Failed on PE -    0 for Level=  6 
        S_L5PE_04
        Checkpoint --  1                  : Result:  FAIL 
-  12 : Check for SHA3 and SHA512 support 
-       Failed on PE -    0 for Level=  6 
-       S_L5PE_05
-       Checkpoint --  1                  : Result:  FAIL 
-  13 : Stage 2 control of mem and cache  
-       Failed on PE -    0 for Level=  6 
-       S_L5PE_06
-       Checkpoint --  1                  : Result:  FAIL 
+  12 : Check for SHA3 and SHA512 support : Result:  PASS 
+  13 : Stage 2 control of mem and cache  : Result:  PASS 
   14 : Check for nested virtualization   
        Failed on PE -    0 for Level=  6 
        S_L5PE_07
@@ -192,48 +171,19 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        S_MPAM_PE
        Checkpoint --  1                  : Result:  SKIPPED 
   17 : Check SPE if implemented          
+       Failed on PE -    0 for Level=  6 
        B_PE_17
-       Checkpoint --  2                  : Result:  SKIPPED 
-  18 : Check Branch Target Support       
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_02
        Checkpoint --  1                  : Result:  FAIL 
-  19 : Check Protect Against Timing Fault
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_03
-       Checkpoint --  1                  : Result:  FAIL 
-  20 : Check PMU Version Support         
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_04
-       Checkpoint --  1                  : Result:  FAIL 
-  21 : Check AccessFlag DirtyState Update
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_05
-       Checkpoint --  1                  : Result:  FAIL 
-  22 : Check Enhanced Virtualization Trap
-       Failed on PE -    0 for Level=  6 
-       S_L6PE_06
-       Checkpoint --  1                  : Result:  FAIL 
-  23 : Check Speculation Restriction     
-       Failed on PE -    0 for Level=  6 
-       B_SEC_01
-       Checkpoint --  1                  : Result:  FAIL 
-  24 : Check Speculative Str Bypass Safe 
-       Failed on PE -    0 for Level=  6 
-       B_SEC_02
-       Checkpoint --  1                  : Result:  FAIL 
-  25 : Check PEs Impl CSDB,SSBB,PSSBB    
-       Failed on PE -    0 for Level=  6 
-       B_SEC_03
-       Checkpoint --  1                  : Result:  FAIL 
-  26 : Check PEs Implement SB Barrier    
-       Failed on PE -    0 for Level=  6 
-       B_SEC_04
-       Checkpoint --  1                  : Result:  FAIL 
-  27 : Check PE Impl CFP,DVP,CPP RCTX    
-       Failed on PE -    0 for Level=  6 
-       B_SEC_05
-       Checkpoint --  1                  : Result:  FAIL 
+  18 : Check Branch Target Support       : Result:  PASS 
+  19 : Check Protect Against Timing Fault: Result:  PASS 
+  20 : Check PMU Version Support         : Result:  PASS 
+  21 : Check AccessFlag DirtyState Update: Result:  PASS 
+  22 : Check Enhanced Virtualization Trap: Result:  PASS 
+  23 : Check Speculation Restriction     : Result:  PASS 
+  24 : Check Speculative Str Bypass Safe : Result:  PASS 
+  25 : Check PEs Impl CSDB,SSBB,PSSBB    : Result:  PASS 
+  26 : Check PEs Implement SB Barrier    : Result:  PASS 
+  27 : Check PE Impl CFP,DVP,CPP RCTX    : Result:  PASS 
 
       One or more PE tests failed or were skipped.
 
@@ -260,13 +210,15 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
  303 : Check S-EL2 & SMMU Stage1 support 
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  6 
        B_SMMU_09
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
  304 : Check S-EL2 & SMMU Stage2 Support 
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  6 
        B_SMMU_20
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
  305 : Check SMMU for MPAM support       
        B_SMMU_11, B_SMMU_22, S_L5SM_03
        Checkpoint --  2                  : Result:  SKIPPED 
@@ -282,9 +234,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  309 : Check SMMU Large VA Support       
        B_SMMU_03
        Checkpoint --  1                  : Result:  SKIPPED 
- 310 : Check TLB Range Invalidation      
-       B_SMMU_04, B_SMMU_05
-       Checkpoint --  1                  : Result:  SKIPPED 
+ 310 : Check TLB Range Invalidation      : Result:  PASS 
  311 : Check SMMU 16 Bit ASID Support    : Result:  PASS 
  312 : Check SMMU Endianess Support      : Result:  PASS 
  313 : Check SMMU Coherent Access Support: Result:  PASS 
@@ -435,7 +385,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   86;  Tests Passed  =   24  Tests Failed =   30
+     Total Tests run  =   86;  Tests Passed  =   42  Tests Failed =   16
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

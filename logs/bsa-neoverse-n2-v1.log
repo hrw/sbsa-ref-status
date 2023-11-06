@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a57
+-cpu neoverse-n2
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -36,7 +36,7 @@ QEMU command line arguments:
 EFI startup script:
 mode 100 31
 pci
-fs0:bsa.efi -sbsa -v 1
+fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -102,7 +102,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -sbsa -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
 
 
  BSA Architecture Compliance Suite
@@ -140,8 +140,6 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating TIMER INFO table
   GTDT is at FC02E618 and length is 84 
   GTDT revision is at 3 
-  GTDT don't have el2 virt timer info
-  using bsa recommended value 28
  TIMER_INFO: Number of system timers  :    0 
  Creating WATCHDOG INFO table
   Watchdog base = 0x50011000 INTID = 0x30 
@@ -326,15 +324,15 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDFA0618 
+ Shared memory is 100FDF9EF98 
 
       *** Starting PE tests ***  
 
 Operating System View:
    1 : Check Arch symmetry across PE                  START
 
-       cache size read is 701FE00A 
-       cache size read is 70FFE07A        PSCI_CPU_ON: success  
+       cache size read is 1A 
+       cache size read is 3A        PSCI_CPU_ON: success  
 
        B_PE_01
                                        : Result:  PASS 
@@ -417,6 +415,13 @@ Operating System View:
                                        : Result:  PASS 
          END
 
+  14 : Check PAuth if implementation                  START
+       PSCI_CPU_ON: success  
+
+       B_PE_15
+                                       : Result:  PASS 
+         END
+
 
 Hypervisor View:
   51 : Check EL2 implementation                       START
@@ -490,6 +495,14 @@ Instance 0x2 not found for memory type 0x1000
 
        gic version from info table = 3 
 Operating System View:
+ 201 : Check GIC version                              START
+
+       gic version from info table = 3 
+       Received GIC version =    3      
+       B_GIC_01
+                                       : Result:  PASS 
+         END
+
  203 : If PCIe, GICv3 then ITS, LPI                   START
 
        gic version from info table = 3 
@@ -532,9 +545,9 @@ Operating System View:
 Hypervisor View:
  226 : Check NS EL2-Virt timer PPI Assignment         START
 
-       v8.1 VHE not supported on this PE 
+       Received vir el2 interrupt    
        B_PPI_02
-       Checkpoint --  2                           : Result:  SKIPPED 
+                                       : Result:  PASS 
          END
 
  227 : Check NS EL2-Phy timer PPI Assignment          START
@@ -624,7 +637,7 @@ Operating System View:
          END
 
 
-      One or more GIC tests failed or were skipped.
+      All GIC tests passed.
 
       *** Starting SMMU tests ***  
 
@@ -650,18 +663,18 @@ Operating System View:
 
  304 : Check SMMU S-EL2 & stage1 support              START
 
+       S-EL2 implemented...Skipping
        B_SMMU_08
-                                       : Result:  PASS 
+       Checkpoint --  2                           : Result:  SKIPPED 
          END
 
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support              START
 
-       SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0
+       S-EL2 implemented...Skipping
        B_SMMU_16, B_SMMU_17, B_SMMU_18
-       Checkpoint --  2                           : Result:  FAIL 
+       Checkpoint --  2                           : Result:  SKIPPED 
          END
 
  354 : SMMUv3 Integration compliance                  START
@@ -1666,7 +1679,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   84  Tests Passed  =   69  Tests Failed =    2
+     Total Tests run  =   86  Tests Passed  =   71  Tests Failed =    1
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

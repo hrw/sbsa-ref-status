@@ -305,10 +305,6 @@ Operating System View:
  838 : Check all RP in HB is in same ECAM         : Result:  PASS 
  839 : Check MSI support for PCIe dev             : Result:  PASS 
  840 : PCIe RC,PE - Same Inr Shareable Domain     : Result:  PASS 
- 841 : NP type-1 PCIe supp 32-bit only       
-       NP type-1 pcie is not 32-bit mem type
-       Failed on PE -    0
-       Checkpoint --  1                           : Result:  FAIL 
  842 : PASID support atleast 16 bits         
        Checkpoint --  3                           : Result:  SKIPPED 
 
@@ -319,7 +315,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   87  Tests Passed  =   71  Tests Failed =    3
+     Total Tests run  =   86  Tests Passed  =   71  Tests Failed =    2
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

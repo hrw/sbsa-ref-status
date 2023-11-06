@@ -370,6 +370,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        Checkpoint --  1                  : Result:  SKIPPED 
  850 : Check L-Intr SPI Level-Sensitive  
        pal_pcie_get_legacy_irq_map unimplemented. Skipping test
+       The API is platform specific and to be populated
+       by partners with system legacy irq map
        PCI_LI_01, PCI_LI_03
        Checkpoint --  2                  : Result:  SKIPPED 
  851 : Check Sec Bus Reset For iEP_RP    

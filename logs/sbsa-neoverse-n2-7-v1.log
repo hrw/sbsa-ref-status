@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu neoverse-v1
+-cpu neoverse-n2
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -36,7 +36,7 @@ QEMU command line arguments:
 EFI startup script:
 mode 100 31
 pci
-fs0:sbsa.efi -skip 861 -l 6 -v 1
+fs0:sbsa.efi -skip 861 -l 7 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
@@ -102,13 +102,13 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 6 -v 1
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 7 -v 1
 
 
  SBSA Architecture Compliance Suite 
     Version 7.1.3  
 
- Starting tests for level  6 (Print level is  1)
+ Starting tests for level  7 (Print level is  1)
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
@@ -444,7 +444,7 @@ PE Index * 1 *
   11 : Check Activity monitors extension 
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L5PE_04
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -466,7 +466,7 @@ PE Index * 1 *
   14 : Check for nested virtualization   
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L5PE_07
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -487,7 +487,7 @@ PE Index * 1 *
   17 : Check SPE if implemented          
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        B_PE_17
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -495,25 +495,22 @@ PE Index * 1 *
   18 : Check Branch Target Support       
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        S_L6PE_02
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   19 : Check Protect Against Timing Fault
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        S_L6PE_03
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   20 : Check PMU Version Support         
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        S_L6PE_04
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   21 : Check AccessFlag DirtyState Update
@@ -533,9 +530,8 @@ PE Index * 1 *
   23 : Check Speculation Restriction     
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        B_SEC_01
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   24 : Check Speculative Str Bypass Safe 
@@ -555,16 +551,89 @@ PE Index * 1 *
   26 : Check PEs Implement SB Barrier    
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        B_SEC_04
-       Checkpoint --  1                  : Result:  FAIL 
+                                  : Result:  PASS 
        END  
 
   27 : Check PE Impl CFP,DVP,CPP RCTX    
        START  
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  6 
        B_SEC_05
+                                  : Result:  PASS 
+       END  
+
+  28 : Check Fine Grain Trap Support     
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_01
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  29 : Check for ECV support             
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_02
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  30 : Check for AMUv1p1 Support         
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_03
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  31 : Checks ASIMD Int8 matrix multiplc 
+       START  
+       PSCI_CPU_ON: success  
+       S_L7PE_04
+                                  : Result:  PASS 
+       END  
+
+  32 : Check for BFLOAT16 extension      
+       START  
+       PSCI_CPU_ON: success  
+       S_L7PE_05
+                                  : Result:  PASS 
+       END  
+
+  33 : Check for EnhancedPAC2 and FPAC   
+       START  
+       PSCI_CPU_ON: success  
+       S_L7PE_06
+                                  : Result:  PASS 
+       END  
+
+  34 : Check for SVE Int8 matrix multiplc
+       START  
+       PSCI_CPU_ON: success  
+       S_L7PE_07
+                                  : Result:  PASS 
+       END  
+
+  35 : Check for data gathering hint     
+       START  
+       PSCI_CPU_ON: success  
+       S_L7PE_08
+                                  : Result:  PASS 
+       END  
+
+  36 : Check WFE Fine tune delay feature 
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_09
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+  37 : Check for enhanced PAN feature    
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       S_L7PE_10
        Checkpoint --  1                  : Result:  FAIL 
        END  
 
@@ -616,7 +685,7 @@ PE Index * 1 *
        START  
        Detected SMMUv3, or higher implementation 
        Stage 2 translation not supported 
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L4SM_01, S_L4SM_02
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -624,23 +693,25 @@ PE Index * 1 *
  302 : Check SMMUv3.2 or higher          
        START  
        Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L5SM_01, S_L5SM_02
        Checkpoint --  2                  : Result:  FAIL 
        END  
 
  303 : Check S-EL2 & SMMU Stage1 support 
        START  
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  7 
        B_SMMU_09
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
        END  
 
  304 : Check S-EL2 & SMMU Stage2 Support 
        START  
-       Secure EL2 not implemented
+       SMMUv3.1 detected: revision must be v3.2 or higher  
+       Failed on PE -    0 for Level=  7 
        B_SMMU_20
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  FAIL 
        END  
 
  305 : Check SMMU for MPAM support       
@@ -652,14 +723,14 @@ PE Index * 1 *
 
  306 : Check SMMU HTTU Support           
        START  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L6SM_02
        Checkpoint --  1                  : Result:  FAIL 
        END  
 
  307 : Check SMMU MSI Support            
        START  
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        S_L6SM_03
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -679,9 +750,8 @@ PE Index * 1 *
 
  310 : Check TLB Range Invalidation      
        START  
-       TLB Range Invalid Not Supported For PE              
        B_SMMU_04, B_SMMU_05
-       Checkpoint --  1                  : Result:  SKIPPED 
+                                  : Result:  PASS 
        END  
 
  311 : Check SMMU 16 Bit ASID Support    
@@ -699,6 +769,24 @@ PE Index * 1 *
  313 : Check SMMU Coherent Access Support
        START  
        S_L6SM_01
+                                  : Result:  PASS 
+       END  
+
+ 314 : Check SMMU PMU Extension          
+       START  
+       PMU Extension not implemented for SMMU index : 0
+       Failed on PE -    0 for Level=  7 
+       S_L7SM_03, S_L7SM_04
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+ 315 : Check if all DMA reqs behind SMMU 
+       START  
+       RC segment no  : 0x0
+       CCA attribute  : 0x1
+       SMMU base addr : 0x60050000
+
+       S_L7SM_01
                                   : Result:  PASS 
        END  
 
@@ -835,7 +923,7 @@ PE Index * 1 *
        BDF 0x200 : PASS
        BDF 0x200 : PASS
        BDF 0x200 : PASS
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -877,7 +965,7 @@ PE Index * 1 *
        BDF 0x200 : PASS
        BDF 0x200 : PASS
        BDF 0x200 : PASS
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -889,7 +977,7 @@ PE Index * 1 *
        BDF 0x100 : PASS
        PCIe Capability 0x1 not found for BDF 0x200
        PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_REG_2, IE_REG_5
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -901,7 +989,7 @@ PE Index * 1 *
        BDF 0x100 : PASS
        PCIe Capability 0x1 not found for BDF 0x200
        PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_REG_2, IE_REG_5
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -959,7 +1047,7 @@ PE Index * 1 *
        BDF - 0x200 
        HDR TYPE 0x0 
        MAX BARS 0x6 
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_BAR_3, IE_BAR_3
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -1012,7 +1100,7 @@ PE Index * 1 *
        BDF - 0x100
        BDF - 0x200
        BDF - 200 does not support Power Management Capability
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_PWR_1, IE_PWR_1
        Checkpoint --  1                  : Result:  FAIL 
        END  
@@ -1140,7 +1228,7 @@ PE Index * 1 *
        BDF - 0x200
        Link Capabilities reg check failed
        Invalid Link Capabilities 0x1
-       Failed on PE -    0 for Level=  6 
+       Failed on PE -    0 for Level=  7 
        RE_PCI_1
        Checkpoint --  2                  : Result:  FAIL 
        END  
@@ -1160,8 +1248,45 @@ PE Index * 1 *
 
      No Exerciser Devices Found, Skipping Exerciser tests...
 
+       PE MPAM extension unimplemented. Skipping all MPAM tests
+
+      *** Starting PMU tests ***  
+1101 : Check PMU Overflow signal         
+       START  
+       Received PMUIRQ 
+       PMU_PE_02
+                                  : Result:  PASS 
+       END  
+
+1102 : Check number of PMU counters      
+       START  
+       PSCI_CPU_ON: success  
+        PMU_PE_03
+                                  : Result:  PASS 
+       END  
+
+1103 : Check for multi-threaded PMU ext  
+       START  
+       PSCI_CPU_ON: success  
+       Failed on PE -    0 for Level=  7 
+       PMU_EV_11
+       Checkpoint --  1                  : Result:  FAIL 
+       END  
+
+1106 : Check for PMU SPE Requirements    
+       START  
+       PSCI_CPU_ON: success  
+       PMU_SPE
+       Checkpoint --  2                  : Result:  SKIPPED 
+       END  
+
+
+       PMU nodes not found. Skipping remaining PMU tests
+
+       RAS nodes not found. Skipping all RAS tests
+
      ------------------------------------------------------- 
-     Total Tests run  =   86;  Tests Passed  =   35  Tests Failed =   20
+     Total Tests run  =  102;  Tests Passed  =   50  Tests Failed =   23
      --------------------------------------------------------- 
 
       **  For complete SBSA test coverage, it is 

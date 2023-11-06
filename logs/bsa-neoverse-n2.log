@@ -2,7 +2,7 @@ QEMU command line arguments:
 -machine sbsa-ref
 -m 4096
 -smp 2
--cpu cortex-a72
+-cpu neoverse-n2
 -drive if=pflash,file=SBSA_FLASH0.fd,format=raw
 -drive if=pflash,file=SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
@@ -152,8 +152,7 @@ Operating System View:
   11 : Check num of Breakpoints and type          : Result:  PASS 
   12 : Check Synchronous Watchpoints              : Result:  PASS 
   13 : Check CRC32 instruction support            : Result:  PASS 
-  14 : Check PAuth if implementation         
-       Checkpoint --  1                           : Result:  SKIPPED 
+  14 : Check PAuth if implementation              : Result:  PASS 
 
 Hypervisor View:
   51 : Check EL2 implementation                   : Result:  PASS 
@@ -165,7 +164,7 @@ Hypervisor View:
 Platform Security View:
   76 : Check EL3 implementation                   : Result:  PASS 
 
-      One or more PE tests failed or were skipped.
+      All PE tests passed.
 
       *** Starting Memory Map tests ***  
 
@@ -186,8 +185,7 @@ Operating System View:
  207 : Check EL1-Virt timer PPI assignment        : Result:  PASS 
 
 Hypervisor View:
- 226 : Check NS EL2-Virt timer PPI Assignment
-       Checkpoint --  2                           : Result:  SKIPPED 
+ 226 : Check NS EL2-Virt timer PPI Assignment     : Result:  PASS 
  227 : Check NS EL2-Phy timer PPI Assignment      : Result:  PASS 
  228 : Check GIC Maintenance PPI Assignment       : Result:  PASS 
 
@@ -199,7 +197,7 @@ Operating System View:
  278 : Check uniqueness of StreamID               : Result:  PASS 
  279 : Check Device's ReqID-DeviceID-StreamID     : Result:  PASS 
 
-      One or more GIC tests failed or were skipped.
+      All GIC tests passed.
 
       *** Starting SMMU tests ***  
 
@@ -208,13 +206,12 @@ Operating System View:
  302 : Check SMMU Granule Support                 : Result:  PASS 
  303 : Check SMMU Large Physical Addr Support
        Checkpoint --  1                           : Result:  SKIPPED 
- 304 : Check SMMU S-EL2 & stage1 support          : Result:  PASS 
+ 304 : Check SMMU S-EL2 & stage1 support     
+       Checkpoint --  2                           : Result:  SKIPPED 
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
-       SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0
-       Checkpoint --  2                           : Result:  FAIL 
+       Checkpoint --  2                           : Result:  SKIPPED 
  354 : SMMUv3 Integration compliance              : Result:  PASS 
 
       One or more SMMU tests failed or were skipped.
@@ -316,7 +313,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   86  Tests Passed  =   70  Tests Failed =    2
+     Total Tests run  =   86  Tests Passed  =   71  Tests Failed =    1
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 
