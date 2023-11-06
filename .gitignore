@@ -1,8 +1,6 @@
 # I have kernel/initrd for some tests and it is not in repo
 disks/virtual/efi/debian
 
-# Ignore flash files for UEFI
-SBSA_FLASH*
 # Ignore images used for tests
 disks/
 
