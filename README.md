@@ -9,7 +9,7 @@ in QEMU ("-M sbsa-ref") in a bit more organized way.
 There are some scripts provided:
 
 | Name                   | Function
-|                      - | - 
+|                      - | -
 | boot-sbsa-ref.sh       | Boot QEMU with several options enabled.
 | check-sbsa.py          | Check "sbsa-ref" against SBSA checklists.
 | parse-bsa-log.py       | Parse BSA ACS logs. Needs verbose logs and core name.
@@ -47,6 +47,7 @@ Status information is split to core names. Supported cpu cores are:
 - Cortex-A57/A72 are Arm v8.0 so they lack many extensions
 - Neoverse-N1 is Arm v8.2
 - Neoverse-V1 is Arm v8.4
+- Neoverse-N2 is Arm v9.0
 - max has everything QEMU supports
 
 
@@ -68,3 +69,20 @@ The "boot-sbsa-ref-sh" shell script has several arguments:
 OS installer images need to be fetched first into "disks/" directory. For NetBSD 9 and OpenBSD disk images are used, other OSes use ISO files.
 
 Virt machine gets SMMUv3 and newer GIC to be closer to SBSA Reference Platform. Also XHCI usb controller is added.
+
+
+# Firmware files
+
+In "firmware" directory I placed several firmware blobs (compressed with xz so
+unpack them before use):
+
+| filename                          | Platform Version | GIC ITS | USB   |
+|    ---                            | :---:            |:---:    | :---: |
+| 202109-tfa2.5-SBSA_FLASH0.fd.xz   | 0.0              | -       | EHCI  |
+| its-ehci-SBSA_FLASH0.fd.xz        | 0.3              | ✔       | EHCI  |
+| SBSA_FLASH0.fd.xz                 | 0.3              | ✔       | XHCI  | 
+
+Notes:
+
+- Firmware which exposes EHCI controller does not give working USB. BSD systems may refuse to boot.
+- GIC ITS also exposes SMMU and allows complex PCI Express setup.
