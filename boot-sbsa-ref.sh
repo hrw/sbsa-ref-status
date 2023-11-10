@@ -37,6 +37,10 @@ for i in "$@"; do
 			MACHINE="virt"
 			shift
 			;;
+		--secure)
+			SECURE=1
+			shift
+			;;
 		--os=*)
 			OS="${i#*=}"
 			shift
@@ -303,6 +307,14 @@ fi
 
 if [ -z $GFX ]; then
         qemu_args="${qemu_args} -nographic"
+fi
+
+if [ ! -z $SECURE ]; then
+        qemu_args="${qemu_args} -serial tcp:localhost:6502"
+        qemu_args="${qemu_args} -serial tcp:localhost:6503"
+        nc -l localhost 6502 &
+        tmux split-window -h "nc -l localhost 6503"
+        tmux last-pane
 fi
 
 if [ ! -z $EMPTY ]; then
