@@ -10,8 +10,8 @@ qemu_args=(
 -cpu $cpu
 
 # firmware
--drive if=pflash,file=SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
 
 # basic disk with EFI apps and generic Debian d-i
 -drive file=fat:rw:$PWD/disks/virtual/,format=raw
