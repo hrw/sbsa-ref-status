@@ -325,6 +325,9 @@ fi
 
 qemu_args="${qemu_args} ${firmware_args[@]}"
 
+../code/qemu/build/aarch64-softmmu/qemu-system-aarch64 --version
+
+echo ""
 echo "QEMU command line arguments:"
 echo "${qemu_args}" | sed -e "s/ -/\n-/g"
 echo ""
