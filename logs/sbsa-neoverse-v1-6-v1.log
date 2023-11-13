@@ -3,8 +3,8 @@ QEMU command line arguments:
 -m 4096
 -smp 2
 -cpu neoverse-v1
--drive if=pflash,file=SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
 -usb
 -device usb-kbd
@@ -40,15 +40,15 @@ fs0:sbsa.efi -skip 861 -l 6 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
-UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -112,7 +112,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
  Creating Platform Information Tables 
  Using SMC as PSCI conduit
- MADT is at FC02E498 and length is 108 
+ MADT is at FBF8E498 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
  MPIDR 0 PE num 0 
@@ -120,7 +120,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   PE Enabled 1, Online Capable 0
  MPIDR 1 PE num 1 
  PE_INFO: Number of PE detected       :    2 
- MADT is at FC02E498 and length is 108 
+ MADT is at FBF8E498 and length is 108 
  GICH base 2C010000 
  GICH base 2C010000 
  GIC DIS base 40060000 
@@ -129,11 +129,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC ITS ID0 
  GIC_INFO: Number of GICD             :    1 
  GIC_INFO: Number of ITS              :    1 
- GTDT is at FC02E618 and length is 84 
+ GTDT is at FBF8E618 and length is 84 
  TIMER_INFO: Number of system timers  :    0 
  Watchdog base = 0x50011000 INTID = 0x30 
  WATCHDOG_INFO: Number of Watchdogs   :    1 
-PPTT table found at 0x100FC02FD18 with length 0xB8
+PPTT table found at 0x100FBF8FD18 with length 0xB8
 
 Cache info * Index 0 *
   Offset:                  0x38
@@ -267,8 +267,10 @@ PE Index * 1 *
 
  SMMU_INFO: Number of SMMU CTRL       :    1 
  000.00.00 class_code = 0 6
- 000.00.19 class_code = 6 1
+ 000.00.19 class_code = 3 12
+ Found a USB controller 60110000 
  000.01.01 class_code = 0 2
+ 000.01.20 class_code = 6 1
  000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
  000.04.07 class_code = 4 6
@@ -277,18 +279,12 @@ PE Index * 1 *
  000.07.13 class_code = 4 6
  000.08.15 class_code = 4 6
  000.09.18 class_code = 0 6
- 001.00.04 class_code = 4 6
- 002.00.05 class_code = 4 6
- 003.00.06 class_code = 6 1
- 004.00.08 class_code = 8 1
- 005.00.10 class_code = 0 2
- 006.00.12 class_code = 3 12
- Found a USB controller 81200004 
  009.08.17 class_code = 255 0
  000.00.00 class_code = 0 6
- 000.00.19 class_code = 6 1
- Found a SATA controller 60100000 
+ 000.00.19 class_code = 3 12
  000.01.01 class_code = 0 2
+ 000.01.20 class_code = 6 1
+ Found a SATA controller 60100000 
  000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
  000.04.07 class_code = 4 6
@@ -342,25 +338,29 @@ PE Index * 1 *
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
  Peripheral: Num of Storage ctrl      :    2 
  Peripheral: Num of Display ctrl      :    1 
- Reserved region of type 7 [0x10000000000, 0x100FBC86000]
- Reserved region of type 1 [0x100FBC86000, 0x100FBDF0000]
- Reserved region of type 5 [0x100FBDF0000, 0x100FBE70000]
- Reserved region of type 6 [0x100FBE70000, 0x100FBF10000]
- Reserved region of type 5 [0x100FBF10000, 0x100FBF60000]
- Reserved region of type 9 [0x100FBF60000, 0x100FBFB0000]
- Reserved region of type 5 [0x100FBFB0000, 0x100FC000000]
+ Reserved region of type 7 [0x10000000000, 0x100FBC56000]
+ Reserved region of type 1 [0x100FBC56000, 0x100FBDC0000]
+ Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
+ Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
+ Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
+ Reserved region of type 9 [0x100FBF30000, 0x100FBF90000]
+ Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
+ Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
- Reserved region of type 9 [0x100FC020000, 0x100FC030000]
- Reserved region of type 7 [0x100FC030000, 0x100FDE27000]
- Reserved region of type 4 [0x100FDE27000, 0x100FEF24000]
- Reserved region of type 7 [0x100FEF24000, 0x100FF1C8000]
- Reserved region of type 3 [0x100FF1C8000, 0x100FF500000]
- Reserved region of type 5 [0x100FF500000, 0x100FF690000]
- Reserved region of type 6 [0x100FF690000, 0x100FF8E0000]
- Reserved region of type 7 [0x100FF8E0000, 0x100FF8F6000]
- Reserved region of type 4 [0x100FF8F6000, 0x100FF918000]
- Reserved region of type 3 [0x100FF918000, 0x100FF94F000]
- Reserved region of type 4 [0x100FF94F000, 0x100FFFE8000]
+ Reserved region of type 7 [0x100FC020000, 0x100FDDC1000]
+ Reserved region of type 4 [0x100FDDC1000, 0x100FDE93000]
+ Reserved region of type 7 [0x100FDE93000, 0x100FDE95000]
+ Reserved region of type 4 [0x100FDE95000, 0x100FEF04000]
+ Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
+ Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
+ Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
+ Reserved region of type 6 [0x100FF670000, 0x100FF8C0000]
+ Reserved region of type 7 [0x100FF8C0000, 0x100FF8D0000]
+ Reserved region of type 6 [0x100FF8D0000, 0x100FF8E0000]
+ Reserved region of type 7 [0x100FF8E0000, 0x100FF8EC000]
+ Reserved region of type 4 [0x100FF8EC000, 0x100FF90F000]
+ Reserved region of type 3 [0x100FF90F000, 0x100FF946000]
+ Reserved region of type 4 [0x100FF946000, 0x100FFFE8000]
  Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
  Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
  Reserved region of type 11 [0x10000000, 0x106C0000]
@@ -369,7 +369,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0 
- Shared memory is 100FDF9C718 
+ Shared memory is 100FDF3CC18 
 
       *** Starting PE tests ***  
    1 : Check PE Granule Support          
@@ -576,11 +576,11 @@ PE Index * 1 *
        START  
  Peripheral 2000
  Peripheral 2001
-   addr of Peripheral 1 is  81200004
+   addr of Peripheral 1 is  60110000
    addr of Peripheral 2 is  60100000
  Peripheral 2000
  Peripheral 2002
-   addr of Peripheral 1 is  81200004
+   addr of Peripheral 1 is  60110000
    addr of Peripheral 2 is  60000000
  Peripheral 2001
  Peripheral 2002

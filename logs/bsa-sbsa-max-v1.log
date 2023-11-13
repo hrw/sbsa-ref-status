@@ -3,8 +3,8 @@ QEMU command line arguments:
 -m 4096
 -smp 2
 -cpu max
--drive if=pflash,file=SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
 -usb
 -device usb-kbd
@@ -40,15 +40,15 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
-UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -114,7 +114,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at FC02E498 and length is 108 
+  MADT is at FBF8E498 and length is 108 
   Flags 1 
   PE Enabled 1, Online Capable 0
   MPIDR 0 PE num 0 
@@ -124,7 +124,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PE_INFO: Number of PE detected       :    2 
  PE_INFO: Primary PE index       :    0 
  Creating GIC INFO table
-  MADT is at FC02E498 and length is 108 
+  MADT is at FBF8E498 and length is 108 
   GICH base 2C010000 
   GICH base 2C010000 
   GIC DIS base 40060000 
@@ -138,7 +138,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICR RD          :    1 
  GIC_INFO: Number of ITS              :    1 
  Creating TIMER INFO table
-  GTDT is at FC02E618 and length is 84 
+  GTDT is at FBF8E618 and length is 84 
   GTDT revision is at 3 
  TIMER_INFO: Number of system timers  :    0 
  Creating WATCHDOG INFO table
@@ -150,7 +150,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Segment   = 0x0
   Start Bus = 0x0
   End Bus   = 0xFF
- PCIE_INFO: Number of ECAM regions    :    1 
+ PCIE_INFO: Number of ECAM regions    : 1 
   Dev bdf 0x000300 type 0x10 RP bdf 0x000300
   Dev bdf 0x000400 type 0x10 RP bdf 0x000400
   Dev bdf 0x000500 type 0x10 RP bdf 0x000500
@@ -163,7 +163,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Dev bdf 0x050000 type 0x01 RP bdf 0x000500
   Dev bdf 0x060000 type 0x01 RP bdf 0x000600
   Dev bdf 0x080000 type 0x80 RP bdf 0x000800
- PCIE_INFO: Number of BDFs found      :    12
+ PCIE_INFO: Number of BDFs found      : 12
  PCIE_INFO: Number of RCiEP           :    0 
  PCIE_INFO: Number of RCEC            :    0 
  PCIE_INFO: Number of EP              :    3 
@@ -219,12 +219,14 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   input_base:0x0 id_count:0xFFFF
   output_base:0x0 output ref:0x134
 
- SMMU_INFO: Number of SMMU CTRL       :    1 
+ SMMU_INFO: Number of SMMU CTRL       : 1 
  SMMU_INFO: SMMU index 00 version     :    v3.1 
  Creating PERIPHERAL INFO table
   000.00.00 class_code = 0 6
-  000.00.19 class_code = 6 1
+  000.00.19 class_code = 3 12
+  Found a USB controller 60110000
   000.01.01 class_code = 0 2
+  000.01.20 class_code = 6 1
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
   000.04.07 class_code = 4 6
@@ -233,18 +235,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   000.07.13 class_code = 4 6
   000.08.15 class_code = 4 6
   000.09.18 class_code = 0 6
-  001.00.04 class_code = 4 6
-  002.00.05 class_code = 4 6
-  003.00.06 class_code = 6 1
-  004.00.08 class_code = 8 1
-  005.00.10 class_code = 0 2
-  006.00.12 class_code = 3 12
-  Found a USB controller 81200004
   009.08.17 class_code = 255 0
   000.00.00 class_code = 0 6
-  000.00.19 class_code = 6 1
-  Found a SATA controller 60100000
+  000.00.19 class_code = 3 12
   000.01.01 class_code = 0 2
+  000.01.20 class_code = 6 1
+  Found a SATA controller 60100000
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
   000.04.07 class_code = 4 6
@@ -299,32 +295,36 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    2 
  Peripheral: Num of Display ctrl      :    1 
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBC97000]
-  Reserved region of type 1 [0x100FBC97000, 0x100FBDF0000]
-  Reserved region of type 5 [0x100FBDF0000, 0x100FBE70000]
-  Reserved region of type 6 [0x100FBE70000, 0x100FBF10000]
-  Reserved region of type 5 [0x100FBF10000, 0x100FBF60000]
-  Reserved region of type 9 [0x100FBF60000, 0x100FBFB0000]
-  Reserved region of type 5 [0x100FBFB0000, 0x100FC000000]
+  Reserved region of type 7 [0x10000000000, 0x100FBC67000]
+  Reserved region of type 1 [0x100FBC67000, 0x100FBDC0000]
+  Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
+  Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
+  Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
+  Reserved region of type 9 [0x100FBF30000, 0x100FBF90000]
+  Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
+  Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 9 [0x100FC020000, 0x100FC030000]
-  Reserved region of type 7 [0x100FC030000, 0x100FDEB6000]
-  Reserved region of type 4 [0x100FDEB6000, 0x100FDF6D000]
-  Reserved region of type 7 [0x100FDF6D000, 0x100FDF6F000]
-  Reserved region of type 4 [0x100FDF6F000, 0x100FEF24000]
-  Reserved region of type 7 [0x100FEF24000, 0x100FF1C8000]
-  Reserved region of type 3 [0x100FF1C8000, 0x100FF500000]
-  Reserved region of type 5 [0x100FF500000, 0x100FF690000]
-  Reserved region of type 6 [0x100FF690000, 0x100FF8E0000]
-  Reserved region of type 7 [0x100FF8E0000, 0x100FF8F6000]
-  Reserved region of type 4 [0x100FF8F6000, 0x100FF918000]
-  Reserved region of type 3 [0x100FF918000, 0x100FF94F000]
-  Reserved region of type 4 [0x100FF94F000, 0x100FFFE8000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDE51000]
+  Reserved region of type 4 [0x100FDE51000, 0x100FDE93000]
+  Reserved region of type 7 [0x100FDE93000, 0x100FDE94000]
+  Reserved region of type 4 [0x100FDE94000, 0x100FDF0A000]
+  Reserved region of type 7 [0x100FDF0A000, 0x100FDF0C000]
+  Reserved region of type 4 [0x100FDF0C000, 0x100FEF04000]
+  Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
+  Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
+  Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
+  Reserved region of type 6 [0x100FF670000, 0x100FF8C0000]
+  Reserved region of type 7 [0x100FF8C0000, 0x100FF8D0000]
+  Reserved region of type 6 [0x100FF8D0000, 0x100FF8E0000]
+  Reserved region of type 7 [0x100FF8E0000, 0x100FF8EC000]
+  Reserved region of type 4 [0x100FF8EC000, 0x100FF90F000]
+  Reserved region of type 3 [0x100FF90F000, 0x100FF946000]
+  Reserved region of type 4 [0x100FF946000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDF9EF98 
+ Shared memory is 100FDF3D698 
 
       *** Starting PE tests ***  
 
@@ -767,13 +767,16 @@ Operating System View:
 Operating System View:
  601 : USB CTRL Interface                             START
 
+       PCIe_CFG_RD ECAM Base is zero FF000000
+       WARN: USB CTRL ECAM access failed 0x0  
+       Re-checking using PCIIO protocol
        B_PER_01, B_PER_02
                                        : Result:  PASS 
          END
 
  602 : Check SATA CTRL Interface                      START
 
-       PCIe_CFG_RD ECAM Base is zero FF000000       WARN: SATA CTRL ECAM access failed 0 
+       PCIe_CFG_RD ECAM Base is zero FF000100       WARN: SATA CTRL ECAM access failed 0 
        Re-checking SATA CTRL using PciIo protocol
 
        B_PER_03

@@ -3,8 +3,8 @@ QEMU command line arguments:
 -m 4096
 -smp 2
 -cpu neoverse-n1
--drive if=pflash,file=SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=SBSA_FLASH1.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
 -drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
 -usb
 -device usb-kbd
@@ -40,15 +40,15 @@ fs0:sbsa.efi -skip 861 -l 5
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL1: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL2: Built : 11:58:56, Oct  2 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9(release):v2.9.0-782-gb990719ba
-NOTICE:  BL31: Built : 11:58:56, Oct  2 2023
-UEFI firmware (version 1.0 built at 15:45:23 on Sep 20 2023)
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
+NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
