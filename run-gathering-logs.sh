@@ -110,8 +110,13 @@ do
         echo -n "ACPI tables "
         boot-sbsa-ref "acpiview" > logs/acpiview-${cpu}.log
 
-        echo "CPU info"
+        echo -n "CPU info "
         boot-sbsa-ref "fs0:armcpuinfo.efi" > logs/cpuinfo-${cpu}.log
+
+        echo -n "Linux "
+        boot-sbsa-ref "fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0" > logs/linux-${cpu}.log
+
+        echo ""
 done
 
 rm disks/virtual/startup.nsh
