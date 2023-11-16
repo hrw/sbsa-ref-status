@@ -40,14 +40,14 @@ fs0:bsa.efi -sbsa
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -296,8 +296,7 @@ Operating System View:
  831 : Check Type0/1 BIST Register rule           : Result:  PASS 
  832 : Check HDR CapPtr Register rule             : Result:  PASS 
  833 : Check Max payload size supported           : Result:  PASS 
- 835 : Check Function level reset            
-       Checkpoint --  1                           : Result:  SKIPPED 
+ 835 : Check Function level reset                 : Result:  PASS 
  836 : Check ARI forwarding enable rule           : Result:  PASS 
  837 : Check Config Txn for RP in HB              : Result:  PASS 
  838 : Check all RP in HB is in same ECAM         : Result:  PASS 
@@ -313,7 +312,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   84  Tests Passed  =   70  Tests Failed =    2
+     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    2
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

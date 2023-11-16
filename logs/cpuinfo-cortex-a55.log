@@ -1,0 +1,23 @@
+QEMU command line arguments:
+-machine virt
+-m 4096
+-smp 2
+-cpu cortex-a55
+-drive if=pflash,file=firmware/VIRT_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/VIRT_FLASH1.fd,format=raw
+-drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
+-usb
+-device usb-kbd
+-device usb-tablet
+-nographic
+-watchdog-action none
+-no-reboot
+-monitor telnet::45454,server,nowait
+-serial stdio
+
+EFI startup script:
+mode 100 31
+pci
+fs0:armcpuinfo.efi
+reset -c
+

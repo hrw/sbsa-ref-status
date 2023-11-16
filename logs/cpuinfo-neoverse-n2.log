@@ -40,14 +40,14 @@ fs0:armcpuinfo.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -110,7 +110,7 @@ ID_AA64MMFR1_EL1 = 0x0000000010212122
 ID_AA64MMFR2_EL1 = 0x1221011110101011
 ID_AA64PFR0_EL1  = 0x1201001121111112
 ID_AA64PFR1_EL1  = 0x0000000000000121
-ID_AA64ISAR0_EL1 = 0x0221111110212120
+ID_AA64ISAR0_EL1 = 0x1221111110212120
 ID_AA64ISAR1_EL1 = 0x0011111101211052
 ID_AA64ISAR2_EL1 = 0x0000000000000000
 ID_AA64DFR0_EL1  = 0x000000F010305609
@@ -205,7 +205,7 @@ ISAR0 | 47:44 |  0001 | FEAT_DotProd implemented.
 ISAR0 | 51:48 |  0001 | FEAT_FHM implemented.
 ISAR0 | 55:52 |  0010 | FEAT_FlagM2 implemented.
 ISAR0 | 59:56 |  0010 | FEAT_TLBIRANGE implemented.
-ISAR0 | 63:60 |  0000 | FEAT_RNG not implemented.
+ISAR0 | 63:60 |  0001 | FEAT_RNG implemented.
 ------|-------|-------|----------------------------------------------
 ISAR1 |  3:0  |  0010 | FEAT_DPB2 implemented.
 ISAR1 |  7:4  |  0101 | FEAT_FPACCOMBINE implemented.

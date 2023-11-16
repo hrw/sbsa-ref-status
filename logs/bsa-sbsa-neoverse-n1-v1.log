@@ -40,14 +40,14 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -304,12 +304,10 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDE51000]
-  Reserved region of type 4 [0x100FDE51000, 0x100FDE93000]
-  Reserved region of type 7 [0x100FDE93000, 0x100FDE94000]
-  Reserved region of type 4 [0x100FDE94000, 0x100FDF0A000]
-  Reserved region of type 7 [0x100FDF0A000, 0x100FDF0C000]
-  Reserved region of type 4 [0x100FDF0C000, 0x100FEF04000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDE52000]
+  Reserved region of type 4 [0x100FDE52000, 0x100FDF09000]
+  Reserved region of type 7 [0x100FDF09000, 0x100FDF0B000]
+  Reserved region of type 4 [0x100FDF0B000, 0x100FEF04000]
   Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
   Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
   Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
@@ -324,7 +322,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDF3D698 
+ Shared memory is 100FDF21F98 
 
       *** Starting PE tests ***  
 
@@ -1581,11 +1579,10 @@ Operating System View:
 
  835 : Check Function level reset                     START
 
-       BDF 0x50000 
+       BDF 0x50000   config space addr 0xF0500000
        BDF 0x60000 
-       No EP type device found with PCIe Express Cap support. Skipping test
        PCI_SM_02
-       Checkpoint --  1                           : Result:  SKIPPED 
+                                       : Result:  PASS 
          END
 
  836 : Check ARI forwarding enable rule               START
@@ -1667,7 +1664,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      ------------------------------------------------------- 
-     Total Tests run  =   84  Tests Passed  =   70  Tests Failed =    2
+     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    2
      ------------------------------------------------------- 
 
       *** BSA tests complete. Reset the system. *** 

@@ -40,14 +40,14 @@ fs0:sbsa.efi -skip 861 -l 3
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL1: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL2: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-1-g5bac6cad6
-NOTICE:  BL31: Built : 10:50:24, Nov 13 2023
+NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
+NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
