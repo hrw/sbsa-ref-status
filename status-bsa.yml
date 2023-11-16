@@ -801,12 +801,12 @@
   title: Check Max payload size supported
 835:
   status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
   tags: PCI_SM_02
   title: Check Function level reset
 836:
