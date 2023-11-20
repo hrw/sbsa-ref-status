@@ -41,6 +41,11 @@ for i in "$@"; do
 			SECURE=1
 			shift
 			;;
+		--numa)
+			NUMA=1
+			MACHINE_OPTIONS=",hmat=on"
+			shift
+			;;
 		--os=*)
 			OS="${i#*=}"
 			shift
@@ -81,7 +86,7 @@ elif [ $MACHINE == "virt" ]; then
 -drive if=pflash,file=firmware/VIRT_FLASH1.fd,format=raw
 
 		)
-MACHINE_OPTIONS=",iommu=smmuv3,gic-version=max"
+MACHINE_OPTIONS="${MACHINE_OPTIONS},iommu=smmuv3,gic-version=max"
 
 fi
 
@@ -89,8 +94,6 @@ fi
 common_qemu_args=(
 
 -machine ${MACHINE}${MACHINE_OPTIONS}
--m 4096
--smp 2
 -cpu $CPU
 
 # basic disk with EFI apps and generic Debian d-i
@@ -308,6 +311,25 @@ fi
 if [ -z $GFX ]; then
         qemu_args="${qemu_args} -nographic"
 fi
+
+if [ -z $NUMA ]; then
+        numa_args=(
+		-m 4G
+		-smp 4
+	)
+else
+	numa_args=(
+		-smp 4,sockets=4,maxcpus=4
+		-m 4G,slots=2,maxmem=5G
+		-object memory-backend-ram,size=3G,id=m0
+		-object memory-backend-ram,size=1G,id=m1
+		-numa node,nodeid=0,cpus=0-1,memdev=m0
+		-numa node,nodeid=1,memdev=m1,initiator=0
+		-numa node,nodeid=2,cpus=2-3
+	)
+fi
+
+qemu_args="${qemu_args} ${numa_args[@]}"
 
 if [ ! -z $SECURE ]; then
         qemu_args="${qemu_args} -serial tcp:localhost:6502"
