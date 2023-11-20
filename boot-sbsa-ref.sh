@@ -182,6 +182,7 @@ its_pci_setup=(
 #            \-09.0  Red Hat, Inc. QEMU PCIe Expander bridge
 
 # 104c:8232 x3130-upstream  
+# 1234:1111 bochs-display
 # 1274:5000 es1370          
 # 1af4:1044 virtio-rng-pci  
 # 1b36:000b pxb-pcie
