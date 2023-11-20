@@ -119,6 +119,7 @@
     neoverse-v1: FAIL
   tags: S_L5PE_04
   title: Check Activity monitors extension
+  comment: does not make sense to implement in QEMU
 12:
   level: '5'
   status:
@@ -185,6 +186,7 @@
     neoverse-v1: FAIL
   tags: B_PE_17
   title: Check SPE if implemented
+  comment: does not make sense to implement in QEMU
 18:
   level: '6'
   status:
@@ -328,6 +330,7 @@
     neoverse-v1: FAIL
   tags: S_L7PE_03
   title: Check for AMUv1p1 Support
+  comment: does not make sense to implement in QEMU
 31:
   level: '7'
   status:
@@ -458,6 +461,7 @@
     neoverse-v1: FAIL
   tags: S_L4SM_01, S_L4SM_02
   title: Check SMMU Compatibility
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 302:
   level: '5'
   status:
@@ -480,6 +484,7 @@
     neoverse-v1: SKIPPED
   tags: B_SMMU_09
   title: Check S-EL2 & SMMU Stage1 support
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 304:
   level: '5'
   status:
@@ -491,6 +496,7 @@
     neoverse-v1: SKIPPED
   tags: B_SMMU_20
   title: Check S-EL2 & SMMU Stage2 Support
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 305:
   level: '5'
   status:
