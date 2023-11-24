@@ -243,7 +243,7 @@ case $OS in
 		ISO="disks/Fedora-Server-netinst-aarch64-39_Beta-1.1.iso"
 		;;
 	"freebsd")
-		ISO="disks/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso"
+		ISO="disks/FreeBSD-13.2-STABLE-arm64-aarch64-20231116-35372e305863-256698-bootonly.iso"
 		;;
 	"freebsd14")
 		ISO="disks/FreeBSD-14.0-RC3-arm64-aarch64-bootonly.iso"
