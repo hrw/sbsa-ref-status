@@ -34,5 +34,3 @@ def load_yamls():
         status_sbsa = yaml.safe_load(yml)
 
     return status_bsa, status_sbsa, xbsa_checklist
-
-
