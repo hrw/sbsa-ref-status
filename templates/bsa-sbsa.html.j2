@@ -229,7 +229,7 @@ table td.mark {
 <td class="mark">{% if entry.sbsa[5] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[6] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[7] %}✔{% endif %}</td>
-<td class="mark">{% if entry.sbsaref %}✔{% endif %}</td>
+<td class="mark">{{ entry.sbsaref }}</td>
 </tr>
 {% endfor %}
 </tbody>

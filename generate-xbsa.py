@@ -8,16 +8,21 @@ import bsa
 
 def check_tag(tag):
     cpu = "neoverse-n2"
-    passed = True
+    passed = "?"
 
     try:
         for bsa_test_id in tags_to_tests[tag]["bsa"]:
-            if status_bsa[bsa_test_id]['status'][cpu] in ["FAIL"]:
-                passed = False
+            if status_bsa[bsa_test_id]['status'][cpu] not in ["FAIL"]:
+                passed = "✔"
 
         for sbsa_test_id in tags_to_tests[tag]["sbsa"]:
-            if status_sbsa[sbsa_test_id]['status'][cpu] in ["FAIL"]:
-                passed = False
+            try:
+                if status_sbsa[sbsa_test_id]['skip_for_qemu']:
+                    passed = "-"
+            except KeyError:
+                pass
+            if status_sbsa[sbsa_test_id]['status'][cpu] not in ["FAIL"]:
+                passed = "✔"
     except KeyError:
         pass
 
@@ -31,9 +36,6 @@ def handle_checklist():
     for category in xbsa_checklist:
         for group in xbsa_checklist[category]["groups"]:
             for rule in xbsa_checklist[category]["groups"][group]["rules"]:
-                if rule["required"]["sbsa"][7]:
-                    sbsaref_passed = check_tag(rule["tag"])
-
                 # not every entry from checklist has ACS tests
                 try:
                     tests = tags_to_tests[rule["tag"]]
@@ -48,13 +50,12 @@ def handle_checklist():
                     'tag': rule["tag"],
                     'bsa': rule["required"]["bsa"],
                     'sbsa': rule["required"]["sbsa"],
-                    'sbsaref': sbsaref_passed,
+                    'sbsaref': check_tag(rule["tag"]),
                     'tests': tests,
                 })
 
     for tag in sorted(tags_to_tests.keys()):
         if tags_to_tests[tag]["acs_only"]:
-            sbsaref_passed = check_tag(tag)
             # we want to display it at the end on checklist
             entry = {
                 'category': "ACS only tests",
@@ -63,7 +64,7 @@ def handle_checklist():
                 'tests': tags_to_tests[tag],
                 'bsa': [],
                 'sbsa': [],
-                'sbsaref': sbsaref_passed,
+                'sbsaref': check_tag(tag),
             }
 
             if tags_to_tests[tag]["bsa"]:
@@ -96,7 +97,7 @@ def generate_html_file(checklist):
     template = env.get_template("bsa-sbsa.html.j2")
 
     output = template.render(
-        generate_time=datetime.strftime(datetime.now(UTC), 
+        generate_time=datetime.strftime(datetime.now(UTC),
                                         "%d %B %Y %H:%M"),
         checklist=checklist,
         status_bsa=status_bsa,
