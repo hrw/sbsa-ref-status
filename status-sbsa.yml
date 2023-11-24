@@ -120,6 +120,7 @@
   tags: S_L5PE_04
   title: Check Activity monitors extension
   comment: does not make sense to implement in QEMU
+  skip_for_qemu: True
 12:
   level: '5'
   status:
@@ -187,6 +188,7 @@
   tags: B_PE_17
   title: Check SPE if implemented
   comment: does not make sense to implement in QEMU
+  skip_for_qemu: True
 18:
   level: '6'
   status:
@@ -331,6 +333,7 @@
   tags: S_L7PE_03
   title: Check for AMUv1p1 Support
   comment: does not make sense to implement in QEMU
+  skip_for_qemu: True
 31:
   level: '7'
   status:
