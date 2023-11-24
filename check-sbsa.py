@@ -8,7 +8,7 @@ def check_tag(tag, failed):
             if bsa_test_id not in checked_tests["bsa"]:
                 checked_tests["bsa"].append(bsa_test_id)
 
-                if status_bsa[bsa_test_id]['status'][cpu] in ["FAIL"]:
+                if status_bsa[bsa_test_id]['status'][cpu] not in ["PASS"]:
                     print(f"- BSA  test {bsa_test_id} for "
                             f"{status_bsa[bsa_test_id]['tags']} "
                             f"({status_bsa[bsa_test_id]['title']}) "
