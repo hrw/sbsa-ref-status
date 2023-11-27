@@ -40,14 +40,14 @@ fs0:bsa.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL1: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL2: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL31: Built : 18:33:11, Nov 27 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -112,210 +112,210 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  Creating Platform Information Tables
- PE_INFO: Number of PE detected       :    2 
- GIC INFO: GIC version                :    v3 
- GIC_INFO: Number of GICD             :    1 
- GIC_INFO: Number of GICR RD          :    1 
- GIC_INFO: Number of ITS              :    1 
- TIMER_INFO: Number of system timers  :    0 
- WATCHDOG_INFO: Number of Watchdogs   :    1 
- PCIE_INFO: Number of ECAM regions    : 1 
- PCIE_INFO: Number of BDFs found      : 12
- PCIE_INFO: Number of RCiEP           :    0 
- PCIE_INFO: Number of RCEC            :    0 
- PCIE_INFO: Number of EP              :    3 
- PCIE_INFO: Number of RP              :    7 
- PCIE_INFO: Number of iEP_EP          :    0 
- PCIE_INFO: Number of iEP_RP          :    0 
- PCIE_INFO: Number of UP of switch    :    1 
- PCIE_INFO: Number of DP of switch    :    0 
- PCIE_INFO: Number of PCI/PCIe Bridge :    0 
- PCIE_INFO: Number of PCIe/PCI Bridge :    1 
- SMMU_INFO: Number of SMMU CTRL       : 1 
- SMMU_INFO: SMMU index 00 version     :    v3.1 
- Peripheral: Num of USB controllers   :    1 
- Peripheral: Num of SATA controllers  :    1 
- Peripheral: Num of UART controllers  :    1 
+ PE_INFO: Number of PE detected       :    2
+ GIC INFO: GIC version                :    v3
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
+ GIC_INFO: Number of ITS              :    1
+ TIMER_INFO: Number of system timers  :    0
+ WATCHDOG_INFO: Number of Watchdogs   :    1
+ PCIE_INFO: Number of ECAM regions    :    1
+ PCIE_INFO: Number of BDFs found      :    12
+ PCIE_INFO: Number of RCiEP           :    0
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    3
+ PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    1
+ PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    1
+ SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
 
-      *** Starting PE tests ***  
+      *** Starting PE tests ***
 
 Operating System View:
-   1 : Check Arch symmetry across PE              : Result:  PASS 
-   2 : Check for number of PE                     : Result:  PASS 
-   3 : Check for AdvSIMD and FP support           : Result:  PASS 
-   4 : Check PE 4KB Granule Support               : Result:  PASS 
-   6 : Check Cryptographic extensions             : Result:  PASS 
-   7 : Check Little Endian support                : Result:  PASS 
-   8 : Check EL1 and EL0 implementation           : Result:  PASS 
-   9 : Check for PMU and PMU counters             : Result:  PASS 
-  10 : Check PMU Overflow signal                  : Result:  PASS 
-  11 : Check num of Breakpoints and type          : Result:  PASS 
-  12 : Check Synchronous Watchpoints              : Result:  PASS 
-  13 : Check CRC32 instruction support            : Result:  PASS 
-  14 : Check PAuth if implementation              : Result:  PASS 
+   1 : Check Arch symmetry across PE              : Result:  PASS
+   2 : Check for number of PE                     : Result:  PASS
+   3 : Check for AdvSIMD and FP support           : Result:  PASS
+   4 : Check PE 4KB Granule Support               : Result:  PASS
+   6 : Check Cryptographic extensions             : Result:  PASS
+   7 : Check Little Endian support                : Result:  PASS
+   8 : Check EL1 and EL0 implementation           : Result:  PASS
+   9 : Check for PMU and PMU counters             : Result:  PASS
+  10 : Check PMU Overflow signal                  : Result:  PASS
+  11 : Check num of Breakpoints and type          : Result:  PASS
+  12 : Check Synchronous Watchpoints              : Result:  PASS
+  13 : Check CRC32 instruction support            : Result:  PASS
+  14 : Check PAuth if implementation              : Result:  PASS
 
 Hypervisor View:
-  51 : Check EL2 implementation                   : Result:  PASS 
-  52 : Check Stage 2 4KB Granule Support          : Result:  PASS 
-  53 : Check Stage2 and Stage1 Granule match      : Result:  PASS 
-  54 : Check for PMU counters                     : Result:  PASS 
-  55 : Check VMID breakpoint number               : Result:  PASS 
+  51 : Check EL2 implementation                   : Result:  PASS
+  52 : Check Stage 2 4KB Granule Support          : Result:  PASS
+  53 : Check Stage2 and Stage1 Granule match      : Result:  PASS
+  54 : Check for PMU counters                     : Result:  PASS
+  55 : Check VMID breakpoint number               : Result:  PASS
 
 Platform Security View:
-  76 : Check EL3 implementation                   : Result:  PASS 
+  76 : Check EL3 implementation                   : Result:  PASS
 
       All PE tests passed.
 
-      *** Starting Memory Map tests ***  
+      *** Starting Memory Map tests ***
 
 Operating System View:
- 102 : Mem Access Response in finite time         : Result:  PASS 
- 103 : PE must access all NS addr space           : Result:  PASS 
+ 102 : Mem Access Response in finite time         : Result:  PASS
+ 103 : PE must access all NS addr space           : Result:  PASS
 
       All Memory tests passed.
 
-      *** Starting GIC tests ***  
+      *** Starting GIC tests ***
 
 Operating System View:
- 201 : Check GIC version                          : Result:  PASS 
- 203 : If PCIe, GICv3 then ITS, LPI               : Result:  PASS 
- 204 : Check GICv3 Security States                : Result:  PASS 
- 205 : Non-secure SGIs are implemented            : Result:  PASS 
- 206 : Check EL1-Phy timer PPI assignment         : Result:  PASS 
- 207 : Check EL1-Virt timer PPI assignment        : Result:  PASS 
+ 201 : Check GIC version                          : Result:  PASS
+ 203 : If PCIe, GICv3 then ITS, LPI               : Result:  PASS
+ 204 : Check GICv3 Security States                : Result:  PASS
+ 205 : Non-secure SGIs are implemented            : Result:  PASS
+ 206 : Check EL1-Phy timer PPI assignment         : Result:  PASS
+ 207 : Check EL1-Virt timer PPI assignment        : Result:  PASS
 
 Hypervisor View:
- 226 : Check NS EL2-Virt timer PPI Assignment     : Result:  PASS 
- 227 : Check NS EL2-Phy timer PPI Assignment      : Result:  PASS 
- 228 : Check GIC Maintenance PPI Assignment       : Result:  PASS 
+ 226 : Check NS EL2-Virt timer PPI Assignment     : Result:  PASS
+ 227 : Check NS EL2-Phy timer PPI Assignment      : Result:  PASS
+ 228 : Check GIC Maintenance PPI Assignment       : Result:  PASS
 
-      *** Starting DeviceID generation and ITS tests ***  
+      *** Starting DeviceID generation and ITS tests ***
 
 Operating System View:
- 276 : Check number of ITS blocks in a group      : Result:  PASS 
- 277 : Check ITS block association with group     : Result:  PASS 
- 278 : Check uniqueness of StreamID               : Result:  PASS 
- 279 : Check Device's ReqID-DeviceID-StreamID     : Result:  PASS 
+ 276 : Check number of ITS blocks in a group      : Result:  PASS
+ 277 : Check ITS block association with group     : Result:  PASS
+ 278 : Check uniqueness of StreamID               : Result:  PASS
+ 279 : Check Device's ReqID-DeviceID-StreamID     : Result:  PASS
 
       All GIC tests passed.
 
-      *** Starting SMMU tests ***  
+      *** Starting SMMU tests ***
 
 Operating System View:
- 301 : All SMMUs have same Arch Revision          : Result:  PASS 
- 302 : Check SMMU Granule Support                 : Result:  PASS 
+ 301 : All SMMUs have same Arch Revision          : Result:  PASS
+ 302 : Check SMMU Granule Support                 : Result:  PASS
  303 : Check SMMU Large Physical Addr Support
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
  304 : Check SMMU S-EL2 & stage1 support     
-       Checkpoint --  2                           : Result:  SKIPPED 
+       Checkpoint --  2                           : Result:  SKIPPED
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
-       Checkpoint --  2                           : Result:  SKIPPED 
- 354 : SMMUv3 Integration compliance              : Result:  PASS 
+       Checkpoint --  2                           : Result:  SKIPPED
+ 354 : SMMUv3 Integration compliance              : Result:  PASS
 
       One or more SMMU tests failed or were skipped.
 
-      *** Starting Timer tests ***  
+      *** Starting Timer tests ***
 
 Operating System View:
- 401 : Check Counter Frequency                    : Result:  PASS 
- 402 : SYS Timer if PE Timer not ON               : Result:  PASS 
+ 401 : Check Counter Frequency                    : Result:  PASS
+ 402 : SYS Timer if PE Timer not ON               : Result:  PASS
  403 : Memory mapped timer check             
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
  404 : Generate Mem Mapped SYS Timer Intr    
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
  405 : Restore PE timer on PE wake up        
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
 
       One or more Timer tests failed or were skipped.
 
-      *** Starting Wakeup semantic tests ***  
+      *** Starting Wakeup semantic tests ***
 
 Operating System View:
- 501 : Wake from EL1 PHY Timer Int                : Result:  PASS 
- 502 : Wake from EL1 VIR Timer Int                : Result:  PASS 
- 503 : Wake from EL2 PHY Timer Int                : Result:  PASS 
- 504 : Wake from Watchdog WS0 Int                 : Result:  PASS 
+ 501 : Wake from EL1 PHY Timer Int                : Result:  PASS
+ 502 : Wake from EL1 VIR Timer Int                : Result:  PASS
+ 503 : Wake from EL2 PHY Timer Int                : Result:  PASS
+ 504 : Wake from Watchdog WS0 Int                 : Result:  PASS
  505 : Wake from System Timer Int            
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
 
       One or more Wakeup tests failed or were skipped.
 
-      *** Starting Peripheral tests ***  
+      *** Starting Peripheral tests ***
 
 Operating System View:
  601 : USB CTRL Interface                    
-       PCIe_CFG_RD ECAM Base is zero FF000000     : Result:  PASS 
+       PCIe_CFG_RD ECAM Base is zero FF000000     : Result:  PASS
  602 : Check SATA CTRL Interface             
-       PCIe_CFG_RD ECAM Base is zero FF000100     : Result:  PASS 
- 603 : Check Arm BSA UART register offsets        : Result:  PASS 
+       PCIe_CFG_RD ECAM Base is zero FF000100     : Result:  PASS
+ 603 : Check Arm BSA UART register offsets        : Result:  PASS
  604 : Check Arm GENERIC UART Interrupt      
-       Test Message                               : Result:  PASS 
+       Test Message                               : Result:  PASS
  606 : 16550 compatible UART                 
-       Checkpoint --  2                           : Result:  SKIPPED 
+       Checkpoint --  2                           : Result:  SKIPPED
 
       One or more Peripheral tests failed or were skipped.
 
-      *** Starting Watchdog tests ***  
+      *** Starting Watchdog tests ***
 
 Operating System View:
- 701 : Non Secure Watchdog Access                 : Result:  PASS 
- 702 : Check Watchdog WS0 interrupt               : Result:  PASS 
+ 701 : Non Secure Watchdog Access                 : Result:  PASS
+ 702 : Check Watchdog WS0 interrupt               : Result:  PASS
 
       All Watchdog tests passed.
 
-      *** Starting PCIe tests ***  
+      *** Starting PCIe tests ***
 
 Operating System View:
- 801 : Check ECAM Presence                        : Result:  PASS 
- 802 : PE - ECAM Region accessibility check       : Result:  PASS 
- 803 : All EP/Sw under RP in same ECAM Region     : Result:  PASS 
- 804 : Check RootPort NP Memory Access            : Result:  PASS 
- 805 : Check RootPort P Memory Access             : Result:  PASS 
+ 801 : Check ECAM Presence                        : Result:  PASS
+ 802 : PE - ECAM Region accessibility check       : Result:  PASS
+ 803 : All EP/Sw under RP in same ECAM Region     : Result:  PASS
+ 804 : Check RootPort NP Memory Access            : Result:  PASS
+ 805 : Check RootPort P Memory Access             : Result:  PASS
  806 : Legacy int must be SPI & lvl-sensitive
-       Checkpoint --  2                           : Result:  SKIPPED 
- 808 : Check all 1's for out of range             : Result:  PASS 
- 809 : Vendor specific data is PCIe compliant     : Result:  PASS 
- 811 : Check RP Byte Enable Rules                 : Result:  PASS 
+       Checkpoint --  2                           : Result:  SKIPPED
+ 808 : Check all 1's for out of range             : Result:  PASS
+ 809 : Vendor specific data is PCIe compliant     : Result:  PASS
+ 811 : Check RP Byte Enable Rules                 : Result:  PASS
  817 : Check Direct Transl P2P Support       
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
  818 : Check RP Adv Error Report             
-       Checkpoint --  1                           : Result:  SKIPPED 
+       Checkpoint --  1                           : Result:  SKIPPED
  819 : RP must suprt ACS if P2P Txn are allow
-       Checkpoint --  1                           : Result:  SKIPPED 
- 820 : Type 0/1 common config rule                : Result:  PASS 
- 821 : Type 0 config header rules                 : Result:  PASS 
- 822 : Check Type 1 config header rules           : Result:  PASS 
- 824 : Device capabilities reg rule               : Result:  PASS 
- 825 : Device Control register rule               : Result:  PASS 
- 826 : Device cap 2 register rules                : Result:  PASS 
+       Checkpoint --  1                           : Result:  SKIPPED
+ 820 : Type 0/1 common config rule                : Result:  PASS
+ 821 : Type 0 config header rules                 : Result:  PASS
+ 822 : Check Type 1 config header rules           : Result:  PASS
+ 824 : Device capabilities reg rule               : Result:  PASS
+ 825 : Device Control register rule               : Result:  PASS
+ 826 : Device cap 2 register rules                : Result:  PASS
  830 : Check Cmd Reg memory space enable     
        BDF 10000 MSE functionality failure
        Failed on PE -    0
-       Checkpoint --  1                           : Result:  FAIL 
- 831 : Check Type0/1 BIST Register rule           : Result:  PASS 
- 832 : Check HDR CapPtr Register rule             : Result:  PASS 
- 833 : Check Max payload size supported           : Result:  PASS 
- 835 : Check Function level reset                 : Result:  PASS 
- 836 : Check ARI forwarding enable rule           : Result:  PASS 
- 837 : Check Config Txn for RP in HB              : Result:  PASS 
- 838 : Check all RP in HB is in same ECAM         : Result:  PASS 
- 839 : Check MSI support for PCIe dev             : Result:  PASS 
- 840 : PCIe RC,PE - Same Inr Shareable Domain     : Result:  PASS 
+       Checkpoint --  1                           : Result:  FAIL
+ 831 : Check Type0/1 BIST Register rule           : Result:  PASS
+ 832 : Check HDR CapPtr Register rule             : Result:  PASS
+ 833 : Check Max payload size supported           : Result:  PASS
+ 835 : Check Function level reset                 : Result:  PASS
+ 836 : Check ARI forwarding enable rule           : Result:  PASS
+ 837 : Check Config Txn for RP in HB              : Result:  PASS
+ 838 : Check all RP in HB is in same ECAM         : Result:  PASS
+ 839 : Check MSI support for PCIe dev             : Result:  PASS
+ 840 : PCIe RC,PE - Same Inr Shareable Domain     : Result:  PASS
  842 : PASID support atleast 16 bits         
-       Checkpoint --  3                           : Result:  SKIPPED 
+       Checkpoint --  3                           : Result:  SKIPPED
 
       One or more PCIe tests failed or were skipped.
- 
-PCIE_INFO: Number of exerciser cards :    0 
+
+PCIE_INFO: Number of exerciser cards :    0
 
        No Exerciser Devices Found, Skipping tests...
 
-     ------------------------------------------------------- 
+     -------------------------------------------------------
      Total Tests run  =   86  Tests Passed  =   72  Tests Failed =    1
-     ------------------------------------------------------- 
+     -------------------------------------------------------
 
-      *** BSA tests complete. Reset the system. *** 
+      *** BSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c

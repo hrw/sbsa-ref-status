@@ -40,14 +40,14 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL1: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL2: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL31: Built : 18:33:11, Nov 27 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -114,43 +114,43 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at FBF8E498 and length is 108 
-  Flags 1 
+  MADT is at FBF8E498 and length is 108
+  Flags 1
   PE Enabled 1, Online Capable 0
-  MPIDR 0 PE num 0 
-  Flags 1 
+  MPIDR 0 PE num 0
+  Flags 1
   PE Enabled 1, Online Capable 0
-  MPIDR 1 PE num 1 
- PE_INFO: Number of PE detected       :    2 
- PE_INFO: Primary PE index       :    0 
+  MPIDR 1 PE num 1
+ PE_INFO: Number of PE detected       :    2
+ PE_INFO: Primary PE index       :    0
  Creating GIC INFO table
-  MADT is at FBF8E498 and length is 108 
-  GICH base 2C010000 
-  GICH base 2C010000 
-  GIC DIS base 40060000 
-  GICR RD base 40080000 
-  GICR RD Length 4000000 
-  GIC ITS base 44081000 
-  GIC ITS ID0 
+  MADT is at FBF8E498 and length is 108
+  GICH base 2C010000
+  GICH base 2C010000
+  GIC DIS base 40060000
+  GICR RD base 40080000
+  GICR RD Length 4000000
+  GIC ITS base 44081000
+  GIC ITS ID0
 
-       gic version from info table = 3  GIC INFO: GIC version                :    v3 
- GIC_INFO: Number of GICD             :    1 
- GIC_INFO: Number of GICR RD          :    1 
- GIC_INFO: Number of ITS              :    1 
+       gic version from info table = 3  GIC INFO: GIC version                :    v3
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
+ GIC_INFO: Number of ITS              :    1
  Creating TIMER INFO table
-  GTDT is at FBF8E618 and length is 84 
-  GTDT revision is at 3 
- TIMER_INFO: Number of system timers  :    0 
+  GTDT is at FBF8E618 and length is 84
+  GTDT revision is at 3
+ TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
-  Watchdog base = 0x50011000 INTID = 0x30 
- WATCHDOG_INFO: Number of Watchdogs   :    1 
+  Watchdog base = 0x50011000 INTID = 0x30
+ WATCHDOG_INFO: Number of Watchdogs   :    1
  Creating PCIe INFO table
   Ecam Index = 0
   Base Address = 0xF0000000
   Segment   = 0x0
   Start Bus = 0x0
   End Bus   = 0xFF
- PCIE_INFO: Number of ECAM regions    : 1 
+ PCIE_INFO: Number of ECAM regions    :    1
   Dev bdf 0x000300 type 0x10 RP bdf 0x000300
   Dev bdf 0x000400 type 0x10 RP bdf 0x000400
   Dev bdf 0x000500 type 0x10 RP bdf 0x000500
@@ -163,17 +163,17 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Dev bdf 0x050000 type 0x01 RP bdf 0x000500
   Dev bdf 0x060000 type 0x01 RP bdf 0x000600
   Dev bdf 0x080000 type 0x80 RP bdf 0x000800
- PCIE_INFO: Number of BDFs found      : 12
- PCIE_INFO: Number of RCiEP           :    0 
- PCIE_INFO: Number of RCEC            :    0 
- PCIE_INFO: Number of EP              :    3 
- PCIE_INFO: Number of RP              :    7 
- PCIE_INFO: Number of iEP_EP          :    0 
- PCIE_INFO: Number of iEP_RP          :    0 
- PCIE_INFO: Number of UP of switch    :    1 
- PCIE_INFO: Number of DP of switch    :    0 
- PCIE_INFO: Number of PCI/PCIe Bridge :    0 
- PCIE_INFO: Number of PCIe/PCI Bridge :    1 
+ PCIE_INFO: Number of BDFs found      :    12
+ PCIE_INFO: Number of RCiEP           :    0
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    3
+ PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    1
+ PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    1
 
   ECAM 0:  Base 0xF0000000
   BDF: 0x300
@@ -219,8 +219,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   input_base:0x0 id_count:0xFFFF
   output_base:0x0 output ref:0x134
 
- SMMU_INFO: Number of SMMU CTRL       : 1 
- SMMU_INFO: SMMU index 00 version     :    v3.1 
+ SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
  Creating PERIPHERAL INFO table
   000.00.00 class_code = 0 6
   000.00.19 class_code = 3 12
@@ -250,9 +250,9 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   000.08.15 class_code = 4 6
   000.09.18 class_code = 0 6
   009.08.17 class_code = 255 0
- Peripheral: Num of USB controllers   :    1 
- Peripheral: Num of SATA controllers  :    1 
- Peripheral: Num of UART controllers  :    1 
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
 
  BDF is 0
  Class code is 6000000
@@ -291,12 +291,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  BDF is 80000
  Class code is 6040000
  BDF is 90800
- Class code is FF0000 Peripheral: Num of Network ctrl      :    2 
- Peripheral: Num of Storage ctrl      :    2 
- Peripheral: Num of Display ctrl      :    1 
+ Class code is FF0000 Peripheral: Num of Network ctrl      :    2
+ Peripheral: Num of Storage ctrl      :    2
+ Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBC67000]
-  Reserved region of type 1 [0x100FBC67000, 0x100FBDC0000]
+  Reserved region of type 7 [0x10000000000, 0x100FBC68000]
+  Reserved region of type 1 [0x100FBC68000, 0x100FBDC0000]
   Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
   Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
   Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
@@ -304,8 +304,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDE52000]
-  Reserved region of type 4 [0x100FDE52000, 0x100FDF09000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDD92000]
+  Reserved region of type 4 [0x100FDD92000, 0x100FDF09000]
   Reserved region of type 7 [0x100FDF09000, 0x100FDF0B000]
   Reserved region of type 4 [0x100FDF0B000, 0x100FEF04000]
   Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
@@ -322,258 +322,258 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDF21F98 
+ Shared memory is 100FDF3CA98
 
-      *** Starting PE tests ***  
+      *** Starting PE tests ***
 
 Operating System View:
-   1 : Check Arch symmetry across PE                  START
-
+   1 : Check Arch symmetry across PE         
+       START
        cache size read is 701FE00A 
-       cache size read is 70FFE07A        PSCI_CPU_ON: success  
-
+       cache size read is 70FFE07A 
+       PSCI_CPU_ON: success
        B_PE_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   2 : Check for number of PE                         START
-
+   2 : Check for number of PE                
+       START
        gic version from info table = 3 
        B_PE_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   3 : Check for AdvSIMD and FP support               START
-       PSCI_CPU_ON: success  
-
+   3 : Check for AdvSIMD and FP support      
+       START
+       PSCI_CPU_ON: success
        B_PE_03
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   4 : Check PE 4KB Granule Support                   START
-       PSCI_CPU_ON: success  
-
+   4 : Check PE 4KB Granule Support          
+       START
+       PSCI_CPU_ON: success
        B_PE_04
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   6 : Check Cryptographic extensions                 START
-       PSCI_CPU_ON: success  
-
+   6 : Check Cryptographic extensions        
+       START
+       PSCI_CPU_ON: success
        B_PE_06
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   7 : Check Little Endian support                    START
-       PSCI_CPU_ON: success  
-
+   7 : Check Little Endian support           
+       START
+       PSCI_CPU_ON: success
        B_PE_07
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   8 : Check EL1 and EL0 implementation               START
-       PSCI_CPU_ON: success  
-
+   8 : Check EL1 and EL0 implementation      
+       START
+       PSCI_CPU_ON: success
        B_PE_08
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-   9 : Check for PMU and PMU counters                 START
-       PSCI_CPU_ON: success  
-
+   9 : Check for PMU and PMU counters        
+       START
+       PSCI_CPU_ON: success
        B_PE_09
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  10 : Check PMU Overflow signal                      START
-
+  10 : Check PMU Overflow signal             
+       START
  Received PMUIRQ 
        B_PE_10
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  11 : Check num of Breakpoints and type              START
-       PSCI_CPU_ON: success  
-
+  11 : Check num of Breakpoints and type     
+       START
+       PSCI_CPU_ON: success
        B_PE_11
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  12 : Check Synchronous Watchpoints                  START
-       PSCI_CPU_ON: success  
-
+  12 : Check Synchronous Watchpoints         
+       START
+       PSCI_CPU_ON: success
        B_PE_12
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  13 : Check CRC32 instruction support                START
-       PSCI_CPU_ON: success  
-
+  13 : Check CRC32 instruction support       
+       START
+       PSCI_CPU_ON: success
        B_PE_13
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
 Hypervisor View:
-  51 : Check EL2 implementation                       START
-       PSCI_CPU_ON: success  
-
+  51 : Check EL2 implementation              
+       START
+       PSCI_CPU_ON: success
        B_PE_18
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  52 : Check Stage 2 4KB Granule Support              START
-       PSCI_CPU_ON: success  
-
+  52 : Check Stage 2 4KB Granule Support     
+       START
+       PSCI_CPU_ON: success
        B_PE_19
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  53 : Check Stage2 and Stage1 Granule match          START
-       PSCI_CPU_ON: success  
-
+  53 : Check Stage2 and Stage1 Granule match 
+       START
+       PSCI_CPU_ON: success
        B_PE_20
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  54 : Check for PMU counters                         START
-       PSCI_CPU_ON: success  
-
+  54 : Check for PMU counters                
+       START
+       PSCI_CPU_ON: success
        B_PE_21
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
-  55 : Check VMID breakpoint number                   START
-       PSCI_CPU_ON: success  
-
+  55 : Check VMID breakpoint number          
+       START
+       PSCI_CPU_ON: success
        B_PE_22
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
 Platform Security View:
-  76 : Check EL3 implementation                       START
-       PSCI_CPU_ON: success  
-
+  76 : Check EL3 implementation              
+       START
+       PSCI_CPU_ON: success
        B_PE_23, B_PE_24
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
       All PE tests passed.
 
-      *** Starting Memory Map tests ***  
+      *** Starting Memory Map tests ***
 
 Operating System View:
- 102 : Mem Access Response in finite time             START
-Instance 0x2 not found for memory type 0x1000
+ 102 : Mem Access Response in finite time    
+       STARTInstance 0x2 not found for memory type 0x1000
 
        Error in getting dev mem for index 2  
        B_MEM_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 103 : PE must access all NS addr space               START
-
+ 103 : PE must access all NS addr space      
+       START
        B_MEM_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
       All Memory tests passed.
 
-      *** Starting GIC tests ***  
+      *** Starting GIC tests ***
 
        gic version from info table = 3 
 Operating System View:
- 203 : If PCIe, GICv3 then ITS, LPI                   START
-
+ 203 : If PCIe, GICv3 then ITS, LPI          
+       START
        gic version from info table = 3 
        B_GIC_03
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 204 : Check GICv3 Security States                    START
-
+ 204 : Check GICv3 Security States           
+       START
        gic version from info table = 3 
        B_GIC_04
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 205 : Non-secure SGIs are implemented                START
-
+ 205 : Non-secure SGIs are implemented       
+       START
        PE MPIDR 0x0       gicr_rdindex 0       gicrd_base 0x40080000
        GICR_TYPER 0x1000001
 
        PE RD base address 40080000  data 0x6C80FFFF
        B_GIC_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 206 : Check EL1-Phy timer PPI assignment             START
-
+ 206 : Check EL1-Phy timer PPI assignment    
+       START
        Received phy el1 interrupt   
        B_PPI_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 207 : Check EL1-Virt timer PPI assignment            START
-
+ 207 : Check EL1-Virt timer PPI assignment   
+       START
        Received virt el1 interrupt   
        B_PPI_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
 Hypervisor View:
- 226 : Check NS EL2-Virt timer PPI Assignment         START
-
+ 226 : Check NS EL2-Virt timer PPI Assignment
+       START
        Received vir el2 interrupt    
        B_PPI_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 227 : Check NS EL2-Phy timer PPI Assignment          START
-
+ 227 : Check NS EL2-Phy timer PPI Assignment 
+       START
        Received phy el2 interrupt     
        B_PPI_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 228 : Check GIC Maintenance PPI Assignment           START
-
+ 228 : Check GIC Maintenance PPI Assignment  
+       START
        gic version from info table = 3 
        gic version from info table = 3 
        gic version from info table = 3 
        gic version from info table = 3 
        Received GIC maintenance interrupt 
        B_PPI_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
-       No GICv2m, Skipping all GICv2m tests 
+       No GICv2m, Skipping all GICv2m tests
 
-      *** Starting DeviceID generation and ITS tests ***  
+      *** Starting DeviceID generation and ITS tests ***
 
 Operating System View:
- 276 : Check number of ITS blocks in a group          START
-
+ 276 : Check number of ITS blocks in a group 
+       START
        Number of ITS groups = 1
        Number of ITS Blocks = 1              
        ITS_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 277 : Check ITS block association with group         START
-
+ 277 : Check ITS block association with group
+       START
        Number of ITS groups = 1
        ITS_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 278 : Check uniqueness of StreamID                   START
-
+ 278 : Check uniqueness of StreamID          
+       START
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
@@ -587,11 +587,11 @@ Operating System View:
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
        ITS_DEV_2
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 279 : Check Device's ReqID-DeviceID-StreamID         START
-
+ 279 : Check Device's ReqID-DeviceID-StreamID
+       START
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
        Checking ReqID-StreamID-DeviceID Association, Bdf : 400
@@ -616,235 +616,235 @@ Operating System View:
        RC block->data.smmu.base: 60050000    
        Checking ReqID-StreamID-DeviceID Association, Bdf : 80000
        ITS_DEV_7,ITS_DEV_8
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
       All GIC tests passed.
 
-      *** Starting SMMU tests ***  
+      *** Starting SMMU tests ***
 
 Operating System View:
- 301 : All SMMUs have same Arch Revision              START
-
+ 301 : All SMMUs have same Arch Revision     
+       START
        B_SMMU_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 302 : Check SMMU Granule Support                     START
-
+ 302 : Check SMMU Granule Support            
+       START
        B_SMMU_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 303 : Check SMMU Large Physical Addr Support         START
-
+ 303 : Check SMMU Large Physical Addr Support
+       START
        Large PA Not Supported in SMMU 0
        Failed on PE -    0
        B_SMMU_06
-       Checkpoint --  2                           : Result:  FAIL 
-         END
+       Checkpoint --  2                           : Result:  FAIL
+       END
 
- 304 : Check SMMU S-EL2 & stage1 support              START
-
+ 304 : Check SMMU S-EL2 & stage1 support     
+       START
        S-EL2 implemented...Skipping
        B_SMMU_08
-       Checkpoint --  2                           : Result:  SKIPPED 
-         END
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
 
 
 Hypervisor View:
- 352 : Check SMMU S-EL2 & stage2 support              START
-
+ 352 : Check SMMU S-EL2 & stage2 support     
+       START
        S-EL2 implemented...Skipping
        B_SMMU_16, B_SMMU_17, B_SMMU_18
-       Checkpoint --  2                           : Result:  SKIPPED 
-         END
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
 
- 354 : SMMUv3 Integration compliance                  START
-
+ 354 : SMMUv3 Integration compliance         
+       START
        B_SMMU_21, SMMU_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
       One or more SMMU tests failed or were skipped.
 
-      *** Starting Timer tests ***  
+      *** Starting Timer tests ***
 
 Operating System View:
- 401 : Check Counter Frequency                        START
-
+ 401 : Check Counter Frequency               
+       START
        Counter frequency is 3B9ACA0     
        B_TIME_01, B_TIME_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 402 : SYS Timer if PE Timer not ON                   START
-
+ 402 : SYS Timer if PE Timer not ON          
+       START
  Physical EL1 timer flag = 6
  Physical EL2 timer flag = 6
  Virtual EL1 timer flag  = 6
        B_TIME_06
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 403 : Memory mapped timer check                      START
-
+ 403 : Memory mapped timer check             
+       START
        No System timers are defined  
        B_TIME_07, B_TIME_10
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
- 404 : Generate Mem Mapped SYS Timer Intr             START
-
+ 404 : Generate Mem Mapped SYS Timer Intr    
+       START
        No System timers are defined  
        B_TIME_08
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
- 405 : Restore PE timer on PE wake up                 START
-
+ 405 : Restore PE timer on PE wake up        
+       START
        No non-secure systimer implemented
        B_TIME_09
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
 
       One or more Timer tests failed or were skipped.
 
-      *** Starting Wakeup semantic tests ***  
+      *** Starting Wakeup semantic tests ***
 
 Operating System View:
- 501 : Wake from EL1 PHY Timer Int                    START
-       Received EL1 PHY interrupt       
+ 501 : Wake from EL1 PHY Timer Int           
+       START       Received EL1 PHY interrupt
 
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 502 : Wake from EL1 VIR Timer Int                    START
-       Received EL1 VIRT interrupt      
-
-       B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
-       B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
-                                       : Result:  PASS 
-         END
-
- 503 : Wake from EL2 PHY Timer Int                    START
-       Received EL2 Physical interrupt  
+ 502 : Wake from EL1 VIR Timer Int           
+       START       Received EL1 VIRT interrupt
 
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 504 : Wake from Watchdog WS0 Int                     START
-
-       Setting Trigger type as 1         Received WS0 interrupt          
+ 503 : Wake from EL2 PHY Timer Int           
+       START       Received EL2 Physical interrupt
 
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 505 : Wake from System Timer Int                     START
+ 504 : Wake from Watchdog WS0 Int            
+       START
+       Setting Trigger type as 1         Received WS0 interrupt
 
+       B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
+       B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
+                                       : Result:  PASS
+       END
+
+ 505 : Wake from System Timer Int            
+       START
        No system timers implemented
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
 
       One or more Wakeup tests failed or were skipped.
 
-      *** Starting Peripheral tests ***  
+      *** Starting Peripheral tests ***
 
 Operating System View:
- 601 : USB CTRL Interface                             START
-
+ 601 : USB CTRL Interface                    
+       START
        PCIe_CFG_RD ECAM Base is zero FF000000
        WARN: USB CTRL ECAM access failed 0x0  
        Re-checking using PCIIO protocol
        B_PER_01, B_PER_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 602 : Check SATA CTRL Interface                      START
-
-       PCIe_CFG_RD ECAM Base is zero FF000100       WARN: SATA CTRL ECAM access failed 0 
+ 602 : Check SATA CTRL Interface             
+       START
+       PCIe_CFG_RD ECAM Base is zero FF000100       WARN: SATA CTRL ECAM access failed 0
        Re-checking SATA CTRL using PciIo protocol
 
        B_PER_03
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 603 : Check Arm BSA UART register offsets            START
-
+ 603 : Check Arm BSA UART register offsets   
+       START
        B_PER_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 604 : Check Arm GENERIC UART Interrupt               START
-
+ 604 : Check Arm GENERIC UART Interrupt      
+       START
        Received interrupt on 33     
        Test Message                          
        B_PER_06, B_PER_07
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 606 : 16550 compatible UART                          START
-
+ 606 : 16550 compatible UART                 
+       START
        B_PER_05
-       Checkpoint --  2                           : Result:  SKIPPED 
-         END
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
 
 
       One or more Peripheral tests failed or were skipped.
 
-      *** Starting Watchdog tests ***  
+      *** Starting Watchdog tests ***
 
 Operating System View:
- 701 : Non Secure Watchdog Access                     START
-
+ 701 : Non Secure Watchdog Access            
+       START
        Found 1 watchdogs in table             
        Watchdog Refresh base is 50010000 
        Watchdog CTRL base is  50011000      
        B_WD_01, B_WD_02, S_L3WD_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 702 : Check Watchdog WS0 interrupt                   START
-
+ 702 : Check Watchdog WS0 interrupt          
+       START
        WS0 Interrupt id  48        
        Setting Trigger type as 1  
        Received WS0 interrupt                
        B_WD_03, S_L3WD_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
 
       All Watchdog tests passed.
 
-      *** Starting PCIe tests ***  
+      *** Starting PCIe tests ***
 
 Operating System View:
- 801 : Check ECAM Presence                            START
-
+ 801 : Check ECAM Presence                   
+       START
        PCI_IN_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 802 : PE - ECAM Region accessibility check           START
-
+ 802 : PE - ECAM Region accessibility check  
+       START
        PCI_IN_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 803 : All EP/Sw under RP in same ECAM Region         START
-
+ 803 : All EP/Sw under RP in same ECAM Region
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -858,11 +858,11 @@ Operating System View:
        BDF - 0x60000
        BDF - 0x80000
        PCI_IN_04
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 804 : Check RootPort NP Memory Access                START
-
+ 804 : Check RootPort NP Memory Access       
+       START
        BDF is 0x300
        Memory base is 0x81500000 Memory lim is  0x816FFFFF
        Class code is 0x6040002
@@ -893,11 +893,11 @@ Operating System View:
        Class code is 0x1060102
        Skipping for RP BDF 0x20000
        PCI_IN_13
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 805 : Check RootPort P Memory Access                 START
-
+ 805 : Check RootPort P Memory Access        
+       START
        BDF is 0x300
        Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
        Mem limit < Mem Base. Skipping Bdf - 0x300
@@ -922,21 +922,21 @@ Operating System View:
        Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
        Mem limit < Mem Base. Skipping Bdf - 0x20000
        PCI_IN_13
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 806 : Legacy int must be SPI & lvl-sensitive         START
-
+ 806 : Legacy int must be SPI & lvl-sensitive
+       START
        BDF - 0x300
        pal_pcie_get_legacy_irq_map unimplemented. Skipping test
     The API is platform specific and to be populated
     by partners with system legacy irq map
        PCI_LI_01, PCI_LI_03
-       Checkpoint --  2                           : Result:  SKIPPED 
-         END
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
 
- 808 : Check all 1's for out of range                 START
-
+ 808 : Check all 1's for out of range        
+       START
  max bdf 0x80000
  Maximum sub bus 9
        Maximum bus value is 0xA
@@ -1197,11 +1197,11 @@ Operating System View:
        Calculated config address is F0AFE000
        Calculated config address is F0AFF000
        PCI_IN_16
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 809 : Vendor specific data is PCIe compliant         START
-
+ 809 : Vendor specific data is PCIe compliant
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1210,11 +1210,11 @@ Operating System View:
        BDF - 0x800
        BDF - 0x20000
        PCI_IN_20
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 811 : Check RP Byte Enable Rules                     START
-
+ 811 : Check RP Byte Enable Rules            
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1223,34 +1223,34 @@ Operating System View:
        BDF - 0x800
        BDF - 0x20000
        PCI_IN_18
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 817 : Check Direct Transl P2P Support                START
-
+ 817 : Check Direct Transl P2P Support       
+       START
        No RP type device found with P2P and ATS Support. Skipping test
        PCI_PP_05
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
- 818 : Check RP Adv Error Report                      START
-
+ 818 : Check RP Adv Error Report             
+       START
        The test is applicable only if the system supports
        P2P traffic. If the system supports P2P, pass the
        command line option '-p2p' while running the binary
        PCI_PP_05
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
- 819 : RP must suprt ACS if P2P Txn are allow         START
-
+ 819 : RP must suprt ACS if P2P Txn are allow
+       START
        PCIe hierarchy does not support P2P. Skipping test
        PCI_PP_03
-       Checkpoint --  1                           : Result:  SKIPPED 
-         END
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
 
- 820 : Type 0/1 common config rule                    START
-
+ 820 : Type 0/1 common config rule           
+       START
        Number of bit-field entries to check 10
        BDF 0x300 : PASS
        BDF 0x300 : PASS
@@ -1353,11 +1353,11 @@ Operating System View:
        BDF 0x60000 : PASS
        BDF 0x60000 : PASS
        PCI_IN_05, PCI_IN_19
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 821 : Type 0 config header rules                     START
-
+ 821 : Type 0 config header rules            
+       START
        Number of bit-field entries to check 2
        BDF 0x40000 : PASS
        BDF 0x40000 : PASS
@@ -1366,11 +1366,11 @@ Operating System View:
        BDF 0x60000 : PASS
        BDF 0x60000 : PASS
        B_PER_12
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 822 : Check Type 1 config header rules               START
-
+ 822 : Check Type 1 config header rules      
+       START
        Number of bit-field entries to check 10
        BDF 0x300 : PASS
        BDF 0x300 : PASS
@@ -1443,11 +1443,11 @@ Operating System View:
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
        PCI_IN_05, PCI_IN_19
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 824 : Device capabilities reg rule                   START
-
+ 824 : Device capabilities reg rule          
+       START
        Number of bit-field entries to check 3
        BDF 0x300 : PASS
        BDF 0x300 : PASS
@@ -1471,11 +1471,11 @@ Operating System View:
        BDF 0x20000 : PASS
        BDF 0x20000 : PASS
        PCI_IN_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 825 : Device Control register rule                   START
-
+ 825 : Device Control register rule          
+       START
        Number of bit-field entries to check 1
        BDF 0x300 : PASS
        BDF 0x400 : PASS
@@ -1485,11 +1485,11 @@ Operating System View:
        BDF 0x800 : PASS
        BDF 0x20000 : PASS
        PCI_IN_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 826 : Device cap 2 register rules                    START
-
+ 826 : Device cap 2 register rules           
+       START
        Number of bit-field entries to check 3
        BDF 0x40000 : PASS
        BDF 0x40000 : PASS
@@ -1501,11 +1501,11 @@ Operating System View:
        BDF 0x60000 : PASS
        BDF 0x60000 : PASS
        PCI_IN_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 830 : Check Cmd Reg memory space enable              START
-
+ 830 : Check Cmd Reg memory space enable     
+       START
       tbl_index 0      BDF 300      Bar Base 0
       tbl_index 1      BDF 400      Bar Base 81400000    bar_data FFFFFFFF 
       tbl_index 2      BDF 500      Bar Base 81320000    bar_data FFFFFFFF 
@@ -1521,11 +1521,11 @@ Operating System View:
       tbl_index B      BDF 80000      Bar Base 81100000    bar_data FFFFFFFF 
        Failed on PE -    0
        PCI_IN_19
-       Checkpoint --  1                           : Result:  FAIL 
-         END
+       Checkpoint --  1                           : Result:  FAIL
+       END
 
- 831 : Check Type0/1 BIST Register rule               START
-
+ 831 : Check Type0/1 BIST Register rule      
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1539,11 +1539,11 @@ Operating System View:
        BDF - 0x60000
        BDF - 0x80000
        PCI_IN_19
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 832 : Check HDR CapPtr Register rule                 START
-
+ 832 : Check HDR CapPtr Register rule        
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1557,11 +1557,11 @@ Operating System View:
        BDF - 0x60000
        BDF - 0x80000
        PCI_IN_19
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 833 : Check Max payload size supported               START
-
+ 833 : Check Max payload size supported      
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1575,19 +1575,19 @@ Operating System View:
        BDF - 0x60000
        BDF - 0x80000
        PCI_IN_05
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 835 : Check Function level reset                     START
-
+ 835 : Check Function level reset            
+       START
        BDF 0x50000   config space addr 0xF0500000
        BDF 0x60000 
        PCI_SM_02
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 836 : Check ARI forwarding enable rule               START
-
+ 836 : Check ARI forwarding enable rule      
+       START
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1596,11 +1596,11 @@ Operating System View:
        BDF - 0x800
        BDF - 0x20000
        PCI_IN_17
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 837 : Check Config Txn for RP in HB                  START
-
+ 837 : Check Config Txn for RP in HB         
+       START
        BDF 0x300
        BDF 0x400
        BDF 0x500
@@ -1609,11 +1609,11 @@ Operating System View:
        BDF 0x800
        BDF 0x20000
        PCI_IN_12
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 838 : Check all RP in HB is in same ECAM             START
-
+ 838 : Check all RP in HB is in same ECAM    
+       START
        BDF: 0x300 Dev ID: 0xC Vendor ID: 0x1B36
        ECAM base 0xF0000000 matches with RPs base address 
        BDF: 0x400 Dev ID: 0xC Vendor ID: 0x1B36
@@ -1629,45 +1629,45 @@ Operating System View:
        BDF: 0x20000 Dev ID: 0xC Vendor ID: 0x1B36
        ECAM base 0xF0000000 matches with RPs base address 
        PCI_IN_03
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 839 : Check MSI support for PCIe dev                 START
-
+ 839 : Check MSI support for PCIe dev        
+       START
        BDF 0x40000 int pin value 1 MSI cap 268435472 MSIX cap 0
        BDF 0x50000 int pin value 1 MSI cap 0 MSIX cap 0
        BDF 0x60000 int pin value 1 MSI cap 268435472 MSIX cap 0
        PCI_MSI_01
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 840 : PCIe RC,PE - Same Inr Shareable Domain         START
-
+ 840 : PCIe RC,PE - Same Inr Shareable Domain
+       START
        PCI_IC_11
-                                       : Result:  PASS 
-         END
+                                       : Result:  PASS
+       END
 
- 842 : PASID support atleast 16 bits                  START
-
+ 842 : PASID support atleast 16 bits         
+       START
        Peripheral check - Max PASID bits - 0x0
        Peripheral check - Max PASID bits - 0x0
        Peripheral check - Max PASID bits - 0x0
        SMMU check- Max PASID bits- 0x0
        PCI_PAS_1
-       Checkpoint --  3                           : Result:  SKIPPED 
-         END
+       Checkpoint --  3                           : Result:  SKIPPED
+       END
 
 
       One or more PCIe tests failed or were skipped.
- 
-PCIE_INFO: Number of exerciser cards :    0 
+
+PCIE_INFO: Number of exerciser cards :    0
 
        No Exerciser Devices Found, Skipping tests...
 
-     ------------------------------------------------------- 
+     -------------------------------------------------------
      Total Tests run  =   84  Tests Passed  =   70  Tests Failed =    2
-     ------------------------------------------------------- 
+     -------------------------------------------------------
 
-      *** BSA tests complete. Reset the system. *** 
+      *** BSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c

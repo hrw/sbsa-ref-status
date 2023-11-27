@@ -40,14 +40,14 @@ fs0:sbsa.efi -skip 861 -l 5
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL1: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL1: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL2: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL2: Built : 18:33:11, Nov 27 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.9.0	(release):v2.10-rc0-17-gd749876ac
-NOTICE:  BL31: Built : 22:11:53, Nov 16 2023
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
+NOTICE:  BL31: Built : 18:33:11, Nov 27 2023
 UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
@@ -105,128 +105,128 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 [1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 5
 
 
- SBSA Architecture Compliance Suite 
-    Version 7.1.3  
+ SBSA Architecture Compliance Suite
+    Version 7.1.3
 
  Starting tests for level  5 (Print level is  3)
 
- Creating Platform Information Tables 
- PE_INFO: Number of PE detected       :    2 
- GIC_INFO: Number of GICD             :    1 
- GIC_INFO: Number of ITS              :    1 
- TIMER_INFO: Number of system timers  :    0 
- WATCHDOG_INFO: Number of Watchdogs   :    1 
+ Creating Platform Information Tables
+ PE_INFO: Number of PE detected       :    2
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of ITS              :    1
+ TIMER_INFO: Number of system timers  :    0
+ WATCHDOG_INFO: Number of Watchdogs   :    1
  CACHE_INFO: Number of cache nodes    :    5
- MPAM INFO: Number of MSC nodes       :    0 
- RAS2_INFO: Number of RAS2 entries    :    0 
- RAS2_INFO: Num of RAS2 memory entries:    0 
- PCIE_INFO: Number of ECAM regions    :    1 
- PCIE_INFO: Number of BDFs found      :    14
- PCIE_INFO: Number of RCiEP           :    2 
- PCIE_INFO: Number of RCEC            :    0 
- PCIE_INFO: Number of EP              :    3 
- PCIE_INFO: Number of RP              :    7 
- PCIE_INFO: Number of iEP_EP          :    0 
- PCIE_INFO: Number of iEP_RP          :    0 
- PCIE_INFO: Number of UP of switch    :    1 
- PCIE_INFO: Number of DP of switch    :    0 
- PCIE_INFO: Number of PCI/PCIe Bridge :    0 
- PCIE_INFO: Number of PCIe/PCI Bridge :    1 
- SMMU_INFO: Number of SMMU CTRL       :    1 
- Peripheral: Num of USB controllers   :    1 
- Peripheral: Num of SATA controllers  :    1 
- Peripheral: Num of UART controllers  :    1 
+ MPAM INFO: Number of MSC nodes       :    0
+ RAS2_INFO: Number of RAS2 entries    :    0
+ RAS2_INFO: Num of RAS2 memory entries:    0
+ PCIE_INFO: Number of ECAM regions    :    1
+ PCIE_INFO: Number of BDFs found      :   14
+ PCIE_INFO: Number of RCiEP           :    2
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    3
+ PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    1
+ PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    1
+ SMMU_INFO: Number of SMMU CTRL       :    1
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
  PMU_INFO: Number of PMU units        :    0
- RAS_INFO: Number of RAS nodes        :    0 
+ RAS_INFO: Number of RAS nodes        :    0
 
-      *** Starting PE tests ***  
-   1 : Check PE Granule Support          : Result:  PASS 
-   2 : Check for 16-bit ASID support     : Result:  PASS 
-   3 : Check AARCH64 implementation      : Result:  PASS 
+      *** Starting PE tests ***
+   1 : Check PE Granule Support          : Result:  PASS
+   2 : Check for 16-bit ASID support     : Result:  PASS
+   3 : Check AARCH64 implementation      : Result:  PASS
    4 : Check FEAT_LPA Requirements       
        S_L3PE_04
-       Checkpoint --  1                  : Result:  SKIPPED 
-   5 : Check for RAS extension           : Result:  PASS 
+       Checkpoint --  1                  : Result:  SKIPPED
+   5 : Check for RAS extension           : Result:  PASS
    6 : Check DC CVAP support             
        S_L4PE_02
-       Checkpoint --  2                  : Result:  SKIPPED 
-   7 : Check for 16-Bit VMID             : Result:  PASS 
-   8 : Check for Virtual host extensions : Result:  PASS 
-   9 : Support Page table map size change: Result:  PASS 
-  10 : Check for pointer signing         : Result:  PASS 
+       Checkpoint --  2                  : Result:  SKIPPED
+   7 : Check for 16-Bit VMID             : Result:  PASS
+   8 : Check for Virtual host extensions : Result:  PASS
+   9 : Support Page table map size change: Result:  PASS
+  10 : Check for pointer signing         : Result:  PASS
   11 : Check Activity monitors extension 
        Failed on PE -    0 for Level=  5 
        S_L5PE_04
-       Checkpoint --  1                  : Result:  FAIL 
-  12 : Check for SHA3 and SHA512 support : Result:  PASS 
-  13 : Stage 2 control of mem and cache  : Result:  PASS 
+       Checkpoint --  1                  : Result:  FAIL
+  12 : Check for SHA3 and SHA512 support : Result:  PASS
+  13 : Stage 2 control of mem and cache  : Result:  PASS
   14 : Check for nested virtualization   
        Failed on PE -    0 for Level=  5 
        S_L5PE_07
-       Checkpoint --  1                  : Result:  FAIL 
+       Checkpoint --  1                  : Result:  FAIL
   15 : Check MPAM PE Requirements        
        S_MPAM_PE
-       Checkpoint --  2                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  SKIPPED
   16 : Check MPAM LLC Requirements       
        S_MPAM_PE
-       Checkpoint --  1                  : Result:  SKIPPED 
+       Checkpoint --  1                  : Result:  SKIPPED
 
       One or more PE tests failed or were skipped.
 
-      *** Starting Memory tests ***  
- 101 : Check peripherals addr 64Kb apart : Result:  PASS 
+      *** Starting Memory tests ***
+ 101 : Check peripherals addr 64Kb apart : Result:  PASS
 
       All Memory tests passed.
 
-      *** Starting GIC tests ***  
- 201 : Check GIC version                 : Result:  PASS 
- 202 : Check Reserved PPI Assignments    : Result:  PASS 
+      *** Starting GIC tests ***
+ 201 : Check GIC version                 : Result:  PASS
+ 202 : Check Reserved PPI Assignments    : Result:  PASS
 
       All GIC tests passed.
 
-      *** Starting SMMU tests ***  
+      *** Starting SMMU tests ***
  301 : Check SMMU Compatibility          
        Stage 2 translation not supported 
        Failed on PE -    0 for Level=  5 
        S_L4SM_01, S_L4SM_02
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  2                  : Result:  FAIL
  302 : Check SMMUv3.2 or higher          
        Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
        Failed on PE -    0 for Level=  5 
        S_L5SM_01, S_L5SM_02
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  2                  : Result:  FAIL
  303 : Check S-EL2 & SMMU Stage1 support 
        SMMUv3.1 detected: revision must be v3.2 or higher  
        Failed on PE -    0 for Level=  5 
        B_SMMU_09
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  2                  : Result:  FAIL
  304 : Check S-EL2 & SMMU Stage2 Support 
        SMMUv3.1 detected: revision must be v3.2 or higher  
        Failed on PE -    0 for Level=  5 
        B_SMMU_20
-       Checkpoint --  2                  : Result:  FAIL 
+       Checkpoint --  2                  : Result:  FAIL
  305 : Check SMMU for MPAM support       
        B_SMMU_11, B_SMMU_22, S_L5SM_03
-       Checkpoint --  2                  : Result:  SKIPPED 
+       Checkpoint --  2                  : Result:  SKIPPED
 
       One or more SMMU tests failed or were skipped.
 
-      *** Starting PCIe tests ***  
- 601 : Check EA Capability               : Result:  PASS 
+      *** Starting PCIe tests ***
+ 601 : Check EA Capability               : Result:  PASS
 
       All PCIe tests passed.
-      PCIE_INFO: Number of exerciser cards :    0 
+      PCIE_INFO: Number of exerciser cards :    0
 
      No Exerciser Devices Found, Skipping Exerciser tests...
 
-     ------------------------------------------------------- 
+     -------------------------------------------------------
      Total Tests run  =   25;  Tests Passed  =   14  Tests Failed =    6
-     --------------------------------------------------------- 
+     ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 
-            necessary to also run the BSA test    ** 
+            necessary to also run the BSA test    **
 
 
-      *** SBSA tests complete. Reset the system. *** 
+      *** SBSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
