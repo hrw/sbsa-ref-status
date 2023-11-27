@@ -109,7 +109,9 @@
   tags: S_L5PE_02
   title: Check for pointer signing
 11:
+  comment: does not make sense to implement in QEMU
   level: '5'
+  skip_for_qemu: true
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
@@ -119,8 +121,6 @@
     neoverse-v1: FAIL
   tags: S_L5PE_04
   title: Check Activity monitors extension
-  comment: does not make sense to implement in QEMU
-  skip_for_qemu: True
 12:
   level: '5'
   status:
@@ -177,7 +177,9 @@
   tags: S_MPAM_PE
   title: Check MPAM LLC Requirements
 17:
+  comment: does not make sense to implement in QEMU
   level: '6'
+  skip_for_qemu: true
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -187,8 +189,6 @@
     neoverse-v1: FAIL
   tags: B_PE_17
   title: Check SPE if implemented
-  comment: does not make sense to implement in QEMU
-  skip_for_qemu: True
 18:
   level: '6'
   status:
@@ -322,7 +322,9 @@
   tags: S_L7PE_02
   title: Check for ECV support
 30:
+  comment: does not make sense to implement in QEMU
   level: '7'
+  skip_for_qemu: true
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
@@ -332,8 +334,6 @@
     neoverse-v1: FAIL
   tags: S_L7PE_03
   title: Check for AMUv1p1 Support
-  comment: does not make sense to implement in QEMU
-  skip_for_qemu: True
 31:
   level: '7'
   status:
@@ -454,6 +454,7 @@
   tags: S_L5PP_01
   title: Check Reserved PPI Assignments
 301:
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
   level: '4'
   status:
     cortex-a57: FAIL
@@ -464,7 +465,6 @@
     neoverse-v1: FAIL
   tags: S_L4SM_01, S_L4SM_02
   title: Check SMMU Compatibility
-  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 302:
   level: '5'
   status:
@@ -477,6 +477,7 @@
   tags: S_L5SM_01, S_L5SM_02
   title: Check SMMUv3.2 or higher
 303:
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
   level: '5'
   status:
     cortex-a57: SKIPPED
@@ -487,8 +488,8 @@
     neoverse-v1: SKIPPED
   tags: B_SMMU_09
   title: Check S-EL2 & SMMU Stage1 support
-  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 304:
+  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
   level: '5'
   status:
     cortex-a57: SKIPPED
@@ -499,7 +500,6 @@
     neoverse-v1: SKIPPED
   tags: B_SMMU_20
   title: Check S-EL2 & SMMU Stage2 Support
-  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
 305:
   level: '5'
   status:
