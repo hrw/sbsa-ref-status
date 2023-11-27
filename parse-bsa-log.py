@@ -26,8 +26,10 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
 
         if start_parsing:
             if "START" in line:
-                test_id, test_title = line.removesuffix(
-                    "START\n").strip().split(" : ")
+                # BSA ACS output changed:
+                # 1 : Check Arch symmetry across PE         
+                #     START
+                test_id, test_title = prev_line.strip().split(" : ")
                 test_id = int(test_id)
                 try:
                     tmp = status_bsa[test_id]
@@ -46,6 +48,9 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
 
             if line.strip().startswith("Total Tests run"):
                 break
+
+        # we need previous line to extract test id/title
+        prev_line = line
 
 with open("status-bsa.yml", "w", encoding="utf-8") as yml:
     yaml.dump(status_bsa, yml)
