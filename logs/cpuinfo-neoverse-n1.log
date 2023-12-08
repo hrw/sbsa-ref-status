@@ -40,15 +40,15 @@ fs0:armcpuinfo.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
-NOTICE:  BL1: Built : 18:33:11, Nov 27 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
+NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
-NOTICE:  BL2: Built : 18:33:11, Nov 27 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
+NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-11-gfcb7db0c9
-NOTICE:  BL31: Built : 18:33:11, Nov 27 2023
-UEFI firmware (version 1.0 built at 12:19:56 on Nov 10 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
+NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
+UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -117,125 +117,126 @@ ID_AA64DFR0_EL1  = 0x0000000010305408
 ID_AA64SMFR0_EL1 = 0x0000000000000000
 ID_AA64ZFR0_EL1  = 0x0000000000000000
 
-Reg   |  Bits | Value | Feature
-------|-------|-------|----------------------------------------------
-MMFR0 |  3:0  |  0101 | 48 Bits (256TB) of physical address range supported.
-MMFR0 |  7:4  |  0010 | ASID: 16 Bits
-MMFR0 | 11:8  |  0001 | Mixed-endian support.
-MMFR0 | 19:16 |  0000 | No mixed-endian support at EL0.
-MMFR0 | 15:12 |  0001 | Supports a distinction between Secure and Non-Secure Memory.
-MMFR0 | 31:28 |  0000 |  4KB granule supported.
-MMFR0 | 43:40 |  0000 |  4KB granule support at stage2 as above.
-MMFR0 | 23:20 |  0001 | 16KB granule supported.
-MMFR0 | 35:32 |  0000 | 16KB granule support at stage2 as above.
-MMFR0 | 27:24 |  0000 | 64KB granule supported.
-MMFR0 | 39:36 |  0000 | 64KB granule support at stage2 as above.
-MMFR0 | 47:44 |  0000 | FEAT_ExS not implemented.
-MMFR0 | 59:56 |  0000 | FEAT_FGT not implemented.
-MMFR0 | 63:60 |  0000 | FEAT_ECV not implemented.
-------|-------|-------|----------------------------------------------
-MMFR1 |  3:0  |  0010 | FEAT_HAFDBS implemented with dirty status support.
-MMFR1 |  7:4  |  0010 | FEAT_VMID16 implemented.
-MMFR1 | 11:8  |  0001 | FEAT_VHE implemented.
-MMFR1 | 15:12 |  0010 | FEAT_HPDS2 implemented.
-MMFR1 | 19:16 |  0001 | FEAT_LOR implemented.
-MMFR1 | 23:20 |  0010 | FEAT_PAN2 implemented.
-MMFR1 | 27:24 |  0000 | The PE never generates an SError interrupt due to
-      |       |       | an External abort on a speculative read.
-MMFR1 | 31:28 |  0001 | FEAT_XNX implemented.
-MMFR1 | 35:32 |  0000 | FEAT_TWED not implemented.
-MMFR1 | 39:36 |  0000 | FEAT_ETS not implemented.
-MMFR1 | 43:40 |  0000 | FEAT_HCX not implemented.
-MMFR1 | 47:44 |  0000 | FEAT_AFP not implemented.
-MMFR1 | 51:48 |  0000 | FEAT_nTLBPA not implemented.
-MMFR1 | 55:52 |  0000 | FEAT_TIDCP1 not implemented
-MMFR1 | 59:56 |  0000 | FEAT_CMOW not implemented.
-------|-------|-------|----------------------------------------------
-MMFR2 |  3:0  |  0001 | FEAT_TTCNP implemented.
-MMFR2 |  7:4  |  0001 | FEAT_UAO implemented.
-MMFR2 | 11:8  |  0000 | FEAT_LSMAOC not implemented.
-MMFR2 | 15:12 |  0001 | FEAT_IESB implemented.
-MMFR2 | 19:16 |  0000 | FEAT_LVA not implemented.
-MMFR2 | 23:20 |  0000 | FEAT_CCIDX not implemented.
-MMFR2 | 27:24 |  0000 | FEAT_NV not implemented.
-MMFR2 | 31:28 |  0000 | FEAT_TTST not implemented.
-MMFR2 | 35:32 |  0000 | FEAT_LSE2 not implemented.
-MMFR2 | 39:36 |  0000 | FEAT_IDST not implemented.
-MMFR2 | 43:40 |  0000 | FEAT_S2FWB not implemented.
-MMFR2 | 51:48 |  0000 | FEAT_TTL not implemented.
-MMFR2 | 55:52 |  0000 | FEAT_BBM: Level 0 support for changing block size is supported.
-MMFR2 | 59:56 |  0000 | FEAT_EVT not implemented.
-MMFR2 | 63:60 |  0000 | FEAT_E0PD not implemented.
-------|-------|-------|----------------------------------------------
-PFR0  |  3:0  |  0010 | EL0 in AArch64 and AArch32
-PFR0  |  7:4  |  0001 | EL1 in AArch64 only
-PFR0  | 11:8  |  0001 | EL2 in AArch64 only
-PFR0  | 15:12 |  0001 | EL3 in AArch64 only
-PFR0  | 19:16 |  0001 | Floating-point with half-precision support (FEAT_FP16).
-PFR0  | 23:20 |  0001 | Advanced SIMD with half precision support (FEAT_FP16).
-PFR0  | 27:24 |  0001 | System registers to versions 3.0/4.0 of GIC CPU implemented.
-PFR0  | 31:28 |  0001 | FEAT_RAS implemented.
-PFR0  | 35:32 |  0000 | FEAT_SVE not implemented.
-PFR0  | 39:36 |  0000 | Secure EL2 not implemented.
-PFR0  | 43:40 |  0000 | FEAT_MPAM not implemented.
-PFR0  | 47:44 |  0000 | FEAT_AMU not implemented.
-PFR0  | 51:48 |  0000 | FEAT_DIT not implemented.
-PFR0  | 55:52 |  0000 | FEAT_RME not implemented
-PFR0  | 59:56 |  0001 | FEAT_CSV2 implemented.
-PFR0  | 63:60 |  0001 | FEAT_CSV3 implemented.
-------|-------|-------|----------------------------------------------
-PFR1  |  3:0  |  0000 | FEAT_BTI not implemented.
-PFR1  |  7:4  |  0010 | FEAT_SSBS2 implemented.
-PFR1  | 11:8  |  0000 | FEAT_MTE not implemented.
-PFR1  | 27:24 |  0000 | FEAT_SME not implemented.
-PFR1  | 31:28 |  0000 | FEAT_RNG_TRAP not implemented.
-PFR1  | 39:36 |  0000 | FEAT_NMI not implemented.
-------|-------|-------|----------------------------------------------
-ISAR0 |  7:4  |  0010 | FEAT_AES and FEAT_PMULL implemented.
-ISAR0 | 11:8  |  0001 | FEAT_SHA1 implemented.
-ISAR0 | 15:12 |  0001 | FEAT_SHA256 implemented.
-ISAR0 | 19:16 |  0001 | CRC32 instructions implemented.
-ISAR0 | 23:20 |  0010 | FEAT_LSE implemented.
-ISAR0 | 27:24 |  0000 | TME instructions not implemented.
-ISAR0 | 31:28 |  0001 | FEAT_RDM implemented.
-ISAR0 | 35:32 |  0000 | FEAT_SHA3 not implemented.
-ISAR0 | 39:36 |  0000 | FEAT_SM3 not implemented.
-ISAR0 | 43:40 |  0000 | FEAT_SM4 not implemented.
-ISAR0 | 47:44 |  0001 | FEAT_DotProd implemented.
-ISAR0 | 51:48 |  0000 | FEAT_FHM not implemented.
-ISAR0 | 55:52 |  0000 | FEAT_FlagM/FEAT_FlagM2 not implemented.
-ISAR0 | 59:56 |  0000 | FEAT_TLBIOS/FEAT_TLBIRANGE not implemented.
-ISAR0 | 63:60 |  0000 | FEAT_RNG not implemented.
-------|-------|-------|----------------------------------------------
-ISAR1 |  3:0  |  0001 | FEAT_DPB implemented.
-ISAR1 |  7:4  |  0000 | Address Authentication (APA) not implemented.
-ISAR1 | 11:8  |  0000 | Address Authentication (API) not implemented.
-ISAR1 | 15:12 |  0000 | FEAT_JSCVT not implemented.
-ISAR1 | 19:16 |  0000 | FEAT_FCMA not implemented.
-ISAR1 | 23:20 |  0001 | FEAT_LRCPC implemented.
-ISAR1 | 27:24 |  0000 | FEAT_PACQARMA5 not implemented.
-ISAR1 | 31:28 |  0000 | FEAT_PACIMP not implemented.
-ISAR1 | 35:32 |  0000 | FEAT_FRINTTS not implemented.
-ISAR1 | 39:36 |  0000 | FEAT_SB not implemented.
-ISAR1 | 43:40 |  0000 | FEAT_SPECRES not implemented.
-ISAR1 | 47:44 |  0000 | FEAT_BF16 not implemented.
-ISAR1 | 51:48 |  0000 | FEAT_DGH not implemented.
-ISAR1 | 55:52 |  0000 | FEAT_I8MM not implemented.
-ISAR1 | 59:56 |  0000 | FEAT_XS not implemented.
-ISAR1 | 63:60 |  0000 | FEAT_LS64 not implemented.
-------|-------|-------|----------------------------------------------
-DFR0  |  3:0  |  1000 | FEAT_Debugv8p2 implemented.
-DFR0  |  7:4  |  0000 | Trace unit System registers not implemented.
-DFR0  | 11:8  |  0100 | FEAT_PMUv3p1 implemented.
-DFR0  | 15:12 |  0101 | Number of breakpoints, minus 1.
-DFR0  | 23:20 |  0011 | Number of watchpoints, minus 1.
-DFR0  | 31:28 |  0001 | Number of breakpoints that are context-aware, minus 1.
-DFR0  | 35:32 |  0000 | FEAT_SPE not implemented.
-DFR0  | 39:36 |  0000 | FEAT_DoubleLock implemented.
-DFR0  | 43:40 |  0000 | FEAT_TRF not implemented.
-DFR0  | 47:44 |  0000 | FEAT_TRBE not implemented.
-DFR0  | 51:48 |  0000 | FEAT_MTPMU not implemented.
-DFR0  | 55:52 |  0000 | FEAT_BRBE not implemented.
-DFR0  | 63:60 |  0000 | Setting MDCR_EL2.HPMN to zero has CONSTRAINED UNPREDICTABLE behavior.
-------|-------|-------|----------------------------------------------
+Reg   | Name        |  Bits | Value | Feature
+------|-------------|-------|-------|----------------------------------------------
+MMFR0 | ECV         | 63:60 |  0000 | FEAT_ECV not implemented.
+MMFR0 | FGT         | 59:56 |  0000 | FEAT_FGT not implemented.
+MMFR0 | ExS         | 47:44 |  0000 | FEAT_ExS not implemented.
+MMFR0 | TGran4      | 31:28 |  0000 |  4KB granule supported.
+MMFR0 | TGran4_2    | 43:40 |  0000 |  4KB granule support at stage2 as above.
+MMFR0 | Tgran16     | 23:20 |  0001 | 16KB granule supported.
+MMFR0 | TGran16_2   | 35:32 |  0000 | 16KB granule support at stage2 as above.
+MMFR0 | TGran64     | 27:24 |  0000 | 64KB granule supported.
+MMFR0 | TGran64_2   | 39:36 |  0000 | 64KB granule support at stage2 as above.
+MMFR0 | SNSMem      | 15:12 |  0001 | Supports a distinction between Secure and Non-Secure Memory.
+MMFR0 | BigEnd      | 11:8  |  0001 | Mixed-endian support.
+MMFR0 | BigEndEL0   | 19:16 |  0000 | No mixed-endian support at EL0.
+MMFR0 | ASIDBits    |  7:4  |  0010 | ASID: 16 Bits
+MMFR0 | PARange     |  3:0  |  0101 | 48 Bits (256TB) of physical address range supported.
+------|-------------|-------|-------|----------------------------------------------
+MMFR1 | CMOW        | 59:56 |  0000 | FEAT_CMOW not implemented.
+MMFR1 | TIDCP1      | 55:52 |  0000 | FEAT_TIDCP1 not implemented
+MMFR1 | nTLBPA      | 51:48 |  0000 | FEAT_nTLBPA not implemented.
+MMFR1 | AFP         | 47:44 |  0000 | FEAT_AFP not implemented.
+MMFR1 | HCX         | 43:40 |  0000 | FEAT_HCX not implemented.
+MMFR1 | ETS         | 39:36 |  0000 | FEAT_ETS not implemented.
+MMFR1 | TWED        | 35:32 |  0000 | FEAT_TWED not implemented.
+MMFR1 | XNX         | 31:28 |  0001 | FEAT_XNX implemented.
+MMFR1 | SpecSEI     | 27:24 |  0000 | The PE never generates an SError interrupt due to
+      |             |       |       | an External abort on a speculative read.
+MMFR1 | PAN         | 23:20 |  0010 | FEAT_PAN2 implemented.
+MMFR1 | LO          | 19:16 |  0001 | FEAT_LOR implemented.
+MMFR1 | HPDS        | 15:12 |  0010 | FEAT_HPDS2 implemented.
+MMFR1 | VH          | 11:8  |  0001 | FEAT_VHE implemented.
+MMFR1 | VMIDBits    |  7:4  |  0010 | FEAT_VMID16 implemented.
+MMFR1 | HAFDBS      |  3:0  |  0010 | FEAT_HAFDBS implemented with dirty status support.
+------|-------------|-------|-------|----------------------------------------------
+MMFR2 | E0PD        | 63:60 |  0000 | FEAT_E0PD not implemented.
+MMFR2 | EVT         | 59:56 |  0000 | FEAT_EVT not implemented.
+MMFR2 | BBM         | 55:52 |  0000 | FEAT_BBM: Level 0 support for changing block size.
+MMFR2 | TTL         | 51:48 |  0000 | FEAT_TTL not implemented.
+MMFR2 | FWB         | 43:40 |  0000 | FEAT_S2FWB not implemented.
+MMFR2 | IDS         | 39:36 |  0000 | FEAT_IDST not implemented.
+MMFR2 | AT          | 35:32 |  0000 | FEAT_LSE2 not implemented.
+MMFR2 | ST          | 31:28 |  0000 | FEAT_TTST not implemented.
+MMFR2 | NV          | 27:24 |  0000 | FEAT_NV not implemented.
+MMFR2 | CCIDX       | 23:20 |  0000 | FEAT_CCIDX not implemented.
+MMFR2 | VARange     | 19:16 |  0000 | FEAT_LVA not implemented.
+MMFR2 | IESB        | 15:12 |  0001 | FEAT_IESB implemented.
+MMFR2 | LSM         | 11:8  |  0000 | FEAT_LSMAOC not implemented.
+MMFR2 | UAO         |  7:4  |  0001 | FEAT_UAO implemented.
+MMFR2 | CnP         |  3:0  |  0001 | FEAT_TTCNP implemented.
+------|-------------|-------|-------|----------------------------------------------
+PFR0  | CSV3        | 63:60 |  0001 | FEAT_CSV3 implemented.
+PFR0  | CSV2        | 59:56 |  0001 | FEAT_CSV2 implemented.
+PFR0  | RME         | 55:52 |  0000 | FEAT_RME not implemented
+PFR0  | DIT         | 51:48 |  0000 | FEAT_DIT not implemented.
+PFR0  | AMU         | 47:44 |  0000 | FEAT_AMU not implemented.
+PFR0  | MPAM        | 43:40 |  0000 | FEAT_MPAM not implemented.
+PFR0  | SEL2        | 39:36 |  0000 | Secure EL2 not implemented.
+PFR0  | SVE         | 35:32 |  0000 | FEAT_SVE not implemented.
+PFR0  | RAS         | 31:28 |  0001 | FEAT_RAS implemented.
+PFR0  | GIC         | 27:24 |  0001 | System registers to versions 3.0/4.0 of GIC CPU implemented.
+PFR0  | AdvSIMD     | 23:20 |  0001 | Advanced SIMD with half precision support (FEAT_FP16).
+PFR0  | FP          | 19:16 |  0001 | Floating-point with half-precision support (FEAT_FP16).
+PFR0  | EL3         | 15:12 |  0001 | EL3 in AArch64 only
+PFR0  | EL2         | 11:8  |  0001 | EL2 in AArch64 only
+PFR0  | EL1         |  7:4  |  0001 | EL1 in AArch64 only
+PFR0  | EL0         |  3:0  |  0010 | EL0 in AArch64 and AArch32
+------|-------------|-------|-------|----------------------------------------------
+PFR1  | NMI         | 39:36 |  0000 | FEAT_NMI not implemented.
+PFR1  | RNDR_trap   | 31:28 |  0000 | FEAT_RNG_TRAP not implemented.
+PFR1  | SME         | 27:24 |  0000 | FEAT_SME not implemented.
+PFR1  | MTE         | 11:8  |  0000 | FEAT_MTE not implemented.
+PFR1  | SSBS        |  7:4  |  0010 | FEAT_SSBS2 implemented.
+PFR1  | BT          |  3:0  |  0000 | FEAT_BTI not implemented.
+------|-------------|-------|-------|----------------------------------------------
+ISAR0 | RNDR        | 63:60 |  0000 | FEAT_RNG not implemented.
+ISAR0 | TLB         | 59:56 |  0000 | FEAT_TLBIOS/FEAT_TLBIRANGE not implemented.
+ISAR0 | TS          | 55:52 |  0000 | FEAT_FlagM/FEAT_FlagM2 not implemented.
+ISAR0 | FHM         | 51:48 |  0000 | FEAT_FHM not implemented.
+ISAR0 | DP          | 47:44 |  0001 | FEAT_DotProd implemented.
+ISAR0 | SM4         | 43:40 |  0000 | FEAT_SM4 not implemented.
+ISAR0 | SM3         | 39:36 |  0000 | FEAT_SM3 not implemented.
+ISAR0 | SHA3        | 35:32 |  0000 | FEAT_SHA3 not implemented.
+ISAR0 | RDM         | 31:28 |  0001 | FEAT_RDM implemented.
+ISAR0 | TME         | 27:24 |  0000 | TME instructions not implemented.
+ISAR0 | Atomic      | 23:20 |  0010 | FEAT_LSE implemented.
+ISAR0 | CRC32       | 19:16 |  0001 | CRC32 instructions implemented.
+ISAR0 | SHA2        | 15:12 |  0001 | FEAT_SHA256 implemented.
+ISAR0 | SHA1        | 11:8  |  0001 | FEAT_SHA1 implemented.
+ISAR0 | AES         |  7:4  |  0010 | FEAT_AES and FEAT_PMULL implemented.
+------|-------------|-------|-------|----------------------------------------------
+ISAR1 | LS64        | 63:60 |  0000 | FEAT_LS64 not implemented.
+ISAR1 | XS          | 59:56 |  0000 | FEAT_XS not implemented.
+ISAR1 | I8MM        | 55:52 |  0000 | FEAT_I8MM not implemented.
+ISAR1 | DGH         | 51:48 |  0000 | FEAT_DGH not implemented.
+ISAR1 | BF16        | 47:44 |  0000 | FEAT_BF16 not implemented.
+ISAR1 | SPECRES     | 43:40 |  0000 | FEAT_SPECRES not implemented.
+ISAR1 | SB          | 39:36 |  0000 | FEAT_SB not implemented.
+ISAR1 | FRINTTS     | 35:32 |  0000 | FEAT_FRINTTS not implemented.
+ISAR1 | GPI         | 31:28 |  0000 | FEAT_PACIMP not implemented.
+ISAR1 | GPA         | 27:24 |  0000 | FEAT_PACQARMA5 not implemented.
+ISAR1 | LRCPC       | 23:20 |  0001 | FEAT_LRCPC implemented.
+ISAR1 | FCMA        | 19:16 |  0000 | FEAT_FCMA not implemented.
+ISAR1 | JSCVT       | 15:12 |  0000 | FEAT_JSCVT not implemented.
+ISAR1 | API         | 11:8  |  0000 | Address Authentication (API) not implemented.
+ISAR1 | APA         |  7:4  |  0000 | Address Authentication (APA) not implemented.
+ISAR1 | DPB         |  3:0  |  0001 | FEAT_DPB implemented.
+------|-------------|-------|-------|----------------------------------------------
+DFR0  | HPMN0       | 63:60 |  0000 | Setting MDCR_EL2.HPMN to zero has CONSTRAINED UNPREDICTABLE be
+havior.
+DFR0  | BRBE        | 55:52 |  0000 | FEAT_BRBE not implemented.
+DFR0  | MTPMU       | 51:48 |  0000 | FEAT_MTPMU not implemented.
+DFR0  | TraceBuffer | 47:44 |  0000 | FEAT_TRBE not implemented.
+DFR0  | TraceFilt   | 43:40 |  0000 | FEAT_TRF not implemented.
+DFR0  | DoubleLock  | 39:36 |  0000 | FEAT_DoubleLock implemented.
+DFR0  | PMSVer      | 35:32 |  0000 | FEAT_SPE not implemented.
+DFR0  | CTX_CMPs    | 31:28 |  0001 | Number of breakpoints that are context-aware, minus 1.
+DFR0  | WRPs        | 23:20 |  0011 | Number of watchpoints, minus 1.
+DFR0  | BRPs        | 15:12 |  0101 | Number of breakpoints, minus 1.
+DFR0  | PMUVer      | 11:8  |  0100 | FEAT_PMUv3p1 implemented.
+DFR0  | TraceVer    |  7:4  |  0000 | Trace unit System registers not implemented.
+DFR0  | DebugVer    |  3:0  |  1000 | FEAT_Debugv8p2 implemented.
+------|-------------|-------|-------|----------------------------------------------
 [1m[33m[40mShell> [0m[37m[40mreset -c
