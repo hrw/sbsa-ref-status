@@ -263,7 +263,7 @@ case $OS in
 		ISOHDD=1
 		;;
 	"rhel")
-		ISO="disks/rhel-9.2-aarch64-boot.iso"
+		ISO="disks/rhel-9.3-aarch64-boot.iso"
 		;;
 	"sr-acs")
 		ISO="disks/SystemReady-ACS-23.09-2.0.0-sr_acs_live_image.img"
