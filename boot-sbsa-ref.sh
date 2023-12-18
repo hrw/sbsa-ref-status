@@ -266,6 +266,7 @@ case $OS in
 		ISO="disks/rhel-9.3-aarch64-boot.iso"
 		;;
 	"sr-acs")
+		# https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v23.09_2.0.0/sr_acs_live_image.img.xz
 		ISO="disks/SystemReady-ACS-23.09-2.0.0-sr_acs_live_image.img"
 		ISOHDD=1
 		DISABLE_NO_REBOOT=1
