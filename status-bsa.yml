@@ -373,9 +373,9 @@
   status:
     cortex-a57: PASS
     cortex-a72: PASS
-    max: SKIPPED
+    max: PASS
     neoverse-n1: PASS
-    neoverse-n2: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_SMMU_08
   title: Check SMMU S-EL2 & stage1 support
@@ -384,9 +384,9 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: SKIPPED
+    max: FAIL
     neoverse-n1: FAIL
-    neoverse-n2: SKIPPED
+    neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
   title: Check SMMU S-EL2 & stage2 support
