@@ -393,6 +393,7 @@
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
   title: Check SMMU S-EL2 & stage2 support
 353:
+  ignore_skipped: True
   comment: SBSA requires SMMU v3
   status:
     cortex-a57: SKIPPED
