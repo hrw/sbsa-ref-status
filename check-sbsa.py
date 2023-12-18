@@ -8,6 +8,15 @@ def check_tag(tag, failed):
             if bsa_test_id not in checked_tests["bsa"]:
                 checked_tests["bsa"].append(bsa_test_id)
 
+                # if 'ignore_skipped' is set then we can ignore that test
+                # when it gets skipped
+                # - no NS EL2-Virt timer on v8.0 cpus
+                # - LPA on non-LPA cpus
+                # - 16550 UART
+                if ('ignore_skipped' in status_bsa[bsa_test_id] and
+                    status_bsa[bsa_test_id]['status'][cpu] == "SKIPPED"):
+                    continue
+
                 if status_bsa[bsa_test_id]['status'][cpu] not in ["PASS"]:
                     print(f"- BSA  test {bsa_test_id} for "
                             f"{status_bsa[bsa_test_id]['tags']} "

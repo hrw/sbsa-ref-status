@@ -269,6 +269,7 @@
   tags: B_PPI_01
   title: Check EL1-Virt timer PPI assignment
 226:
+  ignore_skipped: True
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -360,6 +361,7 @@
   title: Check SMMU Granule Support
 303:
   comment: only max has LPA, smmu lacks LPA
+  ignore_skipped: True
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -550,6 +552,7 @@
   tags: B_PER_06, B_PER_07
   title: Check Arm GENERIC UART Interrupt
 606:
+  ignore_skipped: True
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
