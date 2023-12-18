@@ -40,15 +40,15 @@ fs0:sbsa.efi -skip 861 -l 6 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
-UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
+UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -338,8 +338,8 @@ PE Index * 1 *
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2
  Peripheral: Num of Storage ctrl      :    2
  Peripheral: Num of Display ctrl      :    1
- Reserved region of type 7 [0x10000000000, 0x100FBC56000]
- Reserved region of type 1 [0x100FBC56000, 0x100FBDC0000]
+ Reserved region of type 7 [0x10000000000, 0x100FBC58000]
+ Reserved region of type 1 [0x100FBC58000, 0x100FBDC0000]
  Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
  Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
  Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
@@ -347,10 +347,10 @@ PE Index * 1 *
  Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
  Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
- Reserved region of type 7 [0x100FC020000, 0x100FDD04000]
- Reserved region of type 4 [0x100FDD04000, 0x100FEF04000]
- Reserved region of type 7 [0x100FEF04000, 0x100FF19F000]
- Reserved region of type 3 [0x100FF19F000, 0x100FF4E0000]
+ Reserved region of type 7 [0x100FC020000, 0x100FDD03000]
+ Reserved region of type 4 [0x100FDD03000, 0x100FEF04000]
+ Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
+ Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
  Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
  Reserved region of type 6 [0x100FF670000, 0x100FF8C0000]
  Reserved region of type 7 [0x100FF8C0000, 0x100FF8D0000]
@@ -367,7 +367,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0
- Shared memory is 100FDF3C998
+ Shared memory is 100FDF3B798
 
       *** Starting PE tests ***
    1 : Check PE Granule Support          
@@ -1045,22 +1045,6 @@ PE Index * 1 *
        Checkpoint --  1                  : Result:  SKIPPED
        END
 
- 848 : Check RootPort NP Memory Access   
-       START  
-       No iEP_RP type device found with valid Memory Base/Limit Reg.
-       Skipping Test
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED
-       END
-
- 849 : Check RootPort P Memory Access    
-       START  
-       No iEP_RP type device found with valid Memory Base/Limit Reg.
-       Skipping Test
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED
-       END
-
  850 : Check L-Intr SPI Level-Sensitive  
        START  
        BDF - 0x100
@@ -1154,7 +1138,7 @@ PE Index * 1 *
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      -------------------------------------------------------
-     Total Tests run  =   86;  Tests Passed  =   42  Tests Failed =   16
+     Total Tests run  =   84;  Tests Passed  =   42  Tests Failed =   16
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 

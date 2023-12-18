@@ -40,15 +40,15 @@ fs0:sbsa.efi -skip 861 -l 6
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
-UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
+UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -337,12 +337,6 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  847 : Check Config Txn for RP in HB     
        PCI_IN_12
        Checkpoint --  1                  : Result:  SKIPPED
- 848 : Check RootPort NP Memory Access   
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED
- 849 : Check RootPort P Memory Access    
-       PCI_IN_13
-       Checkpoint --  1                  : Result:  SKIPPED
  850 : Check L-Intr SPI Level-Sensitive  
        pal_pcie_get_legacy_irq_map unimplemented. Skipping test
        The API is platform specific and to be populated
@@ -385,7 +379,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
      No Exerciser Devices Found, Skipping Exerciser tests...
 
      -------------------------------------------------------
-     Total Tests run  =   86;  Tests Passed  =   43  Tests Failed =   17
+     Total Tests run  =   84;  Tests Passed  =   43  Tests Failed =   17
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 

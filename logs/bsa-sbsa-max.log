@@ -40,15 +40,15 @@ fs0:bsa.efi -sbsa
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
-UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
+UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -206,12 +206,13 @@ Operating System View:
        Large PA Not Supported in SMMU 0
        Failed on PE -    0
        Checkpoint --  2                           : Result:  FAIL
- 304 : Check SMMU S-EL2 & stage1 support     
-       Checkpoint --  2                           : Result:  SKIPPED
+ 304 : Check SMMU S-EL2 & stage1 support          : Result:  PASS
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
-       Checkpoint --  2                           : Result:  SKIPPED
+       SMMUv3.1 not providing Stage2 functionality
+       Failed on PE -    0
+       Checkpoint --  2                           : Result:  FAIL
  354 : SMMUv3 Integration compliance              : Result:  PASS
 
       One or more SMMU tests failed or were skipped.
@@ -271,8 +272,6 @@ Operating System View:
  801 : Check ECAM Presence                        : Result:  PASS
  802 : PE - ECAM Region accessibility check       : Result:  PASS
  803 : All EP/Sw under RP in same ECAM Region     : Result:  PASS
- 804 : Check RootPort NP Memory Access            : Result:  PASS
- 805 : Check RootPort P Memory Access             : Result:  PASS
  806 : Legacy int must be SPI & lvl-sensitive
        Checkpoint --  2                           : Result:  SKIPPED
  808 : Check all 1's for out of range             : Result:  PASS
@@ -313,7 +312,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   84  Tests Passed  =   70  Tests Failed =    2
+     Total Tests run  =   82  Tests Passed  =   69  Tests Failed =    3
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***

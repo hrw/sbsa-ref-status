@@ -40,15 +40,15 @@ fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
-UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
+UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -295,8 +295,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    2
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBC68000]
-  Reserved region of type 1 [0x100FBC68000, 0x100FBDC0000]
+  Reserved region of type 7 [0x10000000000, 0x100FBC69000]
+  Reserved region of type 1 [0x100FBC69000, 0x100FBDC0000]
   Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
   Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
   Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
@@ -304,12 +304,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDD93000]
-  Reserved region of type 4 [0x100FDD93000, 0x100FDF0A000]
-  Reserved region of type 7 [0x100FDF0A000, 0x100FDF0C000]
-  Reserved region of type 4 [0x100FDF0C000, 0x100FEF04000]
-  Reserved region of type 7 [0x100FEF04000, 0x100FF19F000]
-  Reserved region of type 3 [0x100FF19F000, 0x100FF4E0000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDD92000]
+  Reserved region of type 4 [0x100FDD92000, 0x100FDF09000]
+  Reserved region of type 7 [0x100FDF09000, 0x100FDF0B000]
+  Reserved region of type 4 [0x100FDF0B000, 0x100FEF04000]
+  Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
+  Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
   Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
   Reserved region of type 6 [0x100FF670000, 0x100FF8C0000]
   Reserved region of type 7 [0x100FF8C0000, 0x100FF8D0000]
@@ -322,7 +322,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDF3D518
+ Shared memory is 100FDF3C318
 
       *** Starting PE tests ***
 
@@ -662,18 +662,18 @@ Operating System View:
 
  304 : Check SMMU S-EL2 & stage1 support     
        START
-       S-EL2 implemented...Skipping
        B_SMMU_08
-       Checkpoint --  2                           : Result:  SKIPPED
+                                       : Result:  PASS
        END
 
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
        START
-       S-EL2 implemented...Skipping
+       SMMUv3.1 not providing Stage2 functionality
+       Failed on PE -    0
        B_SMMU_16, B_SMMU_17, B_SMMU_18
-       Checkpoint --  2                           : Result:  SKIPPED
+       Checkpoint --  2                           : Result:  FAIL
        END
 
  354 : SMMUv3 Integration compliance         
@@ -873,70 +873,6 @@ Operating System View:
        BDF - 0x60000
        BDF - 0x80000
        PCI_IN_04
-                                       : Result:  PASS
-       END
-
- 804 : Check RootPort NP Memory Access       
-       START
-       BDF is 0x300
-       Memory base is 0x81500000 Memory lim is  0x816FFFFF
-       Class code is 0x6040002
-       Class code is 0x6040000
-       Class code is 0x1060102
-       Skipping for RP BDF 0x300
-       BDF is 0x400
-       Memory base is 0x81400000 Memory lim is  0x814FFFFF
-       Class code is 0x1080202
-       Skipping for RP BDF 0x400
-       BDF is 0x500
-       Memory base is 0x81300000 Memory lim is  0x813FFFFF
-       Class code is 0x2000001
-       Skipping for RP BDF 0x500
-       BDF is 0x600
-       Memory base is 0x81200000 Memory lim is  0x812FFFFF
-       Class code is 0xC033001
-       BDF is 0x700
-       Memory base is 0xFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x700
-       BDF is 0x800
-       Memory base is 0x81000000 Memory lim is  0x811FFFFF
-       Class code is 0x6040000
-       Class code is 0xFF0000
-       Entered Check_2 for bdf 0x800  Value read is 0xFFFFFFFF
-       BDF is 0x20000
-       Memory base is 0x81500000 Memory lim is  0x815FFFFF
-       Class code is 0x1060102
-       Skipping for RP BDF 0x20000
-       PCI_IN_13
-                                       : Result:  PASS
-       END
-
- 805 : Check RootPort P Memory Access        
-       START
-       BDF is 0x300
-       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x300
-       BDF is 0x400
-       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x400
-       BDF is 0x500
-       Memory base is 0x100000000 Memory lim is  0x1000FFFFF
-       Class code is 0x2000001
-       Skipping for RP BDF 0x500
-       BDF is 0x600
-       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x600
-       BDF is 0x700
-       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x700
-       BDF is 0x800
-       Memory base is 0x100100000 Memory lim is  0x1001FFFFF
-       Class code is 0x6040000
-       Class code is 0xFF0000
-       BDF is 0x20000
-       Memory base is 0xFFFFFFFFFFF00000 Memory lim is  0xFFFFF
-       Mem limit < Mem Base. Skipping Bdf - 0x20000
-       PCI_IN_13
                                        : Result:  PASS
        END
 
@@ -1680,7 +1616,7 @@ PCIE_INFO: Number of exerciser cards :    0
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   86  Tests Passed  =   72  Tests Failed =    2
+     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    3
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***

@@ -40,15 +40,15 @@ fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL1: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL2: Built : 14:18:21, Dec  8 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-82-gc270b099c-dirty
-NOTICE:  BL31: Built : 14:18:21, Dec  8 2023
-UEFI firmware (version 1.0 built at 14:34:23 on Dec  6 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
+NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
+UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -112,7 +112,7 @@ Booting Linux on physical CPU 0x0000000000 [0x410fd083]
 Linux version 6.5.0-4-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-6) 13.2.0, GNU ld (GNU Binutils for Debian) 2.41) #1 SMP Debian 6.5.10-1 (2023-11-03)
 KASLR disabled due to lack of seed
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe6df018 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
+efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe6de018 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
 ACPI: RSDP 0x00000100FBF80018 000024 (v02 LINARO)
@@ -237,13 +237,12 @@ clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.4.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 12/08/2023
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 12/18/2023
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.160:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -251,6 +250,7 @@ thermal_sys: Registered thermal governor 'user_space'
 thermal_sys: Registered thermal governor 'power_allocator'
 cpuidle: using governor ladder
 cpuidle: using governor menu
+audit: type=2000 audit(0.156:1): state=initialized audit_enabled=0 res=1
 hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
 ASID allocator initialised with 65536 entries
 acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
@@ -557,7 +557,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2023-12-08T13:26:35 UTC (1702041995)
+rtc-efi rtc-efi.0: setting system clock to 2023-12-18T09:53:49 UTC (1702893229)
 ledtrig-cpu: registered to indicate activity on CPUs
 SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
 hw perfevents: enabled with armv8_pmuv3_0 PMU driver, 7 counters available
