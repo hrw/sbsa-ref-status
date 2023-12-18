@@ -228,7 +228,7 @@ ISOHDD=0
 
 case $OS in
 	"alpine")
-		ISO="disks/alpine-standard-3.17.2-aarch64.iso"
+		ISO="disks/alpine-standard-3.19.0-aarch64.iso"
 		;;
 	"centos")
 		ISO="disks/CentOS-Stream-9-20230918.0-aarch64-boot.iso"
