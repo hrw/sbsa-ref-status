@@ -609,26 +609,6 @@
     neoverse-v1: PASS
   tags: PCI_IN_04
   title: All EP/Sw under RP in same ECAM Region
-804:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_13
-  title: Check RootPort NP Memory Access
-805:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_13
-  title: Check RootPort P Memory Access
 806:
   status:
     cortex-a57: SKIPPED
