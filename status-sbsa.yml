@@ -148,10 +148,10 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: FAIL
+    max: PASS
     neoverse-n1: FAIL
-    neoverse-n2: FAIL
-    neoverse-v1: FAIL
+    neoverse-n2: PASS
+    neoverse-v1: PASS
   tags: S_L5PE_07
   title: Check for nested virtualization
 15:
