@@ -60,11 +60,6 @@ qemu_args=(
 -device pcie-root-port,id=root_port_for_pci,chassis=1
   -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
     -device virtio-rng-pci,bus=pci,addr=8
-
-# another PCIe bus
- -device pxb-pcie,id=pxb1,bus_nr=2
-   -device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
-     -device ahci,bus=root_port_for_ahci
 )
 
 echo "QEMU command line arguments:"
