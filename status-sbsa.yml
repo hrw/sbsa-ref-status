@@ -392,12 +392,12 @@
 36:
   level: '7'
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-n2: FAIL
-    neoverse-v1: FAIL
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
   tags: S_L7PE_09
   title: Check WFE Fine tune delay feature
 37:
