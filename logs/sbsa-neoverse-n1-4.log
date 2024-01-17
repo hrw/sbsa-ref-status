@@ -29,9 +29,6 @@ QEMU command line arguments:
 -device pcie-root-port,id=root_port_for_pci,chassis=1
 -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
 -device virtio-rng-pci,bus=pci,addr=8
--device pxb-pcie,id=pxb1,bus_nr=2
--device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
--device ahci,bus=root_port_for_ahci
 
 EFI startup script:
 mode 100 31
@@ -40,15 +37,15 @@ fs0:sbsa.efi -skip 861 -l 4
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
-UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
+UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -82,14 +79,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
-             Vendor 1B36 Device 000B Prog Interface 0
     [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 104C Device 8232 Prog Interface 0
     [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
-             Vendor 8086 Device 2922 Prog Interface 1
+             Vendor 104C Device 8233 Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
     [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
@@ -106,7 +101,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  SBSA Architecture Compliance Suite
-    Version 7.1.3
+    Version 7.1.4
 
  Starting tests for level  4 (Print level is  3)
 
@@ -125,11 +120,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
  PCIE_INFO: Number of EP              :    3
- PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of RP              :    6
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
  PCIE_INFO: Number of UP of switch    :    1
- PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    1
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
  PCIE_INFO: Number of PCIe/PCI Bridge :    1
  SMMU_INFO: Number of SMMU CTRL       :    1

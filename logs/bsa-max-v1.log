@@ -29,9 +29,6 @@ QEMU command line arguments:
 -device pcie-root-port,id=root_port_for_pci,chassis=1
 -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
 -device virtio-rng-pci,bus=pci,addr=8
--device pxb-pcie,id=pxb1,bus_nr=2
--device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
--device ahci,bus=root_port_for_ahci
 
 EFI startup script:
 mode 100 31
@@ -40,15 +37,15 @@ fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
-UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
+UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -82,14 +79,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
-             Vendor 1B36 Device 000B Prog Interface 0
     [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 104C Device 8232 Prog Interface 0
     [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
-             Vendor 8086 Device 2922 Prog Interface 1
+             Vendor 104C Device 8233 Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
     [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
@@ -106,7 +101,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  BSA Architecture Compliance Suite
-          Version 1.0.6
+          Version 1.0.7
 
  Starting tests with print level :  1
 
@@ -151,6 +146,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Start Bus = 0x0
   End Bus   = 0xFF
  PCIE_INFO: Number of ECAM regions    :    1
+  Dev bdf 0x000100 type 0x200 RP bdf 0xFFFFFFFF
+  Dev bdf 0x000200 type 0x200 RP bdf 0xFFFFFFFF
   Dev bdf 0x000300 type 0x10 RP bdf 0x000300
   Dev bdf 0x000400 type 0x10 RP bdf 0x000400
   Dev bdf 0x000500 type 0x10 RP bdf 0x000500
@@ -158,24 +155,28 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Dev bdf 0x000700 type 0x10 RP bdf 0x000700
   Dev bdf 0x000800 type 0x10 RP bdf 0x000800
   Dev bdf 0x010000 type 0x20 RP bdf 0x000300
-  Dev bdf 0x020000 type 0x10 RP bdf 0x020000
+  Dev bdf 0x020000 type 0x40 RP bdf 0x000300
   Dev bdf 0x040000 type 0x01 RP bdf 0x000400
   Dev bdf 0x050000 type 0x01 RP bdf 0x000500
   Dev bdf 0x060000 type 0x01 RP bdf 0x000600
   Dev bdf 0x080000 type 0x80 RP bdf 0x000800
- PCIE_INFO: Number of BDFs found      :    12
- PCIE_INFO: Number of RCiEP           :    0
+ PCIE_INFO: Number of BDFs found      :    14
+ PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
  PCIE_INFO: Number of EP              :    3
- PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of RP              :    6
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
  PCIE_INFO: Number of UP of switch    :    1
- PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    1
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
  PCIE_INFO: Number of PCIe/PCI Bridge :    1
 
   ECAM 0:  Base 0xF0000000
+  BDF: 0x100
+  Seg: 0x0, Bus: 0x00, Dev: 0x01, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  BDF: 0x200
+  Seg: 0x0, Bus: 0x00, Dev: 0x02, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
   BDF: 0x300
   Seg: 0x0, Bus: 0x00, Dev: 0x03, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x400
@@ -191,7 +192,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   BDF: 0x10000
   Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x8232, Vendor ID: 0x104C
   BDF: 0x20000
-  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x8233, Vendor ID: 0x104C
   BDF: 0x40000
   Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
   BDF: 0x50000
@@ -223,10 +224,10 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  SMMU_INFO: SMMU index 00 version     :    v3.1
  Creating PERIPHERAL INFO table
   000.00.00 class_code = 0 6
-  000.00.19 class_code = 3 12
+  000.00.18 class_code = 3 12
   Found a USB controller 60110000
   000.01.01 class_code = 0 2
-  000.01.20 class_code = 6 1
+  000.01.19 class_code = 6 1
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
   000.04.07 class_code = 4 6
@@ -234,12 +235,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   000.06.11 class_code = 4 6
   000.07.13 class_code = 4 6
   000.08.15 class_code = 4 6
-  000.09.18 class_code = 0 6
   009.08.17 class_code = 255 0
   000.00.00 class_code = 0 6
-  000.00.19 class_code = 3 12
+  000.00.18 class_code = 3 12
   000.01.01 class_code = 0 2
-  000.01.20 class_code = 6 1
+  000.01.19 class_code = 6 1
   Found a SATA controller 60100000
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
@@ -248,7 +248,6 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   000.06.11 class_code = 4 6
   000.07.13 class_code = 4 6
   000.08.15 class_code = 4 6
-  000.09.18 class_code = 0 6
   009.08.17 class_code = 255 0
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
@@ -272,14 +271,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Class code is 6040000
  BDF is 800
  Class code is 6040000
- BDF is 900
- Class code is 6000000
  BDF is 10000
  Class code is 6040002
  BDF is 20000
- Class code is 6040000
+ Class code is 6040001
  BDF is 30000
- Class code is 1060102
+ Class code is 4010001
  BDF is 40000
  Class code is 1080202
  BDF is 50000
@@ -292,7 +289,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Class code is 6040000
  BDF is 90800
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2
- Peripheral: Num of Storage ctrl      :    2
+ Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
   Reserved region of type 7 [0x10000000000, 0x100FBC69000]
@@ -304,10 +301,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDD92000]
-  Reserved region of type 4 [0x100FDD92000, 0x100FDF09000]
-  Reserved region of type 7 [0x100FDF09000, 0x100FDF0B000]
-  Reserved region of type 4 [0x100FDF0B000, 0x100FEF04000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDE9D000]
+  Reserved region of type 4 [0x100FDE9D000, 0x100FEF04000]
   Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
   Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
   Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
@@ -322,7 +317,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FDF3C318
+ Shared memory is 100FE067998
 
       *** Starting PE tests ***
 
@@ -473,9 +468,14 @@ Platform Security View:
 
 Operating System View:
  102 : Mem Access Response in finite time    
-       STARTInstance 0x2 not found for memory type 0x1000
+       START
+       Device Mem Address : 0x10000000
+       Device Mem Address : 0x60010000Instance 0x2 not found for memory type 0x1000
 
        Error in getting dev mem for index 2  
+       Normal Mem Address : 0x10000000000
+       Normal Mem Address : 0x100FBFE0000
+       Normal Mem Address : 0x100FC020000
        B_MEM_01
                                        : Result:  PASS
        END
@@ -601,6 +601,7 @@ Operating System View:
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
+       RC block->data.smmu.base: 60050000    
        ITS_DEV_2
                                        : Result:  PASS
        END
@@ -608,6 +609,8 @@ Operating System View:
  279 : Check Device's ReqID-DeviceID-StreamID
        START
        RC block->data.smmu.base: 60050000    
+       RC block->data.smmu.base: 60050000    
+       Checking ReqID-StreamID-DeviceID Association, Bdf : 300
        RC block->data.smmu.base: 60050000    
        Checking ReqID-StreamID-DeviceID Association, Bdf : 400
        RC block->data.smmu.base: 60050000    
@@ -860,6 +863,8 @@ Operating System View:
 
  803 : All EP/Sw under RP in same ECAM Region
        START
+       BDF - 0x100
+       BDF - 0x200
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1159,7 +1164,6 @@ Operating System View:
        BDF - 0x600
        BDF - 0x700
        BDF - 0x800
-       BDF - 0x20000
        PCI_IN_20
                                        : Result:  PASS
        END
@@ -1172,7 +1176,6 @@ Operating System View:
        BDF - 0x600
        BDF - 0x700
        BDF - 0x800
-       BDF - 0x20000
        PCI_IN_18
                                        : Result:  PASS
        END
@@ -1263,16 +1266,6 @@ Operating System View:
        BDF 0x800 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
        BDF 0x40000 : PASS
        BDF 0x40000 : PASS
        BDF 0x40000 : PASS
@@ -1383,16 +1376,6 @@ Operating System View:
        BDF 0x800 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
        PCI_IN_05, PCI_IN_19
                                        : Result:  PASS
        END
@@ -1418,9 +1401,6 @@ Operating System View:
        BDF 0x800 : PASS
        BDF 0x800 : PASS
        BDF 0x800 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
-       BDF 0x20000 : PASS
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1434,7 +1414,6 @@ Operating System View:
        BDF 0x600 : PASS
        BDF 0x700 : PASS
        BDF 0x800 : PASS
-       BDF 0x20000 : PASS
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1457,26 +1436,28 @@ Operating System View:
 
  830 : Check Cmd Reg memory space enable     
        START
-      tbl_index 0      BDF 300      Bar Base 0
-      tbl_index 1      BDF 400      Bar Base 81400000    bar_data FFFFFFFF 
-      tbl_index 2      BDF 500      Bar Base 81320000    bar_data FFFFFFFF 
-      tbl_index 3      BDF 600      Bar Base 81200000    bar_data FFFFFFFF 
-      tbl_index 4      BDF 700      Bar Base 81785000    bar_data FFFFFFFF 
-      tbl_index 5      BDF 800      Bar Base 81100000    bar_data FFFFFFFF 
-      tbl_index 6      BDF 10000      Bar Base 81600000    bar_data 0 
-       BDF 10000 MSE functionality failure
-      tbl_index 7      BDF 20000      Bar Base 81600000    bar_data FFFFFFFF 
-      tbl_index 8      BDF 40000      Bar Base 81400000    bar_data FFFFFFFF 
-      tbl_index 9      BDF 50000      Bar Base 81320000    bar_data FFFFFFFF 
-      tbl_index A      BDF 60000      Bar Base 81200000    bar_data FFFFFFFF 
-      tbl_index B      BDF 80000      Bar Base 81100000    bar_data FFFFFFFF 
-       Failed on PE -    0
+      tbl_index 0      BDF 100
+      tbl_index 1      BDF 200
+      tbl_index 2      BDF 300      Bar Base 0
+      tbl_index 3      BDF 400      Bar Base 81400000    bar_data FFFFFFFF 
+      tbl_index 4      BDF 500      Bar Base 81320000    bar_data FFFFFFFF 
+      tbl_index 5      BDF 600      Bar Base 81200000    bar_data FFFFFFFF 
+      tbl_index 6      BDF 700      Bar Base 81585000    bar_data FFFFFFFF 
+      tbl_index 7      BDF 800      Bar Base 81100000    bar_data FFFFFFFF 
+      tbl_index 8      BDF 10000      Bar Base 0
+      tbl_index 9      BDF 20000      Bar Base 0
+      tbl_index A      BDF 40000      Bar Base 81400000    bar_data FFFFFFFF 
+      tbl_index B      BDF 50000      Bar Base 81320000    bar_data FFFFFFFF 
+      tbl_index C      BDF 60000      Bar Base 81200000    bar_data FFFFFFFF 
+      tbl_index D      BDF 80000      Bar Base 81100000    bar_data FFFFFFFF 
        PCI_IN_19
-       Checkpoint --  1                           : Result:  FAIL
+                                       : Result:  PASS
        END
 
  831 : Check Type0/1 BIST Register rule      
        START
+       BDF - 0x100
+       BDF - 0x200
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1495,6 +1476,8 @@ Operating System View:
 
  832 : Check HDR CapPtr Register rule        
        START
+       BDF - 0x100
+       BDF - 0x200
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1513,6 +1496,8 @@ Operating System View:
 
  833 : Check Max payload size supported      
        START
+       BDF - 0x100
+       BDF - 0x200
        BDF - 0x300
        BDF - 0x400
        BDF - 0x500
@@ -1558,7 +1543,6 @@ Operating System View:
        BDF 0x600
        BDF 0x700
        BDF 0x800
-       BDF 0x20000
        PCI_IN_12
                                        : Result:  PASS
        END
@@ -1576,8 +1560,6 @@ Operating System View:
        BDF: 0x700 Dev ID: 0xC Vendor ID: 0x1B36
        ECAM base 0xF0000000 matches with RPs base address 
        BDF: 0x800 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x20000 Dev ID: 0xC Vendor ID: 0x1B36
        ECAM base 0xF0000000 matches with RPs base address 
        PCI_IN_03
                                        : Result:  PASS
@@ -1610,13 +1592,12 @@ Operating System View:
 
 
       One or more PCIe tests failed or were skipped.
-
-PCIE_INFO: Number of exerciser cards :    0
+ PCIE_INFO: Number of exerciser cards :    0 
 
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    3
+     Total Tests run  =   84  Tests Passed  =   72  Tests Failed =    2
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***

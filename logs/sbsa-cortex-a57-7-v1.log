@@ -29,9 +29,6 @@ QEMU command line arguments:
 -device pcie-root-port,id=root_port_for_pci,chassis=1
 -device pcie-pci-bridge,id=pci,bus=root_port_for_pci
 -device virtio-rng-pci,bus=pci,addr=8
--device pxb-pcie,id=pxb1,bus_nr=2
--device pcie-root-port,id=root_port_for_ahci,bus=pxb1,chassis=2,slot=1
--device ahci,bus=root_port_for_ahci
 
 EFI startup script:
 mode 100 31
@@ -40,15 +37,15 @@ fs0:sbsa.efi -skip 861 -l 7 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL1: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL2: Built : 10:41:16, Dec 18 2023
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-85-g41e370ed9
-NOTICE:  BL31: Built : 10:41:16, Dec 18 2023
-UEFI firmware (version 1.0 built at 10:21:01 on Dec 18 2023)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
+NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
+UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -82,14 +79,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000C Prog Interface 0
     [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   09    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
-             Vendor 1B36 Device 000B Prog Interface 0
     [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 104C Device 8232 Prog Interface 0
     [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMass Storage Controller - Serial ATA controller
-             Vendor 8086 Device 2922 Prog Interface 1
+             Vendor 104C Device 8233 Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
     [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
     [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
@@ -106,7 +101,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  SBSA Architecture Compliance Suite
-    Version 7.1.3
+    Version 7.1.4
 
  Starting tests for level  7 (Print level is  1)
 
@@ -120,6 +115,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   PE Enabled 1, Online Capable 0
  MPIDR 1 PE num 1
  PE_INFO: Number of PE detected       :    2
+ PE_INFO: Primary PE index       :    0 
  MADT is at FBF8E498 and length is 108
  GICH base 2C010000
  GICH base 2C010000
@@ -200,7 +196,7 @@ PE Index * 1 *
    Dev bdf 0x000700 DP type 0x010  RP bdf 0x000700
    Dev bdf 0x000800 DP type 0x010  RP bdf 0x000800
    Dev bdf 0x010000 DP type 0x020  RP bdf 0x000300
-   Dev bdf 0x020000 DP type 0x010  RP bdf 0x020000
+   Dev bdf 0x020000 DP type 0x040  RP bdf 0x000300
    Dev bdf 0x040000 DP type 0x001  RP bdf 0x000400
    Dev bdf 0x050000 DP type 0x001  RP bdf 0x000500
    Dev bdf 0x060000 DP type 0x001  RP bdf 0x000600
@@ -209,11 +205,11 @@ PE Index * 1 *
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
  PCIE_INFO: Number of EP              :    3
- PCIE_INFO: Number of RP              :    7
+ PCIE_INFO: Number of RP              :    6
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
  PCIE_INFO: Number of UP of switch    :    1
- PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    1
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
  PCIE_INFO: Number of PCIe/PCI Bridge :    1
 
@@ -237,7 +233,7 @@ PE Index * 1 *
   BDF: 0x10000
   Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x8232, Vendor ID: 0x104C
   BDF: 0x20000
-  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x8233, Vendor ID: 0x104C
   BDF: 0x40000
   Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
   BDF: 0x50000
@@ -267,10 +263,10 @@ PE Index * 1 *
 
  SMMU_INFO: Number of SMMU CTRL       :    1
  000.00.00 class_code = 0 6
- 000.00.19 class_code = 3 12
+ 000.00.18 class_code = 3 12
  Found a USB controller 60110000
  000.01.01 class_code = 0 2
- 000.01.20 class_code = 6 1
+ 000.01.19 class_code = 6 1
  000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
  000.04.07 class_code = 4 6
@@ -278,12 +274,11 @@ PE Index * 1 *
  000.06.11 class_code = 4 6
  000.07.13 class_code = 4 6
  000.08.15 class_code = 4 6
- 000.09.18 class_code = 0 6
  009.08.17 class_code = 255 0
  000.00.00 class_code = 0 6
- 000.00.19 class_code = 3 12
+ 000.00.18 class_code = 3 12
  000.01.01 class_code = 0 2
- 000.01.20 class_code = 6 1
+ 000.01.19 class_code = 6 1
  Found a SATA controller 60100000
  000.02.02 class_code = 128 3
  000.03.03 class_code = 4 6
@@ -292,7 +287,6 @@ PE Index * 1 *
  000.06.11 class_code = 4 6
  000.07.13 class_code = 4 6
  000.08.15 class_code = 4 6
- 000.09.18 class_code = 0 6
  009.08.17 class_code = 255 0
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
@@ -316,14 +310,12 @@ PE Index * 1 *
  Class code is 6040000
  BDF is 800
  Class code is 6040000
- BDF is 900
- Class code is 6000000
  BDF is 10000
  Class code is 6040002
  BDF is 20000
- Class code is 6040000
+ Class code is 6040001
  BDF is 30000
- Class code is 1060102
+ Class code is 4010001
  BDF is 40000
  Class code is 1080202
  BDF is 50000
@@ -336,10 +328,10 @@ PE Index * 1 *
  Class code is 6040000
  BDF is 90800
  Class code is FF0000 Peripheral: Num of Network ctrl      :    2
- Peripheral: Num of Storage ctrl      :    2
+ Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
- Reserved region of type 7 [0x10000000000, 0x100FBC58000]
- Reserved region of type 1 [0x100FBC58000, 0x100FBDC0000]
+ Reserved region of type 7 [0x10000000000, 0x100FBC57000]
+ Reserved region of type 1 [0x100FBC57000, 0x100FBDC0000]
  Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
  Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
  Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
@@ -347,8 +339,8 @@ PE Index * 1 *
  Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
  Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
- Reserved region of type 7 [0x100FC020000, 0x100FDD03000]
- Reserved region of type 4 [0x100FDD03000, 0x100FEF04000]
+ Reserved region of type 7 [0x100FC020000, 0x100FDE0B000]
+ Reserved region of type 4 [0x100FDE0B000, 0x100FEF04000]
  Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
  Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
  Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
@@ -367,7 +359,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0
- Shared memory is 100FDF3B798
+ Shared memory is 100FE02AF98
 
       *** Starting PE tests ***
    1 : Check PE Granule Support          
@@ -491,6 +483,7 @@ PE Index * 1 *
 
   17 : Check SPE if implemented          
        START  
+       ID_AA64PFR0_EL1.SVE = 0
        PSCI_CPU_ON: success  
        B_PE_17
        Checkpoint --  2                  : Result:  SKIPPED
@@ -641,10 +634,11 @@ PE Index * 1 *
 
   36 : Check WFE Fine tune delay feature 
        START  
+       ID_AA64MMFR1_EL1.TWED = 0
+       Recommened WFE fine-tuning delay feature not implemented
        PSCI_CPU_ON: success  
-       Failed on PE -    0 for Level=  7 
        S_L7PE_09
-       Checkpoint --  1                  : Result:  FAIL
+       Checkpoint --  2                  : Result:  SKIPPED
        END
 
   37 : Check for enhanced PAN feature    
@@ -852,7 +846,6 @@ PE Index * 1 *
  803 : Check ECAM Memory accessibility   
        START  
        Skipping legacy PCI device with BDF 0x0
-       Skipping legacy PCI device with BDF 0x900
        Skipping legacy PCI device with BDF 0x30000
        Skipping legacy PCI device with BDF 0x70000
        Skipping legacy PCI device with BDF 0x90800
@@ -1014,7 +1007,7 @@ PE Index * 1 *
  830 : Check Cmd Reg memory space enable 
        START  
        tbl_index 0
-       BDF - 0x100       Bar Base 81760000       bar_data FFFFFFFF 
+       BDF - 0x100       Bar Base 81560000       bar_data FFFFFFFF 
        tbl_index 1
        BDF - 0x200       Bar Base 80000000       bar_data FFFFFFFF 
        tbl_index 2
@@ -1203,9 +1196,9 @@ PE Index * 1 *
 
  858 : Read and write to BAR reg         
        START  
-       BDF - 0x100 BAR offset0x10 value is 0x81760000     
+       BDF - 0x100 BAR offset0x10 value is 0x81560000     
        The BAR supports 32-bit address capability
-       BDF - 0x100 BAR offset0x14 value is 0x81740000     
+       BDF - 0x100 BAR offset0x14 value is 0x81540000     
        The BAR supports 32-bit address capability
        BDF - 0x200 BAR offset0x10 value is 0x80000008     
        The BAR supports 32-bit address capability
@@ -1287,7 +1280,7 @@ PE Index * 1 *
        PE RAS extension unimplemented. Skipping all RAS tests
 
      -------------------------------------------------------
-     Total Tests run  =  100;  Tests Passed  =   27  Tests Failed =   41
+     Total Tests run  =  100;  Tests Passed  =   27  Tests Failed =   40
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 
