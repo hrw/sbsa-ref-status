@@ -37,15 +37,15 @@ fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
-UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
+UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -303,15 +303,13 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDE9D000]
-  Reserved region of type 4 [0x100FDE9D000, 0x100FEF04000]
-  Reserved region of type 7 [0x100FEF04000, 0x100FF19E000]
-  Reserved region of type 3 [0x100FF19E000, 0x100FF4E0000]
-  Reserved region of type 5 [0x100FF4E0000, 0x100FF670000]
-  Reserved region of type 6 [0x100FF670000, 0x100FF8C0000]
-  Reserved region of type 7 [0x100FF8C0000, 0x100FF8D0000]
-  Reserved region of type 6 [0x100FF8D0000, 0x100FF8E0000]
-  Reserved region of type 7 [0x100FF8E0000, 0x100FF8ED000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDEAC000]
+  Reserved region of type 4 [0x100FDEAC000, 0x100FEF14000]
+  Reserved region of type 7 [0x100FEF14000, 0x100FF1AD000]
+  Reserved region of type 3 [0x100FF1AD000, 0x100FF4F0000]
+  Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
+  Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
+  Reserved region of type 7 [0x100FF8D0000, 0x100FF8ED000]
   Reserved region of type 4 [0x100FF8ED000, 0x100FF910000]
   Reserved region of type 3 [0x100FF910000, 0x100FF947000]
   Reserved region of type 4 [0x100FF947000, 0x100FFFE8000]
@@ -319,7 +317,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE067998
+ Shared memory is 100FE076998
 
       *** Starting PE tests ***
 

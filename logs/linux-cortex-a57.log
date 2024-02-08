@@ -37,15 +37,15 @@ fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
-UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
+UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -104,10 +104,10 @@ EFI stub: Loaded initrd from command line option
 EFI stub: Generating empty DTB
 EFI stub: Exiting boot services...
 Booting Linux on physical CPU 0x0000000000 [0x411fd070]
-Linux version 6.6.11-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-9) 13.2.0, GNU ld (GNU Binutils for Debian) 2.41.50.20231227) #1 SMP Debian 6.6.11-1 (2024-01-14)
+Linux version 6.6.13-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-9) 13.2.0, GNU ld (GNU Binutils for Debian) 2.41.90.20240115) #1 SMP Debian 6.6.13-1 (2024-01-20)
 KASLR disabled due to lack of seed
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe641118 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
+efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe650118 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
 ACPI: RSDP 0x00000100FBF80018 000024 (v02 LINARO)
@@ -126,7 +126,7 @@ ACPI: BGRT 0x00000100FBF8E718 000038 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001
 ACPI: SPCR: console: pl011,mmio32,0x60000000,115200
 NUMA: Failed to initialise from firmware
 NUMA: Faking a node at [mem 0x0000010000000000-0x00000100ffffffff]
-NUMA: NODE_DATA [mem 0x100ff406240-0x100ff408fff]
+NUMA: NODE_DATA [mem 0x100ff416240-0x100ff418fff]
 Zone ranges:
   DMA      [mem 0x0000010000000000-0x00000100ffffffff]
   DMA32    empty
@@ -137,11 +137,9 @@ Early memory node ranges
   node   0: [mem 0x00000100fbdc0000-0x00000100fbf2ffff]
   node   0: [mem 0x00000100fbf30000-0x00000100fbf8ffff]
   node   0: [mem 0x00000100fbf90000-0x00000100fbfdffff]
-  node   0: [mem 0x00000100fbfe0000-0x00000100ff4dffff]
-  node   0: [mem 0x00000100ff4e0000-0x00000100ff8bffff]
-  node   0: [mem 0x00000100ff8c0000-0x00000100ff8cffff]
-  node   0: [mem 0x00000100ff8d0000-0x00000100ff8dffff]
-  node   0: [mem 0x00000100ff8e0000-0x00000100ffffffff]
+  node   0: [mem 0x00000100fbfe0000-0x00000100ff4effff]
+  node   0: [mem 0x00000100ff4f0000-0x00000100ff8cffff]
+  node   0: [mem 0x00000100ff8d0000-0x00000100ffffffff]
 Initmem setup node 0 [mem 0x0000010000000000-0x00000100ffffffff]
 cma: Reserved 64 MiB at 0x0000010000000000 on node -1
 psci: probing for conduit method from ACPI.
@@ -170,9 +168,9 @@ Policy zone: DMA
 mem auto-init: stack:all(zero), heap alloc:on, heap free:off
 software IO TLB: area num 2.
 software IO TLB: mapped [mem 0x00000100ed400000-0x00000100f1400000] (64MB)
-Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10124K rodata, 7360K init, 632K bss, 200868K reserved, 65536K cma-reserved)
+Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10124K rodata, 7360K init, 632K bss, 200804K reserved, 65536K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
-ftrace: allocating 47131 entries in 185 pages
+ftrace: allocating 47143 entries in 185 pages
 ftrace: allocated 185 pages with 5 groups
 trace event string verifier disabled
 rcu: Hierarchical RCU implementation.
@@ -235,7 +233,7 @@ clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.4.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 01/17/2024
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 02/08/2024
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
@@ -515,10 +513,10 @@ NET: Registered PF_UNIX/PF_LOCAL protocol family
 NET: Registered PF_XDP protocol family
 pci 0000:06:00.0: enabling device (0000 -> 0002)
 PCI: CLS 0 bytes, default 64
-Trying to unpack rootfs image as initramfs...
 kvm [1]: Guests without required CPU erratum workarounds can deadlock system!
 Only trusted guests should be used on this system.
 kvm [1]: IPA Size Limit: 44 bits
+Trying to unpack rootfs image as initramfs...
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
@@ -531,9 +529,9 @@ zbud: loaded
 fuse: init (API version 7.39)
 integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
-Freeing initrd memory: 12692K
 Key type asymmetric registered
 Asymmetric key parser 'x509' registered
+Freeing initrd memory: 12692K
 Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
 io scheduler mq-deadline registered
 shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
@@ -555,7 +553,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-01-17T14:52:23 UTC (1705503143)
+rtc-efi rtc-efi.0: setting system clock to 2024-02-08T14:48:12 UTC (1707403692)
 ledtrig-cpu: registered to indicate activity on CPUs
 SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
 hw perfevents: enabled with armv8_pmuv3_0 PMU driver, 7 counters available
@@ -567,7 +565,7 @@ NET: Registered PF_PACKET protocol family
 mpls_gso: MPLS GSO support
 registered taskstats version 1
 Loading compiled-in X.509 certificates
-Loaded X.509 cert 'Build time autogenerated kernel key: 74fbb493298c669eefd92db1d831b7254294ba07'
+Loaded X.509 cert 'Build time autogenerated kernel key: ad867652976a14a4f863247eb866be75d82c9fde'
 Key type .fscrypt registered
 Key type fscrypt-provisioning registered
 Key type encrypted registered

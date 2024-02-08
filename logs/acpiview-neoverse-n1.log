@@ -37,15 +37,15 @@ acpiview
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL1: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL2: Built : 15:48:13, Jan 17 2024
+NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-183-g54b1bfdb6-dirty
-NOTICE:  BL31: Built : 15:48:13, Jan 17 2024
-UEFI firmware (version 1.0 built at 15:29:31 on Jan 17 2024)
+NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
+NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
+UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -1078,9 +1078,9 @@ GTDT                                 :
 Address  : 0x100FBF8E718
 Length   : 56
   
-00000000 : 42 47 52 54 38 00 00 00 - 01 4D 4C 49 4E 41 52 4F   BGRT8....MLINARO
+00000000 : 42 47 52 54 38 00 00 00 - 01 5C 4C 49 4E 41 52 4F   BGRT8....\LINARO
 00000010 : 53 42 53 41 51 45 4D 55 - 10 08 20 20 4C 4E 52 4F   SBSAQEMU..  LNRO
-00000020 : 01 00 00 00 01 00 01 00 - 18 80 63 FE 00 01 00 00   ..........c.....
+00000020 : 01 00 00 00 01 00 01 00 - 18 70 64 FE 00 01 00 00   .........pd.....
 00000030 : 1F 02 00 00 73 01 00 00                             ....s...
 
 Table Checksum : OK
@@ -1089,7 +1089,7 @@ BGRT                                 :
   Signature                          : BGRT
   Length                             : 56
   Revision                           : 1
-  Checksum                           : 0x4D
+  Checksum                           : 0x5C
   Oem ID                             : LINARO
   Oem Table ID                       : SBSAQEMU
   Oem Revision                       : 0x20200810
@@ -1098,7 +1098,7 @@ BGRT                                 :
   Version                            : 0x1
   Status                             : 0x1
   Image Type                         : 0x0
-  Image Address                      : 0x100FE638018
+  Image Address                      : 0x100FE647018
   Image Offset X                     : 543
   Image Offset Y                     : 371
 
