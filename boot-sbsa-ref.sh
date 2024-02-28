@@ -190,6 +190,7 @@ its_pci_setup=(
 # 1b36:000d qemu-xhci
 # 1b36:000e pcie-pci-bridge 
 # 1b36:0010 qemu nvme       
+# 8086:10d3 intel e1000e
 # 8086:10c9 intel igb       
 # 8086:2922 ahci            
 
