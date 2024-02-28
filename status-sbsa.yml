@@ -107,7 +107,7 @@
     neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_02
-  title: Check for pointer signing
+  title: Check for addr and generic auth
 11:
   comment: does not make sense to implement in QEMU
   level: '5'
@@ -153,7 +153,7 @@
     neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_07
-  title: Check for nested virtualization
+  title: Check for FEAT_NV2 support
 15:
   level: '5'
   status:
@@ -333,7 +333,7 @@
     neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_03
-  title: Check for AMUv1p1 Support
+  title: Check for AMUv1 Support
 31:
   level: '7'
   status:
@@ -366,7 +366,7 @@
     neoverse-n2: PASS
     neoverse-v1: FAIL
   tags: S_L7PE_06
-  title: Check for EnhancedPAC2 and FPAC
+  title: Check PAuth2, FPAC & FPACCOMBINE
 34:
   level: '7'
   status:
