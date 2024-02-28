@@ -37,15 +37,15 @@ fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL1: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL1: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL2: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL2: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
-UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL31: Built : 11:39:00, Feb 28 2024
+UEFI firmware (version 1.0 built at 13:55:51 on Feb 21 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -104,14 +104,14 @@ EFI stub: Loaded initrd from command line option
 EFI stub: Generating empty DTB
 EFI stub: Exiting boot services...
 Booting Linux on physical CPU 0x0000000000 [0x410fd493]
-Linux version 6.6.13-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-9) 13.2.0, GNU ld (GNU Binutils for Debian) 2.41.90.20240115) #1 SMP Debian 6.6.13-1 (2024-01-20)
+Linux version 6.6.15-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-13) 13.2.0, GNU ld (GNU Binutils for Debian) 2.42) #1 SMP Debian 6.6.15-2 (2024-02-04)
 KASLR enabled
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe650118 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
+efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe64a118 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
 ACPI: RSDP 0x00000100FBF80018 000024 (v02 LINARO)
-ACPI: XSDT 0x00000100FBF8FE98 000074 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: XSDT 0x00000100FBF8FE98 00007C (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: FACP 0x00000100FBF8FB98 000114 (v06 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: DSDT 0x00000100FBF8E998 000CDB (v02 LINARO SBSAQEMU 20200810 INTL 20220331)
 ACPI: DBG2 0x00000100FBF8FA98 00005C (v00 LINARO SBSAQEMU 20200810 LNRO 00000001)
@@ -121,11 +121,11 @@ ACPI: IORT 0x00000100FBF87518 0000DC (v00 LINARO SBSAQEMU 20200810 LNRO 00000001
 ACPI: APIC 0x00000100FBF8E498 000108 (v04 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: SSDT 0x00000100FBF8E898 000067 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: PPTT 0x00000100FBF8FD18 0000B8 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: GTDT 0x00000100FBF8E618 000084 (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: BGRT 0x00000100FBF8E718 000038 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: SRAT 0x00000100FBF8E618 00007C (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: GTDT 0x00000100FBF8E718 000084 (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: BGRT 0x00000100FBF8E818 000038 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: SPCR: console: pl011,mmio32,0x60000000,115200
-NUMA: Failed to initialise from firmware
-NUMA: Faking a node at [mem 0x0000010000000000-0x00000100ffffffff]
+ACPI: SRAT: Node 0 PXM 0 [mem 0x10000000000-0x100ffffffff]
 NUMA: NODE_DATA [mem 0x100ff416240-0x100ff418fff]
 Zone ranges:
   DMA      [mem 0x0000010000000000-0x00000100ffffffff]
@@ -133,9 +133,9 @@ Zone ranges:
   Normal   empty
 Movable zone start for each node
 Early memory node ranges
-  node   0: [mem 0x0000010000000000-0x00000100fbdbffff]
-  node   0: [mem 0x00000100fbdc0000-0x00000100fbf2ffff]
-  node   0: [mem 0x00000100fbf30000-0x00000100fbf8ffff]
+  node   0: [mem 0x0000010000000000-0x00000100fbdaffff]
+  node   0: [mem 0x00000100fbdb0000-0x00000100fbf1ffff]
+  node   0: [mem 0x00000100fbf20000-0x00000100fbf8ffff]
   node   0: [mem 0x00000100fbf90000-0x00000100fbfdffff]
   node   0: [mem 0x00000100fbfe0000-0x00000100ff4effff]
   node   0: [mem 0x00000100ff4f0000-0x00000100ff8cffff]
@@ -147,6 +147,8 @@ psci: PSCIv1.1 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
 psci: MIGRATE_INFO_TYPE not supported.
 psci: SMC Calling Convention v1.4
+ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x0 -> Node 0
+ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x1 -> Node 0
 percpu: Embedded 31 pages/cpu s89192 r8192 d29592 u126976
 Detected PIPT I-cache on CPU0
 CPU features: detected: Address authentication (architected QARMA5 algorithm)
@@ -170,9 +172,9 @@ Policy zone: DMA
 mem auto-init: stack:all(zero), heap alloc:on, heap free:off
 software IO TLB: area num 2.
 software IO TLB: mapped [mem 0x00000100ed400000-0x00000100f1400000] (64MB)
-Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10124K rodata, 7360K init, 632K bss, 200804K reserved, 65536K cma-reserved)
+Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10128K rodata, 7296K init, 632K bss, 200804K reserved, 65536K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
-ftrace: allocating 47143 entries in 185 pages
+ftrace: allocating 47164 entries in 185 pages
 ftrace: allocated 185 pages with 5 groups
 trace event string verifier disabled
 rcu: Hierarchical RCU implementation.
@@ -257,13 +259,13 @@ clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.4.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 02/08/2024
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 02/28/2024
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.324:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.320:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -277,7 +279,7 @@ acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
 Serial: AMBA PL011 UART driver
 Modules: 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
 Modules: 0 pages in range for non-PLT usage
-Modules: 515440 pages in range for PLT usage
+Modules: 515456 pages in range for PLT usage
 HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
 HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
@@ -544,7 +546,6 @@ kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
 kvm [1]: vgic interrupt IRQ9
 kvm [1]: VHE mode initialized successfully
-Trying to unpack rootfs image as initramfs...
 Initialise system trusted keyrings
 Key type blacklist registered
 workingset: timestamp_bits=42 max_order=20 bucket_order=0
@@ -552,19 +553,13 @@ zbud: loaded
 fuse: init (API version 7.39)
 integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
+Trying to unpack rootfs image as initramfs...
 Key type asymmetric registered
 Asymmetric key parser 'x509' registered
 Freeing initrd memory: 12692K
 Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
 io scheduler mq-deadline registered
 shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
-efifb: probing for efifb
-efifb: framebuffer at 0x80000000, using 4000k, total 4000k
-efifb: mode is 1280x800x32, linelength=5120, pages=1
-efifb: scrolling: redraw
-efifb: Truecolor: size=8:8:8:8, shift=24:16:8:0
-Console: switching to colour frame buffer device 160x50
-fb0: EFI VGA frame buffer device
 ACPI GTDT: found 1 SBSA generic Watchdog(s).
 Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
 Serial: AMBA driver
@@ -576,8 +571,15 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-02-08T15:01:14 UTC (1707404474)
+rtc-efi rtc-efi.0: setting system clock to 2024-02-28T10:56:09 UTC (1709117769)
 ledtrig-cpu: registered to indicate activity on CPUs
+efifb: probing for efifb
+efifb: framebuffer at 0x80000000, using 4000k, total 4000k
+efifb: mode is 1280x800x32, linelength=5120, pages=1
+efifb: scrolling: redraw
+efifb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+Console: switching to colour frame buffer device 160x50
+fb0: EFI VGA frame buffer device
 SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
 hw perfevents: enabled with armv8_pmuv3_0 PMU driver, 7 counters available
 NET: Registered PF_INET6 protocol family
@@ -588,7 +590,7 @@ NET: Registered PF_PACKET protocol family
 mpls_gso: MPLS GSO support
 registered taskstats version 1
 Loading compiled-in X.509 certificates
-Loaded X.509 cert 'Build time autogenerated kernel key: ad867652976a14a4f863247eb866be75d82c9fde'
+Loaded X.509 cert 'Build time autogenerated kernel key: 894ee78420a37dee4419e3b1a8e431d22d8e7665'
 Key type .fscrypt registered
 Key type fscrypt-provisioning registered
 Key type encrypted registered
@@ -642,7 +644,7 @@ pcieport 0000:08:00.0: Adding to iommu group 8
 virtio-pci 0000:09:08.0: Adding to iommu group 8
 virtio-pci 0000:09:08.0: enabling device (0000 -> 0003)
 clk: Disabling unused clocks
-Freeing unused kernel memory: 7360K
+Freeing unused kernel memory: 7296K
 Checked W+X mappings: passed, no W+X pages found
 Run /init as init process
 00:00.0 Host bridge [0600]: Red Hat, Inc. QEMU PCIe Host bridge [1b36:0008]

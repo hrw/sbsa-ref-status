@@ -37,15 +37,15 @@ fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL1: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL1: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL2: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL2: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
-UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL31: Built : 11:39:00, Feb 28 2024
+UEFI firmware (version 1.0 built at 13:55:51 on Feb 21 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -133,7 +133,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  Creating TIMER INFO table
-  GTDT is at FBF8E618 and length is 84
+  GTDT is at FBF8E718 and length is 84
   GTDT revision is at 3
  TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
@@ -146,6 +146,10 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Start Bus = 0x0
   End Bus   = 0xFF
  PCIE_INFO: Number of ECAM regions    :    1
+       BDF 0x0 is a Host Bridge...Skipping
+       BDF 0x30000 PCI Express capability not present...Skipping
+       BDF 0x70000 PCI Express capability not present...Skipping
+       BDF 0x90800 PCI Express capability not present...Skipping
   Dev bdf 0x000100 type 0x200 RP bdf 0xFFFFFFFF
   Dev bdf 0x000200 type 0x200 RP bdf 0xFFFFFFFF
   Dev bdf 0x000300 type 0x10 RP bdf 0x000300
@@ -292,30 +296,32 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBC69000]
-  Reserved region of type 1 [0x100FBC69000, 0x100FBDC0000]
-  Reserved region of type 5 [0x100FBDC0000, 0x100FBE40000]
-  Reserved region of type 6 [0x100FBE40000, 0x100FBEE0000]
-  Reserved region of type 5 [0x100FBEE0000, 0x100FBF30000]
-  Reserved region of type 9 [0x100FBF30000, 0x100FBF90000]
+  Reserved region of type 7 [0x10000000000, 0x100FBC59000]
+  Reserved region of type 1 [0x100FBC59000, 0x100FBDB0000]
+  Reserved region of type 5 [0x100FBDB0000, 0x100FBE30000]
+  Reserved region of type 6 [0x100FBE30000, 0x100FBED0000]
+  Reserved region of type 5 [0x100FBED0000, 0x100FBF20000]
+  Reserved region of type 9 [0x100FBF20000, 0x100FBF90000]
   Reserved region of type 5 [0x100FBF90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDEAC000]
-  Reserved region of type 4 [0x100FDEAC000, 0x100FEF14000]
-  Reserved region of type 7 [0x100FEF14000, 0x100FF1AD000]
-  Reserved region of type 3 [0x100FF1AD000, 0x100FF4F0000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDEA4000]
+  Reserved region of type 4 [0x100FDEA4000, 0x100FE01B000]
+  Reserved region of type 7 [0x100FE01B000, 0x100FE01D000]
+  Reserved region of type 4 [0x100FE01D000, 0x100FEF14000]
+  Reserved region of type 7 [0x100FEF14000, 0x100FF1AA000]
+  Reserved region of type 3 [0x100FF1AA000, 0x100FF4F0000]
   Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
   Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
-  Reserved region of type 7 [0x100FF8D0000, 0x100FF8ED000]
-  Reserved region of type 4 [0x100FF8ED000, 0x100FF910000]
-  Reserved region of type 3 [0x100FF910000, 0x100FF947000]
-  Reserved region of type 4 [0x100FF947000, 0x100FFFE8000]
+  Reserved region of type 7 [0x100FF8D0000, 0x100FF8E8000]
+  Reserved region of type 4 [0x100FF8E8000, 0x100FF90B000]
+  Reserved region of type 3 [0x100FF90B000, 0x100FF942000]
+  Reserved region of type 4 [0x100FF942000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE076998
+ Shared memory is 100FE033F98
 
       *** Starting PE tests ***
 
@@ -408,6 +414,8 @@ Operating System View:
 
   14 : Check PAuth if implementation         
        START
+       ID_AA64ISAR1_EL1 = 111000001211032
+       ID_AA64ISAR2_EL1 = 0
        PSCI_CPU_ON: success
        B_PE_15
                                        : Result:  PASS

@@ -37,15 +37,15 @@ fs0:bsa.efi -sbsa
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL1: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL1: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL1: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL2: Built : 15:44:40, Feb  8 2024
+NOTICE:  BL2: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL2: Built : 11:39:00, Feb 28 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0	(release):v2.10.0-341-ga0d03698a
-NOTICE:  BL31: Built : 15:44:40, Feb  8 2024
-UEFI firmware (version 1.0 built at 15:04:51 on Feb  8 2024)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-02-28-1054-dirty
+NOTICE:  BL31: Built : 11:39:00, Feb 28 2024
+UEFI firmware (version 1.0 built at 13:55:51 on Feb 21 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
