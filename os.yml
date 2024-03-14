@@ -1,0 +1,67 @@
+alpine:
+  file: disks/alpine-standard-3.19.1-aarch64.iso
+  url: https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-standard-3.19.1-aarch64.iso
+centos:
+  file: disks/CentOS-Stream-9-20240226.1-aarch64-boot.iso
+  url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-20240226.1-aarch64-boot.iso
+centos8s:
+  file: disks/CentOS-Stream-8-boot.iso
+  force-download: true
+  force-name: true
+  url: https://mirror.dogado.de/centos/8-stream/BaseOS/aarch64/os/images/boot.iso
+debian:
+  file: disks/debian-testing-arm64-netinst.iso
+  force-download: true
+  url: https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/arm64/iso-cd/debian-testing-arm64-netinst.iso
+debian12:
+  file: disks/debian-12.5.0-arm64-netinst.iso
+  url: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12.5.0-arm64-netinst.iso
+fedora:
+  file: disks/Fedora-Server-netinst-aarch64-39-1.5.iso
+  url: https://download.fedoraproject.org/pub/fedora/linux/releases/39/Server/aarch64/iso/Fedora-Server-netinst-aarch64-39-1.5.iso
+freebsd:
+  file: disks/FreeBSD-14.0-RELEASE-arm64-aarch64-bootonly.iso
+  url: https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/14.0/FreeBSD-14.0-RELEASE-arm64-aarch64-bootonly.iso
+freebsd13:
+  file: disks/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso
+  url: https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso
+freebsd15:
+  file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
+  url: https://download.freebsd.org/snapshots/arm64/aarch64/ISO-IMAGES/15.0/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
+netbsd:
+  file: disks/NetBSD-9-aarch64--generic.img
+  force-download: true
+  type: hdd
+  url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.3-release/NetBSD-9-aarch64--generic.img.gz
+netbsd10:
+  file: disks/NetBSD-10-aarch64-202402281230Z-generic.img
+  type: hdd
+  url: https://nycdn.netbsd.org/pub/arm/netbsd-10/202402281230Z/NetBSD-10-aarch64-202402281230Z-generic.img.gz
+openbsd:
+  file: disks/openbsd-miniroot74.img
+  force-name: true
+  type: hdd
+  url: https://cdn.openbsd.org/pub/OpenBSD/7.4/arm64/miniroot74.img
+openbsd73:
+  file: disks/openbsd-miniroot73.img
+  force-name: true
+  type: hdd
+  url: https://cdn.openbsd.org/pub/OpenBSD/7.3/arm64/miniroot73.img
+openbsd75:
+  file: disks/openbsd-miniroot75.img
+  force-name: true
+  type: hdd
+  url: https://cdn.openbsd.org/pub/OpenBSD/snapshots/arm64/miniroot75.img
+rhel:
+  file: disks/rhel-9.3-aarch64-boot.iso
+  paywall_url: https://developers.redhat.com/products/rhel/download
+rhel8:
+  file: disks/rhel-8.9-aarch64-boot.iso
+  paywall_url: https://developers.redhat.com/products/rhel/download
+sr-acs:
+  file: disks/sr_acs_live_image.img.xz
+  reset: false
+  type: hdd
+  url: https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v23.09_2.0.0/sr_acs_live_image.img.xz
+winpe:
+  file: disks/WinPE_arm64.iso
