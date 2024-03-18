@@ -58,6 +58,8 @@ def download_os_image(os_name, data):
 with open("os.yml") as yml:
     yml_data = yaml.safe_load(yml)
 
+wanted_os = ""
+
 if len(sys.argv) > 1:
     wanted_os = sys.argv[1]
     print(f"Updating only image for {wanted_os}")
