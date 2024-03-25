@@ -37,15 +37,88 @@ fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-02-28-1054-dirty
-NOTICE:  BL1: Built : 11:39:00, Feb 28 2024
+NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
+NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
+INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
+INFO:    BL1: cortex_a57: CPU workaround for erratum 1 was applied
+WARNING: BL1: cortex_a57: CPU workaround for erratum 826974 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 826977 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 828024 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 829520 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 833471 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 859972 was missing!
+WARNING: BL1: cortex_a57: CPU workaround for erratum 1319537 was missing!
+INFO:    BL1: cortex_a57: CPU workaround for CVE 2017_5715 was applied
+INFO:    BL1: cortex_a57: CPU workaround for CVE 2018_3639 was applied
+INFO:    BL1: cortex_a57: CPU workaround for CVE 2022_23960 was applied
+INFO:    BL1: Loading BL2
+INFO:    Loading image id=1 at address 0x3fcd1000
+INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-02-28-1054-dirty
-NOTICE:  BL2: Built : 11:39:00, Feb 28 2024
+INFO:    Entry point address = 0x3fcd1000
+INFO:    SPSR = 0x3c5
+NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
+NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
+INFO:    BL2: Doing platform setup
+INFO:    BL2: Loading image id 3
+INFO:    Loading image id=3 at address 0x3fcee000
+INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
+INFO:    BL2: Skip loading image id 5
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-02-28-1054-dirty
-NOTICE:  BL31: Built : 11:39:00, Feb 28 2024
-UEFI firmware (version 1.0 built at 13:55:51 on Feb 21 2024)
+INFO:    Entry point address = 0x3fcee000
+INFO:    SPSR = 0x3cd
+INFO:    Platform version: 0.3
+INFO:    GICD base = 0x40060000
+INFO:    GICR base = 0x40080000
+INFO:    GICI base = 0x44081000
+INFO:    CPU 0: node-id: 0, mpidr: 0
+INFO:    CPU 1: node-id: 0, mpidr: 1
+INFO:    Found 2 cpus
+INFO:    There is no thread in this cpu-map
+INFO:    There is no thread in this cpu-map
+INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
+INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
+NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
+NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
+INFO:    GICv3 without legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    Maximum SPI INTID supported: 287
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: cortex_a57: CPU workaround for erratum 1 was applied
+WARNING: BL31: cortex_a57: CPU workaround for erratum 826974 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 826977 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 828024 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 829520 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 833471 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 859972 was missing!
+WARNING: BL31: cortex_a57: CPU workaround for erratum 1319537 was missing!
+INFO:    BL31: cortex_a57: CPU workaround for CVE 2017_5715 was applied
+INFO:    BL31: cortex_a57: CPU workaround for CVE 2018_3639 was applied
+INFO:    BL31: cortex_a57: CPU workaround for CVE 2022_23960 was applied
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x10000000
+INFO:    SPSR = 0x3c9
+UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
+INFO:    SMC call: (0xc200012c) (function id: 300)
+INFO:    SMC call: (0xc200012d) (function id: 301)
+INFO:    SMC call: (0xc200012c) (function id: 300)
+INFO:    SMC call: (0xc200012d) (function id: 301)
+INFO:    SMC call: (0xc2000001) (function id: 1)
+INFO:    Platform version requested
+INFO:    SMC call: (0xc2000064) (function id: 100)
+INFO:    SMC call: (0xc2000065) (function id: 101)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c9) (function id: 201)
+INFO:    SMC call: (0xc20000c9) (function id: 201)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
+INFO:    SMC call: (0xc20000c8) (function id: 200)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -107,25 +180,25 @@ Booting Linux on physical CPU 0x0000000000 [0x411fd070]
 Linux version 6.6.15-arm64 (debian-kernel@lists.debian.org) (gcc-13 (Debian 13.2.0-13) 13.2.0, GNU ld (GNU Binutils for Debian) 2.42) #1 SMP Debian 6.6.15-2 (2024-02-04)
 KASLR disabled due to lack of seed
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x100fbf80018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe64a118 INITRD=0x100fbfebf18 MEMRESERVE=0x100fbfebf98 
+efi: ACPI 2.0=0x100fbfeb018 SMBIOS 3.0=0x100ff6b0000 MEMATTR=0x100fe653118 INITRD=0x100fbfe4f18 MEMRESERVE=0x100fbfe4f98 
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
-ACPI: RSDP 0x00000100FBF80018 000024 (v02 LINARO)
-ACPI: XSDT 0x00000100FBF8FE98 00007C (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: FACP 0x00000100FBF8FB98 000114 (v06 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: DSDT 0x00000100FBF8E998 000CDB (v02 LINARO SBSAQEMU 20200810 INTL 20220331)
-ACPI: DBG2 0x00000100FBF8FA98 00005C (v00 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: MCFG 0x00000100FBF8FE18 00003C (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: SPCR 0x00000100FBF8FF98 000050 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: IORT 0x00000100FBF87518 0000DC (v00 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: APIC 0x00000100FBF8E498 000108 (v04 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: SSDT 0x00000100FBF8E898 000067 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: PPTT 0x00000100FBF8FD18 0000B8 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: SRAT 0x00000100FBF8E618 00007C (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: GTDT 0x00000100FBF8E718 000084 (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
-ACPI: BGRT 0x00000100FBF8E818 000038 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: RSDP 0x00000100FBFEB018 000024 (v02 LINARO)
+ACPI: XSDT 0x00000100FBFEBF18 000074 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: FACP 0x00000100FBFEBC18 000114 (v06 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: DSDT 0x00000100FBFEA018 000CDB (v02 LINARO SBSAQEMU 20200810 INTL 20220331)
+ACPI: DBG2 0x00000100FBFEBB18 00005C (v00 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: MCFG 0x00000100FBFEBE98 00003C (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: SPCR 0x00000100FBFEBD98 000050 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: IORT 0x00000100FBFEB098 0000DC (v00 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: APIC 0x00000100FBFEB898 000108 (v04 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: SSDT 0x00000100FBFEBA18 000067 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: PPTT 0x00000100FBFEB218 0000B8 (v02 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: GTDT 0x00000100FBFEB718 000084 (v03 LINARO SBSAQEMU 20200810 LNRO 00000001)
+ACPI: BGRT 0x00000100FBFEB818 000038 (v01 LINARO SBSAQEMU 20200810 LNRO 00000001)
 ACPI: SPCR: console: pl011,mmio32,0x60000000,115200
-ACPI: SRAT: Node 0 PXM 0 [mem 0x10000000000-0x100ffffffff]
+NUMA: Failed to initialise from firmware
+NUMA: Faking a node at [mem 0x0000010000000000-0x00000100ffffffff]
 NUMA: NODE_DATA [mem 0x100ff416240-0x100ff418fff]
 Zone ranges:
   DMA      [mem 0x0000010000000000-0x00000100ffffffff]
@@ -133,10 +206,8 @@ Zone ranges:
   Normal   empty
 Movable zone start for each node
 Early memory node ranges
-  node   0: [mem 0x0000010000000000-0x00000100fbdaffff]
-  node   0: [mem 0x00000100fbdb0000-0x00000100fbf1ffff]
-  node   0: [mem 0x00000100fbf20000-0x00000100fbf8ffff]
-  node   0: [mem 0x00000100fbf90000-0x00000100fbfdffff]
+  node   0: [mem 0x0000010000000000-0x00000100fbe1ffff]
+  node   0: [mem 0x00000100fbe20000-0x00000100fbfdffff]
   node   0: [mem 0x00000100fbfe0000-0x00000100ff4effff]
   node   0: [mem 0x00000100ff4f0000-0x00000100ff8cffff]
   node   0: [mem 0x00000100ff8d0000-0x00000100ffffffff]
@@ -147,8 +218,6 @@ psci: PSCIv1.1 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
 psci: MIGRATE_INFO_TYPE not supported.
 psci: SMC Calling Convention v1.4
-ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x0 -> Node 0
-ACPI: NUMA: SRAT: PXM 0 -> MPIDR 0x1 -> Node 0
 percpu: Embedded 31 pages/cpu s89192 r8192 d29592 u126976
 Detected PIPT I-cache on CPU0
 CPU features: detected: GIC system register CPU interface
@@ -169,8 +238,8 @@ Built 1 zonelists, mobility grouping on.  Total pages: 1032192
 Policy zone: DMA
 mem auto-init: stack:all(zero), heap alloc:on, heap free:off
 software IO TLB: area num 2.
-software IO TLB: mapped [mem 0x00000100ed400000-0x00000100f1400000] (64MB)
-Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10128K rodata, 7296K init, 632K bss, 200804K reserved, 65536K cma-reserved)
+software IO TLB: mapped [mem 0x00000100ed600000-0x00000100f1600000] (64MB)
+Memory: 65536K/4194304K available (14208K kernel code, 2856K rwdata, 10128K rodata, 7296K init, 632K bss, 200388K reserved, 65536K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
 ftrace: allocating 47164 entries in 185 pages
 ftrace: allocated 185 pages with 5 groups
@@ -229,19 +298,19 @@ CPU features: detected: 32-bit EL1 Support
 CPU features: detected: CRC32 instructions
 CPU: All CPU(s) started at EL2
 alternatives: applying system-wide alternatives
-node 0 deferred pages initialised in 24ms
+node 0 deferred pages initialised in 28ms
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.4.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 02/28/2024
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 03/21/2024
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.152:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.156:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -517,8 +586,8 @@ pci 0000:06:00.0: enabling device (0000 -> 0002)
 PCI: CLS 0 bytes, default 64
 kvm [1]: Guests without required CPU erratum workarounds can deadlock system!
 Only trusted guests should be used on this system.
-Trying to unpack rootfs image as initramfs...
 kvm [1]: IPA Size Limit: 44 bits
+Trying to unpack rootfs image as initramfs...
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
@@ -531,9 +600,9 @@ zbud: loaded
 fuse: init (API version 7.39)
 integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
-Freeing initrd memory: 12692K
 Key type asymmetric registered
 Asymmetric key parser 'x509' registered
+Freeing initrd memory: 12692K
 Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
 io scheduler mq-deadline registered
 shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
@@ -548,7 +617,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-02-28T10:43:07 UTC (1709116987)
+rtc-efi rtc-efi.0: setting system clock to 2024-03-25T15:08:27 UTC (1711379307)
 ledtrig-cpu: registered to indicate activity on CPUs
 efifb: probing for efifb
 efifb: framebuffer at 0x80000000, using 4000k, total 4000k
@@ -653,3 +722,4 @@ Run /init as init process
            \-08.0-[08-09]----00.0-[09]----08.0  Red Hat, Inc. Virtio RNG
 kvm: exiting hardware virtualization
 reboot: Power down
+INFO:    PSCI Power Domain Map:
