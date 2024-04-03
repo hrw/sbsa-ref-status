@@ -59,7 +59,7 @@ rhel8:
   file: disks/rhel-8.9-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
 sr-acs:
-  file: disks/sr_acs_live_image.img.xz
+  file: disks/sr_acs_live_image.img
   reset: false
   type: hdd
   url: https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v23.09_2.0.0/sr_acs_live_image.img.xz
