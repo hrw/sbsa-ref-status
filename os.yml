@@ -34,9 +34,9 @@ netbsd:
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.3-release/NetBSD-9-aarch64--generic.img.gz
 netbsd10:
-  file: disks/NetBSD-10-aarch64-202402281230Z-generic.img
+  file: disks/NetBSD-10-aarch64--generic.img
   type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/netbsd-10/202402281230Z/NetBSD-10-aarch64-202402281230Z-generic.img.gz
+  url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
 openbsd:
   file: disks/openbsd-miniroot74.img
   force-name: true
