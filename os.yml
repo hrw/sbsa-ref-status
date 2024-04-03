@@ -55,6 +55,9 @@ openbsd75:
 rhel:
   file: disks/rhel-9.3-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
+rhel10:
+  file: disks/RHEL-10.0-20240318.5-aarch64-boot.iso
+  paywall_url: https://developers.redhat.com/products/rhel/download
 rhel8:
   file: disks/rhel-8.9-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
