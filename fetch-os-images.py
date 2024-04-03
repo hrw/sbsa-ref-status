@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import gzip
+import lzma
 import os
 import requests
 import shutil
@@ -22,6 +23,11 @@ osname:             used with "--os" argument of boot-sbsa-ref.py script
   url:              URL to image
 
 """
+
+
+def unpack_file(fin, newname):
+    with open(newname, 'wb') as fout:
+        shutil.copyfileobj(fin, fout)
 
 
 def download_os_image(os_name, data):
@@ -47,10 +53,15 @@ def download_os_image(os_name, data):
     if data['file'].endswith('.gz'):
         newname = os.path.splitext(data['file'])[0]
         with gzip.open(data['file'], 'rb') as fin:
-            with open(newname, 'wb') as fout:
-                shutil.copyfileobj(fin, fout)
-                os.remove(data['file'])
-                data['file'] = newname
+            unpack_file(fin, newname)
+            os.remove(data['file'])
+            data['file'] = newname
+    elif data['file'].endswith('.xz'):
+        newname = os.path.splitext(data['file'])[0]
+        with lzma.open(data['file'], 'rb') as fin:
+            unpack_file(fin, newname)
+            os.remove(data['file'])
+            data['file'] = newname
 
     return data
 
