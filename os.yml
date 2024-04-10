@@ -29,8 +29,8 @@ freebsd:
   file: disks/FreeBSD-14.0-RELEASE-arm64-aarch64-bootonly.iso
   url: https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/14.0/FreeBSD-14.0-RELEASE-arm64-aarch64-bootonly.iso
 freebsd13:
-  file: disks/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso
-  url: https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/13.2/FreeBSD-13.2-RELEASE-arm64-aarch64-bootonly.iso
+  file: disks/FreeBSD-13.3-RELEASE-arm64-aarch64-bootonly.iso
+  url: https://download.freebsd.org/releases/arm64/aarch64/ISO-IMAGES/13.3/FreeBSD-13.3-RELEASE-arm64-aarch64-bootonly.iso
 freebsd15:
   file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
   url: https://download.freebsd.org/snapshots/arm64/aarch64/ISO-IMAGES/15.0/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
