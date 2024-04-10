@@ -45,6 +45,10 @@ def download_os_image(os_name, data):
     print(f"Downloading {os_name} from {data['url']}")
 
     r = requests.get(data['url'], stream=True)
+
+    if r.status_code != 200:
+        print(f"HTTP Error {r.status_code}")
+        sys.exit(-1)
     with open(data['file'], 'wb') as fd:
         for chunk in r.iter_content(chunk_size=32769):
             fd.write(chunk)
