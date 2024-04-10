@@ -43,11 +43,6 @@ netbsd10:
   file: disks/NetBSD-10-aarch64--generic.img
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
-openbsd:
-  file: disks/openbsd-miniroot74.img
-  force-name: true
-  type: hdd
-  url: https://cdn.openbsd.org/pub/OpenBSD/7.4/arm64/miniroot74.img
 openbsd73:
   file: disks/openbsd-miniroot73.img
   force-name: true
@@ -57,7 +52,12 @@ openbsd75:
   file: disks/openbsd-miniroot75.img
   force-name: true
   type: hdd
-  url: https://cdn.openbsd.org/pub/OpenBSD/snapshots/arm64/miniroot75.img
+  url: https://cdn.openbsd.org/pub/OpenBSD/7.5/arm64/miniroot75.img
+openbsd76:
+  file: disks/openbsd-miniroot76.img
+  force-name: true
+  type: hdd
+  url: https://cdn.openbsd.org/pub/OpenBSD/snapshots/arm64/miniroot76.img
 openeuler:
   file: disks/openEuler-22.03-LTS-SP3-aarch64-dvd.iso
   url: https://mirror.accum.se/mirror/openeuler.org/openEuler-22.03-LTS-SP3/ISO/aarch64/openEuler-22.03-LTS-SP3-aarch64-dvd.iso
