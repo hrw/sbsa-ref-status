@@ -30,6 +30,16 @@ def unpack_file(fin, newname):
         shutil.copyfileobj(fin, fout)
 
 
+def progressbar(filesize, position):
+    len = 80
+    dots = ""
+    for d in range(0, int(len * position / filesize)):
+        dots += "."
+    for d in range(int(len * position / filesize), len):
+        dots += " "
+    print(f"\r{dots}\t{position/filesize:.2%}", end='')
+
+
 def download_os_image(os_name, data):
     if 'url' not in data:
         print(f"Cannot download image for {os_name}.")
@@ -46,13 +56,19 @@ def download_os_image(os_name, data):
 
     r = requests.get(data['url'], stream=True)
 
+    filesize = int(r.headers["Content-Length"]) or None
     if r.status_code != 200:
         print(f"HTTP Error {r.status_code}")
         sys.exit(-1)
     with open(data['file'], 'wb') as fd:
-        for chunk in r.iter_content(chunk_size=32769):
+        position = 0
+        for chunk in r.iter_content(chunk_size=32768):
             fd.write(chunk)
+            if filesize:
+                position += 32768
+                progressbar(filesize, position)
 
+    print(" ")
     # if file was gzip compressed then unpack it
     if data['file'].endswith('.gz'):
         newname = os.path.splitext(data['file'])[0]
