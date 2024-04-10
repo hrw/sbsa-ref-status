@@ -34,15 +34,15 @@ freebsd13:
 freebsd15:
   file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
   url: https://download.freebsd.org/snapshots/arm64/aarch64/ISO-IMAGES/15.0/FreeBSD-15.0-CURRENT-arm64-aarch64-20240229-7ee47c3bb7a6-268602-bootonly.iso
-netbsd:
-  file: disks/NetBSD-9-aarch64--generic.img
-  force-download: true
-  type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.3-release/NetBSD-9-aarch64--generic.img.gz
 netbsd10:
   file: disks/NetBSD-10-aarch64--generic.img
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
+netbsd9:
+  file: disks/NetBSD-9-aarch64--generic.img
+  force-download: true
+  type: hdd
+  url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.3-release/NetBSD-9-aarch64--generic.img.gz
 openbsd73:
   file: disks/openbsd-miniroot73.img
   force-name: true
