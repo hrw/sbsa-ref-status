@@ -36,6 +36,7 @@ freebsd15:
   url: https://download.freebsd.org/snapshots/arm64/aarch64/ISO-IMAGES/15.0/FreeBSD-15.0-CURRENT-arm64-aarch64-20240328-f6e77cb8c146-269024-bootonly.iso
 netbsd10:
   file: disks/NetBSD-10-aarch64--generic.img
+  force-download: true
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
 netbsd11:
