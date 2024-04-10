@@ -38,6 +38,11 @@ netbsd10:
   file: disks/NetBSD-10-aarch64--generic.img
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
+netbsd11:
+  file: disks/NetBSD-HEAD-aarch64-202404091010Z-generic.img
+  force-download: true
+  type: hdd
+  url: https://nycdn.netbsd.org/pub/arm/HEAD/202404091010Z/NetBSD-HEAD-aarch64-202404091010Z-generic.img.gz
 netbsd9:
   file: disks/NetBSD-9-aarch64--generic.img
   force-download: true
