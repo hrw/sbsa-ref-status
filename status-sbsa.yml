@@ -315,7 +315,7 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: FAIL
+    max: PASS
     neoverse-n1: FAIL
     neoverse-n2: FAIL
     neoverse-v1: FAIL
