@@ -97,15 +97,15 @@ do
         for level in 3 4 5 6 7
         do
                 echo -n $level
-                boot-sbsa-ref "fs0:sbsa.efi -skip 861 -l ${level}"      > logs/sbsa-${cpu}-${level}.log
+                boot-sbsa-ref "fs0:sbsa.efi -only -skip 861 -l ${level}"      > logs/sbsa-${cpu}-${level}.log
                 echo -n "/v "
-                boot-sbsa-ref "fs0:sbsa.efi -skip 861 -l ${level} -v 1" > logs/sbsa-${cpu}-${level}-v1.log
+                boot-sbsa-ref "fs0:sbsa.efi -only -skip 861 -l ${level} -v 1" > logs/sbsa-${cpu}-${level}-v1.log
         done
 
         echo -n "future"
-        boot-sbsa-ref "fs0:sbsa.efi -skip 861 -fr"      > logs/sbsa-${cpu}-future.log
+        boot-sbsa-ref "fs0:sbsa.efi -only -skip 861 -fr"      > logs/sbsa-${cpu}-future.log
         echo -n "/v "
-        boot-sbsa-ref "fs0:sbsa.efi -skip 861 -fr -v 1" > logs/sbsa-${cpu}-future-v1.log
+        boot-sbsa-ref "fs0:sbsa.efi -only -skip 861 -fr -v 1" > logs/sbsa-${cpu}-future-v1.log
 
         echo -n "ACPI tables "
         boot-sbsa-ref "acpiview" > logs/acpiview-${cpu}.log
