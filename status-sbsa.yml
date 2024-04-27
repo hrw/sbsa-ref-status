@@ -220,7 +220,7 @@
     neoverse-n1: FAIL
     neoverse-n2: PASS
     neoverse-v1: FAIL
-  tags: S_L6PE_04
+  tags: S_L6PE_04, S_L8PE_05
   title: Check PMU Version Support
 21:
   level: '6'
@@ -409,8 +409,63 @@
     neoverse-n1: FAIL
     neoverse-n2: FAIL
     neoverse-v1: FAIL
-  tags: S_L7PE_10
+  tags: S_L8PE_04
   title: Check for enhanced PAN feature
+38:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: PASS
+  tags: S_L8PE_01
+  title: Check XS attribute functionality
+39:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: S_L8PE_02
+  title: Check WFET and WFIT functionality
+40:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: S_L8PE_03
+  title: Check atomic 64 byte store support
+41:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L8PE_06
+  title: Check for FEAT_BRBE support
+42:
+  level: future
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: S_L8PE_07
+  title: Check for unsupported PBHA bits
 101:
   level: '3'
   status:
@@ -474,7 +529,7 @@
     neoverse-n1: FAIL
     neoverse-n2: FAIL
     neoverse-v1: FAIL
-  tags: S_L5SM_01, S_L5SM_02
+  tags: S_L5SM_01, S_L5SM_02, S_L8SM_01
   title: Check SMMUv3.2 or higher
 303:
   comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
@@ -621,6 +676,17 @@
     neoverse-v1: PASS
   tags: S_L7SM_01
   title: Check if all DMA reqs behind SMMU
+317:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: GPU_04
+  title: Check ATS and Page Req Support
 601:
   level: '4'
   status:
@@ -1112,6 +1178,28 @@
     neoverse-v1: SKIPPED
   tags: IE_REG_4
   title: Slot Cap, Control and Status register rules
+864:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: GPU_04
+  title: Check ATS & Page Req for all RP
+865:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_09
+  title: Check RP Extensions for DPC
 1101:
   level: '7'
   status:
@@ -1156,3 +1244,25 @@
     neoverse-v1: SKIPPED
   tags: PMU_SPE
   title: Check for PMU SPE Requirements
+1401:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: ETE_02
+  title: Check for FEAT_ETE
+1405:
+  level: future
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: ETE_07
+  title: Check for FEAT_TRBE

@@ -38,7 +38,8 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
                                             "level": 0,
                                             "status": {core_name: ""}}
 
-            if test_id and line.strip().startswith(("B_", "IE_", "ITS_",
+            if test_id and line.strip().startswith(("B_", "ETE_", "GPU_",
+                                                    "IE_", "ITS_",
                                                     "PCI_", "PMU_", "RE_",
                                                     "S_")):
                 test_tags = line.strip()
