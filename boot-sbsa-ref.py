@@ -164,13 +164,15 @@ def show_args():
 def add_pcie(card_name, add_root_port=True):
     global chassis
 
+    bus = ""
     if add_root_port:
         rpid = "".join(random.choices(string.ascii_letters, k=5))
         qemu_args.extend(["-device",
                          f"pcie-root-port,id={rpid},slot=0,chassis={chassis}"])
         chassis += 1
+        bus = f",bus={rpid}"
 
-    qemu_args.extend(["-device", f"{card_name},bus={rpid}"])
+    qemu_args.extend(["-device", f"{card_name}{bus}"])
 # -----------------------------------------------------------------------------
 
 args = parse_args()
