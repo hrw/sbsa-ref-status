@@ -196,11 +196,11 @@ enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
 add_os_drive(args.os)
 
-# virtual drive with EFI tools
-add_drive("fat:rw:disks/virtual")
-
 # full Debian installation
 add_drive("disks/full-debian.hddimg")
+if not args.virt:
+    # virtual drive with EFI tools
+    add_drive("fat:rw:disks/virtual")
 
 #add_pcie("igb")
 
