@@ -10,8 +10,9 @@ There are some scripts provided:
 
 | Name                   | Function
 |                      - | -
-| boot-sbsa-ref.sh       | Boot QEMU with several options enabled.
+| boot-sbsa-ref.py       | Boot QEMU with several options enabled.
 | check-sbsa.py          | Check "sbsa-ref" against SBSA checklists.
+| fetch-os-images.py     | Fetches images listed in os.yml file.
 | parse-bsa-log.py       | Parse BSA ACS logs. Needs verbose logs and core name.
 | parse-sbsa-log.py      | Parse SBSA ACS logs. Needs verbose logs, core name and SBSA level.
 | run-gathering-logs.sh  | Gather (S)BSA ACS logs.
@@ -20,12 +21,47 @@ There are some scripts provided:
 
 # YAML files
 
-There are two yaml files:
+## Operating Systems for tests
+
+The `os.yml` file lists several operating systems I use to test SBSA Reference
+Platform.
+
+Tried to keep format simple:
+
+```yaml
+
+osname:
+  file: disks/OSNAME.ext
+  force-name: true
+  force-download: true
+  reset: false
+  type: hdd
+  url: https://example.org/OSNAME.ext
+  paywall_url: https://developers.redhat.com/products/rhel/download
+```
+
+| Argument         | Description
+|              --- | ---
+| file             | path to local copy of disk image
+| force-name       | forces name from 'file' field, useful for too generic names
+|                  | (like 'boot.iso' used by CentOS)
+| force-download   | forces download even if file is present (for places where
+|                  | images are updated on server without changing name)
+| type             | ISO by default, 'hdd' if disk image
+| url              | URL to disk image
+| paywall\_url     | URL to page where image can be downloaded
+
+There is `fetch-os-images.py` script to download images listed in `os.yml` file.
+When run without arguments it will try to download all entries.
+
+## (S)BSA ACS
+
+There are two yaml files with results of (S)BSA ACS runs:
 
 - status-bsa.yml
 - status-sbsa.yml
 
-They contain status of (S)BSA ACS runs. Format is simple:
+Format is simple:
 
 ```yaml
 31:
@@ -53,18 +89,19 @@ Status information is split to core names. Supported cpu cores are:
 
 # Boot sbsa-ref script
 
-The "boot-sbsa-ref-sh" shell script has several arguments:
+The "boot-sbsa-ref.py" script has several arguments:
 
-| Argument | Default       | Description
-|      --- | ---           | ---
-| --cpu=   | neoverse-v1   | allows to choose cpu core
-| --virt   |               | allows to boot "virt" instead of "sbsa-ref" (requires own firmware files)
-| --no-its |               | removes all PCIe nodes requiring GIC ITS (handy for simple systems or older QEMU)
-| --gdb    |               | makes QEMU wait for GDB connection
-| --cmd=   |               | provides EFI command to run in UEFI shell (in 100x31 text mode)
-| --reset  |               | adds 'reset -c' command to be run after "--cmd" command to quit QEMU
-| --gfx    |               | open window with graphics card output
-| --os=    |               | allows to run OS installer (Alpine, CentOS Stream 8/9, Debian, Fedora, FreeBSD, NetBSD 9/10, OpenBSD, RHEL 9)
+| Argument   | Default       | Description
+|        --- | ---           | ---
+| --cmd      |               | provides EFI command to run in UEFI shell (in 100x31 text mode)
+| --cpu      | neoverse-v1   | allows to choose cpu core
+| --gdb      |               | makes QEMU wait for GDB connection
+| --gfx      |               | open window with graphics card output
+| --no-reset |               | do not add 'reset -c' command to be run after "--cmd" command to quit QEMU
+| --numa     |               | adds some simple NUMA setup
+| --os       |               | allows to run OS installer (Alpine, CentOS Stream 8/9, Debian, Fedora, FreeBSD, NetBSD 9/10, OpenBSD, RHEL 9)
+| --smp      | 4             | controls amount of cpu cores
+| --virt     |               | allows to boot "virt" instead of "sbsa-ref" (requires own firmware files)
 
 OS installer images need to be fetched first into "disks/" directory. For NetBSD 9 and OpenBSD disk images are used, other OSes use ISO files.
 
