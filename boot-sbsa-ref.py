@@ -129,7 +129,7 @@ def add_os_drive(os_name):
     else:
         add_drive(os_data[os_name]["file"])
 
-    if "reset" in os_data[os_name]:
+    if "reset" in os_data[os_name] and os_data[os_name]["reset"]:
         qemu_args.append("--no-reboot")
 
 
