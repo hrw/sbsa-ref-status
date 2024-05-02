@@ -43,10 +43,8 @@ osname:
 | Argument         | Description
 |              --- | ---
 | file             | path to local copy of disk image
-| force-name       | forces name from 'file' field, useful for too generic names
-|                  | (like 'boot.iso' used by CentOS)
-| force-download   | forces download even if file is present (for places where
-|                  | images are updated on server without changing name)
+| force-name       | forces name from 'file' field, useful for too generic names (like 'boot.iso' used by CentOS)
+| force-download   | forces download even if file is present (for places where images are updated on server without changing name)
 | type             | ISO by default, 'hdd' if disk image
 | url              | URL to disk image
 | paywall\_url     | URL to page where image can be downloaded
