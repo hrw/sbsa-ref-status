@@ -31,6 +31,7 @@ def parse_args():
                         help="select OS to attach")
     parser.add_argument("--secure", action="store_true",
                         help="")
+    parser.add_argument("--smp", help="amount of cpu cores", default=4)
     parser.add_argument("--virt", action="store_true",
                         help='use "virt" instead of "sbsa-ref"')
 
@@ -85,15 +86,14 @@ def add_machine(is_it_virt):
         qemu_args.extend(["-machine", "sbsa-ref"])
 
 
-def add_cpu(cpu_type, is_it_numa):
+def add_cpu(cpu_type, is_it_numa, smp):
     qemu_args.extend(["-cpu", cpu_type])
 
     if not is_it_numa:
-        pass
-        # qemu_args.extend(["-smp", "1", "-m", "1G"])
+        qemu_args.extend(["-smp", str(smp), "-m", "4G"])
     else:
         qemu_args.extend([
-                        "-smp", "4,sockets=4,maxcpus=4",
+                        "-smp", f"{smp},sockets={smp},maxcpus={smp}",
                         "-m", "4G,slots=2,maxmem=5G",
                         "-object", "memory-backend-ram,size=1G,id=m0",
                         "-object", "memory-backend-ram,size=3G,id=m1",
@@ -188,7 +188,7 @@ qemu_args = [
 print(args)
 add_firmware(args.virt)
 add_machine(args.virt)
-add_cpu(args.cpu, args.numa)
+add_cpu(args.cpu, args.numa, args.smp)
 add_usb_devices()
 enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
