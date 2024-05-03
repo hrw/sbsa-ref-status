@@ -37,76 +37,15 @@ fs0:bsa.efi -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-WARNING: BL1: cortex_a72: CPU workaround for erratum 859971 was missing!
-WARNING: BL1: cortex_a72: CPU workaround for erratum 1319367 was missing!
-INFO:    BL1: cortex_a72: CPU workaround for CVE 2017_5715 was applied
-INFO:    BL1: cortex_a72: CPU workaround for CVE 2018_3639 was applied
-INFO:    BL1: cortex_a72: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.3
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-INFO:    CPU 0: node-id: 0, mpidr: 0
-INFO:    CPU 1: node-id: 0, mpidr: 1
-INFO:    Found 2 cpus
-INFO:    There is no thread in this cpu-map
-INFO:    There is no thread in this cpu-map
-INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
-INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
-NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-WARNING: BL31: cortex_a72: CPU workaround for erratum 859971 was missing!
-WARNING: BL31: cortex_a72: CPU workaround for erratum 1319367 was missing!
-INFO:    BL31: cortex_a72: CPU workaround for CVE 2017_5715 was applied
-INFO:    BL31: cortex_a72: CPU workaround for CVE 2018_3639 was applied
-INFO:    BL31: cortex_a72: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc2000001) (function id: 1)
-INFO:    Platform version requested
-INFO:    SMC call: (0xc2000064) (function id: 100)
-INFO:    SMC call: (0xc2000065) (function id: 101)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -162,7 +101,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  BSA Architecture Compliance Suite
-          Version 1.0.7
+          Version 1.0.8
 
  Starting tests with print level :  1
 
@@ -173,10 +112,12 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   MADT is at FBFEB898 and length is 108
   Flags 1
   PE Enabled 1, Online Capable 0
-  MPIDR 0 PE num 0
+  MADT Revision 4 
+ MPIDR 0 PE num 0
   Flags 1
   PE Enabled 1, Online Capable 0
-  MPIDR 1 PE num 1
+  MADT Revision 4 
+ MPIDR 1 PE num 1
  PE_INFO: Number of PE detected       :    2
  PE_INFO: Primary PE index       :    0
  Creating GIC INFO table
@@ -285,7 +226,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Root Complex  Segment Num:0
   Number of ID Mappings:1
   input_base:0x0 id_count:0xFFFF
-  output_base:0x0 output ref:0x134
+  output_base:0x0 output ref:0x144
 
  SMMU_INFO: Number of SMMU CTRL       :    1
  SMMU_INFO: SMMU index 00 version     :    v3.1
@@ -359,8 +300,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBCD5000]
-  Reserved region of type 1 [0x100FBCD5000, 0x100FBE20000]
+  Reserved region of type 7 [0x10000000000, 0x100FBCB6000]
+  Reserved region of type 1 [0x100FBCB6000, 0x100FBE20000]
   Reserved region of type 5 [0x100FBE20000, 0x100FBEA0000]
   Reserved region of type 6 [0x100FBEA0000, 0x100FBF40000]
   Reserved region of type 5 [0x100FBF40000, 0x100FBFE0000]
@@ -368,21 +309,23 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 9 [0x100FBFE5000, 0x100FBFEC000]
   Reserved region of type 7 [0x100FBFEC000, 0x100FC000000]
   Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDEAE000]
-  Reserved region of type 4 [0x100FDEAE000, 0x100FEF14000]
-  Reserved region of type 7 [0x100FEF14000, 0x100FF1AF000]
-  Reserved region of type 3 [0x100FF1AF000, 0x100FF4F0000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDE93000]
+  Reserved region of type 4 [0x100FDE93000, 0x100FDF95000]
+  Reserved region of type 7 [0x100FDF95000, 0x100FDFA6000]
+  Reserved region of type 4 [0x100FDFA6000, 0x100FEF14000]
+  Reserved region of type 7 [0x100FEF14000, 0x100FF1AC000]
+  Reserved region of type 3 [0x100FF1AC000, 0x100FF4F0000]
   Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
   Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
-  Reserved region of type 7 [0x100FF8D0000, 0x100FF8ED000]
-  Reserved region of type 4 [0x100FF8ED000, 0x100FF910000]
-  Reserved region of type 3 [0x100FF910000, 0x100FF947000]
-  Reserved region of type 4 [0x100FF947000, 0x100FFFE8000]
+  Reserved region of type 7 [0x100FF8D0000, 0x100FF8E8000]
+  Reserved region of type 4 [0x100FF8E8000, 0x100FF90B000]
+  Reserved region of type 3 [0x100FF90B000, 0x100FF942000]
+  Reserved region of type 4 [0x100FF942000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE04DF98
+ Shared memory is 100FE04BB18
 
       *** Starting PE tests ***
 
@@ -826,7 +769,7 @@ Operating System View:
 
  504 : Wake from Watchdog WS0 Int            
        START
-       Setting Trigger type as 1  
+       Setting Trigger type as 1
        Writing to Register Address : 0x40060C0C        Received WS0 interrupt
 
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
@@ -904,7 +847,7 @@ Operating System View:
  702 : Check Watchdog WS0 interrupt          
        START
        WS0 Interrupt id  48        
-       Setting Trigger type as 1  
+       Setting Trigger type as 1
        Writing to Register Address : 0x40060C0C 
        Received WS0 interrupt                
        B_WD_03, S_L3WD_01
@@ -1650,12 +1593,12 @@ Operating System View:
 
  842 : PASID support atleast 16 bits         
        START
-       Peripheral check - Max PASID bits - 0x0
-       Peripheral check - Max PASID bits - 0x0
-       Peripheral check - Max PASID bits - 0x0
+       Peripheral check - Max PASID bits - 0x12800001
+       Peripheral check - Max PASID bits - 0xAA1503E0
+       Peripheral check - Max PASID bits - 0x1AC10803
        SMMU check- Max PASID bits- 0x0
        PCI_PAS_1
-       Checkpoint --  3                           : Result:  SKIPPED
+                                       : Result:  PASS
        END
 
 
@@ -1665,10 +1608,9 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   84  Tests Passed  =   70  Tests Failed =    1
+     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    1
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:

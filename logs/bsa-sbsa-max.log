@@ -37,66 +37,15 @@ fs0:bsa.efi -sbsa
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.3
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-INFO:    CPU 0: node-id: 0, mpidr: 0
-INFO:    CPU 1: node-id: 0, mpidr: 1
-INFO:    Found 2 cpus
-INFO:    There is no thread in this cpu-map
-INFO:    There is no thread in this cpu-map
-INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
-INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
-NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc2000001) (function id: 1)
-INFO:    Platform version requested
-INFO:    SMC call: (0xc2000064) (function id: 100)
-INFO:    SMC call: (0xc2000065) (function id: 101)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -152,7 +101,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  BSA Architecture Compliance Suite
-          Version 1.0.7
+          Version 1.0.8
 
  Starting tests with print level :  3
 
@@ -250,14 +199,14 @@ Operating System View:
  302 : Check SMMU Granule Support                 : Result:  PASS
  303 : Check SMMU Large Physical Addr Support
        Large PA Not Supported in SMMU 0
-       Failed on PE -    0
+       Failed on PE -    0B_SMMU_06
        Checkpoint --  2                           : Result:  FAIL
  304 : Check SMMU S-EL2 & stage1 support          : Result:  PASS
 
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
        SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0
+       Failed on PE -    0B_SMMU_16, B_SMMU_17, B_SMMU_18
        Checkpoint --  2                           : Result:  FAIL
  354 : SMMUv3 Integration compliance              : Result:  PASS
 
@@ -268,11 +217,11 @@ Hypervisor View:
 Operating System View:
  401 : Check Counter Frequency                    : Result:  PASS
  402 : SYS Timer if PE Timer not ON               : Result:  PASS
- 403 : Memory mapped timer check             
+ 403 : Memory mapped timer check             B_TIME_07, B_TIME_10
        Checkpoint --  1                           : Result:  SKIPPED
- 404 : Generate Mem Mapped SYS Timer Intr    
+ 404 : Generate Mem Mapped SYS Timer Intr    B_TIME_08
        Checkpoint --  1                           : Result:  SKIPPED
- 405 : Restore PE timer on PE wake up        
+ 405 : Restore PE timer on PE wake up        B_TIME_09
        Checkpoint --  1                           : Result:  SKIPPED
 
       One or more Timer tests failed or were skipped.
@@ -284,7 +233,9 @@ Operating System View:
  502 : Wake from EL1 VIR Timer Int                : Result:  PASS
  503 : Wake from EL2 PHY Timer Int                : Result:  PASS
  504 : Wake from Watchdog WS0 Int                 : Result:  PASS
- 505 : Wake from System Timer Int            
+ 505 : Wake from System Timer Int            B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05       
+              
+       B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
        Checkpoint --  1                           : Result:  SKIPPED
 
       One or more Wakeup tests failed or were skipped.
@@ -299,7 +250,7 @@ Operating System View:
  603 : Check Arm BSA UART register offsets        : Result:  PASS
  604 : Check Arm GENERIC UART Interrupt      
        Test Message                               : Result:  PASS
- 606 : 16550 compatible UART                 
+ 606 : 16550 compatible UART                 B_PER_05
        Checkpoint --  2                           : Result:  SKIPPED
 
       One or more Peripheral tests failed or were skipped.
@@ -318,16 +269,16 @@ Operating System View:
  801 : Check ECAM Presence                        : Result:  PASS
  802 : PE - ECAM Region accessibility check       : Result:  PASS
  803 : All EP/Sw under RP in same ECAM Region     : Result:  PASS
- 806 : Legacy int must be SPI & lvl-sensitive
+ 806 : Legacy int must be SPI & lvl-sensitivePCI_LI_01, PCI_LI_03
        Checkpoint --  2                           : Result:  SKIPPED
  808 : Check all 1's for out of range             : Result:  PASS
  809 : Vendor specific data is PCIe compliant     : Result:  PASS
  811 : Check RP Byte Enable Rules                 : Result:  PASS
- 817 : Check Direct Transl P2P Support       
+ 817 : Check Direct Transl P2P Support       PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED
- 818 : Check RP Adv Error Report             
+ 818 : Check RP Adv Error Report             PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED
- 819 : RP must suprt ACS if P2P Txn are allow
+ 819 : RP must suprt ACS if P2P Txn are allowPCI_PP_03
        Checkpoint --  1                           : Result:  SKIPPED
  820 : Type 0/1 common config rule                : Result:  PASS
  821 : Type 0 config header rules                 : Result:  PASS
@@ -345,8 +296,7 @@ Operating System View:
  838 : Check all RP in HB is in same ECAM         : Result:  PASS
  839 : Check MSI support for PCIe dev             : Result:  PASS
  840 : PCIe RC,PE - Same Inr Shareable Domain     : Result:  PASS
- 842 : PASID support atleast 16 bits         
-       Checkpoint --  3                           : Result:  SKIPPED
+ 842 : PASID support atleast 16 bits              : Result:  PASS
 
       One or more PCIe tests failed or were skipped.
  PCIE_INFO: Number of exerciser cards :    0 
@@ -354,10 +304,9 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   82  Tests Passed  =   70  Tests Failed =    2
+     Total Tests run  =   82  Tests Passed  =   71  Tests Failed =    2
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:

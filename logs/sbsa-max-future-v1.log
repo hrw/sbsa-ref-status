@@ -1,0 +1,538 @@
+QEMU command line arguments:
+-machine sbsa-ref
+-m 4096
+-smp 2
+-cpu max
+-drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
+-drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
+-drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
+-usb
+-device usb-kbd
+-device usb-tablet
+-nographic
+-watchdog-action none
+-no-reboot
+-monitor telnet::45454,server,nowait
+-serial stdio
+-device pcie-root-port,id=root_port_for_switch1,chassis=1,slot=12
+-device x3130-upstream,id=upstream_port1,bus=root_port_for_switch1
+-device xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20
+-device ac97,bus=downstream_port1
+-device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
+-device nvme,serial=deadbeef,bus=root_port_for_nvme1
+-device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
+-device igb,bus=root_port_for_igb
+-device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
+-device qemu-xhci,bus=root_port_for_xhci
+-device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
+-device ac97,bus=root_port_for_ac97
+-device pcie-root-port,id=root_port_for_pci,chassis=1
+-device pcie-pci-bridge,id=pci,bus=root_port_for_pci
+-device virtio-rng-pci,bus=pci,addr=8
+
+EFI startup script:
+mode 100 31
+pci
+fs0:sbsa.efi -only -skip 861 -fr -v 1
+reset -c
+
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: Booting BL2
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: Booting BL31
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+[2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
+[1m[33m[40mMapping table[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+[1m[33m[40mShell> [0m[37m[40mmode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
+   Seg  Bus  Dev  Func
+   ---  ---  ---  ----
+    [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 0008 Prog Interface 0
+    [1m[33m[40m00   00   01    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10D3 Prog Interface 0
+    [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
+             Vendor 1234 Device 1111 Prog Interface 0
+    [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   04    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000C Prog Interface 0
+    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 104C Device 8232 Prog Interface 0
+    [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 104C Device 8233 Prog Interface 0
+    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
+    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
+             Vendor 1B36 Device 0010 Prog Interface 2
+    [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10C9 Prog Interface 0
+    [1m[33m[40m00   06   00    00 ==> [0m[37m[40mSerial Bus Controllers - USB
+             Vendor 1B36 Device 000D Prog Interface 30
+    [1m[33m[40m00   07   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
+             Vendor 8086 Device 2415 Prog Interface 0
+    [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
+             Vendor 1B36 Device 000E Prog Interface 0
+    [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
+             Vendor 1AF4 Device 1005 Prog Interface 0
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -only -skip 861 -fr -v 1
+
+
+ SBSA Architecture Compliance Suite
+    Version 7.2.0
+
+ Starting tests for only level  8 (Print level is  1)
+
+ Creating Platform Information Tables
+ Using SMC as PSCI conduit
+ Creating PE INFO table
+  MADT is at FBFEB898 and length is 108
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 0 PE num 0
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 1 PE num 1
+ PE_INFO: Number of PE detected       :    2
+ PE_INFO: Primary PE index       :    0
+ Creating GIC INFO table
+  MADT is at FBFEB898 and length is 108
+  GICH base 2C010000
+  GICH base 2C010000
+  GIC DIS base 40060000
+  GICR RD base 40080000
+  GICR RD Length 4000000
+  GIC ITS base 44081000
+  GIC ITS ID0
+
+       gic version from info table = 3  GIC INFO: GIC version                :    v3
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
+ GIC_INFO: Number of ITS              :    1
+ Creating TIMER INFO table
+  GTDT is at FBFEB718 and length is 84
+  GTDT revision is at 3
+ TIMER_INFO: Number of system timers  :    0
+ Creating WATCHDOG INFO table
+  Watchdog base = 0x50011000 INTID = 0x30
+ WATCHDOG_INFO: Number of Watchdogs   :    1
+PPTT table found at 0x100FBFEB218 with length 0xB8
+
+Cache info * Index 0 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 1 *
+  Offset:                  0x68
+  Type:                    0x2
+  Cache ID:                0x1C00
+  Size:                    0x80000
+  Next level index:        -1
+  Private flag:            0x1
+
+Cache info * Index 2 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 3 *
+  Offset:                  0x38
+  Type:                    0x0
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+Cache info * Index 4 *
+  Offset:                  0x50
+  Type:                    0x1
+  Cache ID:                0x1801
+  Size:                    0x8000
+  Next level index:        1
+  Private flag:            0x1
+
+PE level one cache index info
+PE Index * 0 *
+  Level 1 Cache index(s) : 0, 2,
+
+PE Index * 1 *
+  Level 1 Cache index(s) : 3, 4,
+ CACHE_INFO: Number of cache nodes    :    5
+ MPAM table not found
+ MPAM INFO: Number of MSC nodes       :    0
+ HMAT ACPI table not found
+ SRAT not found
+
+ Allocating memory for RAS2 info table RAS2 ACPI table not found
+ RAS2_INFO: Number of RAS2 entries    :    0
+ RAS2_INFO: Num of RAS2 memory entries:    0
+ Creating PCIe INFO table
+  Ecam Index = 0
+  Base Address = 0xF0000000
+  Segment   = 0x0
+  Start Bus = 0x0
+  End Bus   = 0xFF
+ PCIE_INFO: Number of ECAM regions    :    1
+       BDF 0x0 is a Host Bridge...Skipping
+       BDF 0x30000 PCI Express capability not present...Skipping
+       BDF 0x70000 PCI Express capability not present...Skipping
+       BDF 0x90800 PCI Express capability not present...Skipping
+  Dev bdf 0x000100 type 0x200 RP bdf 0xFFFFFFFF
+  Dev bdf 0x000200 type 0x200 RP bdf 0xFFFFFFFF
+  Dev bdf 0x000300 type 0x10 RP bdf 0x000300
+  Dev bdf 0x000400 type 0x10 RP bdf 0x000400
+  Dev bdf 0x000500 type 0x10 RP bdf 0x000500
+  Dev bdf 0x000600 type 0x10 RP bdf 0x000600
+  Dev bdf 0x000700 type 0x10 RP bdf 0x000700
+  Dev bdf 0x000800 type 0x10 RP bdf 0x000800
+  Dev bdf 0x010000 type 0x20 RP bdf 0x000300
+  Dev bdf 0x020000 type 0x40 RP bdf 0x000300
+  Dev bdf 0x040000 type 0x01 RP bdf 0x000400
+  Dev bdf 0x050000 type 0x01 RP bdf 0x000500
+  Dev bdf 0x060000 type 0x01 RP bdf 0x000600
+  Dev bdf 0x080000 type 0x80 RP bdf 0x000800
+ PCIE_INFO: Number of BDFs found      :    14
+ PCIE_INFO: Number of RCiEP           :    2
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    3
+ PCIE_INFO: Number of RP              :    6
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    1
+ PCIE_INFO: Number of DP of switch    :    1
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    1
+
+  ECAM 0:  Base 0xF0000000
+  BDF: 0x100
+  Seg: 0x0, Bus: 0x00, Dev: 0x01, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  BDF: 0x200
+  Seg: 0x0, Bus: 0x00, Dev: 0x02, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
+  BDF: 0x300
+  Seg: 0x0, Bus: 0x00, Dev: 0x03, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x400
+  Seg: 0x0, Bus: 0x00, Dev: 0x04, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x500
+  Seg: 0x0, Bus: 0x00, Dev: 0x05, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x600
+  Seg: 0x0, Bus: 0x00, Dev: 0x06, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x700
+  Seg: 0x0, Bus: 0x00, Dev: 0x07, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x800
+  Seg: 0x0, Bus: 0x00, Dev: 0x08, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
+  BDF: 0x10000
+  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x8232, Vendor ID: 0x104C
+  BDF: 0x20000
+  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x8233, Vendor ID: 0x104C
+  BDF: 0x40000
+  Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
+  BDF: 0x50000
+  Seg: 0x0, Bus: 0x05, Dev: 0x00, Func: 0x0, Dev ID: 0x10C9, Vendor ID: 0x8086
+  BDF: 0x60000
+  Seg: 0x0, Bus: 0x06, Dev: 0x00, Func: 0x0, Dev ID: 0x000D, Vendor ID: 0x1B36
+  BDF: 0x80000
+  Seg: 0x0, Bus: 0x08, Dev: 0x00, Func: 0x0, Dev ID: 0x000E, Vendor ID: 0x1B36
+ Creating SMMU INFO table
+  IORT node offset:30, type: 0
+  IORT node offset:48, type: 4
+  IORT node offset:30, type: 0
+  IORT node offset:A0, type: 2
+  IORT node offset:48, type: 4
+  Number of IOVIRT blocks = 3
+  ITS Group Num ITS: 1
+  ITS ID: 0
+  SMMU: Major Rev:3 Base Address:0x60050000
+  Number of ID Mappings:1
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0x18
+
+  Root Complex  Segment Num:0
+  Number of ID Mappings:1
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0x144
+
+ SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
+ Creating PERIPHERAL INFO table
+  000.00.00 class_code = 0 6
+  000.00.18 class_code = 3 12
+  Found a USB controller 60110000
+  000.01.01 class_code = 0 2
+  000.01.19 class_code = 6 1
+  000.02.02 class_code = 128 3
+  000.03.03 class_code = 4 6
+  000.04.07 class_code = 4 6
+  000.05.09 class_code = 4 6
+  000.06.11 class_code = 4 6
+  000.07.13 class_code = 4 6
+  000.08.15 class_code = 4 6
+  009.08.17 class_code = 255 0
+  000.00.00 class_code = 0 6
+  000.00.18 class_code = 3 12
+  000.01.01 class_code = 0 2
+  000.01.19 class_code = 6 1
+  Found a SATA controller 60100000
+  000.02.02 class_code = 128 3
+  000.03.03 class_code = 4 6
+  000.04.07 class_code = 4 6
+  000.05.09 class_code = 4 6
+  000.06.11 class_code = 4 6
+  000.07.13 class_code = 4 6
+  000.08.15 class_code = 4 6
+  009.08.17 class_code = 255 0
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
+
+ BDF is 0
+ Class code is 6000000
+ BDF is 100
+ Class code is 2000000
+ BDF is 200
+ Class code is 3800002
+ BDF is 300
+ Class code is 6040000
+ BDF is 400
+ Class code is 6040000
+ BDF is 500
+ Class code is 6040000
+ BDF is 600
+ Class code is 6040000
+ BDF is 700
+ Class code is 6040000
+ BDF is 800
+ Class code is 6040000
+ BDF is 10000
+ Class code is 6040002
+ BDF is 20000
+ Class code is 6040001
+ BDF is 30000
+ Class code is 4010001
+ BDF is 40000
+ Class code is 1080202
+ BDF is 50000
+ Class code is 2000001
+ BDF is 60000
+ Class code is C033001
+ BDF is 70000
+ Class code is 4010001
+ BDF is 80000
+ Class code is 6040000
+ BDF is 90800
+ Class code is FF0000 Peripheral: Num of Network ctrl      :    2
+ Peripheral: Num of Storage ctrl      :    1
+ Peripheral: Num of Display ctrl      :    1
+ Creating MEMORY INFO table
+  Reserved region of type 7 [0x10000000000, 0x100FBCA0000]
+  Reserved region of type 1 [0x100FBCA0000, 0x100FBE20000]
+  Reserved region of type 5 [0x100FBE20000, 0x100FBEA0000]
+  Reserved region of type 6 [0x100FBEA0000, 0x100FBF40000]
+  Reserved region of type 5 [0x100FBF40000, 0x100FBFE0000]
+  Reserved region of type 7 [0x100FBFE0000, 0x100FBFE5000]
+  Reserved region of type 9 [0x100FBFE5000, 0x100FBFEC000]
+  Reserved region of type 7 [0x100FBFEC000, 0x100FC000000]
+  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
+  Reserved region of type 7 [0x100FC020000, 0x100FDE11000]
+  Reserved region of type 4 [0x100FDE11000, 0x100FDF95000]
+  Reserved region of type 7 [0x100FDF95000, 0x100FDF96000]
+  Reserved region of type 4 [0x100FDF96000, 0x100FEF14000]
+  Reserved region of type 7 [0x100FEF14000, 0x100FF1AC000]
+  Reserved region of type 3 [0x100FF1AC000, 0x100FF4F0000]
+  Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
+  Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
+  Reserved region of type 7 [0x100FF8D0000, 0x100FF8E8000]
+  Reserved region of type 4 [0x100FF8E8000, 0x100FF90B000]
+  Reserved region of type 3 [0x100FF90B000, 0x100FF942000]
+  Reserved region of type 4 [0x100FF942000, 0x100FFFE8000]
+  Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
+  Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
+  Reserved region of type 11 [0x10000000, 0x106C0000]
+  Reserved region of type 11 [0x60010000, 0x60011000]
+ APMT table not found
+ PMU_INFO: Number of PMU units        :    0
+ AEST table not found
+ RAS_INFO: Number of RAS nodes        :    0
+ Shared memory is 100FDFA7F98
+
+      *** Starting PE tests ***
+  37 : Check for enhanced PAN feature    
+       START
+       PSCI_CPU_ON: success
+       S_L8PE_04
+                                       : Result:  PASS
+       END
+
+  38 : Check XS attribute functionality  
+       START
+       PSCI_CPU_ON: success
+       Failed on PE -    0
+       S_L8PE_01
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+  39 : Check WFET and WFIT functionality 
+       START
+       PSCI_CPU_ON: success
+       Failed on PE -    0
+       S_L8PE_02
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+  40 : Check atomic 64 byte store support
+       START
+       PSCI_CPU_ON: success
+       Failed on PE -    0
+       S_L8PE_03
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+  41 : Check for FEAT_BRBE support     
+       START
+       ID_AA64DFR0_EL1.BRBE = 0
+       PSCI_CPU_ON: success
+       S_L8PE_06
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
+
+  42 : Check for unsupported PBHA bits   
+       START
+       ID_AA64MMFR1_EL1.HPDS = 2
+       HCR_EL2.E2H = 0
+       PSCI_CPU_ON: success
+       S_L8PE_07
+                                       : Result:  PASS
+       END
+
+
+      One or more PE tests failed or were skipped.
+
+      *** Starting SMMU tests ***
+ 317 : Check ATS and Page Req Support    
+       START
+       ATS is not supported for Smmu Index : 0 
+       Failed on PE -    0
+       GPU_04
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+
+      One or more SMMU tests failed or were skipped.
+
+      *** Starting PCIe tests ***
+ 864 : Check ATS & Page Req for all RP   
+       START
+       BDF - 0x300
+       ATS Capability Not Present, Bdf : 0x300
+       Page Request Not Present, Bdf : 0x300
+       BDF - 0x400
+       ATS Capability Not Present, Bdf : 0x400
+       Page Request Not Present, Bdf : 0x400
+       BDF - 0x500
+       ATS Capability Not Present, Bdf : 0x500
+       Page Request Not Present, Bdf : 0x500
+       BDF - 0x600
+       ATS Capability Not Present, Bdf : 0x600
+       Page Request Not Present, Bdf : 0x600
+       BDF - 0x700
+       ATS Capability Not Present, Bdf : 0x700
+       Page Request Not Present, Bdf : 0x700
+       BDF - 0x800
+       ATS Capability Not Present, Bdf : 0x800
+       Page Request Not Present, Bdf : 0x800
+       Failed on PE -    0
+       GPU_04
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+ 865 : Check RP Extensions for DPC       
+       START
+       BDF - 0x300
+       BDF - 0x400
+       BDF - 0x500
+       BDF - 0x600
+       BDF - 0x700
+       BDF - 0x800
+       Found no RP with DPC Capability. Skipping test
+       PCI_ER_09
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
+
+
+      One or more PCIe tests failed or were skipped.
+
+      Starting Exerciser Setup
+ PCIE_INFO: Number of exerciser cards :    0 
+
+     No Exerciser Devices Found,                                         Skipping Exerciser tests...
+
+
+       RAS nodes not found. Skipping all RAS tests
+
+      *** Starting ETE tests ***
+1401 : Check for FEAT_ETE                
+       START
+       ID_AA64DFR0_EL1.TraceVer = 0
+       PSCI_CPU_ON: success
+       Failed on PE -    0
+       ETE_02
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+
+ FEAT_ETE Not Supported, Skipping FEAT_ETE tests 
+1405 : Check for FEAT_TRBE               
+       START
+       ID_AA64DFR0_EL1.TraceBuffer = 0
+       PSCI_CPU_ON: success
+       Failed on PE -    0
+       ETE_07
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+
+ FEAT_TRBE Not Supported, Skipping FEAT_TRBE tests 
+
+      One or more ETE tests failed or were skipped.
+
+     -------------------------------------------------------
+     Total Tests run  =   11;  Tests Passed  =    2  Tests Failed =    7
+     ---------------------------------------------------------
+
+      **  For complete SBSA test coverage, it is 
+            necessary to also run the BSA test    **
+
+
+      *** SBSA tests complete. Reset the system. ***
+
+[1m[33m[40mShell> [0m[37m[40mreset -c

@@ -37,66 +37,15 @@ fs0:armcpuinfo.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.3
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-INFO:    CPU 0: node-id: 0, mpidr: 0
-INFO:    CPU 1: node-id: 0, mpidr: 1
-INFO:    Found 2 cpus
-INFO:    There is no thread in this cpu-map
-INFO:    There is no thread in this cpu-map
-INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
-INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
-NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc2000001) (function id: 1)
-INFO:    Platform version requested
-INFO:    SMC call: (0xc2000064) (function id: 100)
-INFO:    SMC call: (0xc2000065) (function id: 101)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -149,17 +98,24 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
 [1m[33m[40mShell> [0m[37m[40mfs0:armcpuinfo.efi
-ArmCpuInfo v1.2.0
+ArmCpuInfo v1.3.0
 
-ID_AA64MMFR0_EL1 = 0x2100032310201126
-ID_AA64MMFR1_EL1 = 0x0010011010312122
-ID_AA64MMFR2_EL1 = 0x1221011112011011
-ID_AA64PFR0_EL1  = 0x1201001121112222
-ID_AA64PFR1_EL1  = 0x0000000001000121
+ID_AA64AFR0_EL1  = 0x0000000000000000
+ID_AA64AFR1_EL1  = 0x0000000000000000
+ID_AA64DFR0_EL1  = 0x1000000010305609
+ID_AA64DFR1_EL1  = 0x0000000000000000
+ID_AA64FPFR0_EL1 = 0x0000000000000000
 ID_AA64ISAR0_EL1 = 0x1221111110212120
 ID_AA64ISAR1_EL1 = 0x0011111101211052
 ID_AA64ISAR2_EL1 = 0x0000000000110000
-ID_AA64DFR0_EL1  = 0x1000000010305609
+ID_AA64ISAR3_EL1 = 0x0000000000000000
+ID_AA64MMFR0_EL1 = 0x2100032310201126
+ID_AA64MMFR1_EL1 = 0x0010011010312122
+ID_AA64MMFR2_EL1 = 0x1221011112011011
+ID_AA64MMFR3_EL1 = 0x0000000000000000
+ID_AA64MMFR4_EL1 = 0x0000000000000000
+ID_AA64PFR0_EL1  = 0x1201001121112222
+ID_AA64PFR1_EL1  = 0x0000001001000121
 ID_AA64SMFR0_EL1 = 0x80F100FD00000000
 ID_AA64ZFR0_EL1  = 0x0110110100110021
 
@@ -240,7 +196,7 @@ PFR1  | MTEX         | 55:52 |  0000 | Canonical Tag checking and Memory tagging
 PFR1  | THE          | 51:48 |  0000 | FEAT_THE not implemented.
 PFR1  | GCS          | 47:44 |  0000 | FEAT_GCS not implemented.
 PFR1  | MTE_frac     | 43:40 |  0000 | FEAT_MTE_ASYNC implemented.
-PFR1  | NMI          | 39:36 |  0000 | FEAT_NMI not implemented.
+PFR1  | NMI          | 39:36 |  0001 | FEAT_NMI implemented.
 PFR1  | RNDR_trap    | 31:28 |  0000 | FEAT_RNG_TRAP not implemented.
 PFR1  | SME          | 27:24 |  0001 | FEAT_SME implemented.
 PFR1  | MTE          | 11:8  |  0001 | FEAT_MTE implemented.
@@ -315,6 +271,17 @@ DFR0  | PMUVer       | 11:8  |  0110 | FEAT_PMUv3p5 implemented.
 DFR0  | TraceVer     |  7:4  |  0000 | Trace unit System registers not implemented.
 DFR0  | DebugVer     |  3:0  |  1001 | FEAT_Debugv8p4 implemented.
 ------|--------------|-------|-------|----------------------------------------------
+ZFR0  | F64MM        | 59:56 |  0001 | FEAT_F64MM SVE implemented
+ZFR0  | F32MM        | 55:52 |  0001 | FEAT_F32MM SVE implemented
+ZFR0  | I8MM         | 47:44 |  0001 | FEAT_I8MM SVE implemented.
+ZFR0  | SM4          | 43:40 |  0001 | FEAT_SVE_SM4 implemented.
+ZFR0  | SHA3         | 35:32 |  0001 | FEAT_SVE_SHA3 implemented.
+ZFR0  | B16B16       | 27:24 |  0000 | FEAT_SVE_B16B16 not implemented.
+ZFR0  | BF16         | 23:20 |  0001 | FEAT_BF16 SVE implemented.
+ZFR0  | BitPerm      | 19:16 |  0001 | FEAT_SVE_BitPerm implemented.
+ZFR0  | AES          |  7:4  |  0010 | FEAT_SVE_AES and FEAT_SVE_PMULL128 implemented.
+ZFR0  | SVEver       |  3:0  |  0001 | FEAT_SVE2 implemented.
+------|--------------|-------|-------|----------------------------------------------
 SMFR0 | FA64         |    63 |  0001 | FEAT_SME_FA64 implemented.
 SMFR0 | LUTv2        |    60 |  0000 | FEAT_SME_LUTv2 not implemented.
 SMFR0 | SMEver       | 59:56 |  0000 | Mandatory SME instructions are implemented.
@@ -334,16 +301,4 @@ SMFR0 | SF8FMA       |    30 |  0000 | FEAT_SSVE_FP8FMA not implemented.
 SMFR0 | SF8DP4       |    29 |  0000 | FEAT_SSVE_FP8DOT4 not implemented.
 SMFR0 | SF8DP2       |    28 |  0000 | FEAT_SSVE_FP8DOT2 not implemented.
 ------|--------------|-------|-------|----------------------------------------------
-ZFR0  | F64MM        | 59:56 |  0001 | FEAT_F64MM SVE implemented
-ZFR0  | F32MM        | 55:52 |  0001 | FEAT_F32MM SVE implemented
-ZFR0  | I8MM         | 47:44 |  0001 | FEAT_I8MM SVE implemented.
-ZFR0  | SM4          | 43:40 |  0001 | FEAT_SVE_SM4 implemented.
-ZFR0  | SHA3         | 35:32 |  0001 | FEAT_SVE_SHA3 implemented.
-ZFR0  | B16B16       | 27:24 |  0000 | FEAT_SVE_B16B16 not implemented.
-ZFR0  | BF16         | 23:20 |  0001 | FEAT_BF16 SVE implemented.
-ZFR0  | BitPerm      | 19:16 |  0001 | FEAT_SVE_BitPerm implemented.
-ZFR0  | AES          |  7:4  |  0010 | FEAT_SVE_AES and FEAT_SVE_PMULL128 implemented.
-ZFR0  | SVEver       |  3:0  |  0001 | FEAT_SVE2 implemented.
-------|--------------|-------|-------|----------------------------------------------
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:

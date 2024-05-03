@@ -33,76 +33,19 @@ QEMU command line arguments:
 EFI startup script:
 mode 100 31
 pci
-fs0:sbsa.efi -skip 861 -l 7
+fs0:sbsa.efi -only -skip 861 -l 7
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-WARNING: BL1: neoverse_n1: CPU workaround for erratum 1946160 was missing!
-WARNING: BL1: neoverse_n1: CPU workaround for erratum 2743102 was missing!
-INFO:    BL1: neoverse_n1: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.3
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-INFO:    CPU 0: node-id: 0, mpidr: 0
-INFO:    CPU 1: node-id: 0, mpidr: 1
-INFO:    Found 2 cpus
-INFO:    There is no thread in this cpu-map
-INFO:    There is no thread in this cpu-map
-INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
-INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
-NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-WARNING: BL31: neoverse_n1: CPU workaround for erratum 1946160 was missing!
-WARNING: BL31: neoverse_n1: CPU workaround for erratum 2743102 was missing!
-INFO:    BL31: neoverse_n1: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc2000001) (function id: 1)
-INFO:    Platform version requested
-INFO:    SMC call: (0xc2000064) (function id: 100)
-INFO:    SMC call: (0xc2000065) (function id: 101)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -154,17 +97,19 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 7
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -only -skip 861 -l 7
 
 
  SBSA Architecture Compliance Suite
-    Version 7.1.4
+    Version 7.2.0
 
- Starting tests for level  7 (Print level is  3)
+ Starting tests for only level  7 (Print level is  3)
 
  Creating Platform Information Tables
  PE_INFO: Number of PE detected       :    2
+ GIC INFO: GIC version                :    v3
  GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
@@ -173,7 +118,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  RAS2_INFO: Number of RAS2 entries    :    0
  RAS2_INFO: Num of RAS2 memory entries:    0
  PCIE_INFO: Number of ECAM regions    :    1
- PCIE_INFO: Number of BDFs found      :   14
+ PCIE_INFO: Number of BDFs found      :    14
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
  PCIE_INFO: Number of EP              :    3
@@ -185,6 +130,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
  PCIE_INFO: Number of PCIe/PCI Bridge :    1
  SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
  Peripheral: Num of UART controllers  :    1
@@ -192,339 +138,69 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  RAS_INFO: Number of RAS nodes        :    0
 
       *** Starting PE tests ***
-   1 : Check PE Granule Support          : Result:  PASS
-   2 : Check for 16-bit ASID support     : Result:  PASS
-   3 : Check AARCH64 implementation      : Result:  PASS
-   4 : Check FEAT_LPA Requirements       
-       S_L3PE_04
-       Checkpoint --  1                  : Result:  SKIPPED
-   5 : Check for RAS extension           : Result:  PASS
-   6 : Check DC CVAP support             
-       S_L4PE_02
-       Checkpoint --  2                  : Result:  SKIPPED
-   7 : Check for 16-Bit VMID             : Result:  PASS
-   8 : Check for Virtual host extensions : Result:  PASS
-   9 : Support Page table map size change
-       Failed on PE -    0 for Level=  7 
-       S_L5PE_01
-       Checkpoint --  1                  : Result:  FAIL
-  10 : Check for addr and generic auth   
-       Failed on PE -    0 for Level=  7 
-       S_L5PE_02
-       Checkpoint --  1                  : Result:  FAIL
-  11 : Check Activity monitors extension 
-       Failed on PE -    0 for Level=  7 
-       S_L5PE_04
-       Checkpoint --  1                  : Result:  FAIL
-  12 : Check for SHA3 and SHA512 support 
-       Failed on PE -    0 for Level=  7 
-       S_L5PE_05
-       Checkpoint --  1                  : Result:  FAIL
-  13 : Stage 2 control of mem and cache  
-       Failed on PE -    0 for Level=  7 
-       S_L5PE_06
-       Checkpoint --  1                  : Result:  FAIL
-  14 : Check for FEAT_NV2 support        
-       S_L5PE_07
-       Checkpoint --  2                  : Result:  SKIPPED
-  15 : Check MPAM PE Requirements        
-       S_MPAM_PE
-       Checkpoint --  2                  : Result:  SKIPPED
-  16 : Check MPAM LLC Requirements       
-       S_MPAM_PE
-       Checkpoint --  2                  : Result:  SKIPPED
-  17 : Check SPE if implemented          
-       B_PE_17
-       Checkpoint --  2                  : Result:  SKIPPED
-  18 : Check Branch Target Support       
-       Failed on PE -    0 for Level=  7 
-       S_L6PE_02
-       Checkpoint --  1                  : Result:  FAIL
-  19 : Check Protect Against Timing Fault
-       Failed on PE -    0 for Level=  7 
-       S_L6PE_03
-       Checkpoint --  1                  : Result:  FAIL
-  20 : Check PMU Version Support         
-       Failed on PE -    0 for Level=  7 
-       S_L6PE_04
-       Checkpoint --  1                  : Result:  FAIL
-  21 : Check AccessFlag DirtyState Update: Result:  PASS
-  22 : Check Enhanced Virtualization Trap
-       Failed on PE -    0 for Level=  7 
-       S_L6PE_06
-       Checkpoint --  1                  : Result:  FAIL
-  23 : Check Speculation Restriction     
-       Failed on PE -    0 for Level=  7 
-       B_SEC_01
-       Checkpoint --  1                  : Result:  FAIL
-  24 : Check Speculative Str Bypass Safe : Result:  PASS
-  25 : Check PEs Impl CSDB,SSBB,PSSBB    : Result:  PASS
-  26 : Check PEs Implement SB Barrier    
-       Failed on PE -    0 for Level=  7 
-       B_SEC_04
-       Checkpoint --  1                  : Result:  FAIL
-  27 : Check PE Impl CFP,DVP,CPP RCTX    
-       Failed on PE -    0 for Level=  7 
-       B_SEC_05
-       Checkpoint --  1                  : Result:  FAIL
   28 : Check Fine Grain Trap Support     
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_01
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_01
+       Checkpoint --  1                           : Result:  FAIL
   29 : Check for ECV support             
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_02
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_02
+       Checkpoint --  1                           : Result:  FAIL
   30 : Check for AMUv1 Support           
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_03
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_03
+       Checkpoint --  1                           : Result:  FAIL
   31 : Checks ASIMD Int8 matrix multiplc 
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_04
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_04
+       Checkpoint --  1                           : Result:  FAIL
   32 : Check for BFLOAT16 extension      
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_05
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_05
+       Checkpoint --  1                           : Result:  FAIL
   33 : Check PAuth2, FPAC & FPACCOMBINE  
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_06
-       Checkpoint --  1                  : Result:  FAIL
-  34 : Check for SVE Int8 matrix multiplc
-       S_L7PE_07
-       Checkpoint --  2                  : Result:  SKIPPED
+       Failed on PE -    0S_L7PE_06
+       Checkpoint --  1                           : Result:  FAIL
+  34 : Check for SVE Int8 matrix multiplcS_L7PE_07
+       Checkpoint --  2                           : Result:  SKIPPED
   35 : Check for data gathering hint     
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_08
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L7PE_08
+       Checkpoint --  1                           : Result:  FAIL
   36 : Check WFE Fine tune delay feature 
-       Recommened WFE fine-tuning delay feature not implemented
-       S_L7PE_09
-       Checkpoint --  2                  : Result:  SKIPPED
-  37 : Check for enhanced PAN feature    
-       Failed on PE -    0 for Level=  7 
-       S_L7PE_10
-       Checkpoint --  1                  : Result:  FAIL
+       Recommened WFE fine-tuning delay feature not implementedS_L7PE_09
+       Checkpoint --  2                           : Result:  SKIPPED
 
       One or more PE tests failed or were skipped.
 
-      *** Starting Memory tests ***
- 101 : Check peripherals addr 64Kb apart : Result:  PASS
-
-      All Memory tests passed.
-
-      *** Starting GIC tests ***
- 201 : Check GIC version                 : Result:  PASS
- 202 : Check Reserved PPI Assignments    : Result:  PASS
-
-      All GIC tests passed.
-
       *** Starting SMMU tests ***
- 301 : Check SMMU Compatibility          
-       Stage 2 translation not supported 
-       Failed on PE -    0 for Level=  7 
-       S_L4SM_01, S_L4SM_02
-       Checkpoint --  2                  : Result:  FAIL
- 302 : Check SMMUv3.2 or higher          
-       Level 5 or higher systems must be compliant with the Arm SMMUv3.2 or higher  
-       Failed on PE -    0 for Level=  7 
-       S_L5SM_01, S_L5SM_02
-       Checkpoint --  2                  : Result:  FAIL
- 303 : Check S-EL2 & SMMU Stage1 support 
-       Secure EL2 not implemented
-       B_SMMU_09
-       Checkpoint --  1                  : Result:  SKIPPED
- 304 : Check S-EL2 & SMMU Stage2 Support 
-       Secure EL2 not implemented
-       B_SMMU_20
-       Checkpoint --  1                  : Result:  SKIPPED
- 305 : Check SMMU for MPAM support       
-       B_SMMU_11, B_SMMU_22, S_L5SM_03
-       Checkpoint --  2                  : Result:  SKIPPED
- 306 : Check SMMU HTTU Support           
-       Failed on PE -    0 for Level=  7 
-       S_L6SM_02
-       Checkpoint --  1                  : Result:  FAIL
- 307 : Check SMMU MSI Support            
-       Failed on PE -    0 for Level=  7 
-       S_L6SM_03
-       Checkpoint --  1                  : Result:  FAIL
- 308 : Check SMMU 16 Bit VMID Support    : Result:  PASS
- 309 : Check SMMU Large VA Support       
-       B_SMMU_03
-       Checkpoint --  1                  : Result:  SKIPPED
- 310 : Check TLB Range Invalidation      
-       B_SMMU_04, B_SMMU_05
-       Checkpoint --  1                  : Result:  SKIPPED
- 311 : Check SMMU 16 Bit ASID Support    : Result:  PASS
- 312 : Check SMMU Endianess Support      : Result:  PASS
- 313 : Check SMMU Coherent Access Support: Result:  PASS
  314 : Check SMMU PMU Extension          
        PMU Extension not implemented for SMMU index : 0
-       Failed on PE -    0 for Level=  7 
-       S_L7SM_03, S_L7SM_04
-       Checkpoint --  1                  : Result:  FAIL
- 315 : Check if all DMA reqs behind SMMU : Result:  PASS
+       Failed on PE -    0S_L7SM_03, S_L7SM_04
+       Checkpoint --  1                           : Result:  FAIL
+ 315 : Check if all DMA reqs behind SMMU      : Result:  PASS
 
       One or more SMMU tests failed or were skipped.
 
-      *** Starting Watchdog tests ***
- 701 : Check NS Watchdog Revision        : Result:  PASS
-
-      All Watchdog tests passed.
-
       *** Starting PCIe tests ***
- 601 : Check EA Capability               : Result:  PASS
- 801 : Check ECAM Presence               : Result:  PASS
- 803 : Check ECAM Memory accessibility   : Result:  PASS
- 816 : NP type-1 pcie only support 32-bit
-       PCI_MM_04
-       Checkpoint --  3                  : Result:  SKIPPED
- 820 : Check Type 0/1 common config rules: Result:  PASS
- 821 : Check Type 0 config header rules  : Result:  PASS
- 822 : Check Type 1 config header rules  
-       IE_REG_3
-       Checkpoint --  1                  : Result:  SKIPPED
- 823 : Check PCIe capability rules       
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED
- 824 : Check Device capabilities reg rule
-       BDF 0x100 : ETFS value mismatch: 0x0 instead of 0x1
-       BDF 0x200 : ETFS value mismatch: 0x0 instead of 0x1
-       Failed on PE -    0 for Level=  7 
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-       Checkpoint --  2                  : Result:  FAIL
- 825 : Check Device Control register rule
-       BDF 0x100 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
-       BDF 0x100 : WARNING APPE attribute mismatch: 0x400 instead of 0x0
-       BDF 0x200 : WARNING PFE attribute mismatch: 0x200 instead of 0x0
-       BDF 0x200 : WARNING APPE attribute mismatch: 0x400 instead of 0x0: Result:  PASS
- 826 : Check Device cap 2 register rules 
-       BDF 0x100 : WARNING EFFS value mismatch: 0x0 instead of 0x1: Result:  PASS
- 827 : Check Device control 2 reg rules  
-       BDF 0x100 : AFI attribute mismatch: 0x2400020 instead of 0x2400000
-       Failed on PE -    0 for Level=  7 
-       RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
-       Checkpoint --  1                  : Result:  FAIL
- 828 : Check Power management cap rules  
-       PCIe Capability 0x1 not found for BDF 0x200
-       PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  7 
-       RE_REG_2, IE_REG_5
-       Checkpoint --  2                  : Result:  FAIL
- 829 : Check Power management/status rule
-       BDF 0x100 : WARNING Data Select attribute mismatch: 0x1E00 instead of 0x0
-       PCIe Capability 0x1 not found for BDF 0x200
-       PCIe Capability 0x1 not found for BDF 0x200
-       Failed on PE -    0 for Level=  7 
-       RE_REG_2, IE_REG_5
-       Checkpoint --  2                  : Result:  FAIL
- 830 : Check Cmd Reg memory space enable : Result:  PASS
- 831 : Check Type0/1 BIST Register rule  : Result:  PASS
- 832 : Check HDR CapPtr Register rule    : Result:  PASS
- 833 : Check Max payload size supported  : Result:  PASS
- 834 : Check BAR memory space & Type rule
-       BDF 0x0 Not MMIO
-       Failed on PE -    0 for Level=  7 
-       RE_BAR_3, IE_BAR_3
-       Checkpoint --  1                  : Result:  FAIL
- 835 : Check Function level reset rule   
-       RE_RST_1, IE_RST_1, PCI_SM_02
-       Checkpoint --  1                  : Result:  SKIPPED
- 836 : Check ARI forwarding support rule 
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED
- 837 : Check OBFF supported rule         
-       IE_REG_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 838 : Check CTRS and CTDS rule          
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED
- 839 : Check i-EP AtomicOp rule          
-       IE_REG_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 841 : Check MSI and MSI-X support rule  : Result:  PASS
- 842 : Check Power Management rules      
-       BDF - 200 does not support Power Management Capability
-       Failed on PE -    0 for Level=  7 
-       RE_PWR_1, IE_PWR_1
-       Checkpoint --  1                  : Result:  FAIL
- 843 : Check ARI forwarding enable rule  
-       PCI_IN_17
-       Checkpoint --  1                  : Result:  SKIPPED
- 844 : Check device under RP in same ECAM
-       PCI_IN_04
-       Checkpoint --  1                  : Result:  SKIPPED
- 845 : Check all RP in HB is in same ECAM
-       PCI_IN_03
-       Checkpoint --  1                  : Result:  SKIPPED
- 846 : Check RP Byte Enable Rules        
-       PCI_IN_18
-       Checkpoint --  1                  : Result:  SKIPPED
- 847 : Check Config Txn for RP in HB     
-       PCI_IN_12
-       Checkpoint --  1                  : Result:  SKIPPED
- 850 : Check L-Intr SPI Level-Sensitive  
-       pal_pcie_get_legacy_irq_map unimplemented. Skipping test
-       The API is platform specific and to be populated
-       by partners with system legacy irq map
-       PCI_LI_01, PCI_LI_03
-       Checkpoint --  2                  : Result:  SKIPPED
- 851 : Check Sec Bus Reset For iEP_RP    
-       IE_RST_2
-       Checkpoint --  2                  : Result:  SKIPPED
- 852 : Check ATS Support Rule            
-       IE_SMU_1, RE_SMU_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 856 : Check iEP-RootPort P2P Support    
-       IE_ACS_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 857 : Check RCiEP, iEP_EP P2P Supp      
-       IE_ACS_1, RE_ACS_1, RE_ACS_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 858 : Read and write to BAR reg         : Result:  PASS
- 859 : Check RCEC Class code and Ext Cap     
-       RE_PCI_2
-       Checkpoint --  1                  : Result:  SKIPPED
- 860 : Check RCiEP Hdr type & link Cap   
-       BDF - 0x100
-       Link Capabilities reg check failed
-       Invalid Link Capabilities 0x1
-       BDF - 0x200
-       Link Capabilities reg check failed
-       Invalid Link Capabilities 0x1
-       Failed on PE -    0 for Level=  7 
-       RE_PCI_1
-       Checkpoint --  2                  : Result:  FAIL
- 863 : Slot Cap, Control and Status register rules      
-       IE_REG_4
-       Checkpoint --  1                  : Result:  SKIPPED
 
       One or more PCIe tests failed or were skipped.
-      PCIE_INFO: Number of exerciser cards :    0
+ PCIE_INFO: Number of exerciser cards :    0 
 
-     No Exerciser Devices Found, Skipping Exerciser tests...
+     No Exerciser Devices Found,                                         Skipping Exerciser tests...
+
 
        PE MPAM extension unimplemented. Skipping all MPAM tests
 
       *** Starting PMU tests ***
-1101 : Check PMU Overflow signal         : Result:  PASS
-1102 : Check number of PMU counters      : Result:  PASS
+1101 : Check PMU Overflow signal              : Result:  PASS
+1102 : Check number of PMU counters           : Result:  PASS
 1103 : Check for multi-threaded PMU ext  
-       Failed on PE -    0 for Level=  7 
-       PMU_EV_11
-       Checkpoint --  1                  : Result:  FAIL
-1106 : Check for PMU SPE Requirements    
-       PMU_SPE
-       Checkpoint --  2                  : Result:  SKIPPED
+       Failed on PE -    0PMU_EV_11
+       Checkpoint --  1                           : Result:  FAIL
+1106 : Check for PMU SPE Requirements    PMU_SPE
+       Checkpoint --  2                           : Result:  SKIPPED
 
        PMU nodes not found. Skipping remaining PMU tests
 
        RAS nodes not found. Skipping all RAS tests
 
      -------------------------------------------------------
-     Total Tests run  =  100;  Tests Passed  =   33  Tests Failed =   33
+     Total Tests run  =   15;  Tests Passed  =    3  Tests Failed =    9
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 
@@ -534,4 +210,3 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
       *** SBSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:

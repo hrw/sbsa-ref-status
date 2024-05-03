@@ -33,92 +33,19 @@ QEMU command line arguments:
 EFI startup script:
 mode 100 31
 pci
-fs0:sbsa.efi -skip 861 -l 4
+fs0:sbsa.efi -only -skip 861 -l 4
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL1: Built : 11:38:19, Mar 25 2024
-INFO:    BL1: RAM 0x3ffee000 - 0x3fffb000
-INFO:    BL1: cortex_a57: CPU workaround for erratum 1 was applied
-WARNING: BL1: cortex_a57: CPU workaround for erratum 826974 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 826977 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 828024 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 829520 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 833471 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 859972 was missing!
-WARNING: BL1: cortex_a57: CPU workaround for erratum 1319537 was missing!
-INFO:    BL1: cortex_a57: CPU workaround for CVE 2017_5715 was applied
-INFO:    BL1: cortex_a57: CPU workaround for CVE 2018_3639 was applied
-INFO:    BL1: cortex_a57: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL1: Loading BL2
-INFO:    Loading image id=1 at address 0x3fcd1000
-INFO:    Image id=1 loaded: 0x3fcd1000 - 0x3fcd9201
+NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL1: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL2
-INFO:    Entry point address = 0x3fcd1000
-INFO:    SPSR = 0x3c5
-NOTICE:  BL2: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL2: Built : 11:38:19, Mar 25 2024
-INFO:    BL2: Doing platform setup
-INFO:    BL2: Loading image id 3
-INFO:    Loading image id=3 at address 0x3fcee000
-INFO:    Image id=3 loaded: 0x3fcee000 - 0x3fcff0f1
-INFO:    BL2: Skip loading image id 5
+NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL2: Built : 21:46:24, May  2 2024
 NOTICE:  BL1: Booting BL31
-INFO:    Entry point address = 0x3fcee000
-INFO:    SPSR = 0x3cd
-INFO:    Platform version: 0.3
-INFO:    GICD base = 0x40060000
-INFO:    GICR base = 0x40080000
-INFO:    GICI base = 0x44081000
-INFO:    CPU 0: node-id: 0, mpidr: 0
-INFO:    CPU 1: node-id: 0, mpidr: 1
-INFO:    Found 2 cpus
-INFO:    There is no thread in this cpu-map
-INFO:    There is no thread in this cpu-map
-INFO:    cpu topology:sockets is 1, clusters is 1, cores is 2, thread is 0
-INFO:    RAM 0: node-id: 0, address: 0x10000000000 - 0x100ffffffff
-NOTICE:  BL31: v2.10.0(debug):hrw-2024-03-21-1756-36-g602f9ec79-dirty
-NOTICE:  BL31: Built : 11:38:19, Mar 25 2024
-INFO:    GICv3 without legacy support detected.
-INFO:    ARM GICv3 driver initialized in EL3
-INFO:    Maximum SPI INTID supported: 287
-INFO:    BL31: Initializing runtime services
-INFO:    BL31: cortex_a57: CPU workaround for erratum 1 was applied
-WARNING: BL31: cortex_a57: CPU workaround for erratum 826974 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 826977 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 828024 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 829520 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 833471 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 859972 was missing!
-WARNING: BL31: cortex_a57: CPU workaround for erratum 1319537 was missing!
-INFO:    BL31: cortex_a57: CPU workaround for CVE 2017_5715 was applied
-INFO:    BL31: cortex_a57: CPU workaround for CVE 2018_3639 was applied
-INFO:    BL31: cortex_a57: CPU workaround for CVE 2022_23960 was applied
-INFO:    BL31: Preparing for EL3 exit to normal world
-INFO:    Entry point address = 0x10000000
-INFO:    SPSR = 0x3c9
-UEFI firmware (version 1.0 built at 14:00:09 on Mar 20 2024)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc200012c) (function id: 300)
-INFO:    SMC call: (0xc200012d) (function id: 301)
-INFO:    SMC call: (0xc2000001) (function id: 1)
-INFO:    Platform version requested
-INFO:    SMC call: (0xc2000064) (function id: 100)
-INFO:    SMC call: (0xc2000065) (function id: 101)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c9) (function id: 201)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
-INFO:    SMC call: (0xc20000c8) (function id: 200)
+NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
+NOTICE:  BL31: Built : 21:46:24, May  2 2024
+UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -170,17 +97,19 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1B36 Device 000E Prog Interface 0
     [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
              Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -skip 861 -l 4
+[1m[33m[40mShell> [0m[37m[40mfs0:sbsa.efi -only -skip 861 -l 4
 
 
  SBSA Architecture Compliance Suite
-    Version 7.1.4
+    Version 7.2.0
 
- Starting tests for level  4 (Print level is  3)
+ Starting tests for only level  4 (Print level is  3)
 
  Creating Platform Information Tables
  PE_INFO: Number of PE detected       :    2
+ GIC INFO: GIC version                :    v3
  GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
@@ -189,7 +118,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  RAS2_INFO: Number of RAS2 entries    :    0
  RAS2_INFO: Num of RAS2 memory entries:    0
  PCIE_INFO: Number of ECAM regions    :    1
- PCIE_INFO: Number of BDFs found      :   14
+ PCIE_INFO: Number of BDFs found      :    14
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
  PCIE_INFO: Number of EP              :    3
@@ -201,6 +130,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
  PCIE_INFO: Number of PCIe/PCI Bridge :    1
  SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
  Peripheral: Num of UART controllers  :    1
@@ -208,59 +138,35 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  RAS_INFO: Number of RAS nodes        :    0
 
       *** Starting PE tests ***
-   1 : Check PE Granule Support          : Result:  PASS
-   2 : Check for 16-bit ASID support     : Result:  PASS
-   3 : Check AARCH64 implementation      : Result:  PASS
-   4 : Check FEAT_LPA Requirements       
-       S_L3PE_04
-       Checkpoint --  1                  : Result:  SKIPPED
    5 : Check for RAS extension           
-       Failed on PE -    0 for Level=  4 
-       S_L4PE_01
-       Checkpoint --  1                  : Result:  FAIL
-   6 : Check DC CVAP support             
-       S_L4PE_02
-       Checkpoint --  2                  : Result:  SKIPPED
+       Failed on PE -    0S_L4PE_01
+       Checkpoint --  1                           : Result:  FAIL
+   6 : Check DC CVAP support             S_L4PE_02
+       Checkpoint --  2                           : Result:  SKIPPED
    7 : Check for 16-Bit VMID             
-       Failed on PE -    0 for Level=  4 
-       S_L4PE_03
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L4PE_03
+       Checkpoint --  1                           : Result:  FAIL
    8 : Check for Virtual host extensions 
-       Failed on PE -    0 for Level=  4 
-       S_L4PE_04
-       Checkpoint --  1                  : Result:  FAIL
+       Failed on PE -    0S_L4PE_04
+       Checkpoint --  1                           : Result:  FAIL
 
       One or more PE tests failed or were skipped.
-
-      *** Starting Memory tests ***
- 101 : Check peripherals addr 64Kb apart : Result:  PASS
-
-      All Memory tests passed.
-
-      *** Starting GIC tests ***
- 201 : Check GIC version                 : Result:  PASS
-
-      All GIC tests passed.
 
       *** Starting SMMU tests ***
  301 : Check SMMU Compatibility          
        Stage 2 translation not supported 
-       Failed on PE -    0 for Level=  4 
-       S_L4SM_01, S_L4SM_02
-       Checkpoint --  2                  : Result:  FAIL
+       Failed on PE -    0S_L4SM_01, S_L4SM_02
+       Checkpoint --  2                           : Result:  FAIL
 
       One or more SMMU tests failed or were skipped.
 
       *** Starting PCIe tests ***
- 601 : Check EA Capability               : Result:  PASS
+ 601 : Check EA Capability                    : Result:  PASS
 
       All PCIe tests passed.
-      PCIE_INFO: Number of exerciser cards :    0
-
-     No Exerciser Devices Found, Skipping Exerciser tests...
 
      -------------------------------------------------------
-     Total Tests run  =   12;  Tests Passed  =    6  Tests Failed =    4
+     Total Tests run  =    6;  Tests Passed  =    1  Tests Failed =    4
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 
@@ -270,4 +176,3 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
       *** SBSA tests complete. Reset the system. ***
 
 [1m[33m[40mShell> [0m[37m[40mreset -c
-INFO:    PSCI Power Domain Map:
