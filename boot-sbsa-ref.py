@@ -101,6 +101,20 @@ def add_cpu(cpu_type, is_it_numa, smp):
                         "-numa", "node,nodeid=1,cpus=2,memdev=m1",
                         "-numa", "node,nodeid=2,cpus=3"])
 
+        qemu_args.extend([
+  "-device", "pxb-pcie,id=pxb1,bus_nr=64,numa_node=1",
+    "-device", "pcie-root-port,id=root_port3,bus=pxb1,chassis=11,slot=0",
+      "-device", "sdhci-pci,bus=root_port3,id=sdhci",
+    "-device", "pcie-root-port,id=root_port4,bus=pxb1,chassis=12,slot=0",
+      "-device", "bochs-display,bus=root_port4,id=bochs",
+  "-device", "pxb-pcie,id=pxb2,bus_nr=128,numa_node=2,bus=pcie.0",
+    "-device", "pcie-pci-bridge,id=pci,bus=pxb2",
+      "-device", "es1370,bus=pci,addr=9,id=es1370",
+#      "-device", "e1000,bus=pci,addr=10,id=e1000",
+    "-device", "pcie-root-port,id=root_port_for_ahci,bus=pxb2,chassis=10,slot=0",
+      "-device", "ahci,bus=root_port_for_ahci,id=ahci"
+])
+
 
 def add_device(device_name):
     qemu_args.extend(["-device", device_name])
