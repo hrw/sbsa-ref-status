@@ -187,7 +187,6 @@ qemu_args = [
     "-serial", "stdio"
 ]
 
-print(args)
 add_firmware(args.virt)
 add_machine(args.virt)
 add_cpu(args.cpu, args.numa, args.smp)
