@@ -162,17 +162,20 @@ def show_args():
 
     print("QEMU command arguments:\n")
     for arg in qemu_args:
-        if arg.startswith("-") and prev_arg.startswith("-"):
-            print(prev_arg)
-        elif arg.startswith("-"):
-            pass
-        elif prev_arg.startswith("-"):
-            print(f"{prev_arg} {arg}")
-        else:
-            print(arg)
-        prev_arg = arg
+        try:
+            if arg.startswith("-") and prev_arg.startswith("-"):
+                print(prev_arg)
+            elif arg.startswith("-"):
+                pass
+            elif prev_arg.startswith("-"):
+                print(f"{prev_arg} {arg}")
+            else:
+                print(arg)
+            prev_arg = arg
+        except AttributeError:
+            print(f"ERROR: prev_arg:{prev_arg} arg:{arg}")
 
-    print("")
+    print("", flush=True)
 
 
 def add_pcie(card_name, add_root_port=True):
