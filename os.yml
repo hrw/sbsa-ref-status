@@ -1,6 +1,6 @@
 alpine:
-  file: disks/alpine-standard-3.19.1-aarch64.iso
-  url: https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-standard-3.19.1-aarch64.iso
+  file: disks/alpine-standard-3.20.0-aarch64.iso
+  url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.0-aarch64.iso
 centos:
   file: disks/CentOS-Stream-9-20240226.1-aarch64-boot.iso
   url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-20240226.1-aarch64-boot.iso
