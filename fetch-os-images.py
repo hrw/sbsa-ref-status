@@ -104,7 +104,11 @@ for entry in yml_data:
 
     print(f"Checking image for {entry}")
 
-    filename = os_data['file'].split('/')[-1]
+    filename = ""
+    if 'file' in os_data:
+        filename = os_data['file'].split('/')[-1]
+    else:
+        os_data['file'] = ""
 
     if 'url' in os_data:
         url_name = os_data['url'].split('/')[-1]
