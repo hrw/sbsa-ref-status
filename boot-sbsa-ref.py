@@ -148,7 +148,9 @@ def add_os_drive(os_name):
 
 
 def enable_graphics_window(is_gfx):
-    if not is_gfx:
+    if is_gfx:
+        qemu_args.extend(["-display", "gtk,show-tabs=on"])
+    else:
         qemu_args.append("-nographic")
 
 
