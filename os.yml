@@ -32,23 +32,25 @@ freebsd13:
   file: disks/FreeBSD-13.3-RELEASE-arm64-aarch64.qcow2
   url: https://download.freebsd.org/releases/VM-IMAGES/13.3-RELEASE/aarch64/Latest/FreeBSD-13.3-RELEASE-arm64-aarch64.qcow2.xz
 freebsd15:
+  file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64.qcow2
   force-download: true
   url: https://download.freebsd.org/snapshots/VM-IMAGES/15.0-CURRENT/aarch64/Latest/FreeBSD-15.0-CURRENT-arm64-aarch64.qcow2.xz
 netbsd10:
-  file: disks/NetBSD-10-aarch64--generic.img
-  force-download: true
+  file: disks/NetBSD-10-arm64.img
+  force-name: true
   type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
+  url: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.0/evbarm-aarch64/binary/gzimg/arm64.img.gz
 netbsd11:
-  file: disks/NetBSD-HEAD-aarch64-202404091010Z-generic.img
+  file: disks/NetBSD-11-aarch64-generic.img
   force-download: true
+  force-name: true
   type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/HEAD/202404091010Z/NetBSD-HEAD-aarch64-202404091010Z-generic.img.gz
+  url: https://nycdn.netbsd.org/pub/arm/HEAD/202405231440Z/NetBSD-HEAD-aarch64-202405231440Z-generic.img.gz
 netbsd9:
   file: disks/NetBSD-9-aarch64--generic.img
   force-download: true
   type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.3-release/NetBSD-9-aarch64--generic.img.gz
+  url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.4-release/NetBSD-9-aarch64--generic.img.gz
 openbsd73:
   file: disks/openbsd-miniroot73.img
   force-name: true
