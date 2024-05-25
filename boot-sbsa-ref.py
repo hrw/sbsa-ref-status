@@ -140,6 +140,8 @@ def add_os_drive(os_name):
 
     if os_data[os_name]["file"].endswith(".iso"):
         add_drive(os_data[os_name]["file"], "", "cdrom")
+    elif os_data[os_name]["file"].endswith(".qcow2"):
+        add_drive(os_data[os_name]["file"], drive_format="qcow2")
     else:
         add_drive(os_data[os_name]["file"])
 
