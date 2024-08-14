@@ -56,7 +56,11 @@ def download_os_image(os_name, data):
 
     r = requests.get(data['url'], stream=True)
 
-    filesize = int(r.headers["Content-Length"]) or None
+    try:
+        filesize = int(r.headers["Content-Length"]) or None
+    except KeyError:
+        filesize = None
+
     if r.status_code != 200:
         print(f"HTTP Error {r.status_code}")
         sys.exit(-1)
