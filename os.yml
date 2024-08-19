@@ -84,6 +84,6 @@ sr-acs:
   file: disks/sr_acs_live_image.img
   reset: false
   type: hdd
-  url: https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v23.09_2.0.0/sr_acs_live_image.img.xz
+  url: https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v24.03_2.1.0/sr_acs_live_image.img.xz
 winpe:
   file: disks/WinPE_arm64.iso
