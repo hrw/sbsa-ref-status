@@ -47,7 +47,7 @@ netbsd11:
   force-download: true
   force-name: true
   type: hdd
-  url: https://nycdn.netbsd.org/pub/arm/HEAD/202405231440Z/NetBSD-HEAD-aarch64-202405231440Z-generic.img.gz
+  url: https://nycdn.netbsd.org/pub/arm/HEAD/latest-evbarm-aarch64/NetBSD-HEAD-aarch64-generic.img.gz
 netbsd9:
   file: disks/NetBSD-9-aarch64--generic.img
   force-download: true
