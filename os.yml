@@ -2,8 +2,10 @@ alpine:
   file: disks/alpine-standard-3.20.2-aarch64.iso
   url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.2-aarch64.iso
 centos:
-  file: disks/CentOS-Stream-9-20240226.1-aarch64-boot.iso
-  url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-20240226.1-aarch64-boot.iso
+  file: disks/CentOS-Stream-9-boot.iso
+  force-download: true
+  force-name: true
+  url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-latest-aarch64-boot.iso
 centos8s:
   file: disks/CentOS-Stream-8-boot.iso
   force-download: true
