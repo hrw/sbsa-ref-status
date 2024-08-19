@@ -37,15 +37,15 @@ fs0:sbsa.efi -only -skip 861 -l 7 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL31: Built : 21:46:24, May  2 2024
-UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
+UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -108,7 +108,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at FBFEB898 and length is 108
+  MADT is at F86DF898 and length is 108
   Flags 1
   PE Enabled 1, Online Capable 0
   MADT Revision 4 
@@ -116,11 +116,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Flags 1
   PE Enabled 1, Online Capable 0
   MADT Revision 4 
- MPIDR 100 PE num 1
+ MPIDR 1 PE num 1
  PE_INFO: Number of PE detected       :    2
  PE_INFO: Primary PE index       :    0
  Creating GIC INFO table
-  MADT is at FBFEB898 and length is 108
+  MADT is at F86DF898 and length is 108
   GICH base 2C010000
   GICH base 2C010000
   GIC DIS base 40060000
@@ -134,52 +134,60 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  Creating TIMER INFO table
-  GTDT is at FBFEB718 and length is 84
+  GTDT is at F86DF798 and length is 84
   GTDT revision is at 3
  TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
   Watchdog base = 0x50011000 INTID = 0x30
  WATCHDOG_INFO: Number of Watchdogs   :    1
-PPTT table found at 0x100FBFEB218 with length 0xB8
+PPTT table found at 0x100F86DF218 with length 0x12C
 
 Cache info * Index 0 *
-  Offset:                  0x38
+  Offset:                  0x68
   Type:                    0x0
-  Cache ID:                0x1801
-  Size:                    0x8000
+  Cache ID:                0x1
+  Size:                    0x10000
   Next level index:        1
   Private flag:            0x1
 
 Cache info * Index 1 *
-  Offset:                  0x68
+  Offset:                  0xA0
   Type:                    0x2
-  Cache ID:                0x1C00
+  Cache ID:                0x3
   Size:                    0x80000
   Next level index:        -1
   Private flag:            0x1
 
 Cache info * Index 2 *
-  Offset:                  0x50
+  Offset:                  0x84
   Type:                    0x1
-  Cache ID:                0x1801
-  Size:                    0x8000
+  Cache ID:                0x2
+  Size:                    0x10000
   Next level index:        1
   Private flag:            0x1
 
 Cache info * Index 3 *
-  Offset:                  0x38
+  Offset:                  0xD8
   Type:                    0x0
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
+  Cache ID:                0x4
+  Size:                    0x10000
+  Next level index:        4
   Private flag:            0x1
 
 Cache info * Index 4 *
-  Offset:                  0x50
+  Offset:                  0x110
+  Type:                    0x2
+  Cache ID:                0x6
+  Size:                    0x80000
+  Next level index:        -1
+  Private flag:            0x1
+
+Cache info * Index 5 *
+  Offset:                  0xF4
   Type:                    0x1
-  Cache ID:                0x1801
-  Size:                    0x8000
-  Next level index:        1
+  Cache ID:                0x5
+  Size:                    0x10000
+  Next level index:        4
   Private flag:            0x1
 
 PE level one cache index info
@@ -187,8 +195,8 @@ PE Index * 0 *
   Level 1 Cache index(s) : 0, 2,
 
 PE Index * 1 *
-  Level 1 Cache index(s) : 3, 4,
- CACHE_INFO: Number of cache nodes    :    5
+  Level 1 Cache index(s) : 3, 5,
+ CACHE_INFO: Number of cache nodes    :    6
  MPAM table not found
  MPAM INFO: Number of MSC nodes       :    0
  HMAT ACPI table not found
@@ -354,27 +362,28 @@ PE Index * 1 *
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBCA0000]
-  Reserved region of type 1 [0x100FBCA0000, 0x100FBE20000]
-  Reserved region of type 5 [0x100FBE20000, 0x100FBEA0000]
-  Reserved region of type 6 [0x100FBEA0000, 0x100FBF40000]
-  Reserved region of type 5 [0x100FBF40000, 0x100FBFE0000]
-  Reserved region of type 7 [0x100FBFE0000, 0x100FBFE5000]
-  Reserved region of type 9 [0x100FBFE5000, 0x100FBFEC000]
-  Reserved region of type 7 [0x100FBFEC000, 0x100FC000000]
-  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDE11000]
-  Reserved region of type 4 [0x100FDE11000, 0x100FDF95000]
-  Reserved region of type 7 [0x100FDF95000, 0x100FDF96000]
-  Reserved region of type 4 [0x100FDF96000, 0x100FEF14000]
-  Reserved region of type 7 [0x100FEF14000, 0x100FF1AC000]
-  Reserved region of type 3 [0x100FF1AC000, 0x100FF4F0000]
-  Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
-  Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
-  Reserved region of type 7 [0x100FF8D0000, 0x100FF8E8000]
-  Reserved region of type 4 [0x100FF8E8000, 0x100FF90B000]
-  Reserved region of type 3 [0x100FF90B000, 0x100FF942000]
-  Reserved region of type 4 [0x100FF942000, 0x100FFFE8000]
+  Reserved region of type 7 [0x10000000000, 0x100F83E0000]
+  Reserved region of type 1 [0x100F83E0000, 0x100F8560000]
+  Reserved region of type 5 [0x100F8560000, 0x100F85E0000]
+  Reserved region of type 6 [0x100F85E0000, 0x100F8680000]
+  Reserved region of type 5 [0x100F8680000, 0x100F86D0000]
+  Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
+  Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
+  Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA51A000]
+  Reserved region of type 4 [0x100FA51A000, 0x100FA724000]
+  Reserved region of type 7 [0x100FA724000, 0x100FA725000]
+  Reserved region of type 4 [0x100FA725000, 0x100FB624000]
+  Reserved region of type 7 [0x100FB624000, 0x100FB8CA000]
+  Reserved region of type 3 [0x100FB8CA000, 0x100FBC00000]
+  Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
+  Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
+  Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
+  Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
+  Reserved region of type 7 [0x100FC020000, 0x100FF8E3000]
+  Reserved region of type 4 [0x100FF8E3000, 0x100FF904000]
+  Reserved region of type 3 [0x100FF904000, 0x100FF93A000]
+  Reserved region of type 4 [0x100FF93A000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
@@ -383,10 +392,10 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0
- Shared memory is 100FDFA7F98
+ Shared memory is 100FA74FF98
 
       *** Starting PE tests ***
-  28 : Check Fine Grain Trap Support     
+  28 : Check Fine Grain Trap Support         
        START
        PSCI_CPU_ON: success
        Failed on PE -    0
@@ -394,7 +403,7 @@ PE Index * 1 *
        Checkpoint --  1                           : Result:  FAIL
        END
 
-  29 : Check for ECV support             
+  29 : Check for ECV support                 
        START
        PSCI_CPU_ON: success
        Failed on PE -    0
@@ -402,7 +411,7 @@ PE Index * 1 *
        Checkpoint --  1                           : Result:  FAIL
        END
 
-  30 : Check for AMUv1 Support           
+  30 : Check for AMUv1 Support               
        START
        ID_AA64PFR0_EL1.AMU[47:44]  = 0
        PSCI_CPU_ON: success
@@ -411,14 +420,14 @@ PE Index * 1 *
        Checkpoint --  1                           : Result:  FAIL
        END
 
-  31 : Checks ASIMD Int8 matrix multiplc 
+  31 : Checks ASIMD Int8 matrix multiplc     
        START
        PSCI_CPU_ON: success
        S_L7PE_04
                                        : Result:  PASS
        END
 
-  32 : Check for BFLOAT16 extension      
+  32 : Check for BFLOAT16 extension          
        START
        PSCI_CPU_ON: success
        S_L7PE_05
@@ -434,21 +443,21 @@ PE Index * 1 *
                                        : Result:  PASS
        END
 
-  34 : Check for SVE Int8 matrix multiplc
+  34 : Check for SVE Int8 matrix multiplc    
        START
        PSCI_CPU_ON: success
        S_L7PE_07
                                        : Result:  PASS
        END
 
-  35 : Check for data gathering hint     
+  35 : Check for data gathering hint         
        START
        PSCI_CPU_ON: success
        S_L7PE_08
                                        : Result:  PASS
        END
 
-  36 : Check WFE Fine tune delay feature 
+  36 : Check WFE Fine tune delay feature     
        START
        ID_AA64MMFR1_EL1.TWED = 0
        Recommened WFE fine-tuning delay feature not implemented
@@ -461,7 +470,7 @@ PE Index * 1 *
       One or more PE tests failed or were skipped.
 
       *** Starting SMMU tests ***
- 314 : Check SMMU PMU Extension          
+ 314 : Check SMMU PMU Extension              
        START
        PMU Extension not implemented for SMMU index : 0
        Failed on PE -    0
@@ -469,7 +478,7 @@ PE Index * 1 *
        Checkpoint --  1                           : Result:  FAIL
        END
 
- 315 : Check if all DMA reqs behind SMMU 
+ 315 : Check if all DMA reqs behind SMMU     
        START
        RC segment no  : 0x0
        CCA attribute  : 0x1
@@ -495,21 +504,21 @@ PE Index * 1 *
        PE MPAM extension unimplemented. Skipping all MPAM tests
 
       *** Starting PMU tests ***
-1101 : Check PMU Overflow signal         
+1101 : Check PMU Overflow signal             
        START
        Received PMUIRQ 
        PMU_PE_02
                                        : Result:  PASS
        END
 
-1102 : Check number of PMU counters      
+1102 : Check number of PMU counters          
        START
        PSCI_CPU_ON: success
         PMU_PE_03
                                        : Result:  PASS
        END
 
-1103 : Check for multi-threaded PMU ext  
+1103 : Check for multi-threaded PMU ext      
        START
        PSCI_CPU_ON: success
        Failed on PE -    0
@@ -517,7 +526,7 @@ PE Index * 1 *
        Checkpoint --  1                           : Result:  FAIL
        END
 
-1106 : Check for PMU SPE Requirements    
+1106 : Check for PMU SPE Requirements        
        START
        PSCI_CPU_ON: success
        PMU_SPE

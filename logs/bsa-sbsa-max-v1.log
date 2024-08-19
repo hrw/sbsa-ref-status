@@ -37,15 +37,15 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL31: Built : 21:46:24, May  2 2024
-UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
+UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -109,7 +109,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at FBFEB898 and length is 108
+  MADT is at F86DF898 and length is 108
   Flags 1
   PE Enabled 1, Online Capable 0
   MADT Revision 4 
@@ -121,7 +121,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  PE_INFO: Number of PE detected       :    2
  PE_INFO: Primary PE index       :    0
  Creating GIC INFO table
-  MADT is at FBFEB898 and length is 108
+  MADT is at F86DF898 and length is 108
   GICH base 2C010000
   GICH base 2C010000
   GIC DIS base 40060000
@@ -135,7 +135,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  Creating TIMER INFO table
-  GTDT is at FBFEB718 and length is 84
+  GTDT is at F86DF798 and length is 84
   GTDT revision is at 3
  TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
@@ -298,41 +298,109 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100FBCB6000]
-  Reserved region of type 1 [0x100FBCB6000, 0x100FBE20000]
-  Reserved region of type 5 [0x100FBE20000, 0x100FBEA0000]
-  Reserved region of type 6 [0x100FBEA0000, 0x100FBF40000]
-  Reserved region of type 5 [0x100FBF40000, 0x100FBFE0000]
-  Reserved region of type 7 [0x100FBFE0000, 0x100FBFE5000]
-  Reserved region of type 9 [0x100FBFE5000, 0x100FBFEC000]
-  Reserved region of type 7 [0x100FBFEC000, 0x100FC000000]
-  Reserved region of type 4 [0x100FC000000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FDE93000]
-  Reserved region of type 4 [0x100FDE93000, 0x100FDF95000]
-  Reserved region of type 7 [0x100FDF95000, 0x100FDFA6000]
-  Reserved region of type 4 [0x100FDFA6000, 0x100FEF14000]
-  Reserved region of type 7 [0x100FEF14000, 0x100FF1AC000]
-  Reserved region of type 3 [0x100FF1AC000, 0x100FF4F0000]
-  Reserved region of type 5 [0x100FF4F0000, 0x100FF680000]
-  Reserved region of type 6 [0x100FF680000, 0x100FF8D0000]
-  Reserved region of type 7 [0x100FF8D0000, 0x100FF8E8000]
-  Reserved region of type 4 [0x100FF8E8000, 0x100FF90B000]
-  Reserved region of type 3 [0x100FF90B000, 0x100FF942000]
-  Reserved region of type 4 [0x100FF942000, 0x100FFFE8000]
+  Reserved region of type 7 [0x10000000000, 0x100F83F5000]
+  Reserved region of type 1 [0x100F83F5000, 0x100F8560000]
+  Reserved region of type 5 [0x100F8560000, 0x100F85E0000]
+  Reserved region of type 6 [0x100F85E0000, 0x100F8680000]
+  Reserved region of type 5 [0x100F8680000, 0x100F86D0000]
+  Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
+  Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
+  Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA5AB000]
+  Reserved region of type 4 [0x100FA5AB000, 0x100FA724000]
+  Reserved region of type 7 [0x100FA724000, 0x100FA725000]
+  Reserved region of type 4 [0x100FA725000, 0x100FA73C000]
+  Reserved region of type 7 [0x100FA73C000, 0x100FA73D000]
+  Reserved region of type 4 [0x100FA73D000, 0x100FB624000]
+  Reserved region of type 7 [0x100FB624000, 0x100FB8CA000]
+  Reserved region of type 3 [0x100FB8CA000, 0x100FBC00000]
+  Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
+  Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
+  Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
+  Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
+  Reserved region of type 7 [0x100FC020000, 0x100FF8E3000]
+  Reserved region of type 4 [0x100FF8E3000, 0x100FF904000]
+  Reserved region of type 3 [0x100FF904000, 0x100FF93A000]
+  Reserved region of type 4 [0x100FF93A000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FE04BB98
+ Shared memory is 100FA752F98
 
       *** Starting PE tests ***
 
 Operating System View:
    1 : Check Arch symmetry across PE         
        START
-       cache size read is 701FE00A 
-       cache size read is 70FFE07A 
+       Primary PE Index: 0, cache index: 0, size read: 0x00000000701FE00A
+       Primary PE Index: 0, cache index: 1, size read: 0x0000000070FFE07A
+       Primary PE Index: 0, MIDR_EL1 : 0x00000000000F0510 
+       Primary PE Index: 0, ID_AA64PFR0_EL1 : 0x1301001121112222 
+       Primary PE Index: 0, ID_AA64PFR1_EL1 : 0x0000001001000121 
+       Primary PE Index: 0, ID_AA64DFR0_EL1 : 0x100000001030560A 
+       Primary PE Index: 0, ID_AA64DFR1_EL1 : 0x0000000000000000 
+       Primary PE Index: 0, ID_AA64MMFR0_EL1 : 0x2100032310201126 
+       Primary PE Index: 0, ID_AA64MMFR1_EL1 : 0x0010012010312122 
+       Primary PE Index: 0, CTR_EL0 : 0x00000000B444C004 
+       Primary PE Index: 0, ID_AA64ISAR0_EL1 : 0x1221111110212120 
+       Primary PE Index: 0, ID_AA64ISAR1_EL1 : 0x0011111101211052 
+       Primary PE Index: 0, MPIDR_EL1 : 0x0000000080000000 
+       Primary PE Index: 0, ID_DFR0_EL1 : 0x00000000060000AA 
+       Primary PE Index: 0, ID_ISAR0_EL1 : 0x0000000002101110 
+       Primary PE Index: 0, ID_ISAR1_EL1 : 0x0000000013112111 
+       Primary PE Index: 0, ID_ISAR2_EL1 : 0x0000000021232042 
+       Primary PE Index: 0, ID_ISAR3_EL1 : 0x0000000001112131 
+       Primary PE Index: 0, ID_ISAR4_EL1 : 0x0000000000011142 
+       Primary PE Index: 0, ID_ISAR5_EL1 : 0x0000000011011121 
+       Primary PE Index: 0, ID_MMFR0_EL1 : 0x0000000010101105 
+       Primary PE Index: 0, ID_MMFR1_EL1 : 0x0000000040000000 
+       Primary PE Index: 0, ID_MMFR2_EL1 : 0x0000000001260000 
+       Primary PE Index: 0, ID_MMFR3_EL1 : 0x0000000002122211 
+       Primary PE Index: 0, ID_MMFR4_EL1 : 0x00000100F84129FC 
+       Primary PE Index: 0, ID_PFR0_EL1 : 0x0000000011020131 
+       Primary PE Index: 0, ID_PFR1_EL1 : 0x0000000010011011 
+       Primary PE Index: 0, MVFR0_EL1 : 0x0000000010110222 
+       Primary PE Index: 0, MVFR1_EL1 : 0x0000000013211111 
+       Primary PE Index: 0, MVFR2_EL1 : 0x0000000000000043 
+       Primary PE Index: 0, PMCEID0_EL0 : 0x0000000000020001 
+       Primary PE Index: 0, PMCEID1_EL0 : 0x0000000010000018 
+       Primary PE Index: 0, PMCR_EL0 : 0x0000000041013000 
        PSCI_CPU_ON: success
+Primary PE Index : 0, MIDR_EL1 : 0x00000000000F0510
+        PE Index : 1, MIDR_EL1 : 0x00000000000F0510
+        PE Index: 1, cache index: 0, size read: 0x00000000701FE00A
+        PE Index: 1, cache index: 1, size read: 0x0000000070FFE07A
+        PE Index: 1, ID_AA64PFR0_EL1  : 0x1301001121112222
+        PE Index: 1, ID_AA64PFR1_EL1  : 0x0000001001000121
+        PE Index: 1, ID_AA64DFR0_EL1  : 0x100000001030560A
+        PE Index: 1, ID_AA64DFR1_EL1  : 0x0000000000000000
+        PE Index: 1, ID_AA64MMFR0_EL1  : 0x2100032310201126
+        PE Index: 1, ID_AA64MMFR1_EL1  : 0x0010012010312122
+        PE Index: 1, CTR_EL0  : 0x00000000B444C004
+        PE Index: 1, ID_AA64ISAR0_EL1  : 0x1221111110212120
+        PE Index: 1, ID_AA64ISAR1_EL1  : 0x0011111101211052
+        PE Index: 1, MPIDR_EL1  : 0x0000000080000001
+        PE Index: 1, ID_DFR0_EL1  : 0x00000000060000AA
+        PE Index: 1, ID_ISAR0_EL1  : 0x0000000002101110
+        PE Index: 1, ID_ISAR1_EL1  : 0x0000000013112111
+        PE Index: 1, ID_ISAR2_EL1  : 0x0000000021232042
+        PE Index: 1, ID_ISAR3_EL1  : 0x0000000001112131
+        PE Index: 1, ID_ISAR4_EL1  : 0x0000000000011142
+        PE Index: 1, ID_ISAR5_EL1  : 0x0000000011011121
+        PE Index: 1, ID_MMFR0_EL1  : 0x0000000010101105
+        PE Index: 1, ID_MMFR1_EL1  : 0x0000000040000000
+        PE Index: 1, ID_MMFR2_EL1  : 0x0000000001260000
+        PE Index: 1, ID_MMFR3_EL1  : 0x0000000002122211
+        PE Index: 1, ID_MMFR4_EL1  : 0x00000100F84129FC
+        PE Index: 1, ID_PFR0_EL1  : 0x0000000011020131
+        PE Index: 1, ID_PFR1_EL1  : 0x0000000010011011
+        PE Index: 1, MVFR0_EL1  : 0x0000000010110222
+        PE Index: 1, MVFR1_EL1  : 0x0000000013211111
+        PE Index: 1, MVFR2_EL1  : 0x0000000000000043
+        PE Index: 1, PMCEID0_EL0  : 0x0000000000020001
+        PE Index: 1, PMCEID1_EL0  : 0x0000000010000018
+        PE Index: 1, PMCR_EL0  : 0x0000000041013000
        B_PE_01
                                        : Result:  PASS
        END
@@ -473,8 +541,8 @@ Operating System View:
 
        Error in getting dev mem for index 2  
        Normal Mem Address : 0x10000000000
-       Normal Mem Address : 0x100FBFE0000
-       Normal Mem Address : 0x100FBFEC000
+       Normal Mem Address : 0x100F86D0000
+       Normal Mem Address : 0x100F8730000
        B_MEM_01
                                        : Result:  PASS
        END
@@ -647,11 +715,40 @@ Operating System View:
        END
 
  303 : Check SMMU Large Physical Addr Support
-       START
-       Large PA Not Supported in SMMU 0
-       Failed on PE -    0
+       START 
+       Mem Phy Addr 10000000000 
+       Mem Phy Addr 100F83F5000 
+       Mem Phy Addr 100F8560000 
+       Mem Phy Addr 100F85E0000 
+       Mem Phy Addr 100F8680000 
+       Mem Phy Addr 100F86D0000 
+       Mem Phy Addr 100F86D9000 
+       Mem Phy Addr 100F86E0000 
+       Mem Phy Addr 100F8730000 
+       Mem Phy Addr 100FA5AB000 
+       Mem Phy Addr 100FA724000 
+       Mem Phy Addr 100FA725000 
+       Mem Phy Addr 100FA73C000 
+       Mem Phy Addr 100FA73D000 
+       Mem Phy Addr 100FB624000 
+       Mem Phy Addr 100FB8CA000 
+       Mem Phy Addr 100FBC00000 
+       Mem Phy Addr 100FBD90000 
+       Mem Phy Addr 100FBFE0000 
+       Mem Phy Addr 100FBFFF000 
+       Mem Phy Addr 100FC020000 
+       Mem Phy Addr 100FF8E3000 
+       Mem Phy Addr 100FF904000 
+       Mem Phy Addr 100FF93A000 
+       Mem Phy Addr 100FFFE8000 
+       Mem Phy Addr 100FFFF8000 
+       Mem Phy Addr 10000000 
+       Mem Phy Addr 60010000
+       uefi mem map has 52 bit addr: 0
+       PE pa range value: 6
+       SMMU 0 OAS value: 4
        B_SMMU_06
-       Checkpoint --  2                           : Result:  FAIL
+       Checkpoint --  2                           : Result:  SKIPPED
        END
 
  304 : Check SMMU S-EL2 & stage1 support     
@@ -664,10 +761,8 @@ Operating System View:
 Hypervisor View:
  352 : Check SMMU S-EL2 & stage2 support     
        START
-       SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0
        B_SMMU_16, B_SMMU_17, B_SMMU_18
-       Checkpoint --  2                           : Result:  FAIL
+                                       : Result:  PASS
        END
 
  354 : SMMUv3 Integration compliance         
@@ -684,7 +779,7 @@ Hypervisor View:
 Operating System View:
  401 : Check Counter Frequency               
        START
-       Counter frequency is 3B9ACA0     
+       Counter frequency is 3B9ACA00     
        B_TIME_01, B_TIME_02
                                        : Result:  PASS
        END
@@ -1509,10 +1604,13 @@ Operating System View:
 
  835 : Check Function level reset            
        START
-       BDF 0x50000   config space addr 0xF0500000
+       Skipping for BDF - 0x100  Classcode is : 0x2 
+       Skipping for BDF - 0x40000  Classcode is : 0x1 
+       Skipping for BDF - 0x50000  Classcode is : 0x2 
        BDF 0x60000 
+       No EP type device found with PCIe Express Cap support. Skipping test
        PCI_SM_02
-                                       : Result:  PASS
+       Checkpoint --  1                           : Result:  SKIPPED
        END
 
  836 : Check ARI forwarding enable rule      
@@ -1567,20 +1665,15 @@ Operating System View:
                                        : Result:  PASS
        END
 
- 840 : PCIe RC,PE - Same Inr Shareable Domain
-       START
-       PCI_IC_11
-                                       : Result:  PASS
-       END
-
  842 : PASID support atleast 16 bits         
        START
-       Peripheral check - Max PASID bits - 0x12800001
-       Peripheral check - Max PASID bits - 0xAA1503E0
-       Peripheral check - Max PASID bits - 0x1AC10803
+       PCIe_CFG_RD ECAM Base is zero FF000100
+       PASID extended capability not supported. Skipping for BDF: 0xFF000100
+       PCIe_CFG_RD ECAM Base is zero FF000000
+       PASID extended capability not supported. Skipping for BDF: 0xFF000000
        SMMU check- Max PASID bits- 0x0
        PCI_PAS_1
-                                       : Result:  PASS
+       Checkpoint --  3                           : Result:  SKIPPED
        END
 
 
@@ -1590,7 +1683,7 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   82  Tests Passed  =   71  Tests Failed =    2
+     Total Tests run  =   81  Tests Passed  =   69  Tests Failed =    0
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***

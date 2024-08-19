@@ -427,7 +427,7 @@
   status:
     cortex-a57: FAIL
     cortex-a72: FAIL
-    max: FAIL
+    max: PASS
     neoverse-n1: FAIL
     neoverse-n2: FAIL
     neoverse-v1: FAIL
@@ -651,7 +651,7 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: S_L6SM_01
+  tags: S_L4SM_03
   title: Check SMMU Coherent Access Support
 314:
   level: '7'
@@ -1176,7 +1176,7 @@
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
   tags: IE_REG_4
-  title: Slot Cap, Control and Status register rules
+  title: Slot Cap, Control and Status reg rules
 864:
   level: future
   status:

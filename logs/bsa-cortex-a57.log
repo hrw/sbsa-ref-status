@@ -37,15 +37,15 @@ fs0:bsa.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL31: Built : 21:46:24, May  2 2024
-UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
+UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -135,7 +135,9 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
       *** Starting PE tests ***
 
 Operating System View:
-   1 : Check Arch symmetry across PE              : Result:  PASS
+   1 : Check Arch symmetry across PE         
+Primary PE Index : 0, MIDR_EL1 : 0x00000000411FD070
+        PE Index : 1, MIDR_EL1 : 0x00000000411FD070     : Result:  PASS
    2 : Check for number of PE                     : Result:  PASS
    3 : Check for AdvSIMD and FP support           : Result:  PASS
    4 : Check PE 4KB Granule Support               : Result:  PASS
@@ -147,7 +149,8 @@ Operating System View:
   11 : Check num of Breakpoints and type          : Result:  PASS
   12 : Check Synchronous Watchpoints              : Result:  PASS
   13 : Check CRC32 instruction support            : Result:  PASS
-  14 : Check PAuth if implementation         B_PE_15
+  14 : Check PAuth if implementation         
+       B_PE_15
        Checkpoint --  1                           : Result:  SKIPPED
 
 Hypervisor View:
@@ -181,7 +184,8 @@ Operating System View:
  207 : Check EL1-Virt timer PPI assignment        : Result:  PASS
 
 Hypervisor View:
- 226 : Check NS EL2-Virt timer PPI AssignmentB_PPI_02
+ 226 : Check NS EL2-Virt timer PPI Assignment
+       B_PPI_02
        Checkpoint --  2                           : Result:  SKIPPED
  227 : Check NS EL2-Phy timer PPI Assignment      : Result:  PASS
  228 : Check GIC Maintenance PPI Assignment       : Result:  PASS
@@ -201,15 +205,13 @@ Operating System View:
 Operating System View:
  301 : All SMMUs have same Arch Revision          : Result:  PASS
  302 : Check SMMU Granule Support                 : Result:  PASS
- 303 : Check SMMU Large Physical Addr SupportB_SMMU_06
-       Checkpoint --  1                           : Result:  SKIPPED
+ 303 : Check SMMU Large Physical Addr Support
+       B_SMMU_06
+       Checkpoint --  2                           : Result:  SKIPPED
  304 : Check SMMU S-EL2 & stage1 support          : Result:  PASS
 
 Hypervisor View:
- 352 : Check SMMU S-EL2 & stage2 support     
-       SMMUv3.1 not providing Stage2 functionality
-       Failed on PE -    0B_SMMU_16, B_SMMU_17, B_SMMU_18
-       Checkpoint --  2                           : Result:  FAIL
+ 352 : Check SMMU S-EL2 & stage2 support          : Result:  PASS
  354 : SMMUv3 Integration compliance              : Result:  PASS
 
       One or more SMMU tests failed or were skipped.
@@ -219,11 +221,14 @@ Hypervisor View:
 Operating System View:
  401 : Check Counter Frequency                    : Result:  PASS
  402 : SYS Timer if PE Timer not ON               : Result:  PASS
- 403 : Memory mapped timer check             B_TIME_07, B_TIME_10
+ 403 : Memory mapped timer check             
+       B_TIME_07, B_TIME_10
        Checkpoint --  1                           : Result:  SKIPPED
- 404 : Generate Mem Mapped SYS Timer Intr    B_TIME_08
+ 404 : Generate Mem Mapped SYS Timer Intr    
+       B_TIME_08
        Checkpoint --  1                           : Result:  SKIPPED
- 405 : Restore PE timer on PE wake up        B_TIME_09
+ 405 : Restore PE timer on PE wake up        
+       B_TIME_09
        Checkpoint --  1                           : Result:  SKIPPED
 
       One or more Timer tests failed or were skipped.
@@ -235,8 +240,8 @@ Operating System View:
  502 : Wake from EL1 VIR Timer Int                : Result:  PASS
  503 : Wake from EL2 PHY Timer Int                : Result:  PASS
  504 : Wake from Watchdog WS0 Int                 : Result:  PASS
- 505 : Wake from System Timer Int            B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05       
-              
+ 505 : Wake from System Timer Int            
+       B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
        Checkpoint --  1                           : Result:  SKIPPED
 
@@ -252,7 +257,8 @@ Operating System View:
  603 : Check Arm BSA UART register offsets        : Result:  PASS
  604 : Check Arm GENERIC UART Interrupt      
        Test Message                               : Result:  PASS
- 606 : 16550 compatible UART                 B_PER_05
+ 606 : 16550 compatible UART                 
+       B_PER_05
        Checkpoint --  2                           : Result:  SKIPPED
 
       One or more Peripheral tests failed or were skipped.
@@ -271,16 +277,20 @@ Operating System View:
  801 : Check ECAM Presence                        : Result:  PASS
  802 : PE - ECAM Region accessibility check       : Result:  PASS
  803 : All EP/Sw under RP in same ECAM Region     : Result:  PASS
- 806 : Legacy int must be SPI & lvl-sensitivePCI_LI_01, PCI_LI_03
+ 806 : Legacy int must be SPI & lvl-sensitive
+       PCI_LI_01, PCI_LI_03
        Checkpoint --  2                           : Result:  SKIPPED
  808 : Check all 1's for out of range             : Result:  PASS
  809 : Vendor specific data is PCIe compliant     : Result:  PASS
  811 : Check RP Byte Enable Rules                 : Result:  PASS
- 817 : Check Direct Transl P2P Support       PCI_PP_05
+ 817 : Check Direct Transl P2P Support       
+       PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED
- 818 : Check RP Adv Error Report             PCI_PP_05
+ 818 : Check RP Adv Error Report             
+       PCI_PP_05
        Checkpoint --  1                           : Result:  SKIPPED
- 819 : RP must suprt ACS if P2P Txn are allowPCI_PP_03
+ 819 : RP must suprt ACS if P2P Txn are allow
+       PCI_PP_03
        Checkpoint --  1                           : Result:  SKIPPED
  820 : Type 0/1 common config rule                : Result:  PASS
  821 : Type 0 config header rules                 : Result:  PASS
@@ -292,13 +302,18 @@ Operating System View:
  831 : Check Type0/1 BIST Register rule           : Result:  PASS
  832 : Check HDR CapPtr Register rule             : Result:  PASS
  833 : Check Max payload size supported           : Result:  PASS
- 835 : Check Function level reset                 : Result:  PASS
+ 835 : Check Function level reset            
+       PCI_SM_02
+       Checkpoint --  1                           : Result:  SKIPPED
  836 : Check ARI forwarding enable rule           : Result:  PASS
  837 : Check Config Txn for RP in HB              : Result:  PASS
  838 : Check all RP in HB is in same ECAM         : Result:  PASS
  839 : Check MSI support for PCIe dev             : Result:  PASS
- 840 : PCIe RC,PE - Same Inr Shareable Domain     : Result:  PASS
- 842 : PASID support atleast 16 bits              : Result:  PASS
+ 842 : PASID support atleast 16 bits         
+       PCIe_CFG_RD ECAM Base is zero FF000100
+       PCIe_CFG_RD ECAM Base is zero FF000000
+       PCI_PAS_1
+       Checkpoint --  3                           : Result:  SKIPPED
 
       One or more PCIe tests failed or were skipped.
  PCIE_INFO: Number of exerciser cards :    0 
@@ -306,7 +321,7 @@ Operating System View:
        No Exerciser Devices Found, Skipping tests...
 
      -------------------------------------------------------
-     Total Tests run  =   84  Tests Passed  =   71  Tests Failed =    1
+     Total Tests run  =   83  Tests Passed  =   69  Tests Failed =    0
      -------------------------------------------------------
 
       *** BSA tests complete. Reset the system. ***

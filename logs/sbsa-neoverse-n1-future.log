@@ -37,15 +37,15 @@ fs0:sbsa.efi -only -skip 861 -fr
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL31: Built : 21:46:24, May  2 2024
-UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
+UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -113,7 +113,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of ITS              :    1
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
- CACHE_INFO: Number of cache nodes    :    5
+ CACHE_INFO: Number of cache nodes    :    6
  MPAM INFO: Number of MSC nodes       :    0
  RAS2_INFO: Number of RAS2 entries    :    0
  RAS2_INFO: Num of RAS2 memory entries:    0
@@ -138,34 +138,40 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  RAS_INFO: Number of RAS nodes        :    0
 
       *** Starting PE tests ***
-  37 : Check for enhanced PAN feature    
-       Failed on PE -    0S_L8PE_04
+  37 : Check for enhanced PAN feature        
+       Failed on PE -    0
+       S_L8PE_04
        Checkpoint --  1                           : Result:  FAIL
   38 : Check XS attribute functionality  
-       Failed on PE -    0S_L8PE_01
+       Failed on PE -    0
+       S_L8PE_01
        Checkpoint --  1                           : Result:  FAIL
   39 : Check WFET and WFIT functionality 
-       Failed on PE -    0S_L8PE_02
+       Failed on PE -    0
+       S_L8PE_02
        Checkpoint --  1                           : Result:  FAIL
   40 : Check atomic 64 byte store support
-       Failed on PE -    0S_L8PE_03
+       Failed on PE -    0
+       S_L8PE_03
        Checkpoint --  1                           : Result:  FAIL
-  41 : Check for FEAT_BRBE support     S_L8PE_06
+  41 : Check for FEAT_BRBE support         
+       S_L8PE_06
        Checkpoint --  2                           : Result:  SKIPPED
-  42 : Check for unsupported PBHA bits        : Result:  PASS
+  42 : Check for unsupported PBHA bits            : Result:  PASS
 
       One or more PE tests failed or were skipped.
 
       *** Starting SMMU tests ***
- 317 : Check ATS and Page Req Support    
+ 317 : Check ATS and Page Req Support        
        ATS is not supported for Smmu Index : 0 
-       Failed on PE -    0GPU_04
+       Failed on PE -    0
+       GPU_04
        Checkpoint --  1                           : Result:  FAIL
 
       One or more SMMU tests failed or were skipped.
 
       *** Starting PCIe tests ***
- 864 : Check ATS & Page Req for all RP   
+ 864 : Check ATS & Page Req for all RP       
        ATS Capability Not Present, Bdf : 0x300
        Page Request Not Present, Bdf : 0x300
        ATS Capability Not Present, Bdf : 0x400
@@ -178,9 +184,11 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        Page Request Not Present, Bdf : 0x700
        ATS Capability Not Present, Bdf : 0x800
        Page Request Not Present, Bdf : 0x800
-       Failed on PE -    0GPU_04
+       Failed on PE -    0
+       GPU_04
        Checkpoint --  1                           : Result:  FAIL
- 865 : Check RP Extensions for DPC       PCI_ER_09
+ 865 : Check RP Extensions for DPC           
+       PCI_ER_09
        Checkpoint --  2                           : Result:  SKIPPED
 
       One or more PCIe tests failed or were skipped.
@@ -192,13 +200,15 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        RAS nodes not found. Skipping all RAS tests
 
       *** Starting ETE tests ***
-1401 : Check for FEAT_ETE                
-       Failed on PE -    0ETE_02
+1401 : Check for FEAT_ETE                    
+       Failed on PE -    0
+       ETE_02
        Checkpoint --  1                           : Result:  FAIL
 
  FEAT_ETE Not Supported, Skipping FEAT_ETE tests 
-1405 : Check for FEAT_TRBE               
-       Failed on PE -    0ETE_07
+1405 : Check for FEAT_TRBE                   
+       Failed on PE -    0
+       ETE_07
        Checkpoint --  1                           : Result:  FAIL
 
  FEAT_TRBE Not Supported, Skipping FEAT_TRBE tests 

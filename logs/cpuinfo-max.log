@@ -37,15 +37,15 @@ fs0:armcpuinfo.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL1: Built : 21:46:24, May  2 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL2: Built : 21:46:24, May  2 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.10.0(release):hrw-2024-04-23-0910-130-gd5d2f21f2
-NOTICE:  BL31: Built : 21:46:24, May  2 2024
-UEFI firmware (version 1.0 built at 09:06:56 on Apr 30 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
+NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
+UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -102,20 +102,21 @@ ArmCpuInfo v1.3.0
 
 ID_AA64AFR0_EL1  = 0x0000000000000000
 ID_AA64AFR1_EL1  = 0x0000000000000000
-ID_AA64DFR0_EL1  = 0x1000000010305609
+ID_AA64DFR0_EL1  = 0x100000001030560A
 ID_AA64DFR1_EL1  = 0x0000000000000000
 ID_AA64FPFR0_EL1 = 0x0000000000000000
 ID_AA64ISAR0_EL1 = 0x1221111110212120
 ID_AA64ISAR1_EL1 = 0x0011111101211052
-ID_AA64ISAR2_EL1 = 0x0000000000110000
+ID_AA64ISAR2_EL1 = 0x0000000000110002
 ID_AA64ISAR3_EL1 = 0x0000000000000000
 ID_AA64MMFR0_EL1 = 0x2100032310201126
-ID_AA64MMFR1_EL1 = 0x0010011010312122
+ID_AA64MMFR1_EL1 = 0x0010012010312122
 ID_AA64MMFR2_EL1 = 0x1221011112011011
-ID_AA64MMFR3_EL1 = 0x0000000000000000
+ID_AA64MMFR3_EL1 = 0x1000000000000000
 ID_AA64MMFR4_EL1 = 0x0000000000000000
-ID_AA64PFR0_EL1  = 0x1201001121112222
+ID_AA64PFR0_EL1  = 0x1301001121112222
 ID_AA64PFR1_EL1  = 0x0000001001000121
+ID_AA64PFR2_EL1  = 0x0000000000000000
 ID_AA64SMFR0_EL1 = 0x80F100FD00000000
 ID_AA64ZFR0_EL1  = 0x0110110100110021
 
@@ -143,7 +144,7 @@ MMFR1 | TIDCP1       | 55:52 |  0001 | FEAT_TIDCP1 implemented
 MMFR1 | nTLBPA       | 51:48 |  0000 | FEAT_nTLBPA not implemented.
 MMFR1 | AFP          | 47:44 |  0000 | FEAT_AFP not implemented.
 MMFR1 | HCX          | 43:40 |  0001 | FEAT_HCX implemented.
-MMFR1 | ETS          | 39:36 |  0001 | FEAT_ETS implemented.
+MMFR1 | ETS          | 39:36 |  0010 | FEAT_ETS2 implemented.
 MMFR1 | TWED         | 35:32 |  0000 | FEAT_TWED not implemented.
 MMFR1 | XNX          | 31:28 |  0001 | FEAT_XNX implemented.
 MMFR1 | SpecSEI      | 27:24 |  0000 | The PE never generates an SError interrupt due to an 
@@ -173,7 +174,7 @@ MMFR2 | UAO          |  7:4  |  0001 | FEAT_UAO implemented.
 MMFR2 | CnP          |  3:0  |  0001 | FEAT_TTCNP implemented.
 ------|--------------|-------|-------|----------------------------------------------
 PFR0  | CSV3         | 63:60 |  0001 | FEAT_CSV3 implemented.
-PFR0  | CSV2         | 59:56 |  0010 | FEAT_CSV2_2 implemented.
+PFR0  | CSV2         | 59:56 |  0011 | FEAT_CSV2_3 implemented.
 PFR0  | RME          | 55:52 |  0000 | FEAT_RME not implemented
 PFR0  | DIT          | 51:48 |  0001 | FEAT_DIT implemented.
 PFR0  | AMU          | 47:44 |  0000 | FEAT_AMU not implemented.
@@ -252,7 +253,7 @@ ISAR2 | MOPS         | 19:16 |  0001 | FEAT_MOPS implemented.
 ISAR2 | APA3         | 15:12 |  0000 | Address Authentication (APA3) not implemented.
 ISAR2 | GPA3         | 11:8  |  0000 | FEAT_PACQARMA3 not implemented.
 ISAR2 | RPRES        |  7:4  |  0000 | FEAT_RPRES not implemented.
-ISAR2 | WFxT         |  3:0  |  0000 | FEAT_WFxT not implemented.
+ISAR2 | WFxT         |  3:0  |  0010 | FEAT_WFxT implemented.
 ------|--------------|-------|-------|----------------------------------------------
 DFR0  | HPMN0        | 63:60 |  0001 | FEAT_HPMN0 implemented.
 DFR0  | ExtTrcBuff   | 59:56 |  0000 | Trace Buffer External Mode not implemented.
@@ -269,7 +270,7 @@ DFR0  | PMSS         | 19:16 |  0000 | FEAT_PMUv2_SS not implemented.
 DFR0  | BRPs         | 15:12 |  0101 | Number of breakpoints, minus 1.
 DFR0  | PMUVer       | 11:8  |  0110 | FEAT_PMUv3p5 implemented.
 DFR0  | TraceVer     |  7:4  |  0000 | Trace unit System registers not implemented.
-DFR0  | DebugVer     |  3:0  |  1001 | FEAT_Debugv8p4 implemented.
+DFR0  | DebugVer     |  3:0  |  1010 | FEAT_Debugv8p8 implemented.
 ------|--------------|-------|-------|----------------------------------------------
 ZFR0  | F64MM        | 59:56 |  0001 | FEAT_F64MM SVE implemented
 ZFR0  | F32MM        | 55:52 |  0001 | FEAT_F32MM SVE implemented
@@ -301,4 +302,8 @@ SMFR0 | SF8FMA       |    30 |  0000 | FEAT_SSVE_FP8FMA not implemented.
 SMFR0 | SF8DP4       |    29 |  0000 | FEAT_SSVE_FP8DOT4 not implemented.
 SMFR0 | SF8DP2       |    28 |  0000 | FEAT_SSVE_FP8DOT2 not implemented.
 ------|--------------|-------|-------|----------------------------------------------
+
+Your system has something this app does not handle. Please contact author.
+Open issue at https://github.com/hrw/edk2-armcpuinfo/issues and copy output.
+
 [1m[33m[40mShell> [0m[37m[40mreset -c
