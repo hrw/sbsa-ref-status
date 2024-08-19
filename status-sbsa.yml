@@ -509,15 +509,14 @@
   tags: S_L5PP_01
   title: Check Reserved PPI Assignments
 301:
-  comment: QEMU has stage 1 or stage 2 support. No 1+2 yet.
   level: '4'
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-n2: FAIL
-    neoverse-v1: FAIL
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
   tags: S_L4SM_01, S_L4SM_02
   title: Check SMMU Compatibility
 302:
