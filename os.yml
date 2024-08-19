@@ -69,8 +69,8 @@ openbsd76:
   type: hdd
   url: https://cdn.openbsd.org/pub/OpenBSD/snapshots/arm64/miniroot76.img
 openeuler:
-  file: disks/openEuler-22.03-LTS-SP3-aarch64-dvd.iso
-  url: https://mirror.accum.se/mirror/openeuler.org/openEuler-22.03-LTS-SP3/ISO/aarch64/openEuler-22.03-LTS-SP3-aarch64-dvd.iso
+  file: disks/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
+  url: https://mirrors.dotsrc.org/openeuler/openEuler-24.03-LTS/ISO/aarch64/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
 rhel:
   file: disks/rhel-9.3-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
