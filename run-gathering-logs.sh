@@ -114,7 +114,7 @@ do
         boot-sbsa-ref "fs0:armcpuinfo.efi" > logs/cpuinfo-${cpu}.log
 
         echo -n "Linux "
-        boot-sbsa-ref "fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd.img printk.time=0" > logs/linux-${cpu}.log
+        boot-sbsa-ref "fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.time=0" > logs/linux-${cpu}.log
 
         echo ""
 done
