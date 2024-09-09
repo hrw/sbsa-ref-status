@@ -74,13 +74,13 @@ def download_os_image(os_name, data):
 
     print(" ")
     # if file was gzip compressed then unpack it
-    if data['file'].endswith('.gz'):
+    if data['url'].endswith('.gz'):
         newname = os.path.splitext(data['file'])[0]
         with gzip.open(data['file'], 'rb') as fin:
             unpack_file(fin, newname)
             os.remove(data['file'])
             data['file'] = newname
-    elif data['file'].endswith('.xz'):
+    elif data['url'].endswith('.xz'):
         newname = os.path.splitext(data['file'])[0]
         with lzma.open(data['file'], 'rb') as fin:
             unpack_file(fin, newname)
