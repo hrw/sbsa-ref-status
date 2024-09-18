@@ -353,7 +353,7 @@
     max: PASS
     neoverse-n1: FAIL
     neoverse-n2: PASS
-    neoverse-v1: FAIL
+    neoverse-v1: PASS
   tags: S_L7PE_05
   title: Check for BFLOAT16 extension
 33:
@@ -419,7 +419,7 @@
     max: FAIL
     neoverse-n1: FAIL
     neoverse-n2: FAIL
-    neoverse-v1: PASS
+    neoverse-v1: FAIL
   tags: S_L8PE_01
   title: Check XS attribute functionality
 39:
