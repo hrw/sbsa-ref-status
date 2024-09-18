@@ -37,15 +37,15 @@ fs0:sbsa.efi -only -skip 861 -l 3 -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -138,6 +138,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   GTDT revision is at 3
   GTDT don't have el2 virt timer info
   using bsa recommended value 28
+ TIMER_INFO: System Counter frequency :    0x3B9ACA00
  TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
   Watchdog base = 0x50011000 INTID = 0x30
@@ -364,28 +365,26 @@ PE Index * 1 *
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100F83E0000]
-  Reserved region of type 1 [0x100F83E0000, 0x100F8560000]
+  Reserved region of type 7 [0x10000000000, 0x100F83D8000]
+  Reserved region of type 1 [0x100F83D8000, 0x100F8560000]
   Reserved region of type 5 [0x100F8560000, 0x100F85E0000]
   Reserved region of type 6 [0x100F85E0000, 0x100F8680000]
   Reserved region of type 5 [0x100F8680000, 0x100F86D0000]
   Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
   Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
   Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA520000]
-  Reserved region of type 4 [0x100FA520000, 0x100FA72A000]
-  Reserved region of type 7 [0x100FA72A000, 0x100FA72B000]
-  Reserved region of type 4 [0x100FA72B000, 0x100FB624000]
-  Reserved region of type 7 [0x100FB624000, 0x100FB920000]
-  Reserved region of type 3 [0x100FB920000, 0x100FBC00000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA518000]
+  Reserved region of type 4 [0x100FA518000, 0x100FB624000]
+  Reserved region of type 7 [0x100FB624000, 0x100FB91F000]
+  Reserved region of type 3 [0x100FB91F000, 0x100FBC00000]
   Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
   Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
   Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FF8E3000]
-  Reserved region of type 4 [0x100FF8E3000, 0x100FF904000]
-  Reserved region of type 3 [0x100FF904000, 0x100FF93A000]
-  Reserved region of type 4 [0x100FF93A000, 0x100FFFE8000]
+  Reserved region of type 7 [0x100FC020000, 0x100FF8DF000]
+  Reserved region of type 4 [0x100FF8DF000, 0x100FF900000]
+  Reserved region of type 3 [0x100FF900000, 0x100FF937000]
+  Reserved region of type 4 [0x100FF937000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
@@ -394,7 +393,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0
- Shared memory is 100FA755F98
+ Shared memory is 100FA62AF98
 
       *** Starting PE tests ***
    1 : Check PE Granule Support              

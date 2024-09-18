@@ -37,15 +37,15 @@ fs0:armcpuinfo.efi
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -106,7 +106,7 @@ ID_AA64DFR0_EL1  = 0x100000001030560A
 ID_AA64DFR1_EL1  = 0x0000000000000000
 ID_AA64FPFR0_EL1 = 0x0000000000000000
 ID_AA64ISAR0_EL1 = 0x1221111110212120
-ID_AA64ISAR1_EL1 = 0x0011111101211052
+ID_AA64ISAR1_EL1 = 0x0011211101211052
 ID_AA64ISAR2_EL1 = 0x0000000000110002
 ID_AA64ISAR3_EL1 = 0x0000000000000000
 ID_AA64MMFR0_EL1 = 0x2100032310201126
@@ -118,7 +118,7 @@ ID_AA64PFR0_EL1  = 0x1301001121112222
 ID_AA64PFR1_EL1  = 0x0000001001000121
 ID_AA64PFR2_EL1  = 0x0000000000000000
 ID_AA64SMFR0_EL1 = 0x80F100FD00000000
-ID_AA64ZFR0_EL1  = 0x0110110100110021
+ID_AA64ZFR0_EL1  = 0x0110110100210021
 
 Reg   | Name         |  Bits | Value | Feature
 ------|--------------|-------|-------|----------------------------------------------
@@ -224,7 +224,7 @@ ISAR1 | LS64         | 63:60 |  0000 | FEAT_LS64 not implemented.
 ISAR1 | XS           | 59:56 |  0000 | FEAT_XS not implemented.
 ISAR1 | I8MM         | 55:52 |  0001 | FEAT_I8MM implemented.
 ISAR1 | DGH          | 51:48 |  0001 | FEAT_DGH implemented.
-ISAR1 | BF16         | 47:44 |  0001 | FEAT_BF16 implemented.
+ISAR1 | BF16         | 47:44 |  0010 | FEAT_EBF16 implemented.
 ISAR1 | SPECRES      | 43:40 |  0001 | FEAT_SPECRES implemented.
 ISAR1 | SB           | 39:36 |  0001 | FEAT_SB implemented.
 ISAR1 | FRINTTS      | 35:32 |  0001 | FEAT_FRINTTS implemented.
@@ -278,7 +278,7 @@ ZFR0  | I8MM         | 47:44 |  0001 | FEAT_I8MM SVE implemented.
 ZFR0  | SM4          | 43:40 |  0001 | FEAT_SVE_SM4 implemented.
 ZFR0  | SHA3         | 35:32 |  0001 | FEAT_SVE_SHA3 implemented.
 ZFR0  | B16B16       | 27:24 |  0000 | FEAT_SVE_B16B16 not implemented.
-ZFR0  | BF16         | 23:20 |  0001 | FEAT_BF16 SVE implemented.
+ZFR0  | BF16         | 23:20 |  0010 | FEAT_EBF16 SVE implemented.
 ZFR0  | BitPerm      | 19:16 |  0001 | FEAT_SVE_BitPerm implemented.
 ZFR0  | AES          |  7:4  |  0010 | FEAT_SVE_AES and FEAT_SVE_PMULL128 implemented.
 ZFR0  | SVEver       |  3:0  |  0001 | FEAT_SVE2 implemented.

@@ -37,15 +37,15 @@ acpiview
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -841,6 +841,12 @@ MADT                                 :
     CPU Interface Number             : 0x0
     ACPI Processor UID               : 0x0
     Flags                            : 0x1
+      Enabled                        : 1
+      Performance Inter. Mode        : Edge Triggered
+      VGIC Maintenance Inter. Mode   : Edge Triggered
+      Online Capable                 : 0
+      Reserved                       : 0
+
     Parking Protocol Version         : 0x0
     Performance Interrupt GSIV       : 0x17
     Parked Address                   : 0x0
@@ -860,6 +866,12 @@ MADT                                 :
     CPU Interface Number             : 0x0
     ACPI Processor UID               : 0x1
     Flags                            : 0x1
+      Enabled                        : 1
+      Performance Inter. Mode        : Edge Triggered
+      VGIC Maintenance Inter. Mode   : Edge Triggered
+      Online Capable                 : 0
+      Reserved                       : 0
+
     Parking Protocol Version         : 0x0
     Performance Interrupt GSIV       : 0x17
     Parked Address                   : 0x0
@@ -1137,9 +1149,9 @@ GTDT                                 :
 Address  : 0x100F86DFE18
 Length   : 56
   
-00000000 : 42 47 52 54 38 00 00 00 - 01 79 4C 49 4E 41 52 4F   BGRT8....yLINARO
+00000000 : 42 47 52 54 38 00 00 00 - 01 F9 4C 49 4E 41 52 4F   BGRT8.....LINARO
 00000010 : 53 42 53 41 51 45 4D 55 - 25 06 24 20 4C 4E 52 4F   SBSAQEMU%.$ LNRO
-00000020 : 01 00 00 00 01 00 01 00 - 18 D0 D4 FA 00 01 00 00   ................
+00000020 : 01 00 00 00 01 00 01 00 - 18 50 D4 FA 00 01 00 00   .........P......
 00000030 : 1F 02 00 00 73 01 00 00                             ....s...
 
 Table Checksum : OK
@@ -1148,7 +1160,7 @@ BGRT                                 :
   Signature                          : BGRT
   Length                             : 56
   Revision                           : 1
-  Checksum                           : 0x79
+  Checksum                           : 0xF9
   Oem ID                             : LINARO
   Oem Table ID                       : SBSAQEMU
   Oem Revision                       : 0x20240625
@@ -1157,7 +1169,7 @@ BGRT                                 :
   Version                            : 0x1
   Status                             : 0x1
   Image Type                         : 0x0
-  Image Address                      : 0x100FAD4D018
+  Image Address                      : 0x100FAD45018
   Image Offset X                     : 543
   Image Offset Y                     : 371
 

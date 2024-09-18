@@ -37,15 +37,15 @@ fs0:sbsa.efi -only -skip 861 -fr
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -111,6 +111,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICD             :    1
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
+ TIMER_INFO: System Counter frequency :    0x3B9ACA00
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
  CACHE_INFO: Number of cache nodes    :    6
@@ -142,7 +143,10 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
        Failed on PE -    0
        S_L8PE_04
        Checkpoint --  1                           : Result:  FAIL
-  38 : Check XS attribute functionality       : Result:  PASS
+  38 : Check XS attribute functionality  
+       Failed on PE -    0
+       S_L8PE_01
+       Checkpoint --  1                           : Result:  FAIL
   39 : Check WFET and WFIT functionality 
        Failed on PE -    0
        S_L8PE_02
@@ -213,7 +217,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
       One or more ETE tests failed or were skipped.
 
      -------------------------------------------------------
-     Total Tests run  =   11;  Tests Passed  =    2  Tests Failed =    7
+     Total Tests run  =   11;  Tests Passed  =    1  Tests Failed =    8
      ---------------------------------------------------------
 
       **  For complete SBSA test coverage, it is 

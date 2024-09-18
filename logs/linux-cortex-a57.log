@@ -37,15 +37,15 @@ fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.tim
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -104,10 +104,10 @@ EFI stub: Loaded initrd from command line option
 EFI stub: Generating empty DTB
 EFI stub: Exiting boot services...
 Booting Linux on physical CPU 0x0000000000 [0x411fd070]
-Linux version 6.8.12-arm64 (debian-kernel@lists.debian.org) (aarch64-linux-gnu-gcc-13 (Debian 13.2.0-25) 13.2.0, GNU ld (GNU Binutils for Debian) 2.42) #1 SMP Debian 6.8.12-1 (2024-05-31)
+Linux version 6.10.9-arm64 (debian-kernel@lists.debian.org) (aarch64-linux-gnu-gcc-13 (Debian 13.3.0-6) 13.3.0, GNU ld (GNU Binutils for Debian) 2.43.1) #1 SMP Debian 6.10.9-1 (2024-09-08)
 KASLR disabled due to lack of seed
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x100f86df018 SMBIOS 3.0=0x100fbdc0000 MEMATTR=0x100fad5c118 INITRD=0x100f86d8f18 MEMRESERVE=0x100f86d8f98 
+efi: ACPI 2.0=0x100f86df018 SMBIOS 3.0=0x100fbdc0000 MEMATTR=0x100fad54118 INITRD=0x100f86d8f18 MEMRESERVE=0x100f86d8f98 
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
 ACPI: RSDP 0x00000100F86DF018 000024 (v02 LINARO)
@@ -126,7 +126,7 @@ ACPI: BGRT 0x00000100F86DFE18 000038 (v01 LINARO SBSAQEMU 20240625 LNRO 00000001
 ACPI: SPCR: console: pl011,mmio32,0x60000000,115200
 NUMA: Failed to initialise from firmware
 NUMA: Faking a node at [mem 0x0000010000000000-0x00000100ffffffff]
-NUMA: NODE_DATA [mem 0x100ff7f8240-0x100ff7fafff]
+NUMA: NODE_DATA [mem 0x100ff803240-0x100ff805fff]
 Zone ranges:
   DMA      [mem 0x0000010000000000-0x00000100ffffffff]
   DMA32    empty
@@ -147,7 +147,7 @@ psci: PSCIv1.1 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
 psci: MIGRATE_INFO_TYPE not supported.
 psci: SMC Calling Convention v1.5
-percpu: Embedded 31 pages/cpu s89640 r8192 d29144 u126976
+percpu: Embedded 34 pages/cpu s98728 r8192 d32344 u139264
 Detected PIPT I-cache on CPU0
 CPU features: detected: GIC system register CPU interface
 CPU features: detected: Spectre-v2
@@ -163,16 +163,16 @@ Unknown kernel command line parameters "fs0:\efi\debian\linux", will be passed t
 Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
 Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
 Fallback order for Node 0: 0 
-Built 1 zonelists, mobility grouping on.  Total pages: 1032192
+Built 1 zonelists, mobility grouping on.  Total pages: 1048576
 Policy zone: DMA
 mem auto-init: stack:all(zero), heap alloc:on, heap free:off
 software IO TLB: SWIOTLB bounce buffer size adjusted to 4MB
 software IO TLB: area num 2.
-software IO TLB: mapped [mem 0x00000100fed94000-0x00000100ff194000] (4MB)
-Memory: 65536K/4194304K available (14464K kernel code, 3066K rwdata, 10496K rodata, 7616K init, 767K bss, 128504K reserved, 65536K cma-reserved)
+software IO TLB: mapped [mem 0x00000100fed99000-0x00000100ff199000] (4MB)
+Memory: 65536K/4194304K available (14720K kernel code, 3458K rwdata, 11076K rodata, 2752K init, 775K bss, 124920K reserved, 65536K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
-ftrace: allocating 47904 entries in 188 pages
-ftrace: allocated 188 pages with 5 groups
+ftrace: allocating 48753 entries in 191 pages
+ftrace: allocated 191 pages with 7 groups
 trace event string verifier disabled
 rcu: Hierarchical RCU implementation.
 rcu: 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=2.
@@ -180,6 +180,8 @@ rcu: 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=2.
 	Tracing variant of Tasks RCU enabled.
 rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
 rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
+RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
 NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
 GICv3: GIC: Using split EOI/Deactivate mode
 GICv3: 256 SPIs implemented
@@ -191,16 +193,16 @@ ITS [mem 0x44081000-0x440a0fff]
 ITS@0x0000000044081000: allocated 8192 Devices @100041d0000 (indirect, esz 8, psz 64K, shr 1)
 ITS@0x0000000044081000: allocated 8192 Interrupt Collections @100041e0000 (flat, esz 8, psz 64K, shr 1)
 GICv3: using LPI property table @0x00000100041f0000
-GICv3: CPU0: using allocated LPI pending table @0x0000010004210000
+GICv3: CPU0: using allocated LPI pending table @0x0000010004200000
 rcu: srcu_init: Setting srcu_struct sizes based on contention.
 arch_timer: cp15 timer(s) running at 1000.00MHz (phys).
 clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
 sched_clock: 61 bits at 1000MHz, resolution 1ns, wraps every 4398046511103ns
 Console: colour dummy device 80x25
-ACPI: Core revision 20230628
+ACPI: Core revision 20240322
 Calibrating delay loop (skipped), value calculated using timer frequency.. 2000.00 BogoMIPS (lpj=4000000)
 pid_max: default: 32768 minimum: 301
-LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,integrity
+LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ima,evm
 landlock: Up and running.
 Yama: disabled by default; enable with sysctl kernel.yama.*
 AppArmor: AppArmor initialized
@@ -208,8 +210,6 @@ TOMOYO Linux initialized
 LSM support for eBPF active
 Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
 Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
-RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
-RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
 rcu: Hierarchical SRCU implementation.
 rcu: 	Max phase no-delay instances is 1000.
 Platform MSI: ITS@0x44081000 domain created
@@ -219,7 +219,7 @@ Remapping and enabling EFI services.
 smp: Bringing up secondary CPUs ...
 Detected PIPT I-cache on CPU1
 GICv3: CPU1: found redistributor 1 region 0:0x00000000400a0000
-GICv3: CPU1: using allocated LPI pending table @0x0000010004220000
+GICv3: CPU1: using allocated LPI pending table @0x0000010004210000
 CPU1: Booted secondary processor 0x0000000001 [0x411fd070]
 smp: Brought up 1 node, 2 CPUs
 SMP: Total of 2 processors activated.
@@ -228,19 +228,22 @@ CPU features: detected: 32-bit EL0 Support
 CPU features: detected: 32-bit EL1 Support
 CPU features: detected: CRC32 instructions
 alternatives: applying system-wide alternatives
-node 0 deferred pages initialised in 32ms
+node 0 deferred pages initialised in 36ms
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+24512 pages in range for non-PLT usage
+516032 pages in range for PLT usage
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.4.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 08/19/2024
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 09/16/2024
+DMI: Memory slots populated: 1/1
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.208:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.212:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -252,8 +255,6 @@ hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
 ASID allocator initialised with 65536 entries
 acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
 Serial: AMBA PL011 UART driver
-Modules: 23616 pages in range for non-PLT usage
-Modules: 515136 pages in range for PLT usage
 HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
 HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
@@ -262,6 +263,7 @@ HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
 HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+Demotion targets for Node 0: null
 ACPI: Added _OSI(Module Device)
 ACPI: Added _OSI(Processor Device)
 ACPI: Added _OSI(3.0 _SCP Extensions)
@@ -295,7 +297,6 @@ pci 0000:00:02.0: [1234:1111] type 00 class 0x038000 PCIe Root Complex Integrate
 pci 0000:00:02.0: BAR 0 [mem 0x80000000-0x80ffffff pref]
 pci 0000:00:02.0: BAR 2 [mem 0x8158a000-0x8158afff]
 pci 0000:00:02.0: ROM [mem 0xffff8000-0xffffffff pref]
-pci 0000:00:02.0: BAR 0: assigned to efifb
 pci 0000:00:03.0: [1b36:000c] type 01 class 0x060400 PCIe Root Port
 pci 0000:00:03.0: BAR 0 [mem 0x81589000-0x81589fff]
 pci 0000:00:03.0: PCI bridge to [bus 01-03]
@@ -538,20 +539,21 @@ NET: Registered PF_UNIX/PF_LOCAL protocol family
 NET: Registered PF_XDP protocol family
 pci 0000:06:00.0: enabling device (0000 -> 0002)
 PCI: CLS 0 bytes, default 64
+Trying to unpack rootfs image as initramfs...
+kvm [1]: nv: 477 coarse grained trap handlers
 kvm [1]: Guests without required CPU erratum workarounds can deadlock system!
 Only trusted guests should be used on this system.
 kvm [1]: IPA Size Limit: 44 bits
-Trying to unpack rootfs image as initramfs...
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
 kvm [1]: vgic interrupt IRQ9
-kvm [1]: Hyp mode initialized successfully
+kvm [1]: Hyp nVHE mode initialized successfully
 Initialise system trusted keyrings
 Key type blacklist registered
 workingset: timestamp_bits=42 max_order=20 bucket_order=0
 zbud: loaded
-fuse: init (API version 7.39)
+fuse: init (API version 7.40)
 integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
 Key type asymmetric registered
@@ -571,7 +573,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-08-19T09:10:32 UTC (1724058632)
+rtc-efi rtc-efi.0: setting system clock to 2024-09-19T15:08:10 UTC (1726758490)
 ledtrig-cpu: registered to indicate activity on CPUs
 efifb: probing for efifb
 efifb: framebuffer at 0x80000000, using 4000k, total 4000k
@@ -588,9 +590,11 @@ In-situ OAM (IOAM) with IPv6
 mip6: Mobile IPv6
 NET: Registered PF_PACKET protocol family
 mpls_gso: MPLS GSO support
+Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
 registered taskstats version 1
 Loading compiled-in X.509 certificates
-Loaded X.509 cert 'Build time autogenerated kernel key: 08806f67ad101bfc65011af27802e7ee434843f0'
+Loaded X.509 cert 'Build time autogenerated kernel key: fed41bf9f82d972a36f9afb483a3a17c4d351862'
+Demotion targets for Node 0: null
 Key type .fscrypt registered
 Key type fscrypt-provisioning registered
 Key type encrypted registered
@@ -644,7 +648,8 @@ pcieport 0000:08:00.0: Adding to iommu group 8
 virtio-pci 0000:09:08.0: Adding to iommu group 8
 virtio-pci 0000:09:08.0: enabling device (0000 -> 0003)
 clk: Disabling unused clocks
-Freeing unused kernel memory: 7616K
+PM: genpd: Disabling unused power domains
+Freeing unused kernel memory: 2752K
 Checked W+X mappings: passed, no W+X pages found
 Run /init as init process
 processor	: 0

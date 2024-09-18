@@ -37,15 +37,15 @@ fs0:bsa.efi -sbsa -v 1
 reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL1: Built : 11:04:56, Aug 19 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL2: Built : 11:04:57, Aug 19 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-08-19-1102-88-g2d4f264ba
-NOTICE:  BL31: Built : 11:04:57, Aug 19 2024
-UEFI firmware (version 1.0 built at 11:05:06 on Aug 19 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
+NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
+UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
@@ -137,6 +137,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating TIMER INFO table
   GTDT is at F86DF798 and length is 84
   GTDT revision is at 3
+ TIMER_INFO: System Counter frequency :    0x3B9ACA00
  TIMER_INFO: Number of system timers  :    0
  Creating WATCHDOG INFO table
   Watchdog base = 0x50011000 INTID = 0x30
@@ -298,35 +299,31 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100F83F5000]
-  Reserved region of type 1 [0x100F83F5000, 0x100F8560000]
+  Reserved region of type 7 [0x10000000000, 0x100F83EC000]
+  Reserved region of type 1 [0x100F83EC000, 0x100F8560000]
   Reserved region of type 5 [0x100F8560000, 0x100F85E0000]
   Reserved region of type 6 [0x100F85E0000, 0x100F8680000]
   Reserved region of type 5 [0x100F8680000, 0x100F86D0000]
   Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
   Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
   Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA5B1000]
-  Reserved region of type 4 [0x100FA5B1000, 0x100FA72A000]
-  Reserved region of type 7 [0x100FA72A000, 0x100FA72B000]
-  Reserved region of type 4 [0x100FA72B000, 0x100FA742000]
-  Reserved region of type 7 [0x100FA742000, 0x100FA743000]
-  Reserved region of type 4 [0x100FA743000, 0x100FB624000]
-  Reserved region of type 7 [0x100FB624000, 0x100FB920000]
-  Reserved region of type 3 [0x100FB920000, 0x100FBC00000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA5AA000]
+  Reserved region of type 4 [0x100FA5AA000, 0x100FB624000]
+  Reserved region of type 7 [0x100FB624000, 0x100FB91F000]
+  Reserved region of type 3 [0x100FB91F000, 0x100FBC00000]
   Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
   Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
   Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
   Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FF8E3000]
-  Reserved region of type 4 [0x100FF8E3000, 0x100FF904000]
-  Reserved region of type 3 [0x100FF904000, 0x100FF93A000]
-  Reserved region of type 4 [0x100FF93A000, 0x100FFFE8000]
+  Reserved region of type 7 [0x100FC020000, 0x100FF8DF000]
+  Reserved region of type 4 [0x100FF8DF000, 0x100FF900000]
+  Reserved region of type 3 [0x100FF900000, 0x100FF937000]
+  Reserved region of type 4 [0x100FF937000, 0x100FFFE8000]
   Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FA758F98
+ Shared memory is 100FA735F98
 
       *** Starting PE tests ***
 
@@ -357,7 +354,7 @@ Operating System View:
        Primary PE Index: 0, ID_MMFR1_EL1 : 0x0000000040000000 
        Primary PE Index: 0, ID_MMFR2_EL1 : 0x0000000001260000 
        Primary PE Index: 0, ID_MMFR3_EL1 : 0x0000000002122211 
-       Primary PE Index: 0, ID_MMFR4_EL1 : 0x00000100F84129FC 
+       Primary PE Index: 0, ID_MMFR4_EL1 : 0x00000100F8409A5C 
        Primary PE Index: 0, ID_PFR0_EL1 : 0x0000000010010131 
        Primary PE Index: 0, ID_PFR1_EL1 : 0x0000000010010000 
        Primary PE Index: 0, MVFR0_EL1 : 0x0000000010110222 
@@ -392,7 +389,7 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000414FD0C1
         PE Index: 1, ID_MMFR1_EL1  : 0x0000000040000000
         PE Index: 1, ID_MMFR2_EL1  : 0x0000000001260000
         PE Index: 1, ID_MMFR3_EL1  : 0x0000000002122211
-        PE Index: 1, ID_MMFR4_EL1  : 0x00000100F84129FC
+        PE Index: 1, ID_MMFR4_EL1  : 0x00000100F8409A5C
         PE Index: 1, ID_PFR0_EL1  : 0x0000000010010131
         PE Index: 1, ID_PFR1_EL1  : 0x0000000010010000
         PE Index: 1, MVFR0_EL1  : 0x0000000010110222
@@ -717,7 +714,7 @@ Operating System View:
  303 : Check SMMU Large Physical Addr Support
        START 
        Mem Phy Addr 10000000000 
-       Mem Phy Addr 100F83F5000 
+       Mem Phy Addr 100F83EC000 
        Mem Phy Addr 100F8560000 
        Mem Phy Addr 100F85E0000 
        Mem Phy Addr 100F8680000 
@@ -725,21 +722,17 @@ Operating System View:
        Mem Phy Addr 100F86D9000 
        Mem Phy Addr 100F86E0000 
        Mem Phy Addr 100F8730000 
-       Mem Phy Addr 100FA5B1000 
-       Mem Phy Addr 100FA72A000 
-       Mem Phy Addr 100FA72B000 
-       Mem Phy Addr 100FA742000 
-       Mem Phy Addr 100FA743000 
+       Mem Phy Addr 100FA5AA000 
        Mem Phy Addr 100FB624000 
-       Mem Phy Addr 100FB920000 
+       Mem Phy Addr 100FB91F000 
        Mem Phy Addr 100FBC00000 
        Mem Phy Addr 100FBD90000 
        Mem Phy Addr 100FBFE0000 
        Mem Phy Addr 100FBFFF000 
        Mem Phy Addr 100FC020000 
-       Mem Phy Addr 100FF8E3000 
-       Mem Phy Addr 100FF904000 
-       Mem Phy Addr 100FF93A000 
+       Mem Phy Addr 100FF8DF000 
+       Mem Phy Addr 100FF900000 
+       Mem Phy Addr 100FF937000 
        Mem Phy Addr 100FFFE8000 
        Mem Phy Addr 100FFFF8000 
        Mem Phy Addr 10000000 
@@ -823,6 +816,7 @@ Operating System View:
  501 : Wake from EL1 PHY Timer Int           
        START       Received EL1 PHY interrupt
 
+       delay loop remainig value 1000000000
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
                                        : Result:  PASS
@@ -831,6 +825,7 @@ Operating System View:
  502 : Wake from EL1 VIR Timer Int           
        START       Received EL1 VIRT interrupt
 
+       delay loop remainig value 1000000000
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
                                        : Result:  PASS
@@ -839,6 +834,7 @@ Operating System View:
  503 : Wake from EL2 PHY Timer Int           
        START       Received EL2 Physical interrupt
 
+       delay loop remainig value 1000000000
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
                                        : Result:  PASS
@@ -849,6 +845,7 @@ Operating System View:
        Setting Trigger type as 1
        Writing to Register Address : 0x40060C0C        Received WS0 interrupt
 
+       delay loop remainig value 1000000000
        B_WAK_01, B_WAK_02, B_WAK_03, B_WAK_04, B_WAK_05                     
        B_WAK_06, B_WAK_07, B_WAK_10, B_WAK_11
                                        : Result:  PASS
