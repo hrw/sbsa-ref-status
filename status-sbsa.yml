@@ -153,7 +153,7 @@
     neoverse-n2: PASS
     neoverse-v1: PASS
   tags: S_L5PE_07
-  title: Check for FEAT_NV2 support
+  title: Check for nested virtualization
 15:
   level: '5'
   status:
@@ -333,7 +333,7 @@
     neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: S_L7PE_03
-  title: Check for AMUv1 Support
+  title: Check for AMU Support
 31:
   level: '7'
   status:
