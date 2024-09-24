@@ -466,6 +466,46 @@
           sbsa:
             7: true
         tag: S_L7ENT_01
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_01
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_02
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_03
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_04
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_05
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_06
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8PE_07
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8SHD_1
     1:
       name: Hypervisor
       rules:
@@ -555,6 +595,11 @@
           sbsa:
             7: true
         tag: SYS_RAS_3
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: SYS_RAS_4
 1:
   name: Memory map
   groups:
@@ -642,6 +687,11 @@
             6: true
             7: true
         tag: S_L3MM_02
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8SM_01
     1:
       name: Platform security
       rules:
@@ -1426,6 +1476,36 @@
       - required:
           bsa: false
           sbsa:
+            8: true
+        tag: S_PCIe_06
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_PCIe_07
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_PCIe_08
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_PCIe_09
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_PCIe_10
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_PCIe_11
+      - required:
+          bsa: false
+          sbsa:
             7: true
         tag: PCIE_ER_01
       - required:
@@ -1453,6 +1533,26 @@
           sbsa:
             7: true
         tag: PCIE_ER_06
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+        tag: PCIE_ER_07
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+        tag: PCIE_ER_08
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+        tag: PCIE_ER_09
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+        tag: PCIE_ER_10
 8:
   name: Watchdog
   groups:
