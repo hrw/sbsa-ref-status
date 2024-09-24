@@ -477,15 +477,6 @@
     neoverse-v1: PASS
   tags: S_L3MM_01, S_L3MM_02
   title: Check peripherals addr 64Kb apart
-102:
-  level: '5'
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-  tags: S_L5PP_01
-  title: Check Reserved PPI Assignments
 201:
   level: '3'
   status:
