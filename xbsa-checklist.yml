@@ -1407,11 +1407,6 @@
           bsa: false
           sbsa:
             7: true
-        tag: S_PCI_02
-      - required:
-          bsa: false
-          sbsa:
-            7: true
         tag: S_PCIe_02
       - required:
           bsa: false
