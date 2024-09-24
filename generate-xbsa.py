@@ -21,8 +21,15 @@ def check_tag(tag):
                     passed = "-"
             except KeyError:
                 pass
-            if status_sbsa[sbsa_test_id]['status'][cpu] not in ["FAIL"]:
-                passed = "✔"
+            match status_sbsa[sbsa_test_id]['status'][cpu]:
+                case "FAIL":
+                    passed = "-"
+                case "SKIPPED":
+                    passed = "?"
+                case "PASS":
+                    passed = "✔"
+                case _:
+                    pass
     except KeyError:
         pass
 
