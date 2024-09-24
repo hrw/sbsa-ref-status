@@ -1139,24 +1139,6 @@
     neoverse-v1: FAIL
   tags: RE_PCI_1
   title: Check RCiEP Hdr type & link Cap
-861:
-  level: '6'
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-  tags: S_PCIe_02
-  title: Check RootPort P&NP Memory Access
-862:
-  level: '6'
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-  tags: S_L4PCI_2
-  title: Check EA Capability
 863:
   level: '6'
   status:
