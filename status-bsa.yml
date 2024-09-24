@@ -391,16 +391,6 @@
     neoverse-v1: PASS
   tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
   title: Check SMMU S-EL2 & stage2 support
-353:
-  comment: SBSA requires SMMU v3
-  ignore_skipped: true
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-  tags: B_SMMU_19
-  title: SMMUv2 unique intr per ctxt bank
 354:
   status:
     cortex-a57: PASS
@@ -842,15 +832,6 @@
     neoverse-v1: PASS
   tags: PCI_IC_11
   title: PCIe RC,PE - Same Inr Shareable Domain
-841:
-  status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-v1: FAIL
-  tags: PCI_MM_04
-  title: NP type-1 PCIe supp 32-bit only
 842:
   status:
     cortex-a57: SKIPPED
