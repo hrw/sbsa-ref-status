@@ -126,12 +126,13 @@ table td.mark {
 <th>Rule ID</th>
 <th>ACS tests</th>
 <th align="center">BSA</th>
-<th align="center">SBSA level 3</th>
-<th align="center">SBSA level 4</th>
-<th align="center">SBSA level 5</th>
-<th align="center">SBSA level 6</th>
-<th align="center">SBSA level 7</th>
-<th align="center">SBSA Reference Platform</th>
+<th align="center">SBSA<br />level 3</th>
+<th align="center">SBSA<br />level 4</th>
+<th align="center">SBSA<br />level 5</th>
+<th align="center">SBSA<br />level 6</th>
+<th align="center">SBSA<br />level 7</th>
+<th align="center">SBSA<br />level 'future'</th>
+<th align="center">SBSA<br />Reference Platform</th>
 </tr>
 </thead>
 <tbody>
@@ -145,6 +146,7 @@ table td.mark {
 <td align="center">v8.4</td>
 <td align="center">v8.5 or v9.0</td>
 <td align="center">v8.6 or v9.1</td>
+<td align="center">TBD</td>
 <td align="center">Neoverse-N2</td>
 </tr>
 <tr>
@@ -157,7 +159,8 @@ table td.mark {
 <td align="center">v3.2</td>
 <td align="center">v3.2</td>
 <td align="center">v3.2</td>
-<td align="center">3.0</td>
+<td align="center">v3.3</td>
+<td align="center">v3.0</td>
 </tr>
 <tr>
 <td>GIC</td>
@@ -169,7 +172,8 @@ table td.mark {
 <td align="center">v3.0</td>
 <td align="center">v3.0</td>
 <td align="center">v3.0</td>
-<td align="center">3.0</td>
+<td align="center">v3.0</td>
+<td align="center">v3.0</td>
 </tr>
 
 {% set v = namespace(category = "", group = "") %}
@@ -189,12 +193,14 @@ table td.mark {
 <td />
 <td />
 <td />
+<td />
 </tr>
         {% endif %}
         {% if entry["group"] != v.group %}
                 {% set v.group = entry["group"] %}
 <tr>
 <td class="title">{{ v.group }}</td>
+<td />
 <td />
 <td />
 <td />
@@ -229,6 +235,7 @@ table td.mark {
 <td class="mark">{% if entry.sbsa[5] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[6] %}✔{% endif %}</td>
 <td class="mark">{% if entry.sbsa[7] %}✔{% endif %}</td>
+<td class="mark">{% if entry.sbsa[8] %}✔{% endif %}</td>
 <td class="mark">{{ entry.sbsaref }}</td>
 </tr>
 {% endfor %}
