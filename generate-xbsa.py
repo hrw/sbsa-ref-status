@@ -82,12 +82,17 @@ def handle_checklist():
                     4: False,
                     5: False,
                     6: False,
-                    7: False
+                    7: False,
+                    8: False
                 }
                 for test in tags_to_tests[tag]["sbsa"]:
-                    sbsa_level = int(status_sbsa[test]["level"])
+                    try:
+                        sbsa_level = int(status_sbsa[test]["level"])
+                    except ValueError:
+                        if "future" == status_sbsa[test]["level"]:
+                            sbsa_level = 8
 
-                    for level in range(sbsa_level, 8):
+                    for level in range(sbsa_level, 9):
                         entry["sbsa"][level] = True
 
             checklist.append(entry)
