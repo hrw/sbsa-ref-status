@@ -337,7 +337,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: Appendix I.6
+  tags: null
   title: Check MSI SPI are Edge Triggered
 252:
   status:
@@ -347,7 +347,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: Appendix I.9
+  tags: null
   title: Check GICv2m MSI Frame Register
 253:
   status:
@@ -357,7 +357,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: Appendix I.6
+  tags: null
   title: Check GICv2m MSI to SPI Generation
 254:
   status:
@@ -367,7 +367,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: Appendix I.5
+  tags: null
   title: Check GICv2m SPI allocated to MSI Ctrl
 276:
   status:
