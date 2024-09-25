@@ -47,8 +47,9 @@ def check_sbsa_level(cpu, level, previous_level_result):
     for category in xbsa_checklist:
         for group in xbsa_checklist[category]["groups"]:
             for rule in xbsa_checklist[category]["groups"][group]["rules"]:
-                if rule["required"]["sbsa"][level]:
-                    failed = check_tag(rule["tag"], failed)
+                if rule["required"]["sbsa"] != None:
+                    if level in rule["required"]["sbsa"]:
+                        failed = check_tag(rule["tag"], failed)
 
     if not failed:
         print(f"SBSA level {level} for {cpu}: no failures found")
