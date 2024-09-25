@@ -666,6 +666,17 @@
     neoverse-v1: PASS
   tags: S_L7SM_01
   title: Check if all DMA reqs behind SMMU
+316:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7SM_02
+  title: Check for SMMU/CATU in ETR Path
 317:
   level: future
   status:
@@ -721,6 +732,28 @@
     neoverse-v1: PASS
   tags: PCI_IN_02
   title: Check ECAM Memory accessibility
+805:
+  level: 6
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_MM_01, PCI_MM_02, PCI_MM_03, RE_BAR_2, IE_BAR_2
+  title: PCIe Unaligned access, Norm mem
+809:
+  level: 3
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L3GI_02
+  title: Check all MSI=X vectors are LPIs
 816:
   level: '6'
   status:
@@ -952,6 +985,17 @@
     neoverse-v1: SKIPPED
   tags: IE_REG_2
   title: Check i-EP AtomicOp rule
+840:
+  level: 3
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_IC_11
+  title: PCIe RC,PE - Same Inr Shareable Domain
 841:
   level: '6'
   status:
@@ -1139,6 +1183,17 @@
     neoverse-v1: FAIL
   tags: RE_PCI_1
   title: Check RCiEP Hdr type & link Cap
+861:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_PCIe_02
+  title: Check RootPort P&NP Memory Access
 863:
   level: '6'
   status:
@@ -1172,6 +1227,204 @@
     neoverse-v1: SKIPPED
   tags: PCI_ER_09
   title: Check RP Extensions for DPC
+901:
+  level: 3
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: None
+  title: Enhanced ECAM Memory access check
+902:
+  level: 6
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RE_SMU_2
+  title: PCIe Address translation check
+903:
+  level: 6
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RE_SMU_2
+  title: ATS Functionality Check
+904:
+  level: 6
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RE_ORD_1, RE_ORD_2, IE_ORD_1, IE_ORD_2
+  title: Arrival order & Gathering Check
+905:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_PCIe_03
+  title: PE 2/4/8B writes tp PCIe as 2/4/8B
+906:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_01, PCI_ER_02, PCI_ER_03, PCI_ER_04
+  title: RP's must support AER feature
+907:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_05, PCI_ER_06
+  title: RP's must support DPC
+908:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_PCIe_04
+  title: Check 2/4/8 Bytes targeted writes
+909:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_PCIe_07, S_PCIe_08
+  title: Check Relaxed Ordering of writes
+910:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_10
+  title: DPC trig when RP-PIO unimplemented
+911:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_08
+  title: RAS ERR record for poisoned data
+912:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PCI_ER_07
+  title: RAS ERR record for external abort
+1001:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_01, S_L7MP_02
+  title: Check for MPAM extension
+1002:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_03, S_L7MP_04
+  title: Check for MPAM LLC CSU
+1003:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_05, S_L7MP_06
+  title: Check for MPAM MBWUs Monitor func
+1004:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_07
+  title: Check for MBWU counter size
+1005:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_08
+  title: Check for MPAM MSC address overlap
+1006:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7MP_03
+  title: Check PMG storage by CPOR nodes
 1101:
   level: '7'
   status:
@@ -1205,6 +1458,28 @@
     neoverse-v1: FAIL
   tags: PMU_EV_11
   title: Check for multi-threaded PMU ext
+1104:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PMU_BM_1, PMU_SYS_1, PMU_SYS_2
+  title: Check memory bandwidth monitors
+1105:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PMU_MEM_1, PMU_SYS_1, PMU_SYS_2
+  title: Check memory latency monitors
 1106:
   level: '7'
   status:
@@ -1216,6 +1491,193 @@
     neoverse-v1: SKIPPED
   tags: PMU_SPE
   title: Check for PMU SPE Requirements
+1107:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PMU_BM_2, PMU_SYS_1, PMU_SYS_2
+  title: Check PCIe bandwidth monitors
+1108:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PMU_SYS_5
+  title: Check System PMU for NUMA systems
+1109:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: PMU_SYS_6
+  title: Check multiple types of traffic measurement
+1201:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_01
+  title: Check Error Counter
+1202:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_02
+  title: Check CFI, DUI, UI Controls
+1203:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_03
+  title: Check FHI in Error Record Group
+1204:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_04
+  title: Check ERI in Error Record Group
+1205:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_06
+  title: Check ERI/FHI Connected to GIC
+1206:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_07
+  title: RAS ERR<n>ADDR.AI bit status check
+1207:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_08
+  title: Check Error Group Status
+1208:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: RAS_11, RAS_12
+  title: Software Fault Error Check
+1209:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7RAS_1
+  title: Data abort on Containable err
+1210:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: SYS_RAS_1
+  title: Check for patrol scrubbing support
+1211:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: SYS_RAS_2, SYS_RAS_3
+  title: Check Poison Storage & Forwarding
+1212:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: SYS_RAS_2
+  title: Check Pseudo Fault Injection
+1213:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: SYS_RAS_4
+  title: Check RAS memory mapped view supp
+1301:
+  level: 7
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: S_L7ENT_1
+  title: NIST Statistical Test Suite
 1401:
   level: future
   status:
@@ -1227,6 +1689,39 @@
     neoverse-v1: FAIL
   tags: ETE_02
   title: Check for FEAT_ETE
+1402:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_03
+  title: Check trace unit ETE supports
+1403:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_04, ETE_06
+  title: Check ETE Trace Timestamp Source
+1404:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_05
+  title: Check Trace Same Timestamp Source
 1405:
   level: future
   status:
@@ -1238,3 +1733,36 @@
     neoverse-v1: FAIL
   tags: ETE_07
   title: Check for FEAT_TRBE
+1406:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_08
+  title: Check trace buffers flag updates
+1407:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_09
+  title: Check TRBE trace buffers alignment
+1408:
+  level: future
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ETE_10
+  title: Check GICC TRBE Interrupt field
