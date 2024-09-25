@@ -94,7 +94,7 @@ do
         boot-sbsa-ref "fs0:bsa.efi -sbsa -v 1" > logs/bsa-sbsa-${cpu}-v1.log
 
         echo -n "SBSA level "
-        for level in 3 4 5 6 7
+        for level in 4 5 6 7
         do
                 echo -n $level
                 boot-sbsa-ref "fs0:sbsa.efi -only -skip 861 -l ${level}"      > logs/sbsa-${cpu}-${level}.log
