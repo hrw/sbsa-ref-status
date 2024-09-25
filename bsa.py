@@ -5,20 +5,22 @@ def create_map_tags_to_tests(status_bsa, status_sbsa):
     tags_to_tests = {}
 
     for test in status_bsa:
-        for tag in status_bsa[test]["tags"].split(","):
-            tag = tag.strip()
-            if tag not in tags_to_tests:
-                tags_to_tests[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
+        if status_bsa[test]["tags"]:
+            for tag in status_bsa[test]["tags"].split(","):
+                tag = tag.strip()
+                if tag not in tags_to_tests:
+                    tags_to_tests[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
 
-            tags_to_tests[tag]["bsa"].append(test)
+                tags_to_tests[tag]["bsa"].append(test)
 
     for test in status_sbsa:
-        for tag in status_sbsa[test]["tags"].split(','):
-            tag = tag.strip()
-            if tag not in tags_to_tests:
-                tags_to_tests[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
+        if status_sbsa[test]["tags"]:
+            for tag in status_sbsa[test]["tags"].split(','):
+                tag = tag.strip()
+                if tag not in tags_to_tests:
+                    tags_to_tests[tag] = {"bsa": [], "sbsa": [], "acs_only": True}
 
-            tags_to_tests[tag]["sbsa"].append(test)
+                tags_to_tests[tag]["sbsa"].append(test)
 
     return tags_to_tests
 
