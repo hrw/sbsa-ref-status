@@ -1,7 +1,7 @@
-0:
+0_pe:
   name: PE
   groups:
-    0:
+    0_arch:
       name: Architecture
       rules:
       - required:
@@ -459,7 +459,7 @@
           sbsa:
             8: true
         tag: S_L8PE_07
-    1:
+    1_mpam:
       name: MPAM
       rules:
       - required:
@@ -518,7 +518,7 @@
             7: true
             8: true
         tag: S_L7MP_08
-    2:
+    2_ras:
       name: RAS
       rules:
       - required:
@@ -569,7 +569,7 @@
           sbsa:
             8: true
         tag: SYS_RAS_4
-    3:
+    3_tme:
       name: TME
       rules:
       - required:
@@ -602,7 +602,7 @@
             7: true
             8: true
         tag: S_L7TME_5
-    4:
+    4_ent:
       name: Entropy
       rules:
       - required:
@@ -611,7 +611,7 @@
             7: true
             8: true
         tag: S_L7ENT_01
-    5:
+    5_pmu:
       name: PMU
       rules:
       - required:
@@ -628,7 +628,7 @@
           sbsa:
             8: true
         tag: S_L8SHD_1
-    8:
+    8_hypervisor:
       name: Hypervisor
       rules:
       - required:
