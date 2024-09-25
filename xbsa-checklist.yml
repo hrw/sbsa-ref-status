@@ -1838,3 +1838,29 @@
             7: true
             8: true
         tag: S_L6WD_01
+90:
+  name: GPU compute
+  groups:
+    0:
+      name: GPU accelerated compute
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: GPU_01
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: GPU_02
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: GPU_03
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: GPU_04
