@@ -6,3 +6,11 @@ disks/
 
 # Ignore python cache
 __pycache__
+
+# ignore temporary log files
+log
+log-*
+
+# ignore working firmware files
+firmware/*_FLASH?.fd
+firmware/*_EFI.fd
