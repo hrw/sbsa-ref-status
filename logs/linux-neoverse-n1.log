@@ -233,7 +233,7 @@ CPU features: detected: RAS Extension Support
 CPU features: detected: Speculative Store Bypassing Safe (SSBS)
 alternatives: applying system-wide alternatives
 CPU features: detected: Hardware dirty bit management on CPU0-1
-node 0 deferred pages initialised in 36ms
+node 0 deferred pages initialised in 28ms
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
@@ -248,7 +248,7 @@ DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.232:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.208:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -550,7 +550,6 @@ kvm [1]: IPA Size Limit: 48 bits
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
-Freeing initrd memory: 1696K
 kvm [1]: vgic interrupt IRQ9
 kvm [1]: VHE mode initialized successfully
 Initialise system trusted keyrings
@@ -562,6 +561,7 @@ integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
 Key type asymmetric registered
 Asymmetric key parser 'x509' registered
+Freeing initrd memory: 1696K
 Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
 io scheduler mq-deadline registered
 shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
@@ -576,7 +576,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-09-19T15:15:14 UTC (1726758914)
+rtc-efi rtc-efi.0: setting system clock to 2024-09-24T19:25:30 UTC (1727205930)
 ledtrig-cpu: registered to indicate activity on CPUs
 efifb: probing for efifb
 efifb: framebuffer at 0x80000000, using 4000k, total 4000k

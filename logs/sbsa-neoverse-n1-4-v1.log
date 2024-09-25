@@ -371,8 +371,8 @@ PE Index * 1 *
   Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
   Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
   Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA519000]
-  Reserved region of type 4 [0x100FA519000, 0x100FB624000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA515000]
+  Reserved region of type 4 [0x100FA515000, 0x100FB624000]
   Reserved region of type 7 [0x100FB624000, 0x100FB91F000]
   Reserved region of type 3 [0x100FB91F000, 0x100FBC00000]
   Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
@@ -391,7 +391,7 @@ PE Index * 1 *
  PMU_INFO: Number of PMU units        :    0
  AEST table not found
  RAS_INFO: Number of RAS nodes        :    0
- Shared memory is 100FA62BF98
+ Shared memory is 100FA627F98
 
       *** Starting PE tests ***
    5 : Check for RAS extension               

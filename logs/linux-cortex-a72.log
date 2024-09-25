@@ -226,7 +226,7 @@ CPU features: detected: 32-bit EL0 Support
 CPU features: detected: 32-bit EL1 Support
 CPU features: detected: CRC32 instructions
 alternatives: applying system-wide alternatives
-node 0 deferred pages initialised in 28ms
+node 0 deferred pages initialised in 32ms
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
@@ -241,7 +241,7 @@ DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.212:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.216:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -539,12 +539,12 @@ pci 0000:06:00.0: enabling device (0000 -> 0002)
 PCI: CLS 0 bytes, default 64
 kvm [1]: nv: 477 coarse grained trap handlers
 kvm [1]: IPA Size Limit: 44 bits
-Trying to unpack rootfs image as initramfs...
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
 kvm [1]: GIC system register CPU interface enabled
 kvm [1]: vgic interrupt IRQ9
 kvm [1]: Hyp nVHE mode initialized successfully
+Trying to unpack rootfs image as initramfs...
 Initialise system trusted keyrings
 Key type blacklist registered
 workingset: timestamp_bits=42 max_order=20 bucket_order=0
@@ -569,7 +569,7 @@ arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-09-19T15:11:42 UTC (1726758702)
+rtc-efi rtc-efi.0: setting system clock to 2024-09-24T19:22:18 UTC (1727205738)
 ledtrig-cpu: registered to indicate activity on CPUs
 efifb: probing for efifb
 efifb: framebuffer at 0x80000000, using 4000k, total 4000k

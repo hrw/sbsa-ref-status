@@ -841,6 +841,12 @@ MADT                                 :
     CPU Interface Number             : 0x0
     ACPI Processor UID               : 0x0
     Flags                            : 0x1
+      Enabled                        : 1
+      Performance Inter. Mode        : Edge Triggered
+      VGIC Maintenance Inter. Mode   : Edge Triggered
+      Online Capable                 : 0
+      Reserved                       : 0
+
     Parking Protocol Version         : 0x0
     Performance Interrupt GSIV       : 0x17
     Parked Address                   : 0x0
@@ -860,6 +866,12 @@ MADT                                 :
     CPU Interface Number             : 0x0
     ACPI Processor UID               : 0x1
     Flags                            : 0x1
+      Enabled                        : 1
+      Performance Inter. Mode        : Edge Triggered
+      VGIC Maintenance Inter. Mode   : Edge Triggered
+      Online Capable                 : 0
+      Reserved                       : 0
+
     Parking Protocol Version         : 0x0
     Performance Interrupt GSIV       : 0x17
     Parked Address                   : 0x0

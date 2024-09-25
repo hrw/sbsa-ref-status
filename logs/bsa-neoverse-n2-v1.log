@@ -307,10 +307,10 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
   Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
   Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA5A3000]
-  Reserved region of type 4 [0x100FA5A3000, 0x100FA71B000]
-  Reserved region of type 7 [0x100FA71B000, 0x100FA71C000]
-  Reserved region of type 4 [0x100FA71C000, 0x100FB624000]
+  Reserved region of type 7 [0x100F8730000, 0x100FA59F000]
+  Reserved region of type 4 [0x100FA59F000, 0x100FA717000]
+  Reserved region of type 7 [0x100FA717000, 0x100FA718000]
+  Reserved region of type 4 [0x100FA718000, 0x100FB624000]
   Reserved region of type 7 [0x100FB624000, 0x100FB8C9000]
   Reserved region of type 3 [0x100FB8C9000, 0x100FBC00000]
   Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
@@ -325,7 +325,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FA786418
+ Shared memory is 100FA782418
 
       *** Starting PE tests ***
 
@@ -741,9 +741,9 @@ Operating System View:
        Mem Phy Addr 100F86D9000 
        Mem Phy Addr 100F86E0000 
        Mem Phy Addr 100F8730000 
-       Mem Phy Addr 100FA5A3000 
-       Mem Phy Addr 100FA71B000 
-       Mem Phy Addr 100FA71C000 
+       Mem Phy Addr 100FA59F000 
+       Mem Phy Addr 100FA717000 
+       Mem Phy Addr 100FA718000 
        Mem Phy Addr 100FB624000 
        Mem Phy Addr 100FB8C9000 
        Mem Phy Addr 100FBC00000 
