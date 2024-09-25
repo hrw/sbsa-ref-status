@@ -453,12 +453,23 @@
           bsa: false
           sbsa:
             8: true
-        tag: S_L8PE_06
+        tag: S_L8PE_07
+    1_v9:
+      name: ARMv9 only
+      rules:
       - required:
           bsa: false
           sbsa:
             8: true
-        tag: S_L8PE_07
+        tag: S_L8PE_06
+    1_shd:
+      name: Self-hosted Debug (ARMv9)
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: S_L8SHD_1
     1_mpam:
       name: MPAM
       rules:
@@ -620,14 +631,6 @@
             7: true
             8: true
         tag: S_L7PMU
-    6:
-      name: Self-hosted Debug
-      rules:
-      - required:
-          bsa: false
-          sbsa:
-            8: true
-        tag: S_L8SHD_1
     8_hypervisor:
       name: Hypervisor
       rules:
