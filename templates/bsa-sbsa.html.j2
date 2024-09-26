@@ -20,25 +20,13 @@
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Marcin Juszkiewicz" />
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.3.1/css/fixedHeader.dataTables.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.3.1/js/dataTables.fixedHeader.min.js"></script>
-    <script type="text/javascript" id="js">
-            $(document).ready(function() {
-                    $("table").DataTable( {
-                            pageLength  : -1,
-                            paging:       false,
-                            scrollX:        false,
-                            scrollCollapse: false,
-                            fixedHeader    : true,
-                            ordering: false,
-                    });
-    });
-    </script>
 
     <style type="text/css">
 
@@ -66,8 +54,9 @@ table td {
         padding: 0.5em;
 }
 
-table tbody tr.odd td {
-        background-color: lightgrey;
+table.dataTable.stripe>tbody>tr:nth-child(odd)>*,table.dataTable.display>tbody>tr:nth-child(odd)>* {
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.023);
+    box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-stripe), 0.20);
 }
 
 table td.category_title {
@@ -132,7 +121,7 @@ table td.mark {
 <h3>Build info</h3>
     <p>Table generated on <strong>{{ generate_time }} UTC</strong>.</p>
 
-<table>
+<table id="xbsa" class="display" style="width:100%">
 <thead>
 <tr>
 <th>Section</th>
@@ -256,4 +245,14 @@ table td.mark {
 </table>    
 
 </body>
+    <script>
+        new DataTable('#xbsa', {
+                pageLength:         -1,
+                paging:             false,
+                scrollX:            false,
+                scrollCollapse:     false,
+                fixedHeader:        true,
+                ordering:           false
+        });
+    </script>
 </html>
