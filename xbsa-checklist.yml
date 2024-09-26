@@ -149,49 +149,49 @@
           sbsa:
         tag: B_PE_15
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_PE_16
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_PE_17
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SEC_01
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SEC_02
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SEC_03
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SEC_04
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
@@ -544,13 +544,7 @@
           sbsa:
             7: true
             8: true
-        tag: S_L7RAS_01
-      - required:
-          bsa: false
-          sbsa:
-            7: true
-            8: true
-        tag: S_L7RAS_02
+        tag: S_L7RAS_1
       - required:
           bsa: false
           sbsa:
@@ -580,6 +574,60 @@
           sbsa:
             8: true
         tag: SYS_RAS_4
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_01
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_02
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_03
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_04
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_06
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_07
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_08
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_11
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: RAS_12
     3_tme:
       name: TME
       rules:
@@ -621,7 +669,7 @@
           sbsa:
             7: true
             8: true
-        tag: S_L7ENT_01
+        tag: S_L7ENT_1
     5_pmu:
       name: PMU
       rules:
@@ -631,6 +679,126 @@
             7: true
             8: true
         tag: S_L7PMU
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_PE_02
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_PE_03
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_BM_1
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_BM_2
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_EV_11
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_MEM_1
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SPE
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SYS_1
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SYS_2
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SYS_3
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SYS_5
+      - required:
+          bsa: false
+          sbsa:
+            7: true
+            8: true
+        tag: PMU_SYS_6
+    7_ete:
+      name: Embedded Trace Extension
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_02
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_03
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_04
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_05
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_06
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_07
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_08
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_09
+      - required:
+          bsa: false
+          sbsa:
+            8: true
+        tag: ETE_10
     8_hypervisor:
       name: Hypervisor
       rules:
@@ -957,6 +1125,72 @@
             7: true
             8: true
         tag: B_PPI_03
+    its_groups:
+      name: ITS groups
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_01
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_02
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_03
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_04
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_05
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_06
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_07
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_08
+    its_deviceid:
+      name: Generation of DeviceID values
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_1
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_2
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_4
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_5
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_6
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_7
+      - required:
+          bsa: true
+          sbsa:
+        tag: ITS_DEV_8
 30:
   name: SMMU
   groups:
@@ -984,21 +1218,21 @@
             8: true
         tag: B_SMMU_02
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_03
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_04
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
@@ -1030,7 +1264,7 @@
             3: true
         tag: B_SMMU_08
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             5: true
             6: true
@@ -1038,7 +1272,7 @@
             8: true
         tag: B_SMMU_09
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             5: true
             6: true
@@ -1056,14 +1290,14 @@
             8: true
         tag: B_SMMU_12
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_13
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
@@ -1215,7 +1449,7 @@
             8: true
         tag: B_SMMU_19
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             5: true
             6: true
@@ -1233,7 +1467,7 @@
             8: true
         tag: B_SMMU_21
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             5: true
             6: true
@@ -1241,7 +1475,7 @@
             8: true
         tag: B_SMMU_22
       - required:
-          bsa: true
+          bsa: false
           sbsa:
             6: true
             7: true
@@ -1255,6 +1489,10 @@
           bsa: true
           sbsa:
         tag: B_SMMU_25
+      - required:
+          bsa: true
+          sbsa:
+        tag: SMMU_01
 40:
   name: Timer subsystem
   groups:
@@ -1448,12 +1686,6 @@
       - required:
           bsa: true
           sbsa:
-            3: true
-            4: true
-            5: true
-            6: true
-            7: true
-            8: true
         tag: B_WAK_08
       - required:
           bsa: true
@@ -1702,7 +1934,7 @@
           sbsa:
             8: true
         tag: S_PCIe_11
-    1:
+    error_reporting:
       name: Error reporting
       rules:
       - required:
@@ -1765,6 +1997,506 @@
             7: true
             8: true
         tag: PCI_ER_10
+    configspace:
+      name: Configuration space
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_01
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_02
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_03
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_04
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IN_05
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IN_11
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_12
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_13
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IN_16
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_17
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_IN_18
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IN_19
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IN_20
+    memory_space:
+      name: PCI Express Memory Space
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_MM_01
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_MM_02
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_MM_03
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_MM_04
+    memory_space2:
+      name: PCI Express device view of memory
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_MM_05
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_MM_06
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_MM_07
+    msi:
+      name: Message Signaled Interrupts
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_MSI_01
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_MSI_2
+    legacy_ints:
+      name: Legacy Interrupts
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_LI_01
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_LI_02
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_LI_03
+    smmu:
+      name: System MMU and Device Assignment
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: PCI_SM_02
+    io_coherency:
+      name: I/O Coherency
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+            3: true
+            4: true
+            5: true
+            6: true
+            7: true
+            8: true
+        tag: PCI_IC_11
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_13
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_14
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_15
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_16
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_17
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_IC_18
+    p2p:
+      name: Peer-to-peer
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PP_02
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PP_03
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PP_04
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PP_05
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PP_06
+    pasid:
+      name: PASID support
+      rules:
+      - required:
+          bsa: true
+          sbsa:
+        tag: PCI_PAS_1
+    rciep:
+      name: Rules for RCiEP
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_PCI_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_PCI_2
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_BAR_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_BAR_2
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_BAR_3
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_INT_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_ORD_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_ORD_2
+      - required:
+          bsa: true
+          sbsa:
+        tag: RE_ORD_4
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_SMU_2
+      - required:
+          bsa: true
+          sbsa:
+        tag: RE_SMU_4
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_RST_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_PWR_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_ACS_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_ACS_2
+    rciep_caps_regs:
+      name: RCiEP capabilities and registers
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_REG_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_REG_2
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_REG_3
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: RE_REC_1
+    iep:
+      name: Rules for i-EP
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_BAR_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_BAR_2
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_BAR_3
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_INT_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_ORD_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_ORD_2
+      - required:
+          bsa: true
+          sbsa:
+        tag: IE_ORD_4
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_SMU_1
+      - required:
+          bsa: true
+          sbsa:
+        tag: IE_SMU_3
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_RST_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_RST_2
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_PWR_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_ACS_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_ACS_2
+    iep_caps_regs:
+      name: I-EP capabilities and registers
+      rules:
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_1
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_2
+      - required:
+          bsa: true
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_3
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_4
+      - required:
+          bsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_5
 80:
   name: Watchdog
   groups:
