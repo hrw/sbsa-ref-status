@@ -21,8 +21,6 @@ def parse_args():
                         help="wait for GDB connection")
     parser.add_argument("--gfx", action="store_true",
                         help="open window with graphics output")
-    parser.add_argument("--no-its", action="store_true",
-                        help="disable extra PCIe devices")
     parser.add_argument("--no-reset", action="store_true",
                         help="do not shutdown after running EFI command")
     parser.add_argument("--numa", action="store_true",
