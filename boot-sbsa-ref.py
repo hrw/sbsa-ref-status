@@ -27,6 +27,8 @@ def parse_args():
                         help="use NUMA configation")
     parser.add_argument("--os",
                         help="select OS to attach")
+    parser.add_argument("--pcie", help="add some PCIe cards",
+                        action="store_true")
     parser.add_argument("--secure", action="store_true",
                         help="")
     parser.add_argument("--smp", help="amount of cpu cores", default=4)
@@ -99,6 +101,23 @@ def add_cpu(cpu_type, is_it_numa, smp):
                         "-numa", "node,nodeid=1,cpus=2,memdev=m1",
                         "-numa", "node,nodeid=2,cpus=3"])
 
+
+def add_some_pcie():
+    qemu_args.extend([
+     "-device", "pcie-root-port,id=root_port_for_igb,chassis=1,slot=1",
+       "-device", "igb,bus=root_port_for_igb,id=igb",
+     "-device", "pcie-root-port,id=root_port_for_switch1,chassis=2,slot=12",
+       "-device", "x3130-upstream,id=upstream_port1,bus=root_port_for_switch1",
+       "-device", "xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20",
+         "-device", "pcie-pci-bridge,id=pci,bus=downstream_port1",
+            "-device", "es1370,bus=pci,addr=9,id=es1370",
+            "-device", "e1000,bus=pci,addr=10,id=e1000",
+            "-device", "ahci,bus=pci,id=ahci,addr=11",
+            "-device", "pci-bridge,bus=pci,addr=13,id=pci-pci,chassis_nr=3",
+              "-device", "ac97,bus=pci-pci,addr=12",
+       "-device", "xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis=1,slot=21",
+         "-device", "igb,bus=downstream_port2,id=igb2",
+     ])
         qemu_args.extend([
   "-device", "pxb-pcie,id=pxb1,bus_nr=64,numa_node=1",
     "-device", "pcie-root-port,id=root_port3,bus=pxb1,chassis=11,slot=0",
@@ -213,6 +232,9 @@ add_usb_devices()
 enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
 add_os_drive(args.os)
+
+if args.pcie:
+    add_some_pcie()
 
 # full Debian installation
 add_drive("disks/full-debian.hddimg")
