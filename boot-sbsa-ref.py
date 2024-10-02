@@ -254,8 +254,6 @@ if not args.virt:
     # virtual drive with EFI tools
     add_drive("fat:rw:disks/virtual")
 
-#add_pcie("igb")
-
 show_args()
 
 os.execv(qemu_args[0], qemu_args)
