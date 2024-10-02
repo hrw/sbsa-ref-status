@@ -94,7 +94,7 @@ def add_cpu(cpu_type, is_it_numa, smp):
     qemu_args.extend(["-cpu", cpu_type])
 
     if not is_it_numa:
-        qemu_args.extend(["-smp", str(smp), "-m", "4G"])
+        qemu_args.extend(["-smp", f"{str(smp)}", "-m", "8G"])
     else:
         qemu_args.extend([
                         "-smp", f"{smp},sockets={smp},maxcpus={smp}",
