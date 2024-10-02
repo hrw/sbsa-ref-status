@@ -103,9 +103,9 @@ def add_cpu(cpu_type, is_it_numa, smp):
 
 
 def add_some_pcie():
+    add_pcie("igb")
+
     qemu_args.extend([
-     "-device", "pcie-root-port,id=root_port_for_igb,chassis=1,slot=1",
-       "-device", "igb,bus=root_port_for_igb,id=igb",
      "-device", "pcie-root-port,id=root_port_for_switch1,chassis=2,slot=12",
        "-device", "x3130-upstream,id=upstream_port1,bus=root_port_for_switch1",
        "-device", "xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20",
