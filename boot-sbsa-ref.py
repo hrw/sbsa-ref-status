@@ -105,6 +105,19 @@ def add_cpu(cpu_type, is_it_numa, smp):
                         "-numa", "node,nodeid=1,cpus=2,memdev=m1",
                         "-numa", "node,nodeid=2,cpus=3"])
 
+        qemu_args.extend([
+            "-device", "pxb-pcie,id=npxb1,bus_nr=64,numa_node=1",
+                "-device", "pcie-root-port,id=nroot_port3,bus=npxb1,chassis=11,slot=0",
+                "-device", "sdhci-pci,bus=nroot_port3,id=nsdhci",
+                "-device", "pcie-root-port,id=nroot_port4,bus=npxb1,chassis=12,slot=0",
+                "-device", "igb,bus=nroot_port4,id=nigb",
+            "-device", "pxb-pcie,id=npxb2,bus_nr=128,numa_node=2,bus=pcie.0",
+                "-device", "pcie-pci-bridge,id=npci,bus=npxb2",
+                "-device", "es1370,bus=npci,addr=9,id=nes1370",
+                "-device", "e1000,bus=npci,addr=10,id=ne1000",
+                "-device", "pcie-root-port,id=nroot_port_for_ahci,bus=npxb2,chassis=10,slot=0",
+                "-device", "ahci,bus=nroot_port_for_ahci,id=nahci"
+])
 
 def add_some_pcie():
     global chassis
@@ -133,19 +146,6 @@ def add_nvme(disk_image):
     add_pcie(f"nvme,drive={drive_id},serial={drive_id}")
 
     add_drive(disk_image, drive_type="none", drive_id=drive_id)
-        qemu_args.extend([
-  "-device", "pxb-pcie,id=pxb1,bus_nr=64,numa_node=1",
-    "-device", "pcie-root-port,id=root_port3,bus=pxb1,chassis=11,slot=0",
-      "-device", "sdhci-pci,bus=root_port3,id=sdhci",
-    "-device", "pcie-root-port,id=root_port4,bus=pxb1,chassis=12,slot=0",
-      "-device", "bochs-display,bus=root_port4,id=bochs",
-  "-device", "pxb-pcie,id=pxb2,bus_nr=128,numa_node=2,bus=pcie.0",
-    "-device", "pcie-pci-bridge,id=pci,bus=pxb2",
-      "-device", "es1370,bus=pci,addr=9,id=es1370",
-#      "-device", "e1000,bus=pci,addr=10,id=e1000",
-    "-device", "pcie-root-port,id=root_port_for_ahci,bus=pxb2,chassis=10,slot=0",
-      "-device", "ahci,bus=root_port_for_ahci,id=ahci"
-])
 
 
 def add_device(device_name):
