@@ -122,6 +122,14 @@ def add_some_pcie():
        "-device", "xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis=1,slot=21",
          "-device", "igb,bus=downstream_port2,id=igb2",
      ])
+
+
+def add_nvme(disk_image):
+    drive_id = "".join(random.choices(string.ascii_letters, k=5))
+
+    add_pcie(f"nvme,drive={drive_id},serial={drive_id}")
+
+    add_drive(disk_image, drive_type="none", drive_id=drive_id)
         qemu_args.extend([
   "-device", "pxb-pcie,id=pxb1,bus_nr=64,numa_node=1",
     "-device", "pcie-root-port,id=root_port3,bus=pxb1,chassis=11,slot=0",
@@ -237,11 +245,11 @@ enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
 add_os_drive(args.os)
 
+add_nvme("disks/full-debian.hddimg")
+
 if args.pcie:
     add_some_pcie()
 
-# full Debian installation
-add_drive("disks/full-debian.hddimg")
 if not args.virt:
     # virtual drive with EFI tools
     add_drive("fat:rw:disks/virtual")
