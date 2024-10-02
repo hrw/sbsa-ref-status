@@ -107,20 +107,24 @@ def add_cpu(cpu_type, is_it_numa, smp):
 
 
 def add_some_pcie():
+    global chassis
+
     add_pcie("igb")
 
     qemu_args.extend([
-     "-device", "pcie-root-port,id=root_port_for_switch1,chassis=2,slot=12",
+     "-device", f"pcie-root-port,id=root_port_for_switch1,chassis={chassis},slot=12",
        "-device", "x3130-upstream,id=upstream_port1,bus=root_port_for_switch1",
-       "-device", "xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20",
+       "-device", f"xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis={chassis + 1},slot=20",
          "-device", "pcie-pci-bridge,id=pci,bus=downstream_port1",
             "-device", "es1370,bus=pci,addr=9,id=es1370",
             "-device", "e1000,bus=pci,addr=10,id=e1000",
             "-device", "pci-bridge,bus=pci,addr=13,id=pci-pci,chassis_nr=3",
               "-device", "ac97,bus=pci-pci,addr=12",
-       "-device", "xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis=1,slot=21",
+       "-device", f"xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis={chassis + 2},slot=21",
          "-device", "igb,bus=downstream_port2,id=igb2",
      ])
+
+    chassis += 2
 
 
 def add_nvme(disk_image):
