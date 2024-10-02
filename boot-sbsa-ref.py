@@ -39,11 +39,6 @@ def parse_args():
 
 
 def handle_uefi_command(command, no_reset):
-    try:
-        os.remove("disks/virtual/startup.nsh")
-    except FileNotFoundError:
-        pass
-
     with open("disks/virtual/startup.nsh", "w") as startup:
         startup.write(f"""
                        mode 100 31
@@ -230,6 +225,10 @@ def add_pcie(card_name, add_root_port=True):
 
 args = parse_args()
 chassis = 0
+
+# drop EFI shell autostart script
+if os.path.exists("disks/virtual/startup.nsh"):
+    os.remove("disks/virtual/startup.nsh")
 
 if args.cmd:
     handle_uefi_command(args.cmd, args.no_reset)
