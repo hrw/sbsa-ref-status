@@ -238,16 +238,21 @@ qemu_args = [
 
 add_firmware(args.virt)
 add_machine(args.virt)
+
+if args.pcie:
+    add_some_pcie()
+
+nvme_drive = "disks/nvme.img"
+
+if os.path.exists(nvme_drive):
+    add_nvme(nvme_drive)
+
 add_cpu(args.cpu, args.numa, args.smp)
 add_usb_devices()
 enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
 add_os_drive(args.os)
 
-add_nvme("disks/full-debian.hddimg")
-
-if args.pcie:
-    add_some_pcie()
 
 if not args.virt:
     # virtual drive with EFI tools
