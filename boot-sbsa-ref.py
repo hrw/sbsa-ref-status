@@ -56,13 +56,17 @@ def handle_uefi_command(command, no_reset):
             startup.write("reset -c\n")
 
 
-def add_drive(drive_file, drive_type="", media="", drive_format="raw"):
+def add_drive(drive_file, drive_type="", media="", drive_format="raw",
+              drive_id=""):
     drive_extra = ""
     if drive_type:
         drive_extra = f",if={drive_type}"
 
     if media:
         drive_extra += ",media=cdrom"
+
+    if drive_id:
+        drive_extra += f",id={drive_id}"
 
     qemu_args.extend(["-drive",
                      f"file={drive_file},format={drive_format}{drive_extra}"])
