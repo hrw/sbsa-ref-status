@@ -1,81 +1,102 @@
 alpine:
+  checksum: 8d0efbc173aeb54fd41af7d88e3b92c10e443ac33beca7bfa112e230df71571a
   file: disks/alpine-standard-3.20.3-aarch64.iso
   url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.3-aarch64.iso
 centos:
+  checksum: false
   file: disks/CentOS-Stream-9-boot.iso
   force-download: true
   force-name: true
   url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-latest-aarch64-boot.iso
 debian:
+  checksum: false
   file: disks/debian-testing-arm64-netinst.iso
   force-download: true
   url: https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/arm64/iso-cd/debian-testing-arm64-netinst.iso
 debian10:
+  checksum: a20a5437e243186ac8d678202cf55a253e8d37df2b187da885796d5071ba829f
   file: disks/debian-10.13.0-arm64-netinst.iso
   url: https://cdimage.debian.org/cdimage/archive/10.13.0/arm64/iso-cd/debian-10.13.0-arm64-netinst.iso
 debian11:
+  checksum: c81b6081d5dc5cfac49310b104eb9843252fd3c97cedbcd69ec0388798e7ef7e
   file: disks/debian-11.11.0-arm64-netinst.iso
   url: https://cdimage.debian.org/cdimage/archive/11.11.0/arm64/iso-cd/debian-11.11.0-arm64-netinst.iso
 debian12:
+  checksum: ff476eeee26162e42111277796cdb7470ff1f1f6203bd9bc4548d211ebf9f931
   file: disks/debian-12.7.0-arm64-netinst.iso
   url: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12.7.0-arm64-netinst.iso
 fedora:
+  checksum: 690731ac6abba81413d97517baa80841cb122d07b296ec3f2935848be45be8fe
   file: disks/Fedora-Server-netinst-aarch64-40-1.14.iso
   url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Server/aarch64/iso/Fedora-Server-netinst-aarch64-40-1.14.iso
 freebsd:
+  checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
   file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
   url: https://download.freebsd.org/releases/VM-IMAGES/14.1-RELEASE/aarch64/Latest/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2.xz
 freebsd13:
+  checksum: 313bb1774e281c7c8eff6a63f58b096b709b9ef2d5ada3701980314822c551a6
   file: disks/FreeBSD-13.4-RELEASE-arm64-aarch64.qcow2
   url: https://download.freebsd.org/releases/VM-IMAGES/13.4-RELEASE/aarch64/Latest/FreeBSD-13.4-RELEASE-arm64-aarch64.qcow2.xz
 freebsd15:
+  checksum: false
   file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64-ufs.qcow2
   force-download: true
   url: https://download.freebsd.org/snapshots/VM-IMAGES/15.0-CURRENT/aarch64/Latest/FreeBSD-15.0-CURRENT-arm64-aarch64-ufs.qcow2.xz
 netbsd10:
+  checksum: 5e4ca918991b6fa10bb041814cd3bc5ffb5354f8f32af535124080e1f055d50f
   file: disks/NetBSD-10-arm64.img
   force-name: true
   type: hdd
   url: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.0/evbarm-aarch64/binary/gzimg/arm64.img.gz
 netbsd11:
+  checksum: false
   file: disks/NetBSD-11-aarch64-generic.img
   force-download: true
   force-name: true
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/HEAD/latest-evbarm-aarch64/NetBSD-HEAD-aarch64-generic.img.gz
 netbsd9:
+  checksum: aee18c113de9cdec6b1c2574d144217b7f5bd9b9c63d09c8af17156544ff6243
   file: disks/NetBSD-9-aarch64--generic.img
   force-download: true
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.4-release/NetBSD-9-aarch64--generic.img.gz
 openbsd73:
+  checksum: 7fc2c75401d6f01fbfa25f4953f72ad7d7c18650056d30755c44b9c129b707e5
   file: disks/openbsd-miniroot73.img
   force-name: true
   type: hdd
   url: https://cdn.openbsd.org/pub/OpenBSD/7.3/arm64/miniroot73.img
 openbsd75:
+  checksum: 05df229dc026785b5b3d1ec8b0dcd46780a2a5bdf99b7e739d83abf4ff7b3ff5
   file: disks/openbsd-miniroot75.img
   force-name: true
   type: hdd
   url: https://cdn.openbsd.org/pub/OpenBSD/7.5/arm64/miniroot75.img
 openbsd76:
+  checksum: 7d79df740c701f162903307f941005fafdc82eff829e07104105c4c9e79986f4
   file: disks/openbsd-miniroot76.img
   force-name: true
   type: hdd
   url: https://cdn.openbsd.org/pub/OpenBSD/7.6/arm64/miniroot76.img
 openeuler:
+  checksum: 2e6e98788d9de805b1406989e780a798caf2aa1af6d6c6e209be390912ff8da8
   file: disks/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
   url: https://mirrors.dotsrc.org/openeuler/openEuler-24.03-LTS/ISO/aarch64/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
 rhel:
+  checksum: false
   file: disks/rhel-9.3-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
 rhel10:
+  checksum: false
   file: disks/RHEL-10.0-20240318.5-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
 sr-acs:
+  checksum: 8bbc25be79d18e25553c33a8ec44b8846348806481c4c69aff4e9f5971b201f9
   file: disks/sr_acs_live_image.img
   reset: false
   type: hdd
   url: https://github.com/ARM-software/arm-systemready/raw/main/SR/prebuilt_images/v24.03_2.1.0/sr_acs_live_image.img.xz
 winpe:
+  checksum: false
   file: disks/WinPE_arm64.iso

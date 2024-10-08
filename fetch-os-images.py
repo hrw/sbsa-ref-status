@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import gzip
+import hashlib
 import lzma
 import os
 import requests
@@ -13,6 +14,7 @@ os.yml file defines list of operating system images to use with boot-sbsa-ref
 script. There are several fields defined for each entry:
 
 osname:             used with "--os" argument of boot-sbsa-ref.py script
+  checksum:         sha256 checksum
   file:             filename of local copy of disk image (mandatory)
   force-download:   skip checking, always download fresh image
   force-name:       use filename from "file" field (centos8s has boot.iso)
@@ -61,6 +63,8 @@ def download_os_image(os_name, data):
     except KeyError:
         filesize = None
 
+    checksum = hashlib.sha256()
+
     if r.status_code != 200:
         print(f"HTTP Error {r.status_code}")
         sys.exit(-1)
@@ -68,11 +72,22 @@ def download_os_image(os_name, data):
         position = 0
         for chunk in r.iter_content(chunk_size=32768):
             fd.write(chunk)
+            checksum.update(chunk)
             if filesize:
                 position += 32768
                 progressbar(filesize, position)
 
     print(" ")
+
+    # daily/snapshot images do not have checksums stored
+    if data['checksum']:
+        if data['checksum'] != checksum.hexdigest():
+            print("Checksum does not match")
+            print(f"Old one: {data['checksum']}")
+            print(f"New one: {checksum.hexdigest()}")
+
+        data['checksum'] = checksum.hexdigest()
+
     # if file was gzip compressed then unpack it
     if data['url'].endswith('.gz'):
         newname = os.path.splitext(data['file'])[0]
