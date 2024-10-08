@@ -6,11 +6,6 @@ centos:
   force-download: true
   force-name: true
   url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-latest-aarch64-boot.iso
-centos8s:
-  file: disks/CentOS-Stream-8-boot.iso
-  force-download: true
-  force-name: true
-  url: https://mirror.dogado.de/centos/8-stream/BaseOS/aarch64/os/images/boot.iso
 debian:
   file: disks/debian-testing-arm64-netinst.iso
   force-download: true
@@ -76,9 +71,6 @@ rhel:
   paywall_url: https://developers.redhat.com/products/rhel/download
 rhel10:
   file: disks/RHEL-10.0-20240318.5-aarch64-boot.iso
-  paywall_url: https://developers.redhat.com/products/rhel/download
-rhel8:
-  file: disks/rhel-8.9-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
 sr-acs:
   file: disks/sr_acs_live_image.img
