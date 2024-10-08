@@ -67,7 +67,7 @@ openbsd76:
   file: disks/openbsd-miniroot76.img
   force-name: true
   type: hdd
-  url: https://cdn.openbsd.org/pub/OpenBSD/snapshots/arm64/miniroot76.img
+  url: https://cdn.openbsd.org/pub/OpenBSD/7.6/arm64/miniroot76.img
 openeuler:
   file: disks/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
   url: https://mirrors.dotsrc.org/openeuler/openEuler-24.03-LTS/ISO/aarch64/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
