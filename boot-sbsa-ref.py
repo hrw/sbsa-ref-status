@@ -266,6 +266,9 @@ show_args()
 if args.cmd:
     handle_uefi_command(args.cmd, args.no_reset)
 
+if not args.no_reset:
+    qemu_args.extend(["--no-reboot"])
+
 os.execv(qemu_args[0], qemu_args)
 
 try:
