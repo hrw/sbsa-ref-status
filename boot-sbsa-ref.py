@@ -39,17 +39,21 @@ def parse_args():
 
 
 def handle_uefi_command(command, no_reset):
+    script = f"""
+              mode 100 31
+              pci
+              {command}
+              """
+
+    # we shutdown by default
+    if not no_reset:
+        script += ("reset -c\n")
+
     with open("disks/virtual/startup.nsh", "w") as startup:
-        startup.write(f"""
-                       mode 100 31
-                       pci
-                       {command}
-                       """)
+        startup.write(script)
 
-        # we shutdown by default
-        if not no_reset:
-            startup.write("reset -c\n")
-
+    print("EFI startup script:")
+    print(script)
 
 def add_drive(drive_file, drive_type="", media="", drive_format="raw",
               drive_id=""):
@@ -230,9 +234,6 @@ chassis = 0
 if os.path.exists("disks/virtual/startup.nsh"):
     os.remove("disks/virtual/startup.nsh")
 
-if args.cmd:
-    handle_uefi_command(args.cmd, args.no_reset)
-
 qemu_args = [
     "../code/qemu/build/qemu-system-aarch64",
     "-monitor", "telnet::45454,server,nowait",
@@ -256,12 +257,14 @@ enable_graphics_window(args.gfx)
 enable_gdb(args.gdb)
 add_os_drive(args.os)
 
-
 if not args.virt:
     # virtual drive with EFI tools
     add_drive("fat:rw:disks/virtual")
 
 show_args()
+
+if args.cmd:
+    handle_uefi_command(args.cmd, args.no_reset)
 
 os.execv(qemu_args[0], qemu_args)
 
