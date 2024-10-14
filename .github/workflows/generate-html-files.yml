@@ -1,0 +1,40 @@
+name: Generate HTML tables
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - "main"
+    paths:
+    - "generate-xbsa.py"
+    - "status-*.yml"
+    - "xbsa-checklist.yml"
+
+
+jobs:
+  generate-and-deploy:
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Generate BSA-SBSA HTML
+        run: |
+          mkdir -p out
+          python3 generate-xbsa.py > out/bsa-sbsa.html
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: out/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
