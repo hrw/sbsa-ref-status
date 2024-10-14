@@ -1,64 +1,62 @@
-QEMU command line arguments:
--machine sbsa-ref
--m 4096
--smp 2
--cpu neoverse-n1
--drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
--drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
--usb
--device usb-kbd
--device usb-tablet
--nographic
--watchdog-action none
--no-reboot
+QEMU command arguments:
+
+../code/qemu/build/qemu-system-aarch64
 -monitor telnet::45454,server,nowait
 -serial stdio
--device pcie-root-port,id=root_port_for_switch1,chassis=1,slot=12
--device x3130-upstream,id=upstream_port1,bus=root_port_for_switch1
--device xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20
--device ac97,bus=downstream_port1
--device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
--device nvme,serial=deadbeef,bus=root_port_for_nvme1
--device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
--device igb,bus=root_port_for_igb
--device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
--device qemu-xhci,bus=root_port_for_xhci
--device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
--device ac97,bus=root_port_for_ac97
--device pcie-root-port,id=root_port_for_pci,chassis=1
--device pcie-pci-bridge,id=pci,bus=root_port_for_pci
--device virtio-rng-pci,bus=pci,addr=8
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash
+-machine sbsa-ref
+-device pcie-root-port,id=tvykN,slot=0,chassis=0
+-device nvme,drive=FzCEZ,serial=FzCEZ,bus=tvykN
+-drive file=disks/nvme.img,format=raw,if=none,id=FzCEZ
+-cpu neoverse-n1
+-smp 4
+-m 8G
+-device usb-kbd
+-device usb-tablet
+-device usb-mouse
+-nographic
+-drive file=fat:rw:disks/virtual,format=raw
 
 EFI startup script:
-mode 100 31
-pci
-fs0:bsa.efi -sbsa
-reset -c
+
+              mode 100 31
+              pci
+              fs1:bsa.efi -sbsa
+              reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL1: Built : 10:33:51, Oct 14 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL2: Built : 10:33:52, Oct 14 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
-UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL31: Built : 10:33:52, Oct 14 2024
+UEFI firmware (version 1.0 built at 10:34:00 on Oct 14 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
 [1m[33m[40mMapping table[0m[37m[40m
-[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+[1m[33m[40m      FS1:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD1a65535a1:;BLK4:
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
-[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0b:;BLK1:
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)/HD(1,GPT,E18266A2-C5EF-4299-AF15-636D414978CD,0x800,0x100000)
+[1m[33m[40m     BLK3:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)
+[1m[33m[40m     BLK2:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)/HD(2,GPT,01B58A9B-C015-4D10-9B69-79C1A4BE1BBE,0x100800,0xEFF7DF)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mmode 100 31
-[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40m              mode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40m              pci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -69,35 +67,9 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1234 Device 1111 Prog Interface 0
     [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   04    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 104C Device 8232 Prog Interface 0
-    [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 104C Device 8233 Prog Interface 0
-    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
-             Vendor 8086 Device 2415 Prog Interface 0
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
+    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
-    [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
-             Vendor 8086 Device 10C9 Prog Interface 0
-    [1m[33m[40m00   06   00    00 ==> [0m[37m[40mSerial Bus Controllers - USB
-             Vendor 1B36 Device 000D Prog Interface 30
-    [1m[33m[40m00   07   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
-             Vendor 8086 Device 2415 Prog Interface 0
-    [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000E Prog Interface 0
-    [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
-             Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -sbsa
+[1m[33m[40mShell> [0m[37m[40m              fs1:bsa.efi -sbsa
 
 
  BSA Architecture Compliance Suite
@@ -107,7 +79,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 
 
  Creating Platform Information Tables
- PE_INFO: Number of PE detected       :    2
+ PE_INFO: Number of PE detected       :    4
  GIC INFO: GIC version                :    v3
  GIC_INFO: Number of GICD             :    1
  GIC_INFO: Number of GICR RD          :    1
@@ -116,17 +88,17 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
  PCIE_INFO: Number of ECAM regions    :    1
- PCIE_INFO: Number of BDFs found      :    14
+ PCIE_INFO: Number of BDFs found      :    4
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
- PCIE_INFO: Number of EP              :    3
- PCIE_INFO: Number of RP              :    6
+ PCIE_INFO: Number of EP              :    1
+ PCIE_INFO: Number of RP              :    1
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
- PCIE_INFO: Number of UP of switch    :    1
- PCIE_INFO: Number of DP of switch    :    1
+ PCIE_INFO: Number of UP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    0
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
- PCIE_INFO: Number of PCIe/PCI Bridge :    1
+ PCIE_INFO: Number of PCIe/PCI Bridge :    0
  SMMU_INFO: Number of SMMU CTRL       :    1
  SMMU_INFO: SMMU index 00 version     :    v3.1
  Peripheral: Num of USB controllers   :    1
@@ -138,7 +110,9 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
 Operating System View:
    1 : Check Arch symmetry across PE         
 Primary PE Index : 0, MIDR_EL1 : 0x00000000414FD0C1
-        PE Index : 1, MIDR_EL1 : 0x00000000414FD0C1     : Result:  PASS
+        PE Index : 1, MIDR_EL1 : 0x00000000414FD0C1
+        PE Index : 2, MIDR_EL1 : 0x00000000414FD0C1
+        PE Index : 3, MIDR_EL1 : 0x00000000414FD0C1     : Result:  PASS
    2 : Check for number of PE                     : Result:  PASS
    3 : Check for AdvSIMD and FP support           : Result:  PASS
    4 : Check PE 4KB Granule Support               : Result:  PASS
@@ -321,4 +295,4 @@ Operating System View:
 
       *** BSA tests complete. Reset the system. ***
 
-[1m[33m[40mShell> [0m[37m[40mreset -c
+[1m[33m[40mShell> [0m[37m[40m              reset -c

@@ -1,64 +1,62 @@
-QEMU command line arguments:
--machine sbsa-ref
--m 4096
--smp 2
--cpu cortex-a72
--drive if=pflash,file=firmware/SBSA_FLASH0.fd,format=raw
--drive if=pflash,file=firmware/SBSA_FLASH1.fd,format=raw
--drive file=fat:rw:/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/disks/virtual/,format=raw
--usb
--device usb-kbd
--device usb-tablet
--nographic
--watchdog-action none
--no-reboot
+QEMU command arguments:
+
+../code/qemu/build/qemu-system-aarch64
 -monitor telnet::45454,server,nowait
 -serial stdio
--device pcie-root-port,id=root_port_for_switch1,chassis=1,slot=12
--device x3130-upstream,id=upstream_port1,bus=root_port_for_switch1
--device xio3130-downstream,id=downstream_port1,bus=upstream_port1,chassis=1,slot=20
--device ac97,bus=downstream_port1
--device pcie-root-port,id=root_port_for_nvme1,chassis=1,slot=1
--device nvme,serial=deadbeef,bus=root_port_for_nvme1
--device pcie-root-port,id=root_port_for_igb,chassis=1,slot=2
--device igb,bus=root_port_for_igb
--device pcie-root-port,id=root_port_for_xhci,chassis=1,slot=3
--device qemu-xhci,bus=root_port_for_xhci
--device pcie-root-port,id=root_port_for_ac97,chassis=1,slot=97
--device ac97,bus=root_port_for_ac97
--device pcie-root-port,id=root_port_for_pci,chassis=1
--device pcie-pci-bridge,id=pci,bus=root_port_for_pci
--device virtio-rng-pci,bus=pci,addr=8
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash
+-machine sbsa-ref
+-device pcie-root-port,id=WGHPh,slot=0,chassis=0
+-device nvme,drive=SRVLp,serial=SRVLp,bus=WGHPh
+-drive file=disks/nvme.img,format=raw,if=none,id=SRVLp
+-cpu cortex-a72
+-smp 4
+-m 8G
+-device usb-kbd
+-device usb-tablet
+-device usb-mouse
+-nographic
+-drive file=fat:rw:disks/virtual,format=raw
 
 EFI startup script:
-mode 100 31
-pci
-fs0:bsa.efi -v 1
-reset -c
+
+              mode 100 31
+              pci
+              fs1:bsa.efi -v 1
+              reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL1: Built : 12:37:50, Sep 17 2024
+NOTICE:  BL1: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL1: Built : 10:33:51, Oct 14 2024
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL2: Built : 12:37:50, Sep 17 2024
+NOTICE:  BL2: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL2: Built : 10:33:52, Oct 14 2024
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-09-17-1236-47-g000d80b5a
-NOTICE:  BL31: Built : 12:37:51, Sep 17 2024
-UEFI firmware (version 1.0 built at 10:08:42 on Sep 16 2024)
+NOTICE:  BL31: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
+NOTICE:  BL31: Built : 10:33:52, Oct 14 2024
+UEFI firmware (version 1.0 built at 10:34:00 on Oct 14 2024)
 [2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
 [1m[33m[40mMapping table[0m[37m[40m
-[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+[1m[33m[40m      FS1:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD1a65535a1:;BLK4:
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
-[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0b:;BLK1:
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)/HD(1,GPT,E18266A2-C5EF-4299-AF15-636D414978CD,0x800,0x100000)
+[1m[33m[40m     BLK3:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)
+[1m[33m[40m     BLK2:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
+0)/HD(2,GPT,01B58A9B-C015-4D10-9B69-79C1A4BE1BBE,0x100800,0xEFF7DF)
 Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
-[1m[33m[40mShell> [0m[37m[40mmode 100 31
-[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40mpci
+[1m[33m[40mShell> [0m[37m[40m              mode 100 31
+[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40m              pci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -69,35 +67,9 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 1234 Device 1111 Prog Interface 0
     [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
              Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   04    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   05    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   06    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   07    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   00   08    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 104C Device 8232 Prog Interface 0
-    [1m[33m[40m00   02   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 104C Device 8233 Prog Interface 0
-    [1m[33m[40m00   03   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
-             Vendor 8086 Device 2415 Prog Interface 0
-    [1m[33m[40m00   04   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
+    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
              Vendor 1B36 Device 0010 Prog Interface 2
-    [1m[33m[40m00   05   00    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
-             Vendor 8086 Device 10C9 Prog Interface 0
-    [1m[33m[40m00   06   00    00 ==> [0m[37m[40mSerial Bus Controllers - USB
-             Vendor 1B36 Device 000D Prog Interface 30
-    [1m[33m[40m00   07   00    00 ==> [0m[37m[40mMultimedia Device - Audio device
-             Vendor 8086 Device 2415 Prog Interface 0
-    [1m[33m[40m00   08   00    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000E Prog Interface 0
-    [1m[33m[40m00   09   08    00 ==> [0m[37m[40mPre 2.0 device - UNDEFINED
-             Vendor 1AF4 Device 1005 Prog Interface 0
-[1m[33m[40mShell> [0m[37m[40mfs0:bsa.efi -v 1
+[1m[33m[40mShell> [0m[37m[40m              fs1:bsa.efi -v 1
 
 
  BSA Architecture Compliance Suite
@@ -109,7 +81,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Creating Platform Information Tables
  Using SMC as PSCI conduit
  Creating PE INFO table
-  MADT is at F86DF898 and length is 108
+  MADT is at F86DF898 and length is 1A8
   Flags 1
   PE Enabled 1, Online Capable 0
   MADT Revision 4 
@@ -118,10 +90,20 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   PE Enabled 1, Online Capable 0
   MADT Revision 4 
  MPIDR 1 PE num 1
- PE_INFO: Number of PE detected       :    2
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 2 PE num 2
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 3 PE num 3
+ PE_INFO: Number of PE detected       :    4
  PE_INFO: Primary PE index       :    0
  Creating GIC INFO table
-  MADT is at F86DF898 and length is 108
+  MADT is at F86DF898 and length is 1A8
+  GICH base 2C010000
+  GICH base 2C010000
   GICH base 2C010000
   GICH base 2C010000
   GIC DIS base 40060000
@@ -135,7 +117,7 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
  Creating TIMER INFO table
-  GTDT is at F86DF798 and length is 84
+  GTDT is at F86DF598 and length is 84
   GTDT revision is at 3
   GTDT don't have el2 virt timer info
   using bsa recommended value 28
@@ -152,34 +134,21 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   End Bus   = 0xFF
  PCIE_INFO: Number of ECAM regions    :    1
        BDF 0x0 is a Host Bridge...Skipping
-       BDF 0x30000 PCI Express capability not present...Skipping
-       BDF 0x70000 PCI Express capability not present...Skipping
-       BDF 0x90800 PCI Express capability not present...Skipping
   Dev bdf 0x000100 type 0x200 RP bdf 0xFFFFFFFF
   Dev bdf 0x000200 type 0x200 RP bdf 0xFFFFFFFF
   Dev bdf 0x000300 type 0x10 RP bdf 0x000300
-  Dev bdf 0x000400 type 0x10 RP bdf 0x000400
-  Dev bdf 0x000500 type 0x10 RP bdf 0x000500
-  Dev bdf 0x000600 type 0x10 RP bdf 0x000600
-  Dev bdf 0x000700 type 0x10 RP bdf 0x000700
-  Dev bdf 0x000800 type 0x10 RP bdf 0x000800
-  Dev bdf 0x010000 type 0x20 RP bdf 0x000300
-  Dev bdf 0x020000 type 0x40 RP bdf 0x000300
-  Dev bdf 0x040000 type 0x01 RP bdf 0x000400
-  Dev bdf 0x050000 type 0x01 RP bdf 0x000500
-  Dev bdf 0x060000 type 0x01 RP bdf 0x000600
-  Dev bdf 0x080000 type 0x80 RP bdf 0x000800
- PCIE_INFO: Number of BDFs found      :    14
+  Dev bdf 0x010000 type 0x01 RP bdf 0x000300
+ PCIE_INFO: Number of BDFs found      :    4
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
- PCIE_INFO: Number of EP              :    3
- PCIE_INFO: Number of RP              :    6
+ PCIE_INFO: Number of EP              :    1
+ PCIE_INFO: Number of RP              :    1
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
- PCIE_INFO: Number of UP of switch    :    1
- PCIE_INFO: Number of DP of switch    :    1
+ PCIE_INFO: Number of UP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    0
  PCIE_INFO: Number of PCI/PCIe Bridge :    0
- PCIE_INFO: Number of PCIe/PCI Bridge :    1
+ PCIE_INFO: Number of PCIe/PCI Bridge :    0
 
   ECAM 0:  Base 0xF0000000
   BDF: 0x100
@@ -188,28 +157,8 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
   Seg: 0x0, Bus: 0x00, Dev: 0x02, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
   BDF: 0x300
   Seg: 0x0, Bus: 0x00, Dev: 0x03, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
-  BDF: 0x400
-  Seg: 0x0, Bus: 0x00, Dev: 0x04, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
-  BDF: 0x500
-  Seg: 0x0, Bus: 0x00, Dev: 0x05, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
-  BDF: 0x600
-  Seg: 0x0, Bus: 0x00, Dev: 0x06, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
-  BDF: 0x700
-  Seg: 0x0, Bus: 0x00, Dev: 0x07, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
-  BDF: 0x800
-  Seg: 0x0, Bus: 0x00, Dev: 0x08, Func: 0x0, Dev ID: 0x000C, Vendor ID: 0x1B36
   BDF: 0x10000
-  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x8232, Vendor ID: 0x104C
-  BDF: 0x20000
-  Seg: 0x0, Bus: 0x02, Dev: 0x00, Func: 0x0, Dev ID: 0x8233, Vendor ID: 0x104C
-  BDF: 0x40000
-  Seg: 0x0, Bus: 0x04, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
-  BDF: 0x50000
-  Seg: 0x0, Bus: 0x05, Dev: 0x00, Func: 0x0, Dev ID: 0x10C9, Vendor ID: 0x8086
-  BDF: 0x60000
-  Seg: 0x0, Bus: 0x06, Dev: 0x00, Func: 0x0, Dev ID: 0x000D, Vendor ID: 0x1B36
-  BDF: 0x80000
-  Seg: 0x0, Bus: 0x08, Dev: 0x00, Func: 0x0, Dev ID: 0x000E, Vendor ID: 0x1B36
+  Seg: 0x0, Bus: 0x01, Dev: 0x00, Func: 0x0, Dev ID: 0x0010, Vendor ID: 0x1B36
  Creating SMMU INFO table
   IORT node offset:30, type: 0
   IORT node offset:48, type: 4
@@ -233,31 +182,19 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  SMMU_INFO: SMMU index 00 version     :    v3.1
  Creating PERIPHERAL INFO table
   000.00.00 class_code = 0 6
-  000.00.18 class_code = 3 12
+  000.00.05 class_code = 3 12
   Found a USB controller 60110000
   000.01.01 class_code = 0 2
-  000.01.19 class_code = 6 1
+  000.01.06 class_code = 6 1
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
-  000.04.07 class_code = 4 6
-  000.05.09 class_code = 4 6
-  000.06.11 class_code = 4 6
-  000.07.13 class_code = 4 6
-  000.08.15 class_code = 4 6
-  009.08.17 class_code = 255 0
   000.00.00 class_code = 0 6
-  000.00.18 class_code = 3 12
+  000.00.05 class_code = 3 12
   000.01.01 class_code = 0 2
-  000.01.19 class_code = 6 1
+  000.01.06 class_code = 6 1
   Found a SATA controller 60100000
   000.02.02 class_code = 128 3
   000.03.03 class_code = 4 6
-  000.04.07 class_code = 4 6
-  000.05.09 class_code = 4 6
-  000.06.11 class_code = 4 6
-  000.07.13 class_code = 4 6
-  000.08.15 class_code = 4 6
-  009.08.17 class_code = 255 0
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
  Peripheral: Num of UART controllers  :    1
@@ -270,62 +207,38 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Class code is 3800002
  BDF is 300
  Class code is 6040000
- BDF is 400
- Class code is 6040000
- BDF is 500
- Class code is 6040000
- BDF is 600
- Class code is 6040000
- BDF is 700
- Class code is 6040000
- BDF is 800
- Class code is 6040000
  BDF is 10000
- Class code is 6040002
- BDF is 20000
- Class code is 6040001
- BDF is 30000
- Class code is 4010001
- BDF is 40000
- Class code is 1080202
- BDF is 50000
- Class code is 2000001
- BDF is 60000
- Class code is C033001
- BDF is 70000
- Class code is 4010001
- BDF is 80000
- Class code is 6040000
- BDF is 90800
- Class code is FF0000 Peripheral: Num of Network ctrl      :    2
+ Class code is 1080202 Peripheral: Num of Network ctrl      :    1
  Peripheral: Num of Storage ctrl      :    1
  Peripheral: Num of Display ctrl      :    1
  Creating MEMORY INFO table
-  Reserved region of type 7 [0x10000000000, 0x100F83EC000]
-  Reserved region of type 1 [0x100F83EC000, 0x100F8560000]
-  Reserved region of type 5 [0x100F8560000, 0x100F85E0000]
-  Reserved region of type 6 [0x100F85E0000, 0x100F8680000]
-  Reserved region of type 5 [0x100F8680000, 0x100F86D0000]
-  Reserved region of type 7 [0x100F86D0000, 0x100F86D9000]
-  Reserved region of type 9 [0x100F86D9000, 0x100F86E0000]
-  Reserved region of type 5 [0x100F86E0000, 0x100F8730000]
-  Reserved region of type 7 [0x100F8730000, 0x100FA5A6000]
-  Reserved region of type 4 [0x100FA5A6000, 0x100FB624000]
-  Reserved region of type 7 [0x100FB624000, 0x100FB91F000]
-  Reserved region of type 3 [0x100FB91F000, 0x100FBC00000]
-  Reserved region of type 5 [0x100FBC00000, 0x100FBD90000]
-  Reserved region of type 6 [0x100FBD90000, 0x100FBFE0000]
-  Reserved region of type 7 [0x100FBFE0000, 0x100FBFFF000]
-  Reserved region of type 4 [0x100FBFFF000, 0x100FC020000]
-  Reserved region of type 7 [0x100FC020000, 0x100FF8DF000]
-  Reserved region of type 4 [0x100FF8DF000, 0x100FF900000]
-  Reserved region of type 3 [0x100FF900000, 0x100FF937000]
-  Reserved region of type 4 [0x100FF937000, 0x100FFFE8000]
-  Reserved region of type 3 [0x100FFFE8000, 0x100FFFF8000]
-  Reserved region of type 4 [0x100FFFF8000, 0x10100000000]
+  Reserved region of type 7 [0x10000000000, 0x101F83EC000]
+  Reserved region of type 1 [0x101F83EC000, 0x101F8560000]
+  Reserved region of type 5 [0x101F8560000, 0x101F85E0000]
+  Reserved region of type 6 [0x101F85E0000, 0x101F8680000]
+  Reserved region of type 5 [0x101F8680000, 0x101F86D0000]
+  Reserved region of type 7 [0x101F86D0000, 0x101F86D9000]
+  Reserved region of type 9 [0x101F86D9000, 0x101F86E0000]
+  Reserved region of type 5 [0x101F86E0000, 0x101F8730000]
+  Reserved region of type 7 [0x101F8730000, 0x101FA104000]
+  Reserved region of type 4 [0x101FA104000, 0x101FA206000]
+  Reserved region of type 7 [0x101FA206000, 0x101FA212000]
+  Reserved region of type 4 [0x101FA212000, 0x101FB624000]
+  Reserved region of type 7 [0x101FB624000, 0x101FB90F000]
+  Reserved region of type 3 [0x101FB90F000, 0x101FBC00000]
+  Reserved region of type 5 [0x101FBC00000, 0x101FBD90000]
+  Reserved region of type 6 [0x101FBD90000, 0x101FBFE0000]
+  Reserved region of type 7 [0x101FBFE0000, 0x101FBFFF000]
+  Reserved region of type 4 [0x101FBFFF000, 0x101FC020000]
+  Reserved region of type 7 [0x101FC020000, 0x101FF8CB000]
+  Reserved region of type 4 [0x101FF8CB000, 0x101FF8EC000]
+  Reserved region of type 3 [0x101FF8EC000, 0x101FF924000]
+  Reserved region of type 4 [0x101FF924000, 0x101FFFE8000]
+  Reserved region of type 3 [0x101FFFE8000, 0x101FFFF8000]
+  Reserved region of type 4 [0x101FFFF8000, 0x10200000000]
   Reserved region of type 11 [0x10000000, 0x106C0000]
   Reserved region of type 11 [0x60010000, 0x60011000]
- Shared memory is 100FA731F98
+ Shared memory is 101FA2B1C98
 
       *** Starting PE tests ***
 
@@ -356,7 +269,7 @@ Operating System View:
        Primary PE Index: 0, ID_MMFR1_EL1 : 0x0000000040000000 
        Primary PE Index: 0, ID_MMFR2_EL1 : 0x0000000001260000 
        Primary PE Index: 0, ID_MMFR3_EL1 : 0x0000000002102211 
-       Primary PE Index: 0, ID_MMFR4_EL1 : 0x00000100F8409A5C 
+       Primary PE Index: 0, ID_MMFR4_EL1 : 0x00000101F8409A5C 
        Primary PE Index: 0, ID_PFR0_EL1 : 0x0000000000000131 
        Primary PE Index: 0, ID_PFR1_EL1 : 0x0000000010011011 
        Primary PE Index: 0, MVFR0_EL1 : 0x0000000010110222 
@@ -366,8 +279,12 @@ Operating System View:
        Primary PE Index: 0, PMCEID1_EL0 : 0x0000000000000000 
        Primary PE Index: 0, PMCR_EL0 : 0x0000000041023000 
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
 Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
         PE Index : 1, MIDR_EL1 : 0x00000000410FD083
+        PE Index : 2, MIDR_EL1 : 0x00000000410FD083
+        PE Index : 3, MIDR_EL1 : 0x00000000410FD083
         PE Index: 1, cache index: 0, size read: 0x00000000700FE01A
         PE Index: 1, cache index: 1, size read: 0x00000000707FE07A
         PE Index: 1, ID_AA64PFR0_EL1  : 0x0000000001002222
@@ -391,7 +308,7 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
         PE Index: 1, ID_MMFR1_EL1  : 0x0000000040000000
         PE Index: 1, ID_MMFR2_EL1  : 0x0000000001260000
         PE Index: 1, ID_MMFR3_EL1  : 0x0000000002102211
-        PE Index: 1, ID_MMFR4_EL1  : 0x00000100F8409A5C
+        PE Index: 1, ID_MMFR4_EL1  : 0x00000101F8409A5C
         PE Index: 1, ID_PFR0_EL1  : 0x0000000000000131
         PE Index: 1, ID_PFR1_EL1  : 0x0000000010011011
         PE Index: 1, MVFR0_EL1  : 0x0000000010110222
@@ -400,6 +317,70 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
         PE Index: 1, PMCEID0_EL0  : 0x0000000000020001
         PE Index: 1, PMCEID1_EL0  : 0x0000000000000000
         PE Index: 1, PMCR_EL0  : 0x0000000041023000
+        PE Index: 2, cache index: 0, size read: 0x00000000700FE01A
+        PE Index: 2, cache index: 1, size read: 0x00000000707FE07A
+        PE Index: 2, ID_AA64PFR0_EL1  : 0x0000000001002222
+        PE Index: 2, ID_AA64PFR1_EL1  : 0x0000000000000000
+        PE Index: 2, ID_AA64DFR0_EL1  : 0x0000000010305106
+        PE Index: 2, ID_AA64DFR1_EL1  : 0x0000000000000000
+        PE Index: 2, ID_AA64MMFR0_EL1  : 0x0000000000001124
+        PE Index: 2, ID_AA64MMFR1_EL1  : 0x0000000000000000
+        PE Index: 2, CTR_EL0  : 0x000000008444C004
+        PE Index: 2, ID_AA64ISAR0_EL1  : 0x0000000000011120
+        PE Index: 2, ID_AA64ISAR1_EL1  : 0x0000000000000000
+        PE Index: 2, MPIDR_EL1  : 0x0000000080000002
+        PE Index: 2, ID_DFR0_EL1  : 0x0000000003000066
+        PE Index: 2, ID_ISAR0_EL1  : 0x0000000002101110
+        PE Index: 2, ID_ISAR1_EL1  : 0x0000000013112111
+        PE Index: 2, ID_ISAR2_EL1  : 0x0000000021232042
+        PE Index: 2, ID_ISAR3_EL1  : 0x0000000001112131
+        PE Index: 2, ID_ISAR4_EL1  : 0x0000000000011142
+        PE Index: 2, ID_ISAR5_EL1  : 0x0000000000011121
+        PE Index: 2, ID_MMFR0_EL1  : 0x0000000010201105
+        PE Index: 2, ID_MMFR1_EL1  : 0x0000000040000000
+        PE Index: 2, ID_MMFR2_EL1  : 0x0000000001260000
+        PE Index: 2, ID_MMFR3_EL1  : 0x0000000002102211
+        PE Index: 2, ID_MMFR4_EL1  : 0x00000101F8409A5C
+        PE Index: 2, ID_PFR0_EL1  : 0x0000000000000131
+        PE Index: 2, ID_PFR1_EL1  : 0x0000000010011011
+        PE Index: 2, MVFR0_EL1  : 0x0000000010110222
+        PE Index: 2, MVFR1_EL1  : 0x0000000012111111
+        PE Index: 2, MVFR2_EL1  : 0x0000000000000043
+        PE Index: 2, PMCEID0_EL0  : 0x0000000000020001
+        PE Index: 2, PMCEID1_EL0  : 0x0000000000000000
+        PE Index: 2, PMCR_EL0  : 0x0000000041023000
+        PE Index: 3, cache index: 0, size read: 0x00000000700FE01A
+        PE Index: 3, cache index: 1, size read: 0x00000000707FE07A
+        PE Index: 3, ID_AA64PFR0_EL1  : 0x0000000001002222
+        PE Index: 3, ID_AA64PFR1_EL1  : 0x0000000000000000
+        PE Index: 3, ID_AA64DFR0_EL1  : 0x0000000010305106
+        PE Index: 3, ID_AA64DFR1_EL1  : 0x0000000000000000
+        PE Index: 3, ID_AA64MMFR0_EL1  : 0x0000000000001124
+        PE Index: 3, ID_AA64MMFR1_EL1  : 0x0000000000000000
+        PE Index: 3, CTR_EL0  : 0x000000008444C004
+        PE Index: 3, ID_AA64ISAR0_EL1  : 0x0000000000011120
+        PE Index: 3, ID_AA64ISAR1_EL1  : 0x0000000000000000
+        PE Index: 3, MPIDR_EL1  : 0x0000000080000003
+        PE Index: 3, ID_DFR0_EL1  : 0x0000000003000066
+        PE Index: 3, ID_ISAR0_EL1  : 0x0000000002101110
+        PE Index: 3, ID_ISAR1_EL1  : 0x0000000013112111
+        PE Index: 3, ID_ISAR2_EL1  : 0x0000000021232042
+        PE Index: 3, ID_ISAR3_EL1  : 0x0000000001112131
+        PE Index: 3, ID_ISAR4_EL1  : 0x0000000000011142
+        PE Index: 3, ID_ISAR5_EL1  : 0x0000000000011121
+        PE Index: 3, ID_MMFR0_EL1  : 0x0000000010201105
+        PE Index: 3, ID_MMFR1_EL1  : 0x0000000040000000
+        PE Index: 3, ID_MMFR2_EL1  : 0x0000000001260000
+        PE Index: 3, ID_MMFR3_EL1  : 0x0000000002102211
+        PE Index: 3, ID_MMFR4_EL1  : 0x00000101F8409A5C
+        PE Index: 3, ID_PFR0_EL1  : 0x0000000000000131
+        PE Index: 3, ID_PFR1_EL1  : 0x0000000010011011
+        PE Index: 3, MVFR0_EL1  : 0x0000000010110222
+        PE Index: 3, MVFR1_EL1  : 0x0000000012111111
+        PE Index: 3, MVFR2_EL1  : 0x0000000000000043
+        PE Index: 3, PMCEID0_EL0  : 0x0000000000020001
+        PE Index: 3, PMCEID1_EL0  : 0x0000000000000000
+        PE Index: 3, PMCR_EL0  : 0x0000000041023000
        B_PE_01
                                        : Result:  PASS
        END
@@ -414,12 +395,16 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
    3 : Check for AdvSIMD and FP support      
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_03
                                        : Result:  PASS
        END
 
    4 : Check PE 4KB Granule Support          
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_04
                                        : Result:  PASS
@@ -428,12 +413,16 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
    6 : Check Cryptographic extensions        
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_06
                                        : Result:  PASS
        END
 
    7 : Check Little Endian support           
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_07
                                        : Result:  PASS
@@ -442,12 +431,16 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
    8 : Check EL1 and EL0 implementation      
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_08
                                        : Result:  PASS
        END
 
    9 : Check for PMU and PMU counters        
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_09
                                        : Result:  PASS
@@ -463,6 +456,8 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
   11 : Check num of Breakpoints and type     
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_11
                                        : Result:  PASS
        END
@@ -470,12 +465,16 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
   12 : Check Synchronous Watchpoints         
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_12
                                        : Result:  PASS
        END
 
   13 : Check CRC32 instruction support       
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_13
                                        : Result:  PASS
@@ -486,6 +485,8 @@ Primary PE Index : 0, MIDR_EL1 : 0x00000000410FD083
        ID_AA64ISAR1_EL1 = 0
        ID_AA64ISAR2_EL1 = 0
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_15
        Checkpoint --  1                           : Result:  SKIPPED
        END
@@ -495,12 +496,16 @@ Hypervisor View:
   51 : Check EL2 implementation              
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_18
                                        : Result:  PASS
        END
 
   52 : Check Stage 2 4KB Granule Support     
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_19
                                        : Result:  PASS
@@ -509,6 +514,8 @@ Hypervisor View:
   53 : Check Stage2 and Stage1 Granule match 
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_20
                                        : Result:  PASS
        END
@@ -516,12 +523,16 @@ Hypervisor View:
   54 : Check for PMU counters                
        START
        PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        B_PE_21
                                        : Result:  PASS
        END
 
   55 : Check VMID breakpoint number          
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_22
                                        : Result:  PASS
@@ -531,6 +542,8 @@ Hypervisor View:
 Platform Security View:
   76 : Check EL3 implementation              
        START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
        PSCI_CPU_ON: success
        B_PE_23, B_PE_24
                                        : Result:  PASS
@@ -549,8 +562,8 @@ Operating System View:
 
        Error in getting dev mem for index 2  
        Normal Mem Address : 0x10000000000
-       Normal Mem Address : 0x100F86D0000
-       Normal Mem Address : 0x100F8730000
+       Normal Mem Address : 0x101F86D0000
+       Normal Mem Address : 0x101F8730000
        B_MEM_01
                                        : Result:  PASS
        END
@@ -667,16 +680,6 @@ Operating System View:
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
        RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
-       RC block->data.smmu.base: 60050000    
        ITS_DEV_2
                                        : Result:  PASS
        END
@@ -687,27 +690,7 @@ Operating System View:
        RC block->data.smmu.base: 60050000    
        Checking ReqID-StreamID-DeviceID Association, Bdf : 300
        RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 400
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 500
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 600
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 700
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 800
-       RC block->data.smmu.base: 60050000    
        Checking ReqID-StreamID-DeviceID Association, Bdf : 10000
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 20000
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 40000
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 50000
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 60000
-       RC block->data.smmu.base: 60050000    
-       Checking ReqID-StreamID-DeviceID Association, Bdf : 80000
        ITS_DEV_7,ITS_DEV_8
                                        : Result:  PASS
        END
@@ -733,27 +716,29 @@ Operating System View:
  303 : Check SMMU Large Physical Addr Support
        START 
        Mem Phy Addr 10000000000 
-       Mem Phy Addr 100F83EC000 
-       Mem Phy Addr 100F8560000 
-       Mem Phy Addr 100F85E0000 
-       Mem Phy Addr 100F8680000 
-       Mem Phy Addr 100F86D0000 
-       Mem Phy Addr 100F86D9000 
-       Mem Phy Addr 100F86E0000 
-       Mem Phy Addr 100F8730000 
-       Mem Phy Addr 100FA5A6000 
-       Mem Phy Addr 100FB624000 
-       Mem Phy Addr 100FB91F000 
-       Mem Phy Addr 100FBC00000 
-       Mem Phy Addr 100FBD90000 
-       Mem Phy Addr 100FBFE0000 
-       Mem Phy Addr 100FBFFF000 
-       Mem Phy Addr 100FC020000 
-       Mem Phy Addr 100FF8DF000 
-       Mem Phy Addr 100FF900000 
-       Mem Phy Addr 100FF937000 
-       Mem Phy Addr 100FFFE8000 
-       Mem Phy Addr 100FFFF8000 
+       Mem Phy Addr 101F83EC000 
+       Mem Phy Addr 101F8560000 
+       Mem Phy Addr 101F85E0000 
+       Mem Phy Addr 101F8680000 
+       Mem Phy Addr 101F86D0000 
+       Mem Phy Addr 101F86D9000 
+       Mem Phy Addr 101F86E0000 
+       Mem Phy Addr 101F8730000 
+       Mem Phy Addr 101FA104000 
+       Mem Phy Addr 101FA206000 
+       Mem Phy Addr 101FA212000 
+       Mem Phy Addr 101FB624000 
+       Mem Phy Addr 101FB90F000 
+       Mem Phy Addr 101FBC00000 
+       Mem Phy Addr 101FBD90000 
+       Mem Phy Addr 101FBFE0000 
+       Mem Phy Addr 101FBFFF000 
+       Mem Phy Addr 101FC020000 
+       Mem Phy Addr 101FF8CB000 
+       Mem Phy Addr 101FF8EC000 
+       Mem Phy Addr 101FF924000 
+       Mem Phy Addr 101FFFE8000 
+       Mem Phy Addr 101FFFF8000 
        Mem Phy Addr 10000000 
        Mem Phy Addr 60010000
        uefi mem map has 52 bit addr: 0
@@ -970,17 +955,7 @@ Operating System View:
        BDF - 0x100
        BDF - 0x200
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        BDF - 0x10000
-       BDF - 0x20000
-       BDF - 0x40000
-       BDF - 0x50000
-       BDF - 0x60000
-       BDF - 0x80000
        PCI_IN_04
                                        : Result:  PASS
        END
@@ -997,265 +972,265 @@ Operating System View:
 
  808 : Check all 1's for out of range        
        START
- max bdf 0x80000
- Maximum sub bus 9
-       Maximum bus value is 0xA
-       Calculated config address is F0A00000
-       Calculated config address is F0A01000
-       Calculated config address is F0A02000
-       Calculated config address is F0A03000
-       Calculated config address is F0A04000
-       Calculated config address is F0A05000
-       Calculated config address is F0A06000
-       Calculated config address is F0A07000
-       Calculated config address is F0A08000
-       Calculated config address is F0A09000
-       Calculated config address is F0A0A000
-       Calculated config address is F0A0B000
-       Calculated config address is F0A0C000
-       Calculated config address is F0A0D000
-       Calculated config address is F0A0E000
-       Calculated config address is F0A0F000
-       Calculated config address is F0A10000
-       Calculated config address is F0A11000
-       Calculated config address is F0A12000
-       Calculated config address is F0A13000
-       Calculated config address is F0A14000
-       Calculated config address is F0A15000
-       Calculated config address is F0A16000
-       Calculated config address is F0A17000
-       Calculated config address is F0A18000
-       Calculated config address is F0A19000
-       Calculated config address is F0A1A000
-       Calculated config address is F0A1B000
-       Calculated config address is F0A1C000
-       Calculated config address is F0A1D000
-       Calculated config address is F0A1E000
-       Calculated config address is F0A1F000
-       Calculated config address is F0A20000
-       Calculated config address is F0A21000
-       Calculated config address is F0A22000
-       Calculated config address is F0A23000
-       Calculated config address is F0A24000
-       Calculated config address is F0A25000
-       Calculated config address is F0A26000
-       Calculated config address is F0A27000
-       Calculated config address is F0A28000
-       Calculated config address is F0A29000
-       Calculated config address is F0A2A000
-       Calculated config address is F0A2B000
-       Calculated config address is F0A2C000
-       Calculated config address is F0A2D000
-       Calculated config address is F0A2E000
-       Calculated config address is F0A2F000
-       Calculated config address is F0A30000
-       Calculated config address is F0A31000
-       Calculated config address is F0A32000
-       Calculated config address is F0A33000
-       Calculated config address is F0A34000
-       Calculated config address is F0A35000
-       Calculated config address is F0A36000
-       Calculated config address is F0A37000
-       Calculated config address is F0A38000
-       Calculated config address is F0A39000
-       Calculated config address is F0A3A000
-       Calculated config address is F0A3B000
-       Calculated config address is F0A3C000
-       Calculated config address is F0A3D000
-       Calculated config address is F0A3E000
-       Calculated config address is F0A3F000
-       Calculated config address is F0A40000
-       Calculated config address is F0A41000
-       Calculated config address is F0A42000
-       Calculated config address is F0A43000
-       Calculated config address is F0A44000
-       Calculated config address is F0A45000
-       Calculated config address is F0A46000
-       Calculated config address is F0A47000
-       Calculated config address is F0A48000
-       Calculated config address is F0A49000
-       Calculated config address is F0A4A000
-       Calculated config address is F0A4B000
-       Calculated config address is F0A4C000
-       Calculated config address is F0A4D000
-       Calculated config address is F0A4E000
-       Calculated config address is F0A4F000
-       Calculated config address is F0A50000
-       Calculated config address is F0A51000
-       Calculated config address is F0A52000
-       Calculated config address is F0A53000
-       Calculated config address is F0A54000
-       Calculated config address is F0A55000
-       Calculated config address is F0A56000
-       Calculated config address is F0A57000
-       Calculated config address is F0A58000
-       Calculated config address is F0A59000
-       Calculated config address is F0A5A000
-       Calculated config address is F0A5B000
-       Calculated config address is F0A5C000
-       Calculated config address is F0A5D000
-       Calculated config address is F0A5E000
-       Calculated config address is F0A5F000
-       Calculated config address is F0A60000
-       Calculated config address is F0A61000
-       Calculated config address is F0A62000
-       Calculated config address is F0A63000
-       Calculated config address is F0A64000
-       Calculated config address is F0A65000
-       Calculated config address is F0A66000
-       Calculated config address is F0A67000
-       Calculated config address is F0A68000
-       Calculated config address is F0A69000
-       Calculated config address is F0A6A000
-       Calculated config address is F0A6B000
-       Calculated config address is F0A6C000
-       Calculated config address is F0A6D000
-       Calculated config address is F0A6E000
-       Calculated config address is F0A6F000
-       Calculated config address is F0A70000
-       Calculated config address is F0A71000
-       Calculated config address is F0A72000
-       Calculated config address is F0A73000
-       Calculated config address is F0A74000
-       Calculated config address is F0A75000
-       Calculated config address is F0A76000
-       Calculated config address is F0A77000
-       Calculated config address is F0A78000
-       Calculated config address is F0A79000
-       Calculated config address is F0A7A000
-       Calculated config address is F0A7B000
-       Calculated config address is F0A7C000
-       Calculated config address is F0A7D000
-       Calculated config address is F0A7E000
-       Calculated config address is F0A7F000
-       Calculated config address is F0A80000
-       Calculated config address is F0A81000
-       Calculated config address is F0A82000
-       Calculated config address is F0A83000
-       Calculated config address is F0A84000
-       Calculated config address is F0A85000
-       Calculated config address is F0A86000
-       Calculated config address is F0A87000
-       Calculated config address is F0A88000
-       Calculated config address is F0A89000
-       Calculated config address is F0A8A000
-       Calculated config address is F0A8B000
-       Calculated config address is F0A8C000
-       Calculated config address is F0A8D000
-       Calculated config address is F0A8E000
-       Calculated config address is F0A8F000
-       Calculated config address is F0A90000
-       Calculated config address is F0A91000
-       Calculated config address is F0A92000
-       Calculated config address is F0A93000
-       Calculated config address is F0A94000
-       Calculated config address is F0A95000
-       Calculated config address is F0A96000
-       Calculated config address is F0A97000
-       Calculated config address is F0A98000
-       Calculated config address is F0A99000
-       Calculated config address is F0A9A000
-       Calculated config address is F0A9B000
-       Calculated config address is F0A9C000
-       Calculated config address is F0A9D000
-       Calculated config address is F0A9E000
-       Calculated config address is F0A9F000
-       Calculated config address is F0AA0000
-       Calculated config address is F0AA1000
-       Calculated config address is F0AA2000
-       Calculated config address is F0AA3000
-       Calculated config address is F0AA4000
-       Calculated config address is F0AA5000
-       Calculated config address is F0AA6000
-       Calculated config address is F0AA7000
-       Calculated config address is F0AA8000
-       Calculated config address is F0AA9000
-       Calculated config address is F0AAA000
-       Calculated config address is F0AAB000
-       Calculated config address is F0AAC000
-       Calculated config address is F0AAD000
-       Calculated config address is F0AAE000
-       Calculated config address is F0AAF000
-       Calculated config address is F0AB0000
-       Calculated config address is F0AB1000
-       Calculated config address is F0AB2000
-       Calculated config address is F0AB3000
-       Calculated config address is F0AB4000
-       Calculated config address is F0AB5000
-       Calculated config address is F0AB6000
-       Calculated config address is F0AB7000
-       Calculated config address is F0AB8000
-       Calculated config address is F0AB9000
-       Calculated config address is F0ABA000
-       Calculated config address is F0ABB000
-       Calculated config address is F0ABC000
-       Calculated config address is F0ABD000
-       Calculated config address is F0ABE000
-       Calculated config address is F0ABF000
-       Calculated config address is F0AC0000
-       Calculated config address is F0AC1000
-       Calculated config address is F0AC2000
-       Calculated config address is F0AC3000
-       Calculated config address is F0AC4000
-       Calculated config address is F0AC5000
-       Calculated config address is F0AC6000
-       Calculated config address is F0AC7000
-       Calculated config address is F0AC8000
-       Calculated config address is F0AC9000
-       Calculated config address is F0ACA000
-       Calculated config address is F0ACB000
-       Calculated config address is F0ACC000
-       Calculated config address is F0ACD000
-       Calculated config address is F0ACE000
-       Calculated config address is F0ACF000
-       Calculated config address is F0AD0000
-       Calculated config address is F0AD1000
-       Calculated config address is F0AD2000
-       Calculated config address is F0AD3000
-       Calculated config address is F0AD4000
-       Calculated config address is F0AD5000
-       Calculated config address is F0AD6000
-       Calculated config address is F0AD7000
-       Calculated config address is F0AD8000
-       Calculated config address is F0AD9000
-       Calculated config address is F0ADA000
-       Calculated config address is F0ADB000
-       Calculated config address is F0ADC000
-       Calculated config address is F0ADD000
-       Calculated config address is F0ADE000
-       Calculated config address is F0ADF000
-       Calculated config address is F0AE0000
-       Calculated config address is F0AE1000
-       Calculated config address is F0AE2000
-       Calculated config address is F0AE3000
-       Calculated config address is F0AE4000
-       Calculated config address is F0AE5000
-       Calculated config address is F0AE6000
-       Calculated config address is F0AE7000
-       Calculated config address is F0AE8000
-       Calculated config address is F0AE9000
-       Calculated config address is F0AEA000
-       Calculated config address is F0AEB000
-       Calculated config address is F0AEC000
-       Calculated config address is F0AED000
-       Calculated config address is F0AEE000
-       Calculated config address is F0AEF000
-       Calculated config address is F0AF0000
-       Calculated config address is F0AF1000
-       Calculated config address is F0AF2000
-       Calculated config address is F0AF3000
-       Calculated config address is F0AF4000
-       Calculated config address is F0AF5000
-       Calculated config address is F0AF6000
-       Calculated config address is F0AF7000
-       Calculated config address is F0AF8000
-       Calculated config address is F0AF9000
-       Calculated config address is F0AFA000
-       Calculated config address is F0AFB000
-       Calculated config address is F0AFC000
-       Calculated config address is F0AFD000
-       Calculated config address is F0AFE000
-       Calculated config address is F0AFF000
+ max bdf 0x10000
+ Maximum sub bus 1
+       Maximum bus value is 0x2
+       Calculated config address is F0200000
+       Calculated config address is F0201000
+       Calculated config address is F0202000
+       Calculated config address is F0203000
+       Calculated config address is F0204000
+       Calculated config address is F0205000
+       Calculated config address is F0206000
+       Calculated config address is F0207000
+       Calculated config address is F0208000
+       Calculated config address is F0209000
+       Calculated config address is F020A000
+       Calculated config address is F020B000
+       Calculated config address is F020C000
+       Calculated config address is F020D000
+       Calculated config address is F020E000
+       Calculated config address is F020F000
+       Calculated config address is F0210000
+       Calculated config address is F0211000
+       Calculated config address is F0212000
+       Calculated config address is F0213000
+       Calculated config address is F0214000
+       Calculated config address is F0215000
+       Calculated config address is F0216000
+       Calculated config address is F0217000
+       Calculated config address is F0218000
+       Calculated config address is F0219000
+       Calculated config address is F021A000
+       Calculated config address is F021B000
+       Calculated config address is F021C000
+       Calculated config address is F021D000
+       Calculated config address is F021E000
+       Calculated config address is F021F000
+       Calculated config address is F0220000
+       Calculated config address is F0221000
+       Calculated config address is F0222000
+       Calculated config address is F0223000
+       Calculated config address is F0224000
+       Calculated config address is F0225000
+       Calculated config address is F0226000
+       Calculated config address is F0227000
+       Calculated config address is F0228000
+       Calculated config address is F0229000
+       Calculated config address is F022A000
+       Calculated config address is F022B000
+       Calculated config address is F022C000
+       Calculated config address is F022D000
+       Calculated config address is F022E000
+       Calculated config address is F022F000
+       Calculated config address is F0230000
+       Calculated config address is F0231000
+       Calculated config address is F0232000
+       Calculated config address is F0233000
+       Calculated config address is F0234000
+       Calculated config address is F0235000
+       Calculated config address is F0236000
+       Calculated config address is F0237000
+       Calculated config address is F0238000
+       Calculated config address is F0239000
+       Calculated config address is F023A000
+       Calculated config address is F023B000
+       Calculated config address is F023C000
+       Calculated config address is F023D000
+       Calculated config address is F023E000
+       Calculated config address is F023F000
+       Calculated config address is F0240000
+       Calculated config address is F0241000
+       Calculated config address is F0242000
+       Calculated config address is F0243000
+       Calculated config address is F0244000
+       Calculated config address is F0245000
+       Calculated config address is F0246000
+       Calculated config address is F0247000
+       Calculated config address is F0248000
+       Calculated config address is F0249000
+       Calculated config address is F024A000
+       Calculated config address is F024B000
+       Calculated config address is F024C000
+       Calculated config address is F024D000
+       Calculated config address is F024E000
+       Calculated config address is F024F000
+       Calculated config address is F0250000
+       Calculated config address is F0251000
+       Calculated config address is F0252000
+       Calculated config address is F0253000
+       Calculated config address is F0254000
+       Calculated config address is F0255000
+       Calculated config address is F0256000
+       Calculated config address is F0257000
+       Calculated config address is F0258000
+       Calculated config address is F0259000
+       Calculated config address is F025A000
+       Calculated config address is F025B000
+       Calculated config address is F025C000
+       Calculated config address is F025D000
+       Calculated config address is F025E000
+       Calculated config address is F025F000
+       Calculated config address is F0260000
+       Calculated config address is F0261000
+       Calculated config address is F0262000
+       Calculated config address is F0263000
+       Calculated config address is F0264000
+       Calculated config address is F0265000
+       Calculated config address is F0266000
+       Calculated config address is F0267000
+       Calculated config address is F0268000
+       Calculated config address is F0269000
+       Calculated config address is F026A000
+       Calculated config address is F026B000
+       Calculated config address is F026C000
+       Calculated config address is F026D000
+       Calculated config address is F026E000
+       Calculated config address is F026F000
+       Calculated config address is F0270000
+       Calculated config address is F0271000
+       Calculated config address is F0272000
+       Calculated config address is F0273000
+       Calculated config address is F0274000
+       Calculated config address is F0275000
+       Calculated config address is F0276000
+       Calculated config address is F0277000
+       Calculated config address is F0278000
+       Calculated config address is F0279000
+       Calculated config address is F027A000
+       Calculated config address is F027B000
+       Calculated config address is F027C000
+       Calculated config address is F027D000
+       Calculated config address is F027E000
+       Calculated config address is F027F000
+       Calculated config address is F0280000
+       Calculated config address is F0281000
+       Calculated config address is F0282000
+       Calculated config address is F0283000
+       Calculated config address is F0284000
+       Calculated config address is F0285000
+       Calculated config address is F0286000
+       Calculated config address is F0287000
+       Calculated config address is F0288000
+       Calculated config address is F0289000
+       Calculated config address is F028A000
+       Calculated config address is F028B000
+       Calculated config address is F028C000
+       Calculated config address is F028D000
+       Calculated config address is F028E000
+       Calculated config address is F028F000
+       Calculated config address is F0290000
+       Calculated config address is F0291000
+       Calculated config address is F0292000
+       Calculated config address is F0293000
+       Calculated config address is F0294000
+       Calculated config address is F0295000
+       Calculated config address is F0296000
+       Calculated config address is F0297000
+       Calculated config address is F0298000
+       Calculated config address is F0299000
+       Calculated config address is F029A000
+       Calculated config address is F029B000
+       Calculated config address is F029C000
+       Calculated config address is F029D000
+       Calculated config address is F029E000
+       Calculated config address is F029F000
+       Calculated config address is F02A0000
+       Calculated config address is F02A1000
+       Calculated config address is F02A2000
+       Calculated config address is F02A3000
+       Calculated config address is F02A4000
+       Calculated config address is F02A5000
+       Calculated config address is F02A6000
+       Calculated config address is F02A7000
+       Calculated config address is F02A8000
+       Calculated config address is F02A9000
+       Calculated config address is F02AA000
+       Calculated config address is F02AB000
+       Calculated config address is F02AC000
+       Calculated config address is F02AD000
+       Calculated config address is F02AE000
+       Calculated config address is F02AF000
+       Calculated config address is F02B0000
+       Calculated config address is F02B1000
+       Calculated config address is F02B2000
+       Calculated config address is F02B3000
+       Calculated config address is F02B4000
+       Calculated config address is F02B5000
+       Calculated config address is F02B6000
+       Calculated config address is F02B7000
+       Calculated config address is F02B8000
+       Calculated config address is F02B9000
+       Calculated config address is F02BA000
+       Calculated config address is F02BB000
+       Calculated config address is F02BC000
+       Calculated config address is F02BD000
+       Calculated config address is F02BE000
+       Calculated config address is F02BF000
+       Calculated config address is F02C0000
+       Calculated config address is F02C1000
+       Calculated config address is F02C2000
+       Calculated config address is F02C3000
+       Calculated config address is F02C4000
+       Calculated config address is F02C5000
+       Calculated config address is F02C6000
+       Calculated config address is F02C7000
+       Calculated config address is F02C8000
+       Calculated config address is F02C9000
+       Calculated config address is F02CA000
+       Calculated config address is F02CB000
+       Calculated config address is F02CC000
+       Calculated config address is F02CD000
+       Calculated config address is F02CE000
+       Calculated config address is F02CF000
+       Calculated config address is F02D0000
+       Calculated config address is F02D1000
+       Calculated config address is F02D2000
+       Calculated config address is F02D3000
+       Calculated config address is F02D4000
+       Calculated config address is F02D5000
+       Calculated config address is F02D6000
+       Calculated config address is F02D7000
+       Calculated config address is F02D8000
+       Calculated config address is F02D9000
+       Calculated config address is F02DA000
+       Calculated config address is F02DB000
+       Calculated config address is F02DC000
+       Calculated config address is F02DD000
+       Calculated config address is F02DE000
+       Calculated config address is F02DF000
+       Calculated config address is F02E0000
+       Calculated config address is F02E1000
+       Calculated config address is F02E2000
+       Calculated config address is F02E3000
+       Calculated config address is F02E4000
+       Calculated config address is F02E5000
+       Calculated config address is F02E6000
+       Calculated config address is F02E7000
+       Calculated config address is F02E8000
+       Calculated config address is F02E9000
+       Calculated config address is F02EA000
+       Calculated config address is F02EB000
+       Calculated config address is F02EC000
+       Calculated config address is F02ED000
+       Calculated config address is F02EE000
+       Calculated config address is F02EF000
+       Calculated config address is F02F0000
+       Calculated config address is F02F1000
+       Calculated config address is F02F2000
+       Calculated config address is F02F3000
+       Calculated config address is F02F4000
+       Calculated config address is F02F5000
+       Calculated config address is F02F6000
+       Calculated config address is F02F7000
+       Calculated config address is F02F8000
+       Calculated config address is F02F9000
+       Calculated config address is F02FA000
+       Calculated config address is F02FB000
+       Calculated config address is F02FC000
+       Calculated config address is F02FD000
+       Calculated config address is F02FE000
+       Calculated config address is F02FF000
        PCI_IN_16
                                        : Result:  PASS
        END
@@ -1263,11 +1238,6 @@ Operating System View:
  809 : Vendor specific data is PCIe compliant
        START
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        PCI_IN_20
                                        : Result:  PASS
        END
@@ -1275,11 +1245,6 @@ Operating System View:
  811 : Check RP Byte Enable Rules            
        START
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        PCI_IN_18
                                        : Result:  PASS
        END
@@ -1320,86 +1285,16 @@ Operating System View:
        BDF 0x300 : PASS
        BDF 0x300 : PASS
        BDF 0x300 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
        PCI_IN_05, PCI_IN_19
                                        : Result:  PASS
        END
@@ -1407,12 +1302,8 @@ Operating System View:
  821 : Type 0 config header rules            
        START
        Number of bit-field entries to check 2
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
        B_PER_12
                                        : Result:  PASS
        END
@@ -1430,56 +1321,6 @@ Operating System View:
        BDF 0x300 : PASS
        BDF 0x300 : PASS
        BDF 0x300 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
        PCI_IN_05, PCI_IN_19
                                        : Result:  PASS
        END
@@ -1490,21 +1331,6 @@ Operating System View:
        BDF 0x300 : PASS
        BDF 0x300 : PASS
        BDF 0x300 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x400 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x500 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x600 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x700 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
-       BDF 0x800 : PASS
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1513,11 +1339,6 @@ Operating System View:
        START
        Number of bit-field entries to check 1
        BDF 0x300 : PASS
-       BDF 0x400 : PASS
-       BDF 0x500 : PASS
-       BDF 0x600 : PASS
-       BDF 0x700 : PASS
-       BDF 0x800 : PASS
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1525,15 +1346,9 @@ Operating System View:
  826 : Device cap 2 register rules           
        START
        Number of bit-field entries to check 3
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x40000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x50000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
-       BDF 0x60000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
+       BDF 0x10000 : PASS
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1542,18 +1357,8 @@ Operating System View:
        START
       tbl_index 0      BDF 100
       tbl_index 1      BDF 200
-      tbl_index 2      BDF 300      Bar Base 0
-      tbl_index 3      BDF 400      Bar Base 81400000    bar_data FFFFFFFF 
-      tbl_index 4      BDF 500      Bar Base 81320000    bar_data FFFFFFFF 
-      tbl_index 5      BDF 600      Bar Base 81200000    bar_data FFFFFFFF 
-      tbl_index 6      BDF 700      Bar Base 81585000    bar_data FFFFFFFF 
-      tbl_index 7      BDF 800      Bar Base 81100000    bar_data FFFFFFFF 
-      tbl_index 8      BDF 10000      Bar Base 0
-      tbl_index 9      BDF 20000      Bar Base 0
-      tbl_index A      BDF 40000      Bar Base 81400000    bar_data FFFFFFFF 
-      tbl_index B      BDF 50000      Bar Base 81320000    bar_data FFFFFFFF 
-      tbl_index C      BDF 60000      Bar Base 81200000    bar_data FFFFFFFF 
-      tbl_index D      BDF 80000      Bar Base 81100000    bar_data FFFFFFFF 
+      tbl_index 2      BDF 300      Bar Base 81000000    bar_data FFFFFFFF 
+      tbl_index 3      BDF 10000      Bar Base 81000000    bar_data FFFFFFFF 
        PCI_IN_19
                                        : Result:  PASS
        END
@@ -1563,17 +1368,7 @@ Operating System View:
        BDF - 0x100
        BDF - 0x200
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        BDF - 0x10000
-       BDF - 0x20000
-       BDF - 0x40000
-       BDF - 0x50000
-       BDF - 0x60000
-       BDF - 0x80000
        PCI_IN_19
                                        : Result:  PASS
        END
@@ -1583,17 +1378,7 @@ Operating System View:
        BDF - 0x100
        BDF - 0x200
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        BDF - 0x10000
-       BDF - 0x20000
-       BDF - 0x40000
-       BDF - 0x50000
-       BDF - 0x60000
-       BDF - 0x80000
        PCI_IN_19
                                        : Result:  PASS
        END
@@ -1603,17 +1388,7 @@ Operating System View:
        BDF - 0x100
        BDF - 0x200
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
        BDF - 0x10000
-       BDF - 0x20000
-       BDF - 0x40000
-       BDF - 0x50000
-       BDF - 0x60000
-       BDF - 0x80000
        PCI_IN_05
                                        : Result:  PASS
        END
@@ -1621,9 +1396,7 @@ Operating System View:
  835 : Check Function level reset            
        START
        Skipping for BDF - 0x100  Classcode is : 0x2 
-       Skipping for BDF - 0x40000  Classcode is : 0x1 
-       Skipping for BDF - 0x50000  Classcode is : 0x2 
-       BDF 0x60000 
+       Skipping for BDF - 0x10000  Classcode is : 0x1 
        No EP type device found with PCIe Express Cap support. Skipping test
        PCI_SM_02
        Checkpoint --  1                           : Result:  SKIPPED
@@ -1632,12 +1405,6 @@ Operating System View:
  836 : Check ARI forwarding enable rule      
        START
        BDF - 0x300
-       BDF - 0x400
-       BDF - 0x500
-       BDF - 0x600
-       BDF - 0x700
-       BDF - 0x800
-       BDF - 0x20000
        PCI_IN_17
                                        : Result:  PASS
        END
@@ -1645,11 +1412,6 @@ Operating System View:
  837 : Check Config Txn for RP in HB         
        START
        BDF 0x300
-       BDF 0x400
-       BDF 0x500
-       BDF 0x600
-       BDF 0x700
-       BDF 0x800
        PCI_IN_12
                                        : Result:  PASS
        END
@@ -1658,25 +1420,13 @@ Operating System View:
        START
        BDF: 0x300 Dev ID: 0xC Vendor ID: 0x1B36
        ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x400 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x500 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x600 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x700 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
-       BDF: 0x800 Dev ID: 0xC Vendor ID: 0x1B36
-       ECAM base 0xF0000000 matches with RPs base address 
        PCI_IN_03
                                        : Result:  PASS
        END
 
  839 : Check MSI support for PCIe dev        
        START
-       BDF 0x40000 int pin value 1 MSI cap 268435472 MSIX cap 0
-       BDF 0x50000 int pin value 1 MSI cap 0 MSIX cap 0
-       BDF 0x60000 int pin value 1 MSI cap 268435472 MSIX cap 0
+       BDF 0x10000 int pin value 1 MSI cap 268435472 MSIX cap 0
        PCI_MSI_01
                                        : Result:  PASS
        END
@@ -1704,4 +1454,4 @@ Operating System View:
 
       *** BSA tests complete. Reset the system. ***
 
-[1m[33m[40mShell> [0m[37m[40mreset -c
+[1m[33m[40mShell> [0m[37m[40m              reset -c
