@@ -53,7 +53,7 @@ def handle_uefi_command(command, no_reset):
         startup.write(script)
 
     print("EFI startup script:")
-    print(script)
+    print(script, flush=True)
 
 def add_drive(drive_file, drive_type="", media="", drive_format="raw",
               drive_id=""):
