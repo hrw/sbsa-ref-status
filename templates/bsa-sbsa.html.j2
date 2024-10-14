@@ -20,57 +20,8 @@
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Marcin Juszkiewicz" />
 
-    <link href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.min.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.min.js"></script>
-
-
-    <style type="text/css">
-
-table {
-        border: 1px solid #000;
-}
-
-table th {
-        text-align: center;
-        padding: 0.5em;
-        line-height: 2em;
-        color: white;
-}
-
-table thead {
-        border: 1px solid black;
-        background-color: grey;
-}
-
-table.dataTable thead th {
-  text-align: center
-}
-
-table td {
-        padding: 0.5em;
-}
-
-table.dataTable.stripe>tbody>tr:nth-child(odd)>*,table.dataTable.display>tbody>tr:nth-child(odd)>* {
-    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.023);
-    box-shadow: inset 0 0 0 9999px rgba(var(--dt-row-stripe), 0.20);
-}
-
-table td.category_title {
-        font-weight: bold;
-        font-size: 120%;
-}
-table td.title {
-        font-weight: bold;
-}
-table td.mark {
-        text-align: center;
-        font-weight: bold;
-}
-    </style>
+{% include "common/datatables-js-css.inc.j2" %}
+{% include "common/css.inc.j2" %}
 </head>
 <body>
 
@@ -98,30 +49,9 @@ table td.mark {
         <li><a href="https://github.com/ARM-software/sbsa-acs/blob/master/docs/arm_sbsa_testcase_checklist.rst">SBSA ACS checklist</a></li>
     </ul>
 
-<h2>Author info</h2>
-    <p>
-    Table is maintained by <a href="https://marcin.juszkiewicz.com.pl/">Marcin Juszkiewicz</a> &mdash; AArch64/Arm developer working at Red Hat as Linaro assignee.
-    </p>
+{% include "common/author-tables-help.inc.j2" %}
 
-<h3>My table pages</h3>
-<ul>
-	<li><a href="https://gpages.juszkiewicz.com.pl/arm-socs-table/arm-socs.html">AArch64 SoC features table</a></li>
-	<li><a href="https://gpages.juszkiewicz.com.pl/arm-socs-table/arm-cpu-cores.html">AArch64 cpu cores information</a></li>
-	<li><a href="https://gpages.juszkiewicz.com.pl/syscalls-table/syscalls.html">Linux kernel system calls for all architectures</a></li>
-	<li><a href="https://marcin.juszkiewicz.com.pl/download/tables/bsa-sbsa.html">Arm BSA/SBSA checklist</a></li>
-</ul>
-
-<h2>How to help</h2>
-    <p>
-    Sources used to generate table are available in <a
-    href="https://github.com/hrw/sbsa-ref-status/">git repository at github</a>.
-    Patches are always welcomed.
-    </p>
-
-<h3>Build info</h3>
-    <p>Table generated on <strong>{{ generate_time }} UTC</strong>.</p>
-
-<table id="xbsa" class="display" style="width:100%">
+<table id="infotable" class="display" style="width:100%">
 <thead>
 <tr>
 <th>Section</th>
@@ -246,7 +176,7 @@ table td.mark {
 
 </body>
     <script>
-        new DataTable('#xbsa', {
+        new DataTable('#infotable', {
                 pageLength:         -1,
                 paging:             false,
                 scrollX:            false,
