@@ -1236,7 +1236,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: null
+  tags: PCI_IN_01, PCI_IN_02
   title: Enhanced ECAM Memory access check
 902:
   level: 6
