@@ -9,6 +9,15 @@ import yaml
 
 from pprint import pprint
 
+# for plugging pcie devices
+chassis = 0
+
+qemu_args = [
+    "../code/qemu/build/qemu-system-aarch64",
+    "-monitor", "telnet::45454,server,nowait",
+    "-serial", "stdio"
+]
+
 
 def parse_args():
 
@@ -90,6 +99,8 @@ def add_machine(is_it_virt):
 
 
 def add_cpu(cpu_type, is_it_numa, smp):
+    global chassis
+
     qemu_args.extend(["-cpu", cpu_type])
 
     if not is_it_numa:
@@ -225,53 +236,51 @@ def add_pcie(card_name, add_root_port=True):
         bus = f",bus={rpid}"
 
     qemu_args.extend(["-device", f"{card_name}{bus}"])
-# -----------------------------------------------------------------------------
 
-args = parse_args()
-chassis = 0
 
-# drop EFI shell autostart script
-if os.path.exists("disks/virtual/startup.nsh"):
-    os.remove("disks/virtual/startup.nsh")
+def boot_sbsa_ref():
+    args = parse_args()
 
-qemu_args = [
-    "../code/qemu/build/qemu-system-aarch64",
-    "-monitor", "telnet::45454,server,nowait",
-    "-serial", "stdio"
-]
+    # drop EFI shell autostart script
+    if os.path.exists("disks/virtual/startup.nsh"):
+        os.remove("disks/virtual/startup.nsh")
 
-add_firmware(args.virt)
-add_machine(args.virt)
+    add_firmware(args.virt)
+    add_machine(args.virt)
 
-if args.pcie:
-    add_some_pcie()
+    if args.pcie:
+        add_some_pcie()
 
-nvme_drive = "disks/nvme.img"
+    nvme_drive = "disks/nvme.img"
 
-if os.path.exists(nvme_drive):
-    add_nvme(nvme_drive)
+    if os.path.exists(nvme_drive):
+        add_nvme(nvme_drive)
 
-add_cpu(args.cpu, args.numa, args.smp)
-add_usb_devices()
-enable_graphics_window(args.gfx)
-enable_gdb(args.gdb)
-add_os_drive(args.os)
+    add_cpu(args.cpu, args.numa, args.smp)
+    add_usb_devices()
+    enable_graphics_window(args.gfx)
+    enable_gdb(args.gdb)
+    add_os_drive(args.os)
 
-if not args.virt:
-    # virtual drive with EFI tools
-    add_drive("fat:rw:disks/virtual")
+    if not args.virt:
+        # virtual drive with EFI tools
+        add_drive("fat:rw:disks/virtual")
 
-show_args()
+    show_args()
 
-if args.cmd:
-    handle_uefi_command(args.cmd, args.no_reset)
+    if args.cmd:
+        handle_uefi_command(args.cmd, args.no_reset)
 
-if not args.no_reset:
-    qemu_args.extend(["--no-reboot"])
+    if not args.no_reset:
+        qemu_args.extend(["--no-reboot"])
 
-os.execv(qemu_args[0], qemu_args)
+    os.execv(qemu_args[0], qemu_args)
 
-try:
-    os.remove("disks/virtual/startup.nsh")
-except FileNotFoundError:
-    pass
+    try:
+        os.remove("disks/virtual/startup.nsh")
+    except FileNotFoundError:
+        pass
+
+
+if __name__ == '__main__':
+    boot_sbsa_ref()
