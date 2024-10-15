@@ -117,17 +117,19 @@ def add_cpu(cpu_type, is_it_numa, smp):
 
         qemu_args.extend([
             "-device", "pxb-pcie,id=npxb1,bus_nr=64,numa_node=1",
-                "-device", "pcie-root-port,id=nroot_port3,bus=npxb1,chassis=11,slot=0",
+                "-device", f"pcie-root-port,id=nroot_port3,bus=npxb1,chassis={chassis},slot=0",
                 "-device", "sdhci-pci,bus=nroot_port3,id=nsdhci",
-                "-device", "pcie-root-port,id=nroot_port4,bus=npxb1,chassis=12,slot=0",
+                "-device", f"pcie-root-port,id=nroot_port4,bus=npxb1,chassis={chassis + 1},slot=0",
                 "-device", "igb,bus=nroot_port4,id=nigb",
             "-device", "pxb-pcie,id=npxb2,bus_nr=128,numa_node=2,bus=pcie.0",
                 "-device", "pcie-pci-bridge,id=npci,bus=npxb2",
                 "-device", "es1370,bus=npci,addr=9,id=nes1370",
                 "-device", "e1000,bus=npci,addr=10,id=ne1000",
-                "-device", "pcie-root-port,id=nroot_port_for_ahci,bus=npxb2,chassis=10,slot=0",
+                "-device", f"pcie-root-port,id=nroot_port_for_ahci,bus=npxb2,chassis={chassis + 2},slot=0",
                 "-device", "ahci,bus=nroot_port_for_ahci,id=nahci"
-])
+                ])
+
+        chassis += 3
 
 def add_some_pcie():
     global chassis
@@ -141,13 +143,13 @@ def add_some_pcie():
          "-device", "pcie-pci-bridge,id=pci,bus=downstream_port1",
             "-device", "es1370,bus=pci,addr=9,id=es1370",
             "-device", "e1000,bus=pci,addr=10,id=e1000",
-            "-device", "pci-bridge,bus=pci,addr=13,id=pci-pci,chassis_nr=3",
+            "-device", f"pci-bridge,bus=pci,addr=13,id=pci-pci,chassis_nr={chassis + 2}",
               "-device", "ac97,bus=pci-pci,addr=12",
-       "-device", f"xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis={chassis + 2},slot=21",
+       "-device", f"xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis={chassis + 3},slot=21",
          "-device", "igb,bus=downstream_port2,id=igb2",
      ])
 
-    chassis += 2
+    chassis += 4
 
 
 def add_nvme(disk_image):
