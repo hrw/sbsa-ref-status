@@ -4,31 +4,30 @@ alpine:
   url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.3-aarch64.iso
 centos:
   checksum: false
-  file: disks/CentOS-Stream-9-boot.iso
+  file: disks/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
   force-download: true
-  force-name: true
-  url: https://mirror.dogado.de/centos-stream/9-stream/BaseOS/aarch64/iso/CentOS-Stream-9-latest-aarch64-boot.iso
+  url: https://cloud.centos.org/centos/9-stream/aarch64/images/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
 debian:
   checksum: false
   file: disks/debian-testing-arm64-netinst.iso
   force-download: true
   url: https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/arm64/iso-cd/debian-testing-arm64-netinst.iso
 debian10:
-  checksum: a20a5437e243186ac8d678202cf55a253e8d37df2b187da885796d5071ba829f
-  file: disks/debian-10.13.0-arm64-netinst.iso
-  url: https://cdimage.debian.org/cdimage/archive/10.13.0/arm64/iso-cd/debian-10.13.0-arm64-netinst.iso
+  checksum: 5ba734219b89d233c052c82ca120b49a42ad088e3e82a8fb98b97d0e5b6fe765
+  file: disks/debian-10-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/buster/latest/debian-10-nocloud-arm64.qcow2
 debian11:
-  checksum: c81b6081d5dc5cfac49310b104eb9843252fd3c97cedbcd69ec0388798e7ef7e
-  file: disks/debian-11.11.0-arm64-netinst.iso
-  url: https://cdimage.debian.org/cdimage/archive/11.11.0/arm64/iso-cd/debian-11.11.0-arm64-netinst.iso
+  checksum: 256dccb460aaf459741790e0692184d853b0b208de662b9fde3207fd5eaddbb0
+  file: disks/debian-11-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-arm64.qcow2
 debian12:
-  checksum: ff476eeee26162e42111277796cdb7470ff1f1f6203bd9bc4548d211ebf9f931
-  file: disks/debian-12.7.0-arm64-netinst.iso
-  url: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/debian-12.7.0-arm64-netinst.iso
+  checksum: 4020845240ae86a96176e56abe69f290673eeef4de0243b43722c99891d4e930
+  file: disks/debian-12-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-nocloud-arm64.qcow2
 fedora:
-  checksum: 690731ac6abba81413d97517baa80841cb122d07b296ec3f2935848be45be8fe
-  file: disks/Fedora-Server-netinst-aarch64-40-1.14.iso
-  url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Server/aarch64/iso/Fedora-Server-netinst-aarch64-40-1.14.iso
+  checksum: ebdce26d861a9d15072affe1919ed753ec7015bd97b3a7d0d0df6a10834f7459
+  file: disks/Fedora-Cloud-Base-Generic.aarch64-40-1.14.qcow2
+  url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/aarch64/images/Fedora-Cloud-Base-Generic.aarch64-40-1.14.qcow2
 freebsd:
   checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
   file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
@@ -43,14 +42,14 @@ freebsd15:
   force-download: true
   url: https://download.freebsd.org/snapshots/VM-IMAGES/15.0-CURRENT/aarch64/Latest/FreeBSD-15.0-CURRENT-arm64-aarch64-ufs.qcow2.xz
 netbsd10:
-  checksum: 5e4ca918991b6fa10bb041814cd3bc5ffb5354f8f32af535124080e1f055d50f
-  file: disks/NetBSD-10-arm64.img
+  checksum: f00ff12b97978cef96e4074f7308a92acb58e4f1de1685621a1000215e1f85a8
+  file: disks/NetBSD-10-arm64
   force-name: true
   type: hdd
   url: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.0/evbarm-aarch64/binary/gzimg/arm64.img.gz
 netbsd11:
   checksum: false
-  file: disks/NetBSD-11-aarch64-generic.img
+  file: disks/NetBSD-11-aarch64-generic
   force-download: true
   force-name: true
   type: hdd
