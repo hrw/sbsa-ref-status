@@ -109,7 +109,7 @@ def generate_html_file(checklist):
     template = env.get_template("bsa-sbsa.html.j2")
 
     output = template.render(
-        generate_time=datetime.strftime(datetime.now(UTC),
+        generate_time=datetime.strftime(datetime.now(timezone.utc),
                                         "%d %B %Y %H:%M"),
         checklist=checklist,
         status_bsa=status_bsa,
