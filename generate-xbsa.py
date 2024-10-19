@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from datetime import datetime, UTC
+from datetime import datetime, timezone
 from jinja2 import Environment, FileSystemLoader
 
 import bsa
