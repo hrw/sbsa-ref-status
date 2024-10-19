@@ -114,6 +114,7 @@ def generate_html_file(checklist):
         checklist=checklist,
         status_bsa=status_bsa,
         status_sbsa=status_sbsa,
+        git_repo="sbsa-ref-status",
     )
     print(output)
 
