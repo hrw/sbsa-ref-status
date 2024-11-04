@@ -30,9 +30,9 @@ debian12:
   file: disks/debian-12-nocloud-arm64.qcow2
   url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-nocloud-arm64.qcow2
 fedora:
-  checksum: ebdce26d861a9d15072affe1919ed753ec7015bd97b3a7d0d0df6a10834f7459
-  file: disks/Fedora-Cloud-Base-Generic.aarch64-40-1.14.qcow2
-  url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/aarch64/images/Fedora-Cloud-Base-Generic.aarch64-40-1.14.qcow2
+  checksum: 36920c0f7a0ae00c2542579f9b600108f77de228a892417ebf8cb651123ad1e8
+  file: disks/Fedora-Minimal-40-1.14.aarch64.raw
+  url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Spins/aarch64/images/Fedora-Minimal-40-1.14.aarch64.raw.xz
 freebsd:
   checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
   file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
