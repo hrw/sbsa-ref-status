@@ -1,3 +1,8 @@
+almalinux:
+  checksum: 43c68af1e28e1db52f20961ade95f7fbabdb88606aaa34f2b600f5c3d2175ef3
+  file: disks/almalinux-10-boot.iso
+  force-name: true
+  url: https://kitten.repo.almalinux.org/10-kitten/BaseOS/aarch64/os/images/boot.iso
 alpine:
   checksum: 8d0efbc173aeb54fd41af7d88e3b92c10e443ac33beca7bfa112e230df71571a
   file: disks/alpine-standard-3.20.3-aarch64.iso
