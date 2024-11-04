@@ -72,6 +72,8 @@ def add_drive(drive_file, drive_type="", media="", drive_format="raw",
 
     if media:
         drive_extra += ",media=cdrom"
+    else:
+        drive_extra += ",snapshot=on"
 
     if drive_id:
         drive_extra += f",id={drive_id}"
