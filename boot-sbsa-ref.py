@@ -96,6 +96,7 @@ def add_machine(is_it_virt):
         qemu_args.extend(["-machine", "virt,iommu=smmuv3,gic-version=max"])
         # virt does not have USB host controller
         add_device("qemu-xhci,id=usb")
+        add_device("ahci")
     else:
         qemu_args.extend(["-machine", "sbsa-ref"])
 
@@ -266,9 +267,7 @@ def boot_sbsa_ref():
     enable_gdb(args.gdb)
     add_os_drive(args.os)
 
-    if not args.virt:
-        # virtual drive with EFI tools
-        add_drive("fat:rw:disks/virtual")
+    add_drive("fat:ro:disks/virtual")
 
     show_args()
 
