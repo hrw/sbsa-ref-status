@@ -8,7 +8,7 @@ import time
 
 def boot_os(osname, line_to_check):
     process = subprocess.Popen(["/usr/bin/python3",
-                                "/home/marcin/devel/linaro/sbsa-qemu/sbsa-ref-status/boot-sbsa-ref.py",
+                                "boot-sbsa-ref.py",
                                 f"--os={osname}"],
                                stdout = subprocess.PIPE,
                                )
