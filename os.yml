@@ -89,7 +89,7 @@ openeuler:
   url: https://mirrors.dotsrc.org/openeuler/openEuler-24.03-LTS/ISO/aarch64/openEuler-24.03-LTS-netinst-aarch64-dvd.iso
 rhel:
   checksum: false
-  file: disks/rhel-9.3-aarch64-boot.iso
+  file: disks/rhel-9.4-aarch64-boot.iso
   paywall_url: https://developers.redhat.com/products/rhel/download
 rhel10:
   checksum: false
