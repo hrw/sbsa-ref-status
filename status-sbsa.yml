@@ -750,10 +750,11 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: SKIPPED
   tags: S_L3GI_02
   title: Check all MSI=X vectors are LPIs
+  type: linux
 816:
   level: '6'
   status:

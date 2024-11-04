@@ -627,10 +627,11 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: SKIPPED
   tags: B_PER_09, B_PER_10
   title: Memory Attribute of DMA
+  type: linux
 606:
   ignore_skipped: true
   status:
@@ -968,10 +969,11 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: SKIPPED
   tags: PCI_MM_01, PCI_MM_02, PCI_MM_03
   title: PCIe Unaligned access
+  type: linux
 862:
   status:
     cortex-a57: SKIPPED
@@ -998,10 +1000,11 @@
     cortex-a72: SKIPPED
     max: SKIPPED
     neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
+    neoverse-n2: PASS
     neoverse-v1: SKIPPED
   tags: PCI_MSI_2
   title: Check MSI=X vectors uniqueness
+  type: linux
 901:
   status:
     cortex-a57: SKIPPED
