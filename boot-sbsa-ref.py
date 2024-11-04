@@ -13,7 +13,7 @@ from pprint import pprint
 chassis = 0
 
 qemu_args = [
-    "../code/qemu/build/qemu-system-aarch64",
+    "bin/qemu-system-aarch64",
     "-monitor", "telnet::45454,server,nowait",
     "-serial", "stdio"
 ]
