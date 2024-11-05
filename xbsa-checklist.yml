@@ -1559,14 +1559,6 @@
             6: true
             7: true
             8: true
-        tag: S_L6SM_01
-      - required:
-          bsa: false
-          pcbsa: false
-          sbsa:
-            6: true
-            7: true
-            8: true
         tag: S_L6SM_02
       - required:
           bsa: false
