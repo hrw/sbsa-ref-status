@@ -1675,7 +1675,7 @@
         tag: B_SMMU_22
       - required:
           bsa: future
-          pcbsa: future
+          pcbsa: true
           sbsa:
             6: true
             7: true
