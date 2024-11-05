@@ -321,19 +321,6 @@
     neoverse-v1: FAIL
   tags: S_L7PE_02
   title: Check for ECV support
-30:
-  comment: does not make sense to implement in QEMU
-  level: '7'
-  skip_for_qemu: true
-  status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-n2: FAIL
-    neoverse-v1: FAIL
-  tags: S_L7PE_03
-  title: Check for AMU Support
 31:
   level: '7'
   status:

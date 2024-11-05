@@ -426,13 +426,6 @@
           sbsa:
             7: true
             8: true
-        tag: S_L7PE_03
-      - required:
-          bsa: false
-          pcbsa: false
-          sbsa:
-            7: true
-            8: true
         tag: S_L7PE_04
       - required:
           bsa: false
