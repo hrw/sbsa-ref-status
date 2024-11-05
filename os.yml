@@ -48,21 +48,21 @@ freebsd15:
   url: https://download.freebsd.org/snapshots/VM-IMAGES/15.0-CURRENT/aarch64/Latest/FreeBSD-15.0-CURRENT-arm64-aarch64-ufs.qcow2.xz
 netbsd10:
   checksum: f00ff12b97978cef96e4074f7308a92acb58e4f1de1685621a1000215e1f85a8
-  file: disks/NetBSD-10-arm64
-  force-name: true
+  checksum_unpacked: 5e4ca918991b6fa10bb041814cd3bc5ffb5354f8f32af535124080e1f055d50f
+  file: disks/NetBSD-10-aarch64--generic.img
   type: hdd
-  url: https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.0/evbarm-aarch64/binary/gzimg/arm64.img.gz
+  url: https://nycdn.netbsd.org/pub/arm/NetBSD-10.0-release/NetBSD-10-aarch64--generic.img.gz
 netbsd11:
   checksum: false
-  file: disks/NetBSD-11-aarch64-generic
+  file: disks/NetBSD-11-aarch64-generic.img
   force-download: true
   force-name: true
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/HEAD/latest-evbarm-aarch64/NetBSD-HEAD-aarch64-generic.img.gz
 netbsd9:
   checksum: aee18c113de9cdec6b1c2574d144217b7f5bd9b9c63d09c8af17156544ff6243
+  checksum_unpacked: 1a8094c761cb69222a76518479b0afccfd839341e2115b7cc59bbc451c44dcf4
   file: disks/NetBSD-9-aarch64--generic.img
-  force-download: true
   type: hdd
   url: https://nycdn.netbsd.org/pub/arm/NetBSD-9.4-release/NetBSD-9-aarch64--generic.img.gz
 openbsd73:
