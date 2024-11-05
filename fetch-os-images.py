@@ -108,11 +108,24 @@ def download_os_image(os_name, data):
             with lzma.open(data['file'], 'rb') as fin:
                 unpack_file(fin, newname)
 
+        data['checksum_unpacked'] = check_file_checksum(data['file'])
         os.remove(urlname)
         data['file'] = newname
 
         print("Done")
     return data
+
+
+def check_file_checksum(fname):
+    checksum = hashlib.sha256()
+    with open(fname, 'rb') as fd:
+        while True:
+            chunk = fd.read(32768)
+            if not chunk:
+                break
+            checksum.update(chunk)
+
+    return checksum.hexdigest()
 
 
 with open("os.yml") as yml:
@@ -139,14 +152,15 @@ for entry in yml_data:
             yml_data[entry] = download_os_image(entry, os_data)
         # checking do we have file already
         elif os.stat(os_data['file']):
-            checksum = hashlib.sha256()
-            with open(os_data['file'], 'rb') as fd:
-                while True:
-                    chunk = fd.read(32768)
-                    if not chunk:
-                        break
-                    checksum.update(chunk)
-            if checksum.hexdigest() != os_data['checksum']:
+            checksum = check_file_checksum(os_data['file'])
+            if ('checksum_unpacked' in os_data and
+                checksum != os_data['checksum_unpacked']
+                ):
+                print("Checksums do not match")
+                yml_data[entry] = download_os_image(entry, os_data)
+            elif ('checksum_unpacked' not in os_data and
+                checksum != os_data['checksum']
+                ):
                 print("Checksums do not match")
                 yml_data[entry] = download_os_image(entry, os_data)
             else:
