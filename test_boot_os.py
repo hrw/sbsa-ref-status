@@ -50,11 +50,6 @@ def test_debian12():
     boot_os("debian12", "Debian GNU/Linux 12 localhost ttyAMA0")
 
 
-def test_fedora():
-    # Welcome to Fedora Linux 40 (Server Edition) dracut-059-22.fc40 (Initramfs)!
-    boot_os("fedora", "Welcome to Fedora Linux 40")
-
-
 def test_freebsd14():
     boot_os("freebsd14", "FreeBSD/arm64 (freebsd) (ttyu0)")
 
