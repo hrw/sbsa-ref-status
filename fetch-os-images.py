@@ -106,7 +106,10 @@ def download_os_image(os_name, data):
             with lzma.open(data['file'], 'rb') as fin:
                 unpack_file(fin, newname)
 
-        data['checksum_unpacked'] = check_file_checksum(newname)
+        # if we force download then no point in keeping checksum
+        if 'force-download' not in os_data:
+            data['checksum_unpacked'] = check_file_checksum(newname)
+
         os.remove(urlname)
         data['file'] = newname
 
