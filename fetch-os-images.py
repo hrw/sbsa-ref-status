@@ -106,7 +106,7 @@ def download_os_image(os_name, data):
             with lzma.open(data['file'], 'rb') as fin:
                 unpack_file(fin, newname)
 
-        data['checksum_unpacked'] = check_file_checksum(data['file'])
+        data['checksum_unpacked'] = check_file_checksum(newname)
         os.remove(urlname)
         data['file'] = newname
 
