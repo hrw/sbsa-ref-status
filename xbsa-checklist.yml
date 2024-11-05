@@ -606,6 +606,14 @@
           bsa: false
           pcbsa: false
           sbsa:
+            6: true
+            7: true
+            8: true
+        tag: S_RAS_03
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
             7: true
             8: true
         tag: S_L7RAS_1
