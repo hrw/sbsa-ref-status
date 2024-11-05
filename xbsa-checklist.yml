@@ -6,6 +6,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -16,6 +17,7 @@
         tag: B_PE_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -26,6 +28,7 @@
         tag: B_PE_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -36,6 +39,7 @@
         tag: B_PE_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -46,6 +50,7 @@
         tag: B_PE_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -56,6 +61,7 @@
         tag: B_PE_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -66,6 +72,7 @@
         tag: B_PE_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -76,6 +83,7 @@
         tag: B_PE_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -86,6 +94,7 @@
         tag: B_PE_08
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -96,6 +105,7 @@
         tag: B_PE_09
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -106,6 +116,7 @@
         tag: B_PE_10
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -116,6 +127,7 @@
         tag: B_PE_11
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -126,6 +138,7 @@
         tag: B_PE_12
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -136,6 +149,7 @@
         tag: B_PE_13
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -146,17 +160,20 @@
         tag: B_PE_14
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: B_PE_15
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
             8: true
         tag: B_PE_16
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
@@ -164,6 +181,7 @@
         tag: B_PE_17
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -171,6 +189,7 @@
         tag: B_SEC_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -178,6 +197,7 @@
         tag: B_SEC_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -185,6 +205,7 @@
         tag: B_SEC_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -192,6 +213,7 @@
         tag: B_SEC_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -199,6 +221,7 @@
         tag: B_SEC_05
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -209,6 +232,7 @@
         tag: S_L3PE_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -219,6 +243,7 @@
         tag: S_L3PE_02
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -229,6 +254,7 @@
         tag: S_L3PE_03
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -239,6 +265,7 @@
         tag: S_L3PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             4: true
             5: true
@@ -248,6 +275,7 @@
         tag: S_L4PE_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -257,6 +285,7 @@
         tag: S_L4PE_02
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -266,6 +295,7 @@
         tag: S_L4PE_03
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -275,6 +305,7 @@
         tag: S_L4PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -283,6 +314,7 @@
         tag: S_L5PE_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -291,6 +323,7 @@
         tag: S_L5PE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -299,6 +332,7 @@
         tag: S_L5PE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -307,6 +341,7 @@
         tag: S_L5PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -315,6 +350,7 @@
         tag: S_L5PE_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -323,6 +359,7 @@
         tag: S_L5PE_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -331,6 +368,7 @@
         tag: S_L5PE_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -338,6 +376,7 @@
         tag: S_L6PE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -345,6 +384,7 @@
         tag: S_L6PE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -352,6 +392,7 @@
         tag: S_L6PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -359,6 +400,7 @@
         tag: S_L6PE_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -366,91 +408,107 @@
         tag: S_L6PE_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_08
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_09
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PE_10
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_07
@@ -459,6 +517,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8PE_06
@@ -467,6 +526,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8SHD_1
@@ -475,6 +535,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -483,48 +544,56 @@
         tag: S_MPAM_PE
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7MP_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -534,6 +603,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -541,89 +611,104 @@
         tag: S_RAS_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7RAS_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: SYS_RAS
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: SYS_RAS_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: SYS_RAS_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: SYS_RAS_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: SYS_RAS_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_08
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: RAS_11
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -633,30 +718,35 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7TME_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7TME_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7TME_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7TME_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -666,6 +756,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -675,78 +766,91 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7PMU
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_PE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_PE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_BM_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_BM_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_EV_11
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_MEM_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_SPE
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_SYS_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_SYS_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_SYS_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PMU_SYS_5
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -756,46 +860,55 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_08
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_09
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: ETE_10
@@ -804,6 +917,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -814,6 +928,7 @@
         tag: B_PE_18
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -824,6 +939,7 @@
         tag: B_PE_19
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -834,6 +950,7 @@
         tag: B_PE_20
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -844,6 +961,7 @@
         tag: B_PE_21
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -857,6 +975,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -867,6 +986,7 @@
         tag: B_PE_23
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -875,6 +995,11 @@
             7: true
             8: true
         tag: B_PE_24
+      - required:
+          bsa: future
+          pcbsa: true
+          sbsa:
+        tag: B_PE_25
 10:
   name: Memory map
   groups:
@@ -883,6 +1008,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -893,6 +1019,7 @@
         tag: B_MEM_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -903,6 +1030,7 @@
         tag: B_MEM_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -913,6 +1041,7 @@
         tag: B_MEM_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -923,6 +1052,7 @@
         tag: B_MEM_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -933,6 +1063,7 @@
         tag: B_MEM_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -943,6 +1074,7 @@
         tag: B_MEM_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -953,6 +1085,7 @@
         tag: B_MEM_07
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -963,6 +1096,7 @@
         tag: S_L3MM_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -973,6 +1107,7 @@
         tag: S_L3MM_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_L8SM_01
@@ -981,6 +1116,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -991,6 +1127,7 @@
         tag: B_MEM_08
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1007,14 +1144,17 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: B_GIC_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: B_GIC_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1025,6 +1165,7 @@
         tag: B_GIC_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1035,6 +1176,7 @@
         tag: B_GIC_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1045,6 +1187,7 @@
         tag: B_GIC_05
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1055,6 +1198,7 @@
         tag: S_L3GI_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1065,6 +1209,7 @@
         tag: S_L3GI_02
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1075,6 +1220,7 @@
         tag: S_L3PP_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1083,6 +1229,7 @@
         tag: S_L5GI_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1093,6 +1240,7 @@
         tag: B_PPI_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1104,6 +1252,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1117,6 +1266,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1130,34 +1280,42 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_08
     its_deviceid:
@@ -1165,30 +1323,37 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_1
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_2
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_4
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_5
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_6
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_7
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: ITS_DEV_8
 30:
@@ -1199,6 +1364,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1209,6 +1375,7 @@
         tag: B_SMMU_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1218,21 +1385,24 @@
             8: true
         tag: B_SMMU_02
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_03
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_04
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
@@ -1240,6 +1410,7 @@
         tag: B_SMMU_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1250,6 +1421,7 @@
         tag: B_SMMU_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1260,11 +1432,13 @@
         tag: B_SMMU_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
         tag: B_SMMU_08
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             5: true
             6: true
@@ -1272,7 +1446,8 @@
             8: true
         tag: B_SMMU_09
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             5: true
             6: true
@@ -1281,6 +1456,7 @@
         tag: B_SMMU_11
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1290,14 +1466,16 @@
             8: true
         tag: B_SMMU_12
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_13
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
@@ -1305,6 +1483,7 @@
         tag: B_SMMU_14
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1315,11 +1494,13 @@
         tag: S_L3SM_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
         tag: S_L4SM_01
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -1329,6 +1510,7 @@
         tag: S_L4SM_02
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -1338,6 +1520,7 @@
         tag: S_L4SM_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1346,6 +1529,7 @@
         tag: S_L5SM_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1354,6 +1538,7 @@
         tag: S_L5SM_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1362,6 +1547,7 @@
         tag: S_L5SM_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -1369,6 +1555,7 @@
         tag: S_L6SM_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -1376,6 +1563,7 @@
         tag: S_L6SM_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -1383,24 +1571,28 @@
         tag: S_L6SM_03
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             7: true
             8: true
         tag: S_L7SM_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7SM_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_L7SM_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -1410,6 +1602,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1420,6 +1613,7 @@
         tag: B_SMMU_16
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1430,6 +1624,7 @@
         tag: B_SMMU_17
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1440,6 +1635,7 @@
         tag: B_SMMU_18
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1449,7 +1645,8 @@
             8: true
         tag: B_SMMU_19
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             5: true
             6: true
@@ -1458,6 +1655,7 @@
         tag: B_SMMU_20
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1468,6 +1666,7 @@
         tag: B_SMMU_21
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1475,24 +1674,33 @@
             8: true
         tag: B_SMMU_22
       - required:
-          bsa: false
+          bsa: future
+          pcbsa: future
           sbsa:
             6: true
             7: true
             8: true
         tag: B_SMMU_23
       - required:
-          bsa: true
+          bsa: future
+          pcbsa: future
           sbsa:
         tag: B_SMMU_24
       - required:
-          bsa: true
+          bsa: future
+          pcbsa: future
           sbsa:
         tag: B_SMMU_25
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: SMMU_01
+      - required:
+          bsa: true
+          pcbsa: true
+          sbsa:
+        tag: SMMU_02
 40:
   name: Timer subsystem
   groups:
@@ -1501,6 +1709,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1511,6 +1720,7 @@
         tag: B_TIME_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1521,6 +1731,7 @@
         tag: B_TIME_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1531,6 +1742,7 @@
         tag: B_TIME_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1541,6 +1753,7 @@
         tag: B_TIME_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1551,6 +1764,7 @@
         tag: B_TIME_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1561,6 +1775,7 @@
         tag: B_TIME_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1571,6 +1786,7 @@
         tag: B_TIME_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1581,6 +1797,7 @@
         tag: B_TIME_08
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1591,6 +1808,7 @@
         tag: B_TIME_09
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1601,6 +1819,7 @@
         tag: B_TIME_10
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             5: true
             6: true
@@ -1615,6 +1834,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1625,6 +1845,7 @@
         tag: B_WAK_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1635,6 +1856,7 @@
         tag: B_WAK_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1645,6 +1867,7 @@
         tag: B_WAK_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1655,6 +1878,7 @@
         tag: B_WAK_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1665,6 +1889,7 @@
         tag: B_WAK_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1675,6 +1900,7 @@
         tag: B_WAK_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1685,10 +1911,12 @@
         tag: B_WAK_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: B_WAK_08
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1699,6 +1927,7 @@
         tag: B_WAK_10
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1715,6 +1944,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1725,6 +1955,7 @@
         tag: B_PER_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1735,6 +1966,7 @@
         tag: B_PER_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1745,6 +1977,7 @@
         tag: B_PER_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1755,6 +1988,7 @@
         tag: B_PER_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1765,6 +1999,7 @@
         tag: B_PER_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1775,6 +2010,7 @@
         tag: B_PER_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1785,6 +2021,7 @@
         tag: B_PER_07
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1795,6 +2032,7 @@
         tag: B_PER_08
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1805,6 +2043,7 @@
         tag: B_PER_09
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1815,6 +2054,7 @@
         tag: B_PER_10
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -1828,6 +2068,7 @@
       rules:
         - required:
             bsa: true
+            pcbsa: true
             sbsa:
               3: true
               4: true
@@ -1844,6 +2085,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -1853,6 +2095,7 @@
         tag: S_L4PCI_1
       - required:
           bsa: false
+          pcbsa: true
           sbsa:
             4: true
             5: true
@@ -1862,6 +2105,7 @@
         tag: S_L4PCI_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -1869,6 +2113,7 @@
         tag: B_REP_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -1876,61 +2121,72 @@
         tag: B_IEP_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_PCIe_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_PCIe_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_PCIe_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_PCIe_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: S_PCIe_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_08
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_09
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_10
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: S_PCIe_11
@@ -1939,60 +2195,70 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_05
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_06
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_07
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_08
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
         tag: PCI_ER_09
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             7: true
             8: true
@@ -2002,6 +2268,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2009,6 +2276,7 @@
         tag: PCI_IN_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2016,6 +2284,7 @@
         tag: PCI_IN_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2023,6 +2292,7 @@
         tag: PCI_IN_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2030,14 +2300,17 @@
         tag: PCI_IN_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IN_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IN_11
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2045,6 +2318,7 @@
         tag: PCI_IN_12
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2052,10 +2326,12 @@
         tag: PCI_IN_13
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IN_16
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2063,6 +2339,7 @@
         tag: PCI_IN_17
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2070,10 +2347,12 @@
         tag: PCI_IN_18
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IN_19
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IN_20
     memory_space:
@@ -2081,6 +2360,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2088,6 +2368,7 @@
         tag: PCI_MM_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2095,6 +2376,7 @@
         tag: PCI_MM_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2102,6 +2384,7 @@
         tag: PCI_MM_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2112,14 +2395,17 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_MM_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_MM_06
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_MM_07
     msi:
@@ -2127,10 +2413,12 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_MSI_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_MSI_2
     legacy_ints:
@@ -2138,6 +2426,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2145,10 +2434,12 @@
         tag: PCI_LI_01
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_LI_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2159,6 +2450,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2169,6 +2461,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             3: true
             4: true
@@ -2179,26 +2472,32 @@
         tag: PCI_IC_11
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_13
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_14
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_15
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_16
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_17
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_IC_18
     p2p:
@@ -2206,22 +2505,27 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PP_02
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PP_03
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PP_04
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PP_05
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PP_06
     pasid:
@@ -2229,6 +2533,7 @@
       rules:
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: PCI_PAS_1
     rciep:
@@ -2236,6 +2541,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2243,6 +2549,7 @@
         tag: RE_PCI_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2250,6 +2557,7 @@
         tag: RE_PCI_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2257,6 +2565,7 @@
         tag: RE_BAR_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2264,6 +2573,7 @@
         tag: RE_BAR_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2271,6 +2581,7 @@
         tag: RE_BAR_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2278,6 +2589,7 @@
         tag: RE_INT_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2285,6 +2597,7 @@
         tag: RE_ORD_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2292,10 +2605,12 @@
         tag: RE_ORD_2
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: RE_ORD_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2303,10 +2618,12 @@
         tag: RE_SMU_2
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: RE_SMU_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2314,6 +2631,7 @@
         tag: RE_RST_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2321,6 +2639,7 @@
         tag: RE_PWR_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2328,6 +2647,7 @@
         tag: RE_ACS_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2338,6 +2658,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2345,6 +2666,7 @@
         tag: RE_REG_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2352,6 +2674,7 @@
         tag: RE_REG_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2359,6 +2682,7 @@
         tag: RE_REG_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2369,6 +2693,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2376,6 +2701,7 @@
         tag: IE_BAR_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2383,6 +2709,7 @@
         tag: IE_BAR_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2390,6 +2717,7 @@
         tag: IE_BAR_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2397,6 +2725,7 @@
         tag: IE_INT_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2404,6 +2733,7 @@
         tag: IE_ORD_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2411,10 +2741,12 @@
         tag: IE_ORD_2
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: IE_ORD_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2422,10 +2754,12 @@
         tag: IE_SMU_1
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
         tag: IE_SMU_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2433,6 +2767,7 @@
         tag: IE_RST_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2440,6 +2775,7 @@
         tag: IE_RST_2
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2447,6 +2783,7 @@
         tag: IE_PWR_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2454,6 +2791,7 @@
         tag: IE_ACS_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2464,6 +2802,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2471,6 +2810,7 @@
         tag: IE_REG_1
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2478,6 +2818,7 @@
         tag: IE_REG_2
       - required:
           bsa: true
+          pcbsa: true
           sbsa:
             6: true
             7: true
@@ -2485,6 +2826,7 @@
         tag: IE_REG_3
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2492,6 +2834,7 @@
         tag: IE_REG_4
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2505,6 +2848,7 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             3: true
             4: true
@@ -2515,6 +2859,7 @@
         tag: B_WD_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             3: true
             4: true
@@ -2525,6 +2870,7 @@
         tag: B_WD_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             3: true
             4: true
@@ -2535,6 +2881,7 @@
         tag: B_WD_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             3: true
             4: true
@@ -2545,6 +2892,7 @@
         tag: B_WD_04
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             3: true
             4: true
@@ -2555,6 +2903,7 @@
         tag: B_WD_05
       - required:
           bsa: false
+          pcbsa: future
           sbsa:
             3: true
             4: true
@@ -2565,6 +2914,7 @@
         tag: S_L3WD_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             6: true
             7: true
@@ -2578,21 +2928,25 @@
       rules:
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: GPU_01
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: GPU_02
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: GPU_03
       - required:
           bsa: false
+          pcbsa: false
           sbsa:
             8: true
         tag: GPU_04

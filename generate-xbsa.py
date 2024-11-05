@@ -49,13 +49,14 @@ def handle_checklist():
                     # this tag is present in BSA/SBSA spec, not only in ACS
                     tags_to_tests[rule["tag"]]["acs_only"] = False
                 except KeyError:
-                    tests = {"bsa": [], "sbsa": []}
+                    tests = {"bsa": [], "pcbsa": [], "sbsa": []}
 
                 checklist.append({
                     'category': xbsa_checklist[category]["name"],
                     'group': xbsa_checklist[category]["groups"][group]["name"],
                     'tag': rule["tag"],
                     'bsa': rule["required"]["bsa"],
+                    'pcbsa': rule["required"]["pcbsa"],
                     'sbsa': rule["required"]["sbsa"],
                     'sbsaref': check_tag(rule["tag"]),
                     'tests': tests,
@@ -70,6 +71,7 @@ def handle_checklist():
                 'tag': tag,
                 'tests': tags_to_tests[tag],
                 'bsa': [],
+                'pcbsa': [],
                 'sbsa': [],
                 'sbsaref': check_tag(tag),
             }
