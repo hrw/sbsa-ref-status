@@ -122,7 +122,7 @@ wanted_os = ""
 
 if len(sys.argv) > 1:
     wanted_os = sys.argv[1]
-    print(f"Updating only image for {wanted_os}")
+    print(f"Updating image only for {wanted_os}")
 
 for entry in yml_data:
 
