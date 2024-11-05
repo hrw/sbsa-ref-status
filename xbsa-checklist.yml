@@ -2954,3 +2954,93 @@
           sbsa:
             8: true
         tag: GPU_04
+91:
+  name: CXL integration
+  groups:
+    0:
+      name: CXL
+      rules:
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: S_L8CXL_1
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_01
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_02
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_03
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_04
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_05
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_06
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_07
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_08
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_09
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_10
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_11
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_12
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: CXL_13
