@@ -1,4 +1,4 @@
-almalinux:
+almalinux10:
   checksum: 43c68af1e28e1db52f20961ade95f7fbabdb88606aaa34f2b600f5c3d2175ef3
   file: disks/almalinux-10-boot.iso
   force-name: true
@@ -7,7 +7,7 @@ alpine:
   checksum: 8d0efbc173aeb54fd41af7d88e3b92c10e443ac33beca7bfa112e230df71571a
   file: disks/alpine-standard-3.20.3-aarch64.iso
   url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.3-aarch64.iso
-centos:
+centos9:
   checksum: false
   file: disks/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
   force-download: true
@@ -33,7 +33,7 @@ fedora:
   checksum: 36920c0f7a0ae00c2542579f9b600108f77de228a892417ebf8cb651123ad1e8
   file: disks/Fedora-Minimal-40-1.14.aarch64.raw
   url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Spins/aarch64/images/Fedora-Minimal-40-1.14.aarch64.raw.xz
-freebsd:
+freebsd14:
   checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
   file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
   url: https://download.freebsd.org/releases/VM-IMAGES/14.1-RELEASE/aarch64/Latest/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2.xz
