@@ -133,27 +133,25 @@ for entry in yml_data:
 
     print(f"Checking image for {entry}")
 
-    filename = ""
-    if 'file' in os_data:
-        filename = os_data['file'].split('/')[-1]
-    else:
-        os_data['file'] = ""
-
-    if 'url' in os_data:
-        url_name = os_data['url'].split('/')[-1]
-    else:
-        url_name = filename
-
     try:
         if 'force-download' in os_data:
             print("Force download defined")
             yml_data[entry] = download_os_image(entry, os_data)
-        elif filename == url_name:
-            # checking do we have file already
-            os.stat(os_data['file'])
-        elif f"{filename}.gz" == url_name:
-            # checking do we have unpacked file already
-            os.stat(os_data['file'])
+        # checking do we have file already
+        elif os.stat(os_data['file']):
+            checksum = hashlib.sha256()
+            with open(os_data['file'], 'rb') as fd:
+                while True:
+                    chunk = fd.read(32768)
+                    if not chunk:
+                        break
+                    checksum.update(chunk)
+            if checksum.hexdigest() != os_data['checksum']:
+                print("Checksums do not match")
+                yml_data[entry] = download_os_image(entry, os_data)
+            else:
+                print("Already downloaded")
+            continue
         else:
             # no file, need to download
             yml_data[entry] = download_os_image(entry, os_data)
