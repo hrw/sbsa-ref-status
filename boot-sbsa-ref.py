@@ -24,7 +24,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Run virtual machine.")
 
     parser.add_argument("--cmd", help="command to run in EFI shell")
-    parser.add_argument("--cpu", default="neoverse-n2",
+    parser.add_argument("--cpu", default="neoverse-n2,pauth-impdef=on",
                         help="cpu core to use")
     parser.add_argument("--gdb", action="store_true",
                         help="wait for GDB connection")
