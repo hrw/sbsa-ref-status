@@ -12,11 +12,11 @@ centos9:
   file: disks/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
   force-download: true
   url: https://cloud.centos.org/centos/9-stream/aarch64/images/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
-debian:
+debian13:
   checksum: false
-  file: disks/debian-testing-arm64-netinst.iso
+  file: disks/debian-13-nocloud-arm64-daily.qcow2
   force-download: true
-  url: https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/arm64/iso-cd/debian-testing-arm64-netinst.iso
+  url: https://cloud.debian.org/images/cloud/trixie/daily/latest/debian-13-nocloud-arm64-daily.qcow2
 debian10:
   checksum: 5ba734219b89d233c052c82ca120b49a42ad088e3e82a8fb98b97d0e5b6fe765
   file: disks/debian-10-nocloud-arm64.qcow2
