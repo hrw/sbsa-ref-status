@@ -1221,6 +1221,12 @@
             8: true
         tag: S_L5GI_01
       - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            8: true
+        tag: S_L8GI_01
+      - required:
           bsa: true
           pcbsa: true
           sbsa:
