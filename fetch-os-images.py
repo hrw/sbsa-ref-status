@@ -9,6 +9,8 @@ import shutil
 import sys
 import yaml
 
+from urllib.parse import urlparse
+
 """
 os.yml file defines list of operating system images to use with boot-sbsa-ref
 script. There are several fields defined for each entry:
@@ -56,6 +58,7 @@ def download_os_image(os_name, data):
 
     print(f"Downloading {os_name} from {data['url']}")
 
+    urlname = f"disks/{os.path.basename(urlparse(data['url']).path)}"
     r = requests.get(data['url'], stream=True)
 
     try:
@@ -68,7 +71,7 @@ def download_os_image(os_name, data):
     if r.status_code != 200:
         print(f"HTTP Error {r.status_code}")
         sys.exit(-1)
-    with open(data['file'], 'wb') as fd:
+    with open(urlname, 'wb') as fd:
         position = 0
         for chunk in r.iter_content(chunk_size=32768):
             fd.write(chunk)
@@ -78,6 +81,7 @@ def download_os_image(os_name, data):
                 progressbar(filesize, position)
 
     print(" ")
+    print(f"Fetched {urlname}")
 
     # daily/snapshot images do not have checksums stored
     if data['checksum']:
@@ -88,20 +92,26 @@ def download_os_image(os_name, data):
 
         data['checksum'] = checksum.hexdigest()
 
-    # if file was gzip compressed then unpack it
-    if data['url'].endswith('.gz'):
-        newname = os.path.splitext(data['file'])[0]
-        with gzip.open(data['file'], 'rb') as fin:
-            unpack_file(fin, newname)
-            os.remove(data['file'])
-            data['file'] = newname
-    elif data['url'].endswith('.xz'):
-        newname = os.path.splitext(data['file'])[0]
-        with lzma.open(data['file'], 'rb') as fin:
-            unpack_file(fin, newname)
-            os.remove(data['file'])
-            data['file'] = newname
+    # if file was compressed then unpack it
+    if data['url'].endswith('.gz') or data['url'].endswith('.xz'):
+        if 'force-name' in data:
+            newname = data['file']
+        else:
+            newname = os.path.splitext(urlname)[0]
 
+        print(f"Unpacking into {newname}")
+
+        if data['url'].endswith('.gz'):
+            with gzip.open(urlname, 'rb') as fin:
+                unpack_file(fin, newname)
+        elif data['url'].endswith('.xz'):
+            with lzma.open(data['file'], 'rb') as fin:
+                unpack_file(fin, newname)
+
+        os.remove(urlname)
+        data['file'] = newname
+
+        print("Done")
     return data
 
 
