@@ -73,6 +73,7 @@ openbsd73:
   url: https://cdn.openbsd.org/pub/OpenBSD/7.3/arm64/miniroot73.img
 openbsd75:
   checksum: 05df229dc026785b5b3d1ec8b0dcd46780a2a5bdf99b7e739d83abf4ff7b3ff5
+  commend: hangs on Neoverse-V1 or above - fixed in 7.6
   file: disks/openbsd-miniroot75.img
   force-name: true
   type: hdd
