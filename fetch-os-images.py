@@ -86,9 +86,7 @@ def download_os_image(os_name, data):
     # daily/snapshot images do not have checksums stored
     if data['checksum']:
         if data['checksum'] != checksum.hexdigest():
-            print("Checksum does not match")
-            print(f"Old one: {data['checksum']}")
-            print(f"New one: {checksum.hexdigest()}")
+            show_wrong_checksums(data['checksum'], checksum.hexdigest())
 
         data['checksum'] = checksum.hexdigest()
 
@@ -128,6 +126,12 @@ def check_file_checksum(fname):
     return checksum.hexdigest()
 
 
+def show_wrong_checksums(old, new):
+    print("Checksum does not match")
+    print(f"Old one: {old}")
+    print(f"New one: {new}")
+
+
 with open("os.yml") as yml:
     yml_data = yaml.safe_load(yml)
 
@@ -156,12 +160,12 @@ for entry in yml_data:
             if ('checksum_unpacked' in os_data and
                 checksum != os_data['checksum_unpacked']
                 ):
-                print("Checksums do not match")
+                show_wrong_checksums(os_data['checksum_unpacked'], checksum)
                 yml_data[entry] = download_os_image(entry, os_data)
             elif ('checksum_unpacked' not in os_data and
                 checksum != os_data['checksum']
                 ):
-                print("Checksums do not match")
+                show_wrong_checksums(os_data['checksum'], checksum)
                 yml_data[entry] = download_os_image(entry, os_data)
             else:
                 print("Already downloaded")
