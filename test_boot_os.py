@@ -34,8 +34,8 @@ def test_alpine():
     boot_os("alpine", "Welcome to Alpine Linux")
 
 
-def test_centos():
-    boot_os("centos", "CentOS Stream 9")
+def test_centos9():
+    boot_os("centos9", "CentOS Stream 9")
 
 
 def test_debian10():
@@ -55,8 +55,8 @@ def test_fedora():
     boot_os("fedora", "Welcome to Fedora Linux 40")
 
 
-def test_freebsd():
-    boot_os("freebsd", "FreeBSD/arm64 (freebsd) (ttyu0)")
+def test_freebsd14():
+    boot_os("freebsd14", "FreeBSD/arm64 (freebsd) (ttyu0)")
 
 
 def test_freebsd13():
