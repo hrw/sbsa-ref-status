@@ -674,7 +674,7 @@
     neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: GPU_04
-  title: Check ATS and Page Req Support
+  title: Check ATS Support for SMMU
 601:
   level: '4'
   status:
@@ -800,12 +800,12 @@
 824:
   level: '6'
   status:
-    cortex-a57: FAIL
-    cortex-a72: FAIL
-    max: FAIL
-    neoverse-n1: FAIL
-    neoverse-n2: FAIL
-    neoverse-v1: FAIL
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
   tags: RE_REG_3, RE_REC_1, IE_REG_2, IE_REG_4
   title: Check Device capabilities reg rule
 825:
@@ -1203,7 +1203,7 @@
     neoverse-n2: FAIL
     neoverse-v1: FAIL
   tags: GPU_04
-  title: Check ATS & Page Req for all RP
+  title: Check ATS support for RC
 865:
   level: future
   status:
