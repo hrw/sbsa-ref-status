@@ -10,7 +10,7 @@ import yaml
 from pprint import pprint
 
 # for plugging pcie devices
-chassis = 0
+chassis = 4
 
 qemu_args = [
     "bin/qemu-system-aarch64",
@@ -236,7 +236,7 @@ def add_pcie(card_name, add_root_port=True):
     if add_root_port:
         rpid = "".join(random.choices(string.ascii_letters, k=5))
         qemu_args.extend(["-device",
-                         f"pcie-root-port,id={rpid},slot=0,chassis={chassis}"])
+                         f"pcie-root-port,id={rpid},slot=0,chassis={chassis},bus=pcie.0"])
         chassis += 1
         bus = f",bus={rpid}"
 
