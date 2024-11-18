@@ -1215,6 +1215,17 @@
     neoverse-v1: SKIPPED
   tags: PCI_ER_09
   title: Check RP Extensions for DPC
+867:
+  level: '6'
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: IE_REG_6, IE_REG_7, IE_REG_8, IE_REG_9
+  title: Check Supported Link Speed for iEPs
 901:
   level: 3
   status:
