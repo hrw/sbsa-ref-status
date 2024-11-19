@@ -11,6 +11,8 @@ import yaml
 
 from urllib.parse import urlparse
 
+quiet_mode = False
+
 """
 os.yml file defines list of operating system images to use with boot-sbsa-ref
 script. There are several fields defined for each entry:
@@ -35,6 +37,10 @@ def unpack_file(fin, newname):
 
 
 def progressbar(filesize, position):
+
+    if quiet_mode:
+        return
+
     len = 80
     dots = ""
     for d in range(0, int(len * position / filesize)):
@@ -141,7 +147,11 @@ with open("os.yml") as yml:
 wanted_os = ""
 
 if len(sys.argv) > 1:
-    wanted_os = sys.argv[1]
+    if "--quiet" == sys.argv[1]:
+        quiet_mode = True
+        wanted_os = sys.argv[2]
+    else:
+        wanted_os = sys.argv[1]
     print(f"Updating image only for {wanted_os}")
 
 for entry in yml_data:
