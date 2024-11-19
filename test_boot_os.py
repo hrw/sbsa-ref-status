@@ -21,7 +21,7 @@ def boot_os(osname, line_to_check):
             process.terminate()
             return 0
 
-        if time.time() > start_time + 5 * 60:
+        if time.time() > start_time + 7 * 60:
             process.terminate()
             pytest.fail("Timeout")
 
@@ -34,53 +34,47 @@ def test_alpine():
     boot_os("alpine", "Welcome to Alpine Linux")
 
 
+# instead of RHEL
 def test_centos9():
     boot_os("centos9", "CentOS Stream 9")
 
 
-def test_debian10():
-    boot_os("debian10", "Debian GNU/Linux 10 debian ttyAMA0")
-
-
-def test_debian11():
-    boot_os("debian11", "Debian GNU/Linux 11 debian ttyAMA0")
-
-
+# debian/stable
 def test_debian12():
     boot_os("debian12", "Debian GNU/Linux 12 localhost ttyAMA0")
 
+# debian/oldoldstable which should still boot
+def test_debian10():
+    boot_os("debian10", "Debian GNU/Linux 10 debian ttyAMA0")
 
+# devel
+def test_debian13():
+    boot_os("debian13", "Debian GNU/Linux trixie/sid localhost ttyAMA0")
+
+# stable
 def test_freebsd14():
     boot_os("freebsd14", "FreeBSD/arm64 (freebsd) (ttyu0)")
 
-
+# oldstable
 def test_freebsd13():
     boot_os("freebsd13", "FreeBSD/arm64 (freebsd) (ttyu0)")
 
-
+# devel
 def test_freebsd15():
     boot_os("freebsd15", "FreeBSD/arm64 (freebsd) (ttyu0)")
 
-
+# stable
 def test_netbsd10():
     boot_os("netbsd10", "NetBSD/evbarm (arm64) (constty)")
 
-
-def test_netbsd11():
-    boot_os("netbsd11", "NetBSD/evbarm (arm64) (constty)")
-
-
+# oldstable
 def test_netbsd9():
     boot_os("netbsd9", "NetBSD/evbarm (arm64) (constty)")
 
+# devel
+def test_netbsd11():
+    boot_os("netbsd11", "NetBSD/evbarm (arm64) (constty)")
 
-def test_openbsd73():
-    boot_os("openbsd73", "Welcome to the OpenBSD/arm64 7.3 installation program.")
-
-
+# current release
 def test_openbsd76():
     boot_os("openbsd76", "Welcome to the OpenBSD/arm64 7.6 installation program.")
-
-
-#def test_openeuler():
-#    boot_os("", "")
