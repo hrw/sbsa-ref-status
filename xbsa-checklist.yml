@@ -2844,6 +2844,38 @@
             7: true
             8: true
         tag: IE_REG_5
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_6
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_7
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_8
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            6: true
+            7: true
+            8: true
+        tag: IE_REG_9
 80:
   name: Watchdog
   groups:
