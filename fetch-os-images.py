@@ -86,7 +86,8 @@ def download_os_image(os_name, data):
                 position += 32768
                 progressbar(filesize, position)
 
-    print(" ")
+    if not quiet_mode:
+        print(" ")
     print(f"Fetched {urlname}")
 
     # daily/snapshot images do not have checksums stored
@@ -103,7 +104,7 @@ def download_os_image(os_name, data):
         else:
             newname = os.path.splitext(urlname)[0]
 
-        print(f"Unpacking into {newname}")
+        print(f"Unpacking into {newname} ... ", end='', flush=True)
 
         if data['url'].endswith('.gz'):
             with gzip.open(urlname, 'rb') as fin:
@@ -119,7 +120,7 @@ def download_os_image(os_name, data):
         os.remove(urlname)
         data['file'] = newname
 
-        print("Done")
+        print("done")
     return data
 
 
