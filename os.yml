@@ -12,35 +12,35 @@ centos9:
   file: disks/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
   force-download: true
   url: https://cloud.centos.org/centos/9-stream/aarch64/images/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
+debian10:
+  checksum: false
+  file: disks/debian-10-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/buster/latest/debian-10-nocloud-arm64.qcow2
+debian11:
+  checksum: false
+  file: disks/debian-11-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-arm64.qcow2
+debian12:
+  checksum: false
+  file: disks/debian-12-nocloud-arm64.qcow2
+  url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-nocloud-arm64.qcow2
 debian13:
   checksum: false
   file: disks/debian-13-nocloud-arm64-daily.qcow2
   force-download: true
   url: https://cloud.debian.org/images/cloud/trixie/daily/latest/debian-13-nocloud-arm64-daily.qcow2
-debian10:
-  checksum: 5ba734219b89d233c052c82ca120b49a42ad088e3e82a8fb98b97d0e5b6fe765
-  file: disks/debian-10-nocloud-arm64.qcow2
-  url: https://cloud.debian.org/images/cloud/buster/latest/debian-10-nocloud-arm64.qcow2
-debian11:
-  checksum: 256dccb460aaf459741790e0692184d853b0b208de662b9fde3207fd5eaddbb0
-  file: disks/debian-11-nocloud-arm64.qcow2
-  url: https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-arm64.qcow2
-debian12:
-  checksum: 4020845240ae86a96176e56abe69f290673eeef4de0243b43722c99891d4e930
-  file: disks/debian-12-nocloud-arm64.qcow2
-  url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-nocloud-arm64.qcow2
 fedora:
   checksum: 36920c0f7a0ae00c2542579f9b600108f77de228a892417ebf8cb651123ad1e8
   file: disks/Fedora-Minimal-40-1.14.aarch64.raw
   url: https://download.fedoraproject.org/pub/fedora/linux/releases/40/Spins/aarch64/images/Fedora-Minimal-40-1.14.aarch64.raw.xz
-freebsd14:
-  checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
-  file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
-  url: https://download.freebsd.org/releases/VM-IMAGES/14.1-RELEASE/aarch64/Latest/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2.xz
 freebsd13:
   checksum: 313bb1774e281c7c8eff6a63f58b096b709b9ef2d5ada3701980314822c551a6
   file: disks/FreeBSD-13.4-RELEASE-arm64-aarch64.qcow2
   url: https://download.freebsd.org/releases/VM-IMAGES/13.4-RELEASE/aarch64/Latest/FreeBSD-13.4-RELEASE-arm64-aarch64.qcow2.xz
+freebsd14:
+  checksum: e5a972f294d758410eb5033428a85a11db9eece32c3fc3e926f9e70c1c4207c7
+  file: disks/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2
+  url: https://download.freebsd.org/releases/VM-IMAGES/14.1-RELEASE/aarch64/Latest/FreeBSD-14.1-RELEASE-arm64-aarch64.qcow2.xz
 freebsd15:
   checksum: false
   file: disks/FreeBSD-15.0-CURRENT-arm64-aarch64-ufs.qcow2
