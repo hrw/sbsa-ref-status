@@ -28,7 +28,12 @@ def print_struct():
 
     if 'l1i' in struct:
         print(f" L1i: {struct['l1i']}", end='')
+    if 'l1d' in struct:
         print(f" L1d: {struct['l1d']}", end='')
+    if 'l2' in struct:
+        print(f" L2: {struct['l2']}", end='')
+    if 'l3' in struct:
+        print(f" L3: {struct['l3']}", end='')
 
     if struct['type'] == 'cache':
         if 'cacheid' in struct:
@@ -73,9 +78,9 @@ with open(sys.argv[1], encoding='utf-8') as log:
             struct['address'] = value
         elif 'Flags' in line:
             struct['flags'] = value
-            if struct['flags'] == '0x11':
+            if struct['flags'] in ['0x3', 0x11]:
                 struct['type'] = 'socket'
-            elif struct['flags'] == '0x10':
+            elif struct['flags'] in ['0x2', 0x10]:
                 struct['type'] = 'cluster'
             elif struct['flags'] == '0x1E':
                 struct['type'] = 'thread'
@@ -88,10 +93,15 @@ with open(sys.argv[1], encoding='utf-8') as log:
         elif 'Parent' in line:
             struct['parent'] = value
         elif 'Private resources [0]' in line:
-            struct['l1i'] = value
-            struct['type'] = 'core'
+            if struct['type'] == 'socket':
+                struct['l3'] = value
+            else:
+                struct['l1i'] = value
+                struct['type'] = 'core'
         elif 'Private resources [1]' in line:
             struct['l1d'] = value
+        elif 'Private resources [2]' in line:
+            struct['l2'] = value
         elif 'Next Level of Cache' in line:
             struct['nextcache'] = value
         elif 'Cache ID' in line:
