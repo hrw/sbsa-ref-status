@@ -576,7 +576,7 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PER_05
+  tags: S_L3PR_01
   title: Check UART type Arm Generic or 16550
 606:
   status:

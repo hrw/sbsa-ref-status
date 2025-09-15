@@ -39,7 +39,8 @@ with open(sys.argv[1], encoding="utf-8") as bsa_acs_log:
                     status_bsa[test_id] = {"tags": "", "title": "",
                                            "status": {core_name: ""}}
 
-            if test_id and line.strip().startswith(("B_", "ITS_", "PCI_")):
+            if test_id and line.strip().startswith(("B_", "ITS_", "PCI_",
+                                                    "S_")):
                 test_tags = line.strip()
                 status_bsa[test_id]["tags"] = test_tags
                 status_bsa[test_id]["title"] = test_title
