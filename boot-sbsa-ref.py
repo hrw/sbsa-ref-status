@@ -148,6 +148,7 @@ def add_some_pcie():
             "-device", "e1000,bus=pci,addr=10,id=e1000",
             "-device", f"pci-bridge,bus=pci,addr=13,id=pci-pci,chassis_nr={chassis + 2}",
               "-device", "ac97,bus=pci-pci,addr=12",
+              "-device", "usb-ehci,bus=pci-pci,addr=14",
        "-device", f"xio3130-downstream,id=downstream_port2,bus=upstream_port1,chassis={chassis + 3},slot=21",
          "-device", "igb,bus=downstream_port2,id=igb2",
      ])
