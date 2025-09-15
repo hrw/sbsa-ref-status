@@ -7,6 +7,11 @@ alpine:
   checksum: 8d0efbc173aeb54fd41af7d88e3b92c10e443ac33beca7bfa112e230df71571a
   file: disks/alpine-standard-3.20.3-aarch64.iso
   url: https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/aarch64/alpine-standard-3.20.3-aarch64.iso
+amazonlinux:
+  checksum: null
+  file: disks/al2023-kvm-2023.7.20250623.1-kernel-6.1-arm64.xfs.gpt.qcow2
+  type: hdd
+  url: https://cdn.amazonlinux.com/al2023/os-images/2023.7.20250623.1/kvm-arm64/al2023-kvm-2023.7.20250623.1-kernel-6.1-arm64.xfs.gpt.qcow2
 centos9:
   checksum: false
   file: disks/CentOS-Stream-GenericCloud-9-latest.aarch64.qcow2
