@@ -1244,6 +1244,17 @@
             6: true
             7: true
             8: true
+        tag: B_PPI_00
+      - required:
+          bsa: true
+          pcbsa: true
+          sbsa:
+            3: true
+            4: true
+            5: true
+            6: true
+            7: true
+            8: true
         tag: B_PPI_01
       - required:
           bsa: false
@@ -1825,6 +1836,15 @@
             7: true
             8: true
         tag: S_L5TI_01
+      - required:
+          bsa: false
+          pcbsa: false
+          sbsa:
+            5: false
+            6: false
+            7: false
+            8: true
+        tag: S_L8TI_01
 50:
   name: Power and wakeup
   groups:
