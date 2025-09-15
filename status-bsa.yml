@@ -122,13 +122,23 @@
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
+    max: FAIL
+    neoverse-n1: SKIPPED
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: B_PE_15
+  title: Check PAuth if implementation
+16:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
     max: PASS
     neoverse-n1: SKIPPED
     neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: B_PE_15
-  title: Check PAuth if implementation
-51:
+    neoverse-v1: SKIPPED
+  tags: B_PE_14
+  title: Check SVE2 for v9 PE
+17:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -138,7 +148,7 @@
     neoverse-v1: PASS
   tags: B_PE_18
   title: Check EL2 implementation
-52:
+18:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -148,7 +158,7 @@
     neoverse-v1: PASS
   tags: B_PE_19
   title: Check Stage 2 4KB Granule Support
-53:
+19:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -158,7 +168,7 @@
     neoverse-v1: PASS
   tags: B_PE_20
   title: Check Stage2 and Stage1 Granule match
-54:
+20:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -168,7 +178,7 @@
     neoverse-v1: PASS
   tags: B_PE_21
   title: Check for PMU counters
-55:
+21:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -178,7 +188,7 @@
     neoverse-v1: PASS
   tags: B_PE_22
   title: Check VMID breakpoint number
-76:
+22:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -186,18 +196,18 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PE_23, B_PE_24
-  title: Check EL3 implementation
-101:
+  tags: B_PE_23
+  title: Check for EL3 AArch64 support
+63:
   status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: B_MEM_02
-  title: Memory Access to Un-Populated addr
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: PASS
+    neoverse-n1: FAIL
+    neoverse-n2: PASS
+    neoverse-v1: FAIL
+  tags: B_PE_24
+  title: Check for Secure state implementation
 102:
   status:
     cortex-a57: PASS
@@ -218,16 +228,6 @@
     neoverse-v1: PASS
   tags: B_MEM_05
   title: PE must access all NS addr space
-104:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: B_MEM_03, B_MEM_04, B_MEM_06
-  title: Addressability
 201:
   status:
     cortex-a57: PASS
@@ -238,16 +238,6 @@
     neoverse-v1: PASS
   tags: B_GIC_01
   title: Check GIC version
-202:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: B_GIC_02
-  title: Check GICv2 Valid Configuration
 203:
   status:
     cortex-a57: PASS
@@ -286,7 +276,7 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PPI_01
+  tags: B_PPI_00
   title: Check EL1-Phy timer PPI assignment
 207:
   status:
@@ -296,10 +286,9 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PPI_01
+  tags: B_PPI_00
   title: Check EL1-Virt timer PPI assignment
-226:
-  ignore_skipped: true
+209:
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -307,9 +296,9 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PPI_02
+  tags: B_PPI_00
   title: Check NS EL2-Virt timer PPI Assignment
-227:
+210:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -317,9 +306,9 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PPI_02
+  tags: B_PPI_00
   title: Check NS EL2-Phy timer PPI Assignment
-228:
+211:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -327,49 +316,9 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PPI_02
+  tags: B_PPI_00
   title: Check GIC Maintenance PPI Assignment
 251:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: null
-  title: Check MSI SPI are Edge Triggered
-252:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: null
-  title: Check GICv2m MSI Frame Register
-253:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: null
-  title: Check GICv2m MSI to SPI Generation
-254:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: null
-  title: Check GICv2m SPI allocated to MSI Ctrl
-276:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -379,7 +328,7 @@
     neoverse-v1: PASS
   tags: ITS_01
   title: Check number of ITS blocks in a group
-277:
+252:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -389,7 +338,7 @@
     neoverse-v1: PASS
   tags: ITS_02
   title: Check ITS block association with group
-278:
+253:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -399,7 +348,7 @@
     neoverse-v1: PASS
   tags: ITS_DEV_2
   title: Check uniqueness of StreamID
-279:
+254:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -407,8 +356,18 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: ITS_DEV_7,ITS_DEV_8
-  title: Check Device's ReqID-DeviceID-StreamID
+  tags: ITS_DEV_7
+  title: Check Device's SID/RID/DID behind SMMU
+255:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: ITS_DEV_8
+  title: Check Device IDs not behind SMMU
 301:
   status:
     cortex-a57: PASS
@@ -430,8 +389,6 @@
   tags: B_SMMU_02
   title: Check SMMU Granule Support
 303:
-  comment: only max has LPA, smmu lacks LPA
-  ignore_skipped: true
   status:
     cortex-a57: SKIPPED
     cortex-a72: SKIPPED
@@ -451,7 +408,7 @@
     neoverse-v1: PASS
   tags: B_SMMU_08
   title: Check SMMU S-EL2 & stage1 support
-352:
+305:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -459,19 +416,9 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_SMMU_16, B_SMMU_17, B_SMMU_18
-  title: Check SMMU S-EL2 & stage2 support
-353:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: B_SMMU_19
-  title: SMMUv2 unique intr per ctxt bank
-354:
+  tags: B_SMMU_16
+  title: Check SMMUs stage2 support
+307:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -481,6 +428,16 @@
     neoverse-v1: PASS
   tags: B_SMMU_21, SMMU_01
   title: SMMUv3 Integration compliance
+329:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: SKIPPED
+    neoverse-n1: PASS
+    neoverse-n2: SKIPPED
+    neoverse-v1: PASS
+  tags: B_SMMU_18
+  title: Check SMMU S-EL2 & stage2 support
 401:
   status:
     cortex-a57: PASS
@@ -489,8 +446,8 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_TIME_01, B_TIME_02
-  title: Check Counter Frequency
+  tags: B_TIME_01
+  title: Check for Generic System Counter
 402:
   status:
     cortex-a57: PASS
@@ -509,7 +466,7 @@
     neoverse-n1: SKIPPED
     neoverse-n2: SKIPPED
     neoverse-v1: SKIPPED
-  tags: B_TIME_07, B_TIME_10
+  tags: B_TIME_07
   title: Memory mapped timer check
 404:
   status:
@@ -531,6 +488,16 @@
     neoverse-v1: SKIPPED
   tags: B_TIME_09
   title: Restore PE timer on PE wake up
+407:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: B_TIME_02
+  title: Check System Counter Frequency
 501:
   status:
     cortex-a57: PASS
@@ -589,8 +556,8 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PER_01, B_PER_02
-  title: USB CTRL Interface
+  tags: B_PER_01
+  title: USB CTRL Interface EHCI check
 602:
   status:
     cortex-a57: PASS
@@ -610,8 +577,8 @@
     neoverse-n2: PASS
     neoverse-v1: PASS
   tags: B_PER_05
-  title: Check Arm BSA UART register offsets
-604:
+  title: Check UART type Arm Generic or 16550
+606:
   status:
     cortex-a57: PASS
     cortex-a72: PASS
@@ -619,30 +586,18 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_PER_06, B_PER_07
+  tags: B_PER_06
   title: Check Arm GENERIC UART Interrupt
-605:
+608:
   status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
     neoverse-n2: PASS
-    neoverse-v1: SKIPPED
-  tags: B_PER_09, B_PER_10
-  title: Memory Attribute of DMA
-  type: linux
-606:
-  ignore_skipped: true
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: B_PER_05
-  title: 16550 compatible UART
+    neoverse-v1: PASS
+  tags: B_PER_02
+  title: USB CTRL Interface XHCI check
 701:
   status:
     cortex-a57: PASS
@@ -651,7 +606,7 @@
     neoverse-n1: PASS
     neoverse-n2: PASS
     neoverse-v1: PASS
-  tags: B_WD_01, B_WD_02, S_L3WD_01
+  tags: B_WD_01, S_L3WD_01
   title: Non Secure Watchdog Access
 702:
   status:
@@ -673,495 +628,3 @@
     neoverse-v1: PASS
   tags: PCI_IN_01
   title: Check ECAM Presence
-802:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_02
-  title: PE - ECAM Region accessibility check
-803:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_04
-  title: All EP/Sw under RP in same ECAM Region
-804:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IN_13
-  title: Check RootPort NP Memory Access
-805:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IN_13
-  title: Check RootPort P Memory Access
-806:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_LI_01, PCI_LI_03
-  title: Legacy int must be SPI & lvl-sensitive
-808:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_16
-  title: Check all 1's for out of range
-809:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_20
-  title: Vendor specific data is PCIe compliant
-811:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_18
-  title: Check RP Byte Enable Rules
-817:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_05
-  title: Check Direct Transl P2P Support
-818:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_05
-  title: Check RP Adv Error Report
-819:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_03
-  title: RP must suprt ACS if P2P Txn are allow
-820:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05, PCI_IN_19
-  title: Type 0/1 common config rule
-821:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: B_PER_12
-  title: Type 0 config header rules
-822:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05, PCI_IN_19
-  title: Check Type 1 config header rules
-824:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05
-  title: Device capabilities reg rule
-825:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05
-  title: Device Control register rule
-826:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05
-  title: Device cap 2 register rules
-830:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_19
-  title: Check Cmd Reg memory space enable
-831:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_19
-  title: Check Type0/1 BIST Register rule
-832:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_19
-  title: Check HDR CapPtr Register rule
-833:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_05
-  title: Check Max payload size supported
-835:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_SM_02
-  title: Check Function level reset
-836:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_17
-  title: Check ARI forwarding enable rule
-837:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_12
-  title: Check Config Txn for RP in HB
-838:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IN_03
-  title: Check all RP in HB is in same ECAM
-839:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_MSI_01
-  title: Check MSI support for PCIe dev
-840:
-  status:
-    cortex-a57: PASS
-    cortex-a72: PASS
-    max: PASS
-    neoverse-n1: PASS
-    neoverse-n2: PASS
-    neoverse-v1: PASS
-  tags: PCI_IC_11
-  title: PCIe RC,PE - Same Inr Shareable Domain
-842:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PAS_1
-  title: PASID support atleast 16 bits
-843:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_06
-  title: Switches must support ACS if P2P
-861:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: PASS
-    neoverse-v1: SKIPPED
-  tags: PCI_MM_01, PCI_MM_02, PCI_MM_03
-  title: PCIe Unaligned access
-  type: linux
-862:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_MM_05, PCI_MM_06, PCI_MM_07
-  title: No extra address translation
-863:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_LI_02
-  title: PCI legacy intr SPI ID unique
-864:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: PASS
-    neoverse-v1: SKIPPED
-  tags: PCI_MSI_2
-  title: Check MSI=X vectors uniqueness
-  type: linux
-901:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_04
-  title: Check P2P ACS Functionality
-902:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_04
-  title: Check ACS Redirect Req Valid
-903:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IC_15
-  title: Arrival order Check
-904:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_MSI_2, ITS_DEV_6
-  title: MSI-X triggers intr with unique ID
-905:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PAS_1, RE_SMU_4, IE_SMU_3
-  title: Generate PASID transactions
-906:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_LI_02
-  title: Generate PCIe legacy interrupt
-907:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IC_11, PCI_IC_13, PCI_IC_16, PCI_IC_17, PCI_IC_18
-  title: Check PCIe I/O Coherency
-908:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IC_14, RE_ORD_4, IE_ORD_4
-  title: Check PCIe Software Coherency
-910:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IN_11
-  title: Check RP Sec Bus transaction are TYPE0
-911:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: ITS_03, ITS_04, ITS_06, ITS_07, ITS_08, ITS_DEV_1, ITS_DEV_5
-  title: MSI to Any ITS Blk in assigned group
-912:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: ITS_05
-  title: MSI to ITS Blk outside assigned group
-913:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: ITS_DEV_4
-  title: MSI originating from different master
-914:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_PP_02
-  title: P2P transactions must not deadlock
-915:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_IN_17
-  title: Check ARI forwarding enable rule
-916:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: PCI_MM_01, PCI_MM_02, PCI_MM_03
-  title: PCIe Memory access check
-917:
-  status:
-    cortex-a57: SKIPPED
-    cortex-a72: SKIPPED
-    max: SKIPPED
-    neoverse-n1: SKIPPED
-    neoverse-n2: SKIPPED
-    neoverse-v1: SKIPPED
-  tags: IE_REG_3, PCI_IN_05
-  title: Check BME functionality of RP

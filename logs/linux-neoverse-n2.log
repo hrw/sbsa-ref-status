@@ -1,14 +1,11 @@
 QEMU command arguments:
 
-../code/qemu/build/qemu-system-aarch64
+bin/qemu-system-aarch64
 -monitor telnet::45454,server,nowait
 -serial stdio
--drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash
--drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash,snapshot=on
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash,snapshot=on
 -machine sbsa-ref
--device pcie-root-port,id=FJAZw,slot=0,chassis=0
--device nvme,drive=TNVWF,serial=TNVWF,bus=FJAZw
--drive file=disks/nvme.img,format=raw,if=none,id=TNVWF
 -cpu neoverse-n2
 -smp 4
 -m 8G
@@ -16,47 +13,38 @@ QEMU command arguments:
 -device usb-tablet
 -device usb-mouse
 -nographic
--drive file=fat:rw:disks/virtual,format=raw
+-drive file=fat:ro:disks/virtual,format=raw,snapshot=on
 
 EFI startup script:
 
               mode 100 31
               pci
-              fs1:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.time=0
+              fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.time=0
               reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL1: Built : 10:33:51, Oct 14 2024
+NOTICE:  BL1: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL1: Built : 13:37:52, Sep  1 2025
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL2: Built : 10:33:52, Oct 14 2024
+NOTICE:  BL2: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL2: Built : 13:37:52, Sep  1 2025
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL31: Built : 10:33:52, Oct 14 2024
-UEFI firmware (version 1.0 built at 10:34:00 on Oct 14 2024)
-[2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
+NOTICE:  BL31: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL31: Built : 13:37:52, Sep  1 2025
+UEFI firmware (version 1.0 built at 13:37:57 on Sep  1 2025)
+[2J[004D[=3h[2J[009D[2J[004DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
 [1m[33m[40mMapping table[0m[37m[40m
-[1m[33m[40m      FS1:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD1a65535a1:;BLK4:
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
-0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
-[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0b:;BLK1:
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)/HD(1,GPT,E18266A2-C5EF-4299-AF15-636D414978CD,0x800,0x100000)
-[1m[33m[40m     BLK3:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
-[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)
-[1m[33m[40m     BLK2:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)/HD(2,GPT,01B58A9B-C015-4D10-9B69-79C1A4BE1BBE,0x100800,0xEFF7DF)
-Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
 [1m[33m[40mShell> [0m[37m[40m              mode 100 31
-[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40m              pci
+[2J[001;001H[8;031;100t[2J[016D[2J[004D[1m[33m[40mShell> [0m[37m[40m              pci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -65,64 +53,67 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 8086 Device 10D3 Prog Interface 0
     [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
              Vendor 1234 Device 1111 Prog Interface 0
-    [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
-             Vendor 1B36 Device 0010 Prog Interface 2
-[1m[33m[40mShell> [0m[37m[40m              fs1:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.ti
+[1m[33m[40mShell> [0m[37m[40m              fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.ti
 me=0
 EFI stub: Booting Linux Kernel...
 EFI stub: Loaded initrd from command line option
 EFI stub: Generating empty DTB
 EFI stub: Exiting boot services...
 Booting Linux on physical CPU 0x0000000000 [0x410fd493]
-Linux version 6.10.12-arm64 (debian-kernel@lists.debian.org) (aarch64-linux-gnu-gcc-13 (Debian 13.3.0-6) 13.3.0, GNU ld (GNU Binutils for Debian) 2.43.1) #1 SMP Debian 6.10.12-1 (2024-10-01)
+Linux version 6.16.7+deb14-arm64 (debian-kernel@lists.debian.org) (aarch64-linux-gnu-gcc-14 (Debian 14.3.0-8) 14.3.0, GNU ld (GNU Binutils for Debian) 2.45) #1 SMP PREEMPT Debian 6.16.7-1 (2025-09-11)
 KASLR enabled
 efi: EFI v2.7 by EFI Development Kit II / SbsaQemu
-efi: ACPI 2.0=0x101f86df018 SMBIOS 3.0=0x101fbdc0000 MEMATTR=0x101fad66118 INITRD=0x101f86d8f18 RNG=0x101f86dfe18 MEMRESERVE=0x101f86d8f98 
+efi: ACPI 2.0=0x101fec27018 SMBIOS 3.0=0x101ff610000 MEMATTR=0x101fe560118 INITRD=0x101fdf3cf18 RNG=0x101fec27e18 MEMRESERVE=0x101fdf3cf98 
 random: crng init done
 secureboot: Secure boot disabled
 ACPI: Early table checksum verification disabled
-ACPI: RSDP 0x00000101F86DF018 000024 (v02 LINARO)
-ACPI: XSDT 0x00000101F86DFF18 000074 (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: FACP 0x00000101F86DFC18 000114 (v06 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: DSDT 0x00000101F86DE018 000CC2 (v02 LINARO SBSAQEMU 20240625 INTL 20220331)
-ACPI: DBG2 0x00000101F86DFB18 00005C (v00 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: MCFG 0x00000101F86DFE98 00003C (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: SPCR 0x00000101F86DFD98 000050 (v02 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: IORT 0x00000101F86DF098 0000DC (v06 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: APIC 0x00000101F86DF898 0001A8 (v04 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: SSDT 0x00000101F86DF218 0000A3 (v02 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: PPTT 0x00000101F86DF318 00020C (v03 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: GTDT 0x00000101F86DF598 000084 (v03 LINARO SBSAQEMU 20240625 LNRO 00000001)
-ACPI: BGRT 0x00000101F86DF698 000038 (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: RSDP 0x00000101FEC27018 000024 (v02 LINARO)
+ACPI: XSDT 0x00000101FEC27F18 000074 (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: FACP 0x00000101FEC27C18 000114 (v06 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: DSDT 0x00000101FEB9C018 000CC2 (v02 LINARO SBSAQEMU 20240625 INTL 20240322)
+ACPI: DBG2 0x00000101FEC27B18 00005C (v00 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: MCFG 0x00000101FEC27E98 00003C (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: SPCR 0x00000101FEC27D98 000050 (v02 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: IORT 0x00000101FEC27098 0000DC (v06 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: APIC 0x00000101FEC27898 0001A8 (v04 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: SSDT 0x00000101FEC27218 0000A3 (v02 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: PPTT 0x00000101FEC27318 00020C (v03 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: GTDT 0x00000101FEC27598 000084 (v03 LINARO SBSAQEMU 20240625 LNRO 00000001)
+ACPI: BGRT 0x00000101FEC27698 000038 (v01 LINARO SBSAQEMU 20240625 LNRO 00000001)
 ACPI: SPCR: console: pl011,mmio32,0x60000000,115200
-NUMA: Failed to initialise from firmware
+ACPI: Use ACPI SPCR as default console: No
 NUMA: Faking a node at [mem 0x0000010000000000-0x00000101ffffffff]
-NUMA: NODE_DATA [mem 0x101fefff240-0x101ff001fff]
+NODE_DATA(0) allocated [mem 0x101fec22880-0x101fec25fff]
 Zone ranges:
   DMA      [mem 0x0000010000000000-0x00000101ffffffff]
   DMA32    empty
   Normal   empty
+  Device   empty
 Movable zone start for each node
 Early memory node ranges
-  node   0: [mem 0x0000010000000000-0x00000101f855ffff]
-  node   0: [mem 0x00000101f8560000-0x00000101f86cffff]
-  node   0: [mem 0x00000101f86d0000-0x00000101f86dffff]
-  node   0: [mem 0x00000101f86e0000-0x00000101f872ffff]
-  node   0: [mem 0x00000101f8730000-0x00000101fbbfffff]
-  node   0: [mem 0x00000101fbc00000-0x00000101fbfdffff]
-  node   0: [mem 0x00000101fbfe0000-0x00000101ffffffff]
+  node   0: [mem 0x0000010000000000-0x00000101fe79ffff]
+  node   0: [mem 0x00000101fe7a0000-0x00000101fe7dffff]
+  node   0: [mem 0x00000101fe7e0000-0x00000101fe81ffff]
+  node   0: [mem 0x00000101fe820000-0x00000101fe85ffff]
+  node   0: [mem 0x00000101fe860000-0x00000101fe89ffff]
+  node   0: [mem 0x00000101fe8a0000-0x00000101fe9dffff]
+  node   0: [mem 0x00000101fe9e0000-0x00000101fea2ffff]
+  node   0: [mem 0x00000101fea30000-0x00000101fea7ffff]
+  node   0: [mem 0x00000101fea80000-0x00000101feb9ffff]
+  node   0: [mem 0x00000101feba0000-0x00000101febeffff]
+  node   0: [mem 0x00000101febf0000-0x00000101ff47ffff]
+  node   0: [mem 0x00000101ff480000-0x00000101ff85ffff]
+  node   0: [mem 0x00000101ff860000-0x00000101ffffffff]
 Initmem setup node 0 [mem 0x0000010000000000-0x00000101ffffffff]
-cma: Reserved 64 MiB at 0x0000010000000000 on node -1
+cma: Reserved 64 MiB at 0x0000010000000000
 psci: probing for conduit method from ACPI.
 psci: PSCIv1.1 detected in firmware.
 psci: Using standard PSCI v0.2 function IDs
 psci: MIGRATE_INFO_TYPE not supported.
 psci: SMC Calling Convention v1.5
-percpu: Embedded 34 pages/cpu s98728 r8192 d32344 u139264
+percpu: Embedded 35 pages/cpu s103064 r8192 d32104 u143360
 Detected PIPT I-cache on CPU0
-CPU features: detected: Address authentication (architected QARMA5 algorithm)
+CPU features: detected: Address authentication (IMP DEF algorithm)
 CPU features: detected: GIC system register CPU interface
 CPU features: detected: Virtualization Host Extensions
 CPU features: detected: Spectre-v4
@@ -132,51 +123,53 @@ CPU features: detected: ARM erratum 2067961 or 2054223
 CPU features: detected: ARM erratum 2253138 or 2224489
 CPU features: detected: SSBS not fully self-synchronizing
 alternatives: applying boot alternatives
-Kernel command line: fs1:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.time=0
-Unknown kernel command line parameters "fs1:\efi\debian\linux", will be passed to user space.
+Kernel command line: fs0:\efi\debian\linux initrd=\efi\debian\tiny-initrd-show-cpuinfo.img printk.time=0
+Unknown kernel command line parameters "fs0:\efi\debian\linux", will be passed to user space.
+printk: log buffer data + meta data: 131072 + 458752 = 589824 bytes
 Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
 Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+software IO TLB: SWIOTLB bounce buffer size adjusted to 8MB
+software IO TLB: area num 4.
+software IO TLB: mapped [mem 0x00000101f4800000-0x00000101f5000000] (8MB)
 Fallback order for Node 0: 0 
 Built 1 zonelists, mobility grouping on.  Total pages: 2097152
 Policy zone: DMA
 mem auto-init: stack:all(zero), heap alloc:on, heap free:off
-software IO TLB: SWIOTLB bounce buffer size adjusted to 8MB
-software IO TLB: area num 4.
-software IO TLB: mapped [mem 0x00000101fdb50000-0x00000101fe350000] (8MB)
-Memory: 65536K/8388608K available (14720K kernel code, 3458K rwdata, 11080K rodata, 2752K init, 775K bss, 209232K reserved, 65536K cma-reserved)
 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
-ftrace: allocating 48749 entries in 191 pages
-ftrace: allocated 191 pages with 7 groups
-trace event string verifier disabled
+ftrace: allocating 52037 entries in 204 pages
+ftrace: allocated 204 pages with 4 groups
 rcu: Hierarchical RCU implementation.
 rcu: 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=4.
+	Trampoline variant of Tasks RCU enabled.
 	Rude variant of Tasks RCU enabled.
 	Tracing variant of Tasks RCU enabled.
 rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
 rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
-RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1.
-RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1.
+RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
 NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
 GICv3: GIC: Using split EOI/Deactivate mode
 GICv3: 256 SPIs implemented
 GICv3: 0 Extended SPIs implemented
 Root IRQ handler: gic_handle_irq
 GICv3: GICv3 features: 16 PPIs
+GICv3: GICD_CTRL.DS=0, SCR_EL3.FIQ=0
 GICv3: CPU0: found redistributor 0 region 0:0x0000000040080000
 ITS [mem 0x44081000-0x440a0fff]
-ITS@0x0000000044081000: allocated 8192 Devices @100041e0000 (indirect, esz 8, psz 64K, shr 1)
-ITS@0x0000000044081000: allocated 8192 Interrupt Collections @100041f0000 (flat, esz 8, psz 64K, shr 1)
-GICv3: using LPI property table @0x0000010004200000
-GICv3: CPU0: using allocated LPI pending table @0x0000010004210000
+ITS@0x0000000044081000: allocated 8192 Devices @10004200000 (indirect, esz 8, psz 64K, shr 1)
+ITS@0x0000000044081000: allocated 8192 Interrupt Collections @10004210000 (flat, esz 8, psz 64K, shr 1)
+GICv3: using LPI property table @0x0000010004220000
+GICv3: CPU0: using allocated LPI pending table @0x0000010004230000
 rcu: srcu_init: Setting srcu_struct sizes based on contention.
 arch_timer: cp15 timer(s) running at 1000.00MHz (phys).
 clocksource: arch_sys_counter: mask: 0x1fffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
 sched_clock: 61 bits at 1000MHz, resolution 1ns, wraps every 4398046511103ns
 Console: colour dummy device 80x25
-ACPI: Core revision 20240322
+ACPI: Core revision 20250404
 Calibrating delay loop (skipped), value calculated using timer frequency.. 2000.00 BogoMIPS (lpj=4000000)
 pid_max: default: 32768 minimum: 301
-LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ima,evm
+LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
 landlock: Up and running.
 Yama: disabled by default; enable with sysctl kernel.yama.*
 AppArmor: AppArmor initialized
@@ -186,22 +179,21 @@ Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
 Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
 rcu: Hierarchical SRCU implementation.
 rcu: 	Max phase no-delay instances is 1000.
-Platform MSI: ITS@0x44081000 domain created
-PCI/MSI: ITS@0x44081000 domain created
+Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
 fsl-mc MSI: ITS@0x44081000 domain created
 Remapping and enabling EFI services.
 smp: Bringing up secondary CPUs ...
 Detected PIPT I-cache on CPU1
 GICv3: CPU1: found redistributor 1 region 0:0x00000000400a0000
-GICv3: CPU1: using allocated LPI pending table @0x0000010004220000
+GICv3: CPU1: using allocated LPI pending table @0x0000010004240000
 CPU1: Booted secondary processor 0x0000000001 [0x410fd493]
 Detected PIPT I-cache on CPU2
 GICv3: CPU2: found redistributor 2 region 0:0x00000000400c0000
-GICv3: CPU2: using allocated LPI pending table @0x0000010004230000
+GICv3: CPU2: using allocated LPI pending table @0x0000010004250000
 CPU2: Booted secondary processor 0x0000000002 [0x410fd493]
 Detected PIPT I-cache on CPU3
 GICv3: CPU3: found redistributor 3 region 0:0x00000000400e0000
-GICv3: CPU3: using allocated LPI pending table @0x0000010004240000
+GICv3: CPU3: using allocated LPI pending table @0x0000010004260000
 CPU3: Booted secondary processor 0x0000000003 [0x410fd493]
 smp: Brought up 1 node, 4 CPUs
 SMP: Total of 4 processors activated.
@@ -218,10 +210,11 @@ CPU features: detected: Data cache clean to Point of Persistence
 CPU features: detected: Data independent timing control (DIT)
 CPU features: detected: E0PD
 CPU features: detected: Enhanced Virtualization Traps
-CPU features: detected: Generic authentication (architected QARMA5 algorithm)
+CPU features: detected: Generic authentication (IMP DEF algorithm)
 CPU features: detected: RCpc load-acquire (LDAPR)
 CPU features: detected: LSE atomic instructions
 CPU features: detected: Privileged Access Never
+CPU features: detected: PMUv3
 CPU features: detected: RAS Extension Support
 CPU features: detected: Random Number Generator
 CPU features: detected: Speculation barrier (SB)
@@ -233,23 +226,25 @@ alternatives: applying system-wide alternatives
 CPU features: detected: Hardware dirty bit management on CPU0-3
 SVE: maximum available vector length 16 bytes per vector
 SVE: default vector length 16 bytes per vector
-node 0 deferred pages initialised in 100ms
+node 0 deferred pages initialised in 84ms
+Memory: 8099464K/8388608K available (17024K kernel code, 4630K rwdata, 15204K rodata, 3456K init, 941K bss, 218320K reserved, 65536K cma-reserved)
 devtmpfs: initialized
 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
-futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+posixtimers hash table entries: 2048 (order: 3, 32768 bytes, linear)
+futex hash table entries: 1024 (65536 bytes on 1 NUMA nodes, total 64 KiB, linear).
 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
 0 pages in range for non-PLT usage
-516032 pages in range for PLT usage
+513920 pages in range for PLT usage
 pinctrl core: initialized pinctrl subsystem
 SMBIOS 3.7.0 present.
-DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 10/14/2024
+DMI: QEMU QEMU SBSA-REF Machine/SBSA-REF, BIOS 1.0 08/20/2025
 DMI: Memory slots populated: 1/1
 NET: Registered PF_NETLINK/PF_ROUTE protocol family
 DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
 DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
 DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
 audit: initializing netlink subsys (disabled)
-audit: type=2000 audit(0.652:1): state=initialized audit_enabled=0 res=1
+audit: type=2000 audit(0.596:1): state=initialized audit_enabled=0 res=1
 thermal_sys: Registered thermal governor 'fair_share'
 thermal_sys: Registered thermal governor 'bang_bang'
 thermal_sys: Registered thermal governor 'step_wise'
@@ -261,6 +256,8 @@ hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
 ASID allocator initialised with 65536 entries
 acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
 Serial: AMBA PL011 UART driver
+HugeTLB: allocation took 0ms with hugepage_allocation_threads=1
+HugeTLB: allocation took 0ms with hugepage_allocation_threads=1
 HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
 HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
@@ -269,17 +266,15 @@ HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
 HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
 HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
-Demotion targets for Node 0: null
 ACPI: Added _OSI(Module Device)
 ACPI: Added _OSI(Processor Device)
-ACPI: Added _OSI(3.0 _SCP Extensions)
 ACPI: Added _OSI(Processor Aggregator Device)
 ACPI: 2 ACPI AML tables successfully acquired and loaded
 ACPI: Interpreter enabled
 ACPI: Using GIC for interrupt routing
 ACPI: MCFG table detected, 1 entries
 ARMH0011:00: ttyAMA0 at MMIO 0x60000000 (irq = 17, base_baud = 0) is a SBSA
-printk: legacy console [ttyAMA0] enabled
+printk: console [ttyAMA0] enabled
 ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
 acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI HPX-Type3]
 acpi PNP0A08:00: _OSC: platform does not support [SHPCHotplug LTR]
@@ -294,51 +289,36 @@ pci_bus 0000:00: root bus resource [io  0x0000-0xffff window]
 pci_bus 0000:00: root bus resource [bus 00-ff]
 pci 0000:00:00.0: [1b36:0008] type 00 class 0x060000 conventional PCI endpoint
 pci 0000:00:01.0: [8086:10d3] type 00 class 0x020000 PCIe Root Complex Integrated Endpoint
-pci 0000:00:01.0: BAR 0 [mem 0x81160000-0x8117ffff]
-pci 0000:00:01.0: BAR 1 [mem 0x81140000-0x8115ffff]
+pci 0000:00:01.0: BAR 0 [mem 0x81060000-0x8107ffff]
+pci 0000:00:01.0: BAR 1 [mem 0x81040000-0x8105ffff]
 pci 0000:00:01.0: BAR 2 [io  0x0000-0x001f]
-pci 0000:00:01.0: BAR 3 [mem 0x81180000-0x81183fff]
+pci 0000:00:01.0: BAR 3 [mem 0x81080000-0x81083fff]
 pci 0000:00:01.0: ROM [mem 0xfffc0000-0xffffffff pref]
+pci 0000:00:01.0: enabling Extended Tags
 pci 0000:00:02.0: [1234:1111] type 00 class 0x038000 PCIe Root Complex Integrated Endpoint
 pci 0000:00:02.0: BAR 0 [mem 0x80000000-0x80ffffff pref]
-pci 0000:00:02.0: BAR 2 [mem 0x81185000-0x81185fff]
+pci 0000:00:02.0: BAR 2 [mem 0x81084000-0x81084fff]
 pci 0000:00:02.0: ROM [mem 0xffff8000-0xffffffff pref]
-pci 0000:00:03.0: [1b36:000c] type 01 class 0x060400 PCIe Root Port
-pci 0000:00:03.0: BAR 0 [mem 0x81184000-0x81184fff]
-pci 0000:00:03.0: PCI bridge to [bus 01]
-pci 0000:00:03.0:   bridge window [mem 0x81000000-0x810fffff]
-pci 0000:01:00.0: [1b36:0010] type 00 class 0x010802 PCIe Endpoint
-pci 0000:01:00.0: BAR 0 [mem 0x81000000-0x81003fff 64bit]
-pci 0000:00:03.0: bridge window [io  0x1000-0x0fff] to [bus 01] add_size 1000
-pci 0000:00:03.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 01] add_size 200000 add_align 100000
-pci 0000:00:03.0: bridge window [mem 0x00100000-0x001fffff] to [bus 01] add_size 100000 add_align 100000
+pci 0000:00:02.0: enabling Extended Tags
 pci 0000:00:02.0: BAR 0 [mem 0x80000000-0x80ffffff pref]: assigned
-pci 0000:00:03.0: bridge window [mem 0x81000000-0x811fffff]: assigned
-pci 0000:00:03.0: bridge window [mem 0x100000000-0x1001fffff 64bit pref]: assigned
-pci 0000:00:01.0: ROM [mem 0x81200000-0x8123ffff pref]: assigned
-pci 0000:00:01.0: BAR 0 [mem 0x81240000-0x8125ffff]: assigned
-pci 0000:00:01.0: BAR 1 [mem 0x81260000-0x8127ffff]: assigned
-pci 0000:00:02.0: ROM [mem 0x81280000-0x81287fff pref]: assigned
-pci 0000:00:01.0: BAR 3 [mem 0x81288000-0x8128bfff]: assigned
-pci 0000:00:02.0: BAR 2 [mem 0x8128c000-0x8128cfff]: assigned
-pci 0000:00:03.0: BAR 0 [mem 0x8128d000-0x8128dfff]: assigned
-pci 0000:00:03.0: bridge window [io  0x1000-0x1fff]: assigned
-pci 0000:00:01.0: BAR 2 [io  0x2000-0x201f]: assigned
-pci 0000:01:00.0: BAR 0 [mem 0x81000000-0x81003fff 64bit]: assigned
-pci 0000:00:03.0: PCI bridge to [bus 01]
-pci 0000:00:03.0:   bridge window [io  0x1000-0x1fff]
-pci 0000:00:03.0:   bridge window [mem 0x81000000-0x811fffff]
-pci 0000:00:03.0:   bridge window [mem 0x100000000-0x1001fffff 64bit pref]
+pci 0000:00:01.0: ROM [mem 0x81000000-0x8103ffff pref]: assigned
+pci 0000:00:01.0: BAR 0 [mem 0x81040000-0x8105ffff]: assigned
+pci 0000:00:01.0: BAR 1 [mem 0x81060000-0x8107ffff]: assigned
+pci 0000:00:02.0: ROM [mem 0x81080000-0x81087fff pref]: assigned
+pci 0000:00:01.0: BAR 3 [mem 0x81088000-0x8108bfff]: assigned
+pci 0000:00:02.0: BAR 2 [mem 0x8108c000-0x8108cfff]: assigned
+pci 0000:00:01.0: BAR 2 [io  0x1000-0x101f]: assigned
 pci_bus 0000:00: resource 4 [mem 0x80000000-0xefffffff window]
 pci_bus 0000:00: resource 5 [mem 0x100000000-0xffffffffff window]
 pci_bus 0000:00: resource 6 [io  0x0000-0xffff window]
-pci_bus 0000:01: resource 0 [io  0x1000-0x1fff]
-pci_bus 0000:01: resource 1 [mem 0x81000000-0x811fffff]
-pci_bus 0000:01: resource 2 [mem 0x100000000-0x1001fffff 64bit pref]
 ACPI: PCI: Interrupt link GSI0 configured for IRQ 35
 ACPI: PCI: Interrupt link GSI1 configured for IRQ 36
 ACPI: PCI: Interrupt link GSI2 configured for IRQ 37
 ACPI: PCI: Interrupt link GSI3 configured for IRQ 38
+ACPI: CPU0 has been hot-added
+ACPI: CPU1 has been hot-added
+ACPI: CPU2 has been hot-added
+ACPI: CPU3 has been hot-added
 iommu: Default domain type: Translated
 iommu: DMA domain TLB invalidation policy: strict mode
 pps_core: LinuxPPS API ver. 1 registered
@@ -367,13 +347,13 @@ TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
 TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
 TCP: Hash tables configured (established 65536 bind 65536)
 MPTCP token hash table entries: 8192 (order: 5, 196608 bytes, linear)
-UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
-UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+UDP hash table entries: 4096 (order: 6, 262144 bytes, linear)
+UDP-Lite hash table entries: 4096 (order: 6, 262144 bytes, linear)
 NET: Registered PF_UNIX/PF_LOCAL protocol family
 NET: Registered PF_XDP protocol family
 PCI: CLS 0 bytes, default 64
 Trying to unpack rootfs image as initramfs...
-kvm [1]: nv: 477 coarse grained trap handlers
+kvm [1]: nv: 566 coarse grained trap handlers
 kvm [1]: IPA Size Limit: 48 bits
 [Firmware Bug]: CPU interface incapable of MMIO access
 kvm [1]: disabling GICv2 emulation
@@ -382,17 +362,16 @@ kvm [1]: vgic interrupt IRQ9
 kvm [1]: VHE mode initialized successfully
 Initialise system trusted keyrings
 Key type blacklist registered
+Freeing initrd memory: 1696K
 workingset: timestamp_bits=42 max_order=21 bucket_order=0
-zbud: loaded
-fuse: init (API version 7.40)
+fuse: init (API version 7.44)
 integrity: Platform Keyring initialized
 integrity: Machine keyring initialized
 Key type asymmetric registered
 Asymmetric key parser 'x509' registered
-Freeing initrd memory: 1696K
-Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
 io scheduler mq-deadline registered
-shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+ledtrig-cpu: registered to indicate activity on CPUs
 ACPI GTDT: found 1 SBSA generic Watchdog(s).
 Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
 Serial: AMBA driver
@@ -402,10 +381,12 @@ arm-smmu-v3 arm-smmu-v3.0.auto: option mask 0x0
 arm-smmu-v3 arm-smmu-v3.0.auto: ias 44-bit, oas 44-bit (features 0x00088705)
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 65536 entries for cmdq
 arm-smmu-v3 arm-smmu-v3.0.auto: allocated 32768 entries for evtq
+pci 0000:00:00.0: Adding to iommu group 0
+pci 0000:00:01.0: Adding to iommu group 1
+pci 0000:00:02.0: Adding to iommu group 2
 mousedev: PS/2 mouse device common for all mice
 rtc-efi rtc-efi.0: registered as rtc0
-rtc-efi rtc-efi.0: setting system clock to 2024-10-14T11:35:45 UTC (1728905745)
-ledtrig-cpu: registered to indicate activity on CPUs
+rtc-efi rtc-efi.0: setting system clock to 2025-09-15T10:47:00 UTC (1757933220)
 efifb: probing for efifb
 efifb: framebuffer at 0x80000000, using 4000k, total 4000k
 efifb: mode is 1280x800x32, linelength=5120, pages=1
@@ -414,17 +395,17 @@ efifb: Truecolor: size=8:8:8:8, shift=24:16:8:0
 Console: switching to colour frame buffer device 160x50
 fb0: EFI VGA frame buffer device
 SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
-hw perfevents: enabled with armv8_pmuv3_0 PMU driver, 7 counters available
+hw perfevents: enabled with armv8_pmuv3_0 PMU driver, 7 (0,8000003f) counters available
 NET: Registered PF_INET6 protocol family
 Segment Routing with IPv6
+RPL Segment Routing with IPv6
 In-situ OAM (IOAM) with IPv6
 mip6: Mobile IPv6
 NET: Registered PF_PACKET protocol family
 mpls_gso: MPLS GSO support
-Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
 registered taskstats version 1
 Loading compiled-in X.509 certificates
-Loaded X.509 cert 'Build time autogenerated kernel key: d29d5b8877a066c3ffcb68f553c929d940b66720'
+Loaded X.509 cert 'Build time autogenerated kernel key: 7ed3c8a0454669dbf0e139974c194986d6484bcb'
 Demotion targets for Node 0: null
 Key type .fscrypt registered
 Key type fscrypt-provisioning registered
@@ -444,14 +425,9 @@ evm: security.apparmor
 evm: security.ima
 evm: security.capability
 evm: HMAC attrs: 0x1
-pcieport 0000:00:03.0: Adding to iommu group 0
-ACPI: \_SB_.PCI0.GSI3: Enabled at IRQ 38
-pcieport 0000:00:03.0: PME: Signaling with IRQ 23
-pcieport 0000:00:03.0: AER: enabled with IRQ 23
-pcieport 0000:00:03.0: pciehp: Slot #0 AttnBtn+ PwrCtrl+ MRL- AttnInd+ PwrInd+ HotPlug+ Surprise+ Interlock+ NoCompl- IbPresDis- LLActRep+
 clk: Disabling unused clocks
 PM: genpd: Disabling unused power domains
-Freeing unused kernel memory: 2752K
+Freeing unused kernel memory: 3456K
 Checked W+X mappings: passed, no W+X pages found
 Run /init as init process
 processor	: 0

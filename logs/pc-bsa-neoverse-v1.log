@@ -1,0 +1,170 @@
+QEMU command arguments:
+
+bin/qemu-system-aarch64
+-monitor telnet::45454,server,nowait
+-serial stdio
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash,snapshot=on
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash,snapshot=on
+-machine sbsa-ref
+-cpu neoverse-v1
+-smp 4
+-m 8G
+-device usb-kbd
+-device usb-tablet
+-device usb-mouse
+-nographic
+-drive file=fat:ro:disks/virtual,format=raw,snapshot=on
+
+EFI startup script:
+
+              mode 100 31
+              pci
+              fs0:pc_bsa.efi
+              reset -c
+
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL1: Built : 13:37:52, Sep  1 2025
+NOTICE:  BL1: Booting BL2
+NOTICE:  BL2: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL2: Built : 13:37:52, Sep  1 2025
+NOTICE:  BL1: Booting BL31
+NOTICE:  BL31: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL31: Built : 13:37:52, Sep  1 2025
+UEFI firmware (version 1.0 built at 13:37:57 on Sep  1 2025)
+[2J[004D[=3h[2J[009D[2J[004DUEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
+[1m[33m[40mMapping table[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+[1m[33m[40mShell> [0m[37m[40m              mode 100 31
+[2J[001;001H[8;031;100t[2J[016D[2J[004D[1m[33m[40mShell> [0m[37m[40m              pci
+   Seg  Bus  Dev  Func
+   ---  ---  ---  ----
+    [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 0008 Prog Interface 0
+    [1m[33m[40m00   00   01    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10D3 Prog Interface 0
+    [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
+             Vendor 1234 Device 1111 Prog Interface 0
+[1m[33m[40mShell> [0m[37m[40m              fs0:pc_bsa.efi
+
+
+ PC BSA Architecture Compliance Suite
+          Version 0.8.0
+
+ Starting tests for level  1 (Print level is  3)
+
+
+ Creating Platform Information Tables
+ PE_INFO: Number of PE detected       :    4
+ Primary PE: MIDR_EL1                 :    0x411FD402 
+ GIC INFO: GIC version                :    v3
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
+ GIC_INFO: Number of ITS              :    1
+ TIMER_INFO: System Counter frequency :    1000 MHz
+ TIMER_INFO: Number of system timers  :    0
+ WATCHDOG_INFO: Number of Watchdogs   :    1
+ PCIE_INFO: Number of ECAM regions    :    1
+ PCIE_INFO: Number of BDFs found      :    2
+ PCIE_INFO: Number of RCiEP           :    2
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    0
+ PCIE_INFO: Number of RP              :    0
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    0
+ SMMU_INFO: Number of SMMU CTRL       :    1
+ SMMU_INFO: SMMU index 00 version     :    v3.1
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
+ TCG2 Protocol Not Found
+ TPM2 ACPI Table not found
+
+      *** Starting PE tests ***
+   4 : Check PE 4KB Granule Support               : Result:  PASS
+  18 : Check Stage 2 4KB Granule Support          : Result:  PASS
+  24 : Check for 16-bit ASID support              : Result:  PASS
+  25 : Check AARCH64 implementation               : Result:  PASS
+  26 : Check FEAT_LPA Requirements           
+       Skipped on PE -    0
+       P_L1PE_05
+       Checkpoint --  1                           : Result:  SKIPPED
+  28 : Check DC CVAP support                 
+       Skipped on PE -    0
+       P_L1PE_06
+       Checkpoint --  2                           : Result:  SKIPPED
+  29 : Check for 16-Bit VMID                      : Result:  PASS
+  30 : Check for Virtual host extensions          : Result:  PASS
+  15 : Check for FEAT_LSE support                 : Result:  PASS
+
+      One or more PE tests failed or were skipped.
+
+      *** Starting Memory tests ***
+ 105 : NS-EL2 Stage-2 64KB Mapping Check     
+       64KB granule not supported at stage 2.
+       Failed on PE -    0
+       P_L1MM_01
+       Checkpoint --  1                           : Result:  FAIL
+ 108 : Check peripherals addr 64Kb apart          : Result:  PASS
+
+      One or more Memory tests failed or were skipped.
+
+      *** Starting GIC tests ***
+ 212 : Check GIC version                          : Result:  PASS
+ 214 : Check All PPI Interrupt IDs                : Result:  PASS
+ 210 : Check GIC supports disabling LPIs          : Result:  PASS
+ 211 : Check GICR_PENDBASER when LPIs enabled     : Result:  PASS
+
+      All GIC tests passed.
+
+      *** Starting SMMU tests ***
+ 308 : Check Stage 1 SMMUv3 functionality         : Result:  PASS
+ 325 : Check Stage 2 SMMUv3 functionality         : Result:  PASS
+ 320 : Check SMMU Coherent Access Support         : Result:  PASS
+ 322 : Check if all DMA reqs behind SMMU          : Result:  PASS
+
+      All SMMU tests passed.
+
+      *** Starting PCIe tests ***
+ 801 : Check ECAM Presence                        : Result:  PASS
+ 887 : Check EA Capability                        : Result:  PASS
+
+      All PCIe tests passed.
+
+      *** Starting TPM2 tests ***
+1601 : Check TPM Version                     
+       TPM not present
+       Failed on PE -    0
+       P_L1TP_01
+       Checkpoint --  1                           : Result:  FAIL
+1602 : Check TPM interface locality support  
+       TPM not present
+       Failed on PE -    0
+       P_L1TP_03
+       Checkpoint --  1                           : Result:  FAIL
+
+      One or more TPM2 tests failed or were skipped.
+
+     -------------------------------------------------------
+     Total Tests run  =   23  Tests Passed  =   18  Tests Failed =    3
+     -------------------------------------------------------
+
+      **  For complete PC-BSA test coverage, it is 
+            necessary to also run the BSA test    **
+
+
+      *** PC BSA tests complete. Reset the system. ***
+
+[1m[33m[40mShell> [0m[37m[40m              reset -c

@@ -1,14 +1,11 @@
 QEMU command arguments:
 
-../code/qemu/build/qemu-system-aarch64
+bin/qemu-system-aarch64
 -monitor telnet::45454,server,nowait
 -serial stdio
--drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash
--drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash,snapshot=on
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash,snapshot=on
 -machine sbsa-ref
--device pcie-root-port,id=VEJzh,slot=0,chassis=0
--device nvme,drive=bYWHr,serial=bYWHr,bus=VEJzh
--drive file=disks/nvme.img,format=raw,if=none,id=bYWHr
 -cpu neoverse-n1
 -smp 4
 -m 8G
@@ -16,47 +13,38 @@ QEMU command arguments:
 -device usb-tablet
 -device usb-mouse
 -nographic
--drive file=fat:rw:disks/virtual,format=raw
+-drive file=fat:ro:disks/virtual,format=raw,snapshot=on
 
 EFI startup script:
 
               mode 100 31
               pci
-              fs1:sbsa.efi -only -skip 861 -l 4
+              fs0:sbsa.efi -only -l 4
               reset -c
 
 NOTICE:  Booting Trusted Firmware
-NOTICE:  BL1: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL1: Built : 10:33:51, Oct 14 2024
+NOTICE:  BL1: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL1: Built : 13:37:52, Sep  1 2025
 NOTICE:  BL1: Booting BL2
-NOTICE:  BL2: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL2: Built : 10:33:52, Oct 14 2024
+NOTICE:  BL2: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL2: Built : 13:37:52, Sep  1 2025
 NOTICE:  BL1: Booting BL31
-NOTICE:  BL31: v2.11.0(release):hrw-2024-10-07-1044-55-g75b0d5756
-NOTICE:  BL31: Built : 10:33:52, Oct 14 2024
-UEFI firmware (version 1.0 built at 10:34:00 on Oct 14 2024)
-[2J[04D[=3h[2J[09D[2J[04DUEFI Interactive Shell v2.2
+NOTICE:  BL31: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL31: Built : 13:37:52, Sep  1 2025
+UEFI firmware (version 1.0 built at 13:37:57 on Sep  1 2025)
+[2J[004D[=3h[2J[009D[2J[004DUEFI Interactive Shell v2.2
 EDK II
 UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
 [1m[33m[40mMapping table[0m[37m[40m
-[1m[33m[40m      FS1:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD1a65535a1:;BLK4:
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
-0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA,0x3F,0xFBFC1)
-[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0b:;BLK1:
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)/HD(1,GPT,E18266A2-C5EF-4299-AF15-636D414978CD,0x800,0x100000)
-[1m[33m[40m     BLK3:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
           VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
 0,0xFFFF,0x0)
-[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)
-[1m[33m[40m     BLK2:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
-          PciRoot(0x0)/Pci(0x3,0x0)/Pci(0x0,0x0)/NVMe(0x1,00-00-00-00-00-00-00-0
-0)/HD(2,GPT,01B58A9B-C015-4D10-9B69-79C1A4BE1BBE,0x100800,0xEFF7DF)
-Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[72DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
 [1m[33m[40mShell> [0m[37m[40m              mode 100 31
-[2J[01;01H[=3h[2J[09D[2J[04D[1m[33m[40mShell> [0m[37m[40m              pci
+[2J[001;001H[8;031;100t[2J[016D[2J[004D[1m[33m[40mShell> [0m[37m[40m              pci
    Seg  Bus  Dev  Func
    ---  ---  ---  ----
     [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
@@ -65,37 +53,31 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
              Vendor 8086 Device 10D3 Prog Interface 0
     [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
              Vendor 1234 Device 1111 Prog Interface 0
-    [1m[33m[40m00   00   03    00 ==> [0m[37m[40mBridge Device - PCI/PCI bridge
-             Vendor 1B36 Device 000C Prog Interface 0
-    [1m[33m[40m00   01   00    00 ==> [0m[37m[40mMass Storage Controller - Non-volatile memory subsystem
-             Vendor 1B36 Device 0010 Prog Interface 2
-[1m[33m[40mShell> [0m[37m[40m              fs1:sbsa.efi -only -skip 861 -l 4
+[1m[33m[40mShell> [0m[37m[40m              fs0:sbsa.efi -only -l 4
 
 
  SBSA Architecture Compliance Suite
-    Version 7.2.0
+    Version 7.2.3
 
  Starting tests for only level  4 (Print level is  3)
 
+
  Creating Platform Information Tables
  PE_INFO: Number of PE detected       :    4
+ Primary PE: MIDR_EL1                 :    0x414FD0C1 
  GIC INFO: GIC version                :    v3
  GIC_INFO: Number of GICD             :    1
  GIC_INFO: Number of GICR RD          :    1
  GIC_INFO: Number of ITS              :    1
- TIMER_INFO: System Counter frequency :    0x3B9ACA00
+ TIMER_INFO: System Counter frequency :    1000 MHz
  TIMER_INFO: Number of system timers  :    0
  WATCHDOG_INFO: Number of Watchdogs   :    1
- CACHE_INFO: Number of cache nodes    :   12
- MPAM INFO: Number of MSC nodes       :    0
- RAS2_INFO: Number of RAS2 entries    :    0
- RAS2_INFO: Num of RAS2 memory entries:    0
  PCIE_INFO: Number of ECAM regions    :    1
- PCIE_INFO: Number of BDFs found      :    4
+ PCIE_INFO: Number of BDFs found      :    2
  PCIE_INFO: Number of RCiEP           :    2
  PCIE_INFO: Number of RCEC            :    0
- PCIE_INFO: Number of EP              :    1
- PCIE_INFO: Number of RP              :    1
+ PCIE_INFO: Number of EP              :    0
+ PCIE_INFO: Number of RP              :    0
  PCIE_INFO: Number of iEP_EP          :    0
  PCIE_INFO: Number of iEP_RP          :    0
  PCIE_INFO: Number of UP of switch    :    0
@@ -107,37 +89,44 @@ Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup
  Peripheral: Num of USB controllers   :    1
  Peripheral: Num of SATA controllers  :    1
  Peripheral: Num of UART controllers  :    1
+ SMBIOS: Num of slots                 :    4
+ CACHE_INFO: Number of cache nodes    :   12
+ MPAM INFO: Number of MSC nodes       :    0
+ RAS2_INFO: Number of RAS2 entries    :    0
+ RAS2_INFO: Num of RAS2 memory entries:    0
  PMU_INFO: Number of PMU units        :    0
  RAS_INFO: Number of RAS nodes        :    0
 
       *** Starting PE tests ***
-   5 : Check for RAS extension                    : Result:  PASS
-   6 : Check DC CVAP support                 
+  27 : Check for RAS extension               
+       Skipped on PE -    0
+       S_L4PE_01
+       Checkpoint --  1                           : Result:  SKIPPED
+  28 : Check DC CVAP support                 
+       Skipped on PE -    0
        S_L4PE_02
        Checkpoint --  2                           : Result:  SKIPPED
-   7 : Check for 16-Bit VMID                      : Result:  PASS
-   8 : Check for Virtual host extensions          : Result:  PASS
+  29 : Check for 16-Bit VMID                      : Result:  PASS
+  30 : Check for Virtual host extensions          : Result:  PASS
 
       One or more PE tests failed or were skipped.
 
       *** Starting SMMU tests ***
- 301 : Check SMMU Compatibility                   : Result:  PASS
- 313 : Check SMMU Coherent Access Support         : Result:  PASS
+ 308 : Check Stage 1 SMMUv3 functionality         : Result:  PASS
+ 325 : Check Stage 2 SMMUv3 functionality         : Result:  PASS
+ 320 : Check SMMU Coherent Access Support         : Result:  PASS
 
       All SMMU tests passed.
 
       *** Starting PCIe tests ***
- 601 : Check EA Capability                        : Result:  PASS
+ 843 : Check ECAM Presence                        : Result:  PASS
+ 887 : Check EA Capability                        : Result:  PASS
 
       All PCIe tests passed.
 
      -------------------------------------------------------
-     Total Tests run  =    7;  Tests Passed  =    6  Tests Failed =    0
-     ---------------------------------------------------------
-
-      **  For complete SBSA test coverage, it is 
-            necessary to also run the BSA test    **
-
+     Total Tests run  =    9  Tests Passed  =    7  Tests Failed =    0
+     -------------------------------------------------------
 
       *** SBSA tests complete. Reset the system. ***
 

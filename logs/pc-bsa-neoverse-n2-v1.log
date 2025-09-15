@@ -1,0 +1,541 @@
+QEMU command arguments:
+
+bin/qemu-system-aarch64
+-monitor telnet::45454,server,nowait
+-serial stdio
+-drive file=firmware/SBSA_FLASH0.fd,format=raw,if=pflash,snapshot=on
+-drive file=firmware/SBSA_FLASH1.fd,format=raw,if=pflash,snapshot=on
+-machine sbsa-ref
+-cpu neoverse-n2
+-smp 4
+-m 8G
+-device usb-kbd
+-device usb-tablet
+-device usb-mouse
+-nographic
+-drive file=fat:ro:disks/virtual,format=raw,snapshot=on
+
+EFI startup script:
+
+              mode 100 31
+              pci
+              fs0:pc_bsa.efi -v 1
+              reset -c
+
+NOTICE:  Booting Trusted Firmware
+NOTICE:  BL1: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL1: Built : 13:37:52, Sep  1 2025
+NOTICE:  BL1: Booting BL2
+NOTICE:  BL2: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL2: Built : 13:37:52, Sep  1 2025
+NOTICE:  BL1: Booting BL31
+NOTICE:  BL31: v2.13.0(release):hrw-2025-09-01-1022-4-g4ee9e9015
+NOTICE:  BL31: Built : 13:37:52, Sep  1 2025
+UEFI firmware (version 1.0 built at 13:37:57 on Sep  1 2025)
+[2J[004D[=3h[2J[009D[2J[004DUEFI Interactive Shell v2.2
+EDK II
+UEFI v2.70 (EFI Development Kit II / SbsaQemu, 0x00010000)
+[1m[33m[40mMapping table[0m[37m[40m
+[1m[33m[40m      FS0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40mHD0a65535a1:;BLK1:
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)/HD(1,MBR,0xBE1AFDFA)
+[1m[33m[40m     BLK0:[0m[37m[40m [1m[37m[40mAlias(s):[0m[37m[40m
+          VenHw(0D51905B-B77E-452A-A2C0-ECA0CC8D514A,000010600000000000)/Sata(0x
+0,0xFFFF,0x0)
+Press [1m[37m[40mESC[0m[37m[40m in 5 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 4 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 3 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 2 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.[072DPress [1m[37m[40mESC[0m[37m[40m in 1 seconds to skip [1m[33m[40mstartup.nsh[0m[37m[40m or any other key to continue.
+[1m[33m[40mShell> [0m[37m[40m              mode 100 31
+[2J[001;001H[8;031;100t[2J[016D[2J[004D[1m[33m[40mShell> [0m[37m[40m              pci
+   Seg  Bus  Dev  Func
+   ---  ---  ---  ----
+    [1m[33m[40m00   00   00    00 ==> [0m[37m[40mBridge Device - Host/PCI bridge
+             Vendor 1B36 Device 0008 Prog Interface 0
+    [1m[33m[40m00   00   01    00 ==> [0m[37m[40mNetwork Controller - Ethernet controller
+             Vendor 8086 Device 10D3 Prog Interface 0
+    [1m[33m[40m00   00   02    00 ==> [0m[37m[40mDisplay Controller - Other display controller
+             Vendor 1234 Device 1111 Prog Interface 0
+[1m[33m[40mShell> [0m[37m[40m              fs0:pc_bsa.efi -v 1
+
+
+ PC BSA Architecture Compliance Suite
+          Version 0.8.0
+
+ Starting tests for level  1 (Print level is  1)
+
+
+ Creating Platform Information Tables
+ Using SMC as PSCI conduit
+ Creating PE INFO table
+  MADT is at FEC27898 and length is 1A8
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 0 PE num 0
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 1 PE num 1
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 2 PE num 2
+  Flags 1
+  PE Enabled 1, Online Capable 0
+  MADT Revision 4 
+ MPIDR 3 PE num 3
+ PE_INFO: Number of PE detected       :    4
+ Primary PE: MIDR_EL1                 :    0x410FD493 
+ PE_INFO: Primary PE index       :    0
+ Creating GIC INFO table
+  MADT is at FEC27898 and length is 1A8
+  GICH base 2C010000
+  GICH base 2C010000
+  GICH base 2C010000
+  GICH base 2C010000
+  GIC DIS base 40060000
+  GICR RD base 40080000
+  GICR RD Length 4000000
+  GIC ITS base 44081000
+  GIC ITS ID0
+
+       gic version from info table = 3
+ GIC INFO: GIC version                :    v3
+ GIC_INFO: Number of GICD             :    1
+ GIC_INFO: Number of GICR RD          :    1
+ GIC_INFO: Number of ITS              :    1
+ Creating TIMER INFO table
+  GTDT is at FEC27598 and length is 84
+  GTDT revision is at 3
+
+       hcr_e2h   : 0x0
+       feat_vhe  : 0x1
+       e2h0 : 0x0
+       effective e2h : 0x0
+
+       hcr_e2h   : 0x0
+       feat_vhe  : 0x1
+       e2h0 : 0x0
+       effective e2h : 0x0
+ TIMER_INFO: System Counter frequency :    1000 MHz
+ TIMER_INFO: Number of system timers  :    0
+ Creating WATCHDOG INFO table
+  Watchdog base = 0x50011000 INTID = 0x30
+ WATCHDOG_INFO: Number of Watchdogs   :    1
+ Creating PCIe INFO table
+  Ecam Index = 0
+  Base Address = 0xF0000000
+  Segment   = 0x0
+  Start Bus = 0x0
+  End Bus   = 0xFF
+ PCIE_INFO: Number of ECAM regions    :    1
+       BDF 0x0 is a Host Bridge...Skipping
+  Dev bdf 0x000100 type 0x200 RP bdf 0xFFFFFFFF
+  Dev bdf 0x000200 type 0x200 RP bdf 0xFFFFFFFF
+ PCIE_INFO: Number of BDFs found      :    2
+ PCIE_INFO: Number of RCiEP           :    2
+ PCIE_INFO: Number of RCEC            :    0
+ PCIE_INFO: Number of EP              :    0
+ PCIE_INFO: Number of RP              :    0
+ PCIE_INFO: Number of iEP_EP          :    0
+ PCIE_INFO: Number of iEP_RP          :    0
+ PCIE_INFO: Number of UP of switch    :    0
+ PCIE_INFO: Number of DP of switch    :    0
+ PCIE_INFO: Number of PCI/PCIe Bridge :    0
+ PCIE_INFO: Number of PCIe/PCI Bridge :    0
+
+  ECAM 0:  Base 0xF0000000
+  BDF: 0x100
+  Seg: 0x0, Bus: 0x00, Dev: 0x01, Func: 0x0, Dev ID: 0x10D3, Vendor ID: 0x8086
+  BDF: 0x200
+  Seg: 0x0, Bus: 0x00, Dev: 0x02, Func: 0x0, Dev ID: 0x1111, Vendor ID: 0x1234
+ Creating SMMU INFO table
+  IORT node offset:30, type: 0
+  IORT node offset:48, type: 4
+  IORT node offset:30, type: 0
+  IORT node offset:A0, type: 2
+  IORT node offset:48, type: 4
+  Number of IOVIRT blocks = 3
+  ITS Group Num ITS: 1
+  ITS ID: 0
+  SMMU: Major Rev:3 Base Address:0x60050000
+  Number of ID Mappings:1
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0x18
+
+  Root Complex  Segment Num:0
+  Number of ID Mappings:1
+  input_base:0x0 id_count:0xFFFF
+  output_base:0x0 output ref:0xDC
+
+ SMMU_INFO: Number of SMMU CTRL       :    1
+
+   SMMU index 0, Base : 0x60050000
+   Check for SMMU index 0 entry in memmap
+   Translation table level         = 0
+   Table base address              = 0x101FFFFF000
+   Table entry index               = 0
+   Table entry                     = 0x101FFFFB003
+   VA bits remaining to be resolve = 39
+   Translation table level         = 1
+   Table base address              = 0x101FFFFB000
+   Table entry index               = 1
+   Table entry                     = 0x40000040000401
+   VA bits remaining to be resolve = 30
+   VA translation successful
+   Address is already mapped
+ SMMU_INFO: SMMU index 00 version     :    v3.1
+ Creating PERIPHERAL INFO table
+  000.00.00 class_code = 0 6
+  000.00.03 class_code = 3 12
+  Found a USB controller 60110000
+  000.01.01 class_code = 0 2
+  000.01.04 class_code = 6 1
+  000.02.02 class_code = 128 3
+  000.00.00 class_code = 0 6
+  000.00.03 class_code = 3 12
+  000.01.01 class_code = 0 2
+  000.01.04 class_code = 6 1
+  Found a SATA controller 60100000
+  000.02.02 class_code = 128 3
+ Peripheral: Num of USB controllers   :    1
+ Peripheral: Num of SATA controllers  :    1
+ Peripheral: Num of UART controllers  :    1
+
+ BDF is 0
+ Class code is 6000000
+ BDF is 100
+ Class code is 2000000
+ BDF is 200
+ Class code is 3800002
+ Peripheral: Num of Network ctrl      :    1
+ Peripheral: Num of Storage ctrl      :    0
+ Peripheral: Num of Display ctrl      :    1
+ Creating MEMORY INFO table
+  Reserved region of type 7 [0x10000000000, 0x101FC000000]
+  Reserved region of type 4 [0x101FC000000, 0x101FC020000]
+  Reserved region of type 7 [0x101FC020000, 0x101FDC5E000]
+  Reserved region of type 4 [0x101FDC5E000, 0x101FDD60000]
+  Reserved region of type 1 [0x101FDD60000, 0x101FDDA2000]
+  Reserved region of type 4 [0x101FDDA2000, 0x101FDDA4000]
+  Reserved region of type 1 [0x101FDDA4000, 0x101FDEA4000]
+  Reserved region of type 4 [0x101FDEA4000, 0x101FDEA5000]
+  Reserved region of type 7 [0x101FDEA5000, 0x101FDEB2000]
+  Reserved region of type 4 [0x101FDEB2000, 0x101FDF3C000]
+  Reserved region of type 7 [0x101FDF3C000, 0x101FDF3D000]
+  Reserved region of type 4 [0x101FDF3D000, 0x101FDF47000]
+  Reserved region of type 7 [0x101FDF47000, 0x101FDF48000]
+  Reserved region of type 4 [0x101FDF48000, 0x101FDF51000]
+  Reserved region of type 7 [0x101FDF51000, 0x101FDF52000]
+  Reserved region of type 4 [0x101FDF52000, 0x101FE5DE000]
+  Reserved region of type 3 [0x101FE5DE000, 0x101FE5EE000]
+  Reserved region of type 4 [0x101FE5EE000, 0x101FE5F2000]
+  Reserved region of type 3 [0x101FE5F2000, 0x101FE62A000]
+  Reserved region of type 4 [0x101FE62A000, 0x101FE62C000]
+  Reserved region of type 3 [0x101FE62C000, 0x101FE656000]
+  Reserved region of type 4 [0x101FE656000, 0x101FE65F000]
+  Reserved region of type 3 [0x101FE65F000, 0x101FE6A0000]
+  Reserved region of type 4 [0x101FE6A0000, 0x101FE6A3000]
+  Reserved region of type 3 [0x101FE6A3000, 0x101FE768000]
+  Reserved region of type 4 [0x101FE768000, 0x101FE769000]
+  Reserved region of type 3 [0x101FE769000, 0x101FE779000]
+  Reserved region of type 4 [0x101FE779000, 0x101FE781000]
+  Reserved region of type 3 [0x101FE781000, 0x101FE7A0000]
+  Reserved region of type 5 [0x101FE7A0000, 0x101FE7E0000]
+  Reserved region of type 4 [0x101FE7E0000, 0x101FE7E2000]
+  Reserved region of type 3 [0x101FE7E2000, 0x101FE801000]
+  Reserved region of type 4 [0x101FE801000, 0x101FE80B000]
+  Reserved region of type 3 [0x101FE80B000, 0x101FE815000]
+  Reserved region of type 4 [0x101FE815000, 0x101FE817000]
+  Reserved region of type 3 [0x101FE817000, 0x101FE820000]
+  Reserved region of type 5 [0x101FE820000, 0x101FE860000]
+  Reserved region of type 4 [0x101FE860000, 0x101FE862000]
+  Reserved region of type 3 [0x101FE862000, 0x101FE874000]
+  Reserved region of type 4 [0x101FE874000, 0x101FE876000]
+  Reserved region of type 3 [0x101FE876000, 0x101FE87D000]
+  Reserved region of type 4 [0x101FE87D000, 0x101FE887000]
+  Reserved region of type 3 [0x101FE887000, 0x101FE88B000]
+  Reserved region of type 4 [0x101FE88B000, 0x101FE892000]
+  Reserved region of type 3 [0x101FE892000, 0x101FE8A0000]
+  Reserved region of type 6 [0x101FE8A0000, 0x101FE900000]
+  Reserved region of type 5 [0x101FE900000, 0x101FE950000]
+  Reserved region of type 6 [0x101FE950000, 0x101FE9A0000]
+  Reserved region of type 5 [0x101FE9A0000, 0x101FE9E0000]
+  Reserved region of type 3 [0x101FE9E0000, 0x101FE9EF000]
+  Reserved region of type 4 [0x101FE9EF000, 0x101FEA30000]
+  Reserved region of type 6 [0x101FEA30000, 0x101FEA80000]
+  Reserved region of type 4 [0x101FEA80000, 0x101FEA89000]
+  Reserved region of type 3 [0x101FEA89000, 0x101FEB62000]
+  Reserved region of type 4 [0x101FEB62000, 0x101FEB67000]
+  Reserved region of type 3 [0x101FEB67000, 0x101FEB82000]
+  Reserved region of type 4 [0x101FEB82000, 0x101FEB85000]
+  Reserved region of type 3 [0x101FEB85000, 0x101FEB8F000]
+  Reserved region of type 9 [0x101FEB8F000, 0x101FEB90000]
+  Reserved region of type 3 [0x101FEB90000, 0x101FEB9A000]
+  Reserved region of type 9 [0x101FEB9A000, 0x101FEB9F000]
+  Reserved region of type 4 [0x101FEB9F000, 0x101FEBA0000]
+  Reserved region of type 5 [0x101FEBA0000, 0x101FEBF0000]
+  Reserved region of type 4 [0x101FEBF0000, 0x101FEBF3000]
+  Reserved region of type 3 [0x101FEBF3000, 0x101FEC1E000]
+  Reserved region of type 4 [0x101FEC1E000, 0x101FEC27000]
+  Reserved region of type 9 [0x101FEC27000, 0x101FEC28000]
+  Reserved region of type 3 [0x101FEC28000, 0x101FEC2C000]
+  Reserved region of type 4 [0x101FEC2C000, 0x101FEC2D000]
+  Reserved region of type 3 [0x101FEC2D000, 0x101FEC31000]
+  Reserved region of type 4 [0x101FEC31000, 0x101FEC32000]
+  Reserved region of type 3 [0x101FEC32000, 0x101FEC40000]
+  Reserved region of type 4 [0x101FEC40000, 0x101FEC41000]
+  Reserved region of type 3 [0x101FEC41000, 0x101FEC45000]
+  Reserved region of type 4 [0x101FEC45000, 0x101FEC4B000]
+  Reserved region of type 3 [0x101FEC4B000, 0x101FEC62000]
+  Reserved region of type 4 [0x101FEC62000, 0x101FF480000]
+  Reserved region of type 5 [0x101FF480000, 0x101FF610000]
+  Reserved region of type 6 [0x101FF610000, 0x101FF860000]
+  Reserved region of type 7 [0x101FF860000, 0x101FF877000]
+  Reserved region of type 4 [0x101FF877000, 0x101FF899000]
+  Reserved region of type 3 [0x101FF899000, 0x101FF8D1000]
+  Reserved region of type 4 [0x101FF8D1000, 0x101FFFD8000]
+  Reserved region of type 7 [0x101FFFD8000, 0x101FFFE8000]
+  Reserved region of type 3 [0x101FFFE8000, 0x101FFFF8000]
+  Reserved region of type 4 [0x101FFFF8000, 0x10200000000]
+  Reserved region of type 11 [0x10000000, 0x106C0000]
+  Reserved region of type 11 [0x60010000, 0x60011000]
+ Creating TPM2 INFO table
+ TCG2 Protocol Not Found
+ TPM2 ACPI Table not found
+ SRAT not found
+ Shared memory is 101FDF51018
+
+      *** Starting PE tests ***
+   4 : Check PE 4KB Granule Support          
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_01
+                                       : Result:  PASS
+       END
+
+  18 : Check Stage 2 4KB Granule Support     
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_01
+                                       : Result:  PASS
+       END
+
+  24 : Check for 16-bit ASID support         
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_02
+                                       : Result:  PASS
+       END
+
+  25 : Check AARCH64 implementation          
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_03
+                                       : Result:  PASS
+       END
+
+  26 : Check FEAT_LPA Requirements           
+       START
+       Skipped on PE -    0
+       P_L1PE_05
+       Checkpoint --  1                           : Result:  SKIPPED
+       END
+
+  28 : Check DC CVAP support                 
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       Skipped on PE -    0
+       P_L1PE_06
+       Checkpoint --  2                           : Result:  SKIPPED
+       END
+
+  29 : Check for 16-Bit VMID                 
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_07
+                                       : Result:  PASS
+       END
+
+  30 : Check for Virtual host extensions     
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_08
+                                       : Result:  PASS
+       END
+
+  15 : Check for FEAT_LSE support            
+       START
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       PSCI_CPU_ON: success
+       P_L1PE_04
+                                       : Result:  PASS
+       END
+
+
+      One or more PE tests failed or were skipped.
+
+      *** Starting Memory tests ***
+ 105 : NS-EL2 Stage-2 64KB Mapping Check     
+       START
+       No memory regions reported by the system.
+       Failed on PE -    0
+       P_L1MM_01
+       Checkpoint --  2                           : Result:  FAIL
+       END
+
+ 108 : Check peripherals addr 64Kb apart     
+       START
+   addr of Peripheral 1 is  60110000
+   addr of Peripheral 2 is  60100000
+   addr of Peripheral 1 is  60110000
+   addr of Peripheral 2 is  60000000
+   addr of Peripheral 1 is  60100000
+   addr of Peripheral 2 is  60000000
+       P_L1MM_01
+                                       : Result:  PASS
+       END
+
+
+      One or more Memory tests failed or were skipped.
+
+      *** Starting GIC tests ***
+  Initializing ITS
+  ITS : Info Block
+  GIC ITS Index: 0 ID: 0 Base: 44081000
+ 212 : Check GIC version                     
+       START
+       gic version from info table = 3
+
+       Received GIC version =    3      
+       P_L1GI_01
+                                       : Result:  PASS
+       END
+
+ 214 : Check All PPI Interrupt IDs           
+       START
+       P_L1PP_01
+                                       : Result:  PASS
+       END
+
+ 210 : Check GIC supports disabling LPIs     
+       START
+       gic version from info table = 3
+       gicr_rdindex 0       gicrd_base 0x40080000
+       GICR_TYPER 0x1000001
+
+       PE RD base address 40080000
+       P_L1GI_03
+                                       : Result:  PASS
+       END
+
+ 211 : Check GICR_PENDBASER when LPIs enabled
+       START
+       gic version from info table = 3
+       gicr_rdindex 0       gicrd_base 0x40080000
+       GICR_TYPER 0x1000001
+
+       PE RD base address 40080000
+       P_L1GI_04
+                                       : Result:  PASS
+       END
+
+
+      All GIC tests passed.
+
+      *** Starting SMMU tests ***
+ 308 : Check Stage 1 SMMUv3 functionality    
+       START
+       Detected SMMUv3, or higher implementation 
+       P_L1SM_02
+                                       : Result:  PASS
+       END
+
+ 325 : Check Stage 2 SMMUv3 functionality    
+       START
+       Detected SMMUv3, or higher implementation 
+       P_L1SM_03
+                                       : Result:  PASS
+       END
+
+ 320 : Check SMMU Coherent Access Support    
+       START
+       P_L1SM_04
+                                       : Result:  PASS
+       END
+
+ 322 : Check if all DMA reqs behind SMMU     
+       START
+       RC segment no  : 0x0
+       CCA attribute  : 0x1
+       SMMU base addr : 0x60050000
+
+       P_L1SM_05
+                                       : Result:  PASS
+       END
+
+
+      All SMMU tests passed.
+
+      *** Starting PCIe tests ***
+ 801 : Check ECAM Presence                   
+       START
+       PCI_IN_01
+                                       : Result:  PASS
+       END
+
+ 887 : Check EA Capability                   
+       START
+       BDF - 0x100
+       BDF - 0x200
+       P_L1PCI_2
+                                       : Result:  PASS
+       END
+
+
+      All PCIe tests passed.
+
+      *** Starting TPM2 tests ***
+1601 : Check TPM Version                     
+       START
+       TPM not present
+       Failed on PE -    0
+       P_L1TP_01
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+1602 : Check TPM interface locality support  
+       START
+       TPM not present
+       Failed on PE -    0
+       P_L1TP_03
+       Checkpoint --  1                           : Result:  FAIL
+       END
+
+
+      One or more TPM2 tests failed or were skipped.
+
+     -------------------------------------------------------
+     Total Tests run  =   23  Tests Passed  =   18  Tests Failed =    3
+     -------------------------------------------------------
+
+      **  For complete PC-BSA test coverage, it is 
+            necessary to also run the BSA test    **
+
+
+      *** PC BSA tests complete. Reset the system. ***
+
+[1m[33m[40mShell> [0m[37m[40m              reset -c
