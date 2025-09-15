@@ -1,0 +1,230 @@
+4:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_01
+  title: Check PE 4KB Granule Support
+15:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_04
+  title: Check for FEAT_LSE support
+18:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_01
+  title: Check Stage 2 4KB Granule Support
+24:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_02
+  title: Check for 16-bit ASID support
+25:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_03
+  title: Check AARCH64 implementation
+26:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: PASS
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: P_L1PE_05
+  title: Check FEAT_LPA Requirements
+28:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: SKIPPED
+    neoverse-n1: SKIPPED
+    neoverse-n2: SKIPPED
+    neoverse-v1: SKIPPED
+  tags: P_L1PE_06
+  title: Check DC CVAP support
+29:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_07
+  title: Check for 16-Bit VMID
+30:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PE_08
+  title: Check for Virtual host extensions
+105:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: P_L1MM_01
+  title: NS-EL2 Stage-2 64KB Mapping Check
+108:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1MM_01
+  title: Check peripherals addr 64Kb apart
+210:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1GI_03
+  title: Check GIC supports disabling LPIs
+211:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1GI_04
+  title: Check GICR_PENDBASER when LPIs enabled
+212:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1GI_01
+  title: Check GIC version
+214:
+  status:
+    cortex-a57: SKIPPED
+    cortex-a72: SKIPPED
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PP_01
+  title: Check All PPI Interrupt IDs
+308:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1SM_02
+  title: Check Stage 1 SMMUv3 functionality
+320:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1SM_04
+  title: Check SMMU Coherent Access Support
+322:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1SM_05
+  title: Check if all DMA reqs behind SMMU
+325:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1SM_03
+  title: Check Stage 2 SMMUv3 functionality
+801:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: PCI_IN_01
+  title: Check ECAM Presence
+887:
+  status:
+    cortex-a57: PASS
+    cortex-a72: PASS
+    max: PASS
+    neoverse-n1: PASS
+    neoverse-n2: PASS
+    neoverse-v1: PASS
+  tags: P_L1PCI_2
+  title: Check EA Capability
+1601:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: P_L1TP_01
+  title: Check TPM Version
+1602:
+  status:
+    cortex-a57: FAIL
+    cortex-a72: FAIL
+    max: FAIL
+    neoverse-n1: FAIL
+    neoverse-n2: FAIL
+    neoverse-v1: FAIL
+  tags: P_L1TP_03
+  title: Check TPM interface locality support
