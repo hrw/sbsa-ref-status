@@ -5,6 +5,8 @@ import yaml
 
 with open("status-sbsa.yml", encoding="utf-8") as yml:
     status_sbsa = yaml.safe_load(yml)
+    if status_sbsa is None:
+        status_sbsa = {}
 
 if len(sys.argv) < 4:
     print("Give me: logfile corename sbsalevel")
@@ -12,6 +14,9 @@ if len(sys.argv) < 4:
 
 core_name = sys.argv[2]
 sbsa_level = sys.argv[3]
+
+if sbsa_level != "future":
+    sbsa_level = int(sbsa_level)
 
 start_parsing = False
 
@@ -31,6 +36,7 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
                 test_id, test_title = prev_line.removesuffix(
                     "START\n").strip().split(" : ")
                 test_id = int(test_id)
+
                 try:
                     tmp = status_sbsa[test_id]
                 except KeyError:
@@ -48,7 +54,9 @@ with open(sys.argv[1], encoding="utf-8") as sbsa_acs_log:
 
             if 'Result:' in line:
                 result = line.split(':')[-1].strip()
-                if sbsa_level <= status_sbsa[test_id]["level"]:
+                if (sbsa_level == "future" or
+                    status_sbsa[test_id]["level"] == "future" or
+                    sbsa_level <= int(status_sbsa[test_id]["level"])):
                     status_sbsa[test_id]["status"][core_name] = result
 
             if test_id and status_sbsa[test_id]["level"] == 0:

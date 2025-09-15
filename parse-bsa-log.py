@@ -5,6 +5,8 @@ import yaml
 
 with open("status-bsa.yml", encoding="utf-8") as yml:
     status_bsa = yaml.safe_load(yml)
+    if status_bsa is None:
+        status_bsa = {}
 
 if len(sys.argv) < 3:
     print("Give me: logfile corename")
